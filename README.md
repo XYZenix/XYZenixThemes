@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+# XYZenixThemes
 
-You can use the [editor on GitHub](https://github.com/XYZenix/XYZenixThemes/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is where I will put website themes I've made.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/XYZenix/XYZenixThemes/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Website | Theme Name | Link | Description | Preview
+------- | ---------- | ---- | ----------- | -------
+Discord | \<MULTIPLE\> | [Discord-Themes](https://github.com/XYZenix/Discord-Themes) | Collection of Discord themes | None
+YouTube | None, big mess | None | Collection of multiple YouTube themes that are supposed to look like 2012 & 2013 YouTube layouts, but are instead a complete mess | None
+VidLii | VidBit Header | None | Theme that was supposed to make the VidLii header more like the VidBit one | None
+\<ALL\> | Global Font | None | Theme that globally changes fonts on all sites to a specific manually configured font | None
+Twitter | ??? | None | Theme that brings the old icons back | [1](https://cdn.discordapp.com/attachments/531523467636375554/591349962290233354/unknown.png) / [2](https://cdn.discordapp.com/attachments/531523467636375554/591349987661709324/unknown.png)
+Bulbapedia | Bulbapedia-WikiDex Theme | None | Changes the Bulbapedia theme to look more like WikiDex | [Preview](https://cdn.discordapp.com/attachments/531523467636375554/591350934530162697/unknown.png)
