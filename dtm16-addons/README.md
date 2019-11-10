@@ -1,5 +1,7 @@
 
 # DTM-016 Addons
+NOTE: I usually use Discord Canary for theming, so if something here doesn't work, use Discord Canary.
+
 Name | Description | Status | Preview
 ---- | ----------- | ------ | -------
 2015 Embeds | | Available |
