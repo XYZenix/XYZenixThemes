@@ -28,6 +28,7 @@ Unnamed Windows 95 theme | | N/A | Unfinished
 Unnamed classic terminal theme | | N/A | Planned
 DTM-18 | A theme that reverts the new UI changes from early 2019 | N/A | Abandoned
 ~~Unnamed Minecraft theme~~ | | N/A | Cancelled
+Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI... kinda... i still need the font | 0.7 | Available
 
 \* Only as far as 2016, without making formerly always-light-mode elements light and without removing features (like search bar, video call/screenshare, and channel categories). For features added after 2016, will use the oldest version I can find as long as it does not require JS or something (like having text channels actually use a # instead of a SVG for the hashtag, which is not possible as of right now because the way Discord changed the channel list to use same classes no matter whether the channel is a voice one or a text one) There are/will be addons for DTM-16 that will revert elements to light mode and even go as far as 2015 or to remove features added after 2016, however the base DTM-16 will not remove or turn dark elements light.
 
