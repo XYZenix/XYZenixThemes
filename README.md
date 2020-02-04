@@ -21,7 +21,7 @@ Discord Themes:
 
 Name | Description | Version | Status
 -- | -- | -- | --
-DTM-16 | A theme that brings the old UI back* | 4.2.X | Working (+ light theme compatible)
+DTM-16 | A theme that brings the old UI back* | 4.3.X | Working (+ light theme compatible)
 DTM-20 | A theme where I try to 'predict' what Discord would look like in 2020 | 2.0X | Mostly working
 Discord Plus! | A skeuomorphic theme for Discord | 0.7.X | Will fix soon™
 Unnamed Windows 95 theme | | N/A | Unfinished
