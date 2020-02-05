@@ -2,7 +2,7 @@
 
 This is where I will put website themes I've made.
 
-You can join my discord server [here](https://discord.gg/vjXwAYx)
+You can join my discord server [here](https://discord.gg/vUN9sNW)
 
 (this readme.md file was last updated 12 Nov 2019)
 
