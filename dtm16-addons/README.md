@@ -1,6 +1,6 @@
 
 # DTM-016 Addons
-NOTE: I usually use Discord Canary for theming, so if something here doesn't work, use Discord Canary.
+NOTE: "Compatible with" is the last version the addon was tested on, it might work on newer versions but this shows what 11pixels last tested it on
 
 Name | Description | Status | Compatible with | Preview
 ---- | ----------- | ------ | --------------- | -------
