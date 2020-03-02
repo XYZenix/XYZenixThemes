@@ -11,5 +11,6 @@ Zen's Addon | Helps make DTM-016 more accurate to the Discord of 2016, intended 
 DTM-015 Extreme Edition | An extreme version of DTM-015 which also removes various things | WIP | Canary 49186 | N/A
 Old Invite Embeds | Brings back the old, basic invite embeds from 2016 | Available | Stable 53832 | [Preview](https://user-images.githubusercontent.com/51988432/68716346-ab9e1800-05ac-11ea-8da5-dea4ccea428b.png)
 Full Light Mode | For people who hate dark mode | Working? | Stable 53832 | im too lazy eeeeeeeee
+11pixels' Addon | Small changes 11pixels considers optional to DTM-16 | Working?? idk lol | 55393 | TBD
 
 (if someone doesn't know, "Compatible with" is the last version of Discord that I've checked it works on)
