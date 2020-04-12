@@ -16,6 +16,7 @@ Twitter | ??? | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/OldT
 Bulbapedia | Bulbapedia-WikiDex Theme | None | Changes the Bulbapedia theme to look more like WikiDex | [Preview](https://cdn.discordapp.com/attachments/581117911117070336/622017951784239105/unknown.png)
 YouTube | Cosmic Panda Theme | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/YTCosmicPanda.css) | Created by NermalCat79, fixed by Zenix | .
 Twitter | Old Twitter Theme | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/OldTwitterTheme.css) | A mess that is supposed to be a theme that looks like 2012-2013 Twitter | .
+Steam Library Themes | \<MULTIPLE\> | Below the discord theme tables | Various themes for the 'new' Steam library | N/A
 
 Discord Themes:
 
@@ -44,3 +45,17 @@ Unnamed | Mini theme for NoDeleteMessages | Broken | No image
 HideEmail | Mini theme that hides email from user settings | Unknown | [Example](https://cdn.discordapp.com/attachments/531523467636375554/590956519290306564/unknown.png)
 ExpandedSearchBar | Mini theme that expands search bar as needed | Unknown | No image
 FluentClickEffect | Mini theme that adds Fluent Design-like click effects to most buttons | Unknown | [GIF](https://cdn.discordapp.com/attachments/531523467636375554/590957041305255957/2019-06-19_20-31-52.gif)
+
+
+Steam Themes:
+
+ID | Style | Version | Status
+-- | -- | -- | --
+001 | Skeuomorphic + Glossy | 0.0.X | Not finished
+002 | Discord | 0.0.X | Not finished
+N/A | Light mode | N/A | Planned
+N/A | Darker dark mode | N/A | Planned
+N/A | Terminal/retro | N/A | Planned
+N/A | Compact | N/A | Planned
+
+These will be located in the SteamLibraryThemes folder, and I plan on keeping the name scheme
