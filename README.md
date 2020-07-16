@@ -20,17 +20,17 @@ Steam Library Themes | \<MULTIPLE\> | Below the discord theme tables | Various t
 
 Discord Themes:
 
-Name | Description | Version | Status
--- | -- | -- | --
-DTM-16 | A theme that brings the old UI back* | 4.X | Working (+ light theme compatible)
-DTM-20 | A theme where I try to 'predict' what Discord would look like in 2020 | 2.0X | most definitely not actually working
-DTM-08 | A skeuomorphic theme for Discord | 0.X | Working
-Unnamed Windows 95 theme | | N/A | Unfinished
-Unnamed classic terminal theme | | N/A | Planned
-DTM-17 | A theme that reverts the new UI changes from early 2019 and other stuff from 2018 | N/A | Working on it I promise
-Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI i guess | 0.X | Available
+Name | Description  | Status
+-- | --  | --
+DTM-16 | A theme that brings the old UI back* | Working (+ light theme compatible)
+DTM-20 | A theme where I try to 'predict' what Discord would look like in 2020 | most definitely not actually working
+DTM-08 | A skeuomorphic theme for Discord  | Working
+Unnamed Windows 95 theme | | Unfinished
+Unnamed classic terminal theme | | Planned
+DTM-17 | A theme that reverts the new UI changes from early 2019 and other stuff from 2018 | Working on it I promise
+Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI i guess | Available
 
-\* Only as far as 2016, without making formerly always-light-mode elements light and without removing features (like search bar, video call/screenshare, and channel categories). For features added after 2016, will use the oldest version I can find as long as it does not require JS or something (like having text channels actually use a # instead of a SVG for the hashtag, which is not possible as of right now because the way Discord changed the channel list to use same classes no matter whether the channel is a voice one or a text one) There are/will be addons for DTM-16 that will revert elements to light mode and even go as far as 2015 or to remove features added after 2016, however the base DTM-16 will not remove or turn dark elements light.
+\* No half-light dark mode, and all features will be kept mostly intact
 
 Discord Mini-themes:
 
@@ -44,17 +44,18 @@ Unnamed | Mini theme for NoDeleteMessages | Broken | No image
 HideEmail | Mini theme that hides email from user settings | Unknown | [Example](https://cdn.discordapp.com/attachments/531523467636375554/590956519290306564/unknown.png)
 ExpandedSearchBar | Mini theme that expands search bar as needed | Unknown | No image
 FluentClickEffect | Mini theme that adds Fluent Design-like click effects to most buttons | Unknown | [GIF](https://cdn.discordapp.com/attachments/531523467636375554/590957041305255957/2019-06-19_20-31-52.gif)
+MiniProfileRevert | Reverts the new mini profile UI update from July 2020 | Working? | [Comparison](https://i.imgur.com/UPmNSMH.png)
 
 
 Steam Themes:
 
-ID | Style | Version | Status
--- | -- | -- | --
-001 | Skeuomorphic + Glossy | 0.0.X | Not finished
-002 | Discord | 0.0.X | Not finished
-N/A | Light mode | N/A | Planned
-N/A | Darker dark mode | N/A | Planned
-N/A | Terminal/retro | N/A | Planned
-N/A | Compact | N/A | Planned
+ID | Style | Status
+-- | -- | --
+001 | Skeuomorphic + Glossy | Not finished
+002 | Discord | Not finished
+N/A | Light mode | Planned
+N/A | Darker dark mode | Planned
+N/A | Terminal/retro | Planned
+N/A | Compact | Planned
 
 These will be located in the SteamLibraryThemes folder, and I plan on keeping the name scheme
