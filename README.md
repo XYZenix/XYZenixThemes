@@ -2,9 +2,9 @@
 
 This is where I will put website themes I've made.
 
-You can join my discord server [here](https://discord.gg/vUN9sNW)
-
-(this readme.md file was last updated 12 Nov 2019)
+![](https://img.shields.io/github/commit-activity/m/XYZenix/XYZenixThemes?color=4499ff&style=for-the-badge)
+![](https://img.shields.io/github/last-commit/XYZenix/XYZenixThemes?style=for-the-badge)
+![https://discord.gg/vUN9sNW](https://img.shields.io/discord/581110034977783838?color=7289da&label=discord&style=for-the-badge)
 
 Website | Theme Name | Link | Description | Preview
 ------- | ---------- | ---- | ----------- | -------
