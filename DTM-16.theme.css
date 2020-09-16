@@ -602,6 +602,7 @@ path[d="M20 7H12L10.553 5.106C10.214 4.428 9.521 4 8.764 4H3C2.447 4 2 4.447 2 5
 .contextMenu-HLZMGh, .styleFlexible-wGDiIL, .styleFixed-sX-yHV, .theme-dark .submenu-2-ysNh {padding: 0;background: #282B30;box-shadow: 0 0 1px rgba(0,0,0,.82), 0 1px 4px rgba(0,0,0,.1);min-width: 160px}
 .theme-light .contextMenu-HLZMGh, .theme-light .styleFlexible-wGDiIL, .theme-light .styleFixed-sX-yHV {background:#fff}
 .scroller-3BxosC {padding:0}
+.scroller-3BxosC::-webkit-scrollbar {width:0}
 .clickable-11uBi-,.accommodateScrollbar-21WtU7 .item-1tOPte, .clickable-11uBi-, .accommodateScrollbar-21WtU7 .item-1tOPte{color:#A3A5A8}
 .clickable-11uBi-:hover, .selected-BYpGTS, .accommodateScrollbar-21WtU7 .item-1tOPte:hover{background:#25282D!important;border-radius:6px;color:#D1D2D2}
 .clickable-11uBi- .checkbox-3kaeSU .checkboxInner-3yjcPe span{border-color:#535559}
@@ -1213,6 +1214,9 @@ body {--background-message-hover: transparent}
 .folder-21wGz3, .folderIconWrapper-226oVY {margin-left:1px}
 .wrapper-21YSNc {margin-bottom:8px} */
 :not(.panel-UE8sQC)>.cardPrimaryEditable-3KtE4g {background:none!important;border:none;padding-top:5px!important;padding-bottom:5px!important}
+:not(.panel-UE8sQC)>.cardPrimaryEditable-3KtE4g.clickable-ya6Upc {border-radius: 0;border-top: solid 1px var(--background-modifier-selected);padding-top: 18px!important;margin-bottom:0;padding-bottom:18px!important}
+:not(.panel-UE8sQC)>.cardPrimaryEditable-3KtE4g.clickable-ya6Upc:hover {background:var(--background-modifier-hover)!important}
+:not(.panel-UE8sQC)>.cardPrimaryEditable-3KtE4g.clickable-ya6Upc:active {background:var(--background-modifier-active)!important}
 .item-26Dhrx .checkbox-1ix_J3 {border-radius:50px;box-shadow:inset 0 0 0 5px var(--background-primary);border-color:var(--interactive-muted)!important}
 .item-26Dhrx .checkbox-1ix_J3 svg {display:none}
 .item-26Dhrx:hover .checkbox-1ix_J3 {background:#7289da44}
@@ -1248,9 +1252,9 @@ body {--background-message-hover: transparent}
 .contentColumnDefault-1VQkGM {margin-left: 20px !important;margin-right:20px!important}
 .side-8zPYf6 {overflow:visible!important}
 .sidebarRegion-VFTUkN .scroller-2FKFPG {overflow:visible!important}
-.sidebar-CFHs9e {overflow-y:scroll!important;height:inherit;}
-.sidebar-CFHs9e::-webkit-scrollbar {background:var(--background-secondary) !important;width:8px!important;}
-.sidebar-CFHs9e::-webkit-scrollbar-thumb {background:var(--background-tertiary);border:solid 2px var(--background-secondary);border-radius:50px;}
+.sidebar-CFHs9e {overflow-y:scroll!important;height:inherit}
+.sidebar-CFHs9e::-webkit-scrollbar {background:var(--background-secondary) !important;width:8px!important}
+.sidebar-CFHs9e::-webkit-scrollbar-thumb {background:var(--background-tertiary);border:solid 2px var(--background-secondary);border-radius:50px}
 .uploadModal-2ifh8j .textArea-12jD-V {padding-left:5px;color:#fff}
 .uploadModal-2ifh8j .description-11DmNu, .theme-light .uploadModal-2ifh8j .descriptionUsername-J_75O8 {color: #36393f}
 .uploadModal-2ifh8j .content-Qb0rXO {color:#040405}
@@ -1299,7 +1303,7 @@ body {--background-message-hover: transparent}
 .inner-2OjsH_ .cardHeader-1l_Vba {color:var(--interactive-normal);font-weight:bold;font-size:16px}
 .inner-2OjsH_ .checkmark-35U2vf {display:none}
 .inner-2OjsH_ .titleName-3RLGx4 {color:#7289da;font-size:18px;text-transform:uppercase}
-.inner-2OjsH_ .titleName-3RLGx4 p {display:inline;margin-left:2px;margin-right:2px;}
+.inner-2OjsH_ .titleName-3RLGx4 p {display:inline;margin-left:2px;margin-right:2px}
 .inner-2OjsH_ .subtitle-1IUuFJ {display:none}
 .theme-dark .userInfoSection-2acyCx+.userInfoSection-2acyCx {border-top-color:#202225}
 .theme-light .userInfoSection-2acyCx+.userInfoSection-2acyCx {border-top-color:#dcddde}
@@ -1335,15 +1339,10 @@ svg.controlButton-2MhVEL.contextMenuContainer-2HlOMK .contextMenuNub-3yOOYo {dis
     transform: translate(3px, 3px)
 }
 /* some powercord compatibility stuff ig */
-.powercord-spotify .container-3baos1 {
-  height: 50px
-}
+.powercord-spotify .container-3baos1 {height: 50px}
 /* and some betterdiscord fixes i was supposed to do */
-.theme-dark #bd-settings-sidebar .ui-tab-bar-item {
-    margin-bottom:2px
-}
+.theme-dark #bd-settings-sidebar .ui-tab-bar-item {margin-bottom:2px}
 .icon-15v2QJ {margin-right:0px!important}
-
 .overlay-2zxlBT .typingWrapper-24QP4N {margin-left:0;margin-right:0;margin-bottom:-2px;margin-top:2px}
 .overlay-2zxlBT .footerContent-2Hkx-f {padding-top:20px;box-shadow:0 -21px 0 -20px #ffffff15;margin-top:-6px;padding-left:20px;padding-right:20px}
 .overlay-2zxlBT .sidebar-sfP6x6 .header-3UON5h {height:57px}
@@ -1416,3 +1415,10 @@ svg.controlButton-2MhVEL.contextMenuContainer-2HlOMK .contextMenuNub-3yOOYo {dis
 }
 .focused-3afm-j {background:var(--background-modifier-hover)!important}
 .colorDanger-2qLCe1.focused-3afm-j {background:#f0474711!important}
+.breadcrumbs-SOzMJD>.breadcrumbWrapper-WmDjgG:not(:last-of-type):after {content:"/";padding:0 5px}
+.breadcrumbArrow-1bJVKv {display:none}
+.descriptionBox-1EKQKL {border:solid 1px var(--background-tertiary);border-radius:3px}
+.descriptionIcon-36p1fN path {fill: var(--background-secondary);stroke: var(--background-secondary);stroke-width: .75px}
+.descriptionBox-1EKQKL>.descriptionSection-3RrpaD:first-of-type circle {fill:#43b581}
+.descriptionBox-1EKQKL>.descriptionSection-3RrpaD:last-of-type circle {fill:#f04747}
+.descriptionIcon-36p1fN {transform:scale(1.5)}
