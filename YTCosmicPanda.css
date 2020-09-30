@@ -70,6 +70,12 @@ body {
 .yt-uix-expander-collapsed-body .yt-uix-button-default {
     background: none !important;
     border: none !important;
+    margin-top:0;
+    pointer-events: all;
+    z-index: 2147483648;
+}
+.comment-replies-renderer {
+    z-index: 500;
 }
 button#search-btn,button.yt-uix-button.yt-uix-button-size-default.yt-uix-button-default.yt-uix-menu-trigger,button.yt-uix-button.yt-uix-button-size-default.yt-uix-button-default.comment-simplebox-cancel,
 .yt-uix-button-default, .yt-uix-button-text, #appbar-guide-button {
@@ -245,7 +251,8 @@ button#search-btn:active,button.yt-uix-button.yt-uix-button-size-default.yt-uix-
 }
 
 #eow-title {
-    font-size: 15px;
+    font-size: 22px;
+    color: #333;
 }
 
 #watch8-secondary-actions {
@@ -667,7 +674,7 @@ button#search-btn:active,button.yt-uix-button.yt-uix-button-size-default.yt-uix-
     height: 67px;
 }
 
-.related-list-item .thumb-wrapper, .yt-uix-simple-thumb-related>img, .yt-pl-thumb img, .yt-pl-thumb, .yt-thumb-168 {
+.related-list-item .thumb-wrapper, .yt-uix-simple-thumb-related>img,.related-list-item .yt-pl-thumb img,.related-list-item .yt-pl-thumb,.related-list-item .yt-thumb-168 {
     height: 67px;
     width: 120px;
 }
@@ -765,4 +772,60 @@ button#search-btn:active,button.yt-uix-button.yt-uix-button-size-default.yt-uix-
 .comment-renderer-replybox {
     min-width: 500px;
     padding-top: 10px;
+}
+.standalone-collection-badge-renderer-text {
+    display:none
+}
+.guide-item, li.guide-section h3, button.guide-view-more {
+    background: linear-gradient(to bottom,#292929 0,#252525 100%);
+    color: #999;
+    font-size: 11px;
+    border-top: 1px solid #323232;
+    border-bottom: 1px solid #1b1b1b;
+}
+.guide-section-separator {
+    display: none;
+}
+li.guide-section h3 {
+    margin:0;
+    padding:3px 10px;
+    width: 100%;
+    color: #999!important;
+}
+li.guide-section h3 a {color:#999!important}
+#guide-container {
+    padding:0 9px 0 0;
+}
+button.guide-view-more {
+    margin-top:20px;
+    border-radius:0
+}
+.guide-channels-list .guide-item {
+    width: 100%
+}
+.show-guide #appbar-guide-menu {
+    overflow-y: auto
+}
+
+.guide-flyout-trigger.on-hover, .guide-item:hover, .guide-item:hover .yt-deemphasized-text, .guide-collapsible-item .yt-uix-expander-head:hover {
+    border-right-color: #666;
+    text-decoration: none;
+    background: #1c1c1c;
+}
+
+.stat .yt-badge {
+    background: #dfdfdf;
+    border-radius: 3px;
+    color: #333;
+    box-shadow: inset 0 -1px 1px #bfbfbf;
+    font-size: 10px;
+}
+.yt-uix-creator-heart-button {
+    margin-right: 5px
+}
+.comment-renderer {
+    pointer-events: none
+}
+.comment-action-buttons-toolbar, .comment-renderer-text-content, .comment-renderer .yt-thumb img, .comment-thread-renderer, .comment-text-toggle {
+    pointer-events: all;
 }
