@@ -23,12 +23,12 @@ Discord Themes:
 Name | Description  | Status
 -- | --  | --
 DTM-16 | A theme that brings the old UI back* | Working (+ light theme compatible)
-DTM-20 | A theme where I try to 'predict' what Discord would look like in 2020 | most definitely not actually working
+DTM-20 | A theme where I try to 'predict' what Discord would look like in 2020 | Working
 DTM-08 | A skeuomorphic theme for Discord  | Working
-Unnamed Windows 95 theme | | Unfinished
-Unnamed classic terminal theme | | Planned
-DTM-17 | A theme that reverts the new UI changes from early 2019 and other stuff from 2018 | Working on it I promise
-Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI i guess | Available
+Unnamed Windows 95 theme | | Cancelled
+Unnamed classic terminal theme | | Cancelled
+DTM-17 | A theme that reverts the new UI changes from early 2019 and other stuff from 2018 | ""Cancelled""
+Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI i guess | Probably working?
 
 \* No half-light dark mode, and all features will be kept mostly intact
 
@@ -58,4 +58,4 @@ N/A | Darker dark mode | Planned
 N/A | Terminal/retro | Planned
 N/A | Compact | Planned
 
-These will be located in the SteamLibraryThemes folder, and I plan on keeping the name scheme
+These will be located in the SteamLibraryThemes directory, and I plan on keeping the name scheme
