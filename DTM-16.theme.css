@@ -1,7 +1,7 @@
  /**
  * @name DTM-16
  * @author 11pixels#2004
- * @version 4.7.2
+ * @version 4.7.2.1
  * @invite vUN9sNW
  * @description Formerly known as Oldcord, this theme tries to bring back the 2016 look of Discord
  * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
@@ -13,7 +13,7 @@
 	--unread-bar: flex; /* flex = ON, none = OFF - show the "new unreads" bar in the channel list */
 }
 .sidebarRegion-VFTUkN .side-8zPYf6 .socialLinks-3jqNFy:after {
-	content: "DTM-16 4.7.2\A 20 Oct 2020";
+	content: "DTM-16 4.7.2.1\A 21 Oct 2020";
 	display: block;margin-top:10px;margin-bottom:-10px;
 	white-space: pre-wrap;font-weight:300;color: hsla(0,0%,100%,.3);
 }
@@ -1591,11 +1591,17 @@ svg.controlButton-2MhVEL.contextMenuContainer-2HlOMK .contextMenuNub-3yOOYo {dis
 .theme-dark .regionSelectModal-12e-57 .regionSelectModalFooter-20C5iA {color:var(--header-secondary)}
 .focusLock-Ns3yie>.modal-1k91nT.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignCenter-1dQNNs.noWrap-3jynv6.header-1TKi98.separator-2-RRj_ {padding:20px}
 .inviteRow-2L02ae {padding-right:25px}
-.root-3JVdIJ>.mainChannelInfo-1vd795 .wrapper-2QE8vf:after {content: "";position: absolute; pointer-events: none;left: -3px;top: -3px;width: 100%;height: 100%;border-radius: 100%;border: 3px solid var(--interactive-active);-webkit-transform-origin: center;transform-origin: center;}
-@keyframes call-bounce {0%{transform:scale(1.1)}75%{transform:scale(1)}100%{transform:scale(1.1)}}
-@keyframes call-bounce-ring {0%{transform:scale(1);opacity:1}75%{transform:scale(1.3);opacity:0}100%{transform:scale(1);opacity:0}}
-.root-3JVdIJ>.mainChannelInfo-1vd795 .wrapper-2QE8vf:after {content:"";background: var(--interactive-active);z-index:-1;animation:call-bounce-ring 2s infinite}
-.root-3JVdIJ>.mainChannelInfo-1vd795 .callAvatarMask-1SLlRi {animation: call-bounce 2s infinite}
+.root-3JVdIJ>.mainChannelInfo-1vd795 .wrapper-2QE8vf:after {content: "";position: absolute; pointer-events: none;left:0;top:0;width: 100%;height: 100%;border-radius: 100%;border:none;-webkit-transform-origin: center;transform-origin: center;}
+@keyframes incoming-call-pop {
+    20% {transform: scale3d(1.1,1.1,1)}
+    46% {transform: scale3d(1,1,1)}
+}
+@keyframes incoming-call-pulse {
+    20% {box-shadow: 0 0 0 0 rgba(255,255,255,.6)}
+    80% {box-shadow: 0 0 0 10px transparent}
+}
+.root-3JVdIJ>.mainChannelInfo-1vd795 .wrapper-2QE8vf:after {content:"";background: var(--interactive-active);z-index:-1;animation:incoming-call-pulse 1.333s ease-out infinite}
+.root-3JVdIJ>.mainChannelInfo-1vd795 .callAvatarMask-1SLlRi {border-radius:50%;animation: incoming-call-pop 1.3333s ease-out infinite}
 .headerImage-3X1tyY {display:none}
 .scroller-1d5FgU {background: url(/assets/76456a67ca3d139def36fd3ba871b230.png) no-repeat top / contain}
 .theme-light .scroller-1d5FgU {background: url(/assets/757e956c407d352bb77320c83e3c6159.png) no-repeat top / contain}
