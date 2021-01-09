@@ -14,7 +14,7 @@ VidLii | VidBit Header | [1](https://github.com/XYZenix/XYZenixThemes/blob/maste
 \<ALL\> | Global Font | None | Theme that globally changes fonts on all sites to a specific manually configured font | None
 Twitter | ??? | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/OldTwitterIcons.css) | Theme that brings the old icons back | [1](https://cdn.discordapp.com/attachments/531523467636375554/591349962290233354/unknown.png) / [2](https://cdn.discordapp.com/attachments/531523467636375554/591349987661709324/unknown.png)
 Bulbapedia | Bulbapedia-WikiDex Theme | None | Changes the Bulbapedia theme to look more like WikiDex | [Preview](https://cdn.discordapp.com/attachments/581117911117070336/622017951784239105/unknown.png)
-YouTube | Cosmic Panda Theme | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/YTCosmicPanda.css) | Created by NermalCat79, fixed by Zenix | .
+YouTube | Cosmic Panda Theme | Removed | Created by NermalCat79, fixed by me. Meant for the old layout, which was completely destroyed, so this theme was removed. | .
 Twitter | Old Twitter Theme | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/OldTwitterTheme.css) | A mess that is supposed to be a theme that looks like 2012-2013 Twitter | .
 Steam Library Themes | \<MULTIPLE\> | Below the discord theme tables | Various themes for the 'new' Steam library | N/A
 
