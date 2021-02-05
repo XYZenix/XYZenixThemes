@@ -1,24 +1,16 @@
 :root {
-  --theme-version: "21w05a";
-  --theme-verdate: "4 February 2021";
+  --theme-version: "21w05b";
+  --theme-verdate: "6 February 2021";
   --login-background: url(https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1625&q=80);
 }
 /*
-  What's new in 21w05a:
+  What's new in 21w05b:
   [ Additions ]
-  - Tooltips are back.
-  - Changelog? In the CSS file? Why? Because I have no clue where else to put this where I wouldn't forget to update it. I'd probably forget to update this anyway...
-  - Made the message hover background more visible.
-  - Big radio buttons (in settings) are now inside a frame
-  - Updated login background, and added a watermark/label(?) mentioning where the image is from
+  Added a hover background to the channel list header button on top left
   [ Changes ]
-  - Changed version numbers to be totally original not copy of Minecraft's snapshots at all, because the old version scheme wasn't indicative of anything.
-  - Embed shadow changed
-  [ Removed ]
-  - Removed some unused stuff
-  [ Possibly boring stuff ]
-  - Replaced instances of rgba(0,0,0,0) with rgba(0 0 0 /0)
-  - Beautified the CSS "manually"
+  - Tooltips are now less round
+  - Worked on light mode a bit
+  - The voice chat panel buttons for screneshare, video and vc games are now different, just experimenting but might make this a full change to all buttons in a later update.
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -75,6 +67,10 @@
   background: linear-gradient(#3D3F44 00,#2B2D31 50%, #232429 50%,#17181B 100%) !important;
   box-shadow: inset 0 1px #fff2, inset 0 2px #fff1
 }
+.header-2V-4Sw:hover, .selected-31Nl7x .header-2V-4Sw {
+  background: linear-gradient(#51545d 00,#3b3d42 50%, #2f3035 50%,#202225 100%) !important;
+  box-shadow: inset 0 1px #fff2, inset 0 2px #fff1
+}
 .theme-light .container-1giJp5, .theme-light .header-2V-4Sw, .theme-light .searchBar-6Kv8R2, .theme-light .headerBar-UHpsPw {
   background: linear-gradient(#c7c9ce 00,#b9bbc1 50%, #aeafb5 50%,#bec0c5 100%) !important;
   box-shadow: inset 0 1px #fff6, inset 0 2px #fff6
@@ -89,6 +85,9 @@
   background: linear-gradient(#414148,#1d1d21);
   box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff2;
   border-radius: 3px
+}
+.theme-light .quickswitcher-3JagVE {
+  background: linear-gradient(#c6c6ce,#b8b8c1);
 }
 .messagesWrapper-3lZDfY {
   background-image: url(https://cdn.discordapp.com/attachments/484418453348941824/496378031657713684/unknown.png);
@@ -221,8 +220,16 @@
 }
 .unreadBar-3t3sYc:active {
   background: linear-gradient(to bottom, #353535, #3b3b3b 100%) !important;
-  border-radius: 3px;
   box-shadow: inset 0 0 0 1px #fff1,0 1px 3px #000
+}
+.theme-light .unreadBar-3t3sYc {
+  background: linear-gradient(to bottom, #cccccc, #949494 100%) !important;
+  box-shadow: inset 0 0 0 1px #fff9,0 1px 3px #0008;
+  color: #000;
+}
+.theme-light .unreadBar-3t3sYc:active {
+  background: linear-gradient(to bottom, #b1b1b1, #d0d0d0 100%) !important;
+  box-shadow: inset 0 0 0 1px #fff7,0 1px 3px #0004
 }
 .mention-1f5kbO {
   background: linear-gradient(to bottom, #bf5555, #903838 100%) !important
@@ -300,6 +307,9 @@
   text-shadow: 0 0 3px black, 0 0 3px black;
   box-shadow: 0 0 0 1px #000, 0 2px #fff3, inset 0 1px #fff3
 }
+.theme-light .lookFilled-1Gx00P.colorBrand-3pXr91 {
+  box-shadow: 0 0 0 1px #fff6, 0 1px 4px #0008
+}
 .lookFilled-1Gx00P.colorBrand-3pXr91:hover {
   background: linear-gradient(to bottom, #8da1e6 0%,#899fee 50%,#7388d2 51%,#889ce6 100%) !important
 }
@@ -327,17 +337,30 @@
 .theme-dark .tooltipBlack-PPG47z,
 .theme-dark .tooltipPrimary-1d1ph4 {
   background: linear-gradient(to bottom, #292c31 0%,#2a2c31 50%,#1b1d1f 51%,#2b2d31 100%) !important;
-  box-shadow: inset 0 0 0 1px #fff3, 0 0 0 1px #000a, 0 1px 3px #000b
+  box-shadow: inset 0 0 0 1px #fff3, 0 0 0 1px #000a, 0 1px 3px #000b;
+  border-radius: 3px;
 }
 .theme-dark .tooltipBlack-PPG47z .tooltipPointer-3ZfirK,
 .theme-dark .tooltipPrimary-1d1ph4 .tooltipPointer-3ZfirK {
   border-top-color: #000a !important;
+}
+.theme-light .tooltipBlack-PPG47z,
+.theme-light .tooltipPrimary-1d1ph4 {
+  background: linear-gradient(to bottom, #eff1f5 0%,#d6d8dc 50%,#b2b4b5 51%,#c1c2c3 100%) !important;
+  box-shadow: inset 0 0 0 1px #fff3, 0 0 0 1px #fff, 0 1px 3px #fffb
+}
+.theme-light .tooltipBlack-PPG47z .tooltipPointer-3ZfirK,
+.theme-light .tooltipPrimary-1d1ph4 .tooltipPointer-3ZfirK {
+  border-top-color: #fff !important;
 }
 .typeWindows-1za-n7 {
   background: transparent
 }
 .bg-h5JY_x {
   background: linear-gradient(#484848 0px,#232323 22px,#2b2e32 10px)!important
+}
+.theme-light .bg-h5JY_x {
+  background: linear-gradient(#d0d0d0 0px,#bfbfbf 22px,#f3f3f3 10px)!important
 }
 .winButtonClose-1HsbF-, .winButtonMinMax-PBQ2gm {
   border-left: solid 1px gray !important;
@@ -401,6 +424,10 @@
   background: linear-gradient(#313131 0%, #383838 50%, #232323 50%, #333333 100%);
   box-shadow: 0 0 0 1px, 0 2px #fff2, inset 0 1px #fff2, inset 0 0 0 1px #fff1;
   border: none
+}
+.theme-light .connectedAccount-36nQx7 {
+  background: linear-gradient(#d4d4d4 0%, #e2e2e2 50%, #d0d0d0 50%, #c1c1c1 100%);
+  box-shadow: 0 0 0 1px #888, 0 2px #fffb, inset 0 1px #fffb;
 }
 .topSectionPlaying-1J5E4n .tabBarContainer-1s1u-z {
   background: linear-gradient(#5a6ca9 0%, #6073b5 50%, #58679c 50%, #697cbd 100%)
@@ -601,10 +628,11 @@
 .embed-IeVjo6 {
   border-radius: 5px;
   background: linear-gradient(rgba(35 35 35/0.95) 0%, rgba(64 64 64/0.95) 50%, rgba(53 53 53/0.95) 50%, rgba(49 49 49/0.95) 100%);
-  box-shadow: inset 0 2px 10px rgba(0 0 0/0.95)
-}
-.embed-IeVjo6 {
   box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0008, 0 1px 3px #000
+}
+.theme-light .embed-IeVjo6 {
+  background: linear-gradient(#dcdcdcf2 0%, #efefeff2 50%, #e0e0e0f2 50%, #d8d8d8f2 100%);
+  box-shadow: inset 0 0 0 1px #0004, 0 0 0 1px #fff8, 0 1px 3px #0005
 }
 .theme-dark .messageGroupBlocked-3wrQQX .messageGroupBlockedBtn-1PBBh- {
   background: linear-gradient(#464950 0%, #41454e 50%, #32353b 50%, #292c31 100%)
@@ -887,6 +915,12 @@
 .searchBar-3dMhjb, .searchBar-TUoVPN {
   background: linear-gradient(#36383e 0%, #2b2c31 50%, #22252b 50%, #292d31 100%)
 }
+.theme-light .search-2oPWTC .searchBar-3dMhjb, .theme-light .searchBar-TUoVPN {
+  box-shadow: inset 0 1px 3px #0008
+}
+.theme-light .searchBar-3dMhjb, .theme-light .searchBar-TUoVPN {
+  background: linear-gradient(#bec1ca 0%, #cbcbd0 50%, #dadcde 50%, #d8dde2 100%)
+}
 .resultsGroup-r_nuzN {
   background: linear-gradient(to bottom, #26282d, #2e2f33)
 }
@@ -968,6 +1002,10 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   border-radius: 5px 0 5px 0;
   background: linear-gradient(to bottom, #34383d 0%,#26282d 49%,#34383d 49%,#222529 50%,#131518 51%,#131518 100%) !important;
   box-shadow: inset 0.5px 1px #fff3,inset -0.5px -1px #0009, 2px 2px 10px !important
+}
+.theme-light .wrapper-2aW0bm {
+  background: linear-gradient(to bottom, #d5dae0 0%,#e6e8ec 50%, #bfc3c7 50%, #a7aaad 100%) !important;
+  box-shadow: inset 0.5px 1px #fff3,inset -0.5px -1px #0004, 1px 1px 4px #0008 !important
 }
 .channelTextArea-rNsIhG {
   margin-top: 25px;
@@ -1396,6 +1434,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   background: #fff6;
   box-shadow: 0 1px 1px #d8d8d8
 }
+.theme-light .actionButton-VzECiy {
+  background: none;
+}
 .actionButton-VzECiy {
   position: fixed;
   margin-top: -32px;
@@ -1409,6 +1450,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .body-3ND3kc {
   background: linear-gradient(#1b1b1b,#1f1f1f 50%, #171717 50%, #191919)
+}
+.theme-light .body-3ND3kc {
+  background: linear-gradient(#cecece,#d0d0d0 50%, #c1c1c1 50%, #c3c3c3)
 }
 .unreadPill-2HyYtt {
   background: linear-gradient(to right,#f04747,#0000);
@@ -1556,9 +1600,17 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   background: linear-gradient(#2f3136,#222427);
   box-shadow: 0 1px 8px #000
 }
+.theme-light .autocomplete-1vrmpx {
+  background: linear-gradient(#d8dbe0,#bfc1c3);
+  box-shadow: 0 1px 8px #0008
+}
 .autocomplete-1vrmpx .selected-1Tbx07 {
   background: linear-gradient(#36393f,#2c2f33);
   box-shadow: 0 1px 4px
+}
+.theme-light .autocomplete-1vrmpx .selected-1Tbx07 {
+  background: linear-gradient(#dde0e6,#c2c5ca);
+  box-shadow: 0 1px 3px #0008
 }
 .autocomplete-1vrmpx .selected-1Tbx07:active {
   box-shadow: inset 0 1px 4px
@@ -1571,6 +1623,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .searchHeader-2XoQg7 {
   background: linear-gradient(#36393f,#2f3136 50%, #18191c 50%, #2f3136)
+}
+.theme-light .searchHeader-2XoQg7 {
+  background: linear-gradient(#d4d7de,#dce0e8 50%, #c4c7ce 50%, #bdc0ca)
 }
 .option-96V44q:after {
   display: none
@@ -1592,9 +1647,15 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .searchResultsWrap-3-pOjs {
   background: linear-gradient(#18191c,#2f3136)
 }
+.theme-light .searchResultsWrap-3-pOjs {
+  background: linear-gradient(#e0e2e8,#c1c2c5)
+}
 .channelName-1JRO3C {
   padding: 8px;
   background: linear-gradient(#42444c,#2f3136)
+}
+.theme-light .channelName-1JRO3C {
+  background: linear-gradient(#dbdee6,#cbced8)
 }
 .searchResult-9tQ1uo:before, .searchResult-9tQ1uo:after {
   display: none
@@ -1623,6 +1684,16 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .bar-2Qqk5Z {
   box-shadow: 0 0 0 1px #000, 0 2px #fff2, inset 0 1px #0003
+}
+.theme-light .bar-2Qqk5Z {
+  box-shadow: 0 0 0 1px #999, 0 2px #fff2, inset 0 1px #0003
+}
+.theme-light .markValue-2DwdXI {
+  color: #444;
+  font-weight: 500;
+}
+.theme-light .defaultValue-3gC7yw .markValue-2DwdXI {
+  font-weight: 900;
 }
 .barFill-23-gu- {
   box-shadow: inset 0 1px #fff4, inset 0 -1px #0006
@@ -2036,8 +2107,13 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: inset 0 0 0 1px #fff2;
   transition: .2s
 }
+.theme-light .input-2VB9rf {
+  background: linear-gradient(#cecfda,#c4c7d2 50%,#bbbeca 50%,#d0d4e2);
+  border: solid 1px #fff;
+  box-shadow: inset 0 0 0 1px #0004;
+}
 .input-2VB9rf:focus-within {
-  box-shadow: inset 0 0 0 1px #fff2, 0 1px 5px #000a
+  box-shadow: inset 0 0 0 1px #fff2, 0 1px 5px #0004
 }
 .container-2ax-kl {
   text-transform: none;
@@ -2199,6 +2275,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   border: solid 1px;
   border-radius: 5px / 8px
 }
+.theme-light .content-1o0f9g {
+  background: #ddd;
+}
 .radioBar-bMNUI- {
   border: solid 1px #000;
   background: linear-gradient(#3f4350,#313540 50%,#2f3138 50%,#31343e);
@@ -2207,7 +2286,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .theme-light .radioBar-bMNUI- {
   border: solid 1px #fff;
   background: linear-gradient(#f3f3f3,#dcdcdc 50%,#d4d4d4 50%,#d4d4d4);
-  box-shadow: inset 0 0 0 1px #fff2,0 1px #fff1,0 1px 5px #0005
+  box-shadow: inset 0 0 0 1px #fff2,0 1px #fff1,0 1px 5px #0005;
 }
 .radioBar-bMNUI- {
   --radio-bar-accent-color: #fff
@@ -2217,6 +2296,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   text-shadow: 0 1px 2px #000
 }
 .theme-light .radioBar-bMNUI- .title-3BE6m5 {
+  color: #444;
   text-shadow: 0 1px 2px #fff
 }
 .radioBar-bMNUI-:hover {
@@ -2346,9 +2426,19 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   border-radius: 8px;
   box-shadow: inset 0 1px 3px 1px, 0 0 0 1px #fff2;
 }
+.theme-light [role="radiogroup"] {
+  padding: 8px 8px 2px 8px;
+  background: linear-gradient(#bdc0c5,#d1d5dc);
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px 1px #0006, 0 0 0 1px #0006;
+}
 .message-2qnXI6.selected-2P5D_Z, .mouse-mode.full-motion .message-2qnXI6:hover {
   background: linear-gradient(#0002,#0004 50%, #0003 50%, #0002);
   box-shadow: inset 0 1px 4px #0008
+}
+.theme-light .message-2qnXI6.selected-2P5D_Z, .theme-light.mouse-mode.full-motion .message-2qnXI6:hover {
+  background: linear-gradient(#fff4, #fff5 50%, #fff1 50%, #fff6);
+  box-shadow: inset 0 1px 4px #0006
 }
 .leftSplit-1qOwnR:after {
     content: "Image source: Unsplash";
@@ -2357,4 +2447,19 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
     right: 8px;
     color: #fff;
     font-size: 14px;
+}
+.container-1giJp5 .lookFilled-1Gx00P.colorBrand-3pXr91 {
+    background: linear-gradient(#7289da, #516094) !important;
+    box-shadow: inset 0 0 0 1px #fff4, inset 0 1px #fff6, inset 0 -1px #0006, 0 0 0 1px #000, 0 0 2px 1px #6c7594
+}
+.container-1giJp5 .lookFilled-1Gx00P.colorBrand-3pXr91:hover {
+    background: linear-gradient(#8ba2f1, #6375b3) !important;
+    box-shadow: inset 0 0 0 1px #fff4, inset 0 1px #fff6, inset 0 -1px #0006, 0 0 0 1px #000, 0 0 3px 1px #96a0c3
+}
+.container-1giJp5 .lookFilled-1Gx00P.colorBrand-3pXr91:active {
+    background: linear-gradient(#495684, #455692) !important;
+    box-shadow: inset 0 0 0 1px #fff4, inset 0 1px #fff6, inset 0 -1px #0006, 0 0 0 1px #000, 0 0 1px 1px #96a0c3
+}
+.container-1giJp5 .lookFilled-1Gx00P.colorBrand-3pXr91 svg {
+  filter: drop-shadow(0 -1px #0006)
 }
