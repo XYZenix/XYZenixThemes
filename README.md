@@ -6,6 +6,8 @@ This is where I will put website themes I've made.
 ![](https://img.shields.io/github/last-commit/XYZenix/XYZenixThemes?style=for-the-badge)
 ![https://discord.gg/vUN9sNW](https://img.shields.io/discord/581110034977783838?color=7289da&label=discord&style=for-the-badge)
 
+![](https://cdn.discordapp.com/attachments/733624227378495488/812685002784374834/unknown.png)
+
 Website | Theme Name | Link | Description | Preview
 ------- | ---------- | ---- | ----------- | -------
 Discord | \<MULTIPLE\> | Below this table | Collection of Discord themes | None
@@ -18,6 +20,8 @@ Twitter | Old Twitter Theme | [Here](https://github.com/XYZenix/XYZenixThemes/bl
 Steam Library Themes | \<MULTIPLE\> | Below the discord theme tables | Various themes for the 'new' Steam library | N/A
 
 Discord Themes:
+
+![](https://cdn.discordapp.com/attachments/733624227378495488/812683782355288064/unknown.png)
 
 Name | Description  | Status
 -- | --  | --
@@ -34,12 +38,14 @@ ActivityStyleEmbeds | Changes the look of embeds to look like that of the embeds
 
 Discord Mini-themes:
 
+![](https://cdn.discordapp.com/attachments/733624227378495488/812686431256444998/unknown.png)
+
 Name | Description | Status | Image
 -- | -- | -- | --
 GiftAndGifRemove | Mini theme that removes gift and gif buttons in chat input box | Working | No image
 NewDragNDropModal | New drag&drop upload box from a short video that was shown on the Nitro tab, theme includes non nitro version | Working |[Nitro](https://cdn.discordapp.com/attachments/581117911117070336/638606292843233310/unknown.png) / [Nitro Classic](https://cdn.discordapp.com/attachments/531523467636375554/590955254200401926/unknown.png) / [Non-Nitro](https://cdn.discordapp.com/attachments/531523467636375554/590955483863580682/unknown.png)
 NewEmojiPicker | ~~New dark emoji picker from a short video that was shown on the Nitro tab~~ Discord already released the new emoji picker, this theme is now obsolete. | Broken | [Example](https://cdn.discordapp.com/attachments/531523467636375554/590954861861011460/unknown.png)
-NoAutocompleteHover | Mini theme that prevents any mouse hover effects from working on autocomplete in chat input | Working | [Example](https://cdn.discordapp.com/attachments/531523467636375554/590956266159996958/unknown.png)
+NoAutocompleteHover | Mini theme that prevents any mouse hover effects from working on autocomplete in chat input | Probably working | [Example](https://cdn.discordapp.com/attachments/531523467636375554/590956266159996958/unknown.png)
 Unnamed | Mini theme for NoDeleteMessages | Broken | No image
 HideEmail | Mini theme that hides email from user settings | Unknown | [Example](https://cdn.discordapp.com/attachments/531523467636375554/590956519290306564/unknown.png)
 ExpandedSearchBar | Mini theme that expands search bar as needed | Unknown | No image
