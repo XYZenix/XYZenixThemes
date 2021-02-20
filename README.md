@@ -28,6 +28,7 @@ Unnamed Windows 95 theme | | Cancelled
 Unnamed classic terminal theme | | Cancelled
 DTM-17 | A theme that reverts the new UI changes from early 2019 and other stuff from 2018 | ""Cancelled""
 Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI i guess | Probably working?
+ActivityStyleEmbeds | Changes the look of embeds to look like that of the embeds from the (removed) Activity Tab | Still testing probably
 
 \* No half-light dark mode, and all features will be kept mostly intact
 
