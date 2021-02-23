@@ -1,23 +1,23 @@
 :root {
-  --theme-version: "21w08a";
-  --theme-verdate: "22 February 2021";
+  --theme-version: "21w08b";
+  --theme-verdate: "23 February 2021";
   --login-background: url(https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1625&q=80);
 }
 /*
-  What's new in 21w08a:
-  - fixed box-shadows on the new role overview
-  - fixed border radius on server template infobox
-  - fixed search results
-  - fixed mentioned message hover background
-  - fixed emoji picker left sidebar
-  - fixed call ui buttons
+  What's new in 21w08b:
+  - fixed game detection panel button group background
+  - fixed gray tooltips
+  - changed outline buttons
+  - changed server region select buttons
+  - tried fixing {whatever you call the input boxes with a gray button to the right which becomes blurple on hover} but failed, will fix better later
+  - changed server boost tab stuff in server settings
 */
 
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
   margin-bottom: 0px
 }
-.panels-j1Uci_ .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6 {
+.panels-j1Uci_ .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6, .actions-aUdUfC {
   background: rgba(0 0 0/0.4);
   border-radius: 5px;
   box-shadow: inset 0 1px 5px black
@@ -358,22 +358,26 @@
   background: linear-gradient(to bottom, #4a4e56 0%,#4f535a 50%,#474a50 51%,#474c54 100%) !important
 }
 .theme-dark .tooltipBlack-PPG47z,
-.theme-dark .tooltipPrimary-1d1ph4 {
+.theme-dark .tooltipPrimary-1d1ph4,
+.theme-dark .tooltipGrey-1hnvTt {
   background: linear-gradient(to bottom, #3F444B 0%,#292C31 50%,#1B1D1F 51%,#191A1D 100%) !important;
   box-shadow: inset 0 0 0 1px #fff3, 0 0 0 1px #000a, 0 1px 3px #000b;
   border-radius: 3px;
 }
 .theme-dark .tooltipBlack-PPG47z .tooltipPointer-3ZfirK,
-.theme-dark .tooltipPrimary-1d1ph4 .tooltipPointer-3ZfirK {
+.theme-dark .tooltipPrimary-1d1ph4 .tooltipPointer-3ZfirK,
+.theme-dark .tooltipGrey-1hnvTt .tooltipPointer-3ZfirK {
   border-top-color: #000a !important;
 }
 .theme-light .tooltipBlack-PPG47z,
-.theme-light .tooltipPrimary-1d1ph4 {
+.theme-light .tooltipPrimary-1d1ph4,
+.theme-light .tooltipGrey-1hnvTt {
   background: linear-gradient(to bottom, #eff1f5 0%,#d6d8dc 50%,#b2b4b5 51%,#c1c2c3 100%) !important;
   box-shadow: inset 0 0 0 1px #fff3, 0 0 0 1px #fff, 0 1px 3px #fffb
 }
 .theme-light .tooltipBlack-PPG47z .tooltipPointer-3ZfirK,
-.theme-light .tooltipPrimary-1d1ph4 .tooltipPointer-3ZfirK {
+.theme-light .tooltipPrimary-1d1ph4 .tooltipPointer-3ZfirK,
+.theme-light .tooltipGrey-1hnvTt .tooltipPointer-3ZfirK {
   border-top-color: #fff !important;
 }
 .typeWindows-1za-n7 {
@@ -665,10 +669,6 @@
 .theme-dark .messageGroupBlocked-3wrQQX.revealed-1_RKsf .containerCozyBounded-1rKFAn {
   background: linear-gradient(#292c31, #1c1d21)
 }
-.theme-dark .lookOutlined-3sRXeN.colorPrimary-3b3xI6 {
-  box-shadow: inset 0 2px 8px 1px black;
-  background: linear-gradient(#343434, #292929)
-}
 .theme-dark .wrapperAudio-1jDe0Q, .theme-dark .attachment-33OFj0 {
   background: linear-gradient(#232323 0%, #404040 50%, #353535 50%, #313131 100%);
   box-shadow: 0 2px 10px 2px black
@@ -788,16 +788,18 @@
   border-radius: 10px
 }
 .regionSelectModal-12e-57 .regionSelectModalOption-2DSIZ3 {
-  background: linear-gradient(#292c30 0%, #25272a 45%, #1c1e20 45%, #2a2c30 100%);
-  border-color: #1c1e21
+  background: linear-gradient(#36393e, #2a2c30);
+  border: none;
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff2, inset 0 1px #fff1, inset 0 -1px #0006, 0 1px 3px #fff2;
 }
 .regionSelectModal-12e-57 .regionSelectModalOption-2DSIZ3:hover {
-  background: linear-gradient(#383c42 0%, #32353a 45%, #282b2d 45%, #2a2d31 100%);
-  border-color: #35393e
+  background: linear-gradient(#494d52, #2a2c30);
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff2, inset 0 1px #fff1, inset 0 -1px #0006, 0 1px 6px #fff4;
 }
 .regionSelectModal-12e-57 .regionSelectModalOption-2DSIZ3:active {
-  background: linear-gradient(#232629 0%, #1b1d1f 45%, #18191b 45%, #212225 100%);
-  border-color: #16181b
+  background: linear-gradient(#222427, #2a2c30);
+  border: none;
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff2, inset 0 1px #fff1, inset 0 -1px #0006, 0 0 2px #fffb;
 }
 .avatar-uploader-inner {
   border-color: #4a5158
@@ -1298,6 +1300,25 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: 0 1px 2px #000;
   text-shadow: 0 0 2px #000
 }
+.theme-light .layout-eEMo5y .lookGhost-2Fn_0-.colorGrey-2DXtkV {
+  background: linear-gradient(#6f7173,#4b4c4e);
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff3, inset 0 1px #fff4;
+  text-shadow: none;
+  color: #eee;
+}
+.theme-light .layout-eEMo5y .button-cqiy5p.button-3tQuzi.button-38aScr.lookGhost-2Fn_0-.colorBrand-3pXr91:hover {
+  background: linear-gradient(#8d95b3,#54627d);
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff3, inset 0 1px #fff4, 0 1px 3px #000;
+  text-shadow: none;
+  color: #eee;
+}
+.theme-light .layout-eEMo5y .lookGhost-2Fn_0-.colorGrey-2DXtkV:active,
+.theme-light .container-1nZlH6:active .button-cqiy5p.button-3tQuzi.button-38aScr.lookGhost-2Fn_0-.colorBrand-3pXr91 {
+  background: linear-gradient(#363944,#54627d);
+  box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff3, inset 0 1px #fff4, 0 1px 3px #000;
+  text-shadow: none;
+  color: #eee;
+}
 .lookGhost-2Fn_0-.colorWhite-rEQuAQ {
   background: linear-gradient(#b1b1b1,#6b6b6b);
   box-shadow: 0 1px 3px #000;
@@ -1652,7 +1673,8 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .header-2Y0-A-, .enableContainer-6E-puu, .enableContainer-2DIT9Q {
   background: linear-gradient(#3c3e42, #2f3136 50%, #26282b 50%, #1f2023);
-  border-bottom: solid 1px #111
+  border-bottom: solid 1px #111;
+  box-shadow: 0 1px #fff1;
 }
 .theme-light .header-2Y0-A-, .theme-light .enableContainer-6E-puu, .theme-light .enableContainer-2DIT9Q {
   background: linear-gradient(#f8fbff, #dedfe2 50%, #d1d3d6 50%, #eaeaea);
@@ -1831,7 +1853,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .grabber-3mFHz2 {
   background: linear-gradient(#ddd,#eee 50%, #ccc 50%,#eee);
   box-shadow: 0 1px 2px!important;
-  transition: .3s
+  transition: .3s box-shadow;
 }
 .grabber-3mFHz2:hover {
   box-shadow: 0 1px 4px!important
@@ -3070,4 +3092,18 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .categoryList-2Kzf65 {
   top: 66px;
+}
+.theme-dark .tierUnlocked-27DwHo, .theme-light .tierUnlocked-27DwHo {
+    border-radius: 3px;
+    background: none;
+    border: solid 1px #fff;
+    color: #fff;
+    box-shadow: 0 0 5px #fff, inset 0 0 5px #fff;
+    text-shadow: 0 0 5px #fff;
+    font-weight: 500;
+    text-transform: none;
+}
+[lang="en-GB"] .tierUnlocked-27DwHo:after,
+[lang="en-US"] .tierUnlocked-27DwHo:after {
+    content: "!";
 }
