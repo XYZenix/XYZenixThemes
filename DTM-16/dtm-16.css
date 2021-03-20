@@ -5,8 +5,8 @@
     	--qrcode-icon: block; /* block = ON, none = OFF - show or hide the discord logo from discord's qr codes (like on login screen) */
 }
 html {
-	--theme-ver: "DTM-16 4.7.8.0";
-	--theme-ver-date: "10 Mar 2021";
+	--theme-ver: "DTM-16 4.7.8.1";
+	--theme-ver-date: "20 Mar 2021";
 }
 .sidebarRegion-VFTUkN .side-8zPYf6 .socialLinks-3jqNFy:after {
 	content: var(--theme-ver) "\A" var(--theme-ver-date);
@@ -724,6 +724,10 @@ path[d="M15 12C15 12.0007 15 12.0013 15 12.002C15 12.553 14.551 13.002 14 13.002
     d: path("M9.33333333,2 L9.33333333,3.37333333 C11.26,3.94666667 12.6666667,5.73333333 12.6666667,7.84666667 C12.6666667,9.96 11.26,11.74 9.33333333,12.3133333 L9.33333333,13.6933333 C12,13.0866667 14,10.7 14,7.84666667 C14,4.99333333 12,2.60666667 9.33333333,2 L9.33333333,2 Z M11,7.84666667 C11,6.66666667 10.3333333,5.65333333 9.33333333,5.16 L9.33333333,10.5133333 C10.3333333,10.04 11,9.02 11,7.84666667 L11,7.84666667 Z M2,5.84666667 L2,9.84666667 L4.66666667,9.84666667 L8,13.18 L8,2.51333333 L4.66666667,5.84666667 L2,5.84666667 L2,5.84666667 Z");
     transform: scale(1.5);
 }
+path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23204 12 3.59904 12 4.00204V20.002C12 20.407 11.757 20.772 11.383 20.927C11.009 21.082 10.579 20.996 10.293 20.71L6 16.002H3C2.45 16.002 2 15.552 2 15.002V9.00204C2 8.45304 2.45 8.00204 3 8.00204H6L10.293 3.29604ZM14 9.00195C15.654 9.00195 17 10.349 17 12.002C17 13.657 15.654 15.002 14 15.002V13.002C14.551 13.002 15 12.553 15 12.002C15 11.451 14.551 11.002 14 11.002V9.00195Z"] {
+    d: path("M11 7.84701C11 6.66701 10.3333 5.65367 9.33333 5.16034V10.5137C10.3333 10.0403 11 9.02034 11 7.84701ZM2 5.84701V9.847H4.66667L8 13.1803V2.51367L4.66667 5.84701H2Z");
+    transform: scale(1.5);
+}
 .users-3kndPl, .total-i6us2n {
 	background: transparent;
 	padding: 0 !important;
@@ -767,6 +771,11 @@ path[d="M15 12C15 12.0007 15 12.0013 15 12.002C15 12.553 14.551 13.002 14 13.002
 .wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n,.wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n:hover {
 	box-shadow: inset 2px 0 0 #7289DA !important;
 	background: linear-gradient(to right,#282b30 85%,#2e3136) !important
+}
+.theme-light .typeThread-3ESTm- {
+  background: url(https://cdn.discordapp.com/emojis/788883965473718312.png);
+	background-size: contain, cover;
+	background-repeat: no-repeat;
 }
 .theme-light .sidebar-2K8pFh:not(.theme-dark) .wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n,
 .theme-light .sidebar-2K8pFh:not(.theme-dark) .wrapper-2jXpOf.modeSelected-346R90 .content-1x5b-n:hover {
@@ -1088,7 +1097,7 @@ path[d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5
 	margin-top: 2px;
 }
 .scroller-zPkAnE .content-3YMskv>[style^="height:"] {
-	display:none;
+	margin-top: -10px;
 }
 .theme-dark .input-2VB9rf {
 	transform: scale(1.05);
@@ -3611,11 +3620,11 @@ padding: 0 5px;
 .layers-3iHuyZ .baseLayer-35bLyl {
 	transition:.3s filter;
 }
-[mask="url(#svg-mask-status-dnd)"],[mask="url(#svg-mask-status-idle)"],[mask="url(#svg-mask-status-offline)"],[mask="url(#svg-mask-status-streaming)"]{mask:url(#svg-mask-status-online)!important}
+/* [mask="url(#svg-mask-status-dnd)"],[mask="url(#svg-mask-status-idle)"],[mask="url(#svg-mask-status-offline)"],[mask="url(#svg-mask-status-streaming)"]{mask:url(#svg-mask-status-online)!important} */
 .container-1D34oG .title-29uC1r:before {
 	display: none;
 }
-.header-1TKi98 {
+:not(.modalContentForm-1volcU)>.header-1TKi98 {
 	background: var(--background-primary);
 	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
 	padding: 28px 40px;
@@ -5263,7 +5272,7 @@ padding: 0 5px;
     margin-top: 22px;
 }
 .cozy-3raOZG.ephemeral-1PsL1r.groupStart-23k01U:after {
-	top: 0;
+		top: 0;
 }
 .cozy-3raOZG.ephemeral-1PsL1r.groupStart-23k01U .buttons-cl5qTG {
     margin-top: 64px !important
@@ -5289,4 +5298,18 @@ padding: 0 5px;
 }
 .cozy-3raOZG.ephemeral-1PsL1r:not(.groupStart-23k01U)+.groupStart-23k01U {
     margin-top: 20px !important
+}
+.activityItem-1pRGhE {
+    margin: 0;
+}
+.betaTag-F_ncuo, .badge-_BgAUQ.badgeNew-16P_X0 {
+    border-radius: 3px;
+    background: var(--background-accent) !important;
+    color: var(--interactive-active);
+}
+.embedMedia-1guQoW, .embedImage-2W1cML img, .embedImage-2W1cML video, .embedThumbnail-2Y84-K img, .embedThumbnail-2Y84-K video, .embedVideo-3nf0O9 img, .embedVideo-3nf0O9 video {
+    border-radius: 2px;
+}
+.tierLock-3CSxSX {
+    display: none;
 }
