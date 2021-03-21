@@ -1,11 +1,11 @@
 :root {
-  --theme-version: "21w11a";
-  --theme-verdate: "20 March 2021";
+  --theme-version: "21w11b";
+  --theme-verdate: "21 March 2021";
   --login-background: url(https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1625&q=80);
 }
 /*
-  What's new in 21w11a:
-  - light mode is closer to being finished
+  What's new in 21w11b:
+  - threads stuff probably
 */
 
 .container-3baos1 {
@@ -57,10 +57,10 @@
   border-bottom: solid 1px #ffffff !important;
   border-top: solid 1px #ffffff !important
 }
-.container-3w7J-x, .members-1998pB, .ui-standard-sidebar-view .sidebar-region .sidebar-region-scroller, .messagesWrapper-1sRNjr, .scroller-1JbKMe, .container-1D34oG, .theme-dark .sidebar-2K8pFh {
+.container-3w7J-x, .members-1998pB, .ui-standard-sidebar-view .sidebar-region .sidebar-region-scroller, .messagesWrapper-1sRNjr, .scroller-1JbKMe, .container-1D34oG, .theme-dark .sidebar-2K8pFh, .threadSidebar-1o3BTy {
   background: linear-gradient(to bottom, #0a0a0a 0%,#242529 100%) !important
 }
-.theme-light .container-3w7J-x, .theme-light .members-1998pB, .theme-light .ui-standard-sidebar-view .sidebar-region .sidebar-region-scroller, .theme-light .scroller-2FKFPG, .theme-light .messagesWrapper-1sRNjr, .theme-light .scroller-1JbKMe, .theme-light .container-1D34oG, .theme-light .sidebar-2K8pFh {
+.theme-light .container-3w7J-x, .theme-light .members-1998pB, .theme-light .ui-standard-sidebar-view .sidebar-region .sidebar-region-scroller, .theme-light .scroller-2FKFPG, .theme-light .messagesWrapper-1sRNjr, .theme-light .scroller-1JbKMe, .theme-light .container-1D34oG, .theme-light .sidebar-2K8pFh, .theme-light .threadSidebar-1o3BTy {
   background: linear-gradient(to bottom, #d4d4d4 0%,#d6d6d6 100%) !important
 }
 .theme-dark .pageWrapper-1PgVDX {
@@ -106,7 +106,7 @@
   background-size: cover;
   background-position: center
 }
-.chat-3bRxxu form {
+.chat-3bRxxu form, .threadSidebar-1o3BTy form {
   background-image: linear-gradient(#35363a,#2b2c2d 50%,#1e2023 50%, #131517);
   margin-left: 0px;
   margin-right: 0px;
@@ -114,7 +114,7 @@
   padding-right: 20px;
   box-shadow: inset 0 2px #fff1
 }
-.theme-light .chat-3bRxxu form {
+.theme-light .chat-3bRxxu form, .theme-light .threadSidebar-1o3BTy form {
   background-image: linear-gradient(#e9eaef,#e4e9ef 50%,#d5d7da 50%, #b2b9bf);
   box-shadow: inset 0 2px #0003
 }
@@ -1038,7 +1038,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   background: linear-gradient(to bottom, #d5dae0 0%,#e6e8ec 50%, #bfc3c7 50%, #a7aaad 100%) !important;
   box-shadow: inset 0.5px 1px #fff3,inset -0.5px -1px #0004, 1px 1px 4px #0008 !important
 }
-.channelTextArea-rNsIhG {
+.channelTextArea-rNsIhG, .threadSidebar-1o3BTy .channelTextArea-2ZBawt {
   margin-top: 25px;
   margin-bottom: 30px
 }
@@ -2606,6 +2606,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   font-weight: bold;
   color: #bb2a2a;
   background: linear-gradient(#f9d6d6,#c3a3a3);
+  z-index: 9;
 }
 .platform-win.theme-light .content-98HsJk:before {
   top: 0px;
@@ -3164,4 +3165,24 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 [lang="en-GB"] .tierUnlocked-27DwHo:after,
 [lang="en-US"] .tierUnlocked-27DwHo:after {
     content: "!";
+}
+.threadSidebar-1o3BTy {
+    border-radius: 0;
+    margin-left: 0;
+    box-shadow: -1px 0 10px #000;
+}
+.threadSidebarOpen-vdkwIh {
+    border-radius: 0 !important;
+}
+.container-3hZ-gs {
+  background: linear-gradient(#34343a, #38383e 50%, #2a2b2d 50%, #333338);
+  box-shadow: 0 0 0 1px #000, 0 1px 4px, inset 0 0 0 1px #fff2
+}
+.chatHeaderBar-4vZS1x.narrow-1f-G-z {
+  background: linear-gradient(#171719,#333335);
+  box-shadow: inset 0 -1px #fff2;
+}
+.theme-light .chatHeaderBar-4vZS1x.narrow-1f-G-z {
+  background: linear-gradient(#d8d8d8,#afafaf);
+  box-shadow: inset 0 -1px #fff2;
 }
