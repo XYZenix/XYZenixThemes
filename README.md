@@ -11,6 +11,7 @@ This is where I will put website themes I've made.
 Website | Theme Name | Link | Description | Preview
 ------- | ---------- | ---- | ----------- | -------
 Discord | \<MULTIPLE\> | Below this table | Collection of Discord themes | None
+YouTube | YoutubeOutlinedIcons | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/YoutubeOutlinedIcons.css) | Brings back the new outlined icons that were reverted several hours after being released | N/A (or look at mobile YouTube lol)
 YouTube | None, big mess | None | Collection of multiple YouTube themes that are supposed to look like 2012 & 2013 YouTube layouts, but are instead a complete mess | None
 \<ALL\> | Global Font | None | Theme that globally changes fonts on all sites to a specific manually configured font | None
 Twitter | ??? | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/OldTwitterIcons.css) | Theme that brings the old icons back | [1](https://cdn.discordapp.com/attachments/531523467636375554/591349962290233354/unknown.png) / [2](https://cdn.discordapp.com/attachments/531523467636375554/591349987661709324/unknown.png)
