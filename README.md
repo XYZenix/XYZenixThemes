@@ -7,7 +7,7 @@ This is where I will put website themes I've made.
 ![https://discord.gg/vUN9sNW](https://img.shields.io/discord/581110034977783838?color=7289da&label=discord&style=for-the-badge)
 
 ![](https://cdn.discordapp.com/attachments/733624227378495488/812685002784374834/unknown.png)
-
+## Theme list
 Website | Theme Name | Link | Description | Preview
 ------- | ---------- | ---- | ----------- | -------
 Discord | \<MULTIPLE\> | Below this table | Collection of Discord themes | None
@@ -20,7 +20,7 @@ YouTube | Cosmic Panda Theme | Removed | Created by NermalCat79, fixed by me. Me
 Twitter | Old Twitter Theme | [Here](https://github.com/XYZenix/XYZenixThemes/blob/master/OldTwitterTheme.css) | A mess that is supposed to be a theme that looks like 2012-2013 Twitter | .
 Steam Library Themes | \<MULTIPLE\> | Below the discord theme tables | Various themes for the 'new' Steam library | N/A
 
-Discord Themes:
+## Discord Themes:
 
 ![](https://cdn.discordapp.com/attachments/733624227378495488/812683782355288064/unknown.png)
 
@@ -37,7 +37,7 @@ ActivityStyleEmbeds | Changes the look of embeds to look like that of the embeds
 
 \* No half-light dark mode, and all features will be kept mostly intact
 
-Discord Mini-themes:
+## Discord Mini-themes:
 
 ![](https://cdn.discordapp.com/attachments/733624227378495488/812686431256444998/unknown.png)
 
@@ -54,7 +54,7 @@ FluentClickEffect | Mini theme that adds Fluent Design-like click effects to mos
 MiniProfileRevert | Reverts the new mini profile UI update from July 2020 | Working? | [Comparison](https://i.imgur.com/UPmNSMH.png)
 
 
-Steam Themes:
+## Steam Themes:
 
 ID | Style | Status
 -- | -- | --
