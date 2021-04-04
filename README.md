@@ -4,7 +4,8 @@ This is where I will put website themes I've made.
 
 ![](https://img.shields.io/github/commit-activity/m/XYZenix/XYZenixThemes?color=4499ff&style=for-the-badge)
 ![](https://img.shields.io/github/last-commit/XYZenix/XYZenixThemes?style=for-the-badge)
-![https://discord.gg/vUN9sNW](https://img.shields.io/discord/581110034977783838?color=7289da&label=discord&style=for-the-badge)
+![](https://img.shields.io/discord/581110034977783838?color=7289da&label=discord&style=for-the-badge)
+[join the discord server pls](https://discord.gg/vUN9sNW)
 
 ![](https://cdn.discordapp.com/attachments/733624227378495488/812685002784374834/unknown.png)
 ## Theme list
