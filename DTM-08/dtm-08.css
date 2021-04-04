@@ -1,5 +1,5 @@
 :root {
-  --theme-version: "21w13c";
+  --theme-version: "21w13d";
   --theme-verdate: "4 April 2021";
   --login-background: url(https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1625&q=80);
 }
@@ -9,6 +9,9 @@
   - pinned message background changed
   What's new in 21w13c:
   - themed quotes in dark mode
+  What's new in 21w13d:
+  - light mode shit and formatting toolbar shit
+  - soem dumb lieght mode shit fixed prboably i give up
 */
 
 .container-3baos1 {
@@ -328,14 +331,16 @@
   background: linear-gradient(to bottom, #5e6a9a 0%,#5968a0 100%) !important;
   box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff2, inset 0 1px #fff2, inset 0 -1px #0002, 0 0 1px 2px #fff6;
 }
-.lookFilled-1Gx00P.colorPrimary-3b3xI6 {
-  background: linear-gradient(to bottom, #737477 0%,#535456 100%) !important;
+.theme-light .lookFilled-1Gx00P.colorPrimary-3b3xI6 {
+  background: linear-gradient(to bottom, #a3a4a7 0%,#76787b 100%) !important;
 }
-.lookFilled-1Gx00P.colorPrimary-3b3xI6:hover {
-  background: linear-gradient(to bottom, #9f9fa2 0%,#767779 100%) !important;
+.theme-light .lookFilled-1Gx00P.colorPrimary-3b3xI6:hover {
+  background: linear-gradient(to bottom, #cbcbce 0%,#a7a8ab 100%) !important;
+  text-shadow: 0 1px 2px #000, 0 1px 3px #000, 0 0 3px #000
 }
-.lookFilled-1Gx00P.colorPrimary-3b3xI6:active {
-  background: linear-gradient(to bottom, #555658 0%,#616265 100%) !important;
+.theme-light .lookFilled-1Gx00P.colorPrimary-3b3xI6:active {
+  background: linear-gradient(to bottom, #76787b 0%,#8e8f92 100%) !important;
+  text-shadow: 0 1px 2px #000, 0 1px 3px #000, 0 0 3px #000
 }
 .lookFilled-1Gx00P.colorGreen-29iAKY {
   background: linear-gradient(#50d498 0%, #43b581 100%) !important;
@@ -888,14 +893,14 @@
 .theme-light .stickyHeader-1pqx0j {
   background: linear-gradient(#c1c1c1, #e8e8e8)
 }
-.lookFilled-1Gx00P.colorPrimary-3b3xI6 {
+.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6 {
   background: linear-gradient(#60666f 0%, #4f545c 100%);
   text-shadow: 0 1px #0008, 0 1px 3px #0008;
 }
-.lookFilled-1Gx00P.colorPrimary-3b3xI6:hover {
+.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:hover {
   background: linear-gradient(#7d8590 0%, #5d6269 100%);
 }
-.lookFilled-1Gx00P.colorPrimary-3b3xI6:active {
+.theme-dark .lookFilled-1Gx00P.colorPrimary-3b3xI6:active {
   background: linear-gradient(#32363c 0%, #34363a 100%);
 }
 .theme-dark .spoilerText-3p6IlD {
@@ -1169,7 +1174,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .theme-light .button-1-5Aqk {
   background: linear-gradient(#dedede, #d2d2d2 50%, #c7c7c7 50%, #b9b9b9);
-  box-shadow: 0 0 0 1px #e2e2e2, 0 2px #0002, inset 0 1px #2223
+  box-shadow: 0 0 0 1px #e2e2e2, 0 2px #0002, inset 0 1px #2223, 0 1px 4px #000;
 }
 .button-1-5Aqk:hover {
   background: linear-gradient(#525252, #3a3a3a 50%, #2d2d2d 50%, #1b1b1b)
@@ -1628,8 +1633,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .members-1998pB>div {
   background: none
 }
-.hasBanner-2SrLR3 .header-2V-4Sw {
-  background: none!important
+.hasBanner-2SrLR3 .header-2V-4Sw, .theme-light .hasBanner-2SrLR3 .header-2V-4Sw {
+  background: none!important;
+  box-shadow: none !important;
 }
 .textarea-2r0oV8 {
   margin-left: 4px;
@@ -2921,7 +2927,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: inset 0 1px 1px #fff3;
 }
 .theme-light .panels-j1Uci_ {
-  background: linear-gradient(#dadadc, #a7a7ab 50%, #d6d6d6 50%, #c2c2c3);
+  background: linear-gradient(#dadadc, #c5c5cc 50%, #d6d6d6 50%, #c2c2c3);
   box-shadow: inset 0 1px 1px #fff3;
 }
 .container-3baos1, .activityPanel-28dQGo {
@@ -3146,6 +3152,10 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: 0 0 0 .5px #000, 0 1px 3px #0008, inset 0 0 0 1px #fff2;
   border-radius: 2px;
 }
+.theme-light .reaction-1hd86g {
+  background: linear-gradient(#c7c7c7,#c5c5c5);
+  box-shadow: 0 0 0 .5px #0004, 0 1px 3px #0008, inset 0 0 0 1px #fff2;
+}
 .reactionMe-wv5HKu {
   background: linear-gradient(#4e5b82,#33384a);
 }
@@ -3229,4 +3239,27 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .theme-dark .blockquoteContainer-U5TVEi {
   background: linear-gradient(to right, #4F545C33 80%, #0000);
   border-radius: 4px;
+}
+.toolbar-2bjZV7>.lookFilled-1Gx00P.button-qqmJ7w {
+  margin-top: 1px;
+  background: linear-gradient(#444,#222) !important;
+}
+.toolbar-2bjZV7>.lookFilled-1Gx00P.button-qqmJ7w:hover {
+  background: linear-gradient(#666,#444) !important;
+}
+.toolbar-2bjZV7>.lookFilled-1Gx00P.button-qqmJ7w:active {
+  background: linear-gradient(#222,#444) !important;
+}
+.theme-light .toolbar-2bjZV7>.lookFilled-1Gx00P.button-qqmJ7w * {color:#222!important}
+.theme-light .toolbar-2bjZV7>.lookFilled-1Gx00P.button-qqmJ7w {
+  background: linear-gradient(#bbb,#999) !important;
+}
+.theme-light .toolbar-2bjZV7>.lookFilled-1Gx00P.button-qqmJ7w:hover {
+  background: linear-gradient(#fff,#bbb) !important;
+}
+.theme-light .toolbar-2bjZV7>.lookFilled-1Gx00P.button-qqmJ7w:active {
+  background: linear-gradient(#999,#aaa) !important;
+}
+.theme-light .css-x3hllb-control, .theme-light .css-1ou54ee-control, .theme-light .css-z86t1q-control {
+  background: linear-gradient(#ddd,#efefef);
 }
