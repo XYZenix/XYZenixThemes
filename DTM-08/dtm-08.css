@@ -1,12 +1,12 @@
 :root {
-  --theme-version: "21w16a";
-  --theme-verdate: "24 April 2021";
+  --theme-version: "21w18a";
+  --theme-verdate: "6 May 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
 }
 /*
-  What's new in 21w16a:
-  - fixed channel permissions tab role list user override alignment shit
-  - removed shitty blur on emoji picker category title background because backdrop-filter is broken
+  What's new in 21w18a:
+  - home button looks funny now
+  - servers with no icon look funny now
 */
 
 .container-3baos1 {
@@ -1470,7 +1470,11 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .searchBar-6Kv8R2 .searchBarComponent-32dTOx {
   background: #ffffff05;
   box-shadow: 0 0 0 1px #000,inset 0 0 0 1px #fff2;
-  border-radius: 2px
+  border-radius: 2px;
+  transition: .18s box-shadow;
+}
+.searchBar-6Kv8R2 .searchBarComponent-32dTOx:hover {
+  box-shadow: 0 0 3px 1px #000,inset 0 0 0 1px #fff2;
 }
 .theme-light .searchBar-6Kv8R2 .searchBarComponent-32dTOx {
   background: #0001;
@@ -3280,4 +3284,64 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .side-8zPYf6 .role-3wi9Tf.item-PXvHYJ.themed-OHr7kt .horizontal-1ae9ci .xsmallAvatar-3MTKjd {
     order: 1;
+}
+.tutorialContainer-2sGCg9 .listItem-GuPuDH:first-child {
+    position: fixed;
+    z-index: 1;
+}
+.tutorialContainer-2sGCg9 {
+    margin-bottom: 58px;
+}
+.scroller-1Bvpku {
+    contain: none;
+}
+.platform-win .scroller-1Bvpku {
+    padding-top: 0;
+}
+.tutorialContainer-2sGCg9 .pill-3N7f9r {
+    display: none;
+}
+.tutorialContainer-2sGCg9 .childWrapper-anI2G9 {
+    width: 72px;
+    height: 48px;
+    background: linear-gradient(to bottom, #3c3e42 0%,#2b2c2f 50%,#232529 50%,#1B1D22 100%);
+    box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
+}
+.tutorialContainer-2sGCg9 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9,
+.tutorialContainer-2sGCg9 .childWrapper-anI2G9:active, .tutorialContainer-2sGCg9 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9:active {
+    background: linear-gradient(#7289da, #485679 50%, #3d4763 50%, #464f7b);
+}
+.tutorialContainer-2sGCg9 .wrapper-25eVIn>svg {
+    width: 72px;
+    height: 48px;
+}
+.tutorialContainer-2sGCg9 foreignObject {
+    mask: none;
+    width: 72px;
+}
+.tutorialContainer-2sGCg9 .wrapper-1BJsBx {
+    width: 72px;
+}
+.tutorialContainer-2sGCg9 .wrapper-25eVIn {
+    width: 72px;
+    left: -12px;
+}
+.tutorialContainer-2sGCg9 .listItemWrapper-KhRmzM:active {
+  transform: none;
+}
+.unreadMentionsIndicatorTop-2-tcdU {
+  top: 48px
+}
+.acronym-2mOFsV {
+  border-radius: 50%;
+  box-shadow: inset 0 1px 5px #000;
+  transition: .3s;
+  background: linear-gradient(#373c46, #313440 50%, #2a2d35 50%, #1d1e23);
+}
+.wrapper-1BJsBx.selected-bZ3Lue .acronym-2mOFsV {
+  border-radius: 35%;
+  background: linear-gradient(#7181b9, #545c80 50%, #404a65 50%, #3c415d)
+}
+.tutorialContainer-2sGCg9+.listItem-GuPuDH {
+  display: none;
 }
