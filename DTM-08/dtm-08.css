@@ -1,11 +1,11 @@
 :root {
-  --theme-version: "21w18c";
+  --theme-version: "21w18d";
   --theme-verdate: "7 May 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
 }
 /*
-  What's new in 21w18c:
-  - ACTUALLY fixed the button
+  What's new in 21w18d:
+  - mostly finished light theme and fixed something
 */
 
 .container-3baos1 {
@@ -81,8 +81,7 @@
 .theme-light .container-1giJp5, .theme-light .header-2V-4Sw, .theme-light .searchBar-6Kv8R2, .theme-light .headerBar-UHpsPw {
   background: linear-gradient(#f1f1f1 00,#e0e0e0 50%, #d8d8d8 50%,#dedede 100%) !important;
   box-shadow: inset 0 1px #fff6, inset 0 2px #fff6;
-  text-shadow: 0 1px 3px #000;
-  color: #fff;
+  color: #222;
 }
 .theme-light .header-2V-4Sw:hover, .theme-light .selected-31Nl7x .header-2V-4Sw {
   background: linear-gradient(#ffffff 00,#f5f5f5 50%, #ebebeb 50%,#efefef 100%) !important;
@@ -170,12 +169,12 @@
 .streamerModeEnabledBtn-2ZJ2eq:active {
   background: linear-gradient(to bottom, #571363 0%,#7e208e 50%,#5f166b 51%,#3a1b42 100%) !important
 }
-.theme-dark .cardPrimary-1Hv-to, .theme-dark .codeRedemptionRedirect-1wVR4b, .detailsBlock-FoDTGA {
+.theme-dark .cardPrimary-1Hv-to, .theme-dark .codeRedemptionRedirect-1wVR4b, .detailsBlock-FoDTGA, .settingCard-3w2mVL {
   background: linear-gradient(to bottom,#3b3d44,#2c2e33 50%,#2c2e33 50%,#232329) !important;
   box-shadow: inset 0 0 0 1px #fff3;
   border: solid 1px #000
 }
-.theme-light .cardPrimary-1Hv-to, .theme-dark .codeRedemptionRedirect-1wVR4b, .theme-light .detailsBlock-FoDTGA {
+.theme-light .cardPrimary-1Hv-to, .theme-light .codeRedemptionRedirect-1wVR4b, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-3w2mVL {
   background: linear-gradient(to bottom,#e2e2e2,#d8d8d8 50%,#cecece 50%,#cacaca) !important;
   box-shadow: inset 0 0 0 1px #fffb;
   border: solid 1px #999
@@ -186,6 +185,9 @@
 }
 .formNoticeBody-M4JFHP p {
   text-shadow: 0 0 5px black
+}
+.theme-light .formNoticeBody-M4JFHP p {
+  text-shadow: 1px 1px 1px #fff;
 }
 .theme-dark .closeButton-1tv5uR, .editButton-1MavoF {
   border: solid 1px #000;
@@ -313,9 +315,6 @@
   background: linear-gradient(to bottom, #7d8fd0 0%,#677abf 100%) !important;
   text-shadow: 0 1px #000, 0 1px 3px #0004;
   box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff3, inset 0 1px #fff8, inset 0 -1px #162458, 0 0 1px 2px #fff2;
-}
-.theme-light .lookFilled-1Gx00P.colorBrand-3pXr91 {
-  box-shadow: 0 0 0 1px #fff6, 0 1px 4px #0008
 }
 .lookFilled-1Gx00P:hover {
   background: linear-gradient(to bottom, #94a5e6 0%,#768ad4 100%) !important;
@@ -937,6 +936,12 @@
 .resultsGroup-r_nuzN {
   background: linear-gradient(to bottom, #26282d, #2e2f33)
 }
+.theme-light .resultsGroup-r_nuzN {
+  background: linear-gradient(to bottom, #c0c2c5, #c5c7ce)
+}
+.theme-light .resultsGroup-r_nuzN .header-2N-gMV, .theme-light .resultsGroup-r_nuzN .plusIcon-v0BTrL, .theme-light .resultsGroup-r_nuzN .searchClearHistory-2cSSMO, .theme-light .resultsGroup-r_nuzN .searchLearnMore-3SQUAj a {
+  color: #444;
+}
 .option-96V44q {
   background: none
 }
@@ -956,10 +961,10 @@
 img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   height: 30px
 }
-.theme-dark .wrapper-39oAo3 {
+.wrapper-39oAo3 {
   background: transparent;
   margin-top: 10px;
-  padding: 8px
+  padding: 16px 0
 }
 .theme-dark .wrapper-39oAo3 .lookFilled-1Gx00P.colorBrand-3pXr91 {
   box-shadow: inset 0 1px 6px black
@@ -1085,7 +1090,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .theme-light .side-8zPYf6 .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ, .theme-light .topPill-30KHOu .themed-OHr7kt.selected-3s45Ha.item-PXvHYJ {
   background: linear-gradient(#dcdbdb, #e6e6e6 50%, #d6d6d6 50%, #dedede);
-  box-shadow: 0 0 0 1px #eaeaea,0 1px 3px #0004
+  box-shadow: 0 0 0 1px #eaeaea,0 1px 3px #0004;
+  text-shadow: 1px 1px 2px #fff;
+  color: #444;
 }
 .theme-dark .root-1gCeng {
   background: linear-gradient(#2f3136,#202327);
@@ -1152,6 +1159,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   background: linear-gradient(#1f2023 50%, transparent);
   border-radius: 5px 5px 0 0;
   padding-left: 24px
+}
+.theme-light .channelHeader-3Gd2xq {
+  background: linear-gradient(#F2F3F5 50%, transparent);
 }
 .channelHeader-3Gd2xq .collapseButton-2ZsEjz {
   margin-left: 8px
@@ -1480,6 +1490,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: 0 0 0 1px #dcdcdc,inset 0 0 0 1px #0002;
   color: #1d1d1d
 }
+.theme-light .searchBar-6Kv8R2 .searchBarComponent-32dTOx:hover {
+  box-shadow: 0 0 3px 1px #eee,inset 0 0 0 1px #0002;
+}
 .colorDefault-2K3EoJ.focused-3afm-j {
   background: linear-gradient(#ffffff29,#ffffff17);
   box-shadow: 0 1px 4px #000
@@ -1544,7 +1557,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .theme-light .role-2irmRk {
   background: #fff6;
-  box-shadow: 0 0 0 1px #ddd, inset 0 0 2px 1px #0003, 0 1px 3px #0008;
+  box-shadow: 0 0 0 1px #888, 0 1px 3px #0008;
 }
 .theme-light .actionButton-VzECiy {
   background: none;
@@ -1617,7 +1630,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   background: linear-gradient(#30323888,#23252988)!important
 }
 .theme-light .contentRegionScroller-26nc1e, .theme-light .contentRegion-3nDuYy {
-  background: linear-gradient(#cbcdd088,#b7b9bb88)!important
+  background: linear-gradient(#ffffffee,#e2e2e2ee)!important
 }
 .powercord-entities-manage-tabs {
   background: linear-gradient(#272727,#3e3e3e);
@@ -1634,6 +1647,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .hasBanner-2SrLR3 .header-2V-4Sw, .theme-light .hasBanner-2SrLR3 .header-2V-4Sw {
   background: none!important;
   box-shadow: none !important;
+  color: #ffff;
 }
 .textarea-2r0oV8 {
   margin-left: 4px;
@@ -1801,8 +1815,14 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   flex-shrink: 1
 }
 .option-96V44q.selected-rZcOL- {
-  background: linear-gradient(#3c3f46,#2d2f33);
+  background: linear-gradient(#dcdfe6,#c0c2ca);
   box-shadow: 0 1px 3px
+}
+.theme-light .searchOption-zQ-1l6 .answer-1n6g43 {
+  color: #222;
+}
+.theme-light .option-96V44q .filter-3Y_im- {
+  color: #666;
 }
 .option-96V44q.selected-rZcOL-:active {
   box-shadow: inset 0 1px 3px
@@ -1822,6 +1842,10 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   border-radius: 5px;
   background: linear-gradient(#42444c,#2f3136);
   box-shadow: inset 0 0 0 1px #fff3, 0 0 0 1px #000, 0 1px 3px #000;
+}
+.theme-light .searchResult-9tQ1uo {
+  background: linear-gradient(#d8dae2,#b8bbc1);
+  box-shadow: inset 0 0 0 1px #fff3, 0 0 0 1px #888, 0 1px 3px #888;
 }
 .theme-light .channelName-1JRO3C {
   background: linear-gradient(#dbdee6,#cbced8)
@@ -1971,6 +1995,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .perksModal-fSYqOq {
   background: linear-gradient(#42444a,#26282d)!important
 }
+.theme-light .perksModal-fSYqOq {
+  background: linear-gradient(#e8e9ec,#c3c7d0)!important
+}
 .tierHeader---JJFb {
   box-shadow: 0 0 0 1px #000, 0 2px #fff3, inset 0 1px #fff3, inset 0 50px 30px -20px #fff2, inset 0 1px #fff4;
   margin: 5px;
@@ -2049,20 +2076,18 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .connection-1fbD7X {
   background: linear-gradient(#4c4e56,#2e2f33);
   box-shadow: inset 0 0 0 1px #fff1, 0 2px 5px #0004;
-  border-radius: 1px
+  border-radius: 5px
 }
 .theme-light .connection-1fbD7X {
   background: linear-gradient(#e2e2e2,#e2e2e2);
   box-shadow: inset 0 0 0 1px #fff1, 0 2px 5px #0004;
-  border-radius: 2px
 }
 .connectionHeader-2MDqhu {
   background: rgba(0 0 0/0.4);
-  border-radius: 1px 1px 0 0
+  border-radius: 5px 5px 0 0
 }
 .theme-light .connectionHeader-2MDqhu {
   background: rgba(255 255 255 / 40%);
-  border-radius: 1px 1px 0 0
 }
 .button-1PXUl0:disabled {
   pointer-events: none
@@ -2144,6 +2169,11 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 2px 4px;
   border-radius: 8px
 }
+.theme-light .ctaBar-2UsjF2, .theme-light .perk-2WeBWW {
+  background: linear-gradient(#ffffff,#d9dce2)!important;
+  box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #888, 0 2px 4px #888;
+  border-radius: 8px;
+}
 .container-2VW0UT.elevationHigh-1PneE4 {
   background: linear-gradient(#ffffff26,#0000004f);
   box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 2px 2px
@@ -2211,6 +2241,9 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   color: #fff8;
   font-size: 12px;
   white-space: pre-wrap
+}
+.theme-light .info-1VyQPT:before {
+  color: #444;
 }
 .button-14-BFJ.enabled-2cQ-u7:hover {
   background: linear-gradient(#38393c, #1f2021);
@@ -2601,33 +2634,6 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .theme-light .content-98HsJk {
   margin-top: 40px
 }
-.theme-light .content-98HsJk:before {
-  width: 100%;
-  padding: 12px 0;
-  content: "Light theme is not finished.";
-  text-align: center;
-  top: 0;
-  font-size: 16px;
-  position: fixed;
-  text-shadow: 0 1px #fff8;
-  font-weight: bold;
-  color: #bb2a2a;
-  background: linear-gradient(#f9d6d6,#c3a3a3);
-  z-index: 9;
-}
-.platform-win.theme-light .content-98HsJk:before {
-  top: 0px;
-  right: 87px;
-  left: 72px;
-  width: auto;
-  height: 12px;
-  padding: 5px;
-  font-size: 12px;
-  background: none;
-  color: #000;
-  content: "Let me know how much you want me to finish light mode in my discord server: discord.gg/Uvt56UZvZs";
-  opacity: .2;
-}
 .platform-win.theme-light .content-98HsJk {
   margin-top: 0;
 }
@@ -2668,8 +2674,11 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .theme-light .side-8zPYf6 .item-PXvHYJ {
   color: #000
 }
+.side-8zPYf6 .separator-gCa7yv {
+  background: linear-gradient(to right, #0000, #444, #0000)
+}
 .theme-light .side-8zPYf6 .separator-gCa7yv {
-  background: #0005
+  background: linear-gradient(to right, #0000, #999, #0000)
 }
 .scroller-2TZvBN {
   background: linear-gradient(#2b2b2f,#151517)
@@ -2766,7 +2775,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
     box-shadow: inset 0 0 0 1px #000b, inset 0 0 0 2px #fff2;
 }
 .theme-light .markup-2BOw-j code.inline {
-    box-shadow: inset 0 0 0 1px #fff6, inset 0 0 0 2px #0003, 0 1px 2px #0004;
+    box-shadow: inset 0 0 0 1px #fff6, 0 1px 2px #0004;
 }
 .powercord-codeblock-copy-btn {
     background: linear-gradient(#17181b,#18181d 50%, #1a1a1d 50%, #242529);
@@ -2943,16 +2952,16 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
     background: linear-gradient(#3f4350,#2d2d33);
     box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 1px 3px #000;
 }
-.theme-light .container-_phMUq {
-    background: linear-gradient(#dfe0e4,#bababd);
-    box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0002, 0 1px 3px #0004;
-}
 .container-_phMUq:hover {
     background: linear-gradient(#54565d,#414148);
     box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 1px 6px #000;
 }
+.theme-light .container-_phMUq {
+    background: linear-gradient(#fefeff,#d2d2d8);
+    box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0002, 0 1px 3px #0004;
+}
 .theme-light .container-_phMUq:hover {
-    background: linear-gradient(#ebebef,#d1d1d8);
+    background: linear-gradient(#f3f3f7,#e2e2e8);
     box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0006, 0 1px 6px #0007;
 }
 .container-_phMUq:active {
@@ -3203,9 +3212,18 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
     background: linear-gradient(#333, #222);
     box-shadow: inset 0 0 5px #000;
 }
+.theme-light .circleIconButton-1QV--U {
+    border: solid 2px #fff;
+    background: linear-gradient(#f7f7f7, #ccc);
+    box-shadow: inset 0 0 5px #666;
+}
 .circleIconButton-1QV--U:hover, .circleIconButton-1QV--U:active {
     border: solid 2px #555;
     background: linear-gradient(#444, #333);
+}
+.theme-light .circleIconButton-1QV--U:hover, .theme-light .circleIconButton-1QV--U:active, .theme-light .circleIconButton-1QV--U.selected-1JjBPm {
+    border: solid 2px #abbdff;
+    background: linear-gradient(#7289da, #445386);
 }
 .channelNotice-2bJINM {
     background: linear-gradient(#343438,#1a1a1d);
@@ -3306,9 +3324,17 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
     background: linear-gradient(to bottom, #3c3e42 0%,#2b2c2f 50%,#232529 50%,#1B1D22 100%);
     box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
 }
+.theme-light .tutorialContainer-2sGCg9 .childWrapper-anI2G9  {
+    background: linear-gradient(#f1f1f1 00,#e0e0e0 50%, #d8d8d8 50%,#dedede 100%);
+    box-shadow: inset 0 1px 1px #fff3;
+}
 .tutorialContainer-2sGCg9 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9,
 .tutorialContainer-2sGCg9 .childWrapper-anI2G9:active, .tutorialContainer-2sGCg9 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9:active {
     background: linear-gradient(#7289da, #485679 50%, #3d4763 50%, #464f7b);
+}
+.theme-light .tutorialContainer-2sGCg9 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9,
+.theme-light .tutorialContainer-2sGCg9 .childWrapper-anI2G9:active, .theme-light .tutorialContainer-2sGCg9 .wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9:active {
+    background: linear-gradient(#7289da, #798fc7 50%, #6476a7 50%, #828ec5);
 }
 .tutorialContainer-2sGCg9 .wrapper-25eVIn>svg {
     width: 72px;
@@ -3337,10 +3363,45 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   transition: .3s;
   background: linear-gradient(#373c46, #313440 50%, #2a2d35 50%, #1d1e23);
 }
+.theme-light .acronym-2mOFsV {
+  box-shadow: inset 0 1px 5px #666;
+  background: linear-gradient(#dbdfe6, #c4c7d4 50%, #b7bac3 50%, #dbdde2);
+}
 .wrapper-1BJsBx.selected-bZ3Lue .acronym-2mOFsV {
   border-radius: 35%;
   background: linear-gradient(#7181b9, #545c80 50%, #404a65 50%, #3c415d)
 }
+.theme-light .wrapper-1BJsBx.selected-bZ3Lue .acronym-2mOFsV {
+  text-shadow: 0 1px 3px #000;
+  background: linear-gradient(#dee5ff, #b1b9de 50%, #99a4bf 50%, #a0a5bf)
+}
 .tutorialContainer-2sGCg9+.listItem-GuPuDH {
   display: none;
+}
+.theme-light .authedApp-mj2Hmd {
+  border-color: #bbb;
+  box-shadow: inset 0 1px 3px #bbb
+}
+.theme-light .colorPremium-p4p7qO.focused-3afm-j .icon-LYJorE {
+  color: #ff73fa !important
+}
+.item-1yAxl1 {background: linear-gradient(#33333a, #3e3e48 50%, #303038 50%, #36363c)}
+.item-1yAxl1:hover {background: linear-gradient(#4a4a50, #55555f 50%, #484850 50%, #4a4a50)}
+.theme-light .item-1yAxl1 {background: linear-gradient(#dedeea, #e3e3ef 50%, #ccccda 50%, #d0d0d8)}
+.theme-light .item-1yAxl1:hover {background: linear-gradient(#ffffff, #fafaff 50%, #dddde4 50%, #dcdce4)}
+.allow-1PzSY3.selected-2YhbGh {background: linear-gradient(#60b18c, #3c946c 50%, #3e8464 50%, #36805e)}
+.allow-1PzSY3.selected-2YhbGh:hover {background: linear-gradient(#6cdeaa, #4bc38d 50%, #4faf83 50%, #43a578)}
+.deny-3nAuT6.selected-2YhbGh {background: linear-gradient(#f36d6d, #f04747 50%, #ca5656 50%, #c33131)}
+.deny-3nAuT6.selected-2YhbGh:hover {background: linear-gradient(#f78686, #ef6c6c 50%, #c56969 50%, #c54c4c)}
+.passthrough-1c2ewQ.selected-2YhbGh {background: linear-gradient(#7c8694, #6d7480 50%, #5b626d 50%, #4a4f56)}
+.passthrough-1c2ewQ.selected-2YhbGh:hover {background: linear-gradient(#acb6c3, #7c828e 50%, #696f79 50%, #596069)}
+.theme-light .passthrough-1c2ewQ.selected-2YhbGh {background: linear-gradient(#97aaec, #91a0d6 50%, #8191ca 50%, #7485c1)}
+.theme-light .passthrough-1c2ewQ.selected-2YhbGh:hover {background: linear-gradient(#b3c3ff, #b1c2ff 50%, #a7b9fb 50%, #7a8ed8)}
+
+.group-1WdBVp {
+  box-shadow: 0 1px 3px #000;
+  border: none;
+}
+.item-1yAxl1 {
+  box-shadow: inset 0 1px #fff2, inset 0 -1px #0006;
 }
