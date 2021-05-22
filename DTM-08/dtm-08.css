@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "21w20e";
-  --theme-verdate: "21 May 2021";
+  --theme-version: "21w20f";
+  --theme-verdate: "23 May 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
@@ -12,6 +12,9 @@
   - Nothing.
   What's new in 21w20e:
   - made the friends list background darker
+  What's new in 21w20f:
+  - fixed user profile headers & removed bd .da- classes
+  - temp fix for upload modal for light mode
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -154,6 +157,23 @@
   color: white;
   font-weight: bold;
   box-shadow: 0 2px 4px black
+}
+.theme-light .uploadModal-2ifh8j {
+  background: linear-gradient(#899ad6, #505e8e);
+  color: #fff;
+  border-radius: 5px;
+}
+.theme-light .uploadModal-2ifh8j .inner-3nWsbo,
+.theme-light .uploadModal-2ifh8j .colorStandard-2KCXvj,
+.theme-light .uploadModal-2ifh8j .destination-3ZiRO2 strong {
+  color: #fff;
+}
+.theme-light .uploadModal-2ifh8j .colorHeaderSecondary-3Sp3Ft,
+.theme-light .uploadModal-2ifh8j .comment-4IWttf .label-3aiqT2 .optional--ezibr {
+  color: #fffa;
+}
+.theme-light .uploadModal-2ifh8j .lookLink-9FtZy-.colorPrimary-3b3xI6 {
+  color: #fff;
 }
 .theme-dark .ui-standard-sidebar-view .content-region {
   background: transparent
@@ -515,27 +535,31 @@
 .theme-dark .divider-3gKybi:not(.red-1YQ4s7) span, .theme-dark .divider-3gKybi:before, .theme-dark .divider-3gKybi span {
   background: transparent
 }
-.userPopout-3XzG_A.da-userPopout .activity-11LB_k {
-  background: linear-gradient(rgba(113 113 113/0.55) 0%, rgba(49 49 49/0.51) 49%, rgba(41 41 41/0.55) 50%, rgba(0 0 0/0.52) 51%);
-  border-top: solid 2px rgba(170 170 170/0.66)
+.userPopout-3XzG_A .activity-11LB_k {
+  background: linear-gradient(rgb(113 113 113 / 35%) 0%, rgba(49 49 49 / 35%) 49%, rgba(41 41 41 / 35%) 50%, rgba(0 0 0 / 35%) 51%);
+  border-top: solid 1px rgb(255 255 255 / 35%)
 }
-.userPopout-3XzG_A.da-userPopout .headerPlaying-j0WQBV .headerTop-3C2Zn0 {
+.userPopout-3XzG_A .headerPlaying-j0WQBV .headerTop-3C2Zn0 {
   background: linear-gradient(#6374b1 0%, #7a92e4 42%, #687ece 42%, #6176c1 100%);
   border-bottom: solid 1px #4E5675
 }
-.userPopout-3XzG_A.da-userPopout .headerNormal-T_seeN .headerTop-3C2Zn0 {
+.userPopout-3XzG_A .headerNormal-T_seeN .headerTop-3C2Zn0 {
   background: linear-gradient(#656565 0%, #676767 42%, #5f5f5f 42%, #4C4C4C 100%);
   border-bottom: solid 1px #575757
 }
-.userPopout-3XzG_A.da-userPopout .headerSpotify-zpWxgT .headerTop-3C2Zn0 {
+.theme-light .userPopout-3XzG_A .headerNormal-T_seeN .headerTop-3C2Zn0 {
+  background: linear-gradient(#bfbfbf 0%, #d4d4d4 42%, #c7c7c7 42%, #afafaf 100%);
+  border-bottom: solid 1px #efefef
+}
+.userPopout-3XzG_A .headerSpotify-zpWxgT .headerTop-3C2Zn0 {
   background: linear-gradient(#24a251 0%, #24ab50 42%, #309e52 42%, #1c9245 100%);
   border-bottom: solid 1px #575757
 }
-.userPopout-3XzG_A.da-userPopout .headerStreaming-2FjmGz .headerTop-3C2Zn0 {
+.userPopout-3XzG_A .headerStreaming-2FjmGz .headerTop-3C2Zn0 {
   background: linear-gradient(#52318c 0%, #5d339a 42%, #4e2c7d 42%, #553886 100%);
   border-bottom: solid 1px #575757
 }
-.userPopout-3XzG_A.da-userPopout .headerXbox-3G-4PF .headerTop-3C2Zn0 {
+.userPopout-3XzG_A .headerXbox-3G-4PF .headerTop-3C2Zn0 {
   background: linear-gradient(#1d711d 0%, #1e8018 42%, #22711c 42%, #147712 100%);
   border-bottom: solid 1px #575757
 }
@@ -565,7 +589,7 @@
 .horizontal-1ae9ci>.flex-1xMQg5:first-child {
   background: linear-gradient(#242529 0%, #141517 50%, #101112 50%, #191a1d 100%)
 }
-.flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyBetween-2tTqYu.alignStretch-DpGPf3.noWrap-3jynv6.da-flex.da-horizontal.da-directionRow.da-justifyBetween.da-alignStretch.da-noWrap, .side-8zPYf6 .item-PXvHYJ .horizontal-1ae9ci>.flex-1xMQg5:first-child {
+.flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyBetween-2tTqYu.alignStretch-DpGPf3.noWrap-3jynv6, .side-8zPYf6 .item-PXvHYJ .horizontal-1ae9ci>.flex-1xMQg5:first-child {
   background: transparent !important
 }
 .actionRed-gYn8D3 {
@@ -590,7 +614,7 @@
   background: linear-gradient(#3A3A3A,#2d2d2d)
 }
 .theme-light .activity-1ythUs {
-  background: linear-gradient(#cdcdcd,#b7b7b7)
+  background: linear-gradient(#fff4,#fff2)
 }
 .theme-light .topSectionPlaying-1J5E4n .activity-1ythUs {
   background: linear-gradient(#0003, #0002)
@@ -636,7 +660,7 @@
 .horizontal-1ae9ci>.flex-1xMQg5:first-child {
   background: transparent !important
 }
-.flex-1xMQg5.flex-1O1GKY.vertical-V37hAW.flex-1O1GKY.directionColumn-35P_nr.justifyCenter-3D2jYp.alignCenter-1dQNNs.noWrap-3jynv6.previewOverlayInner-1WXURq.da-flex.da-vertical.da-directionColumn.da-justifyCenter.da-alignCenter.da-noWrap.da-previewOverlayInner {
+.flex-1xMQg5.flex-1O1GKY.vertical-V37hAW.flex-1O1GKY.directionColumn-35P_nr.justifyCenter-3D2jYp.alignCenter-1dQNNs.noWrap-3jynv6.previewOverlayInner-1WXURq {
   background: linear-gradient(#242529 0%, #141517 50%, #101112 50%, #191a1d 100%) !important
 }
 .scroller-2FKFPG.inner-3wn6Q5.content-8biNdB {
@@ -1108,10 +1132,10 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 2px 8px #000;
 }
 .root-SR8cQa, .userPopout-3XzG_A, .guild-Hq0WWA, .cardWrapper-2Min21 {
-  box-shadow: 0 0 0 1px #fff3, 0 0 0 2px #000, 0 4px 10px
+  box-shadow: 0 0 0 1px #fff3, 0 0 2px #000, 0 4px 10px
 }
 .theme-light .root-SR8cQa, .theme-light .userPopout-3XzG_A, .theme-light .guild-Hq0WWA, .theme-light .cardWrapper-2Min21 {
-  box-shadow: 0 0 0 1px #fff3, 0 0 0 2px #bbb, 0 4px 10px #0004
+  box-shadow: 0 0 0 1px #fff3, 0 0 2px #bbb, 0 4px 10px #0004
 }
 .guildSubscriptionSlots-JPXXvN, .cardWrapper-2Min21 {
   background: linear-gradient(#2f3136,#18191c)
@@ -3165,6 +3189,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   background: linear-gradient(#383838,#272727);
   box-shadow: 0 0 0 .5px #000, 0 1px 3px #0008, inset 0 0 0 1px #fff2;
   border-radius: 2px;
+  border: none;
 }
 .theme-light .reaction-1hd86g {
   background: linear-gradient(#c7c7c7,#c5c5c5);
@@ -3540,4 +3565,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .item-PXvHYJ .textBadge-1iylP6 {
     display: none;
+}
+.theme-light .headerNormal-T_seeN .headerTag-2pZJzA {
+  color: #0005;
 }
