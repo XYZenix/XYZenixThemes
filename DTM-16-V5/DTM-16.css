@@ -88,7 +88,7 @@
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "125 (Canary)" "\a" "June 23, 2021";
+  content: "DTM-16 Build " "126 (Canary)" "\a" "June 23, 2021";
   margin-bottom: 20px;
 }
 
@@ -1273,9 +1273,11 @@
   background: linear-gradient(to right, #282b30 85%, #2e3136);
 }
 .privateChannels-1nO12o .channel-2QD9_O:hover .layout-2DM8Md, .privateChannels-1nO12o .channel-2QD9_O:active .layout-2DM8Md {
+  background-color: #0000;
   box-shadow: inset 2px 0 #7289da66;
 }
 .privateChannels-1nO12o .channel-2QD9_O.selected-aXhQR6 .layout-2DM8Md {
+  background-color: #0000;
   box-shadow: inset 2px 0 var(--blurple);
 }
 
@@ -1880,6 +1882,9 @@
   opacity: 0.6;
   transition: opacity 0.2s;
 }
+.theme-light .title-3qD0b- .toolbar-1t6TWx .iconWrapper-2OrFZ1 > svg, .theme-light .container-1r6BKw .toolbar-1t6TWx .iconWrapper-2OrFZ1 > svg {
+  opacity: 0.3;
+}
 .title-3qD0b- .toolbar-1t6TWx .iconWrapper-2OrFZ1:hover > svg, .container-1r6BKw .toolbar-1t6TWx .iconWrapper-2OrFZ1:hover > svg {
   opacity: 1;
 }
@@ -2380,12 +2385,18 @@ html[style="font-size: 87.5%"] .embedFull-2tM8-- .embedDescription-1Cuq9a {
   padding: 0;
 }
 .userPopout-xaxa6l .body-3HBlXn .note-1oo11U, .userPopout-xaxa6l .body-3HBlXn .rolesList-1geHY1 {
-  margin-left: 10px;
+  margin-left: 12px;
+}
+.userPopout-xaxa6l .body-3HBlXn .note-1oo11U {
+  padding-right: 14px;
+}
+.userPopout-xaxa6l .body-3HBlXn .note-1oo11U:last-of-type {
+  margin-bottom: 10px;
 }
 .userPopout-xaxa6l .body-3HBlXn .bodyTitle-1ySSKn {
   color: #87909c;
   font-size: 11px;
-  margin-left: 10px;
+  margin-left: 12px;
   margin-top: 10px;
 }
 .userPopout-xaxa6l .body-3HBlXn .bodyTitle-1ySSKn:first-of-type:before {
@@ -2520,10 +2531,18 @@ html[style="font-size: 87.5%"] .embedFull-2tM8-- .embedDescription-1Cuq9a {
   width: 250px !important;
 }
 .userPopout-xaxa6l[style^="width: 300px;"] .popoutBanner-19WKGg, .userPopout-xaxa6l[style^="width: 300px;"] .popoutBannerPremium-1n96gg {
-  display: none;
+  width: 250px;
+  height: 100px;
+}
+.userPopout-xaxa6l[style^="width: 300px;"] .popoutBanner-19WKGg:not(.popoutBannerPremium-1n96gg) {
+  opacity: 0;
+  pointer-events: none;
+}
+.userPopout-xaxa6l[style^="width: 300px;"] .popoutBannerPremium-1n96gg {
+  margin-bottom: 70px;
 }
 .userPopout-xaxa6l[style^="width: 300px;"] .avatarPositionPremium-3We5Ho {
-  top: 20px;
+  margin-top: 10px;
 }
 .theme-light .userPopout-xaxa6l[style^="width: 300px;"] .username-2b1r56 {
   color: #fff;
@@ -2541,18 +2560,22 @@ html[style="font-size: 87.5%"] .embedFull-2tM8-- .embedDescription-1Cuq9a {
   background-image: url("https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png");
   background-size: 270px 213px;
   background-color: var(--blurple);
-  padding-top: 120px;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 .userPopout-xaxa6l[style^="width: 300px;"] .headerTop-3vNv-a .botTagRegular-2HEhHi {
   background: #fff;
   color: var(--blurple);
 }
-.userPopout-xaxa6l[style^="width: 300px;"] .betaBadge-1Xznh1 {
-  display: none;
+.userPopout-xaxa6l[style^="width: 300px;"] .betaBadge-1Ve-yb {
+  background: #0002 !important;
 }
 .userPopout-xaxa6l[style^="width: 300px;"] .aboutMeSection-1Fw5Ia {
   background: var(--background-secondary);
   padding-right: 10px;
+}
+.userPopout-xaxa6l[style^="width: 300px;"] .aboutMeSection-1Fw5Ia .betaBadge-1Xznh1 {
+  background: var(--blurple) !important;
 }
 .userPopout-xaxa6l[style^="width: 300px;"] .activity-fViXj7 {
   margin: 0;
@@ -2654,12 +2677,12 @@ html[style="font-size: 87.5%"] .embedFull-2tM8-- .embedDescription-1Cuq9a {
 .root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .topSection-y3p-_D > header {
   min-height: 180px;
 }
-.root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .topSection-y3p-_D .banner-2QYc2d {
-  display: none;
-}
 .root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .topSection-y3p-_D .customStatusActivity-nmH3DF {
-  margin-top: 20px;
+  margin-top: 45px;
   margin-left: 165px;
+}
+.root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .topSection-y3p-_D .nameTagNoCustomStatus-3IWmZC {
+  margin-bottom: 80px;
 }
 .root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .topSection-y3p-_D .header-4zuFdR {
   padding-top: 100px;
@@ -2774,10 +2797,13 @@ html[style="font-size: 87.5%"] .embedFull-2tM8-- .embedDescription-1Cuq9a {
   margin-left: 20px;
   margin-top: 65px;
 }
+.root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .betaBadge-1Ve-yb {
+  background: #0002 !important;
+}
 .root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .nameTag-ECvD8P {
-  position: absolute;
-  top: -30px;
-  left: 165px;
+  position: relative;
+  margin-top: -55px;
+  margin-left: 180px;
 }
 .root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .connectedAccounts-QlRa4m:before {
   background: none;
@@ -2937,10 +2963,6 @@ html[style="font-size: 87.5%"] .embedFull-2tM8-- .embedDescription-1Cuq9a {
 .root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .body-r6_QPy {
   background: #fff;
   border-top: solid 1px #F0F0F0;
-}
-.root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .body-r6_QPy .userBio-3tlrzS {
-  display: none;
-  /* a/b testing should be illegal */
 }
 .theme-dark .root-3QyAh1.root-1gCeng.small-3iVZYw.fullscreenOnMobile-1bD22y .body-r6_QPy {
   background: var(--background-secondary);
@@ -5519,4 +5541,37 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   font-weight: 500;
 }
 
-/*# sourceMappingURL=DTM-16-v5.theme.css.map */
+.userPopout-xaxa6l[data-user-id="211270674482724864"] .avatar-37jOim {
+  border-color: #00caff !important;
+  background: #00caff !important;
+  box-shadow: 0 0 5px 1px #00caff;
+}
+
+@keyframes rgbMode {
+  0% {
+    color: #FF0000;
+  }
+  16% {
+    color: #FFD800;
+  }
+  33% {
+    color: #00FF21;
+  }
+  50% {
+    color: #0094FF;
+  }
+  66% {
+    color: #0026FF;
+  }
+  83% {
+    color: #B200FF;
+  }
+  100% {
+    color: #FF00DC;
+  }
+}
+body.powercord .socialLinks-3jqNFy:before {
+  animation: 6s rgbMode infinite linear;
+}
+
+/*# sourceMappingURL=DTM-16.css.map */
