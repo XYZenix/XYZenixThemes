@@ -1,14 +1,11 @@
 :root {
-  --theme-version: "21w25e";
-  --theme-verdate: "26 June 2021";
+  --theme-version: "21w26a";
+  --theme-verdate: "28 June 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 /*
   CHANGELOG
-  21w24b:
-  - updated changelog format a tiny bit
-  - miniprofiles and some other stuff
   21w25a:
   - something sticker card on nitro page
   - something red outline buttons
@@ -23,6 +20,8 @@
   - colors, light modes, profiles, potatoes, chips, burritos, only the first 3 are correct, i hate changelogs just read teh commit shit idk lmao
   21w25e:
   - fixed user settings account tab and added a background to nitro classic section of nitro tab
+  21w26a:
+  - some fixes related to light mode, dark sidebar, and 'new server' button on bottom of server list. might redo some other stuff later on.
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -30,7 +29,8 @@
 }
 .theme-light .panels-j1Uci_ .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6, .theme-light .actions-aUdUfC {
   background: rgba(255 255 255/0.2);
-  box-shadow: inset 0 0 0 1px #fff4, 0 0 0 1px #0002
+  box-shadow: inset 0 0 0 1px #fff4, 0 0 0 1px #0002;
+  border-radius: 5px;
 }
 .theme-dark .panels-j1Uci_ .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6, .theme-dark .actions-aUdUfC {
   background: rgba(0 0 0/0.4);
@@ -82,7 +82,7 @@
 .theme-light .container-3w7J-x, .theme-light .members-1998pB, .theme-light .ui-standard-sidebar-view .sidebar-region .sidebar-region-scroller, .theme-light .scroller-2FKFPG, .theme-light .messagesWrapper-1sRNjr, .theme-light .scroller-1JbKMe, .theme-light .container-1D34oG, .theme-light .sidebar-2K8pFh, .theme-light .threadSidebar-1o3BTy, .theme-light .scroller-9moviB {
   background: linear-gradient(to bottom, #ffffff 0%,#eaeaea 100%) !important
 }
-.theme-dark .container-3w7J-x, .theme-dark .members-1998pB, .theme-dark .ui-standard-sidebar-view .sidebar-region .sidebar-region-scroller, .theme-dark .messagesWrapper-1sRNjr, .theme-dark .scroller-1JbKMe, .theme-dark .container-1D34oG, .theme-dark .sidebar-2K8pFh, .theme-dark .threadSidebar-1o3BTy, .theme-dark .container-1EOCj2, .theme-dark .scroller-9moviB {
+.theme-dark .container-3w7J-x, .theme-dark .members-1998pB, .theme-dark .ui-standard-sidebar-view .sidebar-region .sidebar-region-scroller, .theme-dark .messagesWrapper-1sRNjr, .theme-dark .scroller-1JbKMe, .theme-dark .container-1D34oG, .theme-dark .sidebar-2K8pFh, .theme-dark .threadSidebar-1o3BTy, .theme-dark .container-1EOCj2, .theme-dark .scroller-9moviB, .theme-light .sidebar-2K8pFh.theme-dark {
   background: linear-gradient(to bottom, #0a0a0a 0%,#242529 100%) !important
 }
 .theme-dark .pageWrapper-1PgVDX {
@@ -2127,6 +2127,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .theme-light .selected-aXhQR6 .layout-2DM8Md {
   background: linear-gradient(#fff4, #fff8);
   box-shadow: inset 0 0 0 1px #888, inset 0 1px 3px #0009, inset 0 0 0 2px #fff;
+  color: #000;
 }
 .theme-dark .clickable-1JJAn8:hover .layout-2DM8Md {
   background: linear-gradient(#fff1, #fff2);
@@ -2136,6 +2137,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   background: linear-gradient(#fff2, #fff4);
   box-shadow: inset 0 0 0 1px #000, inset 0 1px 3px #0008, inset 0 0 0 2px #fff2;
 }
+.theme-light .sidebar-2K8pFh.theme-dark .selected-aXhQR6 .layout-2DM8Md {color:#ffff}
 .tierMarkerBackground-3q29am {
   background: none!important
 }
@@ -3061,7 +3063,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   color: #bbb;
 }
 .theme-dark .container-1CE3eW .inputDefault-_djjkz.input-cIJ7To {
-  background: linear-gradient(#202023,#262629) !important;
+  background: linear-gradient(#1f1f23,#313135) !important;
   box-shadow: 0 0 0 1px #fff2, inset 0 0 0 1px #000, inset 0 1px 3px #000;
   color: #bbb;
 }
@@ -3220,23 +3222,21 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: inset 0 -1px #fff2;
 }
 .circleIconButton-1QV--U {
-    border: solid 2px #555;
     border-radius: 50%;
-    background: linear-gradient(#333, #222);
-    box-shadow: inset 0 0 5px #000;
+    background: linear-gradient(#303138, #2d2e31 50%, #282a2f 50%, #323336);
+    box-shadow: inset 0 0 0 1px #fff4, inset 0 2px #fff1, inset 0 -2px #0005;
+    border: solid 1px #000;
 }
-.theme-light .circleIconButton-1QV--U {
-    border: solid 2px #fff;
-    background: linear-gradient(#f7f7f7, #ccc);
+.theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-1QV--U {
+    border: solid 1px #fff;
+    background: linear-gradient(#ffffff, #ffffff 50%, #ececec 50%, #ffffff);
     box-shadow: inset 0 0 5px #666;
 }
 .circleIconButton-1QV--U:hover, .circleIconButton-1QV--U:active {
-    border: solid 2px #555;
-    background: linear-gradient(#444, #333);
+    background: linear-gradient(#4c4d56, #4a4c52 50%, #42464e 50%, #3e4148);
 }
-.theme-light .circleIconButton-1QV--U:hover, .theme-light .circleIconButton-1QV--U:active, .theme-light .circleIconButton-1QV--U.selected-1JjBPm {
-    border: solid 2px #abbdff;
-    background: linear-gradient(#7289da, #445386);
+.theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-1QV--U:hover, .theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-1QV--U:active, .theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-1QV--U.selected-1JjBPm {
+    background: linear-gradient(#b3bbff, #7d8aff 50%, #6e7cff 50%, #a8b1ff);
 }
 .channelNotice-2bJINM {
     background: linear-gradient(#343438,#1a1a1d);
@@ -3628,7 +3628,6 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .activityUserPopout-2yItg2 {
   padding: 6px;
-  background: linear-gradient(rgb(113 113 113 / 35%) 0%, rgba(49 49 49 / 35%) 49%, rgba(41 41 41 / 35%) 50%, rgba(0 0 0 / 35%) 51%);
   box-shadow: 0 -2px #0002, 0 -1px #fff;
 }
 .customStatus-oN4ZZY {
@@ -3700,10 +3699,10 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
     background: #7289da22;
 }
 .settingsBanner-15-pZk.bannerPremium-2hSAwz {
-    height: 293px;
+    height: 262px;
 }
 .settingsBanner-15-pZk.bannerPremium-2hSAwz+.userInfo-iCloHO .avatar-1uQSZT {
-    top: 270px;
+    top: 240px;
 }
 .userInfo-iCloHO .avatar-1uQSZT {
     border-color: #3A3C40;
@@ -3715,4 +3714,15 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .artwork-1adZW0 {
     display: none;
+}
+.theme-dark .layer-2KE1M9>.theme-light .title-3w8xhj,
+.theme-dark .layer-2KE1M9>.theme-light .title-LqAd9K,
+.theme-dark .layer-2KE1M9>.theme-light .title-Z_XiOC,
+.theme-dark .layer-2KE1M9>.theme-light .title-XLSR78 {
+  color: #fff; /* discord when they need 4 classnames for the same THING */
+}
+.theme-dark .layer-2KE1M9>.theme-light .colorHeaderSecondary-3Sp3Ft,
+.theme-dark .layer-2KE1M9>.theme-light .colorStandard-2KCXvj,
+.theme-dark .layer-2KE1M9>.theme-light .sampleLink-2NLvZg {
+  color: #fffb;
 }
