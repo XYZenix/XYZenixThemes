@@ -1,16 +1,11 @@
 :root {
-  --theme-version: "21w28a";
-  --theme-verdate: "12 July 2021";
+  --theme-version: "21w28b";
+  --theme-verdate: "15 July 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 /*
   CHANGELOG
-  Canary 21w25b:
-  - fixed mini profiles
-  - a small change i did to my own miniprofile, hope no one has a problem with it...
-  - fixed light mode tooltip
-  - changed the chat textbox area a bit in light mode
   21w25c:
   - fixed a profile thing
   21w25d:
@@ -27,6 +22,8 @@
   - sticker settings fix
   - some light mode context menu fix
   - bd settings fix
+  21w28b:
+  - threads reply bar fix
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -140,6 +137,10 @@
   padding-left: 20px;
   padding-right: 20px;
   box-shadow: inset 0 2px #fff1
+}
+.threadSidebar-1o3BTy .form-3eU9kJ {
+    padding-left: 0;
+    padding-right: 0;
 }
 .theme-light .chat-3bRxxu form, .theme-light .threadSidebar-1o3BTy form {
   background-image: linear-gradient(#ffffff,#f8f8f8 50%,#ececec 50%, #f0f0f0);
@@ -2382,20 +2383,21 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 }
 .container-2fRDfG {
   margin-top: -32px;
-  margin-bottom: -4px;
+  margin-bottom: -2px;
 }
-.replyBar-1YLQ2F {
+.replyBar-1YLQ2F, .threadSuggestionBar-2ufK2Z {
   border-radius: 3px 3px 0 0;
   border-bottom: none;
   border: solid 1px #000;
   background: linear-gradient(#3d4046, #303135 50%, #2c2d2f 50%, #1c1e21);
   box-shadow: inset 0 0 0 1px #fff1, 0 0 0 1px #fff1
 }
-.theme-light .replyBar-1YLQ2F {
+.theme-light .replyBar-1YLQ2F, .threadSuggestionBar-2ufK2Z {
   border: solid 1px #AAAAAA;
   background: linear-gradient(#e2e5e8, #d7d8dc 50%, #cbcdd0 50%, #e3e5e8);
   box-shadow: inset 0 0 0 1px #fff1, 0 0 0 1px #fff1
 }
+.threadSuggestionBar-2ufK2Z {border-radius: 0;border-top:0}
 .scrollableContainer-2NUZem.hasReply-16cIUP {
   border-top-left-radius: 0;
   border-top-right-radius: 0
