@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "21w28c";
-  --theme-verdate: "15 July 2021";
+  --theme-version: "21w28d";
+  --theme-verdate: "16 July 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
@@ -24,6 +24,10 @@
   - threads reply bar fix
   21w28c:
   - bd public servers button fix which i did 2 days ago but didnt save for some reason so i had to re-do just now
+  21w28d:
+  - fixed version date
+  - made the user settings client/theme info thing more visible even if it looks ugly
+  - undid 21w28c, bd is broken
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -2221,14 +2225,23 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
 .layer-3QrUeG[aria-label*="_SETTINGS"] {
   transform: none!important
 }
+.info-1VyQPT {
+  color: #ccc;
+  font-size: 12px;
+  white-space: pre-wrap;
+  background: #222;
+  display: block;
+  padding: 8px;
+  border-radius: 8px;
+}
+.info-1VyQPT .colorMuted-HdFt4q {
+  color: #ccc;
+}
 .info-1VyQPT:before {
   content: "DTM-08 " var(--theme-version) "\A " var(--theme-verdate);
-  color: #fff8;
-  font-size: 12px;
-  white-space: pre-wrap
-}
-.theme-light .info-1VyQPT:before {
-  color: #444;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 12px;
 }
 .theme-light .button-14-BFJ.enabled-2cQ-u7:hover {
   background: linear-gradient(#c8cfda, #d5dae6 50%, #c0c5d0 50%, #d5deea);
@@ -3564,7 +3577,7 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   color: #0005;
 }
 #bd-pub-li {
-    top: 48px;
+    top: 0px;
 }
 #bd-pub-button {
     left: 0px;
