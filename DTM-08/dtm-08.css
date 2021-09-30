@@ -1,8 +1,11 @@
 :root {
-  --theme-version: "21w39c";
-  --theme-verdate: "29 September 2021";
+  --theme-version: "21w39d";
+  --theme-verdate: "30 September 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  --ContextMenuBackgroundColorDark: #0008;
+  --ContextMenuBackgroundColorLight: #fff8;
+  --ContextMenuBackgroundBlur: blur(10px);
 }
 /*
   CHANGELOG
@@ -28,6 +31,8 @@
   - context menus (will probably be reverted because it's stupid and broken)
   21w39c:
   - fixed unread mentions bar
+  21w39d:
+  - new variables
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -3850,7 +3855,7 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
   text-shadow: 0 0 8px #bbb;
 }
 .menu-3sdvDG {
-  background: #0004;
+  background: var(--ContextMenuBackgroundColorDark);
   border: solid 1px #000;
   border-radius: 8px;
 }
@@ -3871,13 +3876,13 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
   width: 100%;
   height: 100%;
   position: absolute;
-  backdrop-filter: blur(10px);
+  backdrop-filter: var(--ContextMenuBackgroundBlur);
   border-radius: 8px;
   box-shadow: inset 0 0 0 1px #fff3;
   z-index: -1;
 }
 .theme-light .menu-3sdvDG {
-  background: #fffb;
+  background: var(--ContextMenuBackgroundColorLight);
   border: solid 1px #C3C3C3;
 }
 .theme-light .menu-3sdvDG .item-1tOPte {
@@ -3890,4 +3895,11 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
 .theme-light .menu-3sdvDG .item-1tOPte:active {
   background: #fffb;
   box-shadow: inset 0 0 0 1px #bbb, inset 0 0 0 2px #eee;
+}
+.info-1VyQPT:after {
+    content: "You're using an outdated version of DTM-08's .theme.css file so some variables might be missing, go get the new version either from BetterDiscord's Theme Repo or github.com/xyzenix/dtm-08 (if this still shows up even tho you're on the most recent version then wow i fucked it up, go scream in 11pixels's dms about it)";
+    color: #f04747;
+    text-transform: none;
+    font-weight: bold;
+    display: var(--WhetherOrNotToShowTheStupidOutdatedWarningWhichIsPositionedInSuchAWayThatLiterallyNobodyWillSeeItButDoILookLikeICare)
 }
