@@ -1,19 +1,11 @@
 :root {
-  --theme-version: "21w39a";
+  --theme-version: "21w39c";
   --theme-verdate: "29 September 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 /*
   CHANGELOG
-  21w26c:
-  - light mode dark sidebar fix
-  21w28a:
-  - sticker settings fix
-  - some light mode context menu fix
-  - bd settings fix
-  21w28b:
-  - threads reply bar fix
   21w28c:
   - bd public servers button fix which i did 2 days ago but didnt save for some reason so i had to re-do just now
   21w28d:
@@ -32,6 +24,10 @@
   - cta
   21w39a:
   - cta (nah just a tooltip)
+  21w39b:
+  - context menus (will probably be reverted because it's stupid and broken)
+  21w39c:
+  - fixed unread mentions bar
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -284,6 +280,7 @@
   background: linear-gradient(to bottom, #cccccc, #949494 100%) !important;
   box-shadow: inset 0 0 0 1px #fff9,0 1px 3px #0008;
   color: #000;
+  border-radius: 3px;
   text-shadow: -1px -1px #fff6;
 }
 .theme-dark .unreadBar-3t3sYc {
@@ -300,11 +297,11 @@
   background: linear-gradient(to bottom, #2c2d2f, #37383e 100%) !important;
   box-shadow: inset 0 0 0 1px #fff1,0 1px 3px #000
 }
-.mention-1f5kbO, .theme-light .mention-1f5kbO {
+.unreadBar-3t3sYc.mention-1f5kbO, .theme-light .mention-1f5kbO {
   background: linear-gradient(to bottom, #bf5555, #903838 100%) !important;
   color: #fff;
 }
-.mention-1f5kbO:active, .theme-light .mention-1f5kbO:active {
+.unreadBar-3t3sYc.mention-1f5kbO:active, .theme-light .mention-1f5kbO:active {
   background: linear-gradient(to bottom, #823333, #903838 100%) !important
 }
 .wrapper-232cHJ {
@@ -3851,4 +3848,46 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
   box-shadow: inset 0 0 4px #fff, 0 0 8px #fff;
   color: #fff;
   text-shadow: 0 0 8px #bbb;
+}
+.menu-3sdvDG {
+  background: #0004;
+  border: solid 1px #000;
+  border-radius: 8px;
+}
+.menu-3sdvDG .item-1tOPte {
+  text-shadow: 0 0 4px #000;
+  border-radius: 5px;
+}
+.menu-3sdvDG .item-1tOPte.focused-3afm-j {
+  background: #0006;
+  box-shadow: inset 0 0 0 1px #000, inset 0 0 0 2px #fff2;
+}
+.menu-3sdvDG .item-1tOPte:active {
+  background: #000b;
+  box-shadow: inset 0 0 0 1px #000, inset 0 0 0 2px #fff2;
+}
+.menu-3sdvDG:before {
+  content:"";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px #fff3;
+  z-index: -1;
+}
+.theme-light .menu-3sdvDG {
+  background: #fffb;
+  border: solid 1px #C3C3C3;
+}
+.theme-light .menu-3sdvDG .item-1tOPte {
+  text-shadow: 0 0 4px #fff;
+}
+.theme-light .menu-3sdvDG .item-1tOPte.focused-3afm-j {
+  background: #fff6;
+  box-shadow: inset 0 0 0 1px #bbb, inset 0 0 0 2px #eee;
+}
+.theme-light .menu-3sdvDG .item-1tOPte:active {
+  background: #fffb;
+  box-shadow: inset 0 0 0 1px #bbb, inset 0 0 0 2px #eee;
 }
