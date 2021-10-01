@@ -1,5 +1,5 @@
 :root {
-  --theme-version: "21w39e";
+  --theme-version: "21w39f";
   --theme-verdate: "1 October 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
@@ -9,20 +9,6 @@
 }
 /*
   CHANGELOG
-  21w28c:
-  - bd public servers button fix which i did 2 days ago but didnt save for some reason so i had to re-do just now
-  21w28d:
-  - fixed version date
-  - made the user settings client/theme info thing more visible even if it looks ugly
-  - undid 21w28c, bd is broken
-  21w31a:
-  - new role tag
-  21w32a:
-  - events thing
-  21w33a:
-  -
-  21w34a:
-  -
   21w38a:
   - cta
   21w39a:
@@ -35,6 +21,8 @@
   - new variables
   21w39e:
   - new boost marketing page
+  21w39f:
+  - fixed user popouts probably
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -604,9 +592,7 @@
   background: linear-gradient(#0003, #0002)
 }
 .rolesList-1geHY1 {
-  max-height: 160px !important;
   border-radius: 0px;
-  overflow-y: scroll !important;
   background: linear-gradient(#3e3e44, #303033)!important;
   padding: 4px!important;
   margin: 0;
@@ -632,7 +618,6 @@
 }
 .body-3HBlXn {
   padding: 0!important;
-  overflow-y: hidden!important
 }
 .bodyInnerWrapper-26fQXj {
   padding: 0
@@ -1586,8 +1571,10 @@ img[src="/assets/bb7f752540c7f4c7039c6dd6b5dd052e.svg"] {
   box-shadow: none;
 }
 .bodyInnerWrapper-26fQXj .actionButton-VzECiy {
-  position: fixed;
-  margin-top: -31px !important;
+  position: absolute;
+  top: -29px;
+  z-index: 99;
+  contain: none;
   box-shadow: none;
   border: none;
   background: none;
