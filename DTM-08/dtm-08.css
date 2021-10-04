@@ -1,16 +1,16 @@
 :root {
-  --theme-version: "21w40b";
+  --theme-version: "21w40c";
   --theme-verdate: "4 October 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
-  --ContextMenuBackgroundColorDark: #0008;
-  --ContextMenuBackgroundColorLight: #fff8;
-  --ContextMenuBackgroundBlur: blur(10px);
+  --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
+  --ContextMenuBackgroundColorLight: #fffb; /* set to #fff if you disable blur */
+  --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
+  --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
+  --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
 }
 /*
   CHANGELOG
-  21w39f:
-  - fixed user popouts probably
   21w39g:
   - bare minimum compatibility with that plugin that makes the server list look like the channel list
   21w39h:
@@ -28,13 +28,13 @@
   - updated nitro page perk cards a bit
   - changed dark mode mini profile header background to something less bright
   - again, removed some unused stuff
-  21w39j:
-  - [d] iScord
-  - this version never happened
   21w40a/21w40b:
   - attempted to remove stage discovery related shit
   - some more unthemed stuff is now themed
   - updated some old stuff (channel permission toggle button group, streamer mode enabled button)
+  21w40c:
+  - upload modal :)
+  - new variables for variable variables for variables for settings sliding animation
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -768,14 +768,37 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   border-color: transparent!important
 }
 .uploadModal-2ifh8j {
-  background: linear-gradient(#313544,transparent)
+  background: linear-gradient(#7289da, #4f67b7);
+  box-shadow: inset 0 0 0 1px #fff4, 0 1px 4px #000 !important;
 }
 .uploadModal-2ifh8j .footer-3mqk7D {
-  background: linear-gradient(transparent,#313544);
-  box-shadow: none
+  background: linear-gradient(#3f5294, #4e61ab);
+  margin: 1px;
+  box-shadow: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .uploadModal-2ifh8j .footer-3mqk7D>.button {
   background: 0 0
+}
+.uploadModal-2ifh8j .checkbox-1ix_J3 {
+  border-color: #fff8 !important;
+}
+.uploadModal-2ifh8j .checked-3_4uQ9 .checkbox-1ix_J3 {
+  background: #fff !important;
+}
+.uploadModal-2ifh8j .scrollableContainer-2NUZem {
+  background: linear-gradient(#3d4f8c, #4d63af) !important;
+  border-color: #8094da;
+  box-shadow: inset 0 1px 6px #000;
+}
+.uploadModal-2ifh8j .slateTextArea-1Mkdgw {
+  color: #fff !important;
+  caret-color: white;
+}
+.uploadModal-2ifh8j .colorHeaderSecondary-3Sp3Ft,
+.uploadModal-2ifh8j .optional--ezibr {
+  color: #fff8 !important;
 }
 .uploadModal-2ifh8j {
   background-color: transparent !Important
@@ -810,8 +833,8 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   box-shadow: inset 0.5px 1px #fff3,inset -0.5px -1px #0004, 1px 1px 4px #0008 !important
 }
 .channelTextArea-rNsIhG {
-  margin-top: 25px;
-  margin-bottom: 30px
+  margin-top: 24px;
+  margin-bottom: 24px
 }
 .form-2fGMdU:before {
   display: none
@@ -1766,6 +1789,12 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
 .theme-dark .sidebarRegionScroller-3MXcoP {
   background: linear-gradient(#27282dcc,#18191ccc)!important
 }
+[aria-label="USER_SETTINGS"] .contentColumn-2hrIYH.contentColumnDefault-1VQkGM>div>.sectionTitle-2vauyC+.children-rWhLdy>.container-cMG81i.large-laZJpW+.group-2TdL0v.marginTop20-3TxNs6:before {
+  content: "if you see this on the actual discord client without looking at the raw css, dm 11pixels a picture of a red chair to confuse him lol";
+  color: #0f0;
+  margin: 0 0 20px;
+  display: block;
+}
 .layer-3QrUeG[aria-hidden="true"] {
   filter: blur(15px);
   transition: .2s filter cubic-bezier(0.6, 0.57, 0.43, 0.54)
@@ -1815,14 +1844,17 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
 }
 .layer-3QrUeG[aria-label*="_SETTINGS"] {
   animation: .8s sopen;
-  transform: none!important
+  animation-duration: var(--SettingsSlideAnimDuration1) !important;
+  transform: none !important;
 }
 .layer-3QrUeG[aria-label*="_SETTINGS"] .sidebarRegion-VFTUkN {
-  animation: .5s ssopen!important;
+  animation: .5s ssopen !important;
+  animation-duration: var(--SettingsSlideAnimDuration2) !important;
   transform: none!important
 }
 .layer-3QrUeG[aria-label*="_SETTINGS"] .contentRegion-3nDuYy {
-  animation: .5s scopen!important;
+  animation: .5s scopen !important;
+  animation-duration: var(--SettingsSlideAnimDuration2) !important;
   transform: none!important
 }
 @keyframes sopen {
@@ -3429,11 +3461,19 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
   box-shadow: inset 0 0 0 1px #bbb, inset 0 0 0 2px #eee;
 }
 .info-1VyQPT:after {
-    content: "You're using an outdated version of DTM-08's .theme.css file so some variables might be missing, go get the new version from github.com/xyzenix/dtm-08 (if you're on the latest version and you still see this, you're using the ThemeRepo version (which may be outdated for some reason) or 11pixels broke something (go complain in the discord server discord.gg/vUN9sNW))";
+    content: "You're using an outdated version of DTM-08's .theme.css file so some variables might be missing, go get the new version from github.com/xyzenix/dtm-08 (if you're on the latest version and you still see this, 11pixels likely broke something (go complain in the discord server discord.gg/vUN9sNW))";
     color: #f04747;
     text-transform: none;
     font-weight: bold;
-    display: var(--WhetherOrNotToShowTheStupidOutdatedWarningWhichIsPositionedInSuchAWayThatLiterallyNobodyWillSeeItButDoILookLikeICare)
+    display: var(--PointlesslyLongVariableNameThatSupposedlyControlsAWarningAboutTheThemeBeingOutdatedButWhatDoIKnow)
+}
+.platform-web .info-1VyQPT:after {
+    content: "they told me to never give up on my dreams, so i went back to sleep";
+    font-weight: 1000;
+    font-family: sans-serif;
+    color: #9b9b9b;
+    display: block !important;
+    transform: skew(-19deg, -3deg);
 }
 .wrapper-3qSb0d {
     background: linear-gradient(#25282c,#202124)
