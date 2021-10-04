@@ -1,5 +1,5 @@
 :root {
-  --theme-version: "21w40a";
+  --theme-version: "21w40b";
   --theme-verdate: "4 October 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
@@ -9,10 +9,6 @@
 }
 /*
   CHANGELOG
-  21w39d:
-  - new variables
-  21w39e:
-  - new boost marketing page
   21w39f:
   - fixed user popouts probably
   21w39g:
@@ -35,7 +31,7 @@
   21w39j:
   - [d] iScord
   - this version never happened
-  21w40a:
+  21w40a/21w40b:
   - attempted to remove stage discovery related shit
   - some more unthemed stuff is now themed
   - updated some old stuff (channel permission toggle button group, streamer mode enabled button)
@@ -269,10 +265,11 @@
   opacity: 1
 }
 .theme-light .unreadBar-3t3sYc {
-  background: linear-gradient(to bottom, #cccccc, #949494 100%) !important;
+  background: linear-gradient(to bottom, #dedede, #ffffff 100%) !important;
   box-shadow: inset 0 0 0 1px #fff9,0 1px 3px #0008;
-  color: #000;
+  color: #444;
   border-radius: 3px;
+  font-weight: 500;
   text-shadow: -1px -1px #fff6;
 }
 .theme-dark .unreadBar-3t3sYc {
@@ -614,7 +611,23 @@
 }
 .theme-dark .wrapperAudio-1jDe0Q, .theme-dark .attachment-33OFj0 {
   background: linear-gradient(#232323 0%, #404040 50%, #353535 50%, #313131 100%);
-  box-shadow: 0 2px 10px 2px black
+  box-shadow: inset 0 0 0 1px #fff2, 0 1px 4px #0008;
+  border: solid 1px #000;
+}
+.theme-light .wrapperAudio-1jDe0Q, .theme-light .attachment-33OFj0 {
+  background: linear-gradient(#ececec 0%, #efefef 50%, #dedede 50%, #ececec 100%);
+  box-shadow: inset 0 0 0 1px #fff, 0 1px 4px #0004;
+  border: solid 1px #bbb;
+}
+.theme-light .wrapperAudio-1jDe0Q .icon-1kp3fr, .theme-light .attachment-33OFj0 .icon-1kp3fr, .theme-light .audioMetadata-3zOuGv:before {
+  box-shadow: inset 0 0 0 1px #0004;
+  background-color: #0008;
+  background-size: 24px 24px;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  border-radius: 5px;
 }
 .audioControls-2HsaU6 {
   background: linear-gradient(#2f2f2f, #191919)
@@ -1477,8 +1490,20 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
 }
 .editVanityUrlCard-1ocV41 {
   border: solid 1px #000;
-  background: linear-gradient(#18191c,#2f3136);
-  box-shadow: inset 0 1px 10px, 0 1px #fff2
+  background: linear-gradient(#3b3d42,#1c1e20);
+  box-shadow: inset 0 0 0 1px #fff3, 0 1px 3px #0008;
+}
+.theme-light .editVanityUrlCard-1ocV41 {
+  border: solid 1px #fff;
+  background: linear-gradient(#efefef,#bfbfbf);
+}
+.prefixInput-14nUik {
+  background: linear-gradient(#2b2d30,#36363c);
+  border: none;
+  box-shadow: 0 0 0 1px #fff2, inset 0 1px 3px #0008
+}
+.theme-light .prefixInput-14nUik {
+  background: linear-gradient(#cfcfcf,#e3e3e3);
 }
 .stickyHeader-1pqx0j {
   width: 100%
@@ -1706,7 +1731,7 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   background: linear-gradient(#ffffff26,#0000004f);
   box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 2px 2px
 }
-.container-2VW0UT.elevationHigh-1PneE4 {
+.theme-light .container-2VW0UT.elevationHigh-1PneE4 {
   background: linear-gradient(#ffffff26,#00000022);
   box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #bbb, 0 2px 2px #ccc
 }
@@ -1756,8 +1781,9 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   color: #ccc;
   font-size: 12px;
   white-space: pre-wrap;
-  background: #222;
+  background: linear-gradient(#434348,#27272b);
   display: block;
+  box-shadow: inset 0 0 0 1px #fff2, 0 1px 3px #000;
   padding: 8px;
   border-radius: 8px;
 }
@@ -2485,6 +2511,14 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   padding: 4px;
   height: auto;
 }
+.theme-light .container-3baos1, .theme-light .container-1giJp5, .theme-light .activityPanel-28dQGo {
+  background: linear-gradient(#ffffff05, #fff2) !important;
+  box-shadow: 0 0 0 1px #b7b7b788, inset 0 0 0 1px #fff2, inset 0 1px #fff3, 0 1px 4px #676767;
+  border-radius: 5px;
+  margin: 8px 4px;
+  padding: 4px;
+  height: auto;
+}
 .theme-light .container-3baos1 .title-eS5yk3 {color: #000}
 .theme-dark .container-3baos1 .title-eS5yk3 {color: #fff}
 .theme-light .container-3baos1 .subtext-3CDbHg {color: #0006}
@@ -2926,11 +2960,13 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
 .theme-light .acronym-2mOFsV {
   box-shadow: inset 0 1px 5px #666;
   background: linear-gradient(#dbdfe6, #c4c7d4 50%, #b7bac3 50%, #dbdde2);
+  border-radius: 50%;
+  transition: 0s;
 }
 .theme-dark .acronym-2mOFsV {
   border-radius: 50%;
   box-shadow: inset 0 1px 5px #000;
-  transition: .3s;
+  transition: 0s;
   background: linear-gradient(#373c46, #313440 50%, #2a2d35 50%, #1d1e23);
 }
 .theme-light .wrapper-1BJsBx.selected-bZ3Lue .acronym-2mOFsV {
@@ -3035,6 +3071,12 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   text-shadow: 0 1px #000, 0 1px 3px #0004 !important;
   box-shadow: inset 0 1px 8px #000, 0 0 0 1px #000b, inset 0 0 0 1px #fff3, inset 0 -1px #0008, 0 0 1px 2px #fff2 !important;
   color: #fff !important;
+}
+.theme-light .lookFilled-1Gx00P:disabled, .theme-light .theme-light .lookFilled-1Gx00P:disabled:hover, .theme-light .lookFilled-1Gx00P:disabled:active, .theme-light .lookInverted-2D7oAl:disabled, .theme-light .bd-button-disabled, .theme-light .bd-button-disabled:hover, .theme-light .bd-button-disabled:active {
+  background: linear-gradient(to bottom, #bfbfbf, #bfbfbf 50%,#a9a9a9 50%, #d4d4d4) !important;
+  text-shadow: 0 1px #fff, 0 1px 3px #fff6 !important;
+  box-shadow: inset 0 1px 8px #0007, 0 0 0 1px #888, inset 0 0 0 1px #fff3 !important;
+  color: #444 !important;
 }
 .activeGame-14JI7o {
   background: linear-gradient(#909ba9, #656f7b);
@@ -3276,16 +3318,20 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
     background: #0004;
 }
 .autoApprovalTitle-3Suv0U, .manualApprovalTitle-3aZYAH {
-    color: #2b6;
+    color: #27e581;
     background: none;
-    border: solid 1px #2b6;
+    border: solid 1px;
     border-radius: 3px;
     box-shadow: inset 0 0 8px, 0 0 8px;
     text-shadow: 0 0 8px
 }
 .manualApprovalTitle-3aZYAH {
-    color: #2bb;
-    border-color: #2bb;
+    color: #40abff;
+}
+.theme-light .autoApprovalTitle-3Suv0U, .theme-light .manualApprovalTitle-3aZYAH {
+  background: linear-gradient(#666, #000 40%);
+  box-shadow: none;
+  border-color: #444
 }
 .approvalTypeBody-ctYX-S {
     background: none;
@@ -3629,4 +3675,14 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
   background: linear-gradient(#ced6e0, #747f8d);
   box-shadow: inset 0 0 0 1px #0004, 0 1px 3px #bbb;
   border-radius: 3px;
+}
+.theme-light .content-3YMskv>.wrapper-2jXpOf .content-1x5b-n .mainContent-u_9PKf {
+  opacity: .5;
+}
+.container-1v9gV9 {
+  padding-left: 4px;
+  margin-left: -4px;
+}
+.serverBoostTabItem-2hFTIN .horizontal-1ae9ci {
+  grid-gap: 8px;
 }
