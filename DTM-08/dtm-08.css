@@ -1,5 +1,5 @@
 :root {
-  --theme-version: "21w40e";
+  --theme-version: "21w40f";
   --theme-verdate: "6 October 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
@@ -38,6 +38,9 @@
   21w40e:
   - fixed a thing with dark sidebar on light mode
   - made reactions look a bit better on light mode (will do the same with dark mode when i stop being lazy)
+  21w40f:
+  - upload modal (drag and drop box)
+  - removed backdrop gradient (looks bad imo)
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -753,9 +756,6 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
 .ragingDemon-bDcoXE .symbol-3ffeCr img {
   content: url(https://cdn.discordapp.com/attachments/733624227378495488/894238701289345144/unknown.png);
 }
-.backdrop-1wrmKB {
-  background: linear-gradient(#2f3136,black)!important
-}
 .uploadModal-2ifh8j .inner-3nWsbo {
   border-color: transparent!important
 }
@@ -769,6 +769,30 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   box-shadow: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+.theme-dark .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc,
+.theme-light .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc {
+    background: #111;
+    box-shadow: 0 1px 10px 5px #111;
+}
+.theme-dark .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc .bgScale-1otPtc,
+.theme-light .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc .bgScale-1otPtc {
+  background: #111;
+  box-shadow: 0 1px 10px 5px #111;
+}
+.theme-dark .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc .inner-3nWsbo,
+.theme-light .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc .inner-3nWsbo {
+  border: solid 1px #7289da;
+  box-shadow: inset 0 0 5px #7289da, 0 0 5px #7289da;
+}
+.theme-dark .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc.error-kKl9o2 .inner-3nWsbo,
+.theme-light .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc.error-kKl9o2 .inner-3nWsbo {
+  border: solid 1px #f22;
+  box-shadow: inset 0 0 5px #f22, 0 0 5px #f22;
+}
+.theme-dark .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc .inner-3nWsbo .icon-kyxXVr.two-3BBQI9,
+.theme-light .uploadModalIn-1z07Bv .uploadDropModal-2kTwbc .inner-3nWsbo .icon-kyxXVr.two-3BBQI9 {
+  filter: drop-shadow(0 0 6px #0006);
 }
 .uploadModal-2ifh8j .footer-3mqk7D>.button {
   background: 0 0
