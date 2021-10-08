@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "21w40f";
-  --theme-verdate: "6 October 2021";
+  --theme-version: "21w40g";
+  --theme-verdate: "8 October 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -41,6 +41,12 @@
   21w40f:
   - upload modal (drag and drop box)
   - removed backdrop gradient (looks bad imo)
+  21w40g:
+  - fixed a text shadow
+  - improved windows titlebar button hover/active state
+  - replaced the unfunny image error icon with the discord logo because that's how it used to be back in 2016
+  - ended up having to somewhat redo the home button, which resulted in having to remove the public servers button so i don't break this for non-bd users
+  - broke the home button 4 times so idk if it works properly anymore
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -352,7 +358,7 @@
 }
 .lookFilled-1Gx00P, .button-coQXfM, .bd-button {
   background: linear-gradient(to bottom, #828eff 0%, #6d7bff 50%, #5661ce 50%,#4c58d2 100%) !important;
-  text-shadow: 0 1px #000, 0 1px 3px #0004;
+  text-shadow: 0 -1px #000, 0 1px 3px #0004;
   box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff4, inset 0 1px #fff4, inset 0 -1px #0008, 0 0 1px 2px #fff2;
 }
 .lookFilled-1Gx00P:hover, .button-coQXfM:hover, .bd-button:hover {
@@ -460,8 +466,11 @@
 .typeWindows-1za-n7 {
   background: transparent
 }
+.theme-dark .typeWindows-1za-n7 {
+  box-shadow: inset 0 -1px #0008;
+}
 .bg-h5JY_x {
-  background: linear-gradient(#484848 0px,#232323 22px,#2b2e32 10px)!important
+  background: linear-gradient(#46484c 0px,#2a2c2f 22px,#2b2e32 10px)!important
 }
 .theme-light .bg-h5JY_x {
   background: linear-gradient(#d0d0d0 0px,#bfbfbf 22px,#f3f3f3 10px)!important
@@ -472,14 +481,21 @@
   border-image: linear-gradient(#c5c5c5, #848484) 1 !important
 }
 .winButtonMinMax-PBQ2gm:hover {
-  background: linear-gradient(#505050, #424242) !important
+  background: linear-gradient(#585f6f, #353a44) !important;
+  opacity: 1 !important;
+}
+.theme-light .winButtonMinMax-PBQ2gm:hover {
+  background: linear-gradient(#a8c3ff, #80a3e8) !important;
 }
 .winButtonClose-1HsbF-:hover {
   background: linear-gradient(#ff3939, #a20909) !important;
   border-image: linear-gradient(#ff9494, #bf1b1b) 1 !important
 }
+.theme-light .winButtonMinMax-PBQ2gm:active {
+  background: linear-gradient(#778ec1, #80a3e8) !important;
+}
 .winButtonMinMax-PBQ2gm:active {
-  background: linear-gradient(#353535, #616161) !important;
+  background: linear-gradient(#3c3f58, #59597d) !important;
   opacity: 1
 }
 .winButtonClose-1HsbF-:active {
@@ -2956,13 +2972,18 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
     z-index: 1;
 }
 .tutorialContainer-2sGCg9 {
-    margin-bottom: 58px;
+    position: absolute;
+    top: -48px;
+    contain: none;
+}
+.platform-web .tutorialContainer-2sGCg9 {
+    position: fixed;
+    top: 0;
 }
 .scroller-1Bvpku {
     contain: none;
-}
-.scroller-1Bvpku {
-    padding-top: 0 !important
+    margin-top: 48px;
+    padding-top: 4px !important;
 }
 .tutorialContainer-2sGCg9 .pill-3N7f9r {
     display: none;
@@ -3032,7 +3053,7 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   border-radius: 35%;
   background: linear-gradient(#7181b9, #545c80 50%, #404a65 50%, #3c415d)
 }
-.tutorialContainer-2sGCg9+.listItem-GuPuDH {
+.tutorialContainer-2sGCg9+.listItem-GuPuDH .guildSeparator-33mFX6 {
   display: none;
 }
 .theme-light .authedApp-mj2Hmd {
@@ -3202,7 +3223,8 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   font-size: 16px;
 }
 #bd-pub-li {
-    top: 0px;
+    top: 48px;
+    display: none;
 }
 #bd-pub-button {
     left: 0px;
@@ -3749,3 +3771,23 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
 .serverBoostTabItem-2hFTIN .horizontal-1ae9ci {
   grid-gap: 8px;
 }
+.theme-light .imageError-2OefUi {
+    background: url(https://cdn.discordapp.com/attachments/733624227378495488/895720936559501382/discord_logo_icon.svg);
+}
+.theme-dark .imageError-2OefUi {
+    background: url(https://cdn.discordapp.com/attachments/733624227378495488/895721152822009856/discord_logo_icon.svg);
+}
+/*.theme-dark .imageError-2OefUi, .theme-light .imageError-2OefUi {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .25;
+}
+.inner-1gJC7_ {
+    padding: 12px;
+}
+.wanderingCubesItem-WPXqao {
+    box-shadow: 0 0 4px #7289da;
+    top: 12px;
+    left: 12px;
+}*/
