@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "21w40i";
-  --theme-verdate: "9 October 2021";
+  --theme-version: "21w41a";
+  --theme-verdate: "14 October 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -11,9 +11,6 @@
 }
 /*
   CHANGELOG
-  21w40e:
-  - fixed a thing with dark sidebar on light mode
-  - made reactions look a bit better on light mode (will do the same with dark mode when i stop being lazy)
   21w40f:
   - upload modal (drag and drop box)
   - removed backdrop gradient (looks bad imo)
@@ -27,6 +24,9 @@
   - DOES IT WORK PROPERLY YET?
   21w40i:
   - added another shadow to the user panel button group (and to the hover state of the buttons in that button group (only on dark mode (because i have no idea how to do anything properly on light mode (because i am not a light moe user (which i actually was going to be for a year (but i gave up halfway through (but that's still quite a lot of time (actually it isn't (or maybe it is and i'm lying (or is it though (it's not (yea it's not))))))))))))
+  21w41a:
+  - embed
+  - events
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -188,12 +188,12 @@
   background: linear-gradient(to bottom, #6139a2 0%,#612fb7 50%,#492586 51%,#452280 100%) !important;
   box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff2, inset 0 1px #fff2, inset 0 -1px #0002, 0 0 1px 2px #fff6;
 }
-.theme-dark .cardPrimary-1Hv-to, .theme-dark .codeRedemptionRedirect-1wVR4b, .detailsBlock-FoDTGA, .settingCard-3w2mVL, .theme-dark .card-Rhm0MB, .theme-dark .subscriptionsRedirectContainer-21LuI0, .theme-dark .changelogNotice-CQEWmQ.notice-2OK8bw {
+.theme-dark .cardPrimary-1Hv-to, .theme-dark .codeRedemptionRedirect-1wVR4b, .detailsBlock-FoDTGA, .settingCard-3w2mVL, .theme-dark .card-Rhm0MB, .theme-dark .subscriptionsRedirectContainer-21LuI0, .theme-dark .changelogNotice-CQEWmQ.notice-2OK8bw, .theme-dark .card-2X8BSG {
   background: linear-gradient(to bottom,#3b3d44,#2c2e33 50%,#2c2e33 50%,#232329) !important;
   box-shadow: inset 0 0 0 1px #fff3;
   border: solid 1px #000
 }
-.theme-light .cardPrimary-1Hv-to, .theme-light .codeRedemptionRedirect-1wVR4b, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-3w2mVL, .theme-light .card-Rhm0MB, .theme-light .subscriptionsRedirectContainer-21LuI0, .theme-light .changelogNotice-CQEWmQ.notice-2OK8bw {
+.theme-light .cardPrimary-1Hv-to, .theme-light .codeRedemptionRedirect-1wVR4b, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-3w2mVL, .theme-light .card-Rhm0MB, .theme-light .subscriptionsRedirectContainer-21LuI0, .theme-light .changelogNotice-CQEWmQ.notice-2OK8bw, .theme-light .card-2X8BSG {
   background: linear-gradient(to bottom,#e2e2e2,#d8d8d8 50%,#cecece 50%,#cacaca) !important;
   box-shadow: inset 0 0 0 1px #fffb;
   border: solid 1px #999
@@ -584,8 +584,8 @@
   box-shadow: inset 0 2px 10px 3px
 }
 .theme-dark .wrapper-35wsBm {
-  background: linear-gradient(#151517, #28282b);
-  box-shadow: 0 0 0 1px #fff2, inset 0 0 0 1px #0006, inset 0 1px 3px #000, 0 1px #fff2, 0 -1px #0008
+  background: linear-gradient(#27272a, #1b1b1c);
+  box-shadow: inset 0 0 0 1px #fff2, inset 0 1px #fff2, 0 0 0 1px #000, 0 1px 4px #000;
 }
 .theme-light .wrapper-35wsBm {
   background: linear-gradient(#ceced6, #e5e5f1);
@@ -3764,3 +3764,23 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
     top: 12px;
     left: 12px;
 }*/
+.theme-dark .previewCard-2AKKVB {
+    background: #0002 !important;
+    box-shadow: none;
+    border: dashed 2px #fff2;
+}
+.theme-light .previewCard-2AKKVB {
+    background: #0001 !important;
+    box-shadow: none;
+    border: dashed 2px #0002;
+}
+.rsvpCount-1Qtgtr {
+    background: linear-gradient(#555, #000 30%);
+    border: solid 1px #666;
+    border-radius: 3px;
+}
+.theme-light .rsvpCount-1Qtgtr {
+    background: linear-gradient(#fff, #bbbb 30%);
+    border: solid 1px #aaa;
+    border-radius: 3px;
+}
