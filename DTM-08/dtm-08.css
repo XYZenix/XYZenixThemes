@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "21w43a";
-  --theme-verdate: "25 October 2021";
+  --theme-version: "21w43b";
+  --theme-verdate: "29 October 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -11,9 +11,6 @@
 }
 /*
   CHANGELOG
-  21w40f:
-  - upload modal (drag and drop box)
-  - removed backdrop gradient (looks bad imo)
   21w40g:
   - fixed a text shadow
   - improved windows titlebar button hover/active state
@@ -32,6 +29,9 @@
   - channelNotice themed
   21w43a:
   - fixed a bug
+  21w43b:
+  - themed a thing
+  - and another thing
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -193,12 +193,12 @@
   background: linear-gradient(to bottom, #6139a2 0%,#612fb7 50%,#492586 51%,#452280 100%) !important;
   box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff2, inset 0 1px #fff2, inset 0 -1px #0002, 0 0 1px 2px #fff6;
 }
-.theme-dark .cardPrimary-1Hv-to, .theme-dark .codeRedemptionRedirect-1wVR4b, .detailsBlock-FoDTGA, .settingCard-3w2mVL, .theme-dark .card-Rhm0MB, .theme-dark .subscriptionsRedirectContainer-21LuI0, .theme-dark .changelogNotice-CQEWmQ.notice-2OK8bw, .theme-dark .card-2X8BSG {
+.theme-dark .cardPrimary-1Hv-to, .theme-dark .codeRedemptionRedirect-1wVR4b, .detailsBlock-FoDTGA, .settingCard-3w2mVL, .theme-dark .card-Rhm0MB, .theme-dark .subscriptionsRedirectContainer-21LuI0, .theme-dark .changelogNotice-CQEWmQ.notice-2OK8bw, .theme-dark .card-2X8BSG, .theme-dark .giftContainer-TKat2X {
   background: linear-gradient(to bottom,#3b3d44,#2c2e33 50%,#2c2e33 50%,#232329) !important;
   box-shadow: inset 0 0 0 1px #fff3;
-  border: solid 1px #000
+  border: solid 1px #000;
 }
-.theme-light .cardPrimary-1Hv-to, .theme-light .codeRedemptionRedirect-1wVR4b, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-3w2mVL, .theme-light .card-Rhm0MB, .theme-light .subscriptionsRedirectContainer-21LuI0, .theme-light .changelogNotice-CQEWmQ.notice-2OK8bw, .theme-light .card-2X8BSG {
+.theme-light .cardPrimary-1Hv-to, .theme-light .codeRedemptionRedirect-1wVR4b, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-3w2mVL, .theme-light .card-Rhm0MB, .theme-light .subscriptionsRedirectContainer-21LuI0, .theme-light .changelogNotice-CQEWmQ.notice-2OK8bw, .theme-light .card-2X8BSG, .theme-light .giftContainer-TKat2X {
   background: linear-gradient(to bottom,#e2e2e2,#d8d8d8 50%,#cecece 50%,#cacaca) !important;
   box-shadow: inset 0 0 0 1px #fffb;
   border: solid 1px #999
@@ -1785,7 +1785,7 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   background: linear-gradient(#27282dcc,#18191ccc)!important
 }
 [aria-label="USER_SETTINGS"] .contentColumn-2hrIYH.contentColumnDefault-1VQkGM>div>.sectionTitle-2vauyC+.children-rWhLdy>.container-cMG81i.large-laZJpW+.group-2TdL0v.marginTop20-3TxNs6:before {
-  content: "if you see this on the actual discord client without looking at the raw css, dm 11pixels a picture of a red chair to confuse him lol";
+  content: "🪑";
   color: #0f0;
   margin: 0 0 20px;
   display: block;
@@ -3808,4 +3808,34 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
 .theme-light .channelNotice-3I83Cr {
     background: linear-gradient(#dcdcdc,#d2d2d2 50%, #cccccc 50%, #dadada);
     box-shadow: inset 0 1px #fff8, inset 0 -1px #0002, 0 1px 3px #0008;
+}
+.container-3fNISf {
+    margin-top: -16px;
+    margin-left: 0;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: linear-gradient(#4b4c52,#303031);
+    border-bottom: solid 1px #222;
+    box-shadow: 0 1px #666;
+}
+.theme-light .container-3fNISf {
+    background: linear-gradient(#cecece,#f3f3f3);
+    border-bottom: solid 1px #fff;
+    box-shadow: 0 1px #ddd;
+}
+.holidayHeroContainer-3emvlW {
+    background: linear-gradient(#E292AA,#A764ED);
+    box-shadow: inset 0 1px #fff6, inset 0 0 0 1px #fff3, inset 0 -1px #0002, 0 1px 4px #0008;
+    border: solid 1px #000;
+    border-radius: 3px;
+}
+.holidayHeroIcon-2v_8Qd {
+  filter: drop-shadow(0 -1px #0004)
+}
+.holidayHeroHeader-1q_0AX, .holidayHeroBody-3RAoUB {
+  text-shadow: 0 -1px #0004;
+}
+.giftContainer-TKat2X {
+  border-radius: 3px;
 }
