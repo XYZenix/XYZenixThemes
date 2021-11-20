@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "21w46a";
-  --theme-verdate: "18 November 2021";
+  --theme-version: "21w46b";
+  --theme-verdate: "20 November 2021";
   --login-background: url(https://images.unsplash.com/photo-1514902408987-9b4b79579a8e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1053&q=80);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -26,6 +26,9 @@
   - fixed user list again
   21w46a:
   - fixed broken shit thanks discord
+  21w46b:
+  - fixed some broken shit ('happening now' channel list banner, new server & server discovery buttons and something in the community server settings tab)
+  - made the user profile gradient on light mode more apparent
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -491,7 +494,7 @@
   border-bottom: solid 1px #575757
 }
 .theme-light .userPopout-xaxa6l .headerTop-3vNv-a {
-  background:  linear-gradient(#fff 0%, #fff 70%, #fafafa 70%, #fff 100%);
+  background:  linear-gradient(#fff 0%, #fff 50%, #efefef 50%, #fff 100%);
   border-bottom: solid 1px #ddd
 }
 .topSection-y3p-_D {
@@ -499,7 +502,7 @@
   border-bottom: solid 1px #575757
 }
 .theme-light .topSection-y3p-_D {
-  background: linear-gradient(#fff 0%, #fff 90%, #fafafa 90%, #fff 100%);
+  background: linear-gradient(#fff 0%, #fff 66%, #ececec 68%, #fff 100%);
   border-bottom: solid 1px #ddd
 }
 .avatar-37jOim {
@@ -1634,23 +1637,23 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
 .shine-2f1uEU {
   background: linear-gradient(to left,#fff3, #0000)
 }
-.upsellContainer-L9xv7w {
+.upsellContainer-1G_YVf {
   background: linear-gradient(#3c3e44,#202125);
   box-shadow: 0 0 0 1px #000,inset 0 0 0 1px #fff1,0 2px #fff2,inset 0 1px #fff2;
   border-radius: 5px
 }
-.theme-light .upsellContainer-L9xv7w {
+.theme-light .upsellContainer-1G_YVf {
   background: linear-gradient(#e0e1e4,#b8b8bb);
   box-shadow: 0 0 0 1px #0004,inset 0 0 0 1px #fff1,0 2px #fff2,inset 0 1px #fff2;
 }
-.upsellFooter-ZYsio_ {
+.upsellFooter-LSx-FB {
   padding: 5px;
   margin: 10px;
   background: linear-gradient(#3b3d44,#292a2f);
   border-radius: 3px;
   box-shadow: 0 0 0 1px #000,inset 0 0 0 1px #fff1,0 2px #fff2,inset 0 1px #fff2
 }
-.theme-light .upsellFooter-ZYsio_ {
+.theme-light .upsellFooter-LSx-FB {
   background: linear-gradient(#dcdee2,#bdbec3);
   box-shadow: 0 0 0 1px #0004,inset 0 0 0 1px #fff1,0 2px #fff2,inset 0 1px #fff2
 }
@@ -2852,21 +2855,21 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   background: linear-gradient(#d8d8d8,#afafaf);
   box-shadow: inset 0 -1px #fff2;
 }
-.circleIconButton-1QV--U {
+.circleIconButton-hZmpE8 {
     border-radius: 50%;
     background: linear-gradient(#303138, #2d2e31 50%, #282a2f 50%, #323336);
     box-shadow: inset 0 0 0 1px #fff4, inset 0 2px #fff1, inset 0 -2px #0005;
     border: solid 1px #000;
 }
-.theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-1QV--U {
+.theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-hZmpE8 {
     border: solid 1px #fff;
     background: linear-gradient(#ffffff, #ffffff 50%, #ececec 50%, #ffffff);
     box-shadow: inset 0 0 5px #666;
 }
-.circleIconButton-1QV--U:hover, .circleIconButton-1QV--U:active {
+.circleIconButton-hZmpE8:hover, .circleIconButton-hZmpE8:active {
     background: linear-gradient(#4c4d56, #4a4c52 50%, #42464e 50%, #3e4148);
 }
-.theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-1QV--U:hover, .theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-1QV--U:active, .theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-1QV--U.selected-1JjBPm {
+.theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-hZmpE8:hover, .theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-hZmpE8:active, .theme-light .guilds-1SWlCJ:not(.theme-dark) .circleIconButton-hZmpE8.selected-1JjBPm {
     background: linear-gradient(#b3bbff, #7d8aff 50%, #6e7cff 50%, #a8b1ff);
 }
 .channelNotice-2bJINM {
@@ -3793,15 +3796,17 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
     25% {box-shadow: 0 0 0 10px #3BA55D00}
     100% {box-shadow: 0 0 0 10px #3BA55D00}
 }
+.channelNotice-3I83Cr {
+    margin: 0;
+    padding: 16px;
+    box-shadow: inset 0 1px #fff2, inset 0 -1px #0006, 0 1px 3px #0008;
+}
 .theme-light .channelNotice-3I83Cr {
     background: linear-gradient(#dcdcdc,#d2d2d2 50%, #cccccc 50%, #dadada);
     box-shadow: inset 0 1px #fff8, inset 0 -1px #0002, 0 1px 3px #0008;
 }
 .theme-dark .channelNotice-3I83Cr {
     background: linear-gradient(#212325,#252629 50%, #1f2023 50%, #202123);
-    margin: 0;
-    padding: 16px;
-    box-shadow: inset 0 1px #fff2, inset 0 -1px #0006, 0 1px 3px #0008;
 }
 
 .theme-light .container-3fNISf {
