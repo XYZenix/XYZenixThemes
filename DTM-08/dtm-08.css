@@ -1,5 +1,5 @@
 :root {
-  --theme-version: "21w49b";
+  --theme-version: "21w49c";
   --theme-verdate: "13 December 2021";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
@@ -11,13 +11,6 @@
 }
 /*
   CHANGELOG
-  21w46a:
-  - fixed broken shit thanks discord
-  21w46b:
-  - fixed some broken shit ('happening now' channel list banner, new server & server discovery buttons and something in the community server settings tab)
-  - made the user profile gradient on light mode more apparent
-  21w48a:
-  - snowsfixing
   21w48b:
   - snowsgiving 2.0
   21w48c:
@@ -37,17 +30,19 @@
   - some changes in attempt to make light mode a bit better
   21w49b:
   - snowstaking
+  21w49c:
+  - i gave up on writing actual changelogs ages ago
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
   margin-bottom: 0px
 }
-.theme-light .panels-j1Uci_ .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6, .theme-light .actions-aUdUfC {
+.theme-light .panels-j1Uci_ .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6, .theme-light .actions-aUdUfC, .theme-light .wrapper-3NnKdC {
   background: rgba(255 255 255/0.2);
   box-shadow: inset 0 0 0 1px #fff4, 0 0 0 1px #0002;
   border-radius: 5px;
 }
-.theme-dark .panels-j1Uci_ .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6, .theme-dark .actions-aUdUfC {
+.theme-dark .panels-j1Uci_ .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyStart-2NDFzi.alignStretch-DpGPf3.noWrap-3jynv6, .theme-dark .actions-aUdUfC, .theme-dark .wrapper-3NnKdC {
   background: linear-gradient(#0008, #0001);
   border-radius: 5px;
   box-shadow: inset 0 1px 5px black, 0 1px #fff3;
@@ -1467,7 +1462,9 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   box-shadow: inset 0 1px 3px
 }
 .searchResultsWrap-3-pOjs {
-  background: linear-gradient(#18191c,#2f3136)
+  background: linear-gradient(#18191c,#2f3136);
+  animation: .4s sropen ease-out;
+  box-shadow: -1px 0 16px #000b;
 }
 .theme-light .searchResultsWrap-3-pOjs {
   background: linear-gradient(#e0e2e8,#c1c2c5)
@@ -1985,9 +1982,6 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
 }
 .theme-light .attachButton-2WznTc {
   border-image: linear-gradient(#0000 10%,#c6c9d0 30%, #b8bbc1 70%,#0000 90%) 1
-}
-.searchResultsWrap-3-pOjs {
-  animation: .4s sropen ease-out
 }
 @keyframes sropen {
   0% {
@@ -2867,11 +2861,21 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
 [lang="en-US"] .tierUnlocked-27DwHo:after {
   content: "!";
 }
+@keyframes tsopen {
+  0% {
+    width: 0px;
+  }
+  100% {
+      width: 400px;
+  }
+}
 .threadSidebar-1o3BTy {
   border-radius: 0;
   margin-left: 0;
   box-shadow: -1px 0 10px #000;
   z-index: 2;
+  /*min-width: 0;
+  animation: .4s tsopen ease-out;*/
 }
 .threadSidebarOpen-vdkwIh {
   border-radius: 0 !important;
