@@ -5,7 +5,7 @@ This is where I will put website themes I've made.
 [![](https://img.shields.io/github/commit-activity/m/XYZenix/XYZenixThemes?color=4499ff&style=for-the-badge)](https://github.com/XYZenix/XYZenixThemes/commits/master)
 [![](https://img.shields.io/github/last-commit/XYZenix/XYZenixThemes?style=for-the-badge)](https://github.com/XYZenix/XYZenixThemes/commits/master)
 
-![](https://cdn.discordapp.com/attachments/733624227378495488/812685002784374834/unknown.png)
+![image](https://user-images.githubusercontent.com/51988432/145855755-eb6e336a-06f9-4a1b-a10a-e0d5897d9af8.png)
 ## Theme list
 
 Website | Theme Name | Link | Description | Preview
@@ -16,7 +16,7 @@ Steam Library Themes | \<MULTIPLE\> | Below the discord theme tables | Various t
 
 ## Discord Themes
 
-![](https://cdn.discordapp.com/attachments/733624227378495488/827974887708426270/unknown.png)
+![image](https://user-images.githubusercontent.com/51988432/145855507-90b72bb4-816e-4f66-9f36-31a898da9b91.png)
 
 Currently active:
 
