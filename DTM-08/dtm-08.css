@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "21w51c";
-  --theme-verdate: "23 December 2021";
+  --theme-version: "21w51d";
+  --theme-verdate: "24 December 2021";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -8,20 +8,28 @@
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Kakuna"; /* disregard this line's existence */
+  --randomPokemon: "Blastoise"; /* disregard this line's existence */
 }
 /*
   BD plugins that I'm sure work fine:
+  - AppNotifications (not themed)
   - BDContextMenu
+  - BetterNsfwTag
+  - CharCounter
   - GameActivityToggle
+  - GuildProfile
   - OldTitleBar
-  - Guild Profiles
+  - PermissionsViewer
   - PersonalPins
   - PluginRepo
+  - QuickMention
+  - ReadAllNotificationsButton
+  - ServerCounter
+  - ServerDetails
   - ShowAllMessageButtons
+  - ShowConnections
   - ThemeRepo
   - Translator
-  - PermissionsViewer
 
   BD plugins that work for the most part but could use improvements:
   - DisplayServersAsChannels
@@ -32,8 +40,6 @@
 */
 /*
   CHANGELOG
-  21w49b:
-  - snowstaking
   21w49c:
   - i gave up on writing actual changelogs ages ago
   21w50a:
@@ -54,6 +60,10 @@
   - fix permissionsviewer
   21w51c:
   - fix a bit of unused shit and remove new shit that i forgot i already fixed but broke because discord rerolled a classname
+  21w51d:
+  - fix Reactions button icon in message actions bar
+  - tried to make this theme more compatible with a few other plugins
+  - fixed the connections on user profiles not being light in light mode
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -589,13 +599,13 @@
 .flex-1xMQg5.flex-1O1GKY.horizontal-1ae9ci.horizontal-2EEEnY.flex-1O1GKY.directionRow-3v3tfG.justifyBetween-2tTqYu.alignStretch-DpGPf3.noWrap-3jynv6, .side-8zPYf6 .item-PXvHYJ .horizontal-1ae9ci>.flex-1xMQg5:first-child {
   background: transparent !important
 }
-.rolesList-1geHY1 {
+.rolesList-1geHY1, .connections-pPr4as {
   border-radius: 0px;
   background: linear-gradient(#3e3e44, #303033)!important;
   padding: 4px!important;
   margin: 0;
 }
-.theme-light .rolesList-1geHY1 {
+.theme-light .rolesList-1geHY1, .theme-light .connections-pPr4as {
   background: linear-gradient(#d8d8dc, #a5a5a7)!important;
 }
 .rolesList-1geHY1::-webkit-scrollbar {
@@ -3693,7 +3703,7 @@ html.theme-dark .title-1hTJEU, html.theme-dark .title-1trl6A, html.theme-dark .s
   width: 240px;
 }
 .menu-3sdvDG .newBadge-34a1Fs,
-.item-PXvHYJ .textBadge-1iylP6 {
+.item-PXvHYJ .textBadge-1iylP6, .nsfwTag-666omg .textBadge-1iylP6 {
   background: none !important;
   border-radius: 3px;
   box-shadow: inset 0 0 0 1px #f04747, 0 0 5px #f04747, inset 0 0 5px #f04747;
@@ -4411,6 +4421,13 @@ html.theme-light[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9[aria-label=
   background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/920346802643947560/delete.png)
 }
 
+html.theme-dark[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9[aria-label="Reactions"] {
+  background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/923747080189648906/reactions.png)
+}
+html.theme-light[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9[aria-label="Reactions"] {
+  background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/923747079971549245/reactions_dark.png)
+}
+
 html.theme-dark[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9[aria-label="Add reaction"],
 html.theme-dark[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9[aria-label="Add Reaction"],
 html.theme-dark[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9[arialabel="Add reaction"],
@@ -4445,6 +4462,13 @@ html.theme-light[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9.cursorPoint
   background: no-repeat url(https://cdn.discordapp.com/attachments/733624227378495488/920750282793685062/note_message_dark.png) center/24px !important
 }
 
+html.theme-dark[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9.cursorPointer-B3uwDA svg[name="Nova_At"] {
+  background: no-repeat url(https://cdn.discordapp.com/attachments/733624227378495488/923755840211656725/mention.png) center/24px !important
+}
+html.theme-light[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9.cursorPointer-B3uwDA svg[name="Nova_At"] {
+  background: no-repeat url(https://cdn.discordapp.com/attachments/733624227378495488/923755839922270258/mention_dark.png) center/24px !important
+}
+
 html.theme-dark[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9.cursorPointer-B3uwDA svg[name="Translate"] {
   background: no-repeat url(https://cdn.discordapp.com/attachments/733624227378495488/920752928904601650/translate.png) center/24px !important
 }
@@ -4462,10 +4486,10 @@ html[lang^="en-"] .buttonContainer-DHceWr .button-1ZiXG9.cursorPointer-B3uwDA sv
   box-shadow: inset 0 1px 4px #0008;
 }
 .marketingLogoImage-2SzXIR {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/918779425091366952/boost.png);
+  content: url(https://cdn.discordapp.com/attachments/733624227378495488/918779425091366952/boost.png);
 }
 .card-3AyPWq {
-    background: none !important;
+  background: none !important;
 }
 .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS container-7uh5fX"]>[class="header-1VS4tm"]>[class="threadIcon-3XJhLD"] path {
   display: none;
@@ -4481,8 +4505,7 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   background: linear-gradient(#393c42, #343538);
   box-shadow: inset 0 1px #fff3, inset 0 -1px #0005, 0 1px 3px #0008;
 }
-.theme-light
-.icon-3pEw1v {
+.theme-light .icon-3pEw1v {
   background: linear-gradient(#f7f7f7, #c5c5c5);
   box-shadow: inset 0 1px #fff3, inset 0 -1px #0005, 0 1px 3px #0008;
 }
@@ -4502,17 +4525,17 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   content: url(https://cdn.discordapp.com/attachments/733624227378495488/918822904613994496/death.svg);
 }
 .container-19nk2r .footer-1JuRYY {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 8px;
 }
 .container-19nk2r .guildSidebar-2OCzWB {
-    background: linear-gradient(#353940, #1d1d22);
-    box-shadow: inset 0 0 0 1px #fff2;
-    border-right: solid 1px
+  background: linear-gradient(#353940, #1d1d22);
+  box-shadow: inset 0 0 0 1px #fff2;
+  border-right: solid 1px
 }
 .theme-light .container-19nk2r .guildSidebar-2OCzWB {
-    background: linear-gradient(#ffffff, #d1d1d1);
-    border-right-color: #bbb;
+  background: linear-gradient(#ffffff, #d1d1d1);
+  border-right-color: #bbb;
 }
 .container-19nk2r .content-1LAB8Z {
   background: linear-gradient(#1e1f24, #282a30);
@@ -4579,6 +4602,9 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   box-shadow: inset 0 0 0 1px #fff1, inset 0 1px #fff2, 0 1px 3px #0008;
   border: none;
 }
+.theme-light .connectedAccount-2Jb-Z0 {
+  background: linear-gradient(#e8e8e8, #f5f5f5 50%, #e8e8e8 50%, #f3f3f3);
+}
 .wrapper-3NnKdC {
   border-radius: 0 !important;
 }
@@ -4603,18 +4629,18 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   --radio-bar-accent-color: #000b;
 }
 .channelNotice-1-XFjC.invite-OjTXrW {
-    background: url(https://cdn.discordapp.com/attachments/733624227378495488/920392260426801182/notice_invite.png) no-repeat center 20px/114px;
+  background: url(https://cdn.discordapp.com/attachments/733624227378495488/920392260426801182/notice_invite.png) no-repeat center 20px/114px;
 }
 .attachedBars-tZDmyV {
-    background: linear-gradient(#2f3036, #1f2024 50%, #1c1d20 50%, #1f2024);
-    border: solid 1px;
-    border-bottom: none;
-    box-shadow: inset 0 0 0 1px #fff1, inset 0 1px #fff3, 0 0 4px #0008
+  background: linear-gradient(#2f3036, #1f2024 50%, #1c1d20 50%, #1f2024);
+  border: solid 1px;
+  border-bottom: none;
+  box-shadow: inset 0 0 0 1px #fff1, inset 0 1px #fff3, 0 0 4px #0008
 }
 .theme-light .attachedBars-tZDmyV {
-    background: linear-gradient(#efefef, #e7e7e7 50%, #d5d5d5 50%, #d3d3d3);
-    border-color: #bbb;
-    box-shadow: inset 0 1px #fff, 0 0 4px #0004;
+  background: linear-gradient(#efefef, #e7e7e7 50%, #d5d5d5 50%, #d3d3d3);
+  border-color: #bbb;
+  box-shadow: inset 0 1px #fff, 0 0 4px #0004;
 }
 .attachedBars-tZDmyV+.scrollableContainer-2NUZem {
   border-top-left-radius: 0;
@@ -4694,13 +4720,13 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   width: calc(100% - 24px);
 }
 .channelNotice-1-XFjC.quickswitcher-35bYg4 {
-    background: url(https://cdn.discordapp.com/attachments/733624227378495488/920402102566674452/notice_qs.png) no-repeat center 35px/101px;
+  background: url(https://cdn.discordapp.com/attachments/733624227378495488/920402102566674452/notice_qs.png) no-repeat center 35px/101px;
 }
 [src="/assets/45372ebbfad1c491747d6f5b7117fd88.svg"] {
   content: url(https://cdn.discordapp.com/attachments/733624227378495488/920402880144494592/verify-phone.png);
 }
 .theme-dark .errorPage-u8SYh4 {
-    background: none;
+  background: none;
 }
 .theme-dark .errorPage-u8SYh4 .lookFilled-1Gx00P.colorBrand-3pXr91 {
   background: #0008 !important;
@@ -4713,47 +4739,47 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   color: #fffb;
 }
 .group-2dAfBy .item-3T2z1R {
-    background: linear-gradient(#383a3e, #434448 50%, #393b3e 50%, #282a2d);
-    box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1;
-    text-shadow: 0 -1px #000b;
-    border-right: solid 1px #222;
+  background: linear-gradient(#383a3e, #434448 50%, #393b3e 50%, #282a2d);
+  box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1;
+  text-shadow: 0 -1px #000b;
+  border-right: solid 1px #222;
 }
 .group-2dAfBy .item-3T2z1R:hover {
-    background: linear-gradient(#4e5156, #4e5054 50%, #424346 50%, #34363a);
+  background: linear-gradient(#4e5156, #4e5054 50%, #424346 50%, #34363a);
 }
 .group-2dAfBy .item-3T2z1R:active {
-    background: linear-gradient(#26282b, #36373a 50%, #292b2d 50%, #282a2d);
+  background: linear-gradient(#26282b, #36373a 50%, #292b2d 50%, #282a2d);
 }
 .theme-light .group-2dAfBy .item-3T2z1R {
-    background: linear-gradient(#e6e6e6, #e8e8e8 50%, #d4d4d4 50%, #e2e2e2);
-    text-shadow: 0 1px #fff;
-    border: none;
-    border-left: solid 1px #bbb;
-    border-right: solid 1px #eee;
+  background: linear-gradient(#e6e6e6, #e8e8e8 50%, #d4d4d4 50%, #e2e2e2);
+  text-shadow: 0 1px #fff;
+  border: none;
+  border-left: solid 1px #bbb;
+  border-right: solid 1px #eee;
 }
 .theme-light .group-2dAfBy .item-3T2z1R:hover {
-    background: linear-gradient(#ffffff, #ffffff 50%, #efefef 50%, #ffffff);
+  background: linear-gradient(#ffffff, #ffffff 50%, #efefef 50%, #ffffff);
 }
 .theme-light .group-2dAfBy .item-3T2z1R:active {
-    background: linear-gradient(#d0d0d0, #c5c4c4 50%, #b5b5b5 50%, #cccccc);
+  background: linear-gradient(#d0d0d0, #c5c4c4 50%, #b5b5b5 50%, #cccccc);
 }
 .group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m {
-    background: linear-gradient(#707ade, #5660c7 50%, #5159a5 50%, #414a9e) !important;
+  background: linear-gradient(#707ade, #5660c7 50%, #5159a5 50%, #414a9e) !important;
 }
 .theme-light .group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m {
-    text-shadow: 0 -1px #000;
+  text-shadow: 0 -1px #000;
 }
 .theme-light .group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m .colorStandard-2KCXvj {
-    color: #fff !important;
+  color: #fff !important;
 }
 .group-2dAfBy {
-    box-shadow: 0 1px 3px #0008;
-    border-radius: 3px;
+  box-shadow: 0 1px 3px #0008;
+  border-radius: 3px;
 }
 .theme-light .group-2dAfBy {
-    box-shadow: 0 1px 3px #000;
-    border: solid 1px #fff;
-    border-radius: 3px;
+  box-shadow: 0 1px 3px #000;
+  border: solid 1px #fff;
+  border-radius: 3px;
 }
 .group-2dAfBy .item-3T2z1R:last-of-type {
   border-right: none;
@@ -4762,25 +4788,25 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   border-left: none;
 }
 .spamBanner-F4eeXk {
-    background: none;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 18px;
-    margin-bottom: 18px;
+  background: none;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 .theme-dark .container-3xeWHc {
-    background: linear-gradient(#2b2d30, #131517);
-    box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 1px 3px #0008;
+  background: linear-gradient(#2b2d30, #131517);
+  box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 1px 3px #0008;
 }
 .theme-dark .container-3xeWHc .iconContainer-3eYW51 {
   background: #0003;
   box-shadow: inset 0 1px 3px #0008;
 }
 .theme-dark .scroller-3BxosC .separator-2I32lJ {
-    border-image: linear-gradient(to right, #0000,#fff3,#0000) 1;
+  border-image: linear-gradient(to right, #0000,#fff3,#0000) 1;
 }
 .theme-light .scroller-3BxosC .separator-2I32lJ {
-    border-image: linear-gradient(to right, #0000,#0004,#0000) 1;
+  border-image: linear-gradient(to right, #0000,#0004,#0000) 1;
 }
 .privateThreadFeaturePill-wa49np {
   border-radius: 3px;
@@ -4791,8 +4817,71 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   margin-left: 2px;
 }
 .topSection-y3p-_D .nameTag-ECvD8P {
-   text-shadow: 0 -1px black, 0 1px 4px #000b;
+  text-shadow: 0 -1px black, 0 1px 4px #000b;
 }
 .theme-light .topSection-y3p-_D .nameTag-ECvD8P {
-   text-shadow: 0 1px #fff8, 0 1px 4px #0006;
+  text-shadow: 0 1px #fff8, 0 1px 4px #0006;
+}
+.serverCountWrap-k8F5De {
+  margin-top: 10px;
+}
+.serverCount-FsTTs1 {
+  font-weight: 700 !important;
+  color: #888;
+  font-size: 10px;
+  text-transform: none;
+  text-shadow: 0 -1px #000;
+}
+.theme-light .serverCount-FsTTs1 {
+  color: #222;
+  text-shadow: 0 1px #fff;
+}
+.scroller-1Bvpku {
+  background: none;
+}
+.scroller-1Bvpku .frame-oXWS21 .button-Jt-tIg {
+  background: linear-gradient(#333438, #2e2f31 50%, #242425 50%, #1f2021);
+  box-shadow: inset 0 0 0 1px #fff1, inset 0 1px #fff2, 0 1px 3px #0008;
+  text-shadow: 0 -1px #000, 0 1px 3px #0008;
+  transition: 0s;
+}
+.scroller-1Bvpku .frame-oXWS21 .button-Jt-tIg:hover {
+  background: linear-gradient(#465588, #5e6fab 50%, #445282 50%, #434f77);
+  box-shadow: inset 0 0 0 1px #fff1, inset 0 1px #fff2, 0 1px 6px #000b;
+}
+.scroller-1Bvpku .frame-oXWS21 .button-Jt-tIg:active {
+  background: linear-gradient(#292f46, #3e4458 50%, #2e3344 50%, #1d2029);
+  box-shadow: inset 0 1px 3px #000b, 0 1px #fff2, 0 0 0 1px #ffffff10;
+}
+.theme-light .scroller-1Bvpku .frame-oXWS21 .button-Jt-tIg {
+  background: linear-gradient(#c1c3ca, #d7d9de 50%, #d4d4d4 50%, #d0d0d0);
+  box-shadow: inset 0 0 0 1px #fff, 0 1px 3px #0008;
+  text-shadow: 0 1px #fffb;
+  font-weight: 500;
+}
+.theme-light .scroller-1Bvpku .frame-oXWS21 .button-Jt-tIg:hover {
+  background: linear-gradient(#cbd7ff, #9db4ec 50%, #90a7e0 50%, #9db4ec);
+  box-shadow: inset 0 0 0 1px #fff, 0 1px 3px #000b;
+  text-shadow: 0 -1px #0008, 0 1px 3px #0008;
+}
+.theme-light .scroller-1Bvpku .frame-oXWS21 .button-Jt-tIg:active {
+  background: linear-gradient(#c3c6d0, #c3c4c7 50%, #aaacb1 50%, #b4b5b7);
+  box-shadow: inset 0 1px 3px #0008, 0 1px #fff;
+  color: #fff;
+  text-shadow: 0 -1px #0008, 0 1px 3px #0008;
+}
+.frame-oXWS21:active {
+  transform: none;
+}
+.connections-pPr4as {
+  padding: 8px !important;
+  margin-bottom: 0;
+  padding-bottom: 0 !important;
+}
+.counter-uAzbKp.charCounter-7fw40k.chatCounter-XOMPsh {
+  text-shadow: 0 -1px black;
+  font-weight: 600;
+}
+.theme-light .counter-uAzbKp.charCounter-7fw40k.chatCounter-XOMPsh {
+  text-shadow: 0 1px #fff, 0 1px 3px #0008;
 }
