@@ -1,5 +1,5 @@
 :root {
-  --theme-version: "21w51d";
+  --theme-version: "21w51e";
   --theme-verdate: "24 December 2021";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
@@ -8,7 +8,7 @@
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Blastoise"; /* disregard this line's existence */
+  --randomPokemon: "Venipede"; /* disregard this line's existence */
 }
 /*
   BD plugins that I'm sure work fine:
@@ -40,8 +40,6 @@
 */
 /*
   CHANGELOG
-  21w49c:
-  - i gave up on writing actual changelogs ages ago
   21w50a:
   - lots of fixes and stuff
   21w50b:
@@ -64,6 +62,8 @@
   - fix Reactions button icon in message actions bar
   - tried to make this theme more compatible with a few other plugins
   - fixed the connections on user profiles not being light in light mode
+  21w51e:
+  - fixed screenshare modal button group thing
 */
 .container-3baos1 {
   border-top: solid 1px #0D0E11;
@@ -952,12 +952,12 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   box-shadow: inset 0 0 0 1px #fff3, 0 0 2px #000, 0 2px 4px
 }
 .cardWrapper-2Min21:hover {
-    background: linear-gradient(#35373e, #24272a);
-    box-shadow: inset 0 0 0 1px #fff3, 0 0 4px #000, 0 4px 8px #000b;
+  background: linear-gradient(#35373e, #24272a);
+  box-shadow: inset 0 0 0 1px #fff3, 0 0 4px #000, 0 4px 8px #000b;
 }
 .cardWrapper-2Min21:active {
-    background: linear-gradient(#1c1e22, #1d2022);
-    box-shadow: 0 0 0 1px #fff3, inset 0 1px 4px #000b;
+  background: linear-gradient(#1c1e22, #1d2022);
+  box-shadow: 0 0 0 1px #fff3, inset 0 1px 4px #000b;
 }
 .theme-light .userPopout-xaxa6l, .theme-light .guild-Hq0WWA, .theme-light .cardWrapper-2Min21 {
   box-shadow: 0 0 0 1px #fff3, 0 0 2px #bbb, 0 4px 10px #0004
@@ -1653,15 +1653,15 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   margin: 0!important
 }
 #permissions-popout .member-perms-header {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 12px;
-    line-height: 16px;
-    color: var(--header-secondary)
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--header-secondary)
 }
 #permissions-popout .perm-details svg {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 .theme-light .bodyTitle-1ySSKn,
 .theme-light #permissions-popout .member-perms-header {
@@ -2460,19 +2460,19 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
   background: linear-gradient(#faa61a28,#faa61a21 50%, #faa61a18 50%, #faa61a21) !important;
 }
 .logo-2iEHEq.logo-1-AbdC {
-    z-index: 2;
+  z-index: 2;
 }
 .wrapper-6URcxg:before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    backdrop-filter: blur(20px);
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  backdrop-filter: blur(20px);
 }
 .characterBackground-2itjYF::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 .wrapper-6URcxg:after {
   content: "Image source: Unsplash";
@@ -2974,7 +2974,7 @@ img[src="/assets/9e8f566e6d49e8f4bba138e1d6a50578.svg"] {
     width: 0px;
   }
   100% {
-      width: 400px;
+    width: 400px;
   }
 }
 .threadSidebar-1o3BTy {
@@ -4763,13 +4763,19 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
 .theme-light .group-2dAfBy .item-3T2z1R:active {
   background: linear-gradient(#d0d0d0, #c5c4c4 50%, #b5b5b5 50%, #cccccc);
 }
-.group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m {
+.group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m,
+.group-2dAfBy .item-3T2z1R.selectorButtonSelected-t5V9On {
   background: linear-gradient(#707ade, #5660c7 50%, #5159a5 50%, #414a9e) !important;
 }
-.theme-light .group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m {
+.theme-light .group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m,
+.theme-light .group-2dAfBy .item-3T2z1R.selectorButtonSelected-t5V9On {
   text-shadow: 0 -1px #000;
 }
-.theme-light .group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m .colorStandard-2KCXvj {
+.theme-light .group-2dAfBy .item-3T2z1R:hover .selectorText-2I7fQU {
+    color: #000;
+}
+.theme-light .group-2dAfBy .item-3T2z1R.selectorButtonSelected-Jj5-3m .colorStandard-2KCXvj,
+.theme-light .group-2dAfBy .item-3T2z1R.selectorButtonSelected-t5V9On .colorStandard-2KCXvj {
   color: #fff !important;
 }
 .group-2dAfBy {
@@ -4782,7 +4788,7 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
   border-radius: 3px;
 }
 .group-2dAfBy .item-3T2z1R:last-of-type {
-  border-right: none;
+  border-right: none !important;
 }
 .group-2dAfBy .item-3T2z1R:first-of-type {
   border-left: none;
@@ -4884,4 +4890,14 @@ html.theme-light .layer-v9HyYc>div[role="dialog"]>[class="browser-2NpbWS contain
 }
 .theme-light .counter-uAzbKp.charCounter-7fw40k.chatCounter-XOMPsh {
   text-shadow: 0 1px #fff, 0 1px 3px #0008;
+}
+.qualitySettingsContainer-1gOtRJ {
+  border: none;
+  box-shadow: inset 0 1px 3px #000b, 0 1px #fff2;
+  background: linear-gradient(#1b1c1f, #2f3133);
+  padding: 4px 12px 12px;
+}
+.theme-light .qualitySettingsContainer-1gOtRJ {
+  background: linear-gradient(#ddd, #fff);
+  box-shadow: inset 0 1px 3px #0008;
 }
