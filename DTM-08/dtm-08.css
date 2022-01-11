@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "22w02a";
-  --theme-verdate: "10 January 2022";
+  --theme-version: "22w02b";
+  --theme-verdate: "11 January 2022";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -40,10 +40,6 @@
 */
 /*
   CHANGELOG
-  21w50c:
-  - fixed thread button
-  21w50d:
-  - edited the crash page (only on dark mode)
   21w51a:
   - timeout modal
   21w51b:
@@ -79,6 +75,8 @@
   - small tweak
   22w02a:
   - nothing, just pushed to stable
+  22w02b:
+  - small tweaks
 */
 .container-YkUktl {
   border-top: solid 1px #0D0E11;
@@ -246,12 +244,12 @@
   background: linear-gradient(to bottom, #6139a2 0%,#612fb7 50%,#492586 51%,#452280 100%) !important;
   box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff2, inset 0 1px #fff2, inset 0 -1px #0002, 0 0 1px 2px #fff6;
 }
-.theme-dark .cardPrimary-3qRT__, .theme-dark .codeRedemptionRedirect-3SBiCp, .detailsBlock-FoDTGA, .settingCard-xZSDjS, .theme-dark .card-3N2v9t, .theme-dark .subscriptionsRedirectContainer-zD3U79, .theme-dark .card-8UsK4b, .theme-dark .giftContainer-1X7m0c, .theme-dark .notice-5OG6bf, .theme-dark .cardPrimaryOutline-1ofwVz, .theme-dark .accountList-305sx3, .theme-dark .noItemsCard-2V85P5, .theme-dark .noItemsCard-5EOcCl, .theme-dark .card-16VQ8C, .theme-dark .promotionCard-3bv1Uh {
+.theme-dark .cardPrimary-3qRT__, .theme-dark .codeRedemptionRedirect-3SBiCp, .detailsBlock-FoDTGA, .settingCard-xZSDjS, .theme-dark .card-3N2v9t, .theme-dark .subscriptionsRedirectContainer-zD3U79, .theme-dark .card-8UsK4b, .theme-dark .giftContainer-1X7m0c, .theme-dark .notice-5OG6bf, .theme-dark .cardPrimaryOutline-1ofwVz, .theme-dark .accountList-305sx3, .theme-dark .noItemsCard-2V85P5, .theme-dark .noItemsCard-5EOcCl, .theme-dark .card-16VQ8C, .theme-dark .promotionCard-3bv1Uh, .theme-dark .expandedInfo-1W31i3 {
   background: linear-gradient(to bottom,#37383c,#303236 50%,#292a2c 50%,#27272a) !important;
   box-shadow: inset 0 0 0 1px #fff3, 0 1px 2px #0004;
   border: solid 1px #000;
 }
-.theme-light .cardPrimary-3qRT__, .theme-light .codeRedemptionRedirect-3SBiCp, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-xZSDjS, .theme-light .card-3N2v9t, .theme-light .subscriptionsRedirectContainer-zD3U79, .theme-light .card-8UsK4b, .theme-light .giftContainer-1X7m0c, .theme-light .notice-5OG6bf, .theme-light .cardPrimaryOutline-1ofwVz, .theme-light .accountList-305sx3, .theme-light .noItemsCard-2V85P5, .theme-light .noItemsCard-5EOcCl, .theme-light .card-16VQ8C, .theme-light .promotionCard-3bv1Uh {
+.theme-light .cardPrimary-3qRT__, .theme-light .codeRedemptionRedirect-3SBiCp, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-xZSDjS, .theme-light .card-3N2v9t, .theme-light .subscriptionsRedirectContainer-zD3U79, .theme-light .card-8UsK4b, .theme-light .giftContainer-1X7m0c, .theme-light .notice-5OG6bf, .theme-light .cardPrimaryOutline-1ofwVz, .theme-light .accountList-305sx3, .theme-light .noItemsCard-2V85P5, .theme-light .noItemsCard-5EOcCl, .theme-light .card-16VQ8C, .theme-light .promotionCard-3bv1Uh, .theme-light .expandedInfo-1W31i3 {
   background: linear-gradient(to bottom,#eaeaea,#ececec 50%,#e4e4e4 50%,#dadada) !important;
   box-shadow: inset 0 0 0 1px #fffb, 0 1px 4px #0003;
   border: solid 1px #999
@@ -996,7 +994,7 @@ html.theme-light .root-g14mjS {
 }
 .theme-light .cardWrapper-CyvwQv:active {
   background: linear-gradient(#b0b0b0,#c6c6c6);
-  box-shadow: 0 0 0 1px #0004, 0 1px 2px #0008, 0 2px #fff;
+  box-shadow: 0 0 0 1px #0004, 0 1px #0004, 0 2px #fff, inset 0 1px 6px #0008;
 }
 .header-2w6VV8, .footer-1Ip3Sd {
   background: linear-gradient(#2d2d2d,#383838)
@@ -1797,19 +1795,21 @@ html.theme-light .root-g14mjS {
 }
 .connection-107AGH {
   background: linear-gradient(#4c4e56,#2e2f33);
-  box-shadow: inset 0 0 0 1px #fff1, 0 2px 5px #0004;
+  box-shadow: inset 0 0 0 1px #fff1, 0 1px 5px #000b, 0 0 0 1px #0008, inset 0 1px #fff3;
   border-radius: 5px
 }
 .theme-light .connection-107AGH {
-  background: linear-gradient(#e2e2e2,#e2e2e2);
+  background: linear-gradient(#ffffff,#e2e2e2);
   box-shadow: inset 0 0 0 1px #fff1, 0 2px 5px #0004;
 }
 .connectionHeader-2rV1ze {
   background: rgba(0 0 0/0.4);
-  border-radius: 5px 5px 0 0
+  border-radius: 5px 5px 0 0;
+  box-shadow: inset 0 -1px #000b, 0 1px #fff2
 }
 .theme-light .connectionHeader-2rV1ze {
   background: rgba(255 255 255 / 40%);
+  box-shadow: 0 1px #fff, inset 0 -1px #0002;
 }
 .feature-2IUcBI {
   background: linear-gradient(#383b40,#1e1f23);
@@ -2089,6 +2089,9 @@ html.theme-light .root-g14mjS {
 }
 .separator-3ng7S5:before {
   border-image: linear-gradient(#0000 0%,#3f4144 20%, #3f4144 80%,#0000 100%) 1;
+}
+.theme-light .separator-3ng7S5:before {
+  border-image: linear-gradient(#0000 0%,#0004 20%, #0004 80%,#0000 100%) 1;
 }
 .innerButton-1aF_E_ {
   margin-left: 4px;
@@ -2653,6 +2656,9 @@ html.theme-light .root-g14mjS {
 }
 .channelTextAreaDisabled-1p2fQv .innerDisabled-2dbG11 {
   cursor: unset;
+}
+.innerDisabled-2dbG11 .buttons-uaqb-5 {
+  opacity: .25;
 }
 .channelTextAreaDisabled-1p2fQv .innerDisabled-2dbG11 .attachButton-_ACFSu {
   background: linear-gradient(to bottom,#151719 0%,#1d1e21 50%,#202125 50%,#222427 100%)!important;
@@ -3832,16 +3838,17 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
 }
 [aria-label="USER_SETTINGS"] .contentRegionScroller-2_GT_N .children-1xdcWE>div:first-of-type .slider-1NC-Gf+.container-1zDvAE+div .preview-38jjUi:before {
   content: "DTM-08 doesn't support this feature.";
-  color: #fff;
+  color: #f77;
   padding: 10px;
   display: block;
   margin-bottom: 16px;
   background: linear-gradient(#2b2d32,#393b42);
   border-radius: 3px;
-  box-shadow: 0 1px #fff2, inset 0 1px 3px #000, 0 0 0 1px #fff1;
+  box-shadow: 0 1px #fff2, inset 0 1px 3px #000, 0 0 0 1px #f775;
 }
 .theme-light [aria-label="USER_SETTINGS"] .contentRegionScroller-2_GT_N .children-1xdcWE>div:first-of-type .slider-1NC-Gf+.container-1zDvAE+div .preview-38jjUi:before {
-  color: #000;
+  color: #b00;
+  font-weight: 600;
   background: linear-gradient(#ececec,#f8f8f9);
   box-shadow: 0 0 0 1px #0004, inset 0 1px 3px #0006;
 }
@@ -4222,12 +4229,15 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
   border-radius: 50px;
 }
 .container-2nx-BQ .input-2XRLou:before {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 1px #fff6;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 1px #fff6, 0 0 0 1px #0006, 0 1px 4px #0008;
   width: 42px;
   height: 24px;
   background: linear-gradient(#8e9199, #565960);
   margin-top: -3px;
   margin-left: -6px;
+}
+.theme-light .container-2nx-BQ .input-2XRLou:before {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 1px #fff6, 0 0 0 1px #555, 0 1px 6px #000b;
 }
 .container-2nx-BQ .input-2XRLou:hover:before {
   background: linear-gradient(#b3b6bd, #6f727a);
