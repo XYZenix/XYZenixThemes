@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "22w02c";
-  --theme-verdate: "16 January 2022";
+  --theme-version: "22w03a";
+  --theme-verdate: "24 January 2022";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -8,7 +8,7 @@
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Blastoise"; /* disregard this line's existence */
+  --randomPokemon: "Kleavor"; /* disregard this line's existence */
 }
 /*
   BD plugins that I'm sure work fine, as of 21w51f: (might not be accurate since the class reroll)
@@ -79,6 +79,11 @@
   - small tweaks
   22w02c:
   - small tweaks (fixed some ui images)
+  22w03a:
+  - small tweaks + themed stuff that wasn't previously themed
+  - made reaction buttons look better on dark mode
+  - themed the reactions modal
+  - themed the modal for following announcement channels
 */
 .container-YkUktl {
   border-top: solid 1px #0D0E11;
@@ -246,12 +251,12 @@
   background: linear-gradient(to bottom, #6139a2 0%,#612fb7 50%,#492586 51%,#452280 100%) !important;
   box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff2, inset 0 1px #fff2, inset 0 -1px #0002, 0 0 1px 2px #fff6;
 }
-.theme-dark .cardPrimary-3qRT__, .theme-dark .codeRedemptionRedirect-3SBiCp, .detailsBlock-FoDTGA, .settingCard-xZSDjS, .theme-dark .card-3N2v9t, .theme-dark .subscriptionsRedirectContainer-zD3U79, .theme-dark .card-8UsK4b, .theme-dark .giftContainer-1X7m0c, .theme-dark .notice-5OG6bf, .theme-dark .cardPrimaryOutline-1ofwVz, .theme-dark .accountList-305sx3, .theme-dark .noItemsCard-2V85P5, .theme-dark .noItemsCard-5EOcCl, .theme-dark .card-16VQ8C, .theme-dark .promotionCard-3bv1Uh, .theme-dark .expandedInfo-1W31i3 {
+.theme-dark .cardPrimary-3qRT__, .theme-dark .codeRedemptionRedirect-3SBiCp, .detailsBlock-FoDTGA, .settingCard-xZSDjS, .theme-dark .card-3N2v9t, .theme-dark .subscriptionsRedirectContainer-zD3U79, .theme-dark .card-8UsK4b, .theme-dark .giftContainer-1X7m0c, .theme-dark .notice-5OG6bf, .theme-dark .cardPrimaryOutline-1ofwVz, .theme-dark .accountList-305sx3, .theme-dark .noItemsCard-2V85P5, .theme-dark .noItemsCard-5EOcCl, .theme-dark .card-16VQ8C, .theme-dark .promotionCard-3bv1Uh, .theme-dark .expandedInfo-1W31i3, .theme-dark .header-13P3fr .channel-k2TVLQ {
   background: linear-gradient(to bottom,#37383c,#303236 50%,#292a2c 50%,#27272a) !important;
   box-shadow: inset 0 0 0 1px #fff3, 0 1px 2px #0004;
   border: solid 1px #000;
 }
-.theme-light .cardPrimary-3qRT__, .theme-light .codeRedemptionRedirect-3SBiCp, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-xZSDjS, .theme-light .card-3N2v9t, .theme-light .subscriptionsRedirectContainer-zD3U79, .theme-light .card-8UsK4b, .theme-light .giftContainer-1X7m0c, .theme-light .notice-5OG6bf, .theme-light .cardPrimaryOutline-1ofwVz, .theme-light .accountList-305sx3, .theme-light .noItemsCard-2V85P5, .theme-light .noItemsCard-5EOcCl, .theme-light .card-16VQ8C, .theme-light .promotionCard-3bv1Uh, .theme-light .expandedInfo-1W31i3 {
+.theme-light .cardPrimary-3qRT__, .theme-light .codeRedemptionRedirect-3SBiCp, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-xZSDjS, .theme-light .card-3N2v9t, .theme-light .subscriptionsRedirectContainer-zD3U79, .theme-light .card-8UsK4b, .theme-light .giftContainer-1X7m0c, .theme-light .notice-5OG6bf, .theme-light .cardPrimaryOutline-1ofwVz, .theme-light .accountList-305sx3, .theme-light .noItemsCard-2V85P5, .theme-light .noItemsCard-5EOcCl, .theme-light .card-16VQ8C, .theme-light .promotionCard-3bv1Uh, .theme-light .expandedInfo-1W31i3, .theme-light .header-13P3fr .channel-k2TVLQ {
   background: linear-gradient(to bottom,#eaeaea,#ececec 50%,#e4e4e4 50%,#dadada) !important;
   box-shadow: inset 0 0 0 1px #fffb, 0 1px 4px #0003;
   border: solid 1px #999
@@ -2958,11 +2963,11 @@ html.theme-light .root-g14mjS {
 }
 .reaction-2A2y9y:hover {
   background: linear-gradient(#3d3f44,#2c2d30);
-  box-shadow: 0 0 0 .5px #000, 0 1px 6px #000b, inset 0 0 0 1px #fff2;
+  box-shadow: inset 0 0 0 1px #fff2, 0 1px 2px #000;
 }
 .reaction-2A2y9y:active {
   background: linear-gradient(#1e1e1e,#272727);
-  box-shadow: 0 0 0 .5px #000, 0 1px 1px #000b, inset 0 0 0 1px #fff2;
+  box-shadow: 0 0 0 1px #fff1, inset 0 1px 4px #000b;
 }
 .reactionMe-3I9gFK {
   background: linear-gradient(#4e5b82,#33384a);
@@ -5059,4 +5064,44 @@ html.theme-light .container-1Lk8p7 .container-x8Y1ix:active {
 .wrapper-2SplAX .colorMuted-20987_ {
   color: #c95f5f;
   font-weight: bold;
+}
+.theme-dark .reactors-1VXca7, .theme-light .reactors-1VXca7 {
+  background: none;
+}
+.theme-dark .scroller-2GkvCq, .theme-light .scroller-2GkvCq {
+  background: #fff4;
+  margin: 1px;
+}
+.theme-dark .reactionDefault-1Sjj1f:hover {
+  background: linear-gradient(#2d2e34, #2a2c2e);
+  box-shadow: inset 0 0 0 1px #fff1, 0 1px 3px #000b;
+}
+.theme-dark .reactionDefault-1Sjj1f:active {
+  background: linear-gradient(#212226, #2a2c2e);
+  box-shadow: 0 1px #fff2, inset 0 1px 5px #000b;
+}
+.theme-dark .reactionSelected-1aMb2K {
+  background: linear-gradient(#3a3b42, #2a2c2e);
+  box-shadow: inset 0 0 0 1px #fff2, 0 1px 3px #000b, 0 0 0 1px #000b;
+}
+.reactionDefault-1Sjj1f, .reactionSelected-1aMb2K {
+  margin-right: 3px;
+}
+.theme-light .reactionDefault-1Sjj1f:hover {
+  background: linear-gradient(#e5e5e5, #e1e1e1);
+  box-shadow: 0 1px 4px #0008, inset 0 1px #fff4;
+}
+.theme-light .reactionDefault-1Sjj1f:active {
+  background: linear-gradient(#d5d5d5, #f1f1f1);
+  box-shadow: 0 1px #fff, inset 0 1px 5px #0006;
+}
+.theme-light .reactionSelected-1aMb2K {
+  background: linear-gradient(#dfdfdf, #dbdbdb);
+  box-shadow: inset 0 0 0 1px #fff, 0 1px 2px #0006;
+}
+.header-13P3fr {
+  margin: 1px;
+}
+.header-13P3fr .channel-k2TVLQ {
+  border-radius: 3px;
 }
