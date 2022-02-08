@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "22w03a";
-  --theme-verdate: "24 January 2022";
+  --theme-version: "22w06a";
+  --theme-verdate: "8 February 2022";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -8,7 +8,7 @@
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Kleavor"; /* disregard this line's existence */
+  --randomPokemon: "Avalugg"; /* disregard this line's existence */
 }
 /*
   BD plugins that I'm sure work fine, as of 21w51f: (might not be accurate since the class reroll)
@@ -40,8 +40,6 @@
 */
 /*
   CHANGELOG
-  21w51a:
-  - timeout modal
   21w51b:
   - fix timeout chat bar
   - fix context menu separators
@@ -84,6 +82,9 @@
   - made reaction buttons look better on dark mode
   - themed the reactions modal
   - themed the modal for following announcement channels
+  22w06a:
+  - fixed reactions modal
+  - added scrollbar to context menus
 */
 .container-YkUktl {
   border-top: solid 1px #0D0E11;
@@ -3564,11 +3565,23 @@ html.theme-light .root-g14mjS {
 /*.userPopout-2j1gM4[data-user-id="211270674482724864"] .avatar-2Vndt_ {border-color: #00caff !important;background: #00caff !important;box-shadow: 0 0 5px 1px #00caff}
 .userPopout-2j1gM4[data-user-id="211270674482724864"] .avatar-2Vndt_:after {content: "";width: 20px;height: 20px;display: block;margin-top: 54px;margin-left: 54px;border-radius: 50%;border: solid 4px #00caff !important;background: #00caff !important;box-shadow: 0 0 5px 1px #00caff}
 .userPopout-2j1gM4[data-user-id="211270674482724864"] .pointerEvents-2zdfdO {fill:#fff}*/
-.scroller-1bVxF5::-webkit-scrollbar {
-  display: none;
+.menu-1QACrS .scroller-1bVxF5::-webkit-scrollbar-thumb {
+  background: #fff4;
+  border: solid 1px #000b;
 }
-.scroller-1bVxF5 {
-  padding-right: 8px !important;
+.theme-light .menu-1QACrS .scroller-1bVxF5::-webkit-scrollbar-thumb {
+  background: #0004;
+  border: solid 1px #fff;
+}
+.menu-1QACrS:not(:hover) .scroller-1bVxF5::-webkit-scrollbar-thumb {
+    background:#0000;
+    border:none;
+}
+.menu-1QACrS .scroller-1bVxF5::-webkit-scrollbar {
+    width: 4px;
+}
+.menu-1QACrS .scroller-1bVxF5 {
+    margin: 1px 1px 1px 0;
 }
 .theme-light .placeholder-1_mJY1 {
   color: #444;
@@ -5071,6 +5084,9 @@ html.theme-light .container-1Lk8p7 .container-x8Y1ix:active {
 .theme-dark .scroller-2GkvCq, .theme-light .scroller-2GkvCq {
   background: #fff4;
   margin: 1px;
+}
+.theme-dark .scroller-2GkvCq {
+    background: #0004;
 }
 .theme-dark .reactionDefault-1Sjj1f:hover {
   background: linear-gradient(#2d2e34, #2a2c2e);
