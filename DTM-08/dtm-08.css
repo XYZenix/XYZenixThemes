@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "22w08a";
-  --theme-verdate: "22 February 2022";
+  --theme-version: "22w13a";
+  --theme-verdate: "30 March 2022";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -8,7 +8,7 @@
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Vileplume"; /* disregard this line's existence */
+  --randomPokemon: "Staraptor"; /* disregard this line's existence */
 }
 /*
   BD plugins that I'm sure work fine, as of 21w51f: (might not be accurate since the class reroll)
@@ -40,12 +40,6 @@
 */
 /*
   CHANGELOG
-  21w51b:
-  - fix timeout chat bar
-  - fix context menu separators
-  - fix channel role override sidebar clipping (by adding margin)
-  - fix (and possibly break again) profile header
-  - fix permissionsviewer
   21w51c:
   - fix a bit of unused shit and remove new shit that i forgot i already fixed but broke because discord rerolled a classname
   21w51d:
@@ -91,6 +85,8 @@
   - removed invite splash thing from invite embeds
   22w08a:
   - fixed theme
+  22w13a:
+  - home tab and server subscription shit
 */
 .container-YkUktl {
   border-top: solid 1px #0D0E11;
@@ -101,10 +97,13 @@
   box-shadow: inset 0 1px 3px #0008, 0 1px #fff8;
   border-radius: 5px;
 }
-.theme-dark .panels-3wFtMD .flex-2S1XBF.flex-3BkGQD.horizontal-112GEH.horizontal-1Piu5-.flex-3BkGQD.directionRow-2Iu2A9.justifyStart-2Mwniq.alignStretch-Uwowzr.noWrap-hBpHBz, .theme-dark .actions-zk2vB_, .theme-dark .wrapper-1_HaEi {
+.theme-dark .panels-3wFtMD .flex-2S1XBF.flex-3BkGQD.horizontal-112GEH.horizontal-1Piu5-.flex-3BkGQD.directionRow-2Iu2A9.justifyStart-2Mwniq.alignStretch-Uwowzr.noWrap-hBpHBz, .theme-dark .actions-zk2vB_, .theme-dark .wrapper-1_HaEi, .theme-dark.wrapper-1_HaEi {
   background: linear-gradient(#0008, #0001);
   border-radius: 5px;
   box-shadow: inset 0 1px 5px black, 0 1px #fff3;
+}
+.theme-dark.wrapper-1_HaEi {
+  background-color: #2f3136;
 }
 .theme-light .button-12Fmur {
   color: #555
@@ -258,15 +257,18 @@
   background: linear-gradient(to bottom, #6139a2 0%,#612fb7 50%,#492586 51%,#452280 100%) !important;
   box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff2, inset 0 1px #fff2, inset 0 -1px #0002, 0 0 1px 2px #fff6;
 }
-.theme-dark .cardPrimary-3qRT__, .theme-dark .codeRedemptionRedirect-3SBiCp, .detailsBlock-FoDTGA, .settingCard-xZSDjS, .theme-dark .card-3N2v9t, .theme-dark .subscriptionsRedirectContainer-zD3U79, .theme-dark .card-8UsK4b, .theme-dark .giftContainer-1X7m0c, .theme-dark .notice-5OG6bf, .theme-dark .cardPrimaryOutline-1ofwVz, .theme-dark .accountList-Wii_T5, .theme-dark .noItemsCard-2V85P5, .theme-dark .noItemsCard-5EOcCl, .theme-dark .card-16VQ8C, .theme-dark .promotionCard-3bv1Uh, .theme-dark .expandedInfo-1W31i3, .theme-dark .header-13P3fr .channel-k2TVLQ, .theme-dark .enableContainer-1J91Aq {
+.theme-dark .cardPrimary-3qRT__, .theme-dark .codeRedemptionRedirect-3SBiCp, .detailsBlock-FoDTGA, .settingCard-xZSDjS, .theme-dark .card-3N2v9t, .theme-dark .subscriptionsRedirectContainer-zD3U79, .theme-dark .card-8UsK4b, .theme-dark .giftContainer-1X7m0c, .theme-dark .notice-5OG6bf, .theme-dark .cardPrimaryOutline-1ofwVz, .theme-dark .accountList-Wii_T5, .theme-dark .noItemsCard-2V85P5, .theme-dark .noItemsCard-5EOcCl, .theme-dark .card-16VQ8C, .theme-dark .promotionCard-3bv1Uh, .theme-dark .expandedInfo-1W31i3, .theme-dark .header-13P3fr .channel-k2TVLQ, .theme-dark .enableContainer-1J91Aq, .theme-dark .container-2Hi7Km, .theme-dark .container-xwOzwi {
   background: linear-gradient(to bottom,#37383c,#303236 50%,#292a2c 50%,#27272a) !important;
   box-shadow: inset 0 0 0 1px #fff3, 0 1px 2px #0004;
   border: solid 1px #000;
 }
-.theme-light .cardPrimary-3qRT__, .theme-light .codeRedemptionRedirect-3SBiCp, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-xZSDjS, .theme-light .card-3N2v9t, .theme-light .subscriptionsRedirectContainer-zD3U79, .theme-light .card-8UsK4b, .theme-light .giftContainer-1X7m0c, .theme-light .notice-5OG6bf, .theme-light .cardPrimaryOutline-1ofwVz, .theme-light .accountList-Wii_T5, .theme-light .noItemsCard-2V85P5, .theme-light .noItemsCard-5EOcCl, .theme-light .card-16VQ8C, .theme-light .promotionCard-3bv1Uh, .theme-light .expandedInfo-1W31i3, .theme-light .header-13P3fr .channel-k2TVLQ, .theme-light .enableContainer-1J91Aq {
+.theme-light .cardPrimary-3qRT__, .theme-light .codeRedemptionRedirect-3SBiCp, .theme-light .detailsBlock-FoDTGA, .theme-light .settingCard-xZSDjS, .theme-light .card-3N2v9t, .theme-light .subscriptionsRedirectContainer-zD3U79, .theme-light .card-8UsK4b, .theme-light .giftContainer-1X7m0c, .theme-light .notice-5OG6bf, .theme-light .cardPrimaryOutline-1ofwVz, .theme-light .accountList-Wii_T5, .theme-light .noItemsCard-2V85P5, .theme-light .noItemsCard-5EOcCl, .theme-light .card-16VQ8C, .theme-light .promotionCard-3bv1Uh, .theme-light .expandedInfo-1W31i3, .theme-light .header-13P3fr .channel-k2TVLQ, .theme-light .enableContainer-1J91Aq, .theme-light .container-2Hi7Km, .theme-light .container-xwOzwi {
   background: linear-gradient(to bottom,#eaeaea,#ececec 50%,#e4e4e4 50%,#dadada) !important;
   box-shadow: inset 0 0 0 1px #fffb, 0 1px 4px #0003;
   border: solid 1px #999
+}
+.container-2Hi7Km, .container-xwOzwi {
+  border-radius: 3px;
 }
 .theme-dark .faded-Yd0FtY {
   text-shadow: 0 -1px #000, 0 1px 1px #000;
@@ -4054,6 +4056,8 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
 }
 .theme-dark .channelNotice-K4UfZY {
   background: linear-gradient(#212325,#252629 50%, #1f2023 50%, #202123);
+  box-shadow: inset 0 1px #fff2;
+  border-bottom: solid 1px #000b;
 }
 .theme-light .container-3fNISf {
   background: linear-gradient(#cecece,#f3f3f3);
@@ -5124,4 +5128,78 @@ html.theme-light .container-1Lk8p7 .container-x8Y1ix:active {
 }
 .wrapper-1HIH0j .inviteSplash-2nkLRX {
     display: none !important;
+}
+.homeContainer-r4Hvv1 {
+    box-shadow: inset 0 2px 8px #000b;
+}
+.theme-dark .card-3x20HF {
+  background: linear-gradient(#45454a, #303033);
+  border: solid 1px #000;
+  box-shadow: 0 1px 4px #0008, inset 0 1px #fff2, inset 0 0 0 1px #fff1;
+  border-radius: 3px;
+}
+.theme-light .card-3x20HF {
+  background: linear-gradient(#ebebeb, #fff);
+  border: solid 1px #888;
+  box-shadow: 0 1px 4px #0004, inset 0 1px #fff;
+  border-radius: 3px;
+}
+.theme-dark .feedItemHeader-txJq98 {
+  border-bottom: solid 1px #333;
+  box-shadow: 0 1px #fff1
+}
+.theme-light .feedItemHeader-txJq98 {
+  border-bottom: solid 1px #bbb;
+  box-shadow: 0 1px #fffb
+}
+.theme-dark .channelIconContainer-573htL {
+  box-shadow: inset 0 1px 3px #0008
+}
+.theme-light .channelIconContainer-573htL {
+  box-shadow: inset 0 1px 3px #0006, 0 1px #fff8
+}
+.container-1gltKk {
+  background: linear-gradient(#54545a 50%,#2a2a2d);
+  padding-bottom: 40px;
+  text-shadow: 0 1px 3px #0008;
+  box-shadow: inset 0 -1px #0004, 0 1px #fff2;
+  margin-bottom: 0;
+}
+.pageContainer-oSrRSz {
+  background: #3A3A3E;
+}
+.tierPreviewsContainer-3tMaPR {
+  background: linear-gradient(#3a3a3e,#48484d);
+  box-shadow: inset 0 1px #fff1;
+}
+.tierInfoContainer-3o77tj {
+  background: linear-gradient(#303033,#2b2b2d);
+  box-shadow: inset 0 1px #fff3, inset 0 -1px #0006;
+  border-radius: 3px 3px 0 0;
+}
+.subscriptionPerks-17BiNa {
+  box-shadow: inset 0 1px #fff2;
+  background: linear-gradient(#303033,#2b2b2d);
+  border-radius: 0 0 3px 3px;
+}
+.cardContainerWithoutTopIndicator-36cvDB {
+  overflow: visible;
+  border-radius: 3px;
+  border: solid 1px;
+}
+.theme-light .container-1gltKk {
+  background: linear-gradient(#fff,#eee);
+  text-shadow: 0 1px 2px #fff4;
+}
+.theme-light .tierPreviewsContainer-3tMaPR {
+  background: #fff;
+}
+.theme-light .cardContainerWithoutTopIndicator-36cvDB {
+  border: solid 1px #bbb;
+}
+.theme-light .tierInfoContainer-3o77tj, .theme-light .subscriptionPerks-17BiNa {
+  background: linear-gradient(#eee,#ddd)
+}
+.sidebar-1tnWFu.theme-dark .content-2a4AW9 {
+  color: #fff;
 }
