@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "22w20a";
-  --theme-verdate: "18 May 2022";
+  --theme-version: "22w20b";
+  --theme-verdate: "19 May 2022";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -8,12 +8,10 @@
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Lurantis"; /* disregard this line's existence */
+  --randomPokemon: "Kleavor"; /* disregard this line's existence */
 }
 /*
   CHANGELOG
-  Canary 2022-01-2:
-  - fixes
   Canary 2022-01-3:
   - small tweak
   22w02a:
@@ -53,6 +51,8 @@
   - deleted party mode
   - fixed settings open animation (probably)
   - fixed a thing
+  22w20b:
+  - fixed some stuff
 */
 .container-YkUktl {
   border-top: solid 1px #0D0E11;
@@ -1813,12 +1813,14 @@ html.theme-light .root-g14mjS {
 }
 .houseLogoWrapper-1qaDCg {
   background: linear-gradient(#bfbfbf,#f3f3f3);
-  box-shadow: inset 0 3px 15px #0004, 0 0 0 1px #fff6, 0 1px 5px #000, 0 0 0 #fff;
-  transition: 1s cubic-bezier(0.65, -0.34, 0.3, 1.26)
+  box-shadow: inset 0 3px 15px #0004, 0 0 0 1px #fff6, 0 1px 5px #000, 0 0 0 #0004;
+  transition: .5s;
 }
 .houseLogoWrapper-1qaDCg:hover {
-  transform: rotate3d(2, 2, 2, 360deg);
-  box-shadow: inset 0 3px 15px #0004, 0 0 0 1px #fff6, 0 1px 5px #000, 0 0 25px #fff
+  /*transform: rotate3d(0, 0, 2, 360deg);*/
+  transform: scale(1.1);
+  box-shadow: inset 0 3px 15px #0004, 0 0 0 1px #fff6, 0 1px 5px #000, 0 0 25px #0004;
+  /*transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94)*/
 }
 .theme-light .clickable-28SzVr:hover .layout-1qmrhw {
   background: linear-gradient(#fff2, #fff4);
@@ -2303,11 +2305,13 @@ html.theme-light .root-g14mjS {
 .radioBar-3w9XY- {
   --radio-bar-accent-color: #fff
 }
-.radioBar-3w9XY- .title-1yyp9V {
+.radioBar-3w9XY- .title-1yyp9V,
+.radioBar-3w9XY- .text-md-medium-2avxhQ {
   color: var(--radio-bar-accent-color);
   text-shadow: 0 1px 2px #000
 }
-.theme-light .radioBar-3w9XY- .title-1yyp9V {
+.theme-light .radioBar-3w9XY- .title-1yyp9V,
+.theme-light .radioBar-3w9XY- .text-md-medium-2avxhQ {
   color: var(--radio-bar-accent-color);
   text-shadow: 0 1px 2px #fff, 0 1px 4px #0004;
 }
@@ -2719,6 +2723,10 @@ html.theme-light .root-g14mjS {
 .container-3EtAkD:hover {
   background: linear-gradient(#54565d,#414148);
   box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 1px 6px #000;
+}
+.container-3EtAkD .icon-2DGsye {
+  background: #0002;
+  box-shadow: inset 0 1px 3px #000, 0 1px #fff2
 }
 .theme-light .container-3EtAkD {
   background: linear-gradient(#fefeff,#d2d2d8);
@@ -3848,7 +3856,7 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
   background: linear-gradient(#9ea2a5,#575858);
   box-shadow: inset 0 0 0 1px #fff3, 0 1px 3px #0008;;
 }
-.banner-2MAbnt {
+.banner-2MAbnt, .banner-3Uu4yV {
   box-shadow: 0 0 0 1px #000, 0 1px 5px #000, inset 0 1px #fff4;
   border-radius: 5px;
 }
@@ -3858,8 +3866,11 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
 .banner-2MAbnt .colorStandard-21JIj7 {
   color: #fffb;
 }
-[aria-label="USER_SETTINGS"] .contentRegionScroller-2_GT_N .children-1xdcWE>div:first-of-type .slider-1NC-Gf+.container-1zDvAE+div .preview-38jjUi:before {
-  content: "DTM-08 doesn't support this feature.";
+.banner-3Uu4yV {
+  background: linear-gradient(45deg, #975f90,#7767b9)
+}
+.contentRegionScroller-2_GT_N .children-1xdcWE>div:first-of-type .preview-3k9WhO:before {
+  content: "DTM-08 does not support the saturation slider. It's likely not going to function properly.";
   color: #f77;
   padding: 10px;
   display: block;
@@ -3868,7 +3879,7 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
   border-radius: 3px;
   box-shadow: 0 1px #fff2, inset 0 1px 3px #000, 0 0 0 1px #f775;
 }
-.theme-light [aria-label="USER_SETTINGS"] .contentRegionScroller-2_GT_N .children-1xdcWE>div:first-of-type .slider-1NC-Gf+.container-1zDvAE+div .preview-38jjUi:before {
+.theme-light .contentRegionScroller-2_GT_N .children-1xdcWE>div:first-of-type .preview-3k9WhO:before {
   color: #b00;
   font-weight: 600;
   background: linear-gradient(#ececec,#f8f8f9);
@@ -4338,7 +4349,8 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
 }
 .scroller-1bVxF5 #channel-attach-upload-file .optionLabel-1o-h-l svg path,
 .scroller-1bVxF5 #channel-attach-THREAD .optionLabel-1o-h-l svg path,
-.scroller-1bVxF5 #channel-attach-SLASH_COMMAND .optionLabel-1o-h-l svg path {
+.scroller-1bVxF5 #channel-attach-SLASH_COMMAND .optionLabel-1o-h-l svg path,
+.scroller-1bVxF5 #channel-attach-upload-text-as-file .optionLabel-1o-h-l svg path {
   display: none;
 }
 .scroller-1bVxF5 #channel-attach-upload-file .optionLabel-1o-h-l svg {
@@ -4361,6 +4373,13 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
 }
 .theme-light .scroller-1bVxF5 #channel-attach-SLASH_COMMAND .optionLabel-1o-h-l svg {
   background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/918541976775852032/slash_cmd_light.png)
+}
+.scroller-1bVxF5 #channel-attach-upload-text-as-file .optionLabel-1o-h-l svg {
+  background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/976826947965423636/upload_as_file_dark.png);
+  background-size: 24px;
+}
+.theme-light .scroller-1bVxF5 #channel-attach-upload-text-as-file .optionLabel-1o-h-l svg {
+  background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/976826948217077760/upload_as_file_light.png)
 }
 /* shard */
 [src="/assets/8948e5fc1217a7d616f408c647bd6978.svg"] {
@@ -5212,6 +5231,9 @@ html.theme-light .container-1Lk8p7 .container-x8Y1ix:active {
   margin-left: -3px;
   cursor: pointer;
 }
+.avatarWrapper-1B9FTW.withTagAsButton-OsgQ9L .hoverRoll-2XwpoF {
+  cursor: inherit;
+}
 .theme-dark .avatarWrapper-1B9FTW.withTagAsButton-OsgQ9L:hover,
 .theme-dark .avatarWrapper-1B9FTW.withTagAsButton-OsgQ9L:active {
   background: linear-gradient(to right, #fff3, #fff0);
@@ -5219,4 +5241,49 @@ html.theme-light .container-1Lk8p7 .container-x8Y1ix:active {
 .theme-light .avatarWrapper-1B9FTW.withTagAsButton-OsgQ9L:hover,
 .theme-light .avatarWrapper-1B9FTW.withTagAsButton-OsgQ9L:active {
   background: linear-gradient(to right, #fff, #fff0);
+}
+.membershipDialogHeading-2YNliA, .membershipDialogHouseDescription-2uFjjO, .membershipDialogHouseName-1yc2Ci, .membershipDialogSwitchHouses-2bOt9w {
+  color: #fff;
+  text-shadow: 0 1px 2px #000b;
+}
+.theme-dark .roleRow-230vCm:hover:not(.roleRowDisableHover-3En0vy) {
+  background: linear-gradient(#33343a,#222327);
+  box-shadow: inset 0 0 0 1px #fff1, inset 0 1px #fff3, 0 0 0 1px #000, 0 2px 4px #0008;
+}
+.theme-dark .roleRow-230vCm:active:not(.roleRowDisableHover-3En0vy) {
+  background: linear-gradient(#202124,#222327);
+  box-shadow: inset 0 2px 4px #000a, 0 1px #fff3, 0 0 0 1px #ffffff08
+}
+.theme-light .roleRow-230vCm:hover:not(.roleRowDisableHover-3En0vy) {
+  background: linear-gradient(#f2f2f4,#d4d4d4);
+  box-shadow: 0 2px 4px #0008, inset 0 0 0 1px #fffb;
+}
+.theme-light .roleRow-230vCm:active:not(.roleRowDisableHover-3En0vy) {
+  background: linear-gradient(#d1d1d1,#d4d4d4);
+  box-shadow: inset 0 2px 8px #0004, 0 1px #fff
+}
+.tabBar-3DfKkN .disabled-1nofHP {
+  opacity: .2
+}
+.tabBar-3DfKkN .brand-3g5E0C.selected-g-kMVV {
+  background: linear-gradient(to top, #5261F766 0px, #5261F700 16px)
+}
+.stepContainer-3L3EXG .selectedProgressBar-11z5d9 {
+  box-shadow: 0 0 4px var(--text-brand);
+}
+.stepContainer-3L3EXG .colorBrand-3Xb6JG {
+  font-weight: bold;
+}
+.theme-dark .container-3EBHNg .selected-g-kMVV {
+  background: linear-gradient(to top, #fff4 0px, #fff0 16px)
+}
+.emptyChannelIcon-1YdEz2 {
+  background-color: #0000;
+  border: solid 1px #fff;
+  box-shadow: 0 0 8px #fff;
+}
+.theme-light .emptyChannelIcon-1YdEz2 {
+  background-color: #000b;
+  border: solid 1px #000;
+  box-shadow: 0 0 8px #000;
 }
