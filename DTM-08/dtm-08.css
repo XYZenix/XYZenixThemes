@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "22w20c";
-  --theme-verdate: "22 May 2022";
+  --theme-version: "22w21a";
+  --theme-verdate: "23 May 2022";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -8,42 +8,10 @@
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Flygon"; /* disregard this line's existence */
+  --randomPokemon: "Dragapult"; /* disregard this line's existence */
 }
 /*
   CHANGELOG
-  Canary 2022-01-3:
-  - small tweak
-  22w02a:
-  - nothing, just pushed to stable
-  22w02b:
-  - small tweaks
-  22w02c:
-  - small tweaks (fixed some ui images)
-  22w03a:
-  - small tweaks + themed stuff that wasn't previously themed
-  - made reaction buttons look better on dark mode
-  - themed the reactions modal
-  - themed the modal for following announcement channels
-  22w06a:
-  - fixed reactions modal
-  - added scrollbar to context menus
-  22w06b:
-  - fixed scrollbar (was supposed to be part of 22w06a but i messed up)
-  22w07a:
-  - removed invite splash thing from invite embeds
-  22w08a:
-  - fixed theme
-  22w13a:
-  - home tab and server subscription shit
-  22w13b & 22w14a:
-  - fixed stuff
-  22w17a:
-  - AAAAAAAAAAAAAAA
-  22w17b:
-  - some fixes
-  22w17c:
-  - some more fixes
   22w18a:
   - fixed the user settings sidebar infobox on the bottom or whatever
   - i don't remember i forgot what i did like 30 seconds ago
@@ -51,8 +19,11 @@
   - deleted party mode
   - fixed settings open animation (probably)
   - fixed a thing
-  22w20b:
+  22w20b & 22w20c:
   - fixed some stuff
+  22w21a:
+  - small quick switcher overhaul
+  - fixed background for messages in replying state (now uses same css as ephemeral messages)
 */
 .container-YkUktl {
   border-top: solid 1px #0D0E11;
@@ -143,8 +114,29 @@
   background: linear-gradient(#51545d 00,#3b3d4288 50%, #2f303588 50%,#20222500 100%) !important;
   box-shadow: inset 0 1px #fff2, inset 0 2px #fff1
 }
+.quickswitcher-pKcM9U {
+    padding: 0;
+}
+.quickswitcher-pKcM9U .content-vQY7Mf {
+    padding-left: 16px;
+    padding-right: 8px;
+}
+.quickswitcher-pKcM9U .scroller-2qwVWY {
+    margin: 0;
+}
 .quickswitcher-pKcM9U .protip-1jXzAl {
-  margin: 0 10px;
+    margin: 0;
+    padding: 10px 16px;
+}
+.theme-dark .quickswitcher-pKcM9U .protip-1jXzAl {
+    background: #0004;
+}
+.theme-light .quickswitcher-pKcM9U .protip-1jXzAl {
+    background: #fff4;
+}
+.theme-light .quickswitcher-pKcM9U .protip-1jXzAl .tip-Jl__cG {
+    opacity: 1;
+    font-weight: 500;
 }
 .quickswitcher-pKcM9U {
   background: linear-gradient(#414148,#1d1d21);
@@ -2053,18 +2045,18 @@ html.theme-light .root-g14mjS {
 }
 .input-3r5zZY {
   background: linear-gradient(#222329,#252629 50%,#18191c 50%,#151619);
-  border-radius: 3px;
-  border: solid 1px #000;
+  border-radius: 3px 3px 0 0;
+  border-bottom: solid 1px #000;
   box-shadow: inset 0 0 0 1px #fff2;
   transition: .2s
 }
 .theme-light .input-3r5zZY {
   background: linear-gradient(#eeeeee,#e4e4e4 50%,#dcdcdc 50%,#e2e2e2);
-  border: solid 1px #fff;
-  box-shadow: inset 0 0 0 1px #0004;
+  border-bottom: solid 1px #fff;
+  box-shadow: inset 0 -1px #0004, inset 0 0 0 1px #fff;
 }
 .input-3r5zZY:focus-within {
-  box-shadow: inset 0 0 0 1px #fff2, 0 1px 5px #0004
+  box-shadow: inset 0 0 6px var(--text-link);
 }
 .container-q97qHp {
   text-transform: none;
@@ -2497,11 +2489,11 @@ html.theme-light .root-g14mjS {
 .theme-light .mentioned-Tre-dv:before {
     background: linear-gradient(to right, #AA7212 2px, #AA721266 2px, #0000)
 }
-.ephemeral-2nDdnn:before {
+.ephemeral-2nDdnn:before, .replying-eZ7p5z:before {
     width: 16px;
     background: linear-gradient(to right, #7289da 2px, #7289da44 2px, #0000)
 }
-.theme-light .ephemeral-2nDdnn:before {
+.theme-light .ephemeral-2nDdnn:before, .theme-light .replying-eZ7p5z:before {
     width: 16px;
     background: linear-gradient(to right, #525BEC 2px, #525BEC44 2px, #0000)
 }
@@ -4541,10 +4533,10 @@ html.theme-light[lang^="en-"] .buttonContainer-1502pf .button-3bklZh.cursorPoint
 
 html[lang^="en-"] .buttonContainer-1502pf .button-3bklZh.cursorPointer-B3uwDA svg[name="Note"] path[stroke="#f04747"] {display:block;filter:drop-shadow(0 1px 2px black)}
 
-.ephemeral-2nDdnn {
+.ephemeral-2nDdnn, .replying-eZ7p5z {
   background: linear-gradient(#7289da22, #7289da25 50%, #7289da18 50%, #7289da11);
 }
-.mouse-mode.full-motion .message-2CShn3.ephemeral-2nDdnn:hover {
+.mouse-mode.full-motion .message-2CShn3.ephemeral-2nDdnn:hover, .mouse-mode.full-motion .message-2CShn3.replying-eZ7p5z:hover {
   background: linear-gradient(#7289da33, #7289da37 50%, #7289da27 50%, #7289da22);
   box-shadow: inset 0 1px 4px #0008;
 }
