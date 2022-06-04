@@ -1,6 +1,6 @@
 :root {
-  --theme-version: "22w22a";
-  --theme-verdate: "2 Jun 2022";
+  --theme-version: "22w22b";
+  --theme-verdate: "5 Jun 2022";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/918775046858752010/giordano-rossoni-4AdYDht1nls-unsplash.jpg);
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
@@ -8,12 +8,10 @@
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Ursaluna"; /* disregard this line's existence */
+  --randomPokemon: "Smoliv"; /* disregard this line's existence */
 }
 /*
   CHANGELOG
-  22w20b & 22w20c:
-  - fixed some stuff
   22w21a:
   - small quick switcher overhaul
   - fixed background for messages in replying state (now uses same css as ephemeral messages)
@@ -27,6 +25,10 @@
   - fixed reactions AGAIN
   - fixed 'new server' dialog
   - some other things idk
+  22w22b:
+  - fixed reactions again, thanks a lot discord
+  - fixed some other stuff i do not feel like writing down here because i am lazy
+  - reverted titlebar wordmark to old logo because it looks better and you can't convince me otherwise
 */
 .container-YkUktl {
   border-top: solid 1px #0D0E11;
@@ -526,26 +528,32 @@
 .typeWindows-2-g3UY {
   background: transparent
 }
-.theme-dark .typeWindows-2-g3UY {
-  box-shadow: inset 0 -1px #0008;
+ .bg-1QIAus {
+  background: linear-gradient(#fdfdfd 0px,#bfbfbf 21px,#888 21px, #f3f3f3 24px)!important
 }
-.bg-1QIAus {
-  background: linear-gradient(#46484c 0px,#2a2c2f 22px,#2b2e32 10px)!important
-}
-.theme-light .bg-1QIAus {
-  background: linear-gradient(#d0d0d0 0px,#bfbfbf 22px,#f3f3f3 10px)!important
+.theme-dark .bg-1QIAus {
+  background: linear-gradient(#46484c 0px,#2a2c2f 21px,#000 21px, #2b2e32 22px)!important
 }
 .winButtonClose-3Q8ZH5, .winButtonMinMax-3RsPUg {
-  border-left: solid 1px gray !important;
-  transition: .2s;
-  border-image: linear-gradient(#c5c5c5, #848484) 1 !important
+  border-left: solid 1px #0003;
+  border-right: solid 1px #fff8;
+}
+.theme-dark .winButtonClose-3Q8ZH5, .theme-dark .winButtonMinMax-3RsPUg {
+  border-left: solid 1px #0008;
+  border-right: solid 1px #fff2;
+}
+.winButtonMinMax-3RsPUg:last-of-type {
+  box-shadow: -1px 0 #fff8;
+}
+.theme-dark .winButtonMinMax-3RsPUg:last-of-type {
+  box-shadow: -1px 0 #fff2;
 }
 .winButtonMinMax-3RsPUg:hover {
   background: linear-gradient(#585f6f, #353a44) !important;
   opacity: 1 !important;
 }
 .theme-light .winButtonMinMax-3RsPUg:hover {
-  background: linear-gradient(#a8c3ff, #80a3e8) !important;
+  background: linear-gradient(#bdd2ff, #819cd2) !important;
 }
 .winButtonClose-3Q8ZH5:hover {
   background: linear-gradient(#ff3939, #a20909) !important;
@@ -2193,7 +2201,7 @@ html.theme-light .root-g14mjS {
   box-shadow: 0 1px 50px #0008
 }
 #app-mount {
-  background: repeating-linear-gradient(45deg, #101113, #040405 5px)
+  background: repeating-linear-gradient(45deg, #101113, #040405 5px);
 }
 .theme-light #app-mount {
   background: repeating-linear-gradient(45deg, #fdfdfd, #dddddd 5px)
@@ -2806,6 +2814,11 @@ html.theme-light .root-g14mjS {
   background: none;
   backdrop-filter: blur(5px);
 }
+/*.theme-dark .stickyHeader-1Sunlx {
+  background: linear-gradient(#0001, #0008);
+  box-shadow: 0 0 0 1px #000, 0 1px 3px #0008, inset 0 0 0 1px #fff3;
+  border-radius: 0 0 8px 8px;
+}*/
 .colorHeaderPrimary-jN_yGr.size16-rrJ6ag.titleText-35PD5k {
   text-transform: none;
   font-weight: 600;
@@ -3005,58 +3018,58 @@ html.theme-light .root-g14mjS {
   box-shadow: inset 0 0 0 1px #fff, inset 0 0 0 2px #0004, inset 0 2px 3px #0004;
   color: #000;
 }
-.reaction-2A2y9y {
+.reaction-3vwAF2 {
   background: linear-gradient(#383838,#272727);
   box-shadow: 0 0 0 .5px #000, 0 1px 3px #0008, inset 0 0 0 1px #fff2;
   border-radius: 2px;
   border: none;
 }
-.reaction-2A2y9y:hover {
+.reaction-3vwAF2:hover {
   background: linear-gradient(#3d3f44,#2c2d30);
   box-shadow: inset 0 0 0 1px #fff2, 0 1px 2px #000;
 }
-.reaction-2A2y9y:active {
+.reaction-3vwAF2:active {
   background: linear-gradient(#1e1e1e,#272727);
   box-shadow: 0 0 0 1px #fff1, inset 0 1px 4px #000b;
 }
-.reactionMe-3I9gFK {
+.reactionMe-1PwQAc {
   background: linear-gradient(#4e5b82,#33384a);
 }
-.reactionMe-3I9gFK:hover {
+.reactionMe-1PwQAc:hover {
   background: linear-gradient(#5e72af,#3d4970);
 }
-.reactionMe-3I9gFK:active {
+.reactionMe-1PwQAc:active {
   background: linear-gradient(#26304c,#292f46);
 }
-.theme-light .reaction-2A2y9y {
+.theme-light .reaction-3vwAF2 {
   background: linear-gradient(#f3f3f3,#dbdbdb);
   border: solid 1px #bbb;
   border-bottom-color: #999;
   box-shadow: inset 0 1px #fff;
   border-radius: 3px;
 }
-.theme-light .reaction-2A2y9y:hover {
+.theme-light .reaction-3vwAF2:hover {
   background: linear-gradient(#f5f5f5,#eee);
   box-shadow: inset 0 1px #fff, 0 1px 2px #0008;
   border-color: #ccc;
 }
-.theme-light .reaction-2A2y9y:active {
+.theme-light .reaction-3vwAF2:active {
   background: linear-gradient(#c9c9c9,#e9e9e9);
   box-shadow: inset 0 1px 3px #0008;
   border-color: #bbb;
 }
-.theme-light .reaction-2A2y9y.reactionMe-3I9gFK {
+.theme-light .reaction-3vwAF2.reactionMe-1PwQAc {
   background: linear-gradient(#aec8ff,#97a5d1);
   border: solid 1px #839acb;
   border-bottom-color: #5b6b8d;
   box-shadow: inset 0 1px #fff6;
 }
-.theme-light .reaction-2A2y9y.reactionMe-3I9gFK:hover {
+.theme-light .reaction-3vwAF2.reactionMe-1PwQAc:hover {
   background: linear-gradient(#bed0ff,#afc8ff);
   box-shadow: inset 0 1px #fff6, 0 1px 2px #0008;
   border-color: #88a4e3;
 }
-.theme-light .reaction-2A2y9y.reactionMe-3I9gFK:active {
+.theme-light .reaction-3vwAF2.reactionMe-1PwQAc:active {
   background: linear-gradient(#7995cf,#98aae1);
   box-shadow: inset 0 1px 3px #0008;
   border-color: #6b85c1;
@@ -4867,11 +4880,11 @@ html.theme-light .layer-2aCOJ3>div[role="dialog"]>[class="browser-mnQ1T7 contain
 .theme-light .group-1_ptLP .item-2OyinQ:active {
   background: linear-gradient(#d0d0d0, #c5c4c4 50%, #b5b5b5 50%, #cccccc);
 }
-.group-1_ptLP .item-2OyinQ.selectorButtonSelected-1VZ6hz,
+.group-1_ptLP .item-2OyinQ.selectorButtonSelected-3cQUnj,
 .group-1_ptLP .item-2OyinQ.selectorButtonSelected-3Z0WNU {
   background: linear-gradient(#707ade, #5660c7 50%, #5159a5 50%, #414a9e) !important;
 }
-.theme-light .group-1_ptLP .item-2OyinQ.selectorButtonSelected-1VZ6hz,
+.theme-light .group-1_ptLP .item-2OyinQ.selectorButtonSelected-3cQUnj,
 .theme-light .group-1_ptLP .item-2OyinQ.selectorButtonSelected-3Z0WNU {
   text-shadow: 0 -1px #000;
 }
@@ -4912,10 +4925,10 @@ html.theme-light .layer-2aCOJ3>div[role="dialog"]>[class="browser-mnQ1T7 contain
   background: #0003;
   box-shadow: inset 0 1px 3px #0008;
 }
-.theme-dark .scroller-1bVxF5 .separator-1So4YB {
+.theme-dark .scroller-1bVxF5 .separator-1So4YB, .theme-dark .activityUserPopout-2MzGCj, .theme-dark .menu-1QACrS[id="account"] .divider-1wtgZ3 {
   border-image: linear-gradient(to right, #0000,#fff3,#0000) 1;
 }
-.theme-light .scroller-1bVxF5 .separator-1So4YB {
+.theme-light .scroller-1bVxF5 .separator-1So4YB, .theme-light .activityUserPopout-2MzGCj, .theme-light .menu-1QACrS[id="account"] .divider-1wtgZ3 {
   border-image: linear-gradient(to right, #0000,#0004,#0000) 1;
 }
 .privateThreadFeaturePill-3pnWt5 {
@@ -5091,7 +5104,8 @@ html.theme-light .container-1Lk8p7 .container-x8Y1ix:active {
   border-radius: 5px 5px 0 0;
   border: solid 1px #fff1;
   border-bottom: solid 1px #000b;
-  box-shadow: 0 1px #ffffff18
+  box-shadow: 0 1px #ffffff18;
+  padding-left: 0;
 }
 .resizeHandle-PBRzPC {
   background: linear-gradient(to right, #0000, #000b) !important;
@@ -5329,6 +5343,16 @@ html.theme-light .container-1Lk8p7 .container-x8Y1ix:active {
 .stepContainer-3L3EXG .colorBrand-3Xb6JG {
   font-weight: bold;
 }
+.theme-dark .container-3EBHNg .item-3XjbnG {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0;
+}
+.theme-dark .header-JUTO-g .item-3XjbnG {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 0;
+}
 .theme-dark .container-3EBHNg .selected-g-kMVV {
   background: linear-gradient(to top, #fff4 0px, #fff0 16px)
 }
@@ -5441,6 +5465,18 @@ html.theme-light .container-1Lk8p7 .container-x8Y1ix:active {
 }
 .theme-light .sidebar-1tnWFu:not(.theme-dark) .panels-3wFtMD .wrapper-3Hk9OB .container-1zzFcN .actionButtons-2vEOUh .lookFilled-yCfaCM.colorBrand-I6CyqQ .buttonIcon-2Zsrs2 {
   filter: drop-shadow(0 1px #fff);
+}
+.panels-3wFtMD .wrapper-3Hk9OB .container-1zzFcN .actionButtons-2vEOUh .lookFilled-yCfaCM.colorBrand-I6CyqQ.buttonActive-Uc1jHx {
+  opacity: 1;
+}
+.panels-3wFtMD .wrapper-3Hk9OB .container-1zzFcN .actionButtons-2vEOUh .lookFilled-yCfaCM.colorBrand-I6CyqQ.buttonActive-Uc1jHx:after {
+  content: "";
+  background: #43B581;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 0 5px #43B581;
 }
 /* i know a lot of this shit isn't needed but right now i am too lazy to check what is needed so i'll leave it like this until i stop being lazy */
 html.theme-dark .layer-1Ixpg3>.theme-light>.focusLock-2tveLW {
@@ -5603,4 +5639,38 @@ html.theme-dark .layer-1Ixpg3>.theme-light>.focusLock-2tveLW {
 }
 .panels-3wFtMD .channel-3prF2u {
     color: var(--header-secondary);
+}
+.menu-1QACrS[id="account"] {
+    background: linear-gradient(var(--background-primary) 30%, var(--background-tertiary));
+    backdrop-filter: none;
+}
+.menu-1QACrS[id="account"] .avatar-2Vndt_ {
+    background: #0002;
+    border: none;
+}
+.menu-1QACrS[id="account"] .avatarWrapper-eenWra {
+    padding: 6px;
+  background: linear-gradient(var(--background-accent) -20%, var(--background-primary) calc(50% - 2px), #0000 calc(50% - 2px));
+}
+.menu-1QACrS[id="account"] .bodyInnerWrapper-2bQs1k {
+  background: none !important;
+}
+.menu-1QACrS[id="account"] .activityUserPopout-2MzGCj {
+  border-top: solid 1px;
+  box-shadow: none;
+}
+.menu-1QACrS[id="account"] .divider-1wtgZ3 {
+  border-top: solid 1px;
+  background: none;
+}
+.wordmark-2u86JB svg path:first-of-type {
+  d: path("M4.57642 3.1413H1V7.22826L3.38069 9.40217V5.43478H4.6626C5.47053 5.43478 5.86911 5.83696 5.86911 6.46739V9.5C5.86911 10.1304 5.49207 10.5543 4.6626 10.5543H1V12.8587H4.57642C6.4939 12.8696 8.29289 11.9022 8.29289 9.66304V6.3913C8.29289 4.13043 6.4939 3.1413 4.57642 3.1413ZM23.3311 9.67391V6.32609C23.3311 5.11957 25.464 4.83696 26.1104 6.05435L28.0817 5.23913C27.3169 3.51087 25.8949 3 24.7207 3C22.8033 3 20.9073 4.13043 20.9073 6.32609V9.67391C20.9073 11.8804 22.8033 13 24.6776 13C25.8841 13 27.3276 12.3913 28.1248 10.8152L26.0134 9.82609C25.4963 11.1739 23.3311 10.8478 23.3311 9.67391ZM16.803 6.78261C16.0598 6.61957 15.5642 6.34783 15.5319 5.88043C15.575 4.75 17.2878 4.71739 18.2896 5.79348L19.8732 4.55435C18.8821 3.32609 17.7618 3 16.5984 3C14.8425 3 13.1404 4 13.1404 5.91304C13.1404 7.77174 14.5409 8.76087 16.0813 9C16.8677 9.1087 17.7402 9.42391 17.7187 9.97826C17.6541 11.0217 15.5427 10.9674 14.5839 9.78261L13.065 11.2391C13.9591 12.4022 15.1764 13 16.3183 13C18.0742 13 20.024 11.9674 20.0994 10.087C20.2071 7.69565 18.5051 7.09783 16.803 6.78261ZM9.59634 12.8587H12.0093V3.1413H9.59634V12.8587ZM50.2835 3.1413H46.7071V7.22826L49.0878 9.40217V5.43478H50.3589C51.1669 5.43478 51.5654 5.83696 51.5654 6.46739V9.5C51.5654 10.1304 51.1884 10.5543 50.3589 10.5543H46.6963V12.8587H50.2728C52.1902 12.8696 53.9892 11.9022 53.9892 9.66304V6.3913C54 4.13043 52.201 3.1413 50.2835 3.1413ZM32.7354 3C30.7533 3 28.7819 4.09783 28.7819 6.33696V9.66304C28.7819 11.8913 30.764 13 32.7569 13C34.739 13 36.7104 11.8913 36.7104 9.66304V6.33696C36.7104 4.1087 34.7175 3 32.7354 3ZM34.2866 9.66304C34.2866 10.3587 33.511 10.7174 32.7461 10.7174C31.9705 10.7174 31.1949 10.3696 31.1949 9.66304V6.33696C31.1949 5.61957 31.949 5.23913 32.703 5.23913C33.4894 5.23913 34.2866 5.58696 34.2866 6.33696V9.66304ZM45.3606 6.33696C45.3067 4.05435 43.777 3.1413 41.8057 3.1413H37.9815V12.8696H40.4268V9.77174H40.8577L43.0768 12.8587H46.0931L43.4862 9.52174C44.6496 9.15217 45.3606 8.1413 45.3606 6.33696ZM41.8488 7.65217H40.4268V5.43478H41.8488C43.3785 5.43478 43.3785 7.65217 41.8488 7.65217Z");
+  transform: translateY(-1px);
+  filter: drop-shadow(0 1px 2px #fff)
+}
+.theme-dark .wordmark-2u86JB svg path:first-of-type {
+  filter: drop-shadow(0 1px 2px #000)
+}
+.wordmark-2u86JB svg path:not(:first-of-type) {
+  display: none;
 }
