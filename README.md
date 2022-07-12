@@ -16,7 +16,7 @@ Steam Library Themes | \<MULTIPLE\> | Below the discord theme tables | Various t
 
 ## Discord Themes
 
-![image](https://user-images.githubusercontent.com/51988432/145855507-90b72bb4-816e-4f66-9f36-31a898da9b91.png)
+![image](https://cdn.discordapp.com/attachments/733624227378495488/996280251757891655/unknown.png)
 
 Currently active:
 
@@ -24,6 +24,7 @@ Name | Description  | Status
 -----|--------------|-------
 DTM-08 | A skeuomorphic/glossy theme for Discord | Active
 DTM-16 | A theme that brings the old UI back | Active
+DTM-17 | A modified version of DTM-16 that looks closer to 2017 and 2018 Discord | Active
 ActivityStyleEmbeds | Changes the look of embeds to look like that of the embeds from the (removed) Activity Tab | [Available here](https://github.com/XYZenix/ActivityStyleEmbeds)
 
 Abandoned:
@@ -31,11 +32,10 @@ Abandoned:
 Name | Description  | Status
 -----|--------------|-------
 DTM-12 | A skeuomorphic theme for Discord based on concept by disctr4k | Abandoned until further notice
-DTM-17 | A theme that reverts the new UI changes from early 2019 and other stuff from 2018 | Cancelled/Abandoned
-DTM-20 | A theme where I try to 'predict' what Discord would look like in 2020 | Abandoned
-Unnamed Windows 95 theme | | Cancelled
-Unnamed classic terminal theme | | Cancelled
-Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI i guess | Abandoned
+DTM-20 | A theme where I tried to 'predict' what Discord would look like in 2020. This theme was made in 2019 (if i recall correctly) | Cancelled
+Unnamed Windows 95 theme | | On indefinite hold
+Unnamed classic terminal theme | | On indefinite hold
+Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI | Abandoned
 
 ## Discord Mini-themes
 
