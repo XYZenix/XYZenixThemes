@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "211";
+$themeVersion: "212";
 $themeDate: "Jul 14, 2022";
 
 @use "sass:color";
@@ -676,6 +676,7 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     }
     #{$panel-rtcConInner} {
       border-top: solid 1px #1C1E22;
+      padding-right: 10px;
       .button-1EGGcP {
         flex: 1 1 50%;
         transition: .2s;
@@ -813,6 +814,7 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   #{$panel-stream} {
     border-bottom-width: 0;
     border-top: solid 1px #1C1E22;
+    padding-right: 10px;
     .actions-zk2vB_ {
       border: solid 1px #1C1E22;
       border-radius: 3px;
@@ -834,6 +836,7 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     border-top: solid 1px #DEDEDE;
     height: 70px;
     padding: 0 10px;
+    padding-right: 2px;
     .withTagAsButton-OsgQ9L, .withTagless-10ooWt {
       min-width: unset;
       width: 100%;
@@ -912,6 +915,9 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
 // chat
 .scrollerContent-2SW0kQ {
     justify-content: normal;
+}
+.message-2CShn3 {
+  padding-right: 16px !important;
 }
 .messageListItem-ZZ7v6g>.message-2CShn3.compact-2Nkcau,
 .backgroundFlash-1X5jVs>.messageListItem-ZZ7v6g>.message-2CShn3.compact-2Nkcau {
@@ -1074,14 +1080,15 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   .clipContainer-31nYlH {
     overflow: hidden;
     padding-top: 32px;
-    margin-top: -30px;
+    margin-top: -32px;
     margin-bottom: -2px;
     #{$channelReplyInner} {
       background: var(--blurple);
       border-radius: 3px 3px 0 0;
       margin-top: -32px;
+      height: 34px;
       .text-1pxItg {
-        color: #fff8;
+        color: #fff8 !important;
         font-weight: 400;
         .name-3DDHNY {
           color: #fff !important;
@@ -1119,6 +1126,9 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     border-radius: 0 0 3px 3px;
     border-color: var(--blurple);
     z-index: 99;
+    .attachButton-_ACFSu {
+      border-color: var(--blurple) !important;
+    }
   }
 }
 .divider-IqmEqJ {
@@ -3980,7 +3990,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   color: var(--blurple);
 }
 // roles
-#{$role} {
+#{$role}, #permissions-popout .member-perm {
   border-radius: 2px;
   position: relative;
   border: solid 1px;
@@ -6007,6 +6017,12 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 .secured-2wavXv:before {
 	background: url("https://cdn.discordapp.com/attachments/733624227378495488/930752807617843230/0c89a0b25036b406bcbcf37701ec738f.svg") 50% no-repeat
 }
+.modal-1Kmy_E {
+  border-radius: 3px;
+  .modalFooter-2XY3GW {
+    border-radius: 0 0 3px 3px;
+  }
+}
 
 // [subtract][number][add] Server Boost(s) thing
 .actions-10aT1z {
@@ -7720,6 +7736,12 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 // betterdiscord
 // permissionsviewer
 #permissions-popout {
+  background: var(--background-secondary);
+  .member-perms-header {
+    margin-top: 0 !important;
+    color: var(--header-secondary);
+    margin-right: 8px;
+  }
   .member-perms {
     padding: 12px;
     padding-top: 4px;
@@ -7731,6 +7753,19 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
     margin-top: 10px;
     font-weight: bold;
     text-transform: uppercase;
+  }
+  .perm-circle {
+    display: none;
+  }
+  .member-perm {
+    padding: 4px;
+    margin: 0 4px 4px 0;
+    .name {
+      color: var(--header-primary);
+      font-weight: 400;
+      font-size: 12px;
+      margin: 0;
+    }
   }
 }
 // bd - spotify
@@ -7808,6 +7843,19 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
       font-weight: 500;
     }
   }
+}
+// bd - oldtitlebar
+.oldTitleBarEnabled-D8ppJQ {
+  .sidebar-1tnWFu {
+    border-radius: 0;
+  }
+  .guilds-2JjMmN .scroller-3X7KbA {
+    padding-top: 16px;
+  }
+}
+// this is as far as i can get now, i'll look for a better fix later
+.settingsToolbar-wu4yfQ {
+  display: none;
 }
 
 // powercord

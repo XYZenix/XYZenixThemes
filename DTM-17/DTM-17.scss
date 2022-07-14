@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "20";
+$themeVersion: "21";
 $themeDate: "Jul 14, 2022";
 $themeName: "DTM-17 BETA";
 
@@ -854,7 +854,6 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   padding: 0;
   padding-top: 20px;
   margin-top: 0;
-  box-shadow: 0 -1px 0 rgba(0,0,0,.1);
   background: var(--background-primary);
   .theme-dark & {
     border-top: solid 1px hsla(0,0%,100%,.06);
@@ -874,26 +873,27 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   .clipContainer-31nYlH {
     overflow: hidden;
     padding-top: 32px;
-    margin-top: -30px;
-    margin-bottom: -2px;
+    margin-top: -34px;
+    margin-bottom: 0px;
     #{$channelReplyInner} {
-      background: var(--blurple);
-      border-radius: 3px 3px 0 0;
+      border-radius: 5px 5px 0 0;
       margin-top: -32px;
+      height: 34px;
       .text-1pxItg {
         color: #fff8;
         font-weight: 400;
-        .name-3DDHNY {
-          color: #fff !important;
-          font-weight: 600;
-        }
       }
-      .mentionButton-3C5YMI, .closeButton-3IEry2 {
+      .closeButton-3IEry2 {
         color: #fff;
         opacity: .5;
         transition: .2s;
         &:hover {
           opacity: 1;
+        }
+      }
+      .mentionButton-3C5YMI {
+        &.colorLink-12GX9V {
+          color: var(--blurple);
         }
       }
       .mentionButton-3C5YMI {
@@ -916,8 +916,7 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     }
   }
   +#{$scrollableContainer} {
-    border-radius: 0 0 3px 3px;
-    border-color: var(--blurple);
+    border-radius: 0 0 5px 5px;
     z-index: 99;
   }
 }
@@ -1571,7 +1570,15 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       .theme-light & {
         background: #FFFB;
         box-shadow: 0 0 4px 6px #FFFB;
-
+      }
+      &:hover {
+        background: #36393EEE;
+        box-shadow: 0 0 4px 6px #36393EEE;
+        padding-left: 0;
+        .theme-light & {
+          background: #FFFE;
+          box-shadow: 0 0 4px 6px #FFFE;
+        }
       }
     }
     #{$msgBtnContHeader} {
@@ -3446,7 +3453,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   color: var(--blurple);
 }
 // roles
-#{$role} {
+#{$role}, #permissions-popout .member-perm {
   border-radius: 2px;
   position: relative;
   border: solid 1px;
@@ -4934,6 +4941,12 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 }
 .secured-2wavXv:before {
 	background: url("https://cdn.discordapp.com/attachments/733624227378495488/930752807617843230/0c89a0b25036b406bcbcf37701ec738f.svg") 50% no-repeat
+}
+.modal-1Kmy_E {
+  border-radius: 3px;
+  .modalFooter-2XY3GW {
+    border-radius: 0 0 3px 3px;
+  }
 }
 
 // [subtract][number][add] Server Boost(s) thing (does this even work anymore?)
@@ -6598,6 +6611,12 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 // betterdiscord
 // permissionsviewer
 #permissions-popout {
+  background: var(--background-secondary);
+  .member-perms-header {
+    margin-top: 0 !important;
+    color: var(--header-secondary);
+    margin-right: 8px;
+  }
   .member-perms {
     padding: 12px;
     padding-top: 4px;
@@ -6609,6 +6628,19 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
     margin-top: 10px;
     font-weight: bold;
     text-transform: uppercase;
+  }
+  .perm-circle {
+    display: none;
+  }
+  .member-perm {
+    padding: 4px;
+    margin: 0 4px 4px 0;
+    .name {
+      color: var(--header-primary);
+      font-weight: 400;
+      font-size: 12px;
+      margin: 0;
+    }
   }
 }
 // bd - spotify
@@ -6685,6 +6717,15 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
       color: #000b;
       font-weight: 500;
     }
+  }
+}
+// bd - oldtitlebar
+.oldTitleBarEnabled-D8ppJQ {
+  .sidebar-1tnWFu {
+    border-radius: 0;
+  }
+  .guilds-2JjMmN .scroller-3X7KbA {
+    padding-top: 16px;
   }
 }
 
