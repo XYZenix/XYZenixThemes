@@ -7,13 +7,15 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "21";
-$themeDate: "Jul 14, 2022";
+$themeVersion: "22";
+$themeDate: "Jul 15, 2022";
 $themeName: "DTM-17 BETA";
 
 @use "sass:color";
 $blurple: #7289da;
 $blurpleV2: #5865F2;
+// 0 = no message style changes / 1 = old message style
+$messageStyle: 1;
 // 0 = Old Blurple / 1 = New Blurple
 $BlurpleStyle: 0;
 @if $BlurpleStyle == 1 {
@@ -884,7 +886,7 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
         font-weight: 400;
       }
       .closeButton-3IEry2 {
-        color: #fff;
+        color: var(--header-primary);
         opacity: .5;
         transition: .2s;
         &:hover {
@@ -918,77 +920,6 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   +#{$scrollableContainer} {
     border-radius: 0 0 5px 5px;
     z-index: 99;
-  }
-}
-.divider-IqmEqJ {
-  margin-left: 20px;
-  margin-right: 4px;
-  &.beforeGroup-1BvJAt {
-    margin-bottom: 0 !important;
-    margin-top: -1px !important;
-  }
-  &.isUnread-3Lojb- {
-    border-color: #f0474766;
-    &:not(.beforeGroup-1BvJAt) {
-      margin-top: -34px !important;
-      margin-bottom: 46px !important;
-      &.hasContent-1y12-u {
-        margin-top: -20px !important;
-        margin-bottom: 19px !important;
-        .unreadPill-3nEWYM {
-          display: none !important;
-        }
-      }
-    }
-    +.messageListItem-ZZ7v6g .message-2CShn3.cozyMessage-1DWF9U.groupStart-3Mlgv1.hasReply-2Cr4KE {
-      margin-top: -20px !important;
-    }
-  }
-  &.hasContent-31hcsn:not(.isUnread-3Lojb-) {
-    margin-top: -20px !important;
-  }
-  .unreadPill-3nEWYM {
-    padding: 0 10px;
-    border-radius: 3px;
-    background: var(--background-primary);
-    right: unset;
-    text-align: center;
-    font-size: 14px;
-    color: rgba(240,71,71,.8);
-    svg {
-      display: none;
-    }
-    [lang="en-GB"] &, [lang="en-US"] & {
-      font-size: 0;
-      &:after {
-        content: "NEW MESSAGES";
-        font-size: 14px;
-      }
-    }
-  }
-  &.beforeGroup-1BvJAt {
-    top: -19px !important;
-  }
-  &:not(.isUnread-3Lojb-)+.messageListItem-ZZ7v6g,
-  &:not(.isUnread-3Lojb-)+.backgroundFlash-1X5jVs {
-    .message-2CShn3 {
-      margin-top: -8px !important;
-      &.groupStart-3Mlgv1:before {
-        content: unset;
-      }
-    }
-  }
-}
-.wrapper-2SplAX {
-  background: none;
-}
-.messageListItem-ZZ7v6g:last-of-type,
-.backgroundFlash-1X5jVs:last-of-type {
-  #{$message} {
-    margin-bottom: -20px !important;
-  }
-  .systemMessage-1H1Z20 {
-    overflow: hidden;
   }
 }
 
@@ -1500,326 +1431,402 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 }
 
 // messages
-#{$markup} {
-  color: #737f8d;
-  .emoji.jumboable {
-    width: var(--jumboEmojiSize);
-    height: var(--jumboEmojiSize);
-    min-height: var(--jumboEmojiSize);
-  }
-  .theme-dark & {
-    color: rgba(255 255 255/.7)
-  }
-  .contents-2MsGLg &:before {
-    content: "";
-    float: right;
-    display: inline-flex;
-    width: 3rem;
-    height: 1rem;
-  }
-}
-#{$message} {
-  padding-bottom: 20px !important;
-  margin-bottom: 20px !important;
-  margin-top: -40px !important;
-  .theme-dark &, .theme-light & {
-    background: var(--background-primary) !important;
-  }
-  #{$scrollableContainer} {
-    border-color: var(--blurple);
-    #{$markup} {
-      background: none !important;
-      border: none !important;
-      margin-left: 0 !important;
-      padding-left: 16px !important;
+@if $messageStyle == 1 {
+  #{$markup} {
+    color: #737f8d;
+    .emoji.jumboable {
+      width: var(--jumboEmojiSize);
+      height: var(--jumboEmojiSize);
+      min-height: var(--jumboEmojiSize);
+    }
+    .theme-dark & {
+      color: rgba(255 255 255/.7)
+    }
+    .contents-2MsGLg &:before {
+      content: "";
+      float: right;
+      display: inline-flex;
+      width: 3rem;
+      height: 1rem;
     }
   }
-  .operations-3q3u6E {
-    text-align: right;
-    font-weight: 500;
-  }
-  #{$msgAvatar} {
-    left: 20px;
-  }
-  margin-right:4px;
-  background: none !important;
-  .contents-2MsGLg #{$markup}:not(.slateTextArea-27tjG0) {
-    border-radius: 2px;
-    padding-left: 0;
-    margin-left: 0;
-  }
-  &#{$msgMentioned} {
-    &:before {
-      display: none;
+  #{$message} {
+    padding-bottom: 20px !important;
+    margin-bottom: 20px !important;
+    margin-top: -40px !important;
+    .theme-dark &, .theme-light & {
+      background: var(--background-primary) !important;
     }
-  }
-  &#{$msgMentioned} {
-    .contents-2MsGLg #{$markup} {
-      background: var(--background-mentioned);
-      border-left: solid 4px #FAA61A;
-      padding-left: 2px;
-      margin-left: -6px;
-    }
-  }
-  #{$msgBtnContainer} {
-    #{$msgBtnContInner} {
-      top: 4px;
-      background: #36393EBB;
-      box-shadow: 0 0 4px 6px #36393EBB;
-      padding-left: 0;
-      .theme-light & {
-        background: #FFFB;
-        box-shadow: 0 0 4px 6px #FFFB;
+    #{$scrollableContainer} {
+      border-color: var(--blurple);
+      #{$markup} {
+        background: none !important;
+        border: none !important;
+        margin-left: 0 !important;
+        padding-left: 16px !important;
       }
-      &:hover {
-        background: #36393EEE;
-        box-shadow: 0 0 4px 6px #36393EEE;
+    }
+    .operations-3q3u6E {
+      text-align: right;
+      font-weight: 500;
+    }
+    #{$msgAvatar} {
+      left: 20px;
+    }
+    margin-right:4px;
+    background: none !important;
+    .contents-2MsGLg #{$markup}:not(.slateTextArea-27tjG0) {
+      border-radius: 2px;
+      padding-left: 0;
+      margin-left: 0;
+    }
+    &#{$msgMentioned} {
+      &:before {
+        display: none;
+      }
+    }
+    &#{$msgMentioned} {
+      .contents-2MsGLg #{$markup} {
+        background: var(--background-mentioned);
+        border-left: solid 4px #FAA61A;
+        padding-left: 2px;
+        margin-left: -6px;
+      }
+    }
+    #{$msgBtnContainer} {
+      #{$msgBtnContInner} {
+        top: 4px;
+        background: #36393EBB;
+        box-shadow: 0 0 4px 6px #36393EBB;
         padding-left: 0;
         .theme-light & {
-          background: #FFFE;
-          box-shadow: 0 0 4px 6px #FFFE;
+          background: #FFFB;
+          box-shadow: 0 0 4px 6px #FFFB;
+        }
+        &:hover {
+          background: #36393EEE;
+          box-shadow: 0 0 4px 6px #36393EEE;
+          padding-left: 0;
+          .theme-light & {
+            background: #FFFE;
+            box-shadow: 0 0 4px 6px #FFFE;
+          }
+        }
+      }
+      #{$msgBtnContHeader} {
+        top: 45px;
+      }
+      #{$msgBtnContWrap} {
+        height: 16px;
+        background: none !important;
+        box-shadow: none !important;
+      }
+      #{$msgBtnContButton} {
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        margin-left: 4px;
+        padding: 0;
+        opacity: .3;
+        transition: .2s opacity;
+        background: none !important;
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+        &:hover {
+          opacity: .8;
+        }
+      }
+      #{$msgBtnContButton} {
+        // pencil / edit
+        [d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z"] {
+          d: path("M1.3335 20.8891V16.4446L15.3424 2.48908C15.6802 2.13352 16.2491 2.13352 16.6046 2.48908L19.7335 5.61797C20.0891 5.97352 20.0891 6.52463 19.7335 6.88019L5.72461 20.8891H1.3335ZM22.6668 20.8891H9.3335L12.8891 17.3335H22.6668V20.8891Z");
+        }
+        // more / 3 dots
+        [d="M7 12.001C7 10.8964 6.10457 10.001 5 10.001C3.89543 10.001 3 10.8964 3 12.001C3 13.1055 3.89543 14.001 5 14.001C6.10457 14.001 7 13.1055 7 12.001ZM14 12.001C14 10.8964 13.1046 10.001 12 10.001C10.8954 10.001 10 10.8964 10 12.001C10 13.1055 10.8954 14.001 12 14.001C13.1046 14.001 14 13.1055 14 12.001ZM19 10.001C20.1046 10.001 21 10.8964 21 12.001C21 13.1055 20.1046 14.001 19 14.001C17.8954 14.001 17 13.1055 17 12.001C17 10.8964 17.8954 10.001 19 10.001Z"] {
+          d: path("M12 16C13.1046 16 14 16.8954 14 18C14 19.1046 13.1046 20 12 20C10.8954 20 10 19.1046 10 18C10 16.8954 10.8954 16 12 16ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM12 4C13.1046 4 14 4.89543 14 6C14 7.10457 13.1046 8 12 8C10.8954 8 10 7.10457 10 6C10 4.89543 10.8954 4 12 4Z")
+        }
+        // add reaction
+        [d="M12.2512 2.00309C12.1677 2.00104 12.084 2 12 2C6.477 2 2 6.477 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 11.916 21.999 11.8323 21.9969 11.7488C21.3586 11.9128 20.6895 12 20 12C15.5817 12 12 8.41828 12 4C12 3.31052 12.0872 2.6414 12.2512 2.00309ZM10 8C10 6.896 9.104 6 8 6C6.896 6 6 6.896 6 8C6 9.105 6.896 10 8 10C9.104 10 10 9.105 10 8ZM12 19C15.14 19 18 16.617 18 14V13H6V14C6 16.617 8.86 19 12 19Z"] {
+          d: path("M21.9499 11C21.9831 11.3308 22 11.6646 22 12C22 17.5228 17.5228 22 12 22C9.34783 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 6.5 6.47 2 12 2C12.3354 2 12.6692 2.01685 13 2.05009V4.06272C12.67 4.02115 12.3361 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.6639 19.9788 11.33 19.9373 11H21.9499ZM12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM15.5 11C16.3284 11 17 10.3284 17 9.5C17 8.67157 16.3284 8 15.5 8C14.6716 8 14 8.67157 14 9.5C14 10.3284 14.6716 11 15.5 11ZM8.5 11C9.32843 11 10 10.3284 10 9.5C10 8.67157 9.32843 8 8.5 8C7.67157 8 7 8.67157 7 9.5C7 10.3284 7.67157 11 8.5 11Z")
+        }
+        [d="M21 3V0H19V3H16V5H19V8H21V5H24V3H21Z"] {
+          d: path("M21 3V0H19V3H16V5H19V8H21V5H24V3H21Z")
+        }
+        // pin
+        [d="M22 12L12.101 2.10101L10.686 3.51401L12.101 4.92901L7.15096 9.87801V9.88001L5.73596 8.46501L4.32196 9.88001L8.56496 14.122L2.90796 19.778L4.32196 21.192L9.97896 15.536L14.222 19.778L15.636 18.364L14.222 16.95L19.171 12H19.172L20.586 13.414L22 12Z"] {
+          d: path("M16.3637 4.3637H17.4546V2.18188H6.5455V4.3637H7.63641V13.091L5.45459 15.2728V17.4546H11.1273V21.8182H12.8728V17.4546H18.5455V15.2728L16.3637 13.091V4.3637ZM9.81823 4.3637H14.1819V14.1819H14.7273C15.0286 14.1819 15.2728 14.4261 15.2728 14.7273C15.2728 15.0286 15.0286 15.2728 14.7273 15.2728H9.27277C8.97153 15.2728 8.72732 15.0286 8.72732 14.7273C8.72732 14.4261 8.97153 14.1819 9.27277 14.1819H9.81823V4.3637Z")
+        }
+        // mark unread
+        [d="M14 3H20C21 3 22.0001 4 22.0001 5V19.0003C22.0001 20 21 21 20 21H14C13 21 6 13 6 13H2V11H6C6 11 13 3 14 3Z"] {
+          d: path("M18.84 7H16.22L10.5 4L4 7.41V17C3.46957 17 2.96086 16.7893 2.58579 16.4142C2.21071 16.0391 2 15.5304 2 15V7.17C2 6.5 2.28 6.06 2.81 5.81L10.5 2L18.05 5.81C18.5 6.09 18.78 6.5 18.84 7ZM7 8H20C20.5304 8 21.0391 8.21071 21.4142 8.58579C21.7893 8.96086 22 9.46957 22 10V19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V10C5 9.46957 5.21071 8.96086 5.58579 8.58579C5.96086 8.21071 6.46957 8 7 8V8ZM20 11.67V10L13.5 13.31L7 10V11.67L13.5 15L20 11.67Z")
+        }
+        // view reactions
+        [d="M12 2C6.477 2 2 6.477 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.477 17.523 2 12 2ZM8 6C9.104 6 10 6.896 10 8C10 9.105 9.104 10 8 10C6.896 10 6 9.105 6 8C6 6.896 6.896 6 8 6ZM18 14C18 16.617 15.14 19 12 19C8.86 19 6 16.617 6 14V13H18V14ZM16 10C14.896 10 14 9.105 14 8C14 6.896 14.896 6 16 6C17.104 6 18 6.896 18 8C18 9.105 17.104 10 16 10Z"] {
+          d: path("M12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM8.5 11C8.89782 11 9.27936 10.842 9.56066 10.5607C9.84196 10.2794 10 9.89782 10 9.5C10 9.10218 9.84196 8.72064 9.56066 8.43934C9.27936 8.15804 8.89782 8 8.5 8C8.10218 8 7.72064 8.15804 7.43934 8.43934C7.15804 8.72064 7 9.10218 7 9.5C7 9.89782 7.15804 10.2794 7.43934 10.5607C7.72064 10.842 8.10218 11 8.5 11ZM15.5 11C15.8978 11 16.2794 10.842 16.5607 10.5607C16.842 10.2794 17 9.89782 17 9.5C17 9.10218 16.842 8.72064 16.5607 8.43934C16.2794 8.15804 15.8978 8 15.5 8C15.1022 8 14.7206 8.15804 14.4393 8.43934C14.158 8.72064 14 9.10218 14 9.5C14 9.89782 14.158 10.2794 14.4393 10.5607C14.7206 10.842 15.1022 11 15.5 11V11ZM12 20C9.87827 20 7.84344 19.1571 6.34315 17.6569C4.84285 16.1566 4 14.1217 4 12C4 9.87827 4.84285 7.84344 6.34315 6.34315C7.84344 4.84285 9.87827 4 12 4C14.1217 4 16.1566 4.84285 17.6569 6.34315C19.1571 7.84344 20 9.87827 20 12C20 14.1217 19.1571 16.1566 17.6569 17.6569C16.1566 19.1571 14.1217 20 12 20V20ZM12 2C6.47 2 2 6.5 2 12C2 14.6522 3.05357 17.1957 4.92893 19.0711C5.85752 19.9997 6.95991 20.7362 8.17317 21.2388C9.38642 21.7413 10.6868 22 12 22C14.6522 22 17.1957 20.9464 19.0711 19.0711C20.9464 17.1957 22 14.6522 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7362 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2V2Z")
+        }
+        // delete
+        [d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z"] {display:none}
+        [d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999 19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z"] {
+          d: path("M7.5 9.75H6V18.75H7.5V9.75ZM21.75 3H15V0.75C15 0.3 14.7 0 14.25 0H8.25C7.8 0 7.5 0.3 7.5 0.75V3H0.75C0.3 3 0 3.3 0 3.75C0 4.2 0.3 4.5 0.75 4.5H1.5V22.5C1.5 23.4 2.1 24 3 24H19.5C20.4 24 21 23.4 21 22.5V4.5H21.75C22.2 4.5 22.5 4.2 22.5 3.75C22.5 3.3 22.2 3 21.75 3ZM9 1.5H13.5V3H9V1.5ZM19.5 21.75C19.5 22.2 19.2 22.5 18.75 22.5H3.75C3.3 22.5 3 22.2 3 21.75V4.5H19.5V21.75ZM12 8.25H10.5V18.75H12V8.25ZM16.5 9.75H15V18.75H16.5V9.75Z")
         }
       }
     }
-    #{$msgBtnContHeader} {
-      top: 45px;
+    .repliedMessage-3Z6XBG+.contents-2MsGLg+#{$msgBtnContainer} .isHeader-2bbX-L,
+    .repliedMessage-3Z6XBG+.contents-2MsGLg+.container-2sjPya+#{$msgBtnContainer} .isHeader-2bbX-L {
+      top: 67px;
     }
-    #{$msgBtnContWrap} {
-      height: 16px;
-      background: none !important;
-      box-shadow: none !important;
-    }
-    #{$msgBtnContButton} {
-      width: 16px;
-      height: 16px;
-      min-width: 16px;
-      margin-left: 4px;
-      padding: 0;
-      opacity: .3;
-      transition: .2s opacity;
-      svg {
-        width: 16px;
-        height: 16px;
+    &.automodMessage-265YwJ {
+      .theme-dark & {
+        background: linear-gradient(to right, #F04747 10px, #5B3C40 10px, var(--background-primary)) !important;
       }
-      &:hover {
-        opacity: .8;
+      .theme-light & {
+        background: linear-gradient(to right, #F04747 10px, #FCDADA 10px, var(--background-primary)) !important;
       }
+      &:before {display:none}
     }
-    #{$msgBtnContButton} {
-      // pencil / edit
-      [d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z"] {
-        d: path("M1.3335 20.8891V16.4446L15.3424 2.48908C15.6802 2.13352 16.2491 2.13352 16.6046 2.48908L19.7335 5.61797C20.0891 5.97352 20.0891 6.52463 19.7335 6.88019L5.72461 20.8891H1.3335ZM22.6668 20.8891H9.3335L12.8891 17.3335H22.6668V20.8891Z");
+    &.ephemeral-2nDdnn {
+      .theme-dark & {
+        background: linear-gradient(to right,#32353A 80%,#0000) !important;
       }
-      // more / 3 dots
-      [d="M7 12.001C7 10.8964 6.10457 10.001 5 10.001C3.89543 10.001 3 10.8964 3 12.001C3 13.1055 3.89543 14.001 5 14.001C6.10457 14.001 7 13.1055 7 12.001ZM14 12.001C14 10.8964 13.1046 10.001 12 10.001C10.8954 10.001 10 10.8964 10 12.001C10 13.1055 10.8954 14.001 12 14.001C13.1046 14.001 14 13.1055 14 12.001ZM19 10.001C20.1046 10.001 21 10.8964 21 12.001C21 13.1055 20.1046 14.001 19 14.001C17.8954 14.001 17 13.1055 17 12.001C17 10.8964 17.8954 10.001 19 10.001Z"] {
-        d: path("M12 16C13.1046 16 14 16.8954 14 18C14 19.1046 13.1046 20 12 20C10.8954 20 10 19.1046 10 18C10 16.8954 10.8954 16 12 16ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM12 4C13.1046 4 14 4.89543 14 6C14 7.10457 13.1046 8 12 8C10.8954 8 10 7.10457 10 6C10 4.89543 10.8954 4 12 4Z")
+      .theme-light & {
+        background: linear-gradient(to right,#EEE 80%,#0000) !important;
       }
-      // add reaction
-      [d="M12.2512 2.00309C12.1677 2.00104 12.084 2 12 2C6.477 2 2 6.477 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 11.916 21.999 11.8323 21.9969 11.7488C21.3586 11.9128 20.6895 12 20 12C15.5817 12 12 8.41828 12 4C12 3.31052 12.0872 2.6414 12.2512 2.00309ZM10 8C10 6.896 9.104 6 8 6C6.896 6 6 6.896 6 8C6 9.105 6.896 10 8 10C9.104 10 10 9.105 10 8ZM12 19C15.14 19 18 16.617 18 14V13H6V14C6 16.617 8.86 19 12 19Z"] {
-        d: path("M21.9499 11C21.9831 11.3308 22 11.6646 22 12C22 17.5228 17.5228 22 12 22C9.34783 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 6.5 6.47 2 12 2C12.3354 2 12.6692 2.01685 13 2.05009V4.06272C12.67 4.02115 12.3361 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.6639 19.9788 11.33 19.9373 11H21.9499ZM12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM15.5 11C16.3284 11 17 10.3284 17 9.5C17 8.67157 16.3284 8 15.5 8C14.6716 8 14 8.67157 14 9.5C14 10.3284 14.6716 11 15.5 11ZM8.5 11C9.32843 11 10 10.3284 10 9.5C10 8.67157 9.32843 8 8.5 8C7.67157 8 7 8.67157 7 9.5C7 10.3284 7.67157 11 8.5 11Z")
-      }
-      [d="M21 3V0H19V3H16V5H19V8H21V5H24V3H21Z"] {
-        d: path("M21 3V0H19V3H16V5H19V8H21V5H24V3H21Z")
-      }
-      // pin
-      [d="M22 12L12.101 2.10101L10.686 3.51401L12.101 4.92901L7.15096 9.87801V9.88001L5.73596 8.46501L4.32196 9.88001L8.56496 14.122L2.90796 19.778L4.32196 21.192L9.97896 15.536L14.222 19.778L15.636 18.364L14.222 16.95L19.171 12H19.172L20.586 13.414L22 12Z"] {
-        d: path("M16.3637 4.3637H17.4546V2.18188H6.5455V4.3637H7.63641V13.091L5.45459 15.2728V17.4546H11.1273V21.8182H12.8728V17.4546H18.5455V15.2728L16.3637 13.091V4.3637ZM9.81823 4.3637H14.1819V14.1819H14.7273C15.0286 14.1819 15.2728 14.4261 15.2728 14.7273C15.2728 15.0286 15.0286 15.2728 14.7273 15.2728H9.27277C8.97153 15.2728 8.72732 15.0286 8.72732 14.7273C8.72732 14.4261 8.97153 14.1819 9.27277 14.1819H9.81823V4.3637Z")
-      }
-      // mark unread
-      [d="M14 3H20C21 3 22.0001 4 22.0001 5V19.0003C22.0001 20 21 21 20 21H14C13 21 6 13 6 13H2V11H6C6 11 13 3 14 3Z"] {
-        d: path("M18.84 7H16.22L10.5 4L4 7.41V17C3.46957 17 2.96086 16.7893 2.58579 16.4142C2.21071 16.0391 2 15.5304 2 15V7.17C2 6.5 2.28 6.06 2.81 5.81L10.5 2L18.05 5.81C18.5 6.09 18.78 6.5 18.84 7ZM7 8H20C20.5304 8 21.0391 8.21071 21.4142 8.58579C21.7893 8.96086 22 9.46957 22 10V19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V10C5 9.46957 5.21071 8.96086 5.58579 8.58579C5.96086 8.21071 6.46957 8 7 8V8ZM20 11.67V10L13.5 13.31L7 10V11.67L13.5 15L20 11.67Z")
-      }
-      // view reactions
-      [d="M12 2C6.477 2 2 6.477 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.477 17.523 2 12 2ZM8 6C9.104 6 10 6.896 10 8C10 9.105 9.104 10 8 10C6.896 10 6 9.105 6 8C6 6.896 6.896 6 8 6ZM18 14C18 16.617 15.14 19 12 19C8.86 19 6 16.617 6 14V13H18V14ZM16 10C14.896 10 14 9.105 14 8C14 6.896 14.896 6 16 6C17.104 6 18 6.896 18 8C18 9.105 17.104 10 16 10Z"] {
-        d: path("M12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM8.5 11C8.89782 11 9.27936 10.842 9.56066 10.5607C9.84196 10.2794 10 9.89782 10 9.5C10 9.10218 9.84196 8.72064 9.56066 8.43934C9.27936 8.15804 8.89782 8 8.5 8C8.10218 8 7.72064 8.15804 7.43934 8.43934C7.15804 8.72064 7 9.10218 7 9.5C7 9.89782 7.15804 10.2794 7.43934 10.5607C7.72064 10.842 8.10218 11 8.5 11ZM15.5 11C15.8978 11 16.2794 10.842 16.5607 10.5607C16.842 10.2794 17 9.89782 17 9.5C17 9.10218 16.842 8.72064 16.5607 8.43934C16.2794 8.15804 15.8978 8 15.5 8C15.1022 8 14.7206 8.15804 14.4393 8.43934C14.158 8.72064 14 9.10218 14 9.5C14 9.89782 14.158 10.2794 14.4393 10.5607C14.7206 10.842 15.1022 11 15.5 11V11ZM12 20C9.87827 20 7.84344 19.1571 6.34315 17.6569C4.84285 16.1566 4 14.1217 4 12C4 9.87827 4.84285 7.84344 6.34315 6.34315C7.84344 4.84285 9.87827 4 12 4C14.1217 4 16.1566 4.84285 17.6569 6.34315C19.1571 7.84344 20 9.87827 20 12C20 14.1217 19.1571 16.1566 17.6569 17.6569C16.1566 19.1571 14.1217 20 12 20V20ZM12 2C6.47 2 2 6.5 2 12C2 14.6522 3.05357 17.1957 4.92893 19.0711C5.85752 19.9997 6.95991 20.7362 8.17317 21.2388C9.38642 21.7413 10.6868 22 12 22C14.6522 22 17.1957 20.9464 19.0711 19.0711C20.9464 17.1957 22 14.6522 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7362 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2V2Z")
-      }
-      // delete
-      [d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z"] {display:none}
-      [d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999 19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z"] {
-        d: path("M7.5 9.75H6V18.75H7.5V9.75ZM21.75 3H15V0.75C15 0.3 14.7 0 14.25 0H8.25C7.8 0 7.5 0.3 7.5 0.75V3H0.75C0.3 3 0 3.3 0 3.75C0 4.2 0.3 4.5 0.75 4.5H1.5V22.5C1.5 23.4 2.1 24 3 24H19.5C20.4 24 21 23.4 21 22.5V4.5H21.75C22.2 4.5 22.5 4.2 22.5 3.75C22.5 3.3 22.2 3 21.75 3ZM9 1.5H13.5V3H9V1.5ZM19.5 21.75C19.5 22.2 19.2 22.5 18.75 22.5H3.75C3.3 22.5 3 22.2 3 21.75V4.5H19.5V21.75ZM12 8.25H10.5V18.75H12V8.25ZM16.5 9.75H15V18.75H16.5V9.75Z")
-      }
-    }
-  }
-  .repliedMessage-3Z6XBG+.contents-2MsGLg+#{$msgBtnContainer} .isHeader-2bbX-L,
-  .repliedMessage-3Z6XBG+.contents-2MsGLg+.container-2sjPya+#{$msgBtnContainer} .isHeader-2bbX-L {
-    top: 67px;
-  }
-  &.automodMessage-265YwJ {
-    .theme-dark & {
-      background: linear-gradient(to right, #F04747 10px, #5B3C40 10px, var(--background-primary)) !important;
-    }
-    .theme-light & {
-      background: linear-gradient(to right, #F04747 10px, #FCDADA 10px, var(--background-primary)) !important;
-    }
-    &:before {display:none}
-  }
-  &.ephemeral-2nDdnn {
-    .theme-dark & {
-      background: linear-gradient(to right,#32353A 80%,#0000) !important;
-    }
-    .theme-light & {
-      background: linear-gradient(to right,#EEE 80%,#0000) !important;
-    }
-    &:before {
-      display: none;
-    }
-  }
-}
-.isSystemMessage-QNv9ZH {
-  .icon-JRJzJz {
-    &[style="background-image: url(\"/assets/1f57f1c100434d1ff6569a495ada213e.svg\");"] {
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977292986029338654/4e4e1d9c907a3dc53d68f34e868fcb12.svg?) !important;
-    }
-    &[style="background-image: url(\"/assets/d1382af8d9e755bc44811b1fd92990a8.svg\");"] {
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977294100787236985/join.svg?) !important;
-    }
-  }
-}
-.systemMessage-1H1Z20 {
-  .messageContent-2t3eCI {
-    overflow: visible;
-  }
-  &.groupStart-3Mlgv1 #{$msgBtnContainer} {
-    top: 24px;
-  }
-  &.hasThread-3h-KJV {
-    &:after {
-      z-index: 0;
-    }
-    .iconContainer-2rPbqG {
-      z-index: 10;
-      background: var(--background-primary)
-    }
-  }
-}
-#{$msgGroupStart} {
-  padding-top: 20px !important;
-  margin-top: -20px !important;
-  &:before, &.mentioned-Tre-dv:before {
-    content: "";
-    width: calc(100% - 20px);
-    height: 1px;
-    background: var(--background-modifier-accent);
-    display: block !important;
-    position: absolute;
-    left: 20px;
-    top: 0;
-  }
-  &:not(#{$message}):not(.backgroundFlash-1X5jVs):before {
-    position: relative;
-    display: block;
-    top: -20px;
-  }
-  &.compact-2Nkcau {
-    margin-top: 5px !important;
-    padding-top: 5px !important;
-  }
-}
-.compact-2Nkcau .headerText-2z4IhQ #{$msgUsername} {
-  top: 2px
-}
-.compact-2Nkcau>.contents-2MsGLg>.messageContent-2t3eCI {
-  position: relative;
-  top: 2px
-}
-#{$scrollerSpacer} {
-  height: 20px;
-}
-.container-1yy5xN {
-  margin-bottom: 40px;
-  .iconWrapper-2JyIpA {display:none}
-}
-.cozy-VmLDNB.wrapper-30-Nkg {
-  min-height: 1rem;
-}
-.cozy-VmLDNB #{$msgTimestamp}.alt-1dvXnH {
-  height: 1rem;
-  line-height: 1rem;
-}
-@keyframes backgroundFlash {
-  0% {background: #7289da22 !important}
-  100% {background: #0000 !important}
-}
-.backgroundFlash-1X5jVs {
-  z-index: 20 !important;
-  background: none !important;
-  .message-2CShn3 {
-    .theme-dark &, .theme-light & {
-      background: var(--background-primary);
-      transition: .5s;
-    }
-    &:not(.groupStart-3Mlgv1) {
-      margin-bottom: 20px !important;
-    }
-    &.groupStart-3Mlgv1 {
-      margin-top: -20px !important;
-      margin-bottom: 20px !important;
-      &:after {
-        bottom: 20px !important;
-      }
-    }
-  }
-}
-.backgroundFlash-1X5jVs:not([style="background-color: rgba(88, 101, 242, 0);"]) {
-  .message-2CShn3 {
-    .theme-dark & {
-      background: #3e4353 !important;
-    }
-    .theme-light & {
-      background: #eceffa !important;
-    }
-    .theme-dark &, .theme-light & {
-      transition: 0s;
-    }
-  }
-}
-
-.replying-eZ7p5z {
-  &:before {
-    display: none;
-  }
-  .contents-2MsGLg #{$markup}:not(.slateTextArea-27tjG0) {
-    @if $BlurpleStyle == 1 {
-      background: #5865F222;
-    } @else {
-      background: #7289da22;
-    }
-    border-left: solid 4px var(--blurple);
-    padding-left: 2px;
-    margin-left: -6px;
-    &:before {
-      content: "";
-      width: 3rem;
-      height: 1rem;
-      display: inline-flex;
-      float: right;
-    }
-  }
-}
-.wrapper-1ZcZW- {
-  border-radius: 0;
-  &.iconMentionText-1_WCtN {
-    padding: 0 2px !important;
-    .channelIcon-3I2O7O {
-      display: none;
-    }
-    &:before {
-      content: "#";
-    }
-  }
-}
-
-.scrollerInner-2PPAp2>div[class="groupStart-3Mlgv1"],
-.scrollerInner-2PPAp2>div[class="groupStart-3Mlgv1 expanded-3lghlw"] {
-  margin-bottom: 20px !important;
-  padding-bottom: 20px !important;
-  .messageListItem-ZZ7v6g {
-    margin-top: 20px !important;
-    #{$message} {
-      background: none !important;
       &:before {
-        display: none !important;
+        display: none;
       }
+    }
+  }
+  .isSystemMessage-QNv9ZH {
+    .icon-JRJzJz {
+      &[style="background-image: url(\"/assets/1f57f1c100434d1ff6569a495ada213e.svg\");"] {
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977292986029338654/4e4e1d9c907a3dc53d68f34e868fcb12.svg?) !important;
+      }
+      &[style="background-image: url(\"/assets/d1382af8d9e755bc44811b1fd92990a8.svg\");"] {
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977294100787236985/join.svg?) !important;
+      }
+    }
+  }
+  .systemMessage-1H1Z20 {
+    .messageContent-2t3eCI {
+      overflow: visible;
+    }
+    &.groupStart-3Mlgv1 #{$msgBtnContainer} {
+      top: 24px;
+    }
+    &.hasThread-3h-KJV {
+      &:after {
+        z-index: 0;
+      }
+      .iconContainer-2rPbqG {
+        z-index: 10;
+        background: var(--background-primary)
+      }
+    }
+  }
+  #{$msgGroupStart} {
+    padding-top: 20px !important;
+    margin-top: -20px !important;
+    &:before, &.mentioned-Tre-dv:before {
+      content: "";
+      width: calc(100% - 20px);
+      height: 1px;
+      background: var(--background-modifier-accent);
+      display: block !important;
+      position: absolute;
+      left: 20px;
+      top: 0;
+    }
+    &:not(#{$message}):not(.backgroundFlash-1X5jVs):before {
+      position: relative;
+      display: block;
+      top: -20px;
+    }
+    &.compact-2Nkcau {
+      margin-top: 5px !important;
+      padding-top: 5px !important;
+    }
+  }
+  .compact-2Nkcau .headerText-2z4IhQ #{$msgUsername} {
+    top: 2px
+  }
+  .compact-2Nkcau>.contents-2MsGLg>.messageContent-2t3eCI {
+    position: relative;
+    top: 2px
+  }
+  #{$scrollerSpacer} {
+    height: 20px;
+  }
+  .container-1yy5xN {
+    margin-bottom: 40px;
+    .iconWrapper-2JyIpA {display:none}
+  }
+  .cozy-VmLDNB.wrapper-30-Nkg {
+    min-height: 1rem;
+  }
+  .cozy-VmLDNB #{$msgTimestamp}.alt-1dvXnH {
+    height: 1rem;
+    line-height: 1rem;
+  }
+  @keyframes backgroundFlash {
+    0% {background: #7289da22 !important}
+    100% {background: #0000 !important}
+  }
+  .backgroundFlash-1X5jVs {
+    z-index: 20 !important;
+    background: none !important;
+    .message-2CShn3 {
+      .theme-dark &, .theme-light & {
+        background: var(--background-primary);
+        transition: .5s;
+      }
+      &:not(.groupStart-3Mlgv1) {
+        margin-bottom: 20px !important;
+      }
+      &.groupStart-3Mlgv1 {
+        margin-top: -20px !important;
+        margin-bottom: 20px !important;
+        &:after {
+          bottom: 20px !important;
+        }
+      }
+    }
+  }
+  .backgroundFlash-1X5jVs:not([style="background-color: rgba(88, 101, 242, 0);"]) {
+    .message-2CShn3 {
+      .theme-dark & {
+        background: #3e4353 !important;
+      }
+      .theme-light & {
+        background: #eceffa !important;
+      }
+      .theme-dark &, .theme-light & {
+        transition: 0s;
+      }
+    }
+  }
+
+  .replying-eZ7p5z {
+    &:before {
+      display: none;
+    }
+    .contents-2MsGLg #{$markup}:not(.slateTextArea-27tjG0) {
+      @if $BlurpleStyle == 1 {
+        background: #5865F222;
+      } @else {
+        background: #7289da22;
+      }
+      border-left: solid 4px var(--blurple);
+      padding-left: 2px;
+      margin-left: -6px;
+      &:before {
+        content: "";
+        width: 3rem;
+        height: 1rem;
+        display: inline-flex;
+        float: right;
+      }
+    }
+  }
+  .wrapper-1ZcZW- {
+    border-radius: 0;
+    &.iconMentionText-1_WCtN {
+      padding: 0 2px !important;
+      .channelIcon-3I2O7O {
+        display: none;
+      }
+      &:before {
+        content: "#";
+      }
+    }
+  }
+
+  .scrollerInner-2PPAp2>div[class="groupStart-3Mlgv1"],
+  .scrollerInner-2PPAp2>div[class="groupStart-3Mlgv1 expanded-3lghlw"] {
+    margin-bottom: 20px !important;
+    padding-bottom: 20px !important;
+    .messageListItem-ZZ7v6g {
+      margin-top: 20px !important;
+      #{$message} {
+        background: none !important;
+        &:before {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+
+  .divider-IqmEqJ {
+    margin-left: 20px;
+    margin-right: 4px;
+    &.beforeGroup-1BvJAt {
+      margin-bottom: 0 !important;
+      margin-top: -1px !important;
+    }
+    &.isUnread-3Lojb- {
+      border-color: #f0474766;
+      &:not(.beforeGroup-1BvJAt) {
+        margin-top: -34px !important;
+        margin-bottom: 46px !important;
+        &.hasContent-1y12-u {
+          margin-top: -20px !important;
+          margin-bottom: 19px !important;
+          .unreadPill-3nEWYM {
+            display: none !important;
+          }
+        }
+      }
+      +.messageListItem-ZZ7v6g .message-2CShn3.cozyMessage-1DWF9U.groupStart-3Mlgv1.hasReply-2Cr4KE {
+        margin-top: -20px !important;
+      }
+    }
+    &.hasContent-31hcsn:not(.isUnread-3Lojb-) {
+      margin-top: -20px !important;
+    }
+    .unreadPill-3nEWYM {
+      padding: 0 10px;
+      border-radius: 3px;
+      background: var(--background-primary);
+      right: unset;
+      text-align: center;
+      font-size: 14px;
+      color: rgba(240,71,71,.8);
+      svg {
+        display: none;
+      }
+      [lang="en-GB"] &, [lang="en-US"] & {
+        font-size: 0;
+        &:after {
+          content: "NEW MESSAGES";
+          font-size: 14px;
+        }
+      }
+    }
+    &.beforeGroup-1BvJAt {
+      top: -19px !important;
+    }
+    &:not(.isUnread-3Lojb-)+.messageListItem-ZZ7v6g,
+    &:not(.isUnread-3Lojb-)+.backgroundFlash-1X5jVs {
+      .message-2CShn3 {
+        margin-top: -8px !important;
+        &.groupStart-3Mlgv1:before {
+          content: unset;
+        }
+      }
+    }
+  }
+  .wrapper-2SplAX {
+    background: none;
+  }
+  .messageListItem-ZZ7v6g:last-of-type,
+  .backgroundFlash-1X5jVs:last-of-type {
+    #{$message} {
+      margin-bottom: -20px !important;
+    }
+    .systemMessage-1H1Z20 {
+      overflow: hidden;
     }
   }
 }
@@ -7002,9 +7009,13 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 }
 .headerRow-1MKoR- .mainCard-3KBsBI {
   background: hsla(0,0%,100%,.06);
-  border: solid 2px hsla(0,0%,100%,.2);
+  .theme-light & {
+    background: #0001;
+  }
+  border: none !important;
+  box-shadow: none !important;
   border-radius: 3px;
-  .scrollableContainer-15eg7h {
+  .scrollableContainer-15eg7h, .input-2g-os5 {
     background: none;
     border: none;
   }
@@ -7192,4 +7203,9 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 // Doing you all a favor
 .fixedBottomList-1yrBla, .premiumTrialBadge-pEqntF.premiumTrialAcknowledgedBadge-2QxbU_, .shineContainer-NmlfaV {
     display: none;
+}
+
+// fixing discord's mistakes
+.sidebar-1tnWFu.theme-dark .divider-3qUeLQ {
+  border-top: solid 1px #ffffff0f;
 }
