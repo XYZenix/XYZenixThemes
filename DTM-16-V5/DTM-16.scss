@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "214";
+$themeVersion: "215";
 $themeDate: "Jul 16, 2022";
 
 @use "sass:color";
@@ -838,14 +838,18 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     border-top: solid 1px #DEDEDE;
     height: 70px;
     padding: 0 10px;
-    padding-right: 2px;
     .withTagAsButton-OsgQ9L, .withTagless-10ooWt {
       min-width: unset;
       width: 100%;
-      max-width: 50%;
-      transition: .2s;
+      //transition: .2s;
+      background: none !important;
       &, .hoverRoll-2XwpoF {
         cursor: pointer;
+      }
+      .nameTag-sc-gpq {
+        padding-top: 0;
+        padding-bottom: 0;
+
       }
     }
     .theme-dark & {
@@ -878,6 +882,20 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
         }
         &:active {
           background: #33373C;
+        }
+      }
+      .buildOverrideButton-1cRvTc {
+        >svg:not(.hasBuildOverride-3V9MZN) {
+          width: 16px;
+          height: 16px;
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .hasBuildOverride-3V9MZN {
+          width: 9px;
+          height: 9px;
         }
       }
     }
@@ -3173,8 +3191,8 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   .icon-3BYlXK {
     color: var(--blurple);
   }
-  .colorMuted-20987_ {
-    color: #fff8;
+  .colorMuted-20987_, .muteText-13RgwP {
+    color: #fff8 !important;
   }
   .activityIcon-vfIBet {
     color: #fffb;
@@ -5780,7 +5798,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     border-color: var(--background-primary);
   }
 }
-
 .feature-2IUcBI {
   .featureTitle-3N9Stg {
     color: #fff !important;
@@ -5823,13 +5840,21 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     background: linear-gradient(135deg,hsl(165.8,calc(var(--saturation-factor, 1)*45.8%),47.1%),hsl(244.8,calc(var(--saturation-factor, 1)*100%),63.1%));
   }
 }
-
 .progressBar-2yl2pi {
   background: linear-gradient(90deg, hsl(270, calc(var(--saturation-factor, 1)*86.7%), 70.6%), hsl(342, calc(var(--saturation-factor, 1)*58%), 72.9%));
 }
 .container-2giAcK:hover .progressBar-2yl2pi {
   background: linear-gradient(90deg,hsl(270, calc(var(--saturation-factor, 1)*86.7%), 70.6%),hsl(342, calc(var(--saturation-factor, 1)*58%), 72.9%) 34%,hsl(270, calc(var(--saturation-factor, 1)*86.7%), 70.6%) 67%,hsl(342, calc(var(--saturation-factor, 1)*58%), 72.9%));
   background-size: 300% 100%;
+}
+.tierTitleActive-3ziKx5 {
+  color: #fff;
+  h3, div {
+    color: inherit !important;
+  }
+}
+.grid-5BH14o {
+    grid-template-columns: repeat(5,108px)
 }
 
 // switches
