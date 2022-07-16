@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "213";
-$themeDate: "Jul 15, 2022";
+$themeVersion: "214";
+$themeDate: "Jul 16, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -1813,7 +1813,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   .channel-1Shao0 {
     margin-left: 0;
     #{$channelInteractive} {
-      padding-left: 16px;
+      padding-left: 12px;
       border-radius: 0;
     }
     &:hover, &:active {
@@ -1843,6 +1843,49 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     }
   }
 }
+
+// tabs in home tab
+#{$privateChannels} {
+  .channel-1Shao0.container-32HW5s {
+    .interactive-1vLZ_I.interactive-iyXY_x.linkButton-2NshQj {
+      .link-39sEB3 {
+        &[href="/store"], &[href="/library"], &[href="/channels/@me"] {
+          .avatar-1HDIsL {
+            background-color: var(--background-accent);
+            background-size: 30px 30px;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 32px;
+            height: 32px;
+            border-radius: 64px;
+            svg {
+              display: none;
+            }
+            opacity: .8;
+          }
+        }
+        &[href="/store"] .avatar-1HDIsL {
+          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/997791588837228606/unknown.png);
+        }
+        &[href="/library"] .avatar-1HDIsL {
+          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/997791604767199332/unknown.png);
+        }
+        &[href="/channels/@me"] .avatar-1HDIsL {
+          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/997791006583955507/unknown.png);
+        }
+      }
+      &.selected-3veCBZ {
+        .link-39sEB3[href="/store"], .link-39sEB3[href="/library"], .link-39sEB3[href="/channels/@me"] {
+          .avatar-1HDIsL {
+            background-color: var(--blurple);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 // channel categories (how)
 #{$containerDefaultCategory} {
