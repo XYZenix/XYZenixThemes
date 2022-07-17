@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "29";
-$themeDate: "Jul 16, 2022";
+$themeVersion: "30";
+$themeDate: "Jul 17, 2022";
 $themeName: "DTM-17 BETA";
 
 @use "sass:color";
@@ -1896,24 +1896,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
         margin-left: -8px;
       }
     }
-    .mentioned-Tre-dv>.contents-2MsGLg>.messageContent-2t3eCI {
-      background: var(--background-mentioned);
-      border-color: #FAA61A;
-    }
-    .automodMessage-265YwJ>.contents-2MsGLg>.messageContent-2t3eCI {
-      background: #f0474722;
-      border-color: var(--red);
-    }
-    .replying-eZ7p5z, .ephemeral-2nDdnn {
-      >.contents-2MsGLg>.messageContent-2t3eCI {
-        @if $BlurpleStyle == 1 {
-          background: #5865F222;
-        } @else {
-          background: #7289da22;
-        }
-        border-color: var(--blurple);
-      }
-    }
     .divider-IqmEqJ {
       &.isUnread-3Lojb- {
         border-color: #f0474766;
@@ -1943,6 +1925,24 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     }
     .scrollerSpacer-3AqkT9 {
       height: 20px;
+    }
+    .mentioned-Tre-dv>.contents-2MsGLg>.messageContent-2t3eCI {
+      background: var(--background-mentioned);
+      border-color: #FAA61A;
+    }
+    .automodMessage-265YwJ>.contents-2MsGLg>.messageContent-2t3eCI {
+      background: #f0474722;
+      border-color: var(--red);
+    }
+    .replying-eZ7p5z, .ephemeral-2nDdnn {
+      >.contents-2MsGLg>.messageContent-2t3eCI {
+        @if $BlurpleStyle == 1 {
+          background: #5865F222;
+        } @else {
+          background: #7289da22;
+        }
+        border-color: var(--blurple);
+      }
     }
     #{$msgBtnContainer} {
       #{$msgBtnContInner} {
@@ -2051,6 +2051,13 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
         }
       }
     }
+    .messageContent-2t3eCI:before {
+      content: "";
+      float: right;
+      display: inline-flex;
+      width: 70px;
+      height: 1rem;
+    }
   }
   .divider-IqmEqJ.hasContent-31hcsn+li, .divider-IqmEqJ.hasContent-31hcsn+div {
     .message-2CShn3.groupStart-3Mlgv1 {
@@ -2070,6 +2077,138 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   .backgroundFlash-1X5jVs {
     &.groupStart-3Mlgv1 {
       margin-top: 0;
+    }
+  }
+  .font-size-12 {
+    .isSystemMessage-QNv9ZH.hasThread-3h-KJV:after {
+      top: 3.3rem !important;
+      left: 3.7rem !important;
+      width: 2rem !important;
+      bottom: 2.1rem !important;
+    }
+    .groupStart-3Mlgv1:not(.isSystemMessage-QNv9ZH).hasThread-3h-KJV:after {
+      top: 4.5rem !important;
+      left: 2.8rem !important;
+      width: 2.8rem !important;
+    }
+    #{$msgBtnContInner} {
+      top: 1px !important;
+    }
+    #{$msgGroupStart} #{$msgBtnContInner} {
+      top: 36px !important;
+    }
+    .isSystemMessage-QNv9ZH #{$msgBtnContInner} {
+      top: 22px !important;
+    }
+  }
+  .font-size-14 {
+    .isSystemMessage-QNv9ZH.hasThread-3h-KJV:after {
+      top: 3rem !important;
+      left: 2.85rem !important;
+      width: 2rem !important;
+      bottom: 2rem !important;
+    }
+    .groupStart-3Mlgv1:not(.isSystemMessage-QNv9ZH).hasThread-3h-KJV:after {
+      top: 4.5rem !important;
+      left: 2.6rem !important;
+      width: 2.2rem !important;
+    }
+    #{$msgGroupStart} #{$msgBtnContInner} {
+      top: 41px !important;
+    }
+    .isSystemMessage-QNv9ZH #{$msgBtnContInner} {
+      top: 24px !important;
+    }
+  }
+  .font-size-15 {
+    .isSystemMessage-QNv9ZH.hasThread-3h-KJV:after {
+      top: 3rem !important;
+      left: 2.5rem !important;
+      width: 1.8rem !important;
+    }
+    .groupStart-3Mlgv1:not(.isSystemMessage-QNv9ZH).hasThread-3h-KJV:after {
+      top: 4.1rem !important;
+      left: 2.5rem !important;
+      width: 2.0rem !important;
+      bottom: 2rem !important;
+    }
+    #{$msgBtnContInner} {
+      top: 5px !important;
+    }
+    #{$msgGroupStart} #{$msgBtnContInner} {
+      top: 44px !important;
+    }
+    .isSystemMessage-QNv9ZH #{$msgBtnContInner} {
+      top: 25px !important;
+    }
+  }
+  .font-size-18 {
+    .isSystemMessage-QNv9ZH.hasThread-3h-KJV:after {
+      top: 2.8rem !important;
+      left: 2.4rem !important;
+      width: 1.8rem !important;
+      bottom: 1.8rem !important;
+    }
+    .groupStart-3Mlgv1:not(.isSystemMessage-QNv9ZH).hasThread-3h-KJV:after {
+      top: 3.5rem !important;
+      left: 2.15rem !important;
+      width: 2rem !important;
+      bottom: 1.9rem !important;
+    }
+    #{$msgBtnContInner} {
+      top: 8px !important;
+    }
+    #{$msgGroupStart} #{$msgBtnContInner} {
+      top: 49px !important;
+    }
+    .isSystemMessage-QNv9ZH #{$msgBtnContInner} {
+      top: 27px !important;
+    }
+  }
+  .font-size-20 {
+    .isSystemMessage-QNv9ZH.hasThread-3h-KJV:after {
+      top: 2.7rem !important;
+      left: 2.2rem !important;
+      width: 1.6rem !important;
+      bottom: 1.8rem !important;
+    }
+    .groupStart-3Mlgv1:not(.isSystemMessage-QNv9ZH).hasThread-3h-KJV:after {
+      top: 3.2rem !important;
+      left: 1.95rem !important;
+      width: 1.8rem !important;
+      bottom: 1.85rem !important;
+    }
+    #{$msgBtnContInner} {
+      top: 8px !important;
+    }
+    #{$msgGroupStart} #{$msgBtnContInner} {
+      top: 54px !important;
+    }
+    .isSystemMessage-QNv9ZH #{$msgBtnContInner} {
+      top: 29px !important;
+    }
+  }
+  .font-size-24 {
+    .isSystemMessage-QNv9ZH.hasThread-3h-KJV:after {
+      top: 2.4rem !important;
+      left: 1.85rem !important;
+      width: 1.3rem !important;
+      bottom: 1.7rem !important;
+    }
+    .groupStart-3Mlgv1:not(.isSystemMessage-QNv9ZH).hasThread-3h-KJV:after {
+      top: 2.7rem !important;
+      left: 1.64rem !important;
+      width: 1.4rem !important;
+      bottom: 1.8rem !important;
+    }
+    #{$msgBtnContInner} {
+      top: 12px !important;
+    }
+    #{$msgGroupStart} #{$msgBtnContInner} {
+      top: 63px !important;
+    }
+    .isSystemMessage-QNv9ZH #{$msgBtnContInner} {
+      top: 34px !important;
     }
   }
 }
@@ -4654,23 +4793,25 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     }
   }
   .icon-Zc-uZZ, .icon-3Povsy {display:none}
-  .contentRegion-3HkfJJ>.contentTransitionWrap-1YD530>.contentRegionScroller-2_GT_N.contentRegionShownSidebar-fHXkEg.auto-2K3UW5.scrollerBase-_bVAAt>.contentColumn-1C7as6.contentColumnDefault-3eyv5o>div>.children-1xdcWE>div[tabindex="-1"]+.marginTop8-24uXGp+.marginTop8-24uXGp:before {
-    content: "IF YOU USE COMPACT MODE: Go to GitHub then navigate to\AXYZenix/XYZenixThemes/DTM-16-V5 and get the Compact Mode fix mini-theme! No guarantee that it will work with DTM-17.";
-    font-size: 14px;
-    white-space: pre-wrap;
-    line-height: 130%;
-    color: var(--text-normal);
-    font-weight: 800 !important;
-    background: var(--deprecated-card-editable-bg);
-    border: solid 1px var(--red);
-    font-weight: 400;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    display: block;
+  @if $messageStyle == 1 {
+    .contentRegion-3HkfJJ>.contentTransitionWrap-1YD530>.contentRegionScroller-2_GT_N.contentRegionShownSidebar-fHXkEg.auto-2K3UW5.scrollerBase-_bVAAt>.contentColumn-1C7as6.contentColumnDefault-3eyv5o>div>.children-1xdcWE>div[tabindex="-1"]+.marginTop8-24uXGp+.marginTop8-24uXGp:before {
+      content: "IF YOU USE COMPACT MODE: Go to GitHub then navigate to\AXYZenix/XYZenixThemes/DTM-16-V5 and get the Compact Mode fix mini-theme! No guarantee that it will work with DTM-17.";
+      font-size: 14px;
+      white-space: pre-wrap;
+      line-height: 130%;
+      color: var(--text-normal);
+      font-weight: 800 !important;
+      background: var(--deprecated-card-editable-bg);
+      border: solid 1px var(--red);
+      font-weight: 400;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      display: block;
+    }
   }
   .contentRegion-3HkfJJ>.contentTransitionWrap-1YD530>.contentRegionScroller-2_GT_N.contentRegionShownSidebar-fHXkEg.auto-2K3UW5.scrollerBase-_bVAAt>.contentColumn-1C7as6.contentColumnDefault-3eyv5o>div>.children-1xdcWE>div[tabindex="-1"]+.marginTop8-24uXGp+.marginTop8-24uXGp+.divider-_0um2u.marginTop20-2T8ZJx+.marginTop20-2T8ZJx:before {
-    content: "Recommended chat font scaling for DTM-17 is 15px. The theme WILL NOT work well at sizes above 18px. Message group spacing option most likely does nothing, and I have no plans on making it function.";
+    content: "Recommended chat font scaling for DTM-17 is 15px. Message group spacing option most likely does nothing, and I have no plans on fixing it for now.";
     font-size: 14px;
     line-height: 130%;
     color: var(--text-normal);
