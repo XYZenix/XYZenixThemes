@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "34";
+$themeVersion: "35";
 $themeDate: "Jul 19, 2022";
 $themeName: "DTM-17 BETA";
 
@@ -1025,25 +1025,25 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
         order: 3;
       }
       #{$controlButton} {
-        width: 26px;
-        height: 26px;
-        margin-left: 3px;
-        margin-right: 3px;
+        width: 32px;
+        height: 32px;
+        margin-left: 2px;
+        margin-right: 2px;
         >svg {
-          width: 36px;
-          height: 36px;
+          width: 56px;
+          height: 56px;
         }
         foreignObject {
           mask: none;
-          width: 56px;
-          height: 56px;
+          width: 32px;
+          height: 32px;
           #{$centerButton} {
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             border-radius: 5px;
             svg {
-              width: 24px;
-              height: 24px;
+              width: 20px;
+              height: 20px;
             }
           }
         }
@@ -1065,9 +1065,6 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
           height: 26px;
           margin-left: 3px;
           margin-right: 3px;
-          svg {
-            transform: scale(0.75)
-          }
         }
       }
       .speakerRaiseHandButtonContainer-vFHQuX {
@@ -1087,28 +1084,18 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
           transform: scale(0.75)
         }
       }
-      .colorable-3rVGna.primaryDark-2UJt1G, .colorable-3rVGna.white-11auuQ, .colorable-3rVGna.primaryLight-1yA273 {
-        background-color: #747f8d !important;
-        .theme-dark & {
-          background-color: #2D3135 !important;
-        }
+      .colorable-3rVGna.primaryDark-2UJt1G, .colorable-3rVGna.white-11auuQ, .colorable-3rVGna.primaryLight-1yA273, .colorable-3rVGna.activeLight-3Bpdpx {
+        background-color: #0000 !important;
+        opacity: .7;
+        transition: .17s opacity;
         &:hover {
-          background-color: #4f5660 !important;
+          opacity: 1 !important;
         }
-        color: #f6f7f8;
-        /*.theme-dark & {
-          background-color: #36393e;
-        }*/
+        color: #fff;
         #{$centerIcon} {
-          color: #f6f7f8;
-          .theme-dark & {
-            color: #aeb0b2;
-          }
+          color: #fff;
         }
       }
-      /*.colorable-3rVGna.red-3T8maV[aria-label="Stop Watching"] {
-        background-color: var(--blurple);
-      }*/
       .colorable-3rVGna.red-3T8maV {
         &:after {
           content: attr(aria-label);
@@ -1117,7 +1104,7 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
         padding-left: 16px;
         padding-right: 16px;
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 14px;
         white-space: nowrap;
         svg {display:none}
         &:hover {
@@ -1128,19 +1115,9 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
         }
       }
       #{$controlIcon} {
-        width: 16px;
-        height: 16px;
-        path[d="M9.01 11.085C9.015 11.1125 9.02 11.14 9.02 11.17L15 5.18V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 11.03 9.005 11.0575 9.01 11.085Z"] {
-          d: path("M8.25 12.3V5.25C8.25 3.15 9.9 1.5 12 1.5C13.95 1.5 15.6 3 15.75 4.95L16.95 3.75C16.35 1.5 14.4 0 12 0C9.15 0 6.75 2.4 6.75 5.25V12.75C6.75 13.05 6.75 13.5 6.9 13.8L8.25 12.3ZM15.75 12.75C15.75 14.85 14.1 16.5 12 16.5C11.25 16.5 10.5 16.35 10.05 15.9L9 16.95C9.75 17.55 10.8 18 12 18C14.85 18 17.25 15.6 17.25 12.75V8.7L15.75 10.2V12.75ZM18.75 12V13.5C18.75 16.8 16.05 19.5 12.75 19.5H11.25C9.9 19.5 8.7 19.05 7.65 18.3L6.6 19.35C7.8 20.4 9.45 21 11.25 21V22.5H10.5C10.05 22.5 9.75 22.8 9.75 23.25C9.75 23.7 10.05 24 10.5 24H13.5C13.95 24 14.25 23.7 14.25 23.25C14.25 22.8 13.95 22.5 13.5 22.5H12.75V21C16.95 21 20.25 17.7 20.25 13.5V12H18.75ZM5.25 12H3.75V13.5C3.75 14.55 3.9 15.45 4.35 16.35L5.55 15.15C5.4 14.55 5.25 14.1 5.25 13.5V12Z");
-        }
-        path[d="M21 4.27L19.73 3L3 19.73L4.27 21L8.46 16.82L9.69 15.58L11.35 13.92L14.99 10.28L21 4.27Z"] {
-          d: path("M23.8501 1.04985L22.8001 -0.150146L-0.149902 22.7999L1.0501 23.8499L23.8501 1.04985Z");
-        }
-        path[d="M6.7 11H5C5 12.19 5.34 13.3 5.9 14.28L7.13 13.05C6.86 12.43 6.7 11.74 6.7 11Z"],
-        path[d="M11.7237 16.0927L10.9632 16.8531L10.2533 17.5688C10.4978 17.633 10.747 17.6839 11 17.72V22H13V17.72C16.28 17.23 19 14.41 19 11H17.3C17.3 14 14.76 16.1 12 16.1C11.9076 16.1 11.8155 16.0975 11.7237 16.0927Z"] {
-          display: none;
-        }
-        .slash-33-IMF {
+        width: 20px;
+        height: 20px;
+        .slash-2yrR11 {
           color: inherit;
         }
       }
@@ -1148,6 +1125,11 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
         display: none;
       }
     }
+  }
+  .wrapper-3t3Yqv {
+    border-radius: 4px;
+    background: #000b;
+    padding: 3px 1px;
   }
   .joinButton-2KP9ZZ {
     border-radius: 3px;
@@ -2899,7 +2881,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 // direct message calls
 .wrapper-1gVUIN {
   .callContainer-HtHELf {
-    padding-top: 56px;
     .gradientTop-1UBZHm {
       display: none !important;
     }
@@ -2911,35 +2892,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       .quickSelectClick-2ycwNA {
         color: var(--header-primary);
         font-weight: bold;
-      }
-    }
-    .topControls-23RE3h {
-      margin-top: -56px;
-      opacity: 1 !important;
-      transform: none !important;
-    }
-    .container-ZMc96U.transparent-1lUmft {
-      background: var(--background-primary) !important;
-    }
-  }
-  &:not(.video-3n15R6) {
-    .callContainer-HtHELf {
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/942347586134749194/29d5ff462afb11bce1979cf694aee3d1.png);
-      background-size: 400px 408px;
-      background-position: 50% -30px;
-      .theme-dark & {
-        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/942347461584900106/fa4d05fd4a7ce8459a7cf997a60338e8.png);
-      }
-      .transition-3ij7TS.participant-1l6khj {
-        width: 96px !important;
-      }
-      .wrapper-3mYmFS.clickable-3mbTtV {
-        width: 96px !important;
-        height: 96px !important;
-        >svg {
-          width: 96px !important;
-          height: 96px !important;
-        }
       }
     }
   }
@@ -6229,6 +6181,94 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 .container-1yy5xN {
   .emptyChannelIcon-1YdEz2, .iconWrapper-3plkqh {
     display: none;
+  }
+}
+
+// incoming call prompt
+@keyframes incoming-call-pop {
+	20% {transform: scale3d(1.1,1.1,1)}
+	46% {transform: scaleX(1)}
+}
+@keyframes incoming-call-pulse {
+	20% {box-shadow: 0 0 0 0 rgba(255,255,255,.6)}
+	80% {box-shadow: 0 0 0 10px transparent}
+}
+.wrapper-3X0c60 {
+  .root-1e2tfc.elevationHigh-3KUiqj {
+    z-index: 10;
+    border-radius: 5px;
+    background: #000000db;
+    box-shadow: 0 2px 12px #0006;
+    padding-top: 48px;
+    .wrapper-3mYmFS:after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      border: none;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      transform-origin: center;
+      z-index: -1;
+      animation: incoming-call-pulse 1.333s ease-out infinite;
+    }
+    .callAvatarMask-fiNMWy {
+      border-radius: 50%;
+      animation: incoming-call-pop 1.3333s ease-out infinite;
+    }
+    .titleGroup-Wf8cWW {
+      .title-1xszmS {
+        color: #fff;
+      }
+      .subtitle-NatkZZ {
+        position: absolute;
+        color: #fff;
+        font-size: 12px;
+        margin-bottom: 10px;
+        opacity: .5;
+        text-transform: uppercase;
+        align-items: center;
+        left: 0;
+        right: 0;
+        top: 24px;
+      }
+    }
+    .actions-AdUAR0 {
+      position: absolute;
+      bottom: 5px;
+      [d="M11 5V3C16.515 3 21 7.486 21 13H19C19 8.589 15.411 5 11 5ZM17 13H15C15 10.795 13.206 9 11 9V7C14.309 7 17 9.691 17 13ZM11 11V13H13C13 11.896 12.105 11 11 11ZM14 16H18C18.553 16 19 16.447 19 17V21C19 21.553 18.553 22 18 22H13C6.925 22 2 17.075 2 11V6C2 5.447 2.448 5 3 5H7C7.553 5 8 5.447 8 6V10C8 10.553 7.553 11 7 11H6C6.063 14.938 9 18 13 18V17C13 16.447 13.447 16 14 16Z"] {
+        d: path("M20.7163 18.3665C20.6972 18.3934 18.8124 21.0345 17.7205 20.9997C14.6529 20.9018 11.0471 17.9278 8.56358 15.4509C6.08002 12.9741 3.09772 9.37914 3 6.30613V6.28139C3 5.20606 5.61386 3.31523 5.64082 3.29724C6.35185 2.80007 7.13253 2.98229 7.45042 3.43447C7.64362 3.70892 9.64755 6.71557 9.87332 7.08338C9.97217 7.24423 10.0205 7.43883 10.0205 7.65367C10.0205 7.92812 9.94072 8.2307 9.78346 8.52878C9.6307 8.81898 9.13084 9.69521 8.88484 10.1238C9.15218 10.5006 9.83289 11.3881 11.2359 12.7873C12.6276 14.1776 13.5251 14.8638 13.9059 15.1292C14.3361 14.884 15.2145 14.3868 15.5032 14.235C16.048 13.9482 16.5939 13.9155 16.9601 14.1484C17.306 14.3666 20.2984 16.3586 20.5826 16.5645C20.8522 16.7568 20.9971 17.1044 20.9971 17.4812C20.9971 17.7782 20.9073 18.0931 20.7163 18.3665")
+      }
+      [d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"] {
+        d: path("M1.18077 14.5317C1.17518 14.4991 0.640455 11.2988 1.43715 10.5514C3.67551 8.45145 8.32809 8.00478 11.8356 8.00004C15.3432 7.99529 19.994 8.42849 22.236 10.5323L22.2535 10.5498C23.0139 11.3102 22.5026 14.4955 22.4963 14.5273C22.3451 15.3816 21.6642 15.8048 21.1197 15.7098C20.789 15.6524 17.246 14.9433 16.8263 14.8429C16.6426 14.7991 16.4709 14.6956 16.319 14.5437C16.1249 14.3496 15.9673 14.0793 15.8677 13.7573C15.7706 13.4441 15.5044 12.471 15.3753 11.9941C14.9198 11.9167 13.811 11.7704 11.8295 11.7731C9.8623 11.7741 8.7425 11.9235 8.28553 12.0051C8.15472 12.4827 7.88515 13.4554 7.78839 13.7669C7.60599 14.3549 7.24303 14.764 6.81946 14.8583C6.42052 14.9486 2.89597 15.656 2.54947 15.7114C2.22284 15.766 1.8746 15.6227 1.60816 15.3562C1.39818 15.1463 1.23902 14.86 1.18077 14.5317Z")
+      }
+      .actionButton-2S7dMn {
+        width: 100px;
+        margin: 5px;
+        padding: 7px;
+        border-radius: 3px;
+      }
+      .red-3T8maV {
+        background: var(--red) !important;
+        &:hover {
+          background: var(--red-hover) !important;
+        }
+        &:active {
+          background: var(--red-active) !important;
+        }
+      }
+      .green-3wkLbx {
+        background: var(--green);
+        &:hover {
+          background: var(--green-hover);
+        }
+        &:active {
+          background: var(--green-active);
+        }
+      }
+    }
   }
 }
 
