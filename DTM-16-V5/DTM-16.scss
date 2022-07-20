@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "226";
-$themeDate: "Jul 19, 2022";
+$themeVersion: "227";
+$themeDate: "Jul 21, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -844,9 +844,11 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     border-top: solid 1px #DEDEDE;
     height: 70px;
     padding: 0 10px;
+    justify-content: space-between;
+    align-content: space-between;
     .withTagAsButton-OsgQ9L, .withTagless-10ooWt {
-      min-width: unset;
-      width: 100%;
+      box-sizing: border-box;
+      margin-right: 0;
       //transition: .2s;
       background: none !important;
       &, .hoverRoll-2XwpoF {
@@ -855,7 +857,6 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
       .nameTag-sc-gpq {
         padding-top: 0;
         padding-bottom: 0;
-
       }
     }
     .theme-dark & {
@@ -863,15 +864,19 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
       background: #282B30;
     }
     .flex-2S1XBF {
+      box-sizing: border-box;
+      display: flex;
       border: 1px solid #dedede;
       border-radius: 4px;
       overflow: hidden;
-      min-width: 96px;
+      min-width: 98px;
       flex-shrink: 0;
       .theme-dark & {
         border-color: #1c1e22;
       }
       button {
+        width: 32px;
+        min-width: 32px;
         &:first-of-type,
         &:nth-of-type(2) {
           border-right: 1px solid #dedede;
