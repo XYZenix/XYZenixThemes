@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "227";
-$themeDate: "Jul 21, 2022";
+$themeVersion: "228";
+$themeDate: "Aug 3, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -1116,7 +1116,12 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     margin-top: -32px;
     margin-bottom: -2px;
     #{$channelReplyInner} {
-      background: var(--blurple);
+      .theme-dark & {
+        background: #686a6e;
+      }
+      .theme-light & {
+        background: #dadddf;
+      }
       border-radius: 3px 3px 0 0;
       margin-top: -32px;
       height: 34px;
@@ -1155,13 +1160,20 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
       box-shadow: none;
     }
   }
+  // this person "MIGHT" be on PTO... great feature, discord
+  >div>.bar-13dNfi {
+    .theme-dark & {
+      background: #686a6e;
+    }
+    .theme-light & {
+      background: #dadddf;
+    }
+    border-radius: 3px 3px 0 0;
+    font-size: 14px;
+  }
   +#{$scrollableContainer} {
     border-radius: 0 0 3px 3px;
-    border-color: var(--blurple);
     z-index: 99;
-    .attachButton-_ACFSu {
-      border-color: var(--blurple) !important;
-    }
   }
 }
 
@@ -5060,6 +5072,10 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     content: url(https://cdn.discordapp.com/attachments/733624227378495488/994012938165821530/badge_nobitches.svg)
   }
 }
+.staffIndicator-1EkvzP .textBadge-1fdDPJ {
+  background: var(--blurple) !important;
+  border-radius: 3px;
+}
 
 // upload modals
 #{$uploadModal} {
@@ -5760,6 +5776,18 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 }
 .platform-win #{$settings-region} {
   top: 0 !important;
+}
+
+// buttons
+#{$btnFilled}#{$btnColorRed} {
+  background: var(--red) !important;
+  color: #fff !important;
+  &:hover {
+    background: var(--red-hover) !important;
+  }
+  &:active {
+    background: var(--red-active) !important;
+  }
 }
 
 // radio buttons
@@ -7675,7 +7703,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     }
     .upperBadge-1V6Iyi {
       background: var(--background-tertiary);
-      box-shadow: 0 0 0 3px var(--background-tertiary);
       border-radius: 50%;
       .iconBadge-3qSJIw {
         background: var(--background-floating);
@@ -7970,24 +7997,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   padding-left: 2px;
   min-width: 16px !important;
   width: auto !important;
-}
-
-.wrapper-28eC3z .lowerBadge-3WTshO {
-  box-shadow: -3px -3px #1E2124, -3px 0 #1E2124, 0 -3px #1E2124;
-  background: #1E2124;
-  border-radius: 4px 0 0 0;
-  .listItem-3SmSlK+ul & {
-    box-shadow: -3px -3px #26292C, -3px 0 #26292C, 0 -3px #26292C;
-    background: #26292C;
-  }
-  .theme-light .guilds-2JjMmN:not(.theme-dark) & {
-    box-shadow: -2px -2px #E3E5E8, -2px 0 #E3E5E8, 0 -2px #E3E5E8;
-    background: #E3E5E8;
-  }
-  .theme-light .guilds-2JjMmN:not(.theme-dark) .listItem-3SmSlK+ul & {
-    box-shadow: -2px -2px #EAECEE, -2px 0 #EAECEE, 0 -2px #EAECEE;
-    background: #EAECEE;
-  }
 }
 
 // file icons
@@ -8457,6 +8466,10 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 // inputs n other shit
 .input-2g-os5.focused-1mmYsC, .input-2g-os5:focus {
   border-color: var(--blurple);
+}
+.input-2g-os5 .input-2g-os5 {
+  border: none;
+  background: none;
 }
 
 // windows titlebar
