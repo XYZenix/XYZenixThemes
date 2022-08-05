@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "37";
-$themeDate: "Aug 4, 2022";
+$themeVersion: "38";
+$themeDate: "Aug 5, 2022";
 $themeName: "DTM-17 BETA";
 
 @use "sass:color";
@@ -793,8 +793,14 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   .attachButton-1ijpt9 {
     .icon-2P5yLI {
       max-height: 42px;
-      padding: 9px 6px !important;
-      border-right: solid 1px var(--blurple);
+      padding: 10px !important;
+      border-right: 1px solid;
+      .theme-light & {
+        border-image: linear-gradient(#0000 10px, #72767d1a 10px, #72767d1a calc(100% - 10px), #0000 calc(100% - 10px)) 1;
+      }
+      .theme-dark & {
+        border-image: linear-gradient(#0000 10px, #ffffff1a 10px, #ffffff1a calc(100% - 10px), #0000 calc(100% - 10px)) 1;
+      }
     }
     margin-right: 8px;
   }
@@ -5546,17 +5552,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 #{$btnOutlined}#{$btnColorGrey}:not(:hover):not(:active) {border-color: #747f8d4d}
 
 // chat autocomplete
-.outerWrapper-3UdjNj, .autocomplete-3l_oCd { // TODO: fix .autocomplete thing
-  bottom: calc(100% - 2px);
-  border-radius: 3px 3px 0 0;
-  box-shadow: none;
-  .theme-dark & {
-    border: solid 2px #686A6E;
-  }
-  .theme-light & {
-    border: solid 2px #DADDDF;
-  }
-}
 .autocomplete-3NRXG8 {
   .autocompleteInner-y1mjDl {
     .autocompleteRow-14iwvH {

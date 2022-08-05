@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "229";
-$themeDate: "Aug 4, 2022";
+$themeVersion: "230";
+$themeDate: "Aug 5, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -990,7 +990,13 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     .icon-2P5yLI {
       max-height: 42px;
       padding: 9px 6px !important;
-      border-right: solid 1px var(--blurple);
+      border-right: solid 1px;
+      .theme-dark & {
+        border-color: hsla(0,0%,100%,.2);
+      }
+      .theme-light & {
+        background: hsla(0,0%,100%,.2);
+      }
     }
     margin-right: 8px;
   }
@@ -1086,6 +1092,14 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   .emojiButtonNormal-35P0_i {
     opacity: .3
   }
+  .placeholder-1rCBhr {
+    .theme-dark & {
+      color: #fff3;
+    }
+    .theme-light & {
+      color: #dadddf;
+    }
+  }
 }
 #{$chat-form} {
   margin-left: 20px;
@@ -1160,8 +1174,8 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
       box-shadow: none;
     }
   }
-  // this person "MIGHT" be on PTO... great feature, discord
-  >div>.bar-13dNfi {
+  // this person "MIGHT" be on PTO... great feature, discord. also, slash command thing
+  >div>.bar-13dNfi,>div>.bar-2MWHzg {
     .theme-dark & {
       background: #686a6e;
     }
