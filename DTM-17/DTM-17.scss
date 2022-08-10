@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "39";
-$themeDate: "Aug 9, 2022";
+$themeVersion: "40";
+$themeDate: "Aug 10, 2022";
 $themeName: "DTM-17 BETA";
 
 @use "sass:color";
@@ -22,34 +22,39 @@ $BlurpleStyle: 0;
   $blurple: #5865F2;
 }
 
-// Experiment 1 - Action Button style
+// Experiment 1 - Action Button style (2021-06_vc_action_buttons)
 // 0 | Control: Outlined
 // 1 | Treatment 1: Filled (lookFilled)
 // 2 | Treatment 2: Transparent (lookGhost)
 // 3 | Treatment 3: Link (lookLink)
 $experiment1: 0;
 
-// Experiment 2 - Server Discovery card style
+// Experiment 2 - Server Discovery card style (2022-06_server_discovery)
 // 0 | Control: No change
 // 1 | Treatment 1: Early 2019
 // 2 | Treatment 2: Late 2019
 $experiment2: 2;
 
-// Experiment 3 - Server Badge Style
+// Experiment 3 - Server Badge Style (2022-06_server_badges)
 // 0 | Control: No change
 // 1 | Treatment 1: Old flower star
 // 2 | Treatment 2: Circle
 $experiment3: 1;
 
-// Experiment 4 - Channel List Thread Style
+// Experiment 4 - Channel List Thread Style (2022-06_channel_list_threads)
 // 0 | Control: Current style
 // 1 | Treatment 1: Pre-release style
 $experiment4: 0;
 
-// Experiment 5 - Stage Channel Icon
+// Experiment 5 - Stage Channel Icon (2022-06_stage_channel_icon)
 // 0 | Control: New icon
 // 1 | Treatment 1: Old icon
 $experiment5: 0;
+
+// Experiment 7 - Server Banner Style (2022-08_server_banner)
+// 0 | Control: No change
+// 1 | Treatment 1: Original design (faded)
+$experiment7: 0;
 
 // variables (i barely use these anymore)
 $scrollableContainer: ".scrollableContainer-15eg7h";
@@ -129,7 +134,7 @@ $contextMenuNub: ".contextMenuNub-NuTZ_U";
 // channels
 $containerDefault: ".containerDefault-YUSmu3";
 $containerDefaultCategory: ".containerDefault-3TQ5YN";
-$userLimit: ".userLimit-VbEkeM";
+$userLimit: ".channelInfo-3jN1ay";
 $userLimitWrapper: ".wrapper-2fEmwW";
 $userLimitUsers: ".users-2JoyGL";
 $userLimitTotal: ".total-1c5KCN";
@@ -2884,6 +2889,18 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 .primaryInfo-2ocY3v {
     height: 100%;
 }
+
+@if $experiment7 == 1 {
+  .animatedContainer-2laTjx {
+    transform: none !important;
+    mask-image: linear-gradient(#000, #0000);
+    -webkit-mask-image: linear-gradient(#000, #0000);
+    .bannerImage-ubW8K- {
+      transform: none !important;
+    }
+  }
+}
+
 // direct message calls
 .wrapper-1gVUIN {
   .callContainer-HtHELf {
@@ -5123,6 +5140,9 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       .theme-dark & {
         color: #72767d;
       }
+    }
+    .featureImageWrapper-2ndc8N {
+      position: unset;
     }
     .featureImage-91H2fC {
       content: url(https://cdn.discordapp.com/attachments/733624227378495488/994475433028493403/nitro_dark.svg);
