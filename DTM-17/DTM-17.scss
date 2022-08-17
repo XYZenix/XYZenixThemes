@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "44";
+$themeVersion: "45";
 $themeDate: "Aug 17, 2022";
 $themeName: "DTM-17 BETA";
 
@@ -18,6 +18,8 @@ $blurpleV2: #5865F2;
 $messageStyle: 2;
 // 0 = Old Blurple / 1 = New Blurple
 $BlurpleStyle: 0;
+// changes servers from 48x48 to 50x50 (if this breaks stuff, i'm going to disable it)
+$resizeServers: true;
 @if $BlurpleStyle == 1 {
   $blurple: #5865F2;
 }
@@ -699,11 +701,11 @@ html.theme-light {
   }
 }
 // channels
-.containerDefault-YUSmu3, .containerDragAfter-3aBiOW, .containerDragBefore-1s5Qg6, .containerUserOver-SDa1HW {
+.containerDefault-YUSmu3, .containerDragAfter-3aBiOW, .containerDragBefore-1s5Qg6, .containerUserOver-SDa1HW, .wrapper-NhbLHG {
   .content-1gYQeQ {
     border-radius: 3px;
     .iconContainer-21RCa3 {
-      .icon-2W8DHg {
+      .icon-2W8DHg, .icon-2W8DHg {
         width: 16px;
         height: 16px;
         .theme-dark & {
@@ -1065,12 +1067,33 @@ html.theme-light {
   .typing-2J1mQU {
     margin-left: -16px;
     margin-right: -16px;
+    margin-bottom: 2px;
     .ellipsis-1e7x0D {
       margin: 0;
     }
   }
   &:before {
     display: none;
+  }
+  .channelTextArea-1VQBuV, .wrapper-2SplAX {
+    margin-bottom: 30px;
+  }
+  .wrapper-2SplAX {
+    border-radius: 0;
+    background: #0000;
+    background-position: 0 100%, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 187px 39px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    .theme-dark & {background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1009438687521677405/unknown.png), url(https://cdn.discordapp.com/attachments/733624227378495488/1009438687827873812/unknown.png)}
+    .theme-light & {background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1009438799039844454/unknown.png), url(https://cdn.discordapp.com/attachments/733624227378495488/1009438799429898251/unknown.png)}
+    .title-Do_30w {
+      .theme-dark & {color:#ffffff4d}
+      font-size: 15px;
+      font-weight: 500;
+    }
   }
 }
 .attachedBars-2BCP3l {
@@ -4618,11 +4641,24 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
         .banner-1YaD3N, .banner-2boKnS {
           display: none;
         }
+        .profileBannerPremium-KD60EB, .profileBannerPremium-3xIFwS {
+          display: block;
+          position: absolute;
+          z-index: 0;
+          opacity: 0.1;
+          top: 0;
+          left: 0;
+          min-height: 130px;
+          height: 130px;
+          right: 0;
+          pointer-events: none;
+        }
         // not supported yet
         .avatarDecorationBorder-1wfzvF, .avatarDecoration-2OJuSI {
           display: none;
         }
         .header-S26rhB {
+          z-index: 2;
           background: none;
           .theme-light & {
             --background-tertiary: #f6f6f7;
@@ -4634,6 +4670,9 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
             left: 20px;
             border: none;
             order: 1;
+            .mask-1FEkla {
+              overflow: visible;
+            }
             .theme-light & {
               background-color: #f6f6f7;
               border-color: #f6f6f7;
@@ -4664,9 +4703,11 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
               align-items: flex-end;
               justify-content: center;
               flex-direction: column;
-              gap: 8px;
               .applicationInstallButton-1-58qm {
                 margin: 0;
+                +.button-f2h6uQ {
+                  margin-top: 8px;
+                }
               }
               .additionalActionsIcon-3Cy8UU {
                 position: absolute;
@@ -4678,6 +4719,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
           position: unset;
         }
         .nameTag-2Nlmsy {
+          z-index: 2;
           max-width: var(--max-element-width);
           margin-left: 130px;
           margin-top: 0;
@@ -4694,6 +4736,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
           }
         }
         .customStatusActivity-WKWGD- {
+          z-index: 2;
           padding-left: 130px;
           padding-bottom: 0;
           margin-top: 2px;
@@ -5096,6 +5139,30 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       }
     }
   }
+  }
+  .accountProfileCard-lbN7n- {
+    background: var(--deprecated-card-bg);
+    border: solid 1px var(--background-tertiary);
+    .background-3d_SjE {
+      background: none;
+      padding: 0;
+      .fieldList-in8WkP {
+        background: none;
+        .size14-k_3Hy4 {
+          color: var(--text-muted);
+          letter-spacing: .5px;
+          font-weight: 600;
+        }
+      }
+    }
+    .avatar-3mTjvZ {
+      border-color: #292b2f;
+      background: #292b2f;
+      .theme-light & {
+        border-color: #f8f9f9;
+        background: #f8f9f9;
+      }
+    }
   }
   .sectionTitle-3j2YI1 .title-3hptVQ {
     text-transform: uppercase;
@@ -6848,6 +6915,44 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   box-shadow: inset 1px 0 #ffffff05, inset -1px 0 #ffffff05;
 }
 
+
+@if $resizeServers {
+  .guilds-2JjMmN {
+    width: 70px;
+  }
+  .listItem-3SmSlK {
+    .wrapper-28eC3z {
+      margin-left: 1px;
+      width: 50px;
+      height: 50px;
+      foreignObject, .folder-241Joy, .closedFolderIconWrapper-3tRb2d, .folderIconWrapper-1oRIZr, .icon-3AqZ2e,
+      .childWrapper-1j_1ub, .wrapper-3kah-n, .circleIconButton-1VxDrg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .homeIcon-r0w4ny {
+      width: 50px !important;
+      height: 50px !important;
+      background-size: 32px 28px !important;
+    }
+  }
+  .wrapper-38slSD,
+  .unreadMentionsIndicatorBottom-3RJMnQ, .unreadMentionsIndicatorTop-2bTgUU {
+    width: 70px;
+  }
+  .unreadMentionsIndicatorBottom-3RJMnQ .unreadMentionsBar-ZXXoOH:before {
+    bottom: -12px;
+  }
+  .listItem-3SmSlK+ul[role="group"] {
+    height: auto !important;
+  }
+  .expandedFolderBackground-1kSAf6 {
+    width: 50px;
+    bottom: 0;
+  }
+}
+
 // login screen
 
 [src="/assets/439112b388adcac969dc066d30767b76.png"] {
@@ -7000,36 +7105,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 .qrCodeOverlay-2bLtKl img {
 	display: block;
   content: url("https://cdn.discordapp.com/attachments/733624227378495488/978708259731030066/36d4b341723daffd4a372e1b19591da1.png");
-}
-
-// slider
-.slider-1NC-Gf {
-  .grabber-2GQyvM {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    margin-left: -12px;
-  }
-}
-.mini-2qY9iv {
-  .bar-1Bhnl9 {
-    margin-left: 3px;
-    margin-right: 3px;
-  }
-  .grabber-2GQyvM {
-    width: 12px;
-    height: 12px;
-  }
-}
-.bar-1Bhnl9 {
-  &[style="background: rgb(87, 242, 135);"] {
-    background: var(--green) !important;
-  }
-  .barFill-2Bh7CX {
-    &[style^="background: rgb(251, 184, 72)"] {
-      background: var(--yellow) !important;
-    }
-  }
 }
 
 // you have been invited to join this server dialog
