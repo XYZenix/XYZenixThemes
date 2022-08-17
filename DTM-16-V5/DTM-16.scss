@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "236";
-$themeDate: "Aug 16, 2022";
+$themeVersion: "237";
+$themeDate: "Aug 17, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -408,6 +408,8 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     --brand-experiment-90a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.9);
     --brand-experiment-95a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.95);
   }
+  --control-brand-foreground: var(--blurple);
+  --control-brand-foreground-new: var(--blurple);
 }
 
 .socialLinks-3ywLUf:before {
@@ -5958,9 +5960,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     border-bottom: solid 1px var(--background-modifier-accent);
     border-radius: 0;
     padding-bottom: 10px;
-    .connectedAccounts-Jb3L2_ {
-      margin-right: -16px;
-    }
     +.container-1zDvAE {
       margin-top: 120px;
       +.connectionList-11Q_X- {
@@ -5990,7 +5989,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     }
   }
   .connectionList-11Q_X- {
-    margin-top: 120px;
+    margin-top: 180px;
   }
   div:first-of-type>.sectionTitle-3j2YI1:first-of-type {
     display: none;
@@ -6504,6 +6503,20 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     margin-bottom: 0;
   }
 }
+
+// radio buttons - channel creation dialog
+.modalContent-33IoUE .radioBar-3w9XY-.radioBar-3_FqUK {
+  align-items: flex-start;
+  .radioItemName-3F4dmu {
+    align-items: flex-start;
+  }
+  .icon-1ykL9s {
+    margin: 2px 6px 2px 0;
+    width: 16px;
+    height: 16px;
+  }
+}
+
 #{$layer-settings} {
   #{$settings-sidebar} .side-2ur1Qk .item-3XjbnG {
     &[aria-controls="changelog-tab"] {
@@ -7230,6 +7243,28 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 .bd-addon-header .bd-switch {
   margin-top: -18px;
 }
+// switches in role settings
+.container-1zDvAE {
+  .container-2nx-BQ .input-2XRLou {
+    &:checked {
+      &:before {
+        background: var(--green);
+      }
+      &:hover:before {
+        background: #55bc8d;
+      }
+    }
+    &:checked:active {
+      &:before {
+        background: var(--green-active);
+      }
+      &:after {
+        left: -11px;
+        width: 26px;
+      }
+    }
+  }
+}
 // switches - channel role overrides
 .group-LWHoGI {
   border: none;
@@ -7626,6 +7661,22 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   }
   .connectionOptionsWrapper-3aVWcp *, .connectionDelete-3YgMVq, .integrationsWrapper-3a2pGd, .integrationsWrapper-3a2pGd *, .connectedAccountSeparator-2gWsUP {
     z-index: 50;
+  }
+  .connectedAccountSeparator-nMsSRO {
+    position: relative;
+    border-top-color: hsla(218,5%,47%,.3);
+  }
+  .connectionOptionSwitch-y1S-cR {
+    margin-top: 2px;
+    .title-2dsDLn {
+      font-weight: 400;
+    }
+  }
+  .integrationsWrapper-1V-5L9 {
+    .subEnabledTitle-2YpsZq {
+      opacity: .75;
+      letter-spacing: .5px;
+    }
   }
   .integrationsWrapper-1V-5L9>.colorStandard-1Xxp1s+div:not([style]) {
     display: flex;

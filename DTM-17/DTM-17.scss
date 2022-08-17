@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "43";
-$themeDate: "Aug 16, 2022";
+$themeVersion: "44";
+$themeDate: "Aug 17, 2022";
 $themeName: "DTM-17 BETA";
 
 @use "sass:color";
@@ -55,6 +55,11 @@ $experiment5: 0;
 // 0 | Control: No change
 // 1 | Treatment 1: Original design (faded)
 $experiment7: 0;
+
+// Experiment 8 - User Profile Experiment (2022-08_user_profiles)
+// 0 | Control: No change
+// 3 | Treatment 3: 2018-04 profiles (no banner)
+$experiment8: 3;
 
 // variables (i barely use these anymore)
 $scrollableContainer: ".scrollableContainer-15eg7h";
@@ -337,6 +342,8 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
     --brand-experiment-90a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.9);
     --brand-experiment-95a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.95);
   }
+  --control-brand-foreground: var(--blurple);
+  --control-brand-foreground-new: var(--blurple);
 }
 
 .socialLinks-3ywLUf:before {
@@ -1193,6 +1200,11 @@ html.theme-light {
       &.focused-3qFvc8 .checkbox-hADx5o, &.focused-3qFvc8 .radioSelection-1UHp0b, &.focused-3qFvc8 .subtext-2GlkbE {
         color: #444;
       }
+    }
+  }
+  .avatar-2Vndt_ {
+    .theme-dark & {
+      --background-floating: #282b30;
     }
   }
 }
@@ -4333,13 +4345,6 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     .actionButton-iarQTd, .applicationInstallButton-1-58qm {
       background: var(--blurple);
       color: #fff;
-      font-size: 16px;
-      min-height: 0;
-      min-width: 0;
-      width: auto;
-      height: auto;
-      padding: 10px 20px;
-      font-weight: 400;
       &:hover {
         @if $BlurpleStyle == 1 {
           background: #{color.scale(#5865F2, $lightness: -10%, $saturation: -25%)}
@@ -4599,6 +4604,110 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     }
   }
 }
+@if $experiment8 {
+  .root-8LYsGj.root-g14mjS.small-23Atuv.fullscreenOnMobile-ixj0e3 {
+    --max-element-width: 240px;
+    --background-modifier-accent: var(--background-tertiary);
+    .topSection-13QKHs {
+      .theme-light & {background: #f6f6f7}
+      header {
+        height: 130px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .banner-1YaD3N, .banner-2boKnS {
+          display: none;
+        }
+        // not supported yet
+        .avatarDecorationBorder-1wfzvF, .avatarDecoration-2OJuSI {
+          display: none;
+        }
+        .header-S26rhB {
+          background: none;
+          .theme-light & {
+            --background-tertiary: #f6f6f7;
+          }
+          .avatar-3QF_VA {
+            width: 90px !important;
+            height: 90px !important;
+            top: 20px;
+            left: 20px;
+            border: none;
+            order: 1;
+            .theme-light & {
+              background-color: #f6f6f7;
+              border-color: #f6f6f7;
+              [mask^="url(#svg-mask-status-"] {
+                stroke: #f6f6f7;
+              }
+            }
+          }
+          .headerTop-1PNKck {
+            position: unset;
+            top: unset;
+            right: unset;
+            margin-left: 130px;
+            max-width: var(--max-element-width);
+            .badgeList-2aoHPw {
+              margin-top: 2px;
+              .profileBadge-12r2Nm {
+                width: 20px !important;
+                height: 20px !important;
+              }
+            }
+            .relationshipButtons-3ByBpj {
+              position: absolute;
+              height: 130px;
+              top: 0;
+              right: 54px;
+              display: flex;
+              align-items: flex-end;
+              justify-content: center;
+              flex-direction: column;
+              gap: 8px;
+              .applicationInstallButton-1-58qm {
+                margin: 0;
+              }
+              .additionalActionsIcon-3Cy8UU {
+                position: absolute;
+                top: calc(50% - 12px);
+                right: -34px;
+              }
+            }
+          }
+          position: unset;
+        }
+        .nameTag-2Nlmsy {
+          max-width: var(--max-element-width);
+          margin-left: 130px;
+          margin-top: 0;
+          margin-bottom: 0;
+          order: -1;
+          .username-3JLfHz {
+            font-size: 18px;
+            font-weight: 600;
+          }
+          .discriminator-1bqsd3 {
+            .theme-dark & {color: #fff9}
+            font-size: 14px;
+            margin-top: 1px;
+          }
+        }
+        .customStatusActivity-WKWGD- {
+          padding-left: 130px;
+          padding-bottom: 0;
+          margin-top: 2px;
+          max-width: var(--max-element-width);
+        }
+      }
+      .tabBarContainer-sCZC4w {
+        .theme-light & {background: #f6f6f7}
+        border-top: solid 1px var(--background-primary);
+        justify-content: flex-start;
+      }
+    }
+  }
+}
 
 // badges
 .newBadge-3QiMZJ.textBadge-1fdDPJ {
@@ -4611,7 +4720,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 }
 .badgeList-2aoHPw, .container-1gYwHN {
   [src="/assets/48d5bdcffe9e7848067c2e187f1ef951.svg"] { // staff
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/994010653545209907/badges_staff.svg)
+    content: url(https://cdn.discordapp.com/attachments/733624227378495488/1007768900508852305/staff-new-7289da.svg)
   }
   [src="/assets/34306011e46e87f8ef25f3415d3b99ca.svg"] { // partner
     content: url(https://cdn.discordapp.com/attachments/733624227378495488/994010900535201893/badges_partner.svg)
@@ -4908,20 +5017,23 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     .radioBar-3w9XY- .text-md-medium-2avxhQ {
       color: var(--interactive-normal);
     }
-    .radioBar-3w9XY-:hover {
-      .theme-dark & {
-        border-color: #000;
-        background: rgba(0 0 0/.2);
-      }
-      .theme-light & {
-        border-color: #b9bbbe;
-        background: hsla(180,8%,97%,.6);
-      }
-    }
     &.disabled-3tqE8r .radioBar-3w9XY- {
       border: solid 1px var(--background-tertiary) !important;
       background: var(--deprecated-card-editable-bg) !important;
     }
+  }
+}
+
+// radio buttons - channel creation dialog
+.modalContent-33IoUE .radioBar-3w9XY-.radioBar-3_FqUK {
+  align-items: flex-start;
+  .radioItemName-3F4dmu {
+    align-items: flex-start;
+  }
+  .icon-1ykL9s {
+    margin: 2px 6px 2px 0;
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -5565,6 +5677,28 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 .bd-addon-header .bd-switch {
   margin-top: -18px;
 }
+// switches in role settings
+.container-1zDvAE {
+  .container-2nx-BQ .input-2XRLou {
+    &:checked {
+      &:before {
+        background: var(--green);
+      }
+      &:hover:before {
+        background: #55bc8d;
+      }
+    }
+    &:checked:active {
+      &:before {
+        background: var(--green-active);
+      }
+      &:after {
+        left: -11px;
+        width: 26px;
+      }
+    }
+  }
+}
 // switches - channel role overrides
 .group-LWHoGI {
   border: none;
@@ -5853,6 +5987,22 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   .connectionOptionsWrapper-3aVWcp *, .connectionDelete-3YgMVq, .integrationsWrapper-3a2pGd, .integrationsWrapper-3a2pGd *, .connectedAccountSeparator-2gWsUP {
     z-index: 50;
   }
+  .connectedAccountSeparator-nMsSRO {
+    position: relative;
+    border-top-color: hsla(218,5%,47%,.3);
+  }
+  .connectionOptionSwitch-y1S-cR {
+    margin-top: 2px;
+    .title-2dsDLn {
+      font-weight: 400;
+    }
+  }
+  .integrationsWrapper-1V-5L9 {
+    .subEnabledTitle-2YpsZq {
+      opacity: .75;
+      letter-spacing: .5px;
+    }
+  }
   .integration-1qC-fv {
     z-index: 999;
     position: relative;
@@ -5861,12 +6011,14 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     border-radius: 3px;
     padding: 10px;
     .button-f2h6uQ.lookFilled-yCfaCM {
-      border: solid 1px #0000004d;
-      background: #593695;
-      padding: 5px 16px;
+      background: hsla(0,0%,100%,.1);
+      padding: 8px 18px;
       min-height: 0px;
       height: auto;
       min-width: 0px;
+      &:active {
+        background: hsla(0,0%,100%,.2);
+      }
     }
   }
   .connectionDelete-3YgMVq {
