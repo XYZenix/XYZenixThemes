@@ -18,7 +18,13 @@
 .theme-dark, .theme-light {
   --font-primary: Whitney;
   --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
-  --text-positive: hsl(152.6,calc(var(--saturation-factor, 1) * 46%),48.6%);
+  --text-positive: var(--green);
+  --status-danger: var(--red);
+  --status-danger-text: var(--red);
+  --status-positive: var(--green);
+  --staus-warning-text: var(--yellow);
+  --info-danger-text: var(--red);
+  --info-positive-text: var(--green);
   --blurple: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%);
   --blurple-hover: hsl(227.1,calc(var(--saturation-factor, 1) * 44.1%),58.6%);
   --blurple-active: hsl(226.3,calc(var(--saturation-factor, 1) * 33.9%),52%);
@@ -92,7 +98,7 @@
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "238" "\a" "Aug 17, 2022";
+  content: "DTM-16 Build " "239" "\a" "Aug 18, 2022";
   margin-bottom: 20px;
 }
 
@@ -157,7 +163,7 @@
   --header-secondary: #4f5660;
   --text-normal: #2e3338;
   --text-muted: #747f8d;
-  --text-link: #0067e0;
+  --text-link: hsl(212.4,calc(var(--saturation-factor, 1) * 100%),43.9%);
   --channels-default: #6a7480;
   --interactive-normal: #4f5660;
   --interactive-hover: #2e3338;
@@ -267,7 +273,7 @@ html.theme-light {
   --override-header-secondary: #4f5660;
   --override-text-normal: #2e3338;
   --override-text-muted: #747f8d;
-  --override-text-link: #0067e0;
+  --text-link: hsl(212.4,calc(var(--saturation-factor, 1) * 100%),43.9%);
   --override-channels-default: #6a7480;
   --override-interactive-normal: #4f5660;
   --override-interactive-hover: #2e3338;
@@ -314,6 +320,10 @@ html.theme-light {
   --override-deprecated-text-input-border-hover: #b9bbbe;
   --override-deprecated-text-input-border-disabled: #dcddde;
   --override-deprecated-text-input-prefix: #b9bbbe;
+}
+
+[fill="hsl(235, calc(var(--saturation-factor, 1) * 85.6%), 64.7%)"] {
+  fill: var(--blurple);
 }
 
 [fill="hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%)"] {
