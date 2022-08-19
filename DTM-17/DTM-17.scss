@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "47";
-$themeDate: "Aug 17, 2022";
+$themeVersion: "48";
+$themeDate: "Aug 19, 2022";
 $themeName: "DTM-18 BETA";
 
 @use "sass:color";
@@ -1432,6 +1432,50 @@ html.theme-light {
     }
   }
 }
+// new unread indicators
+.container-24rGVp {
+  .bar-wDIGjg {
+    background: #0000;
+    border-radius: 3px;
+    width: 240px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 8px;
+    &:active {
+      transform: translateY(1px);
+    }
+    .unreadIcon-3dqgX9 {
+      display: none;
+    }
+    .mentionsDot-lLfrj1 {
+      width: 0;
+      height: 0;
+      position: absolute;
+      opacity: 0;
+    }
+    .text-xs-medium-2LRpEj {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--background-accent);
+      box-shadow: 0 2px 6px hsla(0,calc(var(--saturation-factor, 1)*0%),0%,.24);
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      height: 20px;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 400;
+      border-radius: 3px;
+      color: #fff !important;
+    }
+    .mentionsDot-lLfrj1+.text-xs-medium-2LRpEj {
+      background: var(--status-danger);
+    }
+  }
+}
+// some dm sidebar shit
 #{$dmSidebar} {
   .theme-light &:not(.theme-dark) {
     #{$dmSBComponent} {
@@ -2626,6 +2670,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 }
 
 // chat bars (new, unfortunately cannot make them identical to old ones)
+// chat bars (new, unfortunately cannot make them identical to old ones)
 .newMessagesPill-2YdO-e, .newMessagesClear-2LQVHt, .jumpToPresentButton-1bFSxT {
   background: none;
   border-radius: 0;
@@ -2641,12 +2686,30 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   right: unset;
   margin: 0 auto;
   position: unset;
-  height: 36px;
-  margin-top: 16px;
-  border-radius: 3px;
-  box-shadow: var(--elevation-stroke);
-  &:hover {
-    box-shadow: var(--elevation-medium);
+  height: 26px;
+  padding-top: 2px;
+  transform: translateY(-2px);
+  border-radius: 0 0 3px 3px;
+  box-shadow: none !important;
+  overflow: hidden;
+  width: calc(100% - 40px);
+  justify-content: space-between;
+  background: var(--blurple);
+  opacity: .9;
+  transition: .18s background-color;
+  &:hover {opacity:1}
+  &:active {transform:translateY(-1px)}
+  .newMessagesPill-2YdO-e, .newMessagesClear-2LQVHt {
+    height: 26px;
+    box-sizing: border-box;
+    background: #0000 !important;
+    border: none;
+  }
+  * {
+    color: #fff !important;
+  }
+  .newMessagesPill-2YdO-e {
+    flex: 1 0;
   }
 }
 .jumpToPresentButton-1bFSxT {
@@ -2661,7 +2724,60 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     box-shadow: var(--elevation-medium);
   }
 }
-
+.container-2gk6Pn {
+  bottom: 0;
+  .navigator-lOeWrY {
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 26px;
+    border-radius: 3px 3px 0 0;
+    background: rgba(115, 127, 141, 0.9);
+    transition: .18s background-color;
+    &:hover {
+      background: #737f8d;
+    }
+    .theme-light & {
+      background: rgba(153, 170, 181, 0.9);
+      &:hover {
+        background: #99aab5;
+      }
+    }
+    &:active {
+      transform: translateY(1px);
+    }
+    .button-zlrith {
+      background: #0000 !important;
+      height: 26px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      justify-content: space-between;
+      .icon-2EhgI1 {
+        display: none;
+      }
+      &:before {
+        content: "You're viewing older messages";
+        font-size: 14px;
+      }
+      &:after {
+        content: "Jump to present";
+        float: right;
+        text-transform: uppercase;
+        color: #fff9;
+      }
+      font-size: 12px;
+      &:hover:after {
+        color: #fffb;
+      }
+    }
+    .button-zlrith, .text-2fuaDl {
+      color: #fff;
+    }
+  }
+}
 // QUICK SWITCHER AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 .quickswitcher-pKcM9U {
   .result-u66Ywh[aria-selected=true] {
