@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "241";
+$themeVersion: "242";
 $themeDate: "Aug 19, 2022";
 
 @use "sass:color";
@@ -6674,7 +6674,9 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     &[style="color: rgb(237, 66, 69); background-color: rgba(237, 66, 69, 0.1);"],
     &[style="color: rgb(255, 255, 255); background-color: rgb(237, 66, 69);"],
     &[aria-controls="logout-tab"],
-    &[aria-controls="delete-tab"] {
+    &[aria-controls="delete-tab"],
+    &:has([d="M18 2H7C5.897 2 5 2.898 5 4V11H12.59L10.293 8.708L11.706 7.292L16.414 11.991L11.708 16.706L10.292 15.294L12.582 13H5V20C5 21.103 5.897 22 7 22H18C19.103 22 20 21.103 20 20V4C20 2.898 19.103 2 18 2Z"]),
+    &:has([d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z"]) {
       display: block;
       position: absolute;
       bottom: 18px;
@@ -10343,7 +10345,7 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   }
 }
 
-// discord experiments/
+// discord experiments
 @if $usingExperiments {
   // premium tier 0
   .container-3h5xOu {
@@ -10657,17 +10659,17 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
       .customStatusText-2bcbbm {
         color: #fffa;
       }
-      .inputWrapper-1YNMmM.messageInput-1KI8l8 {
-        .theme-dark & {
-          background-color: #36393f;
-          border-color: #23262a;
-          color: #ffffffb3;
-        }
-        .input-2g-os5 {
-          background: none;
-          height: auto;
-          padding: 8px 10px;
-        }
+    }
+    .inputWrapper-1YNMmM.messageInput-1KI8l8, .messageInputContainer-2rGDH8 {
+      .theme-dark & {
+        background-color: #36393f;
+        border-color: #23262a !important;
+        color: #ffffffb3;
+      }
+      .input-2g-os5 {
+        background: none;
+        height: auto;
+        padding: 8px 10px;
       }
     }
     .userPopoutInnerWithoutBanner-3LRnre {
@@ -10678,6 +10680,18 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
       .overlayBackground-arbZMT>.section-3FmfOT:first-of-type {
         padding-top: calc(72px + 60px);
       }
+    }
+  }
+  // avatar decorations
+  .avatarDecorationBorder-1EBepl {
+    display: none;
+  }
+  .root-8LYsGj.root-g14mjS.small-23Atuv.fullscreenOnMobile-ixj0e3 {
+    .avatarDecoration-2OJuSI {
+      width: calc(148px * var(--decoration-to-avatar-ratio));
+      height: calc(128px * var(--decoration-to-avatar-ratio));
+      top: calc(calc((.5 - var(--decoration-to-avatar-ratio)/2)*100%) + 1px);
+      left: calc(calc((.5 - var(--decoration-to-avatar-ratio)/2)*100%) - 2px);
     }
   }
 }

@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "48";
+$themeVersion: "49";
 $themeDate: "Aug 19, 2022";
 $themeName: "DTM-18 BETA";
 
@@ -20,6 +20,8 @@ $messageStyle: 2;
 $BlurpleStyle: 0;
 // changes servers from 48x48 to 50x50 (if this breaks stuff, i'm going to disable it)
 $resizeServers: true;
+// experimental garbage
+$usingExperiments: true;
 @if $BlurpleStyle == 1 {
   $blurple: #5865F2;
 }
@@ -4784,8 +4786,17 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
           right: 0;
           pointer-events: none;
         }
-        // not supported yet
-        .avatarDecorationBorder-1wfzvF, .avatarDecoration-2OJuSI {
+        .avatarDecoration-2OJuSI {
+            width: calc(104px * var(--decoration-to-avatar-ratio));
+            height: calc(90px * var(--decoration-to-avatar-ratio));
+            top: calc(calc((.5 - var(--decoration-to-avatar-ratio)/2)*100%) + 1px);
+            left: calc(calc((.5 - var(--decoration-to-avatar-ratio)/2)*100%) - 2px);
+            foreignObject {
+              clip-path: path("M0 0H144V144H119.334V134C128.17 133.999 135.333 126.836 135.333 118C135.333 109.163 128.169 102 119.333 102C110.497 102 103.333 109.163 103.333 118C103.333 126.837 110.497 134 119.333 134V144H0V0Z");
+              fill-rule: evenodd;
+            }
+        }
+        .avatarDecorationBorder-1wfzvF {
           display: none;
         }
         .header-S26rhB {
@@ -8417,5 +8428,225 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   transition: .17s;
   &:focus, &:focus-within {
     border-color: var(--blurple);
+  }
+}
+
+// discord experiments/
+@if $usingExperiments {
+  // premium tier 0
+  .container-3h5xOu {
+    .hero-1gKM4P {
+      background: none;
+      padding: 0;
+    }
+    .ctaWrapper-4Js5Q6.ctaWrapperNormal-1H2ebY {
+      border-radius: 3px;
+      flex-direction: row;
+      grid-gap: 16px;
+      .ctaLogo-hfS4Fj, .price-6Nbraf {
+        flex: 0 0 auto;
+      }
+      .ctaCopy-1CkXTE {
+        flex: 1 1 auto;
+        min-width: 100px;
+        max-width: unset;
+        margin: 0;
+        align-self: center;
+      }
+      .ctaLogo-hfS4Fj {
+        margin-bottom: 16px;
+      }
+      .price-6Nbraf {
+        margin-top: 40px;
+        position: absolute;
+      }
+      .ctaButtons-3j63fY {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    .ctaWrapper-4Js5Q6.ctaWrapperMiniature-12ORdn {
+      border-radius: 3px;
+    }
+    .ctaWrapper-4Js5Q6.ctaWrapperNormal-1H2ebY.ctaWrapperTier2-1hk2M8,
+    .ctaWrapper-4Js5Q6.ctaWrapperMiniature-12ORdn.ctaWrapperTier2-1hk2M8{
+      background: linear-gradient(45deg, #B473F5, #E292AA);
+    }
+    .ctaWrapper-4Js5Q6.ctaWrapperNormal-1H2ebY.ctaWrapperTier0-1GlgHE,
+    .ctaWrapper-4Js5Q6.ctaWrapperMiniature-12ORdn.ctaWrapperTier0-1GlgHE {
+      background: linear-gradient(90deg,#5865f2,#007bc2);
+    }
+  }
+  .backgroundGradientForContainer-2R00t2 {
+    background: none;
+    padding: 0;
+    height: auto;
+    .sparkleStar-J6zUP3 {display:none}
+    .buttonContainer-2sL6rz {display:none}
+  }
+  .premiumCards-36uMGt .tier2-qNjKTW {
+    background: linear-gradient(45deg, #B473F5, #E292AA);
+    border-radius: 3px;
+  }
+  .premiumCards-36uMGt .tier0-17mYUd {
+    background: linear-gradient(90deg,#5865f2,#007bc2);
+    border-radius: 3px;
+  }
+  .bigPerkCardContainer-100zsH {display:none}
+  .tier2ColumnOuter-1U2eKO {
+    border-color: var(--blurple);
+    border-width: 1px;
+    border-radius: 3px;
+  }
+  .mostPopularPill-28w8lV {
+    background: var(--background-primary);
+    color: var(--blurple);
+    border: solid 1px var(--blurple);
+    border-radius: 3px;
+  }
+  // profile skins
+  .userPopout-3fydSP {
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 250px;
+    background: var(--background-secondary);
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%), 0 0 0 1px rgb(32 34 37 / 60%);
+    --background-secondary: var(--override-background-secondary);
+    --background-tertiary: var(--override-background-tertiary);
+    --background-accent: var(--override-background-accent);
+    --text-normal: var(--override-text-normal);
+    --text-muted: var(--override-text-muted);
+    --text-link: var(--override-text-link);
+    --scrollbar-thin-thumb: var(--override-scrollbar-thin-thumb);
+    --scrollbar-thin-track: var(--override-scrollbar-thin-track);
+    --interactive-active: var(--override-interactive-active);
+    .theme-light & {
+      box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%), 0 0 0 1px hsl(216deg 4% 74% / 30%);
+    }
+    .userPopoutInner-PA9zkU {
+      border-radius: 0;
+      max-height: calc(100vh - 15px);
+      background: none;
+      &:before {display:none}
+      .avatarWrapper-3y0KZ1 {
+        left: calc(50% - calc(92px / 2));
+      }
+      .overlayBackground-arbZMT {
+        border-radius: 0;
+        margin: 0;
+        margin-top: 32px;
+        background: none;
+        margin-top: 0;
+        background-image: url("https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png");
+        background-size: 270px 213px;
+        background-color: var(--blurple);
+        .messageInput-1KI8l8 {border:none!important}
+        .section-3FmfOT {
+          padding-right: 2px;
+          padding-left: 10px;
+        }
+        .scroller-1jBQYo {
+          background: var(--background-secondary);
+          >.section-3FmfOT:not(:first-of-type) {
+            padding-top: 20px;
+          }
+        }
+        >.section-3FmfOT {
+          &:first-of-type, &:nth-of-type(2) {
+            text-align: center;
+            padding-top: 72px;
+            padding-bottom: 16px;
+            padding-left: 0;
+          }
+          &:nth-of-type(2) {
+            padding-top: 0;
+            margin-top: -8px;
+          }
+        }
+        .note-6O4w9y .textarea-_59yqs {
+          background: #0000;
+          border-color: #0000;
+          &:active, &:focus, &:focus-within {
+            background: var(--background-tertiary);
+          }
+        }
+        .body-2Fhyoo {
+          font-size: 14px;
+        }
+      }
+      .title-1r9MQ6 {
+        color: var(--text-muted);
+      }
+      .roleName-2ZJJYR {
+        font-weight: 500;
+      }
+      .avatar-2OC07D {
+        background: #8b9edc;
+        border-color: #8b9edc;
+        border-width: 4px;
+        margin: 2px;
+      }
+      .popoutBannerPremium-2RvDNZ {
+        height: 100px;
+        min-height: 100px;
+      }
+      .profileBadges-31rDHI {display:none}
+      .divider-1gzPrC {display:none}
+      .userTag-PXLYzP {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+      }
+      .userText-148fun {
+        .username-3JLfHz {
+          font-weight: 400;
+          font-size: 16px;
+          color: #fff;
+        }
+        .discrimBase-KriZSj {
+          font-weight: 400;
+          color: #ffffffa6;
+          font-size: 12px;
+          line-height: 22px;
+        }
+        .nickname-2rimyL {
+          font-size: 16px;
+          font-weight: 400;
+          color: #fff;
+        }
+      }
+      .userTagWithNickname-3-znkC {
+        opacity: .75;
+        .discrimBase-KriZSj {
+          line-height: 16px;
+        }
+      }
+      .customStatusText-2bcbbm {
+        color: #fffa;
+      }
+      .inputWrapper-1YNMmM.messageInput-1KI8l8 {
+        .theme-dark & {
+          background-color: #36393f;
+          border-color: #23262a;
+          color: #ffffffb3;
+        }
+        .input-2g-os5 {
+          background: none;
+          height: auto;
+          padding: 8px 10px;
+        }
+      }
+    }
+    .userPopoutInnerWithoutBanner-3LRnre {
+      min-height: 128px;
+      .popoutBanner-16rVDY {
+        display: none;
+      }
+      .overlayBackground-arbZMT>.section-3FmfOT:first-of-type {
+        padding-top: calc(72px + 60px);
+      }
+    }
   }
 }
