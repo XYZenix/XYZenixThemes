@@ -7,9 +7,9 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "50";
-$themeDate: "Aug 20, 2022";
-$themeName: "DTM-18 BETA";
+$themeVersion: "51";
+$themeDate: "Aug 30, 2022";
+$themeName: "DTM-17";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -364,7 +364,7 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   content: $themeName " Build " $themeVersion "\A" $themeDate;
   margin-bottom: 20px;
 }
-.theme-dark {
+.theme-dark:not(.theme-amoled):not(html.theme-amoled .theme-dark) {
   --header-primary: #fff;
   --header-secondary: #b9bbbe;
   --text-normal: #dcddde;
@@ -827,6 +827,9 @@ html.theme-light {
   background-color: #ebebeb;
   .theme-dark & {
     background-color: #282b30;
+  }
+  .theme-amoled & {
+    background: var(--background-secondary-alt);
   }
   #{$panel-rtcConnection} {
     #{$panel-rtcConnectionStatus} {
@@ -1779,6 +1782,10 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
           background: #FFFB;
           box-shadow: 0 0 4px 6px #FFFB;
         }
+        .theme-amoled & {
+          background: #000B;
+          box-shadow: 0 0 4px 6px #000B;
+        }
         &:hover {
           background: #36393EEE;
           box-shadow: 0 0 4px 6px #36393EEE;
@@ -1786,6 +1793,10 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
           .theme-light & {
             background: #FFFE;
             box-shadow: 0 0 4px 6px #FFFE;
+          }
+          .theme-amoled & {
+            background: #000E;
+            box-shadow: 0 0 4px 6px #000E;
           }
         }
       }
@@ -2231,6 +2242,10 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
           background: #FFFB;
           box-shadow: 0 0 4px 6px #FFFB;
         }
+        .theme-amoled & {
+          background: #000B;
+          box-shadow: 0 0 4px 6px #000B;
+        }
         &:hover {
           background: #36393EEE;
           box-shadow: 0 0 4px 6px #36393EEE;
@@ -2238,6 +2253,10 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
           .theme-light & {
             background: #FFFE;
             box-shadow: 0 0 4px 6px #FFFE;
+          }
+          .theme-amoled & {
+            background: #000E;
+            box-shadow: 0 0 4px 6px #000E;
           }
         }
       }
@@ -3546,6 +3565,9 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     background-image: url("https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png");
     background-size: 270px 213px;
     background-color: var(--blurple);
+    .theme-amoled & {
+      background: #222;
+    }
     .headerNameWrapper-gEOyRH {
       .headerName-3W-qH- {
         font-size: 16px;
@@ -3692,6 +3714,10 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
         background: #8b9edc;
         border: solid 4px #8b9edc;
       }
+      .theme-amoled & {
+        border-color: #333;
+        background: #333;
+      }
       [mask^="url(#svg-mask-avatar-status-"] {
         mask: none;
         border-radius: 50%;
@@ -3758,6 +3784,15 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       }
       .userInfoBody-1zgAd0 {
         color: #fffb !important;
+        .defaultColor-24IHKz {
+          color: inherit;
+        }
+        code {
+          background: #fff2;
+        }
+        .blockquoteDivider-363utW {
+          background: #fff4;
+        }
       }
     }
     &::-webkit-scrollbar {
@@ -8524,6 +8559,9 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
     --scrollbar-thin-thumb: var(--override-scrollbar-thin-thumb);
     --scrollbar-thin-track: var(--override-scrollbar-thin-track);
     --interactive-active: var(--override-interactive-active);
+    .theme-amoled & {
+      --background-secondary: #111;
+    }
     .theme-light & {
       box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%), 0 0 0 1px hsl(216deg 4% 74% / 30%);
     }
@@ -8544,10 +8582,16 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
         background-image: url("https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png");
         background-size: 270px 213px;
         background-color: var(--blurple);
+        .theme-amoled & {
+          background: #222;
+        }
         .messageInput-1KI8l8 {border:none!important}
         .section-3FmfOT {
           padding-right: 2px;
           padding-left: 10px;
+          code {
+            background: var(--background-tertiary);
+          }
         }
         .scroller-1jBQYo {
           background: var(--background-secondary);
@@ -8589,6 +8633,10 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
         border-color: #8b9edc;
         border-width: 4px;
         margin: 2px;
+        .theme-amoled & {
+          background: #444;
+          border-color: #444;
+        }
       }
       .popoutBannerPremium-2RvDNZ {
         height: 100px;
