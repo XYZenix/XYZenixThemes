@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "248";
-$themeDate: "Sep 20, 2022";
+$themeVersion: "249";
+$themeDate: "Sep 21, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -5455,7 +5455,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     justify-content: flex-end;
     .tabBarItem-1b8RUPm, .tabBarItem-30Te4- {
       font-size: 14px;
-      color: rgba(115,127,141,.3) !important;
+      color: #000 !important;
       font-weight: 500;
       margin-right: 20px;
       padding-left: 10px;
@@ -10821,10 +10821,10 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
     * {
       mask: none;
     }
-    &[viewBox="0 0 340 60"] {
+    &[viewBox="0 0 340 60"], &[viewBox="0 0 300 60"] {
       min-height: 96px !important;
     }
-    &[viewBox="0 0 340 120"] {
+    &[viewBox="0 0 340 120"], &[viewBox="0 0 300 120"] {
       min-height: 180px !important;
       margin-top: -30px !important;
     }
@@ -10836,11 +10836,26 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   }
   .avatarWrapper-eenWra {
     margin-top: 0px !important;
+    .mask-1FEkla.svg-2azL_l {
+      >foreignObject {
+        mask: none !important;
+        * {
+          border-radius: 512px;
+        }
+      }
+      >rect {
+        mask: url(#svg-mask-status-online) !important;
+      }
+    }
     .wrapper-1VLyxH {
       background: #8b9edc;
       border: solid 3px #8b9edc;
       top: -3px;
       left: -3px;
+    }
+    .pointerEvents-9SZWKj {
+      stroke: #fff5;
+      stroke-width: 4px;
     }
   }
 }
@@ -10849,14 +10864,31 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   }
   .pencilContainer-11Kuga {display:none}
   .bannerSVGWrapper-qc0szY {
+    &[viewBox="0 0 600 212"] {
+      margin-bottom: -18px;
+      .banner-2boKnS {
+        margin-top: -14px !important;
+        padding-bottom: 14px;
+        margin-left: -14px;
+        padding-right: 28px;
+        &:after {
+          top: -14px;
+        }
+      }
+      +.header-S26rhB {
+        .wrapper-1VLyxH.avatar-3QF_VA {
+          margin-top: 0;
+        }
+      }
+    }
     pointer-events: none;
     * {
       mask: none;
     }
     min-width: 600px !important;
     max-width: 600px;
-    min-height: 212px !important;
-    max-height: 212px;
+    min-height: 240px !important;
+    max-height: 240px;
     margin-bottom: -3px;
     foreignObject {
       top: 2px !important;
@@ -10865,19 +10897,21 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
       min-height: 214px !important;
       height: 214px !important;
       &:not(.profileBannerPremium-3xIFwS) {
-        margin-top: -53px;
+        margin-top: -67px;
+        padding-bottom: 26px;
       }
     }
     .banner-1YaD3N.profileBanner-1owKI5 {
       min-height: 214px !important;
       height: 214px !important;
       &:not(.profileBannerPremium-KD60EB) {
-        margin-top: -53px;
+        margin-top: -67px;
+        padding-bottom: 26px;
       }
     }
   }
   .wrapper-1VLyxH.avatar-3QF_VA {
-    margin-top: -16px;
+    margin-top: 16px;
     .mask-1FEkla.svg-2azL_l {
       margin-left: 4px;
       margin-top: 4px;
@@ -10917,6 +10951,47 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
     }
     max-width: 250px !important;
   }
+  .avatarWrapper-3y0KZ1 {
+    margin-left: 2px;
+    margin-top: 0px !important;
+    .mask-1FEkla.svg-2azL_l {
+      >foreignObject {
+        mask: none !important;
+        * {
+          border-radius: 512px;
+        }
+      }
+      >rect, .cursorDefault--wfhy5 rect {
+        rx: 100%;
+        mask: url(#svg-mask-status-online) !important;
+        width: 24px;
+        height: 24px;
+        x: 58px;
+        y: 58px;
+      }
+    }
+    .wrapper-1VLyxH {
+      background: #8b9edc;
+      top: 0px;
+      left: 0px;
+    }
+    .pointerEvents-9SZWKj {
+      stroke: #fff5;
+      stroke-width: 4px;
+    }
+    &.avatarPositionPremiumBanner-2nq2Fy {
+      .avatarStack-3vfSFa {
+        margin-left: 3px;
+        margin-top: 3px;
+        width: 74px;
+        height: 74px;
+      }
+    }
+  }
+  .avatarHint-2g3Mcd * {
+    mask: none;
+    border-radius: 100%;
+  }
   .messageInputContainer-2rGDH8 {
     border-color: var(--override-background-tertiary);
     .input-2g-os5 {
@@ -10928,3 +11003,4 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 .userPopoutUnthemed-3WS0Xb.userPopout-3fydSP {
   min-height: 116px;
 }
+.pencilContainer-18TrEJ {display:none}
