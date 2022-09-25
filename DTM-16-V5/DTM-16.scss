@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "253";
-$themeDate: "Sep 22, 2022";
+$themeVersion: "254";
+$themeDate: "Sep 25, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -11047,4 +11047,84 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 // font fix
 .markup-eYLPri h1, .markup-eYLPri h2, .markup-eYLPri h3, .markup-eYLPri h4, .markup-eYLPri h5, .markup-eYLPri h6 {
   font-family: var(--font-primary);
+}
+// role fix - sep 25, 2022
+.userPopout-29jUdN {
+  .role-2TIOKu:not(.addButton-1_dZYu) {
+    //border-color: #dbdde1 !important;
+    border: none !important;
+    overflow: hidden;
+    .roleName-2ZJJYR {
+      z-index: 1001;
+    }
+    &:after {
+      display: none;
+    }
+    &:before {
+      content: "";
+      display: block;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: auto;
+      opacity: .5 !important;
+      filter: contrast(0.5) !important;
+      box-shadow: inset 0 0 0 1px #000;
+      mix-blend-mode: unset;
+      .theme-dark & {
+        box-shadow: inset 0 0 0 1px #fff;
+      }
+    }
+  }
+  .roleRemoveButton-17oXnT {
+    position: unset;
+    &:before {
+      content: "";
+      display: block;
+      border: none;
+      height: auto;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      right: unset;
+      bottom: 1px;
+      width: calc(100% - 2px);
+      z-index: 1000;
+      background: var(--background-secondary);
+      .theme-light & {background:#fff}
+      mix-blend-mode: unset;
+      opacity: .75;
+      pointer-events: none;
+    }
+  }
+  .roleIcon-29epUq {
+    z-index: 1006;
+  }
+  .roleRemoveIcon-387wKV {
+    z-index: 1005;
+    position: relative !important;
+    left: 0 !important;
+    .theme-dark & path {fill:#fff!important}
+    .theme-light & path {fill:#000!important}
+  }
+  .roleDot-31puPJ, .dotBorderColor-1bI5mT {
+    display: block !important;
+    position: absolute !important;
+    pointer-events: none;
+    top: 0 !important;
+    left: 0 !important;
+    transform: scale(100);
+    z-index: 100;
+    opacity: 1;
+    mix-blend-mode: darken;
+  }
+  .dotBorderColor-1bI5mT, .dotBorderBase-2L1my4 {
+    display: none;
+  }
+  .roleRemoveButton-17oXnT {
+    z-index: 999;
+  }
 }
