@@ -6,6 +6,16 @@ This is where I will put website themes I've made.
 [![](https://img.shields.io/github/last-commit/XYZenix/XYZenixThemes?style=for-the-badge)](https://github.com/XYZenix/XYZenixThemes/commits/master)
 
 ![image](https://user-images.githubusercontent.com/51988432/145855755-eb6e336a-06f9-4a1b-a10a-e0d5897d9af8.png)
+
+## Contributing
+if you want to contribute, you can open pull requests i guess
+
+for dtm-16 and dtm-17, pull requests should be modifying the .scss file, don't compile it yourself, i'll do it instead (so hopefully it doesn't create a mess of merge conflicts)
+
+for dtm-08, there's just a .css file
+
+the rest of the themes aren't really worth contributing to but if you really want to, go ahead, all of them should be just .css and no scss/sass
+
 ## Theme list
 
 Website | Theme Name | Link | Description | Preview
