@@ -32,10 +32,10 @@ Currently active:
 
 Name | Description  | Status
 -----|--------------|-------
-DTM-08 | A skeuomorphic/glossy theme for Discord | Active
-DTM-16 | A theme that brings the old UI back | Active
-DTM-17 | A modified version of DTM-16 that looks closer to 2017 and 2018 Discord | Active
-ActivityStyleEmbeds | Changes the look of embeds to look like that of the embeds from the (removed) Activity Tab | [Available here](https://github.com/XYZenix/ActivityStyleEmbeds)
+[DTM-08](https://github.com/XYZenix/DTM-08) | A skeuomorphic/glossy theme for Discord | Active
+[DTM-16](https://github.com/XYZenix/DTM-16) | A theme that brings the old UI back | Active
+[DTM-17](https://github.com/XYZenix/DTM-17) | A modified version of DTM-16 that looks closer to 2017 and 2018 Discord | Active
+[ActivityStyleEmbeds](https://github.com/XYZenix/ActivityStyleEmbeds) | Changes the look of embeds to look like that of the embeds from the (removed) Activity Tab | [Available here](https://github.com/XYZenix/ActivityStyleEmbeds)
 
 Abandoned:
 
@@ -53,13 +53,8 @@ Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI | Abandoned
 
 Name | Description | Status | Image
 -----|-------------|--------|------
-NewDragNDropModal | New drag&drop upload box from a short video that was shown on the Nitro tab, theme includes non nitro version | Active |[Nitro](https://cdn.discordapp.com/attachments/581117911117070336/638606292843233310/unknown.png) / [Nitro Classic](https://cdn.discordapp.com/attachments/531523467636375554/590955254200401926/unknown.png) / [Non-Nitro](https://cdn.discordapp.com/attachments/531523467636375554/590955483863580682/unknown.png)
-GiftAndGifRemove | Mini theme that removes gift and gif buttons in chat input box | Abandoned | No image
-NoAutocompleteHover | Mini theme that prevents any mouse hover effects from working on autocomplete in chat input | Abandoned | [Example](https://cdn.discordapp.com/attachments/531523467636375554/590956266159996958/unknown.png)
-HideEmail | Mini theme that hides email from user settings | Abandoned | [Example](https://cdn.discordapp.com/attachments/531523467636375554/590956519290306564/unknown.png)
-ExpandedSearchBar | Mini theme that expands search bar as needed | Abandoned | No image
-FluentClickEffect | Mini theme that adds Fluent Design-like click effects to most buttons | Abandoned | [GIF](https://cdn.discordapp.com/attachments/531523467636375554/590957041305255957/2019-06-19_20-31-52.gif)
-MiniProfileRevert | Reverts the new mini profile UI update from July 2020 | Abandoned | [Comparison](https://i.imgur.com/UPmNSMH.png)
+NewDragNDropModal | New drag&drop upload box from a short video that was shown on the Nitro tab, theme includes non nitro version | Temporarily abandoned |[Nitro](https://cdn.discordapp.com/attachments/581117911117070336/638606292843233310/unknown.png) / [Nitro Classic](https://cdn.discordapp.com/attachments/531523467636375554/590955254200401926/unknown.png) / [Non-Nitro](https://cdn.discordapp.com/attachments/531523467636375554/590955483863580682/unknown.png)
+MiniProfileRevert | Reverts the new mini profile UI update from July 2020 | Temporarily abandoned | [Comparison](https://i.imgur.com/UPmNSMH.png)
 
 
 ## Steam Themes

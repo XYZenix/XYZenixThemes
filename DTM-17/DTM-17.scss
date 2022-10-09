@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "65";
-$themeDate: "Oct 4, 2022";
+$themeVersion: "66";
+$themeDate: "Oct 9, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -8651,7 +8651,7 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
     border-radius: 3px;
   }
   // profile skins
-  .userPopoutOuter-3AVBmJ {
+  .userPopoutOuter-3AVBmJ:not(.profileCustomizationPreview-2-Y173) {
     padding: 0;
     border-radius: 5px;
     overflow: hidden;
@@ -8858,6 +8858,10 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
     left: 0;
     top: 0;
   }
+  .userInfoSection-3her-v>.userInfoSection-3her-v {
+    background: #0000;
+    padding: 0;
+  }
   .avatarWrapper-eenWra {
     margin-top: 0px !important;
     .mask-1FEkla.svg-2azL_l {
@@ -8992,7 +8996,7 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   font-family: var(--font-primary);
 }
 // role fix - sep 25, 2022
-.userPopoutOuter-3AVBmJ {
+.userPopoutOuter-3AVBmJ:not(.profileCustomizationPreview-2-Y173) {
   .role-2TIOKu:not(.addButton-1_dZYu) {
     //border-color: #dbdde1 !important;
     border: none !important;
@@ -9072,8 +9076,8 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   }
 }
 // sep 28 fixes
-.userPopoutOuter-3AVBmJ .avatarWrapper-3y0KZ1 .mask-1FEkla.svg-2azL_l>foreignObject+circle {display:none}
-.userPopoutOuter-3AVBmJ {
+.userPopoutOuter-3AVBmJ:not(.profileCustomizationPreview-2-Y173) .avatarWrapper-3y0KZ1 .mask-1FEkla.svg-2azL_l>foreignObject+circle {display:none}
+.userPopoutOuter-3AVBmJ:not(.profileCustomizationPreview-2-Y173) {
   .userProfileInnerPremiumWithoutBanner-37uB4Q, .userProfileInnerNonPremium-1XjSjn {
     .bannerSVGWrapper-qc0szY {
       display: none;
@@ -9093,7 +9097,13 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 .userInfoSection-3her-v .userInfoBody-1zgAd0.markup-eYLPri {
   margin-bottom: 12px;
 }
-.userPopoutInner-1hXSeY {
+.userPopoutOuter-3AVBmJ:not(.profileCustomizationPreview-2-Y173) .userPopoutInner-1hXSeY {
   max-width: 250px;
   overflow-x: clip;
+}
+// oct 9 (uhhh... fixing the video player fullscreen button?)
+button.videoButton-3NM9Tc.button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-2sR_-F {
+  padding: 4px;
+  margin: 0;
+  border-radius: 0;
 }
