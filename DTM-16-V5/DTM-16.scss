@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "259";
-$themeDate: "Oct 9, 2022";
+$themeVersion: "260";
+$themeDate: "Oct 14, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -1065,6 +1065,10 @@ html.theme-light {
     .actions-zk2vB_ {
       border: solid 1px #1C1E22;
       border-radius: 3px;
+      &, * {
+        min-width: 32px;
+        flex: 0 0 auto;
+      }
       button {
         border-radius: 3px;
         &:active {
@@ -1585,13 +1589,15 @@ html.theme-light {
           }
         }
       }
-      .contextMenuContainer-1RO4DQ>svg {
-        margin-bottom: -30px;
-        margin-right: -30px;
-        >foreignObject {
-          width: 56px;
-          height: 56px;
-          mask: none;
+      .contextMenuContainer-1RO4DQ {
+        >svg {
+          margin-bottom: -30px;
+          margin-right: -30px;
+          >foreignObject {
+            width: 56px;
+            height: 56px;
+            mask: none;
+          }
         }
       }
       #{$centerButton} {
@@ -5799,7 +5805,8 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 // badges
 .headerBarInner-2pcZSM .textBadge-1fdDPJ,
 .tabBarItemContainer-2HdIlr .textBadge-1fdDPJ,
-.tabBarItem-2eb9Nh+.textBadge-1fdDPJ {
+.tabBarItem-2eb9Nh+.textBadge-1fdDPJ,
+.betaTagIcon-BgmWbF {
   border-radius: 3px;
   background: var(--blurple) !important;
   text-shadow: 0 1px 0 rgba(0 0 0 / 25%);
@@ -7490,7 +7497,7 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   margin-top: -18px;
 }
 // switches in role settings
-.container-1zDvAE {
+.permissionsWrapper-34gbP6 {
   .container-2nx-BQ .input-2XRLou {
     &:checked {
       &:before {
@@ -7809,6 +7816,8 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
 #{$btnOutlined} {transition: .2s;background:none!important}
 .theme-dark #{$btnOutlined}#{$btnColorPrimary}:not(:hover):not(:active) {border-color: #ffffff4d}
 .theme-light #{$btnOutlined}#{$btnColorPrimary}:not(:hover):not(:active) {border-color: #747f8d4d}
+.theme-light #{$btnOutlined}#{$btnColorPrimary} {color: var(--button-outline-primary-text) !important}
+.theme-light #{$btnOutlined}#{$btnColorPrimary}:active {background: #747f8d2d !important}
 .theme-dark #{$btnOutlined}#{$btnColorTransparent}:not(:hover):not(:active) {border-color: #dcddde4d}
 .theme-light #{$btnOutlined}#{$btnColorTransparent}:not(:hover):not(:active) {border-color: #747f8d4d}
 #{$btnOutlined}#{$btnColorWhite}:not(:hover):not(:active) {border-color:#ffffff4d}
@@ -11150,4 +11159,27 @@ button.videoButton-3NM9Tc.button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-
   padding: 4px;
   margin: 0;
   border-radius: 0;
+}
+// windows my beloved
+.platform-win .sidebar-1tnWFu {
+  border-radius: 0;
+}
+// oct 14 i forgor to do this earlier >:(
+.userPopout-2j1gM4 .memberSinceContainer-2CBD23 {
+  .discordIcon-32mgeP {
+    color: #fff !important;
+  }
+}
+// screenshare/video call thing that was broken ages ago
+.bottomControls-31YuPK>.flex-3BkGQD>.wrapper-3t3Yqv {
+  >div[style^="opacity:"] {
+    width: auto;
+    .controlButton-2PMNom.contextMenuContainer-1RO4DQ {
+      display: none;
+    }
+    .unmasked-3zpww7.controlButton-2PMNom {
+      display: block;
+      width: auto;
+    }
+  }
 }
