@@ -36,20 +36,20 @@ Name | Description | State
 [Twitch 2014](/Twitch2014.css) | Brings back the 2014 look of Twitch to some extent. **THIS IS MEANT TO BE USED ON STYLUS AS USERCSS** | Active
 
 ## Themes: YouTube
-these are maintained by [Zen](https://github.com/iamthebeast87)
 
 Name | Description | State
 -----|-------------|------
 [YouTube Predictions](/YouTube-Predictions.css) | A theme by [Zen](https://github.com/iamthebeast87) that tries to predict YouTube's near-future layout changes | Active
 [Darker YouTube](/Darker-YouTube.css) | A theme by [Zen](https://github.com/iamthebeast87) that makes dark mode a bit darker | Active
+[2013SubscribeButton](/2013SubscribeButton.css) | A mini-theme I made that makes the sub button look like the 2013 sub button. | Probably broken, definitely abandoned
 
-## Themes: Steam
+## Themes: [Steam](/SteamLibraryThemes/)
 (all of the steam ones are abandoned for now)
 
 ID | Style | Status
 ---|-------|-------
-001 | Skeuomorphic + Glossy | Not finished
-002 | Discord | Not finished
+001 | [Skeuomorphic + Glossy](/SteamLibraryThemes/steam-theme-001.css) | Not finished
+002 | [Discord](/SteamLibraryThemes/steam-theme-002.css) | Not finished
 N/A | Light mode | Planned
 N/A | Darker dark mode | Planned
 N/A | Terminal/retro | Planned
