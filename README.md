@@ -39,6 +39,7 @@ Name | Description | State
 these are maintained by [Zen](https://github.com/iamthebeast87)
 
 Name | Description | State
+-----|-------------|------
 [YouTube Predictions](/YouTube-Predictions.css) | A theme by [Zen](https://github.com/iamthebeast87) that tries to predict YouTube's near-future layout changes | Active
 [Darker YouTube](/Darker-YouTube.css) | A theme by [Zen](https://github.com/iamthebeast87) that makes dark mode a bit darker | Active
 
