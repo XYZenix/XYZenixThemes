@@ -11223,3 +11223,82 @@ button.videoButton-3NM9Tc.button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-
     d: path("M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM13 14H11V12H13V14ZM14.8 9C14.5 9.4 14.1 9.6 13.7 9.8C13.4 10 13.3 10.1 13.2 10.3C13 10.5 13 10.7 13 11H11C11 10.5 11.1 10.2 11.3 9.9C11.5 9.7 11.9 9.4 12.4 9.1C12.7 9 12.9 8.8 13 8.6C13.1 8.4 13.2 8.1 13.2 7.9C13.2 7.6 13.1 7.4 12.9 7.2C12.7 7 12.4 6.9 12.1 6.9C11.8 6.9 11.6 7 11.4 7.1C11.2 7.2 11.1 7.4 11.1 7.7H9.1C9.2 7 9.5 6.4 10 6C10.5 5.6 11.2 5.5 12.1 5.5C13 5.5 13.8 5.7 14.3 6.1C14.8 6.5 15.1 7.1 15.1 7.8C15.2 8.2 15.1 8.6 14.8 9Z")
   }
 }
+// oct 26 - profile themes (temporary until i fix it properly)
+@if $revertProfiles {
+  .userProfileOuter-1K_BYU {
+    --background-secondary: var(--override-background-secondary) !important;
+    --background-tertiary: var(--override-background-tertiary) !important;
+    --background-accent: var(--override-background-accent) !important;
+    --background-floating: var(--override-background-floating) !important;
+    --text-normal: var(--override-text-normal) !important;
+    --text-muted: var(--override-text-muted) !important;
+    --text-link: var(--override-text-link) !important;
+    --scrollbar-thin-thumb: var(--override-scrollbar-thin-thumb) !important;
+    --scrollbar-thin-track: var(--override-scrollbar-thin-track) !important;
+    --interactive-active: var(--override-interactive-active) !important;
+    &.userProfileOuterThemed-3EfHmv {
+      padding: 0;
+    }
+    .userProfileModalInner-3fh3QA {
+      &:before {
+        display: none;
+      }
+      background: var(--background-floating);
+    }
+    .badgeList-2pMvZX {
+      background: none;
+    }
+    .avatar-1YsFQ1 {
+      circle[r="20"][cx="100"][cy="100"] {
+        display: none;
+      }
+    }
+    .overlayBackground-1KgwVi {
+      margin: 0;
+      border-radius: 0;
+      background: none;
+      .body-_QAKrE {
+        .divider-1NpGam {
+          margin-left: 0;
+          margin-right: 0;
+          border-color: var(--override-background-modifier-accent);
+        }
+        >.container-1U-qVy,
+        >.tabBarContainer-2UG0vy,
+        >.infoScroller-3MqKC5 {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+      }
+      .connectedAccountContainer-3aLMHJ {
+        background: none;
+        border-radius: 3px;
+        border: solid 1px #0004;
+        padding: 10px;
+        .connectedAccountOpenIcon-3i81Tz {
+          transform: none;
+          margin-top: 4px;
+          margin-right: 4px;
+          background-image: url('data:image/svg+xml,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14ZM19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V12H19V19Z" fill="%2399AAB5"/></svg>');
+          width: 18px;
+          height: 18px;
+          polygon {
+            display: none;
+          }
+        }
+      }
+      .note-3TX9O7:not(:focus-within) textarea {
+        background: #0000 !important;
+        border-color: #0000 !important;
+      }
+    }
+  }
+  .previewProfileThemes-ViDDkq .title-1HgbhV {
+    flex-direction: column;
+    align-items: flex-start;
+    &:after {
+      content: "i am not fixing this for now so enjoy it being broken (by which i mean disable dtm-16 if you want to see how your profile theme will look)";
+      font-size: 14px;
+    }
+  }
+}
