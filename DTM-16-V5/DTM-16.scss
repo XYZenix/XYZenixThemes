@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "265";
-$themeDate: "Oct 30, 2022";
+$themeVersion: "266";
+$themeDate: "Nov 13, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -90,6 +90,12 @@ $experiment8: 1;
 // 0 | Control: No change
 // 1 | Treatment 1: 2015/2016 modal styling
 $experiment9: 0;
+
+// Experiment 10 - Connections (2022-11_connections)
+// 0 | Control: No change
+// 1 | Treatment 1: Old connections styling
+// 2 | Treatment 2: Connections styling based on one of 11pixels's concepts. Works best with light mode.
+$experiment10: 1;
 
 // variables (i barely use these anymore)
 $scrollableContainer: ".scrollableContainer-15eg7h";
@@ -7883,407 +7889,512 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   color: #fff;
 }
 // connections tab in user settings because i am too lazy to put this in the settings section
-.connection-YOVI9j {
-  overflow: hidden;
-  background: none;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
-  .connectionAccountLabel-28GEPk {
-    color: #fff8 !important;
-  }
-  .defaultColor-24IHKz.text-sm-semibold-3TWn25,
-  .connectionAccountValue-YkFI6F .connectionAccountLabelContainer-1KuLS6 {
-    font-size: 16px;
-    margin-top: 4px;
-    color: #fff;
-    font-weight: 400;
-  }
-  .metadataContainer-35U-On {
-    position: relative;
-    z-index: 10;
-    background: #0004;
-    border: solid 1px #0004;
-    border-radius: 3px;
-    .connectedAccountVanityMetadataTag-19Al5z {
-      border-radius: 3px;
-      background: none;
-      border: solid 1px #fff3;
-    }
-  }
-  .connectionAccountValue-YkFI6F {
-    color: #fff;
-  }
-  .subEnabledTitle-2YpsZq {
-    position: relative;
-    color: #fff;
-  }
-  .slider-32CRPX {
-    display: none;
-  }
-  .integration-1f5IUi {
-    border: 1px solid rgba(0,0,0,.3);
-    background: rgba(0,0,0,.1);
+@if $experiment10 == 1 {
+  .connection-YOVI9j {
+    overflow: hidden;
+    background: none;
     border-radius: 5px;
-    position: relative;
-    padding: 10px;
-  }
-  .connectionHeader-Ixbb1s {
-    background: #0000;
-    &:after {
-      content: "";
-      position: absolute;
-      width: 660px;
-      height: 73px;
-      background: rgba(0,0,0,.1);
-      border-bottom: solid 1px rgba(0,0,0,.15);
-      pointer-events: none;
-    }
-  }
-  .connectionOptionsWrapper-3aVWcp *, .connectionDelete-3YgMVq, .integrationsWrapper-3a2pGd, .integrationsWrapper-3a2pGd *, .connectedAccountSeparator-2gWsUP {
-    z-index: 50;
-  }
-  .connectedAccountSeparator-nMsSRO {
-    position: relative;
-    border-top-color: hsla(218,5%,47%,.3);
-  }
-  .connectionOptionSwitch-y1S-cR {
-    margin-top: 2px;
-    .title-2dsDLn {
-      font-weight: 400;
-    }
-  }
-  .integrationsWrapper-1V-5L9 {
-    .subEnabledTitle-2YpsZq {
-      opacity: .75;
-      letter-spacing: .5px;
-    }
-  }
-  .integrationsWrapper-1V-5L9>.colorStandard-1Xxp1s+div:not([style]) {
-    display: flex;
-    grid-gap: 8px 16px;
-    flex-flow: wrap;
-  }
-  .integration-1qC-fv {
-    z-index: 999;
-    width: calc(50% - 8px);
-    position: relative;
-    background: #0000001a;
-    border: 1px solid #0000004d;
-    border-radius: 3px;
-    padding: 10px;
-    .button-f2h6uQ.lookFilled-yCfaCM {
-      border: solid 1px #0000004d;
-      background: #593695;
-      padding: 5px 16px;
-      min-height: 0px;
-      height: auto;
-      min-width: 0px;
-    }
-  }
-  .connectionDelete-3YgMVq {
-    width: 32px;
-    height: 32px;
-    border: solid 1px rgba(255,255,255,.3);
-    border-radius: 3px;
-    >svg {
-      position: relative;
-      top: 6px;
-      left: 6px;
-      path {
-        fill: #fff;
-        transform: scale(1.1);
-      }
-    }
-  }
-  .container-2nx-BQ {
-    background: none !important;
-    .input-2XRLou {
-      &:before {
-        background: #0000;
-        box-shadow: inset 0 0 0 2px hsla(0,0%,100%,.2);
-      }
-      &:checked:before {
-        background: rgba(255,255,255,.3);
-        box-shadow: none;
-      }
-    }
-  }
-  .connectionHeader-Ixbb1s {
-    [alt] {
-      margin: -572px -610px -4500px -20px;
-      padding: 2000px 330px;
-      background-color: var(--blurple);
-      background-repeat: no-repeat;
-      background-size: 32px 32px;
-      background-position: 20px 20px;
-      border-radius: 5px;
-      pointer-events: none;
-    }
-    [alt="Battle.net"] {
-      background-color: #009AE5;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763309125742/3a257c4cab129e956b05bd50047eb0f9.png);
-    }
-    [alt="GitHub"] {
-      background-color: #191717;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763602739321/9e2893717851c493b4bff518f8b63ee7.png);
-    }
-    [alt="Reddit"] {
-      background-color: #5f99cf;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763938275428/bcc7bc0c0b27f9cbadaa1a47ea79db22.png);
-    }
-    [alt="Spotify"] {
-      background-color: #1DB954;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531764324167770/fe3770614c2658a07dea3ecb286ce745.png);
-    }
-    [alt="Steam"] {
-      background-color: #182332;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531764575805510/baf4bdd36b7ef74e8f34b402e66f81f4.png);
-    }
-    [alt="Twitch"] {
-      background-color: #593695;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532037541109810/4c1bab3f945269a5c1be0b3a2c177141.png);
-    }
-    [alt="Twitter"] {
-      background-color: #1DA1F2;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532038363217970/2ac50d286a1c883f28b5149239a8ad36.png);
-    }
-    [alt="Xbox"] {
-      background-color: #107C10;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039139147826/850ed4fcf5839b7a32651f5959e8511e.png);
-    }
-    [alt="YouTube"] {
-      background-color: #CB2120;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039340466276/0ef81742942677bcef0bebdfb7061d29.png);
-    }
-    [alt="Skype"] {
-      background-color: #009dd7;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039642452048/de5fb9e860729912c65048c1c657e1a3.png);
-    }
-    [alt="League of Legends"] {
-      background-color: #ae914b;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532208224112750/fbbd224a0d94747c102515090682bbe1.png);
-    }
-    [alt="Facebook"] {
-      background-color: #3d4e84;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532208530325534/c926e69c482dac25b8e940db74496813.png);
-    }
-    [alt="PlayStation Network"] {
-      background-color: #023791;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/931884586940657664/4282c3f55c9c6d0c310ebc927d8a278c.png);
-    }
-    [alt="Epic Games"] {
-      background-color: #3C3935;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/992547546570428466/db9e2406158133f91e1fe24bb56425c2.svg)
-    }
-    [alt="Riot Games"] {
-      background-color: #af1924;
-      background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1007053668836720710/991f3682123857c83ad3252a30023b1a.svg)
-    }
-  }
-}
-
-// passports (new connections ui)
-.connection-RE3Idz {
-  overflow: hidden;
-  background: none;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
-  .connectionAccountLabel-3Cz37z {
-    color: #fff8 !important;
-  }
-  .connectionAccountValue-3qVaQ0 {
-    color: #fff;
-  }
-  .text-xs-semibold-3E_l31 {
-    position: relative;
-    color: #fff8;
-  }
-  .slider-32CRPX {
-    display: none;
-  }
-  .integration-2pWYdd {
-    border: 1px solid rgba(0,0,0,.3);
-    background: rgba(0,0,0,.1);
-    border-radius: 5px;
-    position: relative;
-    padding: 10px;
-  }
-  .connectionHeader-w4CpxK {
-    background: #0000;
-    &:after {
-      content: "";
-      position: absolute;
-      width: 660px;
-      height: 73px;
-      background: rgba(0,0,0,.1);
-      border-bottom: solid 1px rgba(0,0,0,.15);
-      pointer-events: none;
-    }
-  }
-  .integrationsWrapper-2pXuUt>.colorStandard-1Xxp1s+div:not([style]) {
-    display: flex;
-    grid-gap: 8px 16px;
-    flex-flow: wrap;
-  }
-  .integration-2pWYdd {
-    z-index: 999;
-    width: calc(50% - 8px);
-    position: relative;
-    background: #0000001a;
-    border: 1px solid #0000004d;
-    border-radius: 3px;
-    padding: 10px;
-    .button-f2h6uQ.lookFilled-yCfaCM {
-      border: solid 1px #0000004d;
-      background: #593695;
-      padding: 5px 16px;
-      min-height: 0px;
-      height: auto;
-      min-width: 0px;
-    }
-  }
-  .connectionDelete-3vC6lN {
-    width: 32px;
-    height: 32px;
-    border: solid 1px rgba(255,255,255,.3);
-    border-radius: 3px;
-    >svg {
-      position: relative;
-      top: 6px;
-      left: 6px;
-      path {
-        fill: #fff;
-        transform: scale(1.1);
-      }
-    }
-  }
-  .connectionOptionSwitch-3HOkNf {
-    .text-sm-semibold-3TWn25 {
-      color: #fff;
-      font-size: 16px;
-      font-weight: 500;
-    }
-  }
-  .container-2nx-BQ {
-    background: none !important;
-    .input-2XRLou {
-      &:before {
-        background: #0000;
-        box-shadow: inset 0 0 0 2px hsla(0,0%,100%,.2);
-      }
-      &:checked:before {
-        background: rgba(255,255,255,.3);
-        box-shadow: none;
-      }
-    }
-  }
-  .connectionAccountLabelVerified-3lIdtD {
-    .flowerStar-2tNFCR path {
-      fill: #fff !important;
-    }
-    .childContainer-U_a6Yh path {
-      fill: var(--connection-color);
-    }
-  }
-  .metadataContainer-3oOWxm {
-    background: #0001;
-    border: solid 1px #0003;
-    border-radius: 3px;
-    .metadataRefreshButton-3zzcEZ {
-      background: var(--connection-color, var(--blurple)) !important;
-      border: solid 1px #0003;
-    }
-    .text-sm-normal-3Zj3Iv, .text-xs-semibold-3E_l31 {
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
+    .connectionAccountLabel-28GEPk {
       color: #fff8 !important;
     }
-    .connectedAccountVanityMetadata-3_RhV9 {
-      border-color: #fff4;
+    .defaultColor-24IHKz.text-sm-semibold-3TWn25,
+    .connectionAccountValue-YkFI6F .connectionAccountLabelContainer-1KuLS6 {
+      font-size: 16px;
+      margin-top: 4px;
+      color: #fff;
+      font-weight: 400;
+    }
+    .metadataContainer-35U-On {
+      position: relative;
+      z-index: 10;
+      background: #0004;
+      border: solid 1px #0004;
+      border-radius: 3px;
+      .connectedAccountVanityMetadataTag-19Al5z {
+        border-radius: 3px;
+        background: none;
+        border: solid 1px #fff3;
+      }
+    }
+    .connectionAccountValue-YkFI6F {
+      color: #fff;
+    }
+    .subEnabledTitle-2YpsZq {
+      position: relative;
+      color: #fff;
+    }
+    .slider-32CRPX {
+      display: none;
+    }
+    .integration-1f5IUi {
+      border: 1px solid rgba(0,0,0,.3);
+      background: rgba(0,0,0,.1);
+      border-radius: 5px;
+      position: relative;
+      padding: 10px;
+    }
+    .connectionHeader-Ixbb1s {
+      background: #0000;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 660px;
+        height: 73px;
+        background: rgba(0,0,0,.1);
+        border-bottom: solid 1px rgba(0,0,0,.15);
+        pointer-events: none;
+      }
+    }
+    .connectionOptionsWrapper-3aVWcp *, .connectionDelete-3YgMVq, .integrationsWrapper-3a2pGd, .integrationsWrapper-3a2pGd *, .connectedAccountSeparator-2gWsUP {
+      z-index: 50;
+    }
+    .connectedAccountSeparator-nMsSRO {
+      position: relative;
+      border-top-color: hsla(218,5%,47%,.3);
+    }
+    .connectionOptionSwitch-y1S-cR {
+      margin-top: 2px;
+      .title-2dsDLn {
+        font-weight: 400;
+      }
+    }
+    .integrationsWrapper-1V-5L9 {
+      .subEnabledTitle-2YpsZq {
+        opacity: .75;
+        letter-spacing: .5px;
+      }
+    }
+    .integrationsWrapper-1V-5L9>.colorStandard-1Xxp1s+div:not([style]) {
+      display: flex;
+      grid-gap: 8px 16px;
+      flex-flow: wrap;
+    }
+    .integration-1qC-fv {
+      z-index: 999;
+      width: calc(50% - 8px);
+      position: relative;
+      background: #0000001a;
+      border: 1px solid #0000004d;
+      border-radius: 3px;
+      padding: 10px;
+      .button-f2h6uQ.lookFilled-yCfaCM {
+        border: solid 1px #0000004d;
+        background: #593695;
+        padding: 5px 16px;
+        min-height: 0px;
+        height: auto;
+        min-width: 0px;
+      }
+    }
+    .connectionDelete-3YgMVq {
+      width: 32px;
+      height: 32px;
+      border: solid 1px rgba(255,255,255,.3);
+      border-radius: 3px;
+      >svg {
+        position: relative;
+        top: 6px;
+        left: 6px;
+        path {
+          fill: #fff;
+          transform: scale(1.1);
+        }
+      }
+    }
+    .container-2nx-BQ {
+      background: none !important;
+      .input-2XRLou {
+        &:before {
+          background: #0000;
+          box-shadow: inset 0 0 0 2px hsla(0,0%,100%,.2);
+        }
+        &:checked:before {
+          background: rgba(255,255,255,.3);
+          box-shadow: none;
+        }
+      }
+    }
+    .connectionHeader-Ixbb1s {
+      [alt] {
+        margin: -572px -610px -4500px -20px;
+        padding: 2000px 330px;
+        background-color: var(--blurple);
+        background-repeat: no-repeat;
+        background-size: 32px 32px;
+        background-position: 20px 20px;
+        border-radius: 5px;
+        pointer-events: none;
+      }
+      [alt="Battle.net"] {
+        background-color: #009AE5;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763309125742/3a257c4cab129e956b05bd50047eb0f9.png);
+      }
+      [alt="GitHub"] {
+        background-color: #191717;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763602739321/9e2893717851c493b4bff518f8b63ee7.png);
+      }
+      [alt="Reddit"] {
+        background-color: #5f99cf;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763938275428/bcc7bc0c0b27f9cbadaa1a47ea79db22.png);
+      }
+      [alt="Spotify"] {
+        background-color: #1DB954;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531764324167770/fe3770614c2658a07dea3ecb286ce745.png);
+      }
+      [alt="Steam"] {
+        background-color: #182332;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930531764575805510/baf4bdd36b7ef74e8f34b402e66f81f4.png);
+      }
+      [alt="Twitch"] {
+        background-color: #593695;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532037541109810/4c1bab3f945269a5c1be0b3a2c177141.png);
+      }
+      [alt="Twitter"] {
+        background-color: #1DA1F2;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532038363217970/2ac50d286a1c883f28b5149239a8ad36.png);
+      }
+      [alt="Xbox"] {
+        background-color: #107C10;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039139147826/850ed4fcf5839b7a32651f5959e8511e.png);
+      }
+      [alt="YouTube"] {
+        background-color: #CB2120;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039340466276/0ef81742942677bcef0bebdfb7061d29.png);
+      }
+      [alt="Skype"] {
+        background-color: #009dd7;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039642452048/de5fb9e860729912c65048c1c657e1a3.png);
+      }
+      [alt="League of Legends"] {
+        background-color: #ae914b;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532208224112750/fbbd224a0d94747c102515090682bbe1.png);
+      }
+      [alt="Facebook"] {
+        background-color: #3d4e84;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/930532208530325534/c926e69c482dac25b8e940db74496813.png);
+      }
+      [alt="PlayStation Network"] {
+        background-color: #023791;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/931884586940657664/4282c3f55c9c6d0c310ebc927d8a278c.png);
+      }
+      [alt="Epic Games"] {
+        background-color: #3C3935;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/992547546570428466/db9e2406158133f91e1fe24bb56425c2.svg)
+      }
+      [alt="Riot Games"] {
+        background-color: #af1924;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1007053668836720710/991f3682123857c83ad3252a30023b1a.svg)
+      }
     }
   }
-  background-color: var(--connection-color, var(--blurple));
-  &:has(img[alt="Battle.net"]) {
-    --connection-color: #009AE5;
+  .connection-RE3Idz {
+    overflow: hidden;
+    background: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,.3);
+    .connectionAccountLabel-3Cz37z {
+      color: #fff8 !important;
+    }
+    .connectionAccountValue-3qVaQ0 {
+      color: #fff;
+    }
+    .text-xs-semibold-3E_l31 {
+      position: relative;
+      color: #fff8;
+    }
+    .slider-32CRPX {
+      display: none;
+    }
+    .integration-2pWYdd {
+      border: 1px solid rgba(0,0,0,.3);
+      background: rgba(0,0,0,.1);
+      border-radius: 5px;
+      position: relative;
+      padding: 10px;
+    }
+    .connectionHeader-w4CpxK {
+      background: #0000;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 660px;
+        height: 73px;
+        background: rgba(0,0,0,.1);
+        border-bottom: solid 1px rgba(0,0,0,.15);
+        pointer-events: none;
+      }
+    }
+    .integrationsWrapper-2pXuUt>.colorStandard-1Xxp1s+div:not([style]) {
+      display: flex;
+      grid-gap: 8px 16px;
+      flex-flow: wrap;
+    }
+    .integration-2pWYdd {
+      z-index: 999;
+      width: calc(50% - 8px);
+      position: relative;
+      background: #0000001a;
+      border: 1px solid #0000004d;
+      border-radius: 3px;
+      padding: 10px;
+      .button-f2h6uQ.lookFilled-yCfaCM {
+        border: solid 1px #0000004d;
+        background: #593695;
+        padding: 5px 16px;
+        min-height: 0px;
+        height: auto;
+        min-width: 0px;
+      }
+    }
+    .connectionDelete-3vC6lN {
+      width: 32px;
+      height: 32px;
+      border: solid 1px rgba(255,255,255,.3);
+      border-radius: 3px;
+      >svg {
+        position: relative;
+        top: 6px;
+        left: 6px;
+        path {
+          fill: #fff;
+          transform: scale(1.1);
+        }
+      }
+    }
+    .connectionOptionSwitch-3HOkNf {
+      .text-sm-semibold-3TWn25 {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    .container-2nx-BQ {
+      background: none !important;
+      .input-2XRLou {
+        &:before {
+          background: #0000;
+          box-shadow: inset 0 0 0 2px hsla(0,0%,100%,.2);
+        }
+        &:checked:before {
+          background: rgba(255,255,255,.3);
+          box-shadow: none;
+        }
+      }
+    }
+    .connectionAccountLabelVerified-3lIdtD {
+      .flowerStar-2tNFCR path {
+        fill: #fff !important;
+      }
+      .childContainer-U_a6Yh path {
+        fill: var(--connection-color);
+      }
+    }
+    .metadataContainer-3oOWxm {
+      background: #0001;
+      border: solid 1px #0003;
+      border-radius: 3px;
+      .metadataRefreshButton-3zzcEZ {
+        background: var(--connection-color, var(--blurple)) !important;
+        border: solid 1px #0003;
+      }
+      .text-sm-normal-3Zj3Iv, .text-xs-semibold-3E_l31 {
+        color: #fff8 !important;
+      }
+      .connectedAccountVanityMetadata-3_RhV9 {
+        border-color: #fff4;
+      }
+    }
+    background-color: var(--connection-color, var(--blurple));
+    &:has(img[alt="Battle.net"]) {
+      --connection-color: #009AE5;
+    }
+    &:has(img[alt="GitHub"]) {
+      --connection-color: #191717;
+    }
+    &:has(img[alt="Reddit"]) {
+      --connection-color: #5f99cf;
+    }
+    &:has(img[alt="Spotify"]) {
+      --connection-color: #1DB954;
+    }
+    &:has(img[alt="Steam"]) {
+      --connection-color: #182332;
+    }
+    &:has(img[alt="Twitch"]) {
+      --connection-color: #593695;
+    }
+    &:has(img[alt="Twitter"]) {
+      --connection-color: #1DA1F2;
+    }
+    &:has(img[alt="Xbox"]) {
+      --connection-color: #107C10;
+    }
+    &:has(img[alt="YouTube"]) {
+      --connection-color: #CB2120;
+    }
+    &:has(img[alt="Skype"]) {
+      --connection-color: #009dd7;
+    }
+    &:has(img[alt="League of Legends"]) {
+      --connection-color: #ae914b;
+    }
+    &:has(img[alt="Facebook"]) {
+      --connection-color: #3d4e84;
+    }
+    &:has(img[alt="PlayStation Network"]) {
+      --connection-color: #023791;
+    }
+    &:has(img[alt="Epic Games"]) {
+      --connection-color: #3C3935;
+    }
+    img[alt="Battle.net"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763309125742/3a257c4cab129e956b05bd50047eb0f9.png);
+    }
+    img[alt="GitHub"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763602739321/9e2893717851c493b4bff518f8b63ee7.png);
+    }
+    img[alt="Reddit"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763938275428/bcc7bc0c0b27f9cbadaa1a47ea79db22.png);
+    }
+    img[alt="Spotify"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531764324167770/fe3770614c2658a07dea3ecb286ce745.png);
+    }
+    img[alt="Steam"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531764575805510/baf4bdd36b7ef74e8f34b402e66f81f4.png);
+    }
+    img[alt="Twitch"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532037541109810/4c1bab3f945269a5c1be0b3a2c177141.png);
+    }
+    img[alt="Twitter"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532038363217970/2ac50d286a1c883f28b5149239a8ad36.png);
+    }
+    img[alt="Xbox"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039139147826/850ed4fcf5839b7a32651f5959e8511e.png);
+    }
+    img[alt="YouTube"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039340466276/0ef81742942677bcef0bebdfb7061d29.png);
+    }
+    img[alt="Skype"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039642452048/de5fb9e860729912c65048c1c657e1a3.png);
+    }
+    img[alt="League of Legends"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532208224112750/fbbd224a0d94747c102515090682bbe1.png);
+    }
+    img[alt="Facebook"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532208530325534/c926e69c482dac25b8e940db74496813.png);
+    }
+    img[alt="PlayStation Network"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/931884586940657664/4282c3f55c9c6d0c310ebc927d8a278c.png);
+    }
+    img[alt="Epic Games"] {
+      content: url(https://cdn.discordapp.com/attachments/733624227378495488/992547546570428466/db9e2406158133f91e1fe24bb56425c2.svg)
+    }
   }
-  &:has(img[alt="GitHub"]) {
-    --connection-color: #191717;
-  }
-  &:has(img[alt="Reddit"]) {
-    --connection-color: #5f99cf;
-  }
-  &:has(img[alt="Spotify"]) {
-    --connection-color: #1DB954;
-  }
-  &:has(img[alt="Steam"]) {
-    --connection-color: #182332;
-  }
-  &:has(img[alt="Twitch"]) {
-    --connection-color: #593695;
-  }
-  &:has(img[alt="Twitter"]) {
-    --connection-color: #1DA1F2;
-  }
-  &:has(img[alt="Xbox"]) {
-    --connection-color: #107C10;
-  }
-  &:has(img[alt="YouTube"]) {
-    --connection-color: #CB2120;
-  }
-  &:has(img[alt="Skype"]) {
-    --connection-color: #009dd7;
-  }
-  &:has(img[alt="League of Legends"]) {
-    --connection-color: #ae914b;
-  }
-  &:has(img[alt="Facebook"]) {
-    --connection-color: #3d4e84;
-  }
-  &:has(img[alt="PlayStation Network"]) {
-    --connection-color: #023791;
-  }
-  &:has(img[alt="Epic Games"]) {
-    --connection-color: #3C3935;
-  }
-  img[alt="Battle.net"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763309125742/3a257c4cab129e956b05bd50047eb0f9.png);
-  }
-  img[alt="GitHub"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763602739321/9e2893717851c493b4bff518f8b63ee7.png);
-  }
-  img[alt="Reddit"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531763938275428/bcc7bc0c0b27f9cbadaa1a47ea79db22.png);
-  }
-  img[alt="Spotify"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531764324167770/fe3770614c2658a07dea3ecb286ce745.png);
-  }
-  img[alt="Steam"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930531764575805510/baf4bdd36b7ef74e8f34b402e66f81f4.png);
-  }
-  img[alt="Twitch"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532037541109810/4c1bab3f945269a5c1be0b3a2c177141.png);
-  }
-  img[alt="Twitter"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532038363217970/2ac50d286a1c883f28b5149239a8ad36.png);
-  }
-  img[alt="Xbox"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039139147826/850ed4fcf5839b7a32651f5959e8511e.png);
-  }
-  img[alt="YouTube"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039340466276/0ef81742942677bcef0bebdfb7061d29.png);
-  }
-  img[alt="Skype"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532039642452048/de5fb9e860729912c65048c1c657e1a3.png);
-  }
-  img[alt="League of Legends"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532208224112750/fbbd224a0d94747c102515090682bbe1.png);
-  }
-  img[alt="Facebook"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/930532208530325534/c926e69c482dac25b8e940db74496813.png);
-  }
-  img[alt="PlayStation Network"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/931884586940657664/4282c3f55c9c6d0c310ebc927d8a278c.png);
-  }
-  img[alt="Epic Games"] {
-    content: url(https://cdn.discordapp.com/attachments/733624227378495488/992547546570428466/db9e2406158133f91e1fe24bb56425c2.svg)
+} @else if $experiment10 == 2 {
+  .connectionList-11Q_X- {
+    .connection-YOVI9j {
+      --connection-color: var(--background-tertiary);
+      --connection-color-50: var(--background-secondary-alt);
+      &:has(img[alt="Battle.net"]) {
+        --connection-color: #009AE5;
+        --connection-color-50: #009AE544;
+      }
+      &:has(img[alt="GitHub"]) {
+        --connection-color: #191717;
+        --connection-color-50: #19171744;
+      }
+      &:has(img[alt="Reddit"]) {
+        --connection-color: #5f99cf;
+        --connection-color-50: #5f99cf44;
+      }
+      &:has(img[alt="Spotify"]) {
+        --connection-color: #1DB954;
+        --connection-color-50: #1db95444;
+      }
+      &:has(img[alt="Steam"]) {
+        --connection-color: #182332;
+        --connection-color-50: #18233244;
+      }
+      &:has(img[alt="Twitch"]) {
+        --connection-color: #593695;
+        --connection-color-50: #59369544;
+      }
+      &:has(img[alt="Twitter"]) {
+        --connection-color: #1DA1F2;
+        --connection-color-50: #1DA1F244;
+      }
+      &:has(img[alt="Xbox"]) {
+        --connection-color: #107C10;
+        --connection-color-50: #107C1044;
+      }
+      &:has(img[alt="YouTube"]) {
+        --connection-color: #CB2120;
+        --connection-color-50: #CB212044;
+      }
+      &:has(img[alt="Skype"]) {
+        --connection-color: #009dd7;
+        --connection-color-50: #009dd744;
+      }
+      &:has(img[alt="League of Legends"]) {
+        --connection-color: #ae914b;
+        --connection-color-50: #ae914b44;
+      }
+      &:has(img[alt="Facebook"]) {
+        --connection-color: #3d4e84;
+        --connection-color-50: #3d4e8444;
+      }
+      &:has(img[alt="PlayStation Network"]) {
+        --connection-color: #023791;
+        --connection-color-50: #02379144;
+      }
+      &:has(img[alt="Epic Games"]) {
+        --connection-color: #3C3935;
+        --connection-color-50: #3C393544;
+      }
+      --border-color: var(--connection-color-50);
+      border-radius: 3px;
+      overflow: hidden;
+      &:hover {
+        --border-color: var(--connection-color);
+      }
+      .connectionOptionsWrapper-3aVWcp, .connectionHeader-Ixbb1s {
+        border-radius: 0;
+        background: #0000;
+      }
+      background: #0000;
+      border: solid 1px var(--border-color);
+      .connectionOptionsWrapper-3aVWcp {
+        border-top: solid 1px var(--border-color);
+      }
+      &, * {
+        transition: .18s border, .18s background-color, .18s color;
+      }
+      .connectionHeader-Ixbb1s {
+        padding: 0;
+        img {
+          margin: 16px;
+          margin-right: 0;
+        }
+        .connectionDelete-3YgMVq {
+          width: 64px;
+          height: 64px;
+          box-sizing: border-box;
+          padding: 24px;
+          margin: 0;
+          border-left: solid 1px var(--border-color);
+          svg {
+            transform: scale(1.5);
+          }
+          path {fill: var(--connection-color)}
+          &:hover, &:active {
+            border-color: var(--connection-color);
+            background: var(--connection-color);
+            path {fill:#fff}
+          }
+        }
+      }
+    }
   }
 }
 
@@ -11307,7 +11418,7 @@ button.videoButton-3NM9Tc.button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-
     flex-direction: column;
     align-items: flex-start;
     &:after {
-      content: "i am not fixing this for now so enjoy it being broken (by which i mean disable dtm-16 if you want to see how your profile theme will look)";
+      content: "i will fix this whenever i get around to organizing DTM-16's scss so until then, this will remain broken";
       font-size: 14px;
     }
   }
