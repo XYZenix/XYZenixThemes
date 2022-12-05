@@ -7,13 +7,13 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "80";
-$themeDate: "Dec 4, 2022";
+$themeVersion: "81";
+$themeDate: "Dec 5, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
 $blurpleV2: #5865F2;
-// 0 = no message style changes / 1 = old message style / 2 = new message style (might be temporary)
+// 0 = no message style changes / 1 = old message style / 2 = new message style
 $messageStyle: 2;
 // 0 = Old Blurple / 1 = New Blurple
 $BlurpleStyle: 0;
@@ -2346,6 +2346,12 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       height: 1rem;
     }
   }
+  .repliedTextPreview-1bvxun {
+    color: #737f8d;
+    .theme-dark & {
+      color: rgba(255 255 255/.7)
+    }
+  }
   #{$message} {
     padding-bottom: 20px !important;
     margin-bottom: 20px !important;
@@ -2757,6 +2763,12 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
         height: var(--jumboEmojiSize);
         min-height: var(--jumboEmojiSize);
       }
+      .theme-dark & {
+        color: rgba(255 255 255/.7)
+      }
+    }
+    .repliedTextPreview-1bvxun {
+      color: #737f8d;
       .theme-dark & {
         color: rgba(255 255 255/.7)
       }
@@ -4887,6 +4899,9 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
     .botTag-UPkL8E {
       color: var(--blurple) !important;
       background: #fff !important;
+    }
+    .text-lg-bold-2qE8R- {
+      color: #fff !important;
     }
     .headerIcons-ICsYI5 {
       display: flex;
@@ -9307,6 +9322,9 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 .sidebar-1tnWFu.theme-dark .divider-3qUeLQ {
   border-top: solid 1px #ffffff0f;
 }
+.sidebar-1tnWFu.theme-dark .channelNotice-K4UfZY {
+  border-bottom: solid 1px #ffffff0f;
+}
 
 // channel opt-in experiment
 .container-3ygkZ6 {
@@ -9479,7 +9497,7 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
           }
           .messageInput-1KI8l8 {border:none!important}
           .section-3FmfOT {
-            padding-right: 2px;
+            padding-right: 10px;
             padding-left: 10px;
             code {
               background: var(--background-tertiary);
@@ -9492,6 +9510,9 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
             }
             >.section-3FmfOT:not(:first-of-type) {
               padding-top: 20px;
+            }
+            &::-webkit-scrollbar {
+              width: 0;
             }
           }
           >.section-3FmfOT {

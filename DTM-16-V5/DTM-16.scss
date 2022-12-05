@@ -7,13 +7,13 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "273";
-$themeDate: "Dec 4, 2022";
+$themeVersion: "274";
+$themeDate: "Dec 5, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
 $blurpleV2: #5865F2;
-// 0 = no message style changes / 1 = old message style / 2 = new message style (might be temporary)
+// 0 = no message style changes / 1 = old message style / 2 = new message style
 $messageStyle: 2;
 // 0 = Old Blurple / 1 = New Blurple
 $BlurpleStyle: 0;
@@ -99,6 +99,11 @@ $experiment9: 0;
 // 1 | Treatment 1: Old connections styling
 // 2 | Treatment 2: Connections styling based on one of 11pixels's concepts. Works best with light mode.
 $experiment10: 1;
+
+// Experiment 11 - 2015 Loading Background (2022-12_loading_bg)
+// 0 | Control: No change
+// 1 | Treatment 1: 2015 loading background
+$experiment11: 0;
 
 // variables (i barely use these anymore)
 $scrollableContainer: ".scrollableContainer-15eg7h";
@@ -1593,10 +1598,10 @@ html.theme-light {
       } @else if $experiment1 == 2 {
         background: #{color.adjust($blurple, $alpha: -0.9)};
         color: var(--blurple);
-        &:hover {
+        &:hover:not(:disabled) {
           background: #{color.adjust($blurple, $alpha: -0.9)};
         }
-        &:active {
+        &:active:not(:disabled) {
           background: #{color.adjust($blurple, $alpha: -0.8)};
         }
         &.buttonActive-Uc1jHx {
@@ -2545,7 +2550,7 @@ html.theme-light {
   &:hover>div>#{$channelWrapper}>#{$channel-content} svg, >div>#{$channelModeSelected}>#{$channel-content} svg {color:#fff}
   .typeThread-2Aqh6X {
     .name-28HaxV {
-      margin-left: 24px !important;
+      margin-left: 28px !important;
     }
   }
 }
@@ -2651,14 +2656,30 @@ html.theme-light {
       text-align: center;
       box-sizing: border-box;
       height: 20px;
-      font-size: 11px;
+      font-size: 12px;
       text-transform: uppercase;
-      font-weight: 400;
+      font-weight: 600;
       border-radius: 3px;
       color: #fff !important;
     }
     .mentionsDot-lLfrj1+.text-xs-medium-2LRpEj {
       background: var(--status-danger);
+    }
+  }
+  &.bottom-29W7pW {
+    .barText-1eIsLx {
+      padding-bottom: 12px;
+      padding-top: 4px;
+      margin-bottom: -16px;
+      height: auto;
+    }
+  }
+  &.top-2wJPMI {
+    .barText-1eIsLx {
+      padding-top: 12px;
+      padding-bottom: 4px;
+      margin-top: -16px;
+      height: auto;
     }
   }
 }
@@ -3086,6 +3107,12 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       height: 1rem;
     }
   }
+  .repliedTextPreview-1bvxun {
+    color: #737f8d;
+    .theme-dark & {
+      color: rgba(255 255 255/.7)
+    }
+  }
   #{$message} {
     padding-bottom: 20px !important;
     margin-bottom: 20px !important;
@@ -3492,6 +3519,12 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       height: var(--jumboEmojiSize);
       min-height: var(--jumboEmojiSize);
     }
+    .theme-dark & {
+      color: rgba(255 255 255/.7)
+    }
+  }
+  .repliedTextPreview-1bvxun {
+    color: #737f8d;
     .theme-dark & {
       color: rgba(255 255 255/.7)
     }
@@ -5702,6 +5735,9 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
       color: var(--blurple) !important;
       background: #fff !important;
     }
+    .text-lg-bold-2qE8R- {
+      color: #fff !important;
+    }
     .headerIcons-ICsYI5 {
       display: flex;
       margin: 0;
@@ -5776,6 +5812,9 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   }
   .applicationDetails-3O3kc- {
     background: var(--background-accent);
+    .theme-light & {
+      background: var(--background-secondary-alt);
+    }
     .entryIcon-2bcrKV, .entryInner-1tOOER {
       color: var(--interactive-hover) !important;
     }
@@ -9204,6 +9243,9 @@ img[src="/assets/7ba11ffb1900fa2b088cb31324242047.png"] {
   .channelName-3KPsGw:before {
     display: inline;
   }
+  .typeThread-2Aqh6X .channelName-3KPsGw:before {
+    display: none;
+  }
 }
 // thread sidebar stuff
 .container-3XgAHv {
@@ -11063,6 +11105,9 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 .sidebar-1tnWFu.theme-dark .divider-3qUeLQ {
   border-top: solid 1px #ffffff0f;
 }
+.sidebar-1tnWFu.theme-dark .channelNotice-K4UfZY {
+  border-bottom: solid 1px #ffffff0f;
+}
 
 // remove shake effect
 .app-2CXKsg {
@@ -11415,7 +11460,7 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
           }
           .messageInput-1KI8l8 {border:none!important}
           .section-3FmfOT {
-            padding-right: 2px;
+            padding-right: 10px;
             padding-left: 10px;
             code {
               background: var(--background-tertiary);
@@ -11428,6 +11473,9 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
             }
             >.section-3FmfOT:not(:first-of-type) {
               padding-top: 20px;
+            }
+            &::-webkit-scrollbar {
+              width: 0;
             }
           }
           >.section-3FmfOT {
@@ -11846,6 +11894,11 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
           height: 24px;
           x: 58px;
           y: 58px;
+        }
+        .cursorDefault--wfhy5 rect {
+          x: 10px;
+          y: 6px;
+          -webkit-mask: none;
         }
       }
       .wrapper-1VLyxH {
@@ -12315,4 +12368,16 @@ button.videoButton-3NM9Tc.button-f2h6uQ.lookBlank-21BCro.colorBrand-I6CyqQ.grow-
 // onboarding (ew)
 .optionButton-1W9f7G {
   border-radius: 3px;
+}
+
+@if $experiment11 == 1 {
+  .container-2RRFHK {
+    background: #000a;
+    .text-2bYgPB *, .problems-CvGwpb * {
+      color: #fff !important;
+    }
+    .ready-3BZNWT {
+      filter: brightness(1000);
+    }
+  }
 }
