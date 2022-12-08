@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "90";
+$themeVersion: "91";
 $themeDate: "Dec 8, 2022";
 
 @use "sass:color";
@@ -3231,6 +3231,11 @@ html.theme-light {
         margin-top: 0;
       }
     }
+    .message-2CShn3 {
+      .avatarDecoration-34OC0G {
+        margin-left: 4px;
+      }
+    }
     .font-size-12 {
       .cozy-VmLDNB.isSystemMessage-QNv9ZH.hasThread-3h-KJV:after {
         top: 3.5rem;
@@ -6085,7 +6090,7 @@ html.theme-light {
             stroke: #fff5;
             stroke-width: 4px;
           }
-          & {
+          & .mask-1FEkla.svg-2azL_l {
             .avatarStack-3vfSFa {
               margin-left: 3px;
               margin-top: 3px;
@@ -6225,10 +6230,28 @@ html.theme-light {
         display: none;
       }
       .avatarWrapper-3y0KZ1 .mask-1FEkla.svg-2azL_l>foreignObject+circle {display:none}
+      .avatarDecoration-2OJuSI .avatarStack-3vfSFa {
+        width: 88.8px;
+        height: 88.8px;
+        margin-top: 3.5px;
+        margin-left: 3.5px;
+      }
     }
   }
-  .avatarDecoration-2OJuSI {display:none}
   .bannerSVGWrapper-qc0szY image {display:none}
+  // avatar decos
+  @at-root {
+    #svg-mask-avatar-decoration-profile-status-square-80 circle {
+      cy: 0.814px;
+      cx: 0.814px;
+      r: 0.126
+    }
+    #svg-mask-avatar-decoration-status-round-80 circle {
+      cy: 0.814px;
+      cx: 0.814px;
+      r: 0.126;
+    }
+  }
 }
 // badges
 @at-root {
@@ -6620,65 +6643,68 @@ html.theme-light {
       }
     }
     .side-2ur1Qk {
-    .header-2Kx1US {
-      font-weight: 500;
-      .theme-light & {color: #b9bbbe}
-      .theme-dark & {color: #72767d}
-    }
-    .separator-2wx7h6 {
-      background-color: #b9bbbe4d;
-      .theme-dark & {
-        background-color: #72767d4d;
+      .header-2Kx1US {
+        font-weight: 500;
+        .theme-light & {color: #b9bbbe}
+        .theme-dark & {color: #72767d}
       }
-    }
-    .item-3XjbnG {
-      border-radius: 3px;
-      .theme-light & {color: #72767d}
-      .theme-dark & {color: #b9bbbe}
-      &:hover, &:active {
-        .theme-light & {
-          color: #4f545c;
-          background: #4f545c1a;
-        }
+      .separator-2wx7h6 {
+        background-color: #b9bbbe4d;
         .theme-dark & {
-          color: #f6f6f7;
-          background: #babcbf1a;
+          background-color: #72767d4d;
         }
       }
-      &.selected-g-kMVV {
-        background: var(--blurple) !important;
-        color: #fff !important;
-        .textBadge-1fdDPJ {
-          color: var(--blurple);
-          background: #fff !important;
+      .item-3XjbnG {
+        border-radius: 3px;
+        .theme-light & {color: #72767d}
+        .theme-dark & {color: #b9bbbe}
+        &:hover, &:active {
+          .theme-light & {
+            color: #4f545c;
+            background: #4f545c1a;
+          }
+          .theme-dark & {
+            color: #f6f6f7;
+            background: #babcbf1a;
+          }
         }
-        .textBadge-1fdDPJ.base-3IDx3L.eyebrow-132Xza.baseShapeRound-3epLEv {
-          background: #fff !important;
-          box-shadow: none !important;
-          text-shadow: none !important;
-          color: var(--blurple) !important;
-        }
-      }
-      &[aria-controls="logout-tab"],
-      &[aria-controls="delete-tab"],
-      &:has(path[d="M18 2H7C5.897 2 5 2.898 5 4V11H12.59L10.293 8.708L11.706 7.292L16.414 11.991L11.708 16.706L10.292 15.294L12.582 13H5V20C5 21.103 5.897 22 7 22H18C19.103 22 20 21.103 20 20V4C20 2.898 19.103 2 18 2Z"]) {
-        color: var(--red) !important;
-        background: none !important;
-        svg {display: none}
-      }
-      &[aria-controls="guild_premium-tab"],
-      &[aria-controls="discord-nitro-tab"],
-      &.premiumTab-39eQzY {
-        color: var(--blurple) !important;
-        background: none !important;
-        svg {display:none}
         &.selected-g-kMVV {
           background: var(--blurple) !important;
           color: #fff !important;
+          .textBadge-1fdDPJ {
+            color: var(--blurple);
+            background: #fff !important;
+          }
+          .textBadge-1fdDPJ.base-3IDx3L.eyebrow-132Xza.baseShapeRound-3epLEv {
+            background: #fff !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            color: var(--blurple) !important;
+          }
+          .text-md-normal-304U3g {
+            color: #fff !important;
+          }
+        }
+        &[aria-controls="logout-tab"],
+        &[aria-controls="delete-tab"],
+        &:has(path[d="M18 2H7C5.897 2 5 2.898 5 4V11H12.59L10.293 8.708L11.706 7.292L16.414 11.991L11.708 16.706L10.292 15.294L12.582 13H5V20C5 21.103 5.897 22 7 22H18C19.103 22 20 21.103 20 20V4C20 2.898 19.103 2 18 2Z"]) {
+          color: var(--red) !important;
+          background: none !important;
+          svg {display: none}
+        }
+        &[aria-controls="guild_premium-tab"],
+        &[aria-controls="discord-nitro-tab"],
+        &.premiumTab-39eQzY {
+          color: var(--blurple) !important;
+          background: none !important;
+          svg {display:none}
+          &.selected-g-kMVV {
+            background: var(--blurple) !important;
+            color: #fff !important;
+          }
         }
       }
     }
-  }
   }
   .accountProfileCard-lbN7n- {
     background: var(--deprecated-card-bg);
@@ -9947,7 +9973,7 @@ html.theme-light {
       stroke: #fff5;
       stroke-width: 4px;
     }
-    & {
+    & .mask-1FEkla.svg-2azL_l {
       .avatarStack-3vfSFa {
         margin-left: 3px;
         margin-top: 3px;
