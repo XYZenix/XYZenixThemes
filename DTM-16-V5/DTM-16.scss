@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "294";
-$themeDate: "Dec 17, 2022";
+$themeVersion: "295";
+$themeDate: "Dec 18, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -5067,11 +5067,11 @@ html.theme-light {
     .theme-dark & {
       box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
     }
-    .wrapper-1HSdhi {
-      font-weight: 600;
-      color: #737f8d;
+    .heading-md-medium-2DVCeJ {
+      font-weight: 700;
+      color: #737f8d !important;
       .theme-dark & {
-        color: #fff;
+        color: #fff !important;
       }
     }
   }
@@ -9614,10 +9614,12 @@ html.theme-light {
   @if $experiment9 == 1 {
     .root-g14mjS {
       &.small-23Atuv {
-        width: 520px;
+        min-width: 520px;
+        width: min-content;
         >div:not([class])>div[style],
         >div:not([class])>div[style]>div[style] {
-          width: 520px !important;
+          min-width: 520px !important;
+          width: min-content !important;
         }
       }
       .input-2g-os5:not(.textarea-_59yqs), .searchBar-20o6Cf {
@@ -9709,6 +9711,66 @@ html.theme-light {
   .qualitySettingsContainer-2LjkfM {
     border-radius: 3px;
     border-color: var(--background-tertiary);
+  }
+  // linked roles (aka verified roles)
+  .verifiedRoles-DtUuIj {
+    .verifiedRole-2nWDpa {
+      border-radius: 3px;
+      border: solid 2px #0000;
+      background: var(--background-primary);
+      box-shadow: var(--elevation-stroke);
+      &.verifiedRoleHasRole-2CPTNi {
+        border-color: var(--blurple);
+        background: var(--background-primary);
+        .roleCheckmark-264cml {
+          top: 0;
+          right: 0;
+          background: none;
+          color: var(--header-primary);
+        }
+        .verifiedRoleNameDescriptionContainer-W0PzpJ,
+        .container-1jha_j {
+          opacity: .75;
+        }
+      }
+    }
+  }
+  // same as above
+  .modal-2RG0j2.root-g14mjS.small-23Atuv.fullscreenOnMobile-ixj0e3 {
+    overflow: hidden;
+    >.header-1zd7se {
+      .headerIcon-2RT_qX {
+        margin-right: 8px;
+      }
+      .text-md-medium-2avxhQ {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      box-shadow: 0 2px 3px 0 rgb(0 0 0 / 20%);
+      +.content-2hZxGK.container-1_S9ZR.thin-31rlnD.scrollerBase-_bVAAt {
+        background: var(--background-secondary);
+        >.heading-md-semibold-3sznX7.defaultColor-HXu-5n:first-child {
+          font-size: 16px;
+          font-weight: 600;
+          color: var(--text-normal) !important;
+        }
+      }
+    }
+  }
+  // ...also same as above
+  .modalRoot-Cm6Ji_.root-g14mjS.medium-1ywRMv.fullscreenOnMobile-ixj0e3 {
+    >.header-219JPV {
+      box-shadow: 0 2px 3px 0 rgb(0 0 0 / 20%);
+      padding: 12px 20px;
+      margin-bottom: 16px;
+      >.headerText-2acgHg>.heading-xl-extrabold-3yYVeH {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+    .connectionsChecksGroup-_ALevE {
+      border-radius: 3px;
+    }
   }
 }
 // boost buying modal
