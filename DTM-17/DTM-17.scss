@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "105";
+$themeVersion: "106";
 $themeDate: "Dec 21, 2022";
 
 @use "sass:color";
@@ -1483,21 +1483,20 @@ html.theme-light {
       z-index: 10;
     }
   }
-  #{$userLimit} {
-    #{$userLimitWrapper} {
-      border-radius: 2px;
-      background: var(--background-modifier-hover);
-      #{$userLimitUsers} {
-        background: none;
-        padding-right: 0;
-        width: auto;
-      }
-      #{$userLimitTotal} {
-        background: none;
-        width: auto;
-        &:after {display:none}
-        &:before {content:"/"}
-      }
+  #{$userLimitWrapper} {
+    border-radius: 2px;
+    background: var(--background-modifier-hover);
+    margin-left: 4px;
+    #{$userLimitUsers} {
+      background: none;
+      padding-right: 0;
+      width: auto;
+    }
+    #{$userLimitTotal} {
+      background: none;
+      width: auto;
+      &:after {display:none}
+      &:before {content:"/"}
     }
   }
   #{$unreadWrap} {
@@ -3812,15 +3811,33 @@ html.theme-light {
   }
 }
 // activity cards
+.nowPlayingColumn-1eCBCN {
+  .heading-lg-semibold-2Z_RS3.header-Imy05m {
+    font-size: 18px;
+    font-weight: 500;
+    color: #dcddde;
+    .theme-light & {
+      color: #4f545c;
+    }
+  }
+}
 .wrapper-2RrXDg {
-  background: var(--background-tertiary);
-  .theme-light & {background: #f6f6f7}
-  border: solid 1px var(--background-secondary);
+  background: #2f3136;
+  .theme-light & {background: #e6e7e8}
+  border: none;
   .theme-light & {border-color: #dcddde}
   border-radius: 3px;
   overflow: hidden;
   box-shadow: none;
   padding: 0;
+  .theme-dark &.interactive-2zD88a:hover,
+  .theme-dark &.active-1W_Gl9 {
+    background: #292b2f;
+  }
+  .theme-light &.interactive-2zD88a:hover,
+  .theme-light &.active-1W_Gl9 {
+    background: #dcddde;
+  }
   .header-3jUeHi {
     padding: 16px;
     border-radius: 0;
@@ -3841,6 +3858,7 @@ html.theme-light {
     }
     >* {z-index: 10}
   }
+  .theme-light &:hover .header-3jUeHi {background:#fff}
   .body-16rSsp {
     margin: 0;
     .section-3G9aLW {
@@ -3852,8 +3870,10 @@ html.theme-light {
   .separator-2OaeRP {
     background: var(--background-primary);
   }
+  .applicationStreamingHoverText-ETJLXZ {
+    border-radius: 3px;
+  }
 }
-
 // header (aka the big bar on the top)
 @at-root {
   .clickable-vvKY2q #{$guildHeader}:hover, .selected-1GtAC5 #{$guildHeader} {
@@ -3873,7 +3893,8 @@ html.theme-light {
           color: var(--background-floating) !important;
           background: var(--header-primary) !important;
         }
-        &[aria-controls="add_friend-tab"] {
+        &[aria-controls="add_friend-tab"],
+        &.addFriend-emTWY1 {
           background: var(--blurple) !important;
           color: #fff !important;
           &[aria-selected=true] {
@@ -8140,6 +8161,17 @@ html.theme-light {
           background: none;
           border: solid 1px #fff3;
         }
+        .connectedAccountVanityMetadata-38KAgN, .text-xs-normal-3SiVjE {
+          color: #fff !important;
+        }
+        .metadataRefreshButton-3G6ilH {
+          background: #fff !important;
+          color: var(--blurple) !important;
+          transition: .2s;
+          &:hover:not(:disabled), &:active:not(:disabled) {
+            opacity: .9;
+          }
+        }
       }
       .connectionAccountValue-YkFI6F {
         color: #fff;
@@ -8181,6 +8213,10 @@ html.theme-light {
         margin-top: 2px;
         .title-2dsDLn {
           font-weight: 400;
+          .defaultColor-1EVLSt {
+            color: #fffd !important;
+            font-weight: 400 !important;
+          }
         }
       }
       .integrationsWrapper-1V-5L9 {
@@ -9828,6 +9864,7 @@ html.theme-light {
 }
 // notices
 .notice-2HEN-u {
+  border-radius: 0;
   .theme-dark &, .theme-light & {
     &.colorWarning-3oV0Ge {
       background: #f26522;
@@ -9877,6 +9914,25 @@ html.theme-light {
   }
   .closeButton-30b1gR path {
     fill: #fff !important;
+  }
+}
+.notice-12Koq- {
+  border-radius: 0;
+  background: hsl(227.1,calc(var(--saturation-factor,1)*31%),44.3%);
+  .theme-dark &, .theme-light & {
+    .button-3_1yil {
+      &:not(:hover):not(:active) {
+        border-color: hsla(0,0%,100%,.25);
+      }
+      &:hover, &:active {
+        border-color: #fff;
+        background: none;
+        color: #fff !important;
+      }
+      &:active {
+        background: #fff2;
+      }
+    }
   }
 }
 // also notices but not the big banner one

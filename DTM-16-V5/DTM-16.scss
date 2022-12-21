@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "311";
+$themeVersion: "312";
 $themeDate: "Dec 21, 2022";
 
 @use "sass:color";
@@ -5060,15 +5060,33 @@ html.theme-light {
   }
 }
 // activity cards
+.nowPlayingColumn-1eCBCN {
+  .heading-lg-semibold-2Z_RS3.header-Imy05m {
+    font-size: 18px;
+    font-weight: 500;
+    color: #dcddde;
+    .theme-light & {
+      color: #4f545c;
+    }
+  }
+}
 .wrapper-2RrXDg {
-  background: var(--background-tertiary);
-  .theme-light & {background: #f6f6f7}
-  border: solid 1px var(--background-secondary);
+  background: #2f3136;
+  .theme-light & {background: #e6e7e8}
+  border: none;
   .theme-light & {border-color: #dcddde}
   border-radius: 3px;
   overflow: hidden;
   box-shadow: none;
   padding: 0;
+  .theme-dark &.interactive-2zD88a:hover,
+  .theme-dark &.active-1W_Gl9 {
+    background: #292b2f;
+  }
+  .theme-light &.interactive-2zD88a:hover,
+  .theme-light &.active-1W_Gl9 {
+    background: #dcddde;
+  }
   .header-3jUeHi {
     padding: 16px;
     border-radius: 0;
@@ -5100,6 +5118,9 @@ html.theme-light {
   }
   .separator-2OaeRP {
     background: var(--background-primary);
+  }
+  .applicationStreamingHoverText-ETJLXZ {
+    border-radius: 3px;
   }
 }
 // header (aka the big bar on the top)
@@ -5148,7 +5169,8 @@ html.theme-light {
           color: var(--background-floating) !important;
           background: var(--header-primary) !important;
         }
-        &[aria-controls="add_friend-tab"] {
+        &[aria-controls="add_friend-tab"],
+        &.addFriend-emTWY1 {
           background: var(--blurple) !important;
           color: #fff !important;
           &[aria-selected=true] {
@@ -10366,6 +10388,10 @@ html.theme-light {
         margin-top: 2px;
         .title-2dsDLn {
           font-weight: 400;
+          .defaultColor-1EVLSt {
+            color: #fffd !important;
+            font-weight: 400 !important;
+          }
         }
       }
       .integrationsWrapper-1V-5L9 {
