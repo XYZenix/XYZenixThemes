@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "108";
-$themeDate: "Dec 23, 2022";
+$themeVersion: "109";
+$themeDate: "Dec 24, 2022";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -881,6 +881,9 @@ html.theme-light {
 }
 // color fix
 @at-root {
+  .theme-dark, .theme-light {
+    --status-red-500: var(--red);
+  }
   [fill="hsl(235, calc(var(--saturation-factor, 1) * 85.6%), 64.7%)"],
   [fill="var(--brand-500)"] {
     fill: var(--blurple) !important;
@@ -900,6 +903,15 @@ html.theme-light {
   }
   .border-2Vy6FN.voiceChannelEffect-1J1MWE {
     box-shadow: inset 0 0 0 2px var(--blurple),inset 0 0 0 3px var(--black-500);
+  }
+  [style="background-image: url(\"/assets/7f75ab26bc5deb393cd8db44d9fe14e7.svg\");"] {
+    background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1056087367926165504/h.svg) !important;
+  }
+  [style="background-image: url(\"/assets/d1382af8d9e755bc44811b1fd92990a8.svg\");"] {
+    background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1056089666018889738/join.svg) !important;
+  }
+  [style="background-image: url(\"/assets/f772d3d7eddcf3c84f710c10999479f0.svg\");"] {
+    background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1056090377620312064/leave.svg) !important;
   }
 }
 // badges/tags
@@ -2272,6 +2284,29 @@ html.theme-light {
             margin-left: 3px;
             margin-right: 3px;
           }
+          &.green-3wkLbx {
+            background: var(--green);
+            &:hover {
+              background: var(--green-hover);
+            }
+            &:active {
+              background: var(--green-active);
+            }
+          }
+        }
+        .avControls-1rQROI.buttonSpacing-ZuQU_D {
+          width: 32px;
+          height: 32px;
+        }
+        .sizeMedium-2bFIHr {
+          border-radius: 3px;
+          padding: 5px 12px;
+          min-height: 32px;
+          height: 32px;
+          margin-left: 4px;
+          .text-sm-medium-3Pz3rB {
+            text-transform: uppercase;
+          }
         }
         .speakerRaiseHandButtonContainer-vFHQuX {
           margin-left: 0;
@@ -2309,9 +2344,11 @@ html.theme-light {
           width: auto !important;
           padding-left: 16px;
           padding-right: 16px;
+          margin-left: 4px;
           text-transform: uppercase;
           font-size: 14px;
           white-space: nowrap;
+          height: 32px;
           svg {display:none}
           &:hover {
             background: var(--red-hover);
@@ -2803,9 +2840,6 @@ html.theme-light {
         &[style="background-image: url(\"/assets/1f57f1c100434d1ff6569a495ada213e.svg\");"] {
           background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977292986029338654/4e4e1d9c907a3dc53d68f34e868fcb12.svg?) !important;
         }
-        &[style="background-image: url(\"/assets/d1382af8d9e755bc44811b1fd92990a8.svg\");"] {
-          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977294100787236985/join.svg?) !important;
-        }
       }
     }
     .systemMessage-1H1Z20 {
@@ -3264,9 +3298,6 @@ html.theme-light {
         .icon-JRJzJz {
           &[style="background-image: url(\"/assets/1f57f1c100434d1ff6569a495ada213e.svg\");"] {
             background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977292986029338654/4e4e1d9c907a3dc53d68f34e868fcb12.svg?) !important;
-          }
-          &[style="background-image: url(\"/assets/d1382af8d9e755bc44811b1fd92990a8.svg\");"] {
-            background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977294100787236985/join.svg?) !important;
           }
         }
       }
@@ -9976,6 +10007,54 @@ html.theme-light {
 // also notices but not the big banner one
 .container-3jbRo5.info-1hMolH {
   border-radius: 3px;
+}
+// old channel notices
+.channelNotice-Bfew9I, .channelNotice-K4UfZY {
+  margin: 0;
+  background: var(--background-secondary-alt);
+  box-shadow: inset 0 -1px 3px rgb(0 0 0 / 10%);
+  padding: 20px;
+  .button-f2h6uQ {
+    border: solid 1px var(--background-floating);
+    background: var(--background-primary) !important;
+    .contents-3ca1mk {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--header-primary);
+    }
+    &:active {
+      background: var(--background-secondary) !important;
+    }
+  }
+}
+// new channel notices
+.container-12NG2g {
+  margin: 0;
+  border-radius: 0;
+  background: var(--background-secondary-alt);
+  box-shadow: inset 0 -1px 3px rgb(0 0 0 / 10%);
+  padding: 20px;
+  .header-3i9Xzx {
+    svg path {
+      d: path("M8 4C5.79086 4 4 5.79086 4 8C4 10.2091 5.79086 12 8 12C10.2091 12 12 10.2091 12 8C12 5.79086 10.2091 4 8 4Z");
+      fill: var(--green) !important;
+    }
+    .text-xs-semibold-3E_l31 {
+      color: var(-green) !important;
+    }
+  }
+  .button-KK_WiO.button-f2h6uQ {
+    border: solid 1px var(--background-floating);
+    background: var(--background-primary) !important;
+    .contents-3ca1mk {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--header-primary);
+    }
+    &:active {
+      background: var(--background-secondary) !important;
+    }
+  }
 }
 // event creation modal
 .container-1y9Q_6 {
