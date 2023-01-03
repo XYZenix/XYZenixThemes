@@ -1,15 +1,15 @@
 :root {
-  --theme-version: "206";
-  --theme-verdate: "Dec 24, 2022";
+  --theme-version: "207";
+  --theme-verdate: "Jan 4, 2023";
   --login-background: url(https://cdn.discordapp.com/attachments/733624227378495488/1030444096210358342/fd91131ea693096d6be5e8aa99d18f9e.jpg);
   --login-background-source: "Discord"; /* this is where the login background is from */
-  --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  --font-display: Whitney,"gg sans","Helvetica Neue",Helvetica,Arial,sans-serif !important;
   --ContextMenuBackgroundColorDark: #0008; /* set to #0a0a0a if you disable blur */
   --ContextMenuBackgroundColorLight: #fffe; /* set to #fff if you disable blur */
   --ContextMenuBackgroundBlur: blur(10px) /* context menu background blur | default: blur(10px) | disable: none*/;
   --SettingsSlideAnimDuration1: 0s; /* the whole 'zoom out' effect thing idk what its called | default: .8s | disable: 0s */
   --SettingsSlideAnimDuration2: 0s; /* the sliding effect | default: .5s | disable: 0s */
-  --randomPokemon: "Gligar"; /* disregard this line's existence */
+  --randomPokemon: "Maractus"; /* disregard this line's existence */
 }
 .container-YkUktl {
   border-top: solid 1px #0D0E11;
@@ -2425,11 +2425,18 @@ html.theme-light .root-g14mjS {
 .theme-dark .side-2ur1Qk .item-3XjbnG {
   color: #fff8;
 }
-.theme-light .side-2ur1Qk .separator-2wx7h6 {
-  background: linear-gradient(to right, #0000, #999, #0000)
+.theme-light .side-2ur1Qk .separator-2wx7h6,
+.theme-light .divider-1tWBgZ,
+.theme-light .formDivider-1vYIF8 {
+  background: linear-gradient(to right, #0000, #bbb, #0000)
 }
-.theme-dark .side-2ur1Qk .separator-2wx7h6 {
+.theme-dark .side-2ur1Qk .separator-2wx7h6,
+.theme-dark .divider-1tWBgZ,
+.theme-dark .formDivider-1vYIF8 {
   background: linear-gradient(to right, #0000, #555, #0000)
+}
+.formDivider-1vYIF8 {
+    border: none;
 }
 .theme-light .item-2LIpTv {
   background: #000;
@@ -3584,6 +3591,13 @@ html.theme-light .root-g14mjS {
   background: #f0474744 !important;
   box-shadow: 0 0 2px 1px #f04747;
 }
+.theme-light .lookOutlined-3yKVGo.colorRed-rQXKgM:hover {
+  color: #f04747 !important;
+}
+.theme-light .lookOutlined-3yKVGo.colorRed-rQXKgM:active {
+  color: #f04747 !important;
+  box-shadow: 0 0 2px 1px #f04747;
+}
 .lookOutlined-3yKVGo.colorRed-rQXKgM .contents-3ca1mk {
   font-weight: bold;
 }
@@ -3936,7 +3950,7 @@ html.theme-dark .title-1_TkpU, html.theme-dark .title-3emmG3, html.theme-dark .s
   background: linear-gradient(45deg, #975f90,#7767b9)
 }
 .contentRegionScroller-2_GT_N .children-1xdcWE>div:first-of-type .preview-3k9WhO:before {
-  content: "DTM-08 does not support the saturation slider. It's likely not going to function properly.";
+  content: "DTM-08 doesn't support the saturation slider; support is not is planned.";
   color: #f77;
   padding: 10px;
   display: block;
@@ -6176,4 +6190,62 @@ html.theme-light .guilds-2JjMmN.theme-dark .homeIcon-r0w4ny {
     background: none !important;
     box-shadow: none;
     border: none;
+}
+.overlayBackground-1KgwVi>.menu-1QACrS {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.overlayBackground-1KgwVi>.menu-1QACrS:before {
+    display: none;
+}
+.theme-dark .metadataContainer-35U-On {
+    background: linear-gradient(#25262b,#333439);
+    box-shadow: inset 0 1px 4px #0008, 0 1px #fff3, 0 0 0 1px #fff1
+}
+.theme-dark .metadataContainer-35U-On .text-xs-normal-3SiVjE {
+    text-shadow: 0 1px 2px #000b;
+}
+.theme-light .metadataContainer-35U-On {
+    background: linear-gradient(#e7e7e7,#ffffff);
+    box-shadow: inset 0 1px 4px #0005, 0 1px #fff
+}
+.theme-light .metadataContainer-35U-On .text-xs-normal-3SiVjE {
+    text-shadow: 0 1px 2px #fff;
+}
+.userPopoutOuter-3AVBmJ.userProfileOuterThemed-3EfHmv .bannerSVGWrapper-qc0szY image,
+.userPopoutOuter-3AVBmJ.userProfileOuterThemed-3EfHmv .bannerSVGWrapper-qc0szY circle {
+    x: 6px !important;
+    cx: 61px;
+    cy: 84px;
+}
+.userPopoutOuter-3AVBmJ.userProfileOuterThemed-3EfHmv .userProfileInnerThemedWithBanner-2624Yx .bannerSVGWrapper-qc0szY circle {
+    cy: 114px;
+}
+@keyframes syncDot {
+  0% {box-shadow: 0 0 0 0 #5865f2}
+  50% {box-shadow: 0 0 0 5px #5865f200}
+  100% {box-shadow: 0 0 0 5px #5865f200}
+}
+.sidebarRegion-1VBisG .item-3XjbnG .dot-e8DTw_ {
+    animation: 2s syncDot infinite;
+    width: 6px;
+    height: 6px;
+}
+.menu-1QACrS .newBadge-1bHewI {
+    background: #0000 !important;
+    box-shadow: inset 0 0 0 1px #fff3;
+    color: #fff6;
+    font-weight: 400;
+    font-size: 8px;
+    padding: 0 3px;
+    border-radius: 3px;
+    line-height: 12px;
+    height: auto;
+    min-height: 0;
+    margin-top: -2px;
+}
+.theme-light .menu-1QACrS .newBadge-1bHewI {
+    box-shadow: inset 0 0 0 1px #0003;
+    color: #000b;
 }
