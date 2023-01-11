@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "324";
-$themeDate: "Jan 8, 2023";
+$themeVersion: "325";
+$themeDate: "Jan 12, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -1019,6 +1019,10 @@ html.theme-light {
 }
 // mini fixes
 @at-root {
+  .imageAccessory-2yA7Kb {
+    left: unset;
+    right: 6px;
+  }
   .gifTag-1TvtGO {
     background:url(https://cdn.discordapp.com/attachments/619899344727834654/643462240426655744/f08d762d18b676262c8d40c5aff9e640.svg?);
     background-size: 36px 22px;
@@ -3932,6 +3936,19 @@ html.theme-light {
           background: linear-gradient(to right,#E3E5E8 85%,#F3F3F3);
         }
       }
+      &.offline-22aM7E {
+        .username-u-ebrn {
+          font-weight: 400;
+        }
+        &:not(:hover):not(.selected-1-Z6gm) {
+          .username-u-ebrn {
+            filter: grayscale(50%);
+          }
+          .wrapper-1VLyxH {
+            filter: grayscale(1);
+          }
+        }
+      }
     }
   }
   .addMembersButton-2qS1qa {
@@ -5734,6 +5751,34 @@ html.theme-light {
       }
       .text-xs-normal-3SiVjE {
         opacity: .8;
+      }
+    }
+  }
+  .popoutContainer-2wbmiM:not(.popoutContent-3RWpUF) {
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 1px rgba(0,0,0,.1);
+  }
+  .popoutContainer-1x4DR4 {
+    padding: 0;
+    .mainContent-15Uhv6 {
+      padding: 16px;
+      padding-bottom: 0;
+    }
+    .ctaButton-1b1vwt {
+      border-radius: 0;
+      border-top: solid 1px var(--background-modifier-accent);
+      background: #0000;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--blurple);
+      transition: .17s;
+      .contents-3ca1mk {
+        font-size: 14px;
+      }
+      &:hover, &:active {
+        background: var(--blurple);
+        color: #fff;
+        border-top-color: #0000;
       }
     }
   }
