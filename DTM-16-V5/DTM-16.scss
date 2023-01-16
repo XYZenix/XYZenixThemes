@@ -115,6 +115,12 @@ $experiment11: 0;
 // 2 | Treatment 2: Checkboxes
 $experiment12: 1;
 
+// Experiment 13 - Account Settings (2023-01_account_settings)
+// 0 | Control: No change
+// 1 | Treatment 1: Mixed
+// 2 | Treatment 2: 2016 (credit: dav)
+$experiment13: 2;
+
 // variables (i barely use these anymore)
 $scrollableContainer: ".scrollableContainer-15eg7h";
 $panels: ".panels-3wFtMD";
@@ -8267,47 +8273,148 @@ html.theme-light {
         }
       }
     }
-    .accountProfileCard-lbN7n- {
-      background: none;
-      padding: 0;
-      border-radius: 0;
-      .background-3d_SjE {
-        padding: 0;
-        margin: 0;
+    @if $experiment13 >= 1 {
+      .accountProfileCard-lbN7n- {
         background: none;
-      }
-      .settingsBanner-2E5fAp {
-        border-radius: 3px;
-      }
-      .containerWithContent-2_V0PM {
         padding: 0;
-        justify-content: flex-start;
-      }
-      .bannerSVGWrapper-qc0szY {
-        display: none;
-      }
-      .fieldList-in8WkP {
-        background: none;
-        padding: 16px 0 0 0;
-        border-top: solid 1px var(--background-modifier-accent);
-        margin-top: 16px;
-      }
-      .userInfo-regn9W {
-        padding-right: 0;
-        padding-top: 0px;
-        padding-left: 96px;
-        margin-top: 16px;
-        height: 82px;
-        align-items: center;
-        .button-f2h6uQ {
+        border-radius: 0;
+        .background-3d_SjE {
+          padding: 0;
           margin: 0;
+          background: none;
+        }
+        .settingsBanner-2E5fAp {
+          border-radius: 3px;
+        }
+        .containerWithContent-2_V0PM {
+          padding: 0;
+          justify-content: flex-start;
+        }
+        .bannerSVGWrapper-qc0szY {
+          display: none;
+        }
+        .fieldList-in8WkP {
+          background: none;
+          padding: 16px 0 0 0;
+          border-top: solid 1px var(--background-modifier-accent);
+          margin-top: 16px;
+        }
+        .userInfo-regn9W {
+          padding-right: 0;
+          padding-top: 0px;
+          padding-left: 96px;
+          margin-top: 16px;
+          height: 82px;
+          align-items: center;
+          .button-f2h6uQ {
+            margin: 0;
+          }
+        }
+        .avatar-3mTjvZ {
+          margin-left: -20px;
+          margin-top: -66px;
+          border: none;
+          background: none;
         }
       }
-      .avatar-3mTjvZ {
-        margin-left: -20px;
-        margin-top: -66px;
-        border: none;
-        background: none;
+    }
+    @if $experiment13 == 2 {
+      .accountProfileCard-lbN7n- {
+        display: flex;
+        flex-direction: row-reverse;
+        .avatar-3mTjvZ {
+          position: unset;
+          width: 128px !important;
+          height: 128px !important;
+          margin: 0 !important;
+          margin-top: 4px !important;
+          border: 4px solid #ebebeb;
+          svg {
+            width: 128px !important;
+            height: 128px !important;
+          }
+          foreignObject {
+            width: 92px;
+            height: 92px;
+            mask: none;
+            border-radius: 50%;
+          }
+          rect, +div, +div+button {
+            display: none;
+          }
+        }
+        .userInfo-regn9W {
+          height: unset !important;
+          justify-content: center !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          align-items: unset !important;
+        }
+        .background-3d_SjE {
+          width: 100%;
+        }
+        .fieldList-in8WkP {
+          margin-top: 0 !important;
+          padding: 0 !important;
+          border: 0 !important;
+        }
+        .field-21XZwa {
+          position: relative;
+          border-bottom: 1px solid #f0f0f0;
+          padding-bottom: 10px;
+          transition: .2s ease;
+          &:hover {
+            border-color: #b9bbbe;
+          }
+          .text-md-normal-304U3g {
+            padding: 10px 0 0;
+          }
+          .fieldButton-14lHvK {
+            position: absolute;
+            bottom: 10px;
+            width: 24px;
+            height: 24px;
+            min-height: unset;
+            min-width: unset;
+            padding: 0 !important;
+            background-color: transparent !important;
+            background-repeat: no-repeat;
+            background-size: 18px 18px;
+            background-position: 4px 4px;
+            color: transparent !important;
+            transition: opacity .2s ease;
+          }
+          .lookFilled-yCfaCM.colorPrimary-2AuQVo {
+            right: 0;
+            background-image: url("data:image/svg+xml,%3Csvg fill='white' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EDiscord%3C/title%3E%3Cpath d='M1.3335 20.8891V16.4446L15.3424 2.48908C15.6802 2.13352 16.2491 2.13352 16.6046 2.48908L19.7335 5.61797C20.0891 5.97352 20.0891 6.52463 19.7335 6.88019L5.72461 20.8891H1.3335ZM22.6668 20.8891H9.3335L12.8891 17.3335H22.6668V20.8891Z'/%3E%3C/svg%3E");
+            background-size: 16px;
+            opacity: .3;
+            .theme-light & {
+              background-image: url("data:image/svg+xml,%3Csvg fill='rgb(6, 6, 7)' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EDiscord%3C/title%3E%3Cpath d='M1.3335 20.8891V16.4446L15.3424 2.48908C15.6802 2.13352 16.2491 2.13352 16.6046 2.48908L19.7335 5.61797C20.0891 5.97352 20.0891 6.52463 19.7335 6.88019L5.72461 20.8891H1.3335ZM22.6668 20.8891H9.3335L12.8891 17.3335H22.6668V20.8891Z'/%3E%3C/svg%3E");
+              background-size: 16px;
+            }
+            &:hover {
+              opacity: .6;
+            }
+          }
+          .removeButton-v6eolJ {
+            right: 24px;
+            margin: 0;
+            background-image: url("data:image/svg+xml,%3Csvg fill='rgb(240, 71, 71)' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EDiscord%3C/title%3E%3Cpath d='M7.5 9.75H6V18.75H7.5V9.75ZM21.75 3H15V0.75C15 0.3 14.7 0 14.25 0H8.25C7.8 0 7.5 0.3 7.5 0.75V3H0.75C0.3 3 0 3.3 0 3.75C0 4.2 0.3 4.5 0.75 4.5H1.5V22.5C1.5 23.4 2.1 24 3 24H19.5C20.4 24 21 23.4 21 22.5V4.5H21.75C22.2 4.5 22.5 4.2 22.5 3.75C22.5 3.3 22.2 3 21.75 3ZM9 1.5H13.5V3H9V1.5ZM19.5 21.75C19.5 22.2 19.2 22.5 18.75 22.5H3.75C3.3 22.5 3 22.2 3 21.75V4.5H19.5V21.75ZM12 8.25H10.5V18.75H12V8.25ZM16.5 9.75H15V18.75H16.5V9.75Z'/%3E%3C/svg%3E");
+            background-size: 16px;
+            opacity: .6;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+        .lookLink-15mFoz.colorPrimary-2AuQVo:hover .contents-3ca1mk {
+          --button-underline-color: transparent !important;
+          background-image: none;
+        }
+        .fieldTitle-2g5r_V {
+          margin-bottom: 20px;
+        }
       }
     }
     .separator-2wx7h6:nth-last-of-type(2) {
