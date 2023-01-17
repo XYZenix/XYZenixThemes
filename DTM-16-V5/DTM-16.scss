@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "326";
-$themeDate: "Jan 16, 2023";
+$themeVersion: "327";
+$themeDate: "Jan 17, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -113,7 +113,7 @@ $experiment11: 0;
 // 0 | Control: No change
 // 1 | Treatment 1: Old switches
 // 2 | Treatment 2: Checkboxes
-$experiment12: 1;
+$experiment12: 2;
 
 // Experiment 13 - Account Settings (2023-01_account_settings)
 // 0 | Control: No change
@@ -8086,6 +8086,9 @@ html.theme-light {
         top: 86px;
         background: none;
         border-bottom: solid 1px var(--background-accent);
+        .theme-light & {
+          border-bottom-color: #dadddf;
+        }
         width: 150px;
         padding: 20px 0;
       }
@@ -8557,6 +8560,131 @@ html.theme-light {
           }
         }
       }
+    }
+  }
+  [id="game-activity-tab"] {
+    .activeGame-1OdxzI {
+      padding: 14px 15px;
+      padding-right: 33px;
+      .lastPlayed-1jum9A {
+        font-size: 11px;
+        opacity: .4;
+        color: #fff;
+      }
+      .gameName-zbZetm {
+        font-weight: 400;
+        color: #fff;
+      }
+      &.notDetected-M3Ghh2 {
+        background: #87909c;
+      }
+      &.nowPlaying-3UpuKc {
+        @keyframes now-playing-pulse {
+          0% {box-shadow: 0 0 10px 2px rgba(0,0,0,.12),0 0 0 0 rgba(115,139,215,.42)}
+          70% {box-shadow: 0 0 10px 2px rgba(0,0,0,.12),0 0 10px 10px rgba(115,139,215,0)}
+          100% {box-shadow: 0 0 10px 2px rgba(0,0,0,.12),0 0 0 0 rgba(115,139,215,0)}
+        }
+        background: #7289da;
+        animation: now-playing-pulse 1.5s infinite;
+        .gameVerifiedIcon-1YMUdQ {
+          width: 16px !important;
+          height: 16px !important;
+          opacity: 0;
+          .flowerStar-2tNFCR {
+            path {
+              fill: #FFFFFF4D !important;
+            }
+          }
+          --white-500: #fff;
+        }
+        &:hover .gameVerifiedIcon-1YMUdQ {
+          opacity: .8;
+        }
+        .gameVerifiedIcon-1YMUdQ:hover {
+          opacity: 1;
+        }
+        .overlayStatusText-In0YrK {
+          text-transform: none;
+          text-align: end;
+          margin-right: 8px;
+        }
+        .overlayToggleIcon-1WRcQ9 {
+          margin-top: 2px;
+          >svg {
+            opacity: 1;
+            width: 18px;
+            height: 18px;
+            position: relative;
+            background: #fff;
+            border-radius: 2px;
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 2px;
+              left: 6px;
+              display: table;
+              width: 4px;
+              height: 10px;
+              border-radius: 0;
+              border: 2px solid #0000;
+              border-top-width: 0;
+              border-left-width: 0;
+              transform: rotate(45deg);
+            }
+            &.overlayToggleIconOn-21NN2N {
+              &:before {
+                border-color: var(--blurple);
+              }
+              &:after {
+                border-color: #fff;
+              }
+            }
+            path, rect {
+              display: none;
+            }
+          }
+        }
+        .gameNameInput-2wbDJ9 {
+          &:hover {
+            border: 1px solid hsla(0,0%,100%,.6);
+            background: hsla(0,0%,100%,.02);
+          }
+          &:focus {
+            border: 1px solid hsla(0,0%,100%,.6);
+            background: hsla(0,0%,100%,.06);
+          }
+        }
+      }
+    }
+    .nowPlayingAdd-3I4RbE {
+      color: #99aab5;
+      font-weight: 600;
+      font-size: 12px;
+      align-self: flex-end;
+      button {
+        color: #43b581;
+        font-weight: 900;
+        font-size: 12px;
+        &:hover {
+          color: #3ca374;
+        }
+        .contents-3ca1mk {
+          background: #0000 !important;
+        }
+      }
+    }
+    .sectionTitle-3j2YI1 {
+      display: block !important;
+      .h1-34Txb0 {
+        color: #87909c;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+    .h5-2RwDNl {
+      color: #87909c;
     }
   }
 }
@@ -9061,10 +9189,9 @@ html.theme-light {
           border-radius: 50px;
         }
         &:before {
-          box-shadow: inset 0 1px 1px rgba(0 0 0/.15);
           width: 18px;
           height: 18px;
-          border-radius: 3px;
+          border-radius: 2px;
           box-sizing: border-box;
           border: solid 2px;
           .theme-dark & {
@@ -9083,7 +9210,7 @@ html.theme-light {
           width: 4px;
           height: 10px;
           border-radius: 0;
-          border: 2px solid #fff;
+          border: 2px solid #0000;
           border-top-width: 0;
           border-left-width: 0;
           transform: rotate(45deg);
@@ -9093,6 +9220,9 @@ html.theme-light {
             background: var(--blurple);
             background-size: 14px 14px;
             border-color: var(--blurple);
+          }
+          &:after {
+            border-color: #fff;
           }
         }
       }
@@ -9152,6 +9282,9 @@ html.theme-light {
     cursor: pointer;
     width: 36px;
     border: solid 1px #18191c;
+    .theme-light & {
+      border-color: #dadddf;
+    }
     &:first-of-type {border-radius: 3px 0 0 3px}
     &:nth-of-type(2) {border-left: none; border-right: none}
     &:last-of-type {border-radius: 0 3px 3px 0}
@@ -10456,7 +10589,7 @@ html.theme-light {
     width: 80px;
   }
   .expandedFolderBackground-1kSAf6 {
-    left: 16px;
+    left: 15px;
   }
   .scroller-3X7KbA {
     .childWrapper-1j_1ub {
