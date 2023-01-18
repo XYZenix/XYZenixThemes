@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "117";
-$themeDate: "Jan 12, 2023";
+$themeVersion: "118";
+$themeDate: "Jan 18, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -1073,13 +1073,13 @@ html.theme-light {
     &.lookOutlined-3yKVGo {
       transition: .2s;
       background: #0000;
-      &.colorBrand-3pXr91 {
+      &.colorBrand-3pXr91, &.colorBrand-I6CyqQ {
         background: #0000;
         border-color: hsla(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%,.3);
         color: hsl(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%);
         &:hover:not(:disabled) {
-          background: hsla(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%,.1);
-          border-color: hsl(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%);
+          background: #0000;
+          border-color: hsl(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%.6,.6);
           color: hsl(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%);
         }
         &:active:not(:disabled) {
@@ -7098,9 +7098,15 @@ html.theme-light {
 }
 // inbox tabs
 #{$inboxPopout} {
+  --status-positive-background: var(--green);
   .header-145e10 {
     padding: 0;
     background: var(--background-primary);
+    .expandedInboxHeader-HkRSug {
+      padding: 20px;
+      padding-bottom: 4px;
+      padding-top: 12px;
+    }
     .tab-TRrPC8 {
       padding: 27px 20px;
       background: none !important;
@@ -7936,6 +7942,10 @@ html.theme-light {
   .theme-dark, .theme-light {
     --font-display: Whitney,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
     --text-positive: hsl(152.6,calc(var(--saturation-factor, 1) * 46%),48.6%);
+    --brand-500: var(--blurple);
+    --status-green-600: var(--green);
+    --status-yellow-500: var(--yellow);
+    --status-red-500: var(--red);
     .wrapper-1ZcZW- {
       background: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.1);
       color: var(--blurple);
