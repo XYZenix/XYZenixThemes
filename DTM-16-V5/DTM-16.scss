@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "329";
+$themeVersion: "330";
 $themeDate: "Jan 19, 2023";
 
 @use "sass:color";
@@ -94,7 +94,7 @@ $experiment8: 1;
 // Experiment 9 - Modal styling (2022-08_modal_styling)
 // 0 | Control: No change
 // 1 | Treatment 1: 2015/2016 modal styling
-$experiment9: 0;
+$experiment9: 1;
 
 // Experiment 10 - Connections (2022-11_connections)
 // 0 | Control: No change
@@ -1301,6 +1301,11 @@ html.theme-light {
         background-position: 50% !important;
         background-repeat: no-repeat !important;
       }
+    }
+  }
+  .content-2hZxGK.content-3HmG6h {
+    div:not([class])+.divider-_0um2u.divider-hdfTuW {
+      display: none;
     }
   }
 }
@@ -3078,7 +3083,7 @@ html.theme-light {
           background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiI+CiAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxwYXRoIGQ9Ik0wIDEyVjBoMTJ2MTIiLz4KICAgIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik01LjI0ODI5MTAyIDJ2NS4yMTg2ODg5NkwzIDUgMiA2bDQgNCA0LTQtMS0xLTIuMjg0MTE4NjUgMi4yMTg2ODg5NlYyIi8+CiAgPC9nPgo8L3N2Zz4=);
         }
       }
-      .mentionsDot-lLfrj1+.text-xs-medium-2LRpEj {
+      &.mentionsBar-DpLHCy .barText-1eIsLx {
         background: var(--status-danger);
       }
     }
@@ -3648,7 +3653,7 @@ html.theme-light {
             border-left-color: hsla(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%,0.251);
           }
         }
-        &.selected-3veCBZ {
+        &.selected-26oxtA {
           border-left-color: var(--blurple);
           background: linear-gradient(to right,var(--background-tertiary) 85%, #0000);
           .theme-dark & {
@@ -5753,7 +5758,9 @@ html.theme-light {
       opacity: .3;
       transform: scale(.8);
       transition: opacity .1s;
-      color: #fff;
+      .theme-dark & {
+        color: #fff;
+      }
       &:hover {
         opacity: .6
       }
@@ -8096,6 +8103,41 @@ html.theme-light {
     .contentColumn-1C7as6, .customColumn-2n-oKU {
       max-width: 712px;
     }
+    .settingsContent-2HUX1H {
+      margin-right: 0;
+      .brownMessageBlock-r5H96c {
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        flex: 1;
+        justify-content: flex-end;
+        box-shadow: none;
+        .horizontalStatusWarningBlock-3LhSE_, .verticalStatusWarningBlock-Qdcu5_ {
+          gap: 16px;
+        }
+        .icon-2iwvYS {
+          display: none;
+        }
+        .text-dIcRfJ {
+          margin: 0;
+          .text-sm-normal-3Zj3Iv {
+            color: #f04747 !important;
+            background: #fdeded;
+            .theme-dark & {
+              background: #f0474722;
+            }
+            border: solid 1px #f04747;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 12px;
+            line-height: 12px;
+            margin: 0;
+            flex: unset;
+          }
+        }
+      }
+    }
     .customScroller-m1-jZn>div {
       max-width: 712px;
       margin-right: 40px
@@ -8733,6 +8775,15 @@ html.theme-light {
     >.divider-_0um2u:last-child {
       display: none;
     }
+    &.disabled-2qTmnp {
+      &, .modeDisabled-1RyezJ, .container-2nx-BQ {
+        cursor: default;
+      }
+      .title-2dsDLn, .titleDefault-3GR-DE, .titleMini-1VCYd9 {
+        opacity: .3;
+        cursor: default;
+      }
+    }
   }
   #game-activity-tab {
     .activeGame-1OdxzI {
@@ -9107,6 +9158,82 @@ html.theme-light {
 }
 // audit logs
 @at-root {
+  .quickSelect-384d3G {
+    .quickSelectLabel-ArUyd9 {
+      text-transform: lowercase;
+    }
+  }
+  .container-2O1UgZ {
+    .icon-2PiQ65.targetAll-21RPfg {
+      background: url(https://canary.discord.com/assets/fe7aeea6c0c96a39eefc1d27714ae445.svg)
+    }
+    .icon-2PiQ65.targetBan-qwvck2 {
+        background: url(https://canary.discord.com/assets/54205f81874ad989414d6f27565c6439.svg)
+    }
+    .icon-2PiQ65.targetChannel-1NWbC5 {
+        background: url(https://canary.discord.com/assets/ba5dca4936081060ff0575545e5cf09a.svg)
+    }
+    .icon-2PiQ65.targetGuild-pvPVWS {
+        background: url(https://canary.discord.com/assets/439bf25fd3b8fb637f9ad6991c7165f9.svg)
+    }
+    .icon-2PiQ65.targetEmoji-2T6Ze4 {
+        background: url(https://canary.discord.com/assets/d4b5fb76bde7eccc9cc729d0d434845b.svg)
+    }
+    .icon-2PiQ65.targetSticker-2BoYB9 {
+        background: url(https://canary.discord.com/assets/48c5a8a2a17ddd205b154a1e0f0adbe8.svg)
+    }
+    .icon-2PiQ65.targetIntegration-j5Mnwy {
+        background: url(https://canary.discord.com/assets/e75d0b20881725f13cbd081083e1e838.svg)
+    }
+    .icon-2PiQ65.targetInvite-2hFskc {
+        background: url(https://canary.discord.com/assets/139538c2c7f64ae31ce50e23eae3885e.svg)
+    }
+    .icon-2PiQ65.targetMemberRole-jNaX-k {
+        background: url(https://canary.discord.com/assets/55de1b4f8dcf61ce75cf1ee1fb88bf09.svg)
+    }
+    .icon-2PiQ65.targetMember-2pI3Cu {
+        background: url(https://canary.discord.com/assets/8e6931bbb72ea565d3c86d23b5b14e9e.svg)
+    }
+    .icon-2PiQ65.targetPermission-2fNNaU {
+        background: url(https://canary.discord.com/assets/9e764c1bae67c18c43b505a9a87105ed.svg)
+    }
+    .icon-2PiQ65.targetRole-24Nm1S {
+        background: url(https://canary.discord.com/assets/8bf3e4e5bbe9b4b18e696247117d0351.svg)
+    }
+    .icon-2PiQ65.targetOnboarding-2xQ2Xp {
+        background: url(https://canary.discord.com/assets/05b0401a6f6f48291f8d4562cf2daca7.svg)
+    }
+    .icon-2PiQ65.targetVanityUrl-1KGkGd {
+        background: url(https://canary.discord.com/assets/d64ea1b480519e7ed3858965c3d35076.svg)
+    }
+    .icon-2PiQ65.targetWebhook-3gzYYG {
+        background: url(https://canary.discord.com/assets/d441a32c45c82f6185df2522109cf541.svg)
+    }
+    .icon-2PiQ65.targetWidget-3g4NqJ {
+        background: url(https://canary.discord.com/assets/882c9d0f1a3a662d22041933c3de7a2a.svg)
+    }
+    .icon-2PiQ65.targetMessage-WgF9Dt {
+        background: url(https://canary.discord.com/assets/8e9b02f534e76bf7d3209dac3109cc99.svg)
+    }
+    .icon-2PiQ65.targetStageInstance-2ljqjY {
+        background: url(https://canary.discord.com/assets/2a67ff191290e6a76fa827ea24134a59.svg)
+    }
+    .icon-2PiQ65.targetGuildScheduledEvent-330pb3 {
+        background: url(https://canary.discord.com/assets/00d3179320d7daf562c1540cefccf28d.svg)
+    }
+    .icon-2PiQ65.thread-P4cm8D {
+        background: url(https://canary.discord.com/assets/34ec9a651f00e971b4f78f2fdd570a97.svg)
+    }
+    .icon-2PiQ65.applicationCommand-3YMgNf {
+        background: url(https://canary.discord.com/assets/e74d1a4db5fe1fd9c19ff9949bba9b7e.svg)
+    }
+    .icon-2PiQ65.autoModerationBlockMessage-97cbNX, .icon-2PiQ65.autoModerationRule-2pc9PC {
+        background: url(https://canary.discord.com/assets/d441a32c45c82f6185df2522109cf541.svg)
+    }
+    .icon-2PiQ65.targetGuildHome-3LSyOg {
+        background: url(https://canary.discord.com/assets/9bf8fed32ea1051b833a89b67cd8de18.svg)
+    }
+  }
   .typeCreate--o_pRH {
     color: var(--green);
     &:after {
@@ -9414,6 +9541,10 @@ html.theme-light {
       color: #747f8d !important;
       &:hover:not(.disabled-Mmpvl7) {
         background: linear-gradient(90deg,#ebebeb,#fff);
+      }
+      &.selectedBrand-1AtwYE {
+        background: linear-gradient(90deg,#ebebeb,#fff);
+        
       }
     }
   }
@@ -9879,6 +10010,12 @@ html.theme-light {
           }
         }
       }
+      .sectionTitle-34s8y3 {
+        font-size: 11px;
+        .theme-light & {
+          color: #87909c;
+        }
+      }
       // server join dialog
       .container-1Lk8p7 {
         &, &>div, &>div>div {
@@ -9902,12 +10039,16 @@ html.theme-light {
         box-shadow: 0 1px 0 rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 10%);
         .heading-lg-semibold-2Z_RS3 {
           font-size: 14px;
+          line-height: 100%;
           font-weight: 700;
           text-transform: uppercase;
           color: var(--blurple);
           .theme-dark & {
             color: var(--header-primary);
           }
+        }
+        [d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"] {
+          d: path("M16.0406 14.4084L13.6324 12.0002L16.0406 9.59196C16.4915 9.14103 16.4915 8.41049 16.0406 7.95956C15.5897 7.50862 14.8591 7.50862 14.4082 7.95956L12 10.3678L9.5918 7.95956C9.14086 7.50862 8.41032 7.50862 7.95939 7.95956C7.50846 8.41049 7.50846 9.14103 7.95939 9.59196L10.3676 12.0002L7.95939 14.4084C7.50846 14.8593 7.50846 15.5898 7.95939 16.0408C8.41032 16.4917 9.14086 16.4917 9.5918 16.0408L12 13.6326L14.4082 16.0408C14.8591 16.4917 15.5897 16.4917 16.0406 16.0408C16.4915 15.5898 16.4915 14.8593 16.0406 14.4084Z");
         }
       }
       .content-2hZxGK {
@@ -11473,6 +11614,12 @@ html.theme-light {
         border-color: #b9bbbe;
       }
     }
+    &.disabled-3XkegQ {
+      opacity: .3;
+      .grabber-2GQyvM {
+        cursor: default;
+      }
+    }
   }
   .mini-2qY9iv {
     .bar-1Bhnl9 {
@@ -12524,9 +12671,16 @@ html.theme-light {
   text-align: left;
   padding-left: 10px;
   height: 24px;
-  line-height: 22px;
+  line-height: 24px;
   .icon-3F2JOt {display:none}
-  .closeButton-2q4zo9 {opacity:0;text-align:center}
+  .closeButton-2q4zo9 {
+    opacity: 0;
+    text-align: center;
+    top: 0;
+    svg {
+      margin-top: 5px;
+    }
+  }
   &:hover .closeButton-2q4zo9 {opacity:.3}
   .closeButton-2q4zo9:hover, .closeButton-2q4zo9:active {opacity:.6}
 }
