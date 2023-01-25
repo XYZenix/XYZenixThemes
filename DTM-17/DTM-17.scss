@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "121";
-$themeDate: "Jan 22, 2023";
+$themeVersion: "122";
+$themeDate: "Jan 25, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -6476,17 +6476,23 @@ html.theme-light {
     .item-2idW98, .item-1TA5qI {
       margin: 0;
       .radioBar-3w9XY-, .radioBar-1XgZqD {
-        background: none;
-        border: none;
+        background: none !important;
+        border: none !important;
         border-radius: 0;
-        border-top: solid 1px var(--background-accent);
+        border-top: solid 1px var(--background-accent) !important;
+        .theme-light & {
+          border-top-color: #dcddde !important;
+        }
         padding: 16px 10px !important;
         grid-gap: 10px;
         .option-1YIfI9 {
           font-weight: 400;
         }
       }
-      &:first-of-type .radioBar-3w9XY-, .radioBar-1XgZqD {border-top:none}
+      &:first-of-type .radioBar-3w9XY-,
+      &:first-of-type .radioBar-1XgZqD {
+        border-top: none
+      }
       div>svg {
         background: radial-gradient(#fff 8px, #0000 8px);
         border-radius: 50px;
@@ -6507,6 +6513,9 @@ html.theme-light {
           opacity: 0 !important;
           transition: .2s;
         }
+      }
+      &[aria-checked="true"] {
+        color: var(--header-primary) !important;
       }
       &:hover svg {
         margin-left: 0 !important;
