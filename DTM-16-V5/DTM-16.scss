@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "337";
+$themeVersion: "338";
 $themeDate: "Feb 10, 2023";
 
 @use "sass:color";
@@ -5064,10 +5064,35 @@ html.theme-light {
   }
   // reactions
   .container-2sjPya {
+    .reactions-3ryImn {
+      &:hover {
+        .reactionBtn-3I19bq {
+          opacity: .5;
+          &:hover {
+            opacity: 1;
+          }
+        }   
+      }
+    }
     .reactionBtn-3I19bq {
-      opacity: .5;
+      visibility: visible !important;
+      transition: .18s opacity;
+      opacity: 0;
+      margin: 0;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+      padding-bottom: 0.125rem;
+      &.active-Rk-d9U {
+        opacity: 1 !important;
+      }
+      .theme-dark & svg {
+        color: #fff;
+      }
+      .theme-light & svg {
+        color: #99aab5;
+      }
       svg path:first-of-type {
-        d: path("M21.9499 11C21.9831 11.3308 22 11.6646 22 12C22 17.5228 17.5228 22 12 22C9.34783 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 6.5 6.47 2 12 2C12.3354 2 12.6692 2.01685 13 2.05009V4.06272C12.67 4.02115 12.3361 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.6639 19.9788 11.33 19.9373 11H21.9499ZM12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM15.5 11C16.3284 11 17 10.3284 17 9.5C17 8.67157 16.3284 8 15.5 8C14.6716 8 14 8.67157 14 9.5C14 10.3284 14.6716 11 15.5 11ZM8.5 11C9.32843 11 10 10.3284 10 9.5C10 8.67157 9.32843 8 8.5 8C7.67157 8 7 8.67157 7 9.5C7 10.3284 7.67157 11 8.5 11Z")
+        d: path("M21.9499 11C21.9831 11.3308 22 11.6646 22 12C22 17.5228 17.5228 22 12 22C9.34784 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 6.5 6.47 2 12 2C12.3354 2 12.6692 2.01685 13 2.05009V4.06272C12.67 4.02115 12.3361 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.6639 19.9789 11.33 19.9373 11H21.9499ZM12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM15.5 11C16.3284 11 17 10.3284 17 9.5C17 8.67157 16.3284 8 15.5 8C14.6716 8 14 8.67157 14 9.5C14 10.3284 14.6716 11 15.5 11ZM8.5 11C9.32843 11 10 10.3284 10 9.5C10 8.67157 9.32843 8 8.5 8C7.67157 8 7 8.67157 7 9.5C7 10.3284 7.67157 11 8.5 11Z")
       }
       svg path:last-of-type {
         d: path("M21 3V0H19V3H16V5H19V8H21V5H24V3H21Z")
@@ -5091,6 +5116,31 @@ html.theme-light {
     }
     .reactionInner-YJjOtT, .reactionInner-1po5__ {
       padding: 0 .375rem
+    }
+  }
+  // forums add reaction button
+  .reactionBtn-fVdJIx {
+    visibility: visible !important;
+    transition: .18s opacity;
+    opacity: .5;
+    &:hover, &.active-2hEEcJ {
+      opacity: 1;
+    }
+    padding-left: 2px;
+    padding-right: 2px;
+    min-width: 16px;
+    background: #0000 !important;
+    .theme-dark & svg {
+      color: #fff;
+    }
+    .theme-light & svg {
+      color: #99aab5;
+    }
+    svg path:first-of-type {
+      d: path("M21.9499 11C21.9831 11.3308 22 11.6646 22 12C22 17.5228 17.5228 22 12 22C9.34784 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 6.5 6.47 2 12 2C12.3354 2 12.6692 2.01685 13 2.05009V4.06272C12.67 4.02115 12.3361 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.6639 19.9789 11.33 19.9373 11H21.9499ZM12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM15.5 11C16.3284 11 17 10.3284 17 9.5C17 8.67157 16.3284 8 15.5 8C14.6716 8 14 8.67157 14 9.5C14 10.3284 14.6716 11 15.5 11ZM8.5 11C9.32843 11 10 10.3284 10 9.5C10 8.67157 9.32843 8 8.5 8C7.67157 8 7 8.67157 7 9.5C7 10.3284 7.67157 11 8.5 11Z")
+    }
+    svg path:last-of-type {
+      d: path("M21 3V0H19V3H16V5H19V8H21V5H24V3H21Z")
     }
   }
   .addReactButton-3bSQb6 {
@@ -5881,15 +5931,17 @@ html.theme-light {
 @at-root {
   // normal tooltips
   .tooltip-14MtrL {
-    box-shadow: 0 2px 4px 1px rgba(0,0,0,.1);
+    .theme-dark &, .theme-light & {
+      box-shadow: 0 2px 4px 1px rgb(0 0 0 / 10%);
+    }
     border-radius: 3px;
     font-weight: 500;
     font-size: 12px;
-    padding: 3px 8px;
+    padding: 5px 10px;
     z-index: 1002;
     box-sizing: border-box;
     word-wrap: break-word;
-    &.tooltipBlack-vMYxvw, &.tooltipPrimary-3qLMbS, &.tooltipGrey-lpLZjh {
+    &:is(.tooltipBlack-vMYxvw, .tooltipPrimary-3qLMbS, .tooltipGrey-lpLZjh) {
       .theme-dark &, .theme-light & {
         background: var(--blurple);
         color: #fff;
@@ -5915,7 +5967,10 @@ html.theme-light {
         border-top-color: var(--green) !important;
       }
     }
-    .tooltipContent-Nejnvh {padding:0}
+    .tooltipContent-Nejnvh {
+      padding: 0;
+      line-height: 100%;
+    }
     .discriminator-3-qTC0 {
       color: #fffb;
       font-weight: 500;
