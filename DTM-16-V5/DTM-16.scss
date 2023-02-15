@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "339";
+$themeVersion: "340";
 $themeDate: "Feb 15, 2023";
 
 @use "sass:color";
@@ -1858,50 +1858,54 @@ html.theme-light {
         transition: .2s;
         font-size: 16px;
         @if $experiment1 == 0 {
-          background: none;
-          border: solid 1px #747F8D66;
-          color: #fff6;
-          .theme-light .sidebar-1tnWFu:not(.theme-dark) & {
-            color: #0006;
-          }
-          &:hover:not(:disabled), &:active:not(:disabled) {
+          .theme-dark &, .theme-light & {
             background: none;
-            @if $BlurpleStyle == 1 {
-              border-color: #5865F288;
-            } @else {
-              border-color: #7289da88;
-            }
-            color: #fff;
+            border: solid 1px #747F8D66;
+            color: #fff6;
             .theme-light .sidebar-1tnWFu:not(.theme-dark) & {
-              color: #000;
+              color: #0006;
             }
-          }
-          &:active:not(:disabled) {
-            border-color: var(--blurple);
-            @if $BlurpleStyle == 1 {
-              background: #5865F222;
-            } @else {
-              background: #7289da22;
+            &:hover:not(:disabled), &:active:not(:disabled) {
+              background: none;
+              @if $BlurpleStyle == 1 {
+                border-color: #5865F288;
+              } @else {
+                border-color: #7289da88;
+              }
+              color: #fff;
+              .theme-light .sidebar-1tnWFu:not(.theme-dark) & {
+                color: #000;
+              }
             }
-          }
-          &.buttonActive-Uc1jHx {
-            border-color: hsl(152.6,calc(var(--saturation-factor, 1) * 46%),48.6%,0.53);
-            color: var(--green);
-            &:hover, &:active {
-              border-color: var(--green);
+            &:active:not(:disabled) {
+              border-color: var(--blurple);
+              @if $BlurpleStyle == 1 {
+                background: #5865F222;
+              } @else {
+                background: #7289da22;
+              }
             }
-            &:active {
-              background: hsl(152.6,calc(var(--saturation-factor, 1) * 46%),48.6%,0.14);
+            &.buttonActive-Uc1jHx {
+              background: #0000;
+              border-color: hsl(152.6,calc(var(--saturation-factor, 1) * 46%),48.6%,0.53);
+              color: var(--green);
+              &:hover, &:active {
+                border-color: var(--green);
+              }
+              &:active {
+                background: hsl(152.6,calc(var(--saturation-factor, 1) * 46%),48.6%,0.14);
+              }
             }
-          }
-          &.buttonDeveloperActivityShelf-3bhcwC {
-            border-color: hsla(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,0.25);
-            &:hover {
-              border-color: hsla(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,0.5);
-            }
-            &:active {
-              border-color: hsla(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,1);
-              background: hsla(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,0.1);
+            &.buttonDeveloperActivityShelf-3bhcwC {
+              background: #0000;
+              border-color: hsla(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,0.25);
+              &:hover {
+                border-color: hsla(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,0.5);
+              }
+              &:active {
+                border-color: hsla(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,1);
+                background: hsla(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,0.1);
+              }
             }
           }
         } @else if $experiment1 == 1 {
