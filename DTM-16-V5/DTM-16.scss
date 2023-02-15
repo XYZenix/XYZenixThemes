@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "338";
-$themeDate: "Feb 10, 2023";
+$themeVersion: "339";
+$themeDate: "Feb 15, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -11252,8 +11252,10 @@ html.theme-light {
 }
 // rebrand fix
 @at-root {
-  .wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j_1ub, .wrapper-3kah-n:hover .childWrapper-1j_1ub {
-    background: var(--blurple);
+  .theme-dark, .theme-light {
+    .wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j_1ub, .wrapper-3kah-n:hover .childWrapper-1j_1ub {
+      background: var(--blurple);
+    }
   }
   @if $BlurpleStyle == 0 {
     [src="/assets/4697ec960e57790ad4f6251af4c246b4.svg"] {
@@ -11594,6 +11596,11 @@ html.theme-light {
     left: 15px;
   }
   .scroller-3X7KbA {
+    .theme-dark &, .theme-light & {
+      .childWrapper-1j_1ub {
+        background-color: var(--background-primary);
+      }
+    }
     .childWrapper-1j_1ub {
       background-color: var(--background-secondary);
     }
@@ -11772,13 +11779,17 @@ html.theme-light {
       border-radius: 15px;
     }
   }
-  .theme-light .expandedFolderBackground-1kSAf6 {
-    background: #fff4;
-    box-shadow: inset 1px 0 #fff, inset -1px 0 #fffb;
+  .theme-light, .theme-light.custom-theme-background {
+    .expandedFolderBackground-1kSAf6 {
+      background: #fff4;
+      box-shadow: inset 1px 0 #fff, inset -1px 0 #fffb;
+    }
   }
-  .theme-dark .expandedFolderBackground-1kSAf6 {
-    background: #ffffff09;
-    box-shadow: inset 1px 0 #ffffff05, inset -1px 0 #ffffff05;
+  .theme-dark, .theme-dark.custom-theme-background {
+    .expandedFolderBackground-1kSAf6 {
+      background: #ffffff09;
+      box-shadow: inset 1px 0 #ffffff05, inset -1px 0 #ffffff05;
+    }
   }
   @if $resizeServers {
     .listItem-3SmSlK {
