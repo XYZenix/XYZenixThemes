@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "346";
-$themeDate: "Feb 15, 2023";
+$themeVersion: "347";
+$themeDate: "Feb 21, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -994,13 +994,13 @@ html.theme-light {
     fill: var(--blurple) !important;
   }
   [fill="hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%)"],
-  [fill="#3ba55c"] {
+  [fill="#3ba55c"], [fill="#23a55a"] {
     fill: var(--green) !important;
   }
-  [fill="#ed4245"] {
+  [fill="#ed4245"], [fill="#f23f43"] {
     fill: var(--red) !important;
   }
-  [fill="#faa61a"] {
+  [fill="#faa61a"], [fill="#f0b232"] {
     fill: var(--yellow) !important;
   }
   .border-2Vy6FN.speaking-7QZEkv, .avatarSpeaking-2pCGrZ {
@@ -1316,6 +1316,17 @@ html.theme-light {
       display: none;
     }
   }
+  .checkbox-1LuCGM {
+    &[style*="border-color: rgb(35, 165, 90); background-color: rgb(35, 165, 90);"] {
+      background-color: var(--green) !important;
+      border-color: var(--green) !important;
+    }
+    &[style*="border-color: rgba(35, 165, 90, 0.15); background-color: rgba(35, 165, 90, 0.15);"] {
+      border-color: #43b58126 !important;
+      background-color: #43b58126 !important;
+      color: #43b581 !important;
+    }
+  }
 }
 // buttons
 @at-root {
@@ -1575,10 +1586,10 @@ html.theme-light {
         align-self: flex-start;
         height: 24px;
       }
-      .icon-NDLBMG {
+      .icon-3UbRUF {
         opacity: .5;
       }
-      >div:not([class*="-"]) > svg:not(.icon-NDLBMG), .radioBarIcon-EiCq-C svg {
+      >div:not([class*="-"]) > svg:not(.icon-3UbRUF), .radioBarIcon-EiCq-C svg {
         > path {
           d: path("M3 0C1.34326 0 0 1.34277 0 3V21C0 22.6572 1.34326 24 3 24H21C22.6567 24 24 22.6572 24 21V3C24 1.34277 22.6567 0 21 0H3ZM3 1C1.89551 1 1 1.89551 1 3V21C1 22.1045 1.89551 23 3 23H21C22.1045 23 23 22.1045 23 21V3C23 1.89551 22.1045 1 21 1H3Z");
           .theme-dark & {
@@ -1606,7 +1617,7 @@ html.theme-light {
         .text-sm-normal-AEQz4v, .radioLabelName-3FiyYq, .icon-1ykL9s {
           color: #fff !important;
         }
-        >div:not([class*="-"])>svg:not(.icon-NDLBMG), .radioBarIcon-EiCq-C svg {
+        >div:not([class*="-"])>svg:not(.icon-3UbRUF), .radioBarIcon-EiCq-C svg {
           >path {
             d: path("M4 1C2.34326 1 1 2.34277 1 4V20C1 21.6572 2.34326 23 4 23H20C21.6567 23 23 21.6572 23 20V4C23 2.34277 21.6567 1 20 1H4ZM6.62231 12L9.74976 15.127L17.6924 7.19238L18.7498 8.25L9.74976 17.25L5.55737 13.0576L6.62231 12Z") !important;
             fill: #fff !important;
@@ -5780,6 +5791,14 @@ html.theme-light {
       }
     }
   }
+  .themed-Hp1KC_ {
+    .theme-dark &, .theme-light & {
+      background: var(--background-primary);
+    }
+    .children-3xh0VB:after {
+      display: none;
+    }
+  }
   .primaryInfo-2ocY3v {
       height: 100%;
   }
@@ -7009,7 +7028,7 @@ html.theme-light {
                   }
                 }
                 // add bot / upgrade buttons
-                &:has(.applicationInstallButton-1co9qK) {
+                &:has(.buttonsContainer-2_Qu-e) {
                   background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
                   background-size: 270px 213px;
                   .button-ejjZWC {
@@ -10515,6 +10534,17 @@ html.theme-light {
       border-radius: 3px;
     }
   }
+  // perks modal
+  .perksModal-CLcR1c {
+    .theme-dark &, .theme-light & {
+      &, .tierMarkerBackground-G8FoN4 {
+        background-color: var(--background-primary);
+      }
+      .tierBody-3ju-rc {
+        background-color: var(--background-tertiary);
+      }
+    }
+  }
 }
 // boost buying modal
 .actions-10aT1z {
@@ -13131,7 +13161,7 @@ html.theme-light {
       .colorHeaderSecondary-g5teka, .icon-1ykL9s, .size14-3fJ-ot, .text-sm-normal-AEQz4v {
         color: var(--header-secondary) !important;
       }
-      > div:not([class*="-"]) > svg:not(.icon-NDLBMG), .radioBarIcon-EiCq-C>svg {
+      > div:not([class*="-"]) > svg:not(.icon-3UbRUF), .radioBarIcon-EiCq-C>svg {
         path {
           display: none;
         }
@@ -13150,8 +13180,8 @@ html.theme-light {
     }
     &:not([aria-checked="true"]) {
       &:hover, &:active {
-        .radioBar-3w9XY- > div:not([class*="-"]) > svg:not(.icon-NDLBMG), .radioBarIcon-EiCq-C>svg,
-        .radioBar-1XgZqD > div:not([class*="-"]) > svg:not(.icon-NDLBMG) {
+        .radioBar-3w9XY- > div:not([class*="-"]) > svg:not(.icon-3UbRUF), .radioBarIcon-EiCq-C>svg,
+        .radioBar-1XgZqD > div:not([class*="-"]) > svg:not(.icon-3UbRUF) {
           background: #7289da66;
           box-shadow: inset 0 0 0 7px var(--background-primary);
         }
@@ -13160,7 +13190,7 @@ html.theme-light {
     &[aria-checked="true"] {
       .radioBar-3w9XY-, .radioBar-1XgZqD {
         --radio-bar-accent-color: var(--header-primary);
-        > div:not([class*="-"]) > svg:not(.icon-NDLBMG), .radioBarIcon-EiCq-C>svg {
+        > div:not([class*="-"]) > svg:not(.icon-3UbRUF), .radioBarIcon-EiCq-C>svg {
           border-radius: 50%;
           border: solid 1px var(--text-muted);
           background: var(--blurple);
