@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "354";
-$themeDate: "Feb 27, 2023";
+$themeVersion: "355";
+$themeDate: "Feb 28, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -540,6 +540,8 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
   --control-brand-foreground-new: var(--blurple);
   --scrollbar-auto-thumb: var(--scrollbar-thumb-color) !important;
   --scrollbar-thin-thumb: var(--scrollbar-thumb-color) !important;
+  --modal-background: var(--background-primary);
+  --modal-footer-background: var(--background-secondary);
 }
 .socialLinks-3ywLUf:before {
   display: block;
@@ -3178,10 +3180,7 @@ html.theme-light {
   }
   // channels
   .content-yjf30S {
-    >.containerDefault-YUSmu3,
-    >.containerDragAfter-3aBiOW,
-    >.containerDragBefore-1s5Qg6,
-    >.containerUserOver-SDa1HW {
+    >:is(.containerDefault-YUSmu3, .containerDragAfter-3aBiOW, .containerDragBefore-1s5Qg6, .containerUserOver-SDa1HW) {
       // all channel types except voice
       >.wrapper-NhbLHG {
         padding:0;
@@ -3256,7 +3255,7 @@ html.theme-light {
             opacity: .3;
           }
         }
-        &:hover, &.modeSelected-3DmyhH, &.modeUnread-3Cxepe {
+        &:is(:hover, .modeSelected-3DmyhH, .modeUnread-3Cxepe) {
           .mainContent-20q_Hp {
             opacity: 1;
           }
@@ -3266,14 +3265,15 @@ html.theme-light {
           margin-left: -4px;
           display: none;
         }
-        [aria-label$="(Stage channel)"], // special case for the special stage channel
+        // special case for the special stage channel
+        :is([aria-label$="(Stage channel)"],
         [aria-label$="(stage channel)"], [aria-label$="(podiekanal)"], [aria-label$="(Stage-Kanal)"], [aria-label$="(canal de escenario)"],
         [aria-label$="(salon de conférence)"], [aria-label$="(kanal s pozornicom)"], [aria-label$="(sala conferenze)"], [aria-label$="(scenos kanalas)"],
         [aria-label$="(pódiumcsatorna)"], [aria-label$="(podiumkanaal)"], [aria-label$="(scenekanal)"], [aria-label$="(kanał podium)"],
         [aria-label$="(canal palco)"], [aria-label$="(Canal podium)"], [aria-label$="(esityskanava)"], [aria-label$="(kênh sân khấu)"],
         [aria-label$="(sahne kanalı)"], [aria-label$="(řečnický kanál)"], [aria-label$="(κανάλι σκηνής)"], [aria-label$="(канал на сцена)"],
         [aria-label$="(трибуна)"], [aria-label$="(канал трибуни)"], [aria-label$="(स्टेज चैनल)"], [aria-label$="(ช่องเวที)"],
-        [aria-label$="(讲堂频道)"], [aria-label$="（ステージチャンネル）"], [aria-label$="(舞台頻道)"], [aria-label$="(무대 채널)"] {
+        [aria-label$="(讲堂频道)"], [aria-label$="（ステージチャンネル）"], [aria-label$="(舞台頻道)"], [aria-label$="(무대 채널)"]) {
           .iconContainer-21RCa3 {display: block}
           @if $experiment5 == 1 {
             path:first-of-type {d: path("M4.80038 6.61466C7.31175 6.61466 9.39399 5.77082 10.2004 4.56122L11.3149 6.30362L8.34279 10.9433L3.2135 6.4937C3.71462 6.57146 4.24742 6.61466 4.80038 6.61466ZM12.8788 14.8831L21.7434 22.5698L15.4074 12.6886L12.8788 14.8831ZM19.2004 6.61466C16.689 6.61466 14.6068 5.77082 13.8004 4.56122L2.25734 22.5698L20.7873 6.49658C20.2861 6.57146 19.7533 6.61466 19.2004 6.61466ZM9.40839 3.44666C9.40839 2.49338 7.51623 1.43066 4.80038 1.43066C2.08454 1.43066 0.192383 2.49338 0.192383 3.44666C0.192383 4.39994 2.08454 5.46266 4.80038 5.46266C7.51623 5.46266 9.40839 4.39994 9.40839 3.44666ZM19.2004 1.43066C16.4845 1.43066 14.5924 2.49338 14.5924 3.44666C14.5924 4.39994 16.4845 5.46266 19.2004 5.46266C21.9162 5.46266 23.8084 4.39994 23.8084 3.44666C23.8084 2.49338 21.9162 1.43066 19.2004 1.43066Z");fill:currentColor}
@@ -5521,7 +5521,7 @@ html.theme-light {
 }
 // activity cards
 .nowPlayingColumn-1eCBCN {
-  .heading-lg-semibold-2Z_RS3.header-Imy05m {
+  .heading-lg-semibold-14ouVv.header-Imy05m {
     font-size: 18px;
     font-weight: 500;
     color: #dcddde;
@@ -6077,6 +6077,14 @@ html.theme-light {
     .clickCTA-1bk0UN {
       color: #fffb !important;
       font-size: 12px;
+    }
+    .burstReactionTooltipSpacer-1oUrib {
+      border-bottom-color: #fff4;
+    }
+    .burstReactionTooltipNitroIcon-34FUA3 {
+      path {
+        fill: #fff !important;
+      }
     }
   }
   // sticker/emoji details
@@ -10316,7 +10324,7 @@ html.theme-light {
   }
   @if $experiment9 == 1 {
     .root-1CAIjD {
-      &.small-23Atuv {
+      &.small-2xUY-3 {
         min-width: 520px;
         width: min-content;
         >div:not([class])>div[style],
@@ -10343,7 +10351,7 @@ html.theme-light {
       .header-1sd0RU {
         background: #0000;
       }
-      .header-1zd7se {
+      .header-1ffhsl {
         padding: 28px 40px;
         h2 {
           color: var(--blurple);
@@ -10417,10 +10425,10 @@ html.theme-light {
     }
     // (credit: dav)
     .focusLock-bHVOlV {
-      .header-1zd7se {
+      .header-1ffhsl {
         padding: 24px 40px;
         box-shadow: 0 1px 0 rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 10%);
-        .heading-lg-semibold-2Z_RS3 {
+        .heading-lg-semibold-14ouVv {
           font-size: 14px;
           line-height: 100%;
           font-weight: 700;
@@ -10550,9 +10558,9 @@ html.theme-light {
     }
   }
   // same as above
-  .modal-2RG0j2.root-1CAIjD.small-23Atuv.fullscreenOnMobile-ixj0e3 {
+  .modal-2RG0j2.root-1CAIjD.small-2xUY-3.fullscreenOnMobile-2971EC {
     overflow: hidden;
-    >.header-1zd7se {
+    >.header-1ffhsl {
       .headerIcon-2RT_qX {
         margin-right: 8px;
       }
@@ -10563,7 +10571,7 @@ html.theme-light {
       box-shadow: 0 2px 3px 0 rgb(0 0 0 / 20%);
       +.content-2hZxGK.container-1_S9ZR.thin-31rlnD.scrollerBase-_bVAAt {
         background: var(--background-secondary);
-        >.heading-md-semibold-3sznX7.defaultColor-HXu-5n:first-child {
+        >.heading-md-semibold-3sznX7.defaultColor-1GKx81:first-child {
           font-size: 16px;
           font-weight: 600;
           color: var(--text-normal) !important;
@@ -10572,7 +10580,7 @@ html.theme-light {
     }
   }
   // ...also same as above
-  .modalRoot-Cm6Ji_.root-1CAIjD.medium-1ywRMv.fullscreenOnMobile-ixj0e3 {
+  .modalRoot-Cm6Ji_.root-1CAIjD.medium-1ywRMv.fullscreenOnMobile-2971EC {
     >.header-219JPV {
       box-shadow: 0 2px 3px 0 rgb(0 0 0 / 20%);
       padding: 12px 20px;
@@ -10596,6 +10604,16 @@ html.theme-light {
         background-color: var(--background-tertiary);
       }
     }
+  }
+  // notification settings
+  .overrideList-1mnGiL .eyebrow-1Shfyi {
+    font-size: 10px;
+  }
+  .override-1sK4r0 {
+    background: #0000;
+  }
+  .checkbox-1LuCGM.box-qwm0Q_ {
+    border-radius: 3px;
   }
 }
 // boost buying modal
@@ -13201,16 +13219,16 @@ html.theme-light {
   }
 }
 @if $experiment14 {
-  .item-2idW98, .item-1TA5qI {
-    .radioBar-3w9XY-, .radioBar-1XgZqD {
+  :is(.item-2idW98, .item-1TA5qI) {
+    :is(.radioBar-3w9XY-, .radioBar-1XgZqD) {
       padding: 8px 0 !important;
       --radio-bar-accent-color: var(--header-primary);
       background: #0000 !important;
       border-color: #0000 !important;
-      .colorStandard-21JIj7, .title-1yyp9V, .text-md-medium-2n7Vn5 {
+      :is(.colorStandard-21JIj7, .title-1yyp9V, .text-md-medium-2n7Vn5) {
         color: var(--radio-bar-accent-color) !important;
       }
-      .colorHeaderSecondary-g5teka, .icon-1ykL9s, .size14-3fJ-ot, .text-sm-normal-AEQz4v {
+      :is(.colorHeaderSecondary-g5teka, .icon-1ykL9s, .size14-3fJ-ot, .text-sm-normal-AEQz4v) {
         color: var(--header-secondary) !important;
       }
       > div:not([class*="-"]) > svg:not(.icon-3UbRUF), .radioBarIcon-EiCq-C>svg {
@@ -13240,7 +13258,7 @@ html.theme-light {
       }
     }
     &[aria-checked="true"] {
-      .radioBar-3w9XY-, .radioBar-1XgZqD {
+      :is(.radioBar-3w9XY-, .radioBar-1XgZqD) {
         --radio-bar-accent-color: var(--header-primary);
         > div:not([class*="-"]) > svg:not(.icon-3UbRUF), .radioBarIcon-EiCq-C>svg {
           border-radius: 50%;
@@ -13251,10 +13269,10 @@ html.theme-light {
             border-color: #cdcdcd;
           }
         }
-        .colorStandard-21JIj7, .title-1yyp9V, .text-md-medium-2n7Vn5 {
+        :is(.colorStandard-21JIj7, .title-1yyp9V, .text-md-medium-2n7Vn5) {
           color: var(--radio-bar-accent-color) !important;
         }
-        .colorHeaderSecondary-g5teka, .icon-1ykL9s, .size14-3fJ-ot, .text-sm-normal-AEQz4v {
+        :is(.colorHeaderSecondary-g5teka, .icon-1ykL9s, .size14-3fJ-ot, .text-sm-normal-AEQz4v) {
           color: var(--header-secondary) !important;
         }
       }
