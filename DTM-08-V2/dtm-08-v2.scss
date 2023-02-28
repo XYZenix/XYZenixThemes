@@ -1014,6 +1014,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         a {
           pointer-events: none;
           .channel-3prF2u {
+            color: #787C83;
             pointer-events: all;
             padding-left: 4px;
             padding-right: 32px;
@@ -1028,20 +1029,20 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         +.flex-2S1XBF {
           margin-left: 4px;
         }
-        .theme-light & {
-          background: linear-gradient(#D2D4D9, #DADCE1 50%, #E1E3E7 50%, #EBECEF);
-           box-shadow: 0 1px #fffb, inset 0 1px 4px #0006;
-          &:after {
-            background-image: linear-gradient(#0000,#fff8 90%, #0000);
-          }
-          &:before {
-            background-image: radial-gradient(#0001, #0000 1px);
-          }
-          .contents-3NembX {
-            color: #4DBCFC;
-          }
-        }
-        .theme-dark & {
+        // .theme-light & {
+        //   background: linear-gradient(#D2D4D9, #DADCE1 50%, #E1E3E7 50%, #EBECEF);
+        //    box-shadow: 0 1px #fffb, inset 0 1px 4px #0006;
+        //   &:after {
+        //     background-image: linear-gradient(#0000,#fff8 90%, #0000);
+        //   }
+        //   &:before {
+        //     background-image: radial-gradient(#0001, #0000 1px);
+        //   }
+        //   .contents-3NembX {
+        //     color: #4DBCFC;
+        //   }
+        // }
+        .theme-dark &, .theme-light & {
           background: linear-gradient(#101215, #14161A 50%,#101215 50%, #0D0E10);
           box-shadow: inset 0 1px 4px #0008, 0 1px #fff3, 0 0 0 1px #fff1;
           &:after {
@@ -1193,6 +1194,10 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
       background: linear-gradient(#202329, #272B31 50%, #2F333A 50%, #373B42);
       box-shadow: inset 0 1px 5px black, 0 1px #fff3;
       border-radius: 3px;
+      .theme-light & {
+        background: linear-gradient(#DADCE1, #EBECEF 50%, #F1F1F4 50%, #FFF);
+        box-shadow: inset 0 1px 5px #0006, 0 1px #fff;
+      }
     }
     .button-12Fmur.enabled-9OeuTA {
       cursor: default;
@@ -1629,7 +1634,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         }
         // attach btn + spotify
         .attachButtonPlay-1ATmb5 {
-          fill: #84b82d;
+          fill: #4CD99A;
         }
         // reply
         &.hasReply-16cIUP {
@@ -1666,7 +1671,8 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
       // follow bar
       .wrapper-2SplAX {
         background: transparent;
-        margin-top: 10px;
+        margin-top: 17px;
+        margin-bottom: 17px;
         padding: 16px 0;
         .theme-dark & .lookFilled-1H2Jvj.colorPrimary-2-Lusz {
           box-shadow: inset 0 1px 2px #000, 0 1px #fff6;
@@ -2022,16 +2028,18 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
                 z-index: 2;
                 border-radius: 3px;
                 text-shadow: 0 0 8px;
-                opacity: .7;
+                opacity: .8;
                 color: #fff;
-                transition: .18s opacity;
-                &:hover {
+                transition: .18s opacity, .18s text-shadow, .18s box-shadow;
+                &:hover:not(:is(:disabled, .activeButton-2K2Fwx)) {
                   background: #0000;
                   opacity: 1;
+                  text-shadow: 0 0 8px, 0 0 8px #fff8;
                 }
                 &.activeButton-2K2Fwx {
                   background: #0000;
                   box-shadow: inset 0 0 0 1px #fffb, inset 0 0 4px #fff8, 0 0 4px #fff8;
+                  opacity: 1;
                 }
                 &:disabled {
                   pointer-events: none;
@@ -2229,10 +2237,10 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
   // rich embed
   .embed-hKpSrO:not(.inlineMediaEmbed-1m3ApS) {
     border-radius: 5px;
-    background: linear-gradient(rgba(32 35 41/0.95) 0%, rgba(63 67 75/0.95) 50%, rgba(53 53 53/0.95) 50%, rgba(47 51 58/0.95) 100%);
+    background: linear-gradient(#202329 0%, #3F434B 50%, #2F333A 50%, #272B31 100%);
     box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0008, 0 1px 3px #000;
     .theme-light & {
-      background: linear-gradient(#dcdcdcf2 0%, #efefeff2 50%, #e0e0e0f2 50%, #d8d8d8f2 100%);
+      background: linear-gradient(#DADCE1 0%, #F1F1F4 50%, #E1E3E7 50%, #DADCE1 100%);
       box-shadow: inset 0 0 0 1px #0004, 0 0 0 1px #fff8, 0 1px 3px #0005
     }
   }
