@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "146";
-$themeDate: "Mar 1, 2023";
+$themeVersion: "147";
+$themeDate: "Mar 2, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -26,7 +26,7 @@ $profilesV2: true;
 // old role tags
 $useOldRoleStyling: false;
 // ignore this
-$debugVC: false;
+$debugVC: true;
 @if $BlurpleStyle == 1 {
   $blurple: #5865F2;
 }
@@ -2448,6 +2448,7 @@ html.theme-light {
         .avControls-1rQROI.buttonSpacing-ZuQU_D {
           width: 32px;
           height: 32px;
+          margin-left: 2px;
         }
         .sizeMedium-2bFIHr {
           border-radius: 3px;
@@ -2510,6 +2511,14 @@ html.theme-light {
           }
           &:active {
             background: var(--red-active);
+          }
+        }
+        .button-ejjZWC.lookFilled-1H2Jvj.primaryButtonColor-3yAd8m+.buttonSpacing-ZuQU_D.contextMenuContainer-1RO4DQ {
+          display: none;
+          +.unmasked-3zpww7.buttonSpacing-ZuQU_D {
+            display: block !important;
+            margin-left: 0;
+            margin-right: -1px;
           }
         }
         #{$controlIcon} {
@@ -6927,6 +6936,61 @@ html.theme-light {
     --text-danger: var(--red);
     .h5-2feg8J.eyebrow-I4BG42 {
       display: flex;
+    }
+  }
+  #voice-\&-video-tab {
+    .select-Zz0IcO {
+      &:has(.deviceOptionCertified-3nW5Y7) {
+        .value-2en4z7:before {
+          content: "Certified";
+          background-color: #7289da;
+          border-radius: 5px;
+          color: #fff;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: normal;
+          line-height: 12px;
+          padding: 4px 10px;
+          text-transform: uppercase
+        }
+        .deviceOptionCertified-3nW5Y7 {
+          position: absolute;
+          width: 0;
+          height: 0;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  @at-root {
+    .popout-15UxD6.none-1rXy4P.scrollerBase-1Pkza4 {
+      .option-Uc12mm {
+        &:has(.deviceOptionCertified-3nW5Y7) {
+          .deviceOption-2OoVjO:before {
+            content: "Certified";
+            background-color: #7289da;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: normal;
+            line-height: 12px;
+            padding: 4px 10px;
+            margin-right: 8px;
+            text-transform: uppercase
+          }
+          .deviceOptionCertified-3nW5Y7 {
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+          }
+        }
+      }
     }
   }
 }
