@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "149";
-$themeDate: "Mar 3, 2023";
+$themeVersion: "150";
+$themeDate: "Mar 4, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -905,7 +905,8 @@ html.theme-light {
     --brand-500: var(--blurple);
   }
   [fill="hsl(235, calc(var(--saturation-factor, 1) * 85.6%), 64.7%)"],
-  [fill="var(--brand-500)"] {
+  [fill="var(--brand-500)"],
+  [fill="hsl(234.94,85.56%,64.71%)"] {
     fill: var(--blurple) !important;
   }
   [fill="hsl(139, calc(var(--saturation-factor, 1) * 47.3%), 43.9%)"],
@@ -2161,13 +2162,16 @@ html.theme-light {
       &::-webkit-scrollbar {
         width: 0;
       }
-      .labelContainer-35-WEd {
+      :is(.labelContainer-35-WEd, .item-5ApiZt) {
         margin: 0;
         color: #99aab5;
         padding: 4px 8px;
         min-height: 28px;
         border-radius: 0;
         font-size: 13px;
+        .statusItem-2a1giL {
+          padding: 0;
+        }
         .theme-dark & {
           color: rgba(255,255,255,.6);
         }
@@ -2179,6 +2183,11 @@ html.theme-light {
             color: #fff;
           }
         }
+      }
+      .item-5ApiZt>.labelContainer-35-WEd {
+        padding: 0;
+        min-height: 0;
+        color: inherit;
       }
       .colorDanger-3umuSx {
         color: var(--red) !important;
@@ -5807,7 +5816,7 @@ html.theme-light {
           --profile-theme-color-dark: hsl(23,calc(var(--saturation-factor,1)*78%),37.5%);
         }
         // streaming
-        &:has(.pointerEvents-9SZWKj[fill="#593695"]) {
+        &:has(.pointerEvents-2KjWnj[fill="#593695"]) {
           --profile-theme-color-default: hsl(262.1,calc(var(--saturation-factor,1)*46.8%),39.8%);
           --profile-theme-color-light: hsl(262,calc(var(--saturation-factor,1)*33.6%),47.8%);
           --profile-theme-color-dark: hsl(262,calc(var(--saturation-factor,1)*46.9%),37.6%);
@@ -6990,6 +6999,14 @@ html.theme-light {
           pointer-events: none;
         }
       }
+    }
+    .notches-2w7UZJ.gray-3wP137 {
+      color: var(--background-primary);
+    }
+  }
+  #streamer-mode-tab {
+    .formNotice-1JW4h2 {
+      background: var(--background-secondary);
     }
   }
   @at-root {
@@ -9152,6 +9169,25 @@ html.theme-light {
   .qrCodeOverlay-2bLtKl img {
     display: block;
     content: url("https://cdn.discordapp.com/attachments/733624227378495488/978708259731030066/36d4b341723daffd4a372e1b19591da1.png");
+  }
+}
+// slider
+@at-root {
+  .bar-1Bhnl9, .bar-2H7Q9u {
+    &[style="background: rgb(35, 165, 90);"] {
+      background: var(--green) !important;
+      .theme-light & {
+        background: #a1dac0 !important;
+      }
+    }
+    .barFill-2Bh7CX, .barFill-3RgCsY {
+      &[style^="background: rgb(240, 178, 50);"] {
+        background: var(--yellow) !important;
+        .theme-light & {
+          background: #fdd38d !important;
+        }
+      }
+    }
   }
 }
 // you have been invited to join this server dialog
