@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "371";
+$themeVersion: "372";
 $themeDate: "Mar 16, 2023";
 
 @use "sass:color";
@@ -9731,9 +9731,6 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         text-align: left;
         background: none;
         border-bottom: solid 1px #f6f6f7;
-        &.featureProfile-2h92hd {
-          border-top: solid 1px #f6f6f7;
-        }
         .theme-dark & {
           border-color: #ffffff0f;
         }
@@ -9778,7 +9775,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         &.featurePremiumGuild-2uV6-N .featureImage-91H2fC {
           content: url(https://cdn.discordapp.com/attachments/733624227378495488/994480902904234044/boost.svg);
         }
-        :is(.featureVideoBackgrounds-3-ItPq, .featurePerGuildProfile-3nTrFP, .stickers-2JFQr2, .featurePremiumGuild-2uV6-N, .featureLongerMessageContent-4BIM8v, .featureMoreServers-3eY3SW) {
+        :is(.featureVideoBackgrounds-3-ItPq, .featurePerGuildProfile-3nTrFP, .stickers-2JFQr2, .featurePremiumGuild-2uV6-N, .featureLongerMessageContent-4BIM8v, .featureMoreServers-3eY3SW, .featureClientThemes-vi_2eN) {
           display: none;
         }
       }
@@ -13373,6 +13370,9 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
     .hero-1gKM4P {
       background: none;
       padding: 0;
+      .theme-light &, .theme-light & .heroHeading-2yVSUj {
+        color: #000 !important;
+      }
     }
     .ctaWrapper-4Js5Q6.ctaWrapperNormal-1H2ebY {
       border-radius: 3px;
@@ -13474,9 +13474,11 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         padding-bottom: 5px;
         text-align: left;
         background: none;
+        border-left: none;
+        border-right: none;
         border-bottom: solid 1px #f6f6f7;
-        &.featureProfile-2h92hd {
-          border-top: solid 1px #f6f6f7;
+        &:last-child {
+          border-bottom: none;
         }
         .theme-dark & {
           border-color: #ffffff0f;
@@ -13523,12 +13525,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         &.featurePremiumGuild-2uV6-N .featureImage-91H2fC {
           content: url(https://cdn.discordapp.com/attachments/733624227378495488/994480902904234044/boost.svg);
         }
-        &.featureVideoBackgrounds-3-ItPq,
-        &.featurePerGuildProfile-3nTrFP,
-        &.stickers-2JFQr2,
-        &.featurePremiumGuild-2uV6-N,
-        &.featureLongerMessageContent-4BIM8v,
-        &.featureMoreServers-3eY3SW {
+        &:is(.featureVideoBackgrounds-3-ItPq, .featurePerGuildProfile-3nTrFP, .stickers-2JFQr2, .featurePremiumGuild-2uV6-N, .featureLongerMessageContent-4BIM8v, .featureMoreServers-3eY3SW, .featureClientThemes-vi_2eN) {
           display: none;
         }
       }
