@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 12";
-$themeDate: "Mar 18, 2023";
+$themeVersion: "Alpha 13";
+$themeDate: "Mar 20, 2023";
 
 @use "sass:color";
 
@@ -1678,6 +1678,17 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
           text-align: center;
         }
       }
+      // annoying hand
+      .animation-1GAstp {
+        display: none;
+      }
+      // attachment box
+      @at-root .upload-vLbqu- {
+        .theme-dark & {
+          background: linear-gradient(#3F434B, #2F333A 50%, #272B31 50%, #2F333A);
+          box-shadow: inset 0 1px #fff2, inset 0 0 0 1px #fff1, 0 0 0 1px #000b, 0 1px 4px #0008;
+        }
+      }
       // follow bar
       .wrapper-2SplAX {
         background: transparent;
@@ -2199,11 +2210,11 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
   }
   .message-2CShn3 {
     // action buttons
-    .wrapper-2vIMkT {
+    @at-root .wrapper-2vIMkT {
       border-radius: 3px;
       .theme-dark & {
-        background: linear-gradient(to bottom, #373B42 0%,#272B31 49%,#202329 50%,#14161A 100%);
-        box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000b, 0 1px 3px #000;
+        background: linear-gradient(to bottom, #373B42 0%,#272B31 49%,#202329 50%,#2F333A 100%);
+        box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000b, 0 1px 3px #000 !important;
         .button-3bklZh {
           border-radius: 3px;
           &:hover {
@@ -2525,7 +2536,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         }
         .info-3pQQBb {
           &:before {
-            content: "New DTM-08 #{$themeVersion} \A Updated on #{$themeDate}";
+            content: "DTM-08 V2 #{$themeVersion} \A Updated on #{$themeDate}";
             font-size: 12px;
             color: #fff8;
             text-transform: none;
@@ -3642,12 +3653,17 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
   }
   .container-3EtAkD {
     background: linear-gradient(#2F333A, #202329 50%, #191C21 50%, #272B31);
-    box-shadow: inset 0 1px #fff2, inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 1px 4px #0008;
+    box-shadow: inset 0 1px #fff2, inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 1px 2px #000b, inset 0 9999px 0 0 #0000, 0 1px #fff2;
     border: none;
     border-radius: 2px;
-    transition: .18s;
+    transition: .5s;
     &:hover {
-      box-shadow: inset 0 1px #7289da, inset 0 0 0 1px #7289da, 0 0 0 1px #000, 0 1px 4px #0008;
+      transition: .08s;
+      box-shadow: inset 0 1px #7289da, inset 0 0 0 1px #7289da, 0 0 0 1px #000, 0 1px 2px #000b, inset 0 9999px 0 0 #0000, 0 1px #fff2;
+    }
+    &:active {
+      transition: .08s;
+      box-shadow: inset 0 0 0 1px #fff1, inset 0 0 0 0 #0000, 0 0 0 1px #000, 0 0 0 #000b, inset 0 9999px 0 0 #0002, 0 2px #fff2;
     }
     .icon-2DGsye {
       box-shadow: inset 0 1px 4px #0008, 0 1px #fff3;
