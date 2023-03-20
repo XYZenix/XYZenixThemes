@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "373";
-$themeDate: "Mar 18, 2023";
+$themeVersion: "374";
+$themeDate: "Mar 20, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -3948,6 +3948,39 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
   }
   .sectionDivider-189lqb+.containerDefault-3TQ5YN+.containerDefault-YUSmu3+.containerDefault-YUSmu3~.voiceChannelsButton-SRmgo8 .voiceChannelsToggleIcon-2RPGsz {
     transform: rotateX(180deg);
+  }
+  // ripple
+  .ripple-2bsDhb {display:none!important}
+  // channel emoji thing
+  #app-mount .selected-2TbFuo {
+    .wrapper-NhbLHG {
+      cursor: default !important;
+    }
+    .content-1gYQeQ {
+      border-left-color: var(--blurple) !important;
+      .theme-dark & {
+        background: linear-gradient(to right, var(--background-secondary-alt) 85%, var(--background-secondary)) !important;
+      }
+      .theme-light & {
+        background: linear-gradient(to right, var(--background-tertiary) 85%, #0000) !important;
+      }
+    }
+    a {
+      cursor: default !important;
+    }
+    .mainContent-20q_Hp {
+      opacity: 1 !important;
+      &:before {
+        cursor: default !important;
+      }
+    }
+    .emojiColorFill-3g46kH {
+      mask: linear-gradient(to right, #000 85%, #0000);
+      -webkit-mask: linear-gradient(to right, #000 85%, #0000);
+    }
+  }
+  .emojiColorFill-3g46kH {
+    transition: 0s;
   }
 }
 //some dm sidebar shit and other things idk
