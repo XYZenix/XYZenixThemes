@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 17";
+$themeVersion: "Alpha 18";
 $themeDate: "Mar 21, 2023";
 
 @use "sass:color";
@@ -4036,6 +4036,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
               background: #0004;
               margin: 0;
             }
+            padding-right: 4px !important;
             &:not(:hover) {
               padding-right: 12px !important;
               &::-webkit-scrollbar {
@@ -4556,4 +4557,87 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
     90% {box-shadow: 0 0 0 3px #339CCB}
     100% {box-shadow: 0 0 0 3px #339CCB}
  }
+}
+// party mode
+@at-root {
+  .container-3aTfKk {
+    background: linear-gradient(#3F434B,#191C21);
+    box-shadow: inset 0 1px #fff4, inset 0 0 0 1px #fff1, 0 1px 3px #000;
+    border-radius: 3px;
+    text-shadow: 0 -1px #0008;
+    .theme-light & {
+      background: linear-gradient(#ffffff,#E1E3E7);
+      box-shadow: inset 0 1px #fff, 0 1px 3px #0008;
+      text-shadow: 0 1px #fff8;
+    }
+    .progress-1J56zN {
+      background: #0004 !important;
+      box-shadow: inset 0 1px 2px #0008, 0 1px #fff2;
+      border-radius: 1px;
+      .theme-light & {
+        background: #0001 !important;
+        box-shadow: inset 0 1px 2px #0004, 0 1px #fff8;
+      }
+    }
+    .progressBar-1T6LYX {
+      border-radius: 1px;
+      background: linear-gradient(#7B8BCA,#5667A3);
+      box-shadow: inset 0 1px #fff5;
+      &[style*="green"] {
+        background: linear-gradient(#3AC78B,#297E58);
+      }
+      &[style*="yellow"] {
+        background: linear-gradient(#FFBB73,#D48B02);
+      }
+      &[style*="red"] {
+        background: linear-gradient(#EF4848,#B92C2C);
+      }
+      &[style*="orange"] {
+        background: linear-gradient(#F68F68,#D4631B);
+      }
+    }
+  }
+  .comboNameplate-2LHfRI {
+      background: linear-gradient(#202329,#101215);
+      border: solid 1px;
+      box-shadow: inset 0 0 5px, 0 0 5px;
+      text-shadow: 0 0 3px;
+    --status-green-600: #43b581;
+    --status-red-500: #f04747;
+    .theme-light & {
+        background: linear-gradient(#fff,#EBECEF);
+        text-shadow: none;
+    }
+  }
+  .comboValue-1MDc9T {
+      animation: 5s infinite combo-rainbow;
+      .theme-light & {
+          animation: 5s infinite combo-rainbow-light;
+      }
+  }
+  .comboNameplate-2LHfRI .tip-WcKlNf {
+      text-shadow: none;
+  }
+  .comboSquare-12yWYj {
+      box-shadow: 0 0 5px 5px;
+      border-radius: .2px;
+  }
+  @keyframes combo-rainbow {
+      0% {color: #f88}
+      16% {color:#ff8}
+      33% {color:#8f8}
+      50% {color:#8ff}
+      66% {color:#88f}
+      83% {color:#f8f}
+      100% {color:#f88}
+  }
+  @keyframes combo-rainbow-light {
+      0% {color: #B22}
+      16% {color:#BB2}
+      33% {color:#2B2}
+      50% {color:#2BB}
+      66% {color:#22B}
+      83% {color:#B2B}
+      100% {color:#B22}
+  }
 }
