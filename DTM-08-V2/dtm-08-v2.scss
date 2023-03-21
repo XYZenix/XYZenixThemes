@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 18";
-$themeDate: "Mar 21, 2023";
+$themeVersion: "Alpha 19";
+$themeDate: "Mar 22, 2023";
 
 @use "sass:color";
 
@@ -1361,7 +1361,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
     .theme-dark & {
       background: linear-gradient(#202329,#272B31 50%,#191C21 50%,#202329);
       border: solid 1px;
-      border-image: linear-gradient(#555,#111) 1;
+      border-image: linear-gradient(#494E56,#101215) 1;
       box-shadow: inset 0 0 0 1px #f0474788, inset 0 1px 3px #000;
     }
     &.local-29aZ6k {
@@ -1407,11 +1407,15 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
 
     }
     // search bar
-    @at-root .container-1SX9VC, .container-2oNtJn, .searchBar-jGtisZ, .searchBox-3IjAC1 {
+    @at-root :is(.container-1SX9VC, .container-2oNtJn, .searchBar-jGtisZ, .searchBox-3IjAC1) {
       background: linear-gradient(to bottom,#14161A 0%,#191C21 50%,#202329 50%,#202329 100%);
       box-shadow: inset 0 1px 3px #0008, 0 1px #fff2, 0 0 0 1px #fff1;
       border-radius: 3px;
       transition: .18s;
+      .theme-light & {
+        background: linear-gradient(to bottom, #D2D4D9 0%, #E1E3E7 50%, #EBECEF 50%, #F1F1F4 100%);
+        box-shadow: inset 0 1px 3px #0008, 0 1px #fff8;
+      }
     }
     .container-2oNtJn {
       margin: 1px;
@@ -1873,6 +1877,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
           &[style="color: var(--text-muted);"] {
             text-shadow: 0 -1px #000b;
             color: #92969B !important;
+            .theme-light & {text-shadow: 0 1px #fffb}
           }
         }
         .separator-8ngZ3p {
@@ -1885,41 +1890,54 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
           border-radius: 2px 0 0 0;
           margin-right: 1px;
           box-shadow: inset -1px 0 #0008;
+          .theme-light & {box-shadow: inset -1px 0 #0004}
           &:hover {
             background: #fff1;
+            .theme-light & {background:#fff4}
           }
           &:active {
             background: linear-gradient(#191C21, #202329 50%, #2F333A 50%, #373B42);
             box-shadow: 0 -1px #0008, inset -1px 0 #0008;
+            .theme-light & {background: linear-gradient(#BEC1C8, #D2D4D9 50%, #E1E3E7 50%, #F1F1F4);box-shadow: 0 -1px #0002, inset -1px 0 #0004}
           }
         }
         .mentionButton-3C5YMI {
           box-shadow: -1px 0 #fff1, inset -1px 0 #0008;
+          .theme-light & {box-shadow: -1px 0 #fffb, inset -1px 0 #0004}
           &:hover {
             background: #fff1;
+            .theme-light & {background:#fff4}
           }
           &:active {
             background: linear-gradient(#191C21, #202329 50%, #2F333A 50%, #373B42);
             box-shadow: 0 -1px #0008, -1px 0 #fff2, inset -1px 0 #0008;
+            .theme-light & {background: linear-gradient(#BEC1C8, #D2D4D9 50%, #E1E3E7 50%, #F1F1F4);box-shadow: 0 -1px #0002,-1px 0 #fff2, inset -1px 0 #0004}
           }
         }
         .closeButton-3IEry2 {
           box-shadow: -1px 0 #fff1;
+          .theme-light & {box-shadow: -1px 0 #fffb}
           border-radius: 0 2px 0 0;
           &:hover {
             background: #fff1;
+            .theme-light & {background:#fff4}
           }
           &:active {
             background: linear-gradient(#191C21, #202329 50%, #2F333A 50%, #373B42);
             box-shadow: 0 -1px #0008, -1px 0 #fff2;
+            .theme-light & {background: linear-gradient(#BEC1C8, #D2D4D9 50%, #E1E3E7 50%, #F1F1F4);box-shadow: 0 -1px #0002, inset -1px 0 #fff4}
           }
         }
       }
-      .replyBar-1oi75v, .threadSuggestionBar-3ExSyc, .bar-2MWHzg {
+      :is(.replyBar-1oi75v, .threadSuggestionBar-3ExSyc, .bar-2MWHzg) {
         border-radius: 3px 3px 0 0;
         border: solid 1px #000;
         background: linear-gradient(#3F434B, #2F333A 50%, #272B31 50%, #191C21);
-        box-shadow: inset 0 0 0 1px #fff1, 0 0 0 1px #fff1
+        box-shadow: inset 0 0 0 1px #fff1, 0 0 0 1px #fff1;
+        .theme-light & {
+          border: solid 1px #9ea1a9;
+          background: linear-gradient(#E1E3E7, #F1F1F4 50%, #DADCE1 50%, #E1E3E7);
+        }
       }
       .threadSuggestionBar-3ExSyc {
         border-radius: 0;
@@ -2064,22 +2082,22 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
               }
               .membersGroup-2eiWxl {
                 .theme-light & {
-                  background: linear-gradient(#0000, #0002);
+                  background: linear-gradient(#0000, #0001);
                   box-shadow: inset 0 -1px #0002, 0 1px #fffb;
                   &:hover {
-                    background: linear-gradient(#0000, #0004);
+                    background: linear-gradient(#0000, #0002);
                   }
                   span {
                     text-shadow: 0 1px #fff6;
                   }
                 }
-                background: linear-gradient(#0000, #494E5666);
-                box-shadow: inset 0 -1px #0008, 0 1px #494e56bb;
+                background: linear-gradient(#0000, #0004);
+                box-shadow: inset 0 -1px #0008, 0 1px #fff1;
                 padding-top: 16px;
                 margin-bottom: 8px;
                 height: 36px;
                 &:hover {
-                  background: linear-gradient(#0000, #494E56aa);
+                  background: linear-gradient(#0000, #0006);
                 }
                 span {
                   font-weight: 400;
@@ -2328,6 +2346,63 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
           &.selected-KQBgNS {
             box-shadow: inset 0 0 0 1px #7289da, inset 0 0 4px #7289da, 0 0 4px #7289da;
           }
+        }
+      }
+    }
+  }
+  // reactions
+  :is(.reaction-102jx9, .reaction-3vwAF2, .addReactButton-3bSQb6, .buttons-BK5gED .button-ejjZWC .contents-3NembX) {
+    background: linear-gradient(#383838,#272727);
+    box-shadow: 0 0 0 .5px #000, 0 1px 3px #0008, inset 0 0 0 1px #fff2;
+    border-radius: 2px;
+    border: none;
+    .theme-light & {
+      background: linear-gradient(#f3f3f3,#dbdbdb);
+      border: solid 1px #bbb;
+      border-bottom-color: #999;
+      box-shadow: inset 0 1px #fff;
+      border-radius: 3px;
+    }
+    &:hover {
+      background: linear-gradient(#3d3f44,#2c2d30);
+      box-shadow: inset 0 0 0 1px #fff2, 0 1px 2px #000;
+      .theme-light & {
+        background: linear-gradient(#f5f5f5,#eee);
+        box-shadow: inset 0 1px #fff, 0 1px 2px #0008;
+        border-color: #ccc;
+      }
+    }
+    &:active {
+      background: linear-gradient(#1e1e1e,#272727);
+      box-shadow: 0 0 0 1px #fff1, inset 0 1px 4px #000b;
+      .theme-light & {
+        background: linear-gradient(#c9c9c9,#e9e9e9);
+        box-shadow: inset 0 1px 3px #0008;
+        border-color: #bbb;
+      }
+    }
+    &:is(.reactionMe-2zhiyZ, .reactionMe-1PwQAc) {
+      background: linear-gradient(#4e5b82,#33384a);
+      .theme-light & {
+        background: linear-gradient(#aec8ff,#97a5d1);
+        border: solid 1px #839acb;
+        border-bottom-color: #5b6b8d;
+        box-shadow: inset 0 1px #fff6;
+      }
+      &:hover {
+        background: linear-gradient(#5e72af,#3d4970);
+        .theme-light & {
+          background: linear-gradient(#bed0ff,#afc8ff);
+          box-shadow: inset 0 1px #fff6, 0 1px 2px #0008;
+          border-color: #88a4e3;
+        }
+      }
+      &:active {
+        background: linear-gradient(#26304c,#292f46);
+        .theme-light & {
+          background: linear-gradient(#7995cf,#98aae1);
+          box-shadow: inset 0 1px 3px #0008;
+          border-color: #6b85c1;
         }
       }
     }
@@ -2742,6 +2817,9 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
               }
               animation: dotAnim 4s infinite ease-out;
             }
+          }
+          .background-Gjdjzm {
+            display: none;
           }
         }
         .info-3pQQBb {
