@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "375";
+$themeVersion: "376";
 $themeDate: "Mar 20, 2023";
 
 @use "sass:color";
@@ -6713,12 +6713,12 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             clip-path: path("M115 0H0V91H81C81 85.4771 85.4771 81 91 81C96.5229 81 101 85.4771 101 91H115V0Z M81 91H0V115H115V91H101C101 96.5228 96.5229 101 91 101C85.4771 101 81 96.5228 81 91Z");
           }
           // avatar decos
-          .avatarDecoration-2OJuSI {
+          .avatarDecoration-2Wb1Au {
             overflow: visible;
             .avatarStack-3Bjmsl {
               width: calc(90px * var(--decoration-to-avatar-ratio));
               height: calc(90px * var(--decoration-to-avatar-ratio));
-              margin-top: 4px;
+              margin-top: 5px;
               margin-left: 5px;
               clip-path: path("M78 89H0V108H108V89H98C98 94.5228 93.5229 99 88 99C82.4771 99 78 94.5228 78 89Z M108 0H0V89H78C78 83.4771 82.4771 79 88 79C93.5229 79 98 83.4771 98 89H108V0Z");
             }
@@ -8647,9 +8647,13 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
     @if $experiment13 == 2 {
       .accountProfileCard-lbN7n- {
         display: flex;
+        align-items: flex-start;
+        justify-content: start;
         flex-direction: row-reverse;
         .avatar-3mTjvZ {
-          position: unset;
+          top: unset;
+          left: unset;
+          position: relative;
           width: 128px !important;
           height: 128px !important;
           margin: 0 !important;
@@ -8658,11 +8662,15 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           .theme-dark & {
             border-color: var(--background-modifier-accent);
           }
-          svg {
+          svg:not(.avatarDecoration-2Wb1Au) {
             width: 128px !important;
             height: 128px !important;
           }
-          foreignObject {
+          .avatarDecoration-2Wb1Au foreignObject {
+            width: calc(128px * var(--decoration-to-avatar-ratio));
+            height: calc(128px * var(--decoration-to-avatar-ratio));
+          }
+          .mask-1y0tyc.svg-1G_H_8 foreignObject {
             width: 92px;
             height: 92px;
             mask: none;
@@ -10851,6 +10859,10 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           }
         }
       }
+      .upsellWrapper-2jvKpl {
+        position: relative;
+        background: none;
+      }
       .connectionHeader-Ixbb1s {
         [alt] {
           margin: -572px -610px -4500px -16px;
@@ -10921,6 +10933,22 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         [alt="Riot Games"] {
           background-color: #af1924;
           background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1007053668836720710/991f3682123857c83ad3252a30023b1a.svg)
+        }
+        [alt="Instagram"] {
+          background-color: #f50b70;
+          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1087781163873095771/1f4cc209b709b7bad525cbb4c69e5fa5.png)
+        }
+        [alt="PayPal"] {
+          background-color: #113984;
+          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1087780365210492928/bd4ee4c968ce7d09c106a45e49dcf11e.png)
+        }
+        [alt="eBay"] {
+          background-color: #e53238;
+          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1087780527228059799/40ae2087fce226fe51856c6b5c85524f.png);
+        }
+        [alt="TikTok"] {
+          background-color: #222;
+          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/1087783008393773118/image.png);
         }
       }
     }
