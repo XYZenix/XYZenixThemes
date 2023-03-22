@@ -7,12 +7,14 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "379";
+$themeVersion: "380";
 $themeDate: "Mar 22, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
 $blurpleV2: #5865F2;
+
+$HomeTabKillswitch: false;
 // 0 = no message style changes / 1 = old message style / 2 = new message style
 $messageStyle: 2;
 // 0 = Old Blurple / 1 = New Blurple
@@ -6923,6 +6925,22 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
                     color: #fffe;
                   }
                 }
+                // pronouns
+                &:has(.eyebrow-1Shfyi+.text-md-normal-2rFCH3:last-child) {
+                  background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
+                  background-size: 270px 213px;
+                  padding-bottom: 10px;
+                  --text-link: #fff;
+                  .eyebrow-1Shfyi {
+                    color: #fff !important;
+                  }
+                  .text-md-normal-2rFCH3 {
+                    color: #fffb;
+                  }
+                  code {
+                    background: #fff3;
+                  }
+                }
                 // about
                 &:has(.markup-eYLPri) {
                   background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
@@ -7291,6 +7309,17 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
       }
       &.userProfileOuterThemed-3EfHmv {
         padding: 0;
+      }
+      &.userProfileOuterUnthemed-2b2rsv .userProfileInnerThemedWithBanner-2624Yx {
+        .avatar-1YsFQ1 {
+          top: 132px;
+        }
+        .container-1U-qVy {
+          height: calc(200px - 8px);
+        }
+        .badgeList-2pMvZX {
+          margin-left: 8px !important;
+        }
       }
       .userProfileModalInner-3fh3QA {
         &:before {
@@ -10317,6 +10346,9 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           min-width: 520px !important;
           width: min-content !important;
         }
+        >div[style]:not([class]) {
+          min-width: 520px !important;
+        }
       }
       .searchBar-20o6Cf, .input-3O04eu:not(.textarea-_59yqs) {
         background: #0000;
@@ -13200,39 +13232,41 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
   }
 }
 // home tab in servers
-.background-fkKrXt {
-  .theme-dark &, .theme-light & {
-    background: var(--background-primary);
-    .headerBarInner-2pcZSM:after {
-      display: none;
-    }
-  }
-  .interactiveCard-2iMtdk, .container-xwOzwi, .container-2Hi7Km {
-    border-radius: 3px;
-    box-shadow: none;
-    border: solid 1px var(--background-tertiary);
-    background: var(--deprecated-card-editable-bg);
-  }
-  .wrapper-15CKyy {
-    background: none;
-  }
-  // active now
-  .container-xwOzwi {
-    .header-3rasUf {
-      margin-top: 16px;
-      margin-left: 16px;
-    }
-    .container-3HMTms {
-      background: none;
-      border: none;
-      &:hover {
-        .title-3O465_ {
-          text-decoration: underline;
-        }
+@if not $HomeTabKillswitch {
+  .background-fkKrXt {
+    .theme-dark &, .theme-light & {
+      background: var(--background-primary);
+      .headerBarInner-2pcZSM:after {
+        display: none;
       }
     }
-    .emptyStateContainer-xWOMPJ {
+    .interactiveCard-2iMtdk, .container-xwOzwi, .container-2Hi7Km {
+      border-radius: 3px;
+      box-shadow: none;
+      border: solid 1px var(--background-tertiary);
+      background: var(--deprecated-card-editable-bg);
+    }
+    .wrapper-15CKyy {
       background: none;
+    }
+    // active now
+    .container-xwOzwi {
+      .header-3rasUf {
+        margin-top: 16px;
+        margin-left: 16px;
+      }
+      .container-3HMTms {
+        background: none;
+        border: none;
+        &:hover {
+          .title-3O465_ {
+            text-decoration: underline;
+          }
+        }
+      }
+      .emptyStateContainer-xWOMPJ {
+        background: none;
+      }
     }
   }
 }
