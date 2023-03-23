@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "382";
+$themeVersion: "383";
 $themeDate: "Mar 23, 2023";
 
 @use "sass:color";
@@ -428,8 +428,8 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
     --background-modifier-active: rgba(79,84,92,0.24);
     --background-modifier-selected: rgba(79,84,92,0.32);
     --background-modifier-accent: hsla(0,0%,100%,0.06);
-    --background-mentioned: rgba(250,166,26,0.05);
-    --background-mentioned-hover: rgba(250,166,26,0.08);
+    --background-mentioned: hsl(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,0.05);
+    --background-mentioned-hover: hsl(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%,0.08);
     --background-message-hover: rgba(4,4,5,0.07);
     --scrollbar-thin-thumb: #202225;
     --scrollbar-thin-track: #0000;
@@ -1796,7 +1796,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         @if $experiment1 == 0 {
           .theme-dark &, .theme-light & {
             background: none;
-            border: solid 1px #747F8D66;
+            border: solid 1px hsl(213.6,calc(var(--saturation-factor,1)*9.9%),50.4%,0.4);
             color: #fff6;
             .theme-light .sidebar-1tnWFu:not(.theme-dark) & {
               color: #0006;
@@ -1804,9 +1804,9 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             &:is(:hover:not(:disabled), :active:not(:disabled)) {
               background: none;
               @if $BlurpleStyle == 1 {
-                border-color: #5865F288;
+                border-color: hsl(234.9,calc(var(--saturation-factor,1)*85.6%),64.7%,0.53);
               } @else {
-                border-color: #7289da88;
+                border-color: hsl(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%,0.53);
               }
               color: #fff;
               .theme-light .sidebar-1tnWFu:not(.theme-dark) & {
@@ -1816,9 +1816,9 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             &:active:not(:disabled) {
               border-color: var(--blurple);
               @if $BlurpleStyle == 1 {
-                background: #5865F222;
+                background: hsl(234.9,calc(var(--saturation-factor,1)*85.6%),64.7%,0.13);
               } @else {
-                background: #7289da22;
+                background: hsl(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%,0.13);
               }
             }
             &.buttonActive-Uc1jHx {
@@ -2083,6 +2083,141 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             transform: scale(1.25);
             transform-origin: center center;
           }
+        }
+      }
+    }
+    #vc-spotify-player {
+      border-bottom: none;
+      border-top: solid 1px;
+      border-top: solid 1px #DEDEDE;
+      --vc-spotify-green: var(--green);
+      #vc-spotify-titles {
+        .vc-spotify-ellipoverflow {
+          font-size: 12px;
+          line-height: 14px;
+        }
+        .colorStandard-1Xxp1s:not(#vc-spotify-song-title) {
+          color: var(--text-muted);
+        }
+      }
+      .vc-spotify-button-row {
+        .vc-spotify-button {
+          width: 32px;
+          min-width: 32px;
+          border-radius: 0;
+          background-color: var(--background-secondary);
+          border: 1px solid #dedede;
+          svg {
+            color: rgba(46,49,54,.4);
+            width: 22px;
+            height: 22px;
+            .theme-dark & {
+              color: rgba(255,255,255,.2);
+            }
+          }
+          &:hover {
+            svg {
+              color: rgba(46,49,54,1);
+              .theme-dark & {
+                color: rgba(255,255,255,.7);
+              }
+            }
+          }
+          &:is(.vc-spotify-shuffle-on, .vc-spotify-repeat-context, .vc-spotify-repeat-track) {
+            svg {
+              color: var(--green);
+            }
+            &:hover {
+              svg {
+                color: hsl(153.1,calc(var(--saturation-factor,1)*74.2%),55.9%);
+              }
+            }
+          }
+          // icons
+          .vc-spotify-shuffle {
+            path {
+              d: path("M15.3177 5.33835V7.68182H13.9241L11.4541 11.1398L8.98414 7.68182H5.4541V8.68182H8.46952L10.8396 12L8.46952 15.3182H5.4541V16.3182H8.98414L11.4541 12.8602L13.9241 16.3182H15.3177V18.6617L18.1612 15.8182L15.3177 12.9747V15.3182H14.4387L12.0686 12L14.4387 8.68182H15.3177V11.0253L18.1612 8.18182L15.3177 5.33835Z");
+            }
+          }
+          .vc-spotify-previous {
+            path {
+              d: path("M7.68164 5.45455V18.5455H8.68164V12.5959L16.318 18.47V5.53002L8.68164 11.4041V5.45455H7.68164ZM15.318 16.4391L9.54716 12L15.318 7.56089V16.4391Z");
+            }
+          }
+          .vc-spotify-play {
+            path {
+              d: path("M7.63672 3.71457V20.2854L17.1968 12L7.63672 3.71457ZM15.5311 12L8.72763 17.8964V6.10361L15.5311 12Z");
+            }
+          }
+          .vc-spotify-pause {
+            path {
+              d: path("M9.81845 18.5455V5.45454H8.72754V18.5455H9.81845Z M14.1821 5.45454V18.5455H15.273V5.45454H14.1821Z");
+            }
+          }
+          .vc-spotify-next {
+            path {
+              d: path("M15.318 5.45455H16.318V18.5455H15.318V12.5959L7.68164 18.47V5.53002L15.318 11.4041V5.45455ZM8.68164 16.4391L14.4525 12L8.68164 7.56089V16.4391Z");
+            }
+          }
+          &.vc-spotify-repeat-off, &.vc-spotify-repeat-context {
+            .vc-spotify-repeat {
+              path {
+                d: path("M8.00007 5.5C6.61936 5.5 5.50007 6.61929 5.50007 8V8.77273H3.55469L6.00007 13.6635L8.44545 8.77273H6.50007V8C6.50007 7.17157 7.17164 6.5 8.00007 6.5H16.0001C16.8285 6.5 17.5001 7.17157 17.5001 8V8.72727H18.5001V8C18.5001 6.61929 17.3808 5.5 16.0001 5.5H8.00007Z M18.0001 10.3365L15.5547 15.2273H17.5001V16C17.5001 16.8284 16.8285 17.5 16.0001 17.5H8.00007C7.17164 17.5 6.50007 16.8284 6.50007 16V15.2727H5.50007V16C5.50007 17.3807 6.61936 18.5 8.00007 18.5H16.0001C17.3808 18.5 18.5001 17.3807 18.5001 16V15.2273H20.4454L18.0001 10.3365Z");
+              }
+            }
+          }
+          &.vc-spotify-repeat-track {
+            .vc-spotify-repeat {
+              path {
+                d: path("M5.50007 8C5.50007 6.61929 6.61936 5.5 8.00007 5.5H16.0001C17.3808 5.5 18.5001 6.61929 18.5001 8V8.72727H17.5001V8C17.5001 7.17157 16.8285 6.5 16.0001 6.5H8.00007C7.17164 6.5 6.50007 7.17157 6.50007 8V8.77273H8.44545L6.00007 13.6635L3.55469 8.77273H5.50007V8Z M15.5547 15.2273L18.0001 10.3365L20.4454 15.2273H18.5001V16C18.5001 17.3807 17.3808 18.5 16.0001 18.5H8.00007C6.61936 18.5 5.50007 17.3807 5.50007 16V15.2727H6.50007V16C6.50007 16.8284 7.17164 17.5 8.00007 17.5H16.0001C16.8285 17.5 17.5001 16.8284 17.5001 16V15.2273H15.5547Z M9.81836 9.77273H11.5002V14.2273H9.81836V15.2273H14.182V14.2273H12.5002V8.77273H9.81836V9.77273Z");
+              }
+            }
+          }
+          .theme-dark & {
+            border-color: #1c1e22;
+          }
+          .theme-amoled & {
+            border-color: #333;
+          }
+          &:first-child {
+            border-radius: 3px 0 0 3px;
+            border-right: none;
+          }
+          &:last-child {
+            border-radius: 0 3px 3px 0;
+            box-shadow: inset 1px 0 0 #fdfdfd;
+            .theme-dark & {
+              box-shadow: inset 1px 0 0 #373b42;
+            }
+          }
+          &:not(:first-child):not(:last-child) {
+            border-right: none;
+            box-shadow: inset 1px 0 0 #fdfdfd;
+            .theme-dark & {
+              box-shadow: inset 1px 0 0 #373b42;
+            }
+          }
+          &:active {
+            background: #33373C;
+            .theme-light .sidebar-1tnWFu:not(.theme-dark) & {
+              background: #FFFFFF;
+            }
+          }
+        }
+      }
+      @if $forceAmoledDark {
+        .theme-dark & {
+          border-top: solid 1px #333;
+          background: var(--background-secondary-alt);
+        }
+      } @else {
+        .theme-dark & {
+          border-top: solid 1px #1C1E22;
+          background: #282B30;
+        }
+        .theme-amoled & {
+          border-top: solid 1px #333;
+          background: var(--background-secondary-alt);
         }
       }
     }
@@ -4394,10 +4529,10 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
       }
       .mentioned-Tre-dv>.contents-2MsGLg>.messageContent-2t3eCI {
         background: var(--background-mentioned);
-        border-color: #FAA61A;
+        border-color: hsl(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%);
       }
       .automodMessage-265YwJ>.contents-2MsGLg>.messageContent-2t3eCI {
-        background: #f0474722;
+        background: hsl(0,84.9%,61%,0.13);
         border-color: var(--red);
       }
       .replying-eZ7p5z, .ephemeral-2nDdnn {
@@ -7626,6 +7761,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
       .connectedAccountIcon-2szOw- {
         width: 30px;
         height: 30px;
+        filter: #{"saturate(var(--saturation-factor,1))"};
       }
       .connectedAccountOpenIcon-OngaxI {
         clip-path: path("M10.5 2.25v1.5h2.6925L5.82 11.1225 6.8775 12.18 14.25 4.8075V7.5h1.5V2.25H10.5zm3.75 12H3.75V3.75H9v-1.5H3.75c-.8325 0-1.5.675-1.5 1.5v10.5c0 .8284271.67157287 1.5 1.5 1.5h10.5c.8284271 0 1.5-.6715729 1.5-1.5V9h-1.5v5.25z");
@@ -8420,6 +8556,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             padding: 0;
             margin: 0 38px 0 16px;
             height: 54px;
+            min-height: 54px;
             border-bottom: solid 1px #f0f0f0;
             .theme-dark & {border-bottom-color: var(--background-accent)}
             .title-JU0E7C {
@@ -8907,6 +9044,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             margin: 0;
             background-image: url("data:image/svg+xml,%3Csvg fill='rgb(240, 71, 71)' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3EDiscord%3C/title%3E%3Cpath d='M7.5 9.75H6V18.75H7.5V9.75ZM21.75 3H15V0.75C15 0.3 14.7 0 14.25 0H8.25C7.8 0 7.5 0.3 7.5 0.75V3H0.75C0.3 3 0 3.3 0 3.75C0 4.2 0.3 4.5 0.75 4.5H1.5V22.5C1.5 23.4 2.1 24 3 24H19.5C20.4 24 21 23.4 21 22.5V4.5H21.75C22.2 4.5 22.5 4.2 22.5 3.75C22.5 3.3 22.2 3 21.75 3ZM9 1.5H13.5V3H9V1.5ZM19.5 21.75C19.5 22.2 19.2 22.5 18.75 22.5H3.75C3.3 22.5 3 22.2 3 21.75V4.5H19.5V21.75ZM12 8.25H10.5V18.75H12V8.25ZM16.5 9.75H15V18.75H16.5V9.75Z'/%3E%3C/svg%3E");
             background-size: 16px;
+            filter: #{"saturate(var(--saturation-factor,1))"};
             opacity: .6;
             &:hover {
               opacity: 1;
@@ -9669,6 +9807,11 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
     }
     .notches-2w7UZJ.gray-3wP137 {
       color: var(--background-primary);
+    }
+  }
+  :is(#vencordsettings-tab, #vencordplugins-tab, #vencordthemes-tab, #vencordupdater-tab, #vencordsettingssync-tab) {
+    .cardPrimary-pAe8Ed {
+      background: var(--deprecated-card-editable-bg);
     }
   }
   .inputDisabledWarning-g8TAac {
