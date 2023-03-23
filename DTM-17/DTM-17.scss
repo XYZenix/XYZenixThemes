@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "168";
+$themeVersion: "169";
 $themeDate: "Mar 23, 2023";
 
 @use "sass:color";
@@ -5281,6 +5281,16 @@ html.theme-light {
                   --text-link: #fff;
                   .eyebrow-1Shfyi {
                     color: #fff !important;
+                    &:before {
+                      content: "";
+                      width: 16px;
+                      height: 16px;
+                      display: inline-block;
+                      float: left;
+                      background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.00033 2.66666C8.70757 2.66666 9.38585 2.94762 9.88594 3.44771C10.386 3.94781 10.667 4.62609 10.667 5.33333C10.667 6.04057 10.386 6.71885 9.88594 7.21895C9.38585 7.71905 8.70757 8 8.00033 8C7.29308 8 6.6148 7.71905 6.11471 7.21895C5.61461 6.71885 5.33366 6.04057 5.33366 5.33333C5.33366 4.62609 5.61461 3.94781 6.11471 3.44771C6.6148 2.94762 7.29308 2.66666 8.00033 2.66666ZM8.00033 9.33333C10.947 9.33333 13.3337 10.5267 13.3337 12V13.3333H2.66699V12C2.66699 10.5267 5.05366 9.33333 8.00033 9.33333Z' fill='black'/%3E%3C/svg%3E%0A");
+                      filter: var(--profile-title-icon-invert);
+                      margin-right: 4px;
+                    }
                   }
                   .text-md-normal-2rFCH3 {
                     color: #fffb;
@@ -5297,6 +5307,16 @@ html.theme-light {
                   --text-link: #fff;
                   .title-1r9MQ6 {
                     color: #fff !important;
+                    &:before {
+                      content: "";
+                      width: 16px;
+                      height: 16px;
+                      display: inline-block;
+                      float: left;
+                      background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 13V10.5L9.88 2.65C10.07 2.45 10.39 2.45 10.59 2.65L12.35 4.41C12.55 4.61 12.55 4.92 12.35 5.12L4.47 13H2ZM14 13H6.5L8.5 11H14V13Z' fill='black'/%3E%3C/svg%3E%0A");
+                      filter: var(--profile-title-icon-invert);
+                      margin-right: 4px;
+                    }
                   }
                   .text-sm-normal-AEQz4v {
                     color: #fffb;
@@ -5311,8 +5331,18 @@ html.theme-light {
                   background-size: 270px 213px;
                   padding-top: 10px !important;
                   padding-bottom: 10px;
-                  .title-1r9MQ6, .discordIcon-JXet1k {
+                  :is(.title-1r9MQ6, .discordIcon-JXet1k) {
                     color: #fff !important;
+                  }
+                  .title-1r9MQ6:before {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    display: inline-block;
+                    float: left;
+                    background: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2ZM8.5 4V7.79289L10.3536 9.64645L9.64645 10.3536L7.64645 8.35355L7.5 8.20711V8V4H8.5Z' fill='black'/%3E%3C/svg%3E%0A");
+                    filter: var(--profile-title-icon-invert);
+                    margin-right: 4px;
                   }
                   .body-2Fhyoo {
                     color: #fffe;
@@ -5376,6 +5406,22 @@ html.theme-light {
                         background: #ffffff1a !important;
                       }
                     }
+                  }
+                }
+                // connected apps
+                &:has(.connectionsContainer-3cWtT-) {
+                  .title-1r9MQ6:before {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3337 8L13.707 6.14667L13.9337 3.69333L11.527 3.14666L10.267 1.02666L8.00033 2L5.73366 1.02666L4.47366 3.14666L2.06699 3.68666L2.29366 6.14L0.666992 8L2.29366 9.85333L2.06699 12.3133L4.47366 12.86L5.73366 14.98L8.00033 14L10.267 14.9733L11.527 12.8533L13.9337 12.3067L13.707 9.85333L15.3337 8ZM6.66699 11.3333L4.00033 8.66666L4.94033 7.72667L6.66699 9.44667L11.0603 5.05333L12.0003 6L6.66699 11.3333Z' fill='%23737F8D'/%3E%3C/svg%3E%0A");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    filter: grayscale(0.25) brightness(1.25);
+                    margin-right: 4px;
+                  }
+                  .connectedAccountVanityMetadataTag-19Al5z {
+                    border-radius: 2px;
                   }
                 }
                 // roles
