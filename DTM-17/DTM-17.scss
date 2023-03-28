@@ -7,14 +7,13 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "175";
+$themeVersion: "176";
 $themeDate: "Mar 28, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
 $blurpleV2: #5865F2;
 
-$HomeTabKillswitch: false;
 // 0 = no message style changes / 1 = old message style / 2 = new message style
 $messageStyle: 2;
 // 0 = Old Blurple / 1 = New Blurple
@@ -8565,45 +8564,6 @@ html.theme-light {
     }
   }
 }
-@if not $HomeTabKillswitch {
-  // home tab in servers
-  .background-fkKrXt {
-    .theme-dark &, .theme-light & {
-      background: var(--background-primary);
-      .headerBarInner-2pcZSM:after {
-        display: none;
-      }
-    }
-    .interactiveCard-2iMtdk, .container-xwOzwi, .container-2Hi7Km {
-      border-radius: 3px;
-      box-shadow: none;
-      border: solid 1px var(--background-tertiary);
-      background: var(--deprecated-card-editable-bg);
-    }
-    .wrapper-15CKyy {
-      background: none;
-    }
-    // active now
-    .container-xwOzwi {
-      .header-3rasUf {
-        margin-top: 16px;
-        margin-left: 16px;
-      }
-      .container-3HMTms {
-        background: none;
-        border: none;
-        &:hover {
-          .title-3O465_ {
-            text-decoration: underline;
-          }
-        }
-      }
-      .emptyStateContainer-xWOMPJ {
-        background: none;
-      }
-    }
-  }
-}
 // events modal
 .root-1CAIjD.medium-1ywRMv {
   .eventCard-2ZL9GD {
@@ -10660,3 +10620,11 @@ button.videoButton-3NM9Tc.button-ejjZWC.lookBlank-FgPMy6.colorBrand-2M3O3N.grow-
 .snowsgivingLink-1TZi3c {display:none}
 // remove gift button (temporarily until they revert it)
 .inner-NQg18Y .buttons-uaqb-5>.container-3Csys8 {display:none}
+
+// no
+.container-22-IpK {
+  display: none;
+}
+@supports selector(a:has(b)) {
+  .wrapper-NhbLHG:has(.mainContent-20q_Hp[data-list-item-id^="channels___home-tab-"]) {display:none}
+}

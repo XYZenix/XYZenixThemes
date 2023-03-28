@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "390";
+$themeVersion: "391";
 $themeDate: "Mar 28, 2023";
 
 @use "sass:color";
@@ -22,7 +22,6 @@ $blurple: #7289da;
 
 // Experiments:
 $redoSettingsUI: true; // work in progress rework of settings ui
-$HomeTabKillswitch: false; // killswitch for home tab which is getting deprecated
 $messageStyle: 2; // 0 = no message style changes 2 = new message style
 $BlurpleStyle: 0; // 0 = Old Blurple / 1 = New Blurple
 $resizeServers: true; // changes servers from 48x48 to 50x50 (if this breaks stuff, i'm going to disable it)
@@ -15409,45 +15408,6 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
     box-shadow: none;
   }
 }
-// home tab in servers
-@if not $HomeTabKillswitch {
-  .background-fkKrXt {
-    .theme-dark &, .theme-light & {
-      background: var(--background-primary);
-      .headerBarInner-2pcZSM:after {
-        display: none;
-      }
-    }
-    .interactiveCard-2iMtdk, .container-xwOzwi, .container-2Hi7Km {
-      border-radius: 3px;
-      box-shadow: none;
-      border: solid 1px var(--background-tertiary);
-      background: var(--deprecated-card-editable-bg);
-    }
-    .wrapper-15CKyy {
-      background: none;
-    }
-    // active now
-    .container-xwOzwi {
-      .header-3rasUf {
-        margin-top: 16px;
-        margin-left: 16px;
-      }
-      .container-3HMTms {
-        background: none;
-        border: none;
-        &:hover {
-          .title-3O465_ {
-            text-decoration: underline;
-          }
-        }
-      }
-      .emptyStateContainer-xWOMPJ {
-        background: none;
-      }
-    }
-  }
-}
 // search? idk anymore
 .container-2McqkF {
   background: var(--background-primary);
@@ -16519,4 +16479,11 @@ button.videoButton-3NM9Tc.button-ejjZWC.lookBlank-FgPMy6.colorBrand-2M3O3N.grow-
       }
     }
   }
+}
+// no
+.container-22-IpK {
+  display: none;
+}
+@supports selector(a:has(b)) {
+  .wrapper-NhbLHG:has(.mainContent-20q_Hp[data-list-item-id^="channels___home-tab-"]) {display:none}
 }
