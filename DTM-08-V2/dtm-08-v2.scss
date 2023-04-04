@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 30";
-$themeDate: "Mar 31, 2023";
+$themeVersion: "Alpha 31";
+$themeDate: "Apr 4, 2023";
 
 @use "sass:color";
 
@@ -1602,6 +1602,58 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
     }
   }
 }
+// server discovery
+@at-root {
+  .pageWrapper-2PwDoS {
+    background: linear-gradient(to bottom, #080809 0%, #202329 100%);
+    .theme-light & {
+      background: linear-gradient(to bottom, #E1E3E7 0%, #FFF 100%);
+    }
+    // scroller
+    .scroller-3j5xK2 {
+      @include scrollbar;
+    }
+    // banner search bar
+    :is(.searchBox-31Zv9h, .searchBox-pyIJJj) {
+      background: linear-gradient(#14161A 0%, #191C21 50%, #202329 50%, #272B31 100%);
+      box-shadow: 0 0 0 1px #0006, inset 0 0 0 1px #fff2, inset 0 1px 4px #000;
+      border: none;
+      border-radius: 3px;
+      .theme-light & {
+        background: linear-gradient(#E1E3E7 0%, #EBECEF 50%, #F1F1F4 50%, #F8F9FA 100%);
+        box-shadow: 0 0 0 1px #9EA1A9, inset 0 0 0 1px #fffb, inset 0 1px 2px #0004;
+      }
+      .inputWrapper-2K8ds1 .input-3O04eu {
+        background: none !important;
+        box-shadow: none !important;
+      }
+      :is(.searchIcon-34RNw9, .clearIcon-TMIIUa, .input-3O04eu) {
+        color: var(--interactive-normal);
+      }
+    }
+    .categoryPill-1zjNrr {
+      border-radius: 3px;
+    }
+    .loaded-igpmmx .card-2TuZPZ {
+      background: linear-gradient(#3F434B, #202329);
+      box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 0 0 1px #000b, 0 1px 4px #0004, 0 1px 4px #000b;
+      text-shadow: 0 1px 3px #000b;
+      border-radius: 3px;
+      border: none;
+      .theme-light & {
+        background: linear-gradient(#F1F1F4, #E1E3E7);
+        box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 0 0 1px #A5A8B0, 0 1px 4px #0004, 0 1px 4px #0004;
+        text-shadow: 0 1px #fff6;
+      }
+      &:hover {
+        box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 0 0 1px #000b, 0 1px 4px #0004, 0 2px 8px #000b;
+        .theme-light & {
+          box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 0 0 1px #A5A8B0, 0 1px 4px #0004, 0 2px 8px #0004;
+        }
+      }
+    }
+  }
+}
 // library
 @at-root {
   .container-36u7Lw {
@@ -3112,6 +3164,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
     }
     // content
     .contentRegionScroller-2_GT_N {
+      @include scrollbar;
       .theme-dark & {
         background: linear-gradient(#2F333A,#202329) fixed 0 0/cover;
       }

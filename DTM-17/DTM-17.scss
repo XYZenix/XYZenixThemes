@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "180";
-$themeDate: "Apr 1, 2023";
+$themeVersion: "181";
+$themeDate: "Apr 4, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
@@ -2145,6 +2145,9 @@ html.theme-light {
       .item-5ApiZt>.labelContainer-35-WEd {
         padding: 0;
         min-height: 0;
+        color: inherit;
+      }
+      :is(.subtext-1mqKVB, .tipSubtext-qn0l_-) {
         color: inherit;
       }
       .colorDanger-3umuSx {
@@ -5023,11 +5026,13 @@ html.theme-light {
         border-radius: 0;
         overflow-x: hidden;
         min-height: 130px;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png), linear-gradient(var(--profile-theme-color-default) calc(100% - 4px), var(--profile-theme-color-default) calc(100% - 4px)) !important;
+        background-size: 270px 213px, 100% 100% !important;
         html.theme-light & {
-          background: #fbfbfb !important;
+          --profile-bg-secondary: #fbfbfb;
         }
         html.theme-dark & {
-          background: var(--background-secondary) !important;
+          --profile-bg-secondary: #2e3136;
         }
         // inner background
         &:before {
@@ -5046,6 +5051,9 @@ html.theme-light {
             height: 100px;
             min-height: 100px;
             background-color: var(--profile-theme-color-default) !important;
+            &:not(.bannerPremium-86naOf) {
+              background: none !important;
+            }
           }
           // mask
           circle, image {
@@ -5141,7 +5149,7 @@ html.theme-light {
             .avatarStack-3Bjmsl {
               width: calc(90px * var(--decoration-to-avatar-ratio));
               height: calc(90px * var(--decoration-to-avatar-ratio));
-              margin-top: 4px;
+              margin-top: 5px;
               margin-left: 5px;
               clip-path: path("M78 89H0V108H108V89H98C98 94.5228 93.5229 99 88 99C82.4771 99 78 94.5228 78 89Z M108 0H0V89H78C78 83.4771 82.4771 79 88 79C93.5229 79 98 83.4771 98 89H108V0Z");
             }
@@ -5179,8 +5187,6 @@ html.theme-light {
           // header
           .usernameSection-2d814A {
             padding-top: 64px;
-            background: var(--profile-theme-color-default) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
-            background-size: 270px 213px;
             padding-bottom: 16px;
             .userText-148fun {
               text-align: center;
@@ -5205,7 +5211,7 @@ html.theme-light {
                 font-weight: 400;
               }
               .userTagWithNickname-3-znkC.userTag-PXLYzP {
-                .username-3JLfHz, .discrimBase-KriZSj {
+                :is(.username-3JLfHz, .discrimBase-KriZSj) {
                   font-size: 16px;
                   line-height: 19px;
                   color: #ffffffa6;
@@ -5224,8 +5230,6 @@ html.theme-light {
             }
           }
           .customStatusSection-2TRu5f {
-            background: var(--profile-theme-color-default) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
-            background-size: 270px 213px;
             padding-bottom: 16px;
             padding-top: 0;
             margin-top: -16px;
@@ -5326,8 +5330,13 @@ html.theme-light {
               }
               // funny :has() stuff
               & {
+                // other
+                & {
+                  background: var(--profile-bg-secondary);
+                }
+                // idk
                 &:has(.defaultColor-24IHKz.text-md-normal-2rFCH3.body-2Fhyoo) {
-                  background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
+                  background: rgba(0 0 0 / .05);
                   background-size: 270px 213px;
                   .title-1r9MQ6 {
                     color: #fff;
@@ -5338,7 +5347,7 @@ html.theme-light {
                 }
                 // pronouns
                 &:has(.eyebrow-1Shfyi+.text-md-normal-2rFCH3:last-child) {
-                  background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
+                  background: rgba(0 0 0 / .05);
                   background-size: 270px 213px;
                   padding-bottom: 10px;
                   --text-link: #fff;
@@ -5365,7 +5374,7 @@ html.theme-light {
                 }
                 // about
                 &:has(.markup-eYLPri) {
-                  background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
+                  background: rgba(0 0 0 / .05);
                   background-size: 270px 213px;
                   padding-bottom: 10px;
                   --text-link: #fff;
@@ -5392,7 +5401,7 @@ html.theme-light {
                 }
                 // member since
                 &:has(.memberSinceContainer-3biwiY) {
-                  background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
+                  background: rgba(0 0 0 / .05);
                   background-size: 270px 213px;
                   padding-top: 10px !important;
                   padding-bottom: 10px;
@@ -5419,7 +5428,7 @@ html.theme-light {
                 }
                 // activity
                 &:has(.activityUserPopoutV2-3eKqzY) {
-                  background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
+                  background: rgba(0 0 0 / .05);
                   background-size: 270px 213px;
                   padding-top: 10px !important;
                   padding-bottom: 10px;
@@ -5456,7 +5465,7 @@ html.theme-light {
                 }
                 // add bot / upgrade buttons
                 &:has(.buttonsContainer-2_Qu-e) {
-                  background: var(--profile-theme-color-dark) url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png);
+                  background: rgba(0 0 0 / .05);
                   background-size: 270px 213px;
                   .button-ejjZWC {
                     background: #0000 !important;
@@ -5525,6 +5534,10 @@ html.theme-light {
               }
             }
           }
+          // context menu shit that's in the account popout
+          .menu-2TXYjN {
+            border-radius: 0;
+          }
         }
         // roles
         @if $useOldRoleStyling {
@@ -5563,7 +5576,7 @@ html.theme-light {
               .theme-dark & path {fill:#fff!important}
               .theme-light & path {fill:#000!important}
             }
-            .roleDot-31puPJ, .roleCircle-3TFUOr, .dotBorderColor-3fulPm {
+            :is(.roleDot-31puPJ, .roleCircle-3TFUOr, .dotBorderColor-3fulPm) {
               display: block !important;
               position: absolute !important;
               pointer-events: none;
@@ -5579,7 +5592,7 @@ html.theme-light {
                 --primary-dark-300: #72767d;
               }
             }
-            .dotBorderColor-3fulPm, .dotBorderBase-2L1my4 {
+            :is(.dotBorderColor-3fulPm, .dotBorderBase-2L1my4) {
               display: none;
             }
           }
@@ -5784,6 +5797,12 @@ html.theme-light {
           margin-left: 8px !important;
         }
       }
+      .userProfileInnerThemedWithBanner-2624Yx {
+        .profileBadge24-3UMhUO {
+          width: 32px;
+          height: 32px;
+        }
+      }
       .userProfileModalInner-3fh3QA {
         &:before {
           display: none;
@@ -5795,6 +5814,8 @@ html.theme-light {
       }
       .badgeList-2pMvZX {
         background: none;
+        margin: 8px;
+        filter: drop-shadow(0 1px 1px #000c);
       }
       .avatar-1YsFQ1 {
         circle[r="20"][cx="100"][cy="100"] {
@@ -5839,10 +5860,6 @@ html.theme-light {
           top: 0;
           left: 0;
           right: 0;
-      }
-      .badgeList-2pMvZX {
-        margin: 8px;
-        filter: drop-shadow(0 1px 1px #000c);
       }
       .container-1U-qVy {
         filter: drop-shadow(0 1px 1px #000c);
@@ -6043,6 +6060,7 @@ html.theme-light {
       .connectedAccountIcon-2szOw- {
         width: 30px;
         height: 30px;
+        filter: #{"saturate(var(--saturation-factor,1))"};
       }
       .connectedAccountOpenIcon-OngaxI {
         clip-path: path("M10.5 2.25v1.5h2.6925L5.82 11.1225 6.8775 12.18 14.25 4.8075V7.5h1.5V2.25H10.5zm3.75 12H3.75V3.75H9v-1.5H3.75c-.8325 0-1.5.675-1.5 1.5v10.5c0 .8284271.67157287 1.5 1.5 1.5h10.5c.8284271 0 1.5-.6715729 1.5-1.5V9h-1.5v5.25z");
@@ -6076,6 +6094,134 @@ html.theme-light {
       cy: 0.814px;
       cx: 0.814px;
       r: 0.126;
+    }
+  }
+  // user profile sidebar in dms
+  .profilePanel-2PWEok {
+    width: 420px;
+    box-shadow: var(--elevation-high);
+    .userPanelInner-1UAR7g {
+      border-radius: 0;
+      background: var(--background-primary) !important;
+      &:before {display:none}
+    }
+    .bannerSVGWrapper-qc0szY {
+      height: 285px;
+      margin-left: -50%;
+      opacity: .25;
+      foreignObject {
+        mask: none;
+      }
+    }
+    .bannerSVGWrapper-qc0szY+.avatarWrapper-3y0KZ1 {
+      &, .avatarHoverTarget-l77PhT, .wrapper-3Un6-K, .wrapper-3Un6-K>svg {
+        width: 128px !important;
+        height: 128px !important;
+      }
+      & {
+        foreignObject {
+          mask: none;
+          overflow: visible;
+        }
+        .avatarStack-3Bjmsl {
+          width: 92px;
+          height: 92px;
+          img {
+            border-radius: 64px;
+          }
+        }
+        // mask
+        .mask-1y0tyc.svg-1G_H_8 {
+          overflow: visible;
+          // status (every day i stray further away from the light)
+          >rect, .cursorDefault-2M8ZNp>rect {
+            mask: url("data:image/svg+xml,%3Csvg width='98' height='98' viewBox='0 0 98 98' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='83' cy='83' r='10' fill='%23000'/%3E%3C/svg%3E%0A");
+            width: 20px;
+            height: 20px;
+            x: 70px;
+            y: 70px;
+            rx: 24px;
+            stroke: #ffffff2d;
+            stroke-width: 4px;
+            clip-path: circle(10px at 50% 50%);
+          }
+          .cursorDefault-2M8ZNp {
+            overflow: visible;
+            >rect {
+              x: 22px;
+              y: 18px;
+            }
+          }
+          >circle {
+            cx: 80px;
+            cy: 80px;
+            r: 10px;
+            visibility: hidden;
+          }
+        }
+      }
+    }
+    .avatarPositionPanel-3P4Ted {
+      top: 51px;
+      left: 146px;
+    }
+    .overlayBackground-1KgwVi {
+      position: unset;
+    }
+    .badgelistGroup-2XjSQi {
+      margin: 0;
+      position: absolute;
+      top: 186px;
+      left: 0;
+      right: 0;
+      .badgeList-1EecKl {
+        margin-right: auto;
+        background: #0000;
+      }
+    }
+    .overlayBackground-1KgwVi {
+      background: none;
+      border-radius: 0;
+      padding: 0;
+      margin: 30px;
+      .divider-1tWBgZ {
+        background-color: var(--background-modifier-accent);
+      }
+      .defaultColor-1EVLSt {
+        color: var(--interactive-active);
+      }
+      .eyebrow-1Shfyi {
+        color: var(--interactive-normal);
+      }
+      .collapseBtn-2sFINR {
+        padding-left: 0;
+        padding-right: 0;
+        .text-sm-medium-2-Xzsi {
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 12px;
+        }
+      }
+    }
+    .section-3FmfOT {
+      &:has(.userText-148fun) {
+        position: absolute;
+        top: 210px;
+        left: 0;
+        right: 0;
+        .userText-148fun {
+          text-align: center;
+          // .username-3JLfHz {
+          //   color: #fff;
+          // }
+          // .discrimBase-KriZSj {
+          //   color: #fff8;
+          // }
+        }
+        +.divider-1tWBgZ {
+          display: none;
+        }
+      }
     }
   }
 }
