@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "401";
+$themeVersion: "402";
 $themeDate: "Apr 7, 2023";
 
 @use "sass:color";
@@ -7033,6 +7033,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           // avatar decos
           .avatarDecoration-2Wb1Au {
             overflow: visible;
+            contain: none;
             .avatarStack-3Bjmsl {
               width: calc(90px * var(--decoration-to-avatar-ratio));
               height: calc(90px * var(--decoration-to-avatar-ratio));
@@ -8867,9 +8868,15 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
                   width: 128px !important;
                   height: 128px !important;
                 }
-                .avatarDecoration-2Wb1Au foreignObject {
-                  width: calc(128px * var(--decoration-to-avatar-ratio));
-                  height: calc(128px * var(--decoration-to-avatar-ratio));
+                .avatarDecoration-2Wb1Au {
+                  overflow: visible;
+                  contain: none;
+                  foreignObject {
+                    mask: none;
+                    -webkit-mask: none;
+                    width: calc(128px * var(--decoration-to-avatar-ratio));
+                    height: calc(128px * var(--decoration-to-avatar-ratio));
+                  }
                 }
                 .mask-1y0tyc.svg-1G_H_8 foreignObject:not([mask="url(#svg-mask-avatar-default)"]) {
                   width: 92px;
@@ -13876,7 +13883,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
       }
     }
   }
-  .mainCard-3KBsBI, .container-3arpDl {
+  :is(.mainCard-3KBsBI, .container-3arpDl) {
     border-radius: 3px;
     box-shadow: none;
     border: solid 1px var(--background-tertiary);
@@ -13888,6 +13895,15 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         color: #fff !important;
       }
     }
+    .descriptionContainer-2ylKGk {
+      background: none;
+      padding: 0;
+    }
+  }
+  .matchingPostsRow-2IiEQ1 {
+    position: absolute;
+    background: none;
+    top: -4px;
   }
   .botTagOP-3pUTXu {
     border: solid 1px var(--blurple);
@@ -14551,7 +14567,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
     .form-3gdLxP {
       background: #0000;
     }
-    .channelTextArea-1FufC0 {
+    :is(.channelTextArea-1FufC0, .channelTextArea-220_Gz) {
       padding: 2px;
       background: var(--bg-overlay-4,#fff);
       border-radius: 2px;
@@ -14772,6 +14788,12 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         }
       }
     }
+    .container-3wLKDe {
+      background: var(--bg-overlay-2) !important;
+      .formContainer-1zrOWf .scrollableContainer-15eg7h {
+        background: none;
+      }
+    }
     // dms
     .channel-1Shao0 {
       >.interactive-iyXY_x {
@@ -14795,6 +14817,13 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
     // message requests
     .container-2YMsb4 {
       background: var(--bg-overlay-1);
+    }
+    // quick switcher
+    .quickswitcher-pKcM9U {
+      background: var(--bg-overlay-3);
+      .scroller-2qwVWY {
+        background: #0000;
+      }
     }
   }
 }

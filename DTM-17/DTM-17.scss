@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "186";
+$themeVersion: "187";
 $themeDate: "Apr 7, 2023";
 
 @use "sass:color";
@@ -5164,6 +5164,7 @@ html.theme-light {
           // avatar decos
           .avatarDecoration-2Wb1Au {
             overflow: visible;
+            contain: none;
             .avatarStack-3Bjmsl {
               width: calc(90px * var(--decoration-to-avatar-ratio));
               height: calc(90px * var(--decoration-to-avatar-ratio));
@@ -6829,7 +6830,7 @@ html.theme-light {
       justify-content: flex-start;
       padding: 0;
     }
-    .bannerSVGWrapper-qc0szY {
+    .bannerSVGWrapper-2CLfzN {
       display: none;
     }
     padding-top: 16px;
@@ -6841,6 +6842,10 @@ html.theme-light {
       background: hsl(220,calc(var(--saturation-factor,1)*6.8%),17.3%);
       margin-top: -66px;
       margin-left: -10px;
+      foreignObject {
+        mask: none;
+        -webkit-mask: none;
+      }
       .theme-light & {
         border-color: #f8f9f9;
         background: #f8f9f9;
@@ -10162,7 +10167,7 @@ html.theme-light {
       }
     }
   }
-  .mainCard-3KBsBI, .container-3arpDl {
+  :is(.mainCard-3KBsBI, .container-3arpDl) {
     border-radius: 3px;
     box-shadow: none;
     border: solid 1px var(--background-tertiary);
@@ -10174,6 +10179,15 @@ html.theme-light {
         color: #fff !important;
       }
     }
+    .descriptionContainer-2ylKGk {
+      background: none;
+      padding: 0;
+    }
+  }
+  .matchingPostsRow-2IiEQ1 {
+    position: absolute;
+    background: none;
+    top: -4px;
   }
   .botTagOP-3pUTXu {
     border: solid 1px var(--blurple);

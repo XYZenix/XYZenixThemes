@@ -20,7 +20,7 @@
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "401" "\a" "Apr 7, 2023";
+  content: "DTM-16 Build " "402" "\a" "Apr 7, 2023";
   margin-bottom: 20px;
 }
 
@@ -5986,6 +5986,7 @@ html.theme-dark :is(.userPopoutOuter-3AVBmJ,.userPopoutOuter-1OHwPL):not(:is(.pr
 }
 :is(.userPopoutOuter-3AVBmJ,.userPopoutOuter-1OHwPL):not(:is(.profileCustomizationPreview-2-Y173, .profileCustomizationPreview-3zZw6E)) :is(.userPopoutInner-1hXSeY, .userPopoutInner-nv9Y92) :is(.avatarWrapper-3y0KZ1, .avatarWrapper-eenWra) .avatarDecoration-2Wb1Au {
   overflow: visible;
+  contain: none;
 }
 :is(.userPopoutOuter-3AVBmJ,.userPopoutOuter-1OHwPL):not(:is(.profileCustomizationPreview-2-Y173, .profileCustomizationPreview-3zZw6E)) :is(.userPopoutInner-1hXSeY, .userPopoutInner-nv9Y92) :is(.avatarWrapper-3y0KZ1, .avatarWrapper-eenWra) .avatarDecoration-2Wb1Au .avatarStack-3Bjmsl {
   width: calc(90px * var(--decoration-to-avatar-ratio));
@@ -7662,7 +7663,13 @@ html.theme-dark :is(.userPopoutOuter-3AVBmJ,.userPopoutOuter-1OHwPL):not(:is(.pr
   width: 128px !important;
   height: 128px !important;
 }
+.layer-86YKbF:not(.baseLayer-W6S8cY) #my-account-tab .accountProfileCard-lbN7n- .avatar-3mTjvZ .avatarDecoration-2Wb1Au {
+  overflow: visible;
+  contain: none;
+}
 .layer-86YKbF:not(.baseLayer-W6S8cY) #my-account-tab .accountProfileCard-lbN7n- .avatar-3mTjvZ .avatarDecoration-2Wb1Au foreignObject {
+  mask: none;
+  -webkit-mask: none;
   width: calc(128px * var(--decoration-to-avatar-ratio));
   height: calc(128px * var(--decoration-to-avatar-ratio));
 }
@@ -12298,18 +12305,28 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   border-radius: 3px;
 }
 
-.mainCard-3KBsBI, .container-3arpDl {
+:is(.mainCard-3KBsBI, .container-3arpDl) {
   border-radius: 3px;
   box-shadow: none;
   border: solid 1px var(--background-tertiary);
   background: var(--deprecated-card-editable-bg);
 }
-.mainCard-3KBsBI .newBadge-1LcB6t, .container-3arpDl .newBadge-1LcB6t {
+:is(.mainCard-3KBsBI, .container-3arpDl) .newBadge-1LcB6t {
   border-radius: 3px !important;
   background: var(--blurple) !important;
 }
-.mainCard-3KBsBI .newBadge-1LcB6t .newBadgeText-1y7fMO, .container-3arpDl .newBadge-1LcB6t .newBadgeText-1y7fMO {
+:is(.mainCard-3KBsBI, .container-3arpDl) .newBadge-1LcB6t .newBadgeText-1y7fMO {
   color: #fff !important;
+}
+:is(.mainCard-3KBsBI, .container-3arpDl) .descriptionContainer-2ylKGk {
+  background: none;
+  padding: 0;
+}
+
+.matchingPostsRow-2IiEQ1 {
+  position: absolute;
+  background: none;
+  top: -4px;
 }
 
 .botTagOP-3pUTXu {
@@ -12951,7 +12968,7 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 .custom-theme-background:is(.theme-dark, .theme-light) #app-mount .form-3gdLxP {
   background: #0000;
 }
-.custom-theme-background:is(.theme-dark, .theme-light) #app-mount .channelTextArea-1FufC0 {
+.custom-theme-background:is(.theme-dark, .theme-light) #app-mount :is(.channelTextArea-1FufC0, .channelTextArea-220_Gz) {
   padding: 2px;
   background: var(--bg-overlay-4, #fff);
   border-radius: 2px;
@@ -13138,6 +13155,12 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
   -webkit-mask: linear-gradient(to right, #000 85%, #0000);
   z-index: -1;
 }
+.custom-theme-background:is(.theme-dark, .theme-light) #app-mount .container-3wLKDe {
+  background: var(--bg-overlay-2) !important;
+}
+.custom-theme-background:is(.theme-dark, .theme-light) #app-mount .container-3wLKDe .formContainer-1zrOWf .scrollableContainer-15eg7h {
+  background: none;
+}
 .custom-theme-background:is(.theme-dark, .theme-light) #app-mount .channel-1Shao0 > .interactive-iyXY_x {
   background: #0000 !important;
 }
@@ -13155,6 +13178,12 @@ path[d="M10.293 3.29604C10.579 3.01004 11.009 2.92504 11.383 3.07904C11.757 3.23
 }
 .custom-theme-background:is(.theme-dark, .theme-light) #app-mount .container-2YMsb4 {
   background: var(--bg-overlay-1);
+}
+.custom-theme-background:is(.theme-dark, .theme-light) #app-mount .quickswitcher-pKcM9U {
+  background: var(--bg-overlay-3);
+}
+.custom-theme-background:is(.theme-dark, .theme-light) #app-mount .quickswitcher-pKcM9U .scroller-2qwVWY {
+  background: #0000;
 }
 
 button.videoButton-3NM9Tc.button-ejjZWC.lookBlank-FgPMy6.colorBrand-2M3O3N.grow-2T4nbg {
