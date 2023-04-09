@@ -7,13 +7,13 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "188";
-$themeDate: "Apr 8, 2023";
+$themeVersion: "189";
+$themeDate: "Apr 9, 2023";
 
 @use "sass:color";
 $blurple: #7289da;
 
-$messageStyle: 2; // 0 = no message style changes / 1 = old message style / 2 = new message style
+$messageStyle: 3; // 0 = no message style changes / 1 = old message style / 2 = new message style
 $resizeServers: false; // changes servers from 48x48 to 50x50 (if this breaks stuff, i'm going to disable it)
 $profilesV2: true; // profiles 2.0
 $useOldRoleStyling: false; // old role tags
@@ -61,7 +61,53 @@ $experiment7: 1;
 // 1 | Treatment 1: 2017-2020
 $experiment10: 1;
 
-// variables (i barely use these anymore)
+// mixins
+@mixin msgBtnIcons {
+  #{$msgBtnContButton} {
+    // pencil / edit
+    [d="M19.2929 9.8299L19.9409 9.18278C21.353 7.77064 21.353 5.47197 19.9409 4.05892C18.5287 2.64678 16.2292 2.64678 14.817 4.05892L14.1699 4.70694L19.2929 9.8299ZM12.8962 5.97688L5.18469 13.6906L10.3085 18.813L18.0201 11.0992L12.8962 5.97688ZM4.11851 20.9704L8.75906 19.8112L4.18692 15.239L3.02678 19.8796C2.95028 20.1856 3.04028 20.5105 3.26349 20.7337C3.48669 20.9569 3.8116 21.046 4.11851 20.9704Z"] {
+      d: path("M1.3335 20.8891V16.4446L15.3424 2.48908C15.6802 2.13352 16.2491 2.13352 16.6046 2.48908L19.7335 5.61797C20.0891 5.97352 20.0891 6.52463 19.7335 6.88019L5.72461 20.8891H1.3335ZM22.6668 20.8891H9.3335L12.8891 17.3335H22.6668V20.8891Z");
+    }
+    // more / 3 dots
+    [d="M7 12.001C7 10.8964 6.10457 10.001 5 10.001C3.89543 10.001 3 10.8964 3 12.001C3 13.1055 3.89543 14.001 5 14.001C6.10457 14.001 7 13.1055 7 12.001ZM14 12.001C14 10.8964 13.1046 10.001 12 10.001C10.8954 10.001 10 10.8964 10 12.001C10 13.1055 10.8954 14.001 12 14.001C13.1046 14.001 14 13.1055 14 12.001ZM19 10.001C20.1046 10.001 21 10.8964 21 12.001C21 13.1055 20.1046 14.001 19 14.001C17.8954 14.001 17 13.1055 17 12.001C17 10.8964 17.8954 10.001 19 10.001Z"] {
+      d: path("M12 16C13.1046 16 14 16.8954 14 18C14 19.1046 13.1046 20 12 20C10.8954 20 10 19.1046 10 18C10 16.8954 10.8954 16 12 16ZM12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10ZM12 4C13.1046 4 14 4.89543 14 6C14 7.10457 13.1046 8 12 8C10.8954 8 10 7.10457 10 6C10 4.89543 10.8954 4 12 4Z")
+    }
+    @at-root {
+      // add reaction
+      [d="M12.2512 2.00309C12.1677 2.00104 12.084 2 12 2C6.477 2 2 6.477 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 11.916 21.999 11.8323 21.9969 11.7488C21.3586 11.9128 20.6895 12 20 12C15.5817 12 12 8.41828 12 4C12 3.31052 12.0872 2.6414 12.2512 2.00309ZM10 8C10 6.896 9.104 6 8 6C6.896 6 6 6.896 6 8C6 9.105 6.896 10 8 10C9.104 10 10 9.105 10 8ZM12 19C15.14 19 18 16.617 18 14V13H6V14C6 16.617 8.86 19 12 19Z"],
+      [d="M12.1151 2.00065C12.0768 2.00022 12.0384 2 12 2C6.477 2 2 6.477 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 11.9616 21.9998 11.9232 21.9993 11.8849C21.1882 12.1737 20.3146 12.3309 19.4043 12.3309C15.1323 12.3309 11.6691 8.86771 11.6691 4.59565C11.6691 3.68536 11.8263 2.8118 12.1151 2.00065ZM7.92105 11.8023C7.92105 12.7107 7.18468 13.4471 6.27631 13.4471C5.36795 13.4471 4.63158 12.7107 4.63158 11.8023C4.63158 10.894 5.36795 10.1576 6.27631 10.1576C7.18467 10.1576 7.92105 10.894 7.92105 11.8023ZM10.5217 14.5171C10.3859 13.9893 9.84786 13.6716 9.32005 13.8074C8.79223 13.9433 8.47448 14.4813 8.61033 15.0091C9.01196 16.5695 10.4273 17.7236 12.1147 17.7236C13.8021 17.7236 15.2174 16.5695 15.6191 15.0091C15.7549 14.4813 15.4372 13.9433 14.9093 13.8074C14.3815 13.6716 13.8435 13.9893 13.7077 14.5171C13.525 15.2267 12.8797 15.7499 12.1147 15.7499C11.3497 15.7499 10.7044 15.2267 10.5217 14.5171Z"] {
+        d: path("M21.9499 11C21.9831 11.3308 22 11.6646 22 12C22 17.5228 17.5228 22 12 22C9.34783 22 6.8043 20.9464 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 6.5 6.47 2 12 2C12.3354 2 12.6692 2.01685 13 2.05009V4.06272C12.67 4.02115 12.3361 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 11.6639 19.9788 11.33 19.9373 11H21.9499ZM12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM15.5 11C16.3284 11 17 10.3284 17 9.5C17 8.67157 16.3284 8 15.5 8C14.6716 8 14 8.67157 14 9.5C14 10.3284 14.6716 11 15.5 11ZM8.5 11C9.32843 11 10 10.3284 10 9.5C10 8.67157 9.32843 8 8.5 8C7.67157 8 7 8.67157 7 9.5C7 10.3284 7.67157 11 8.5 11Z")
+      }
+      [d="M21 3V0H19V3H16V5H19V8H21V5H24V3H21Z"],
+      [d="M18.5 2C17.9477 2 17.5 2.44772 17.5 3V4.5H16C15.4477 4.5 15 4.94771 15 5.5C15 6.05228 15.4477 6.5 16 6.5H17.5V8C17.5 8.55228 17.9477 9 18.5 9C19.0523 9 19.5 8.55229 19.5 8V6.5H21C21.5523 6.5 22 6.05229 22 5.5C22 4.94772 21.5523 4.5 21 4.5H19.5V3C19.5 2.44772 19.0523 2 18.5 2Z"] {
+        d: path("M21 3V0H19V3H16V5H19V8H21V5H24V3H21Z")
+      }
+      [d="M20.3397 14.2379C21.2318 14.4731 22.1292 14.5474 23 14.4789C22.9906 14.5151 22.9809 14.5514 22.9711 14.5876C21.5194 19.9201 15.9496 23.086 10.5309 21.6569C10.3451 21.6079 10.1619 21.5542 9.98145 21.4958C7.94618 20.8378 5.90941 20 3.77041 20H3.5C2.67157 20 2 19.3284 2 18.5C2 17.6716 2.67157 17 3.5 17C4.75918 17 3.9661 15.8584 3.47514 14.7655C3.28101 14.3334 2.86615 14 2.39244 14H1.5C0.671573 14 0 13.3284 0 12.5C0 11.6716 0.671573 11 1.5 11V11C2.38174 11 3.10559 10.3274 3.33171 9.47516C3.33726 9.45427 3.34287 9.43338 3.34856 9.41249V9.41249C3.53406 8.7311 2.9812 8.0187 2.44976 7.55366C2.17543 7.31362 2 6.96872 2 6.5C2 5.67157 2.67157 5 3.5 5V5C5.03983 5 6.4765 4.31861 7.78941 3.51404C10.0926 2.10261 12.9612 1.59744 15.7887 2.34316C15.827 2.35324 15.8651 2.36352 15.9031 2.374C15.4064 3.08271 15.0224 3.88574 14.7831 4.76493C13.6598 8.89108 16.1476 13.1323 20.3397 14.2379ZM9.26206 8.71607C8.70747 8.56981 8.13976 8.79579 7.83448 9.23964C7.62045 9.55083 7.19184 9.86027 6.69655 9.72964C6.24033 9.60932 5.88292 9.10507 6.13732 8.60064C6.78216 7.32202 8.27206 6.62396 9.72714 7.00771C11.1822 7.39146 12.1179 8.72923 12.0268 10.1539C11.9909 10.7159 11.4252 10.9767 10.969 10.8564C10.4737 10.7258 10.2597 10.2469 10.2324 9.87205C10.1935 9.33743 9.81666 8.86234 9.26206 8.71607ZM16.3671 14.9268C16.17 14.5422 15.7892 14.2404 15.3308 14.1195L10.6411 12.8827C10.1826 12.7618 9.69947 12.8357 9.33352 13.0718C8.95878 13.3135 8.70829 13.7284 8.7613 14.2422C8.93054 15.8827 10.1055 17.3278 11.821 17.7802C13.5365 18.2326 15.2881 17.5594 16.2681 16.222C16.575 15.8031 16.5688 15.3205 16.3671 14.9268Z"] {
+        d: path("M9 15H4L11 1V9H16L9 23V15Z");
+      }
+      // view reactions
+      [d="M12 2C6.477 2 2 6.477 2 12C2 17.522 6.477 22 12 22C17.523 22 22 17.522 22 12C22 6.477 17.523 2 12 2ZM8 6C9.104 6 10 6.896 10 8C10 9.105 9.104 10 8 10C6.896 10 6 9.105 6 8C6 6.896 6.896 6 8 6ZM18 14C18 16.617 15.14 19 12 19C8.86 19 6 16.617 6 14V13H18V14ZM16 10C14.896 10 14 9.105 14 8C14 6.896 14.896 6 16 6C17.104 6 18 6.896 18 8C18 9.105 17.104 10 16 10Z"],
+      [d="M2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.522 17.523 22 12 22C6.477 22 2 17.522 2 12ZM6.375 12.8713C7.41054 12.8713 8.25 12.0318 8.25 10.9963C8.25 9.96073 7.41053 9.12128 6.375 9.12128C5.33947 9.12128 4.5 9.96073 4.5 10.9963C4.5 12.0318 5.33946 12.8713 6.375 12.8713ZM19.5 10.9963C19.5 12.0318 18.6605 12.8713 17.625 12.8713C16.5895 12.8713 15.75 12.0318 15.75 10.9963C15.75 9.96073 16.5895 9.12128 17.625 9.12128C18.6605 9.12128 19.5 9.96073 19.5 10.9963ZM10.4867 14.825C10.3576 14.3236 9.8465 14.0217 9.34508 14.1508C8.84365 14.2798 8.54179 14.791 8.67085 15.2924C9.0524 16.7748 10.397 17.8712 12 17.8712C13.603 17.8712 14.9476 16.7748 15.3291 15.2924C15.4582 14.791 15.1563 14.2798 14.6549 14.1508C14.1535 14.0217 13.6424 14.3236 13.5133 14.825C13.3398 15.4991 12.7268 15.9962 12 15.9962C11.2732 15.9962 10.6602 15.4991 10.4867 14.825Z"] {
+        d: path("M12 17.5C14.33 17.5 16.3 16.04 17.11 14H6.89C7.69 16.04 9.67 17.5 12 17.5ZM8.5 11C8.89782 11 9.27936 10.842 9.56066 10.5607C9.84196 10.2794 10 9.89782 10 9.5C10 9.10218 9.84196 8.72064 9.56066 8.43934C9.27936 8.15804 8.89782 8 8.5 8C8.10218 8 7.72064 8.15804 7.43934 8.43934C7.15804 8.72064 7 9.10218 7 9.5C7 9.89782 7.15804 10.2794 7.43934 10.5607C7.72064 10.842 8.10218 11 8.5 11ZM15.5 11C15.8978 11 16.2794 10.842 16.5607 10.5607C16.842 10.2794 17 9.89782 17 9.5C17 9.10218 16.842 8.72064 16.5607 8.43934C16.2794 8.15804 15.8978 8 15.5 8C15.1022 8 14.7206 8.15804 14.4393 8.43934C14.158 8.72064 14 9.10218 14 9.5C14 9.89782 14.158 10.2794 14.4393 10.5607C14.7206 10.842 15.1022 11 15.5 11V11ZM12 20C9.87827 20 7.84344 19.1571 6.34315 17.6569C4.84285 16.1566 4 14.1217 4 12C4 9.87827 4.84285 7.84344 6.34315 6.34315C7.84344 4.84285 9.87827 4 12 4C14.1217 4 16.1566 4.84285 17.6569 6.34315C19.1571 7.84344 20 9.87827 20 12C20 14.1217 19.1571 16.1566 17.6569 17.6569C16.1566 19.1571 14.1217 20 12 20V20ZM12 2C6.47 2 2 6.5 2 12C2 14.6522 3.05357 17.1957 4.92893 19.0711C5.85752 19.9997 6.95991 20.7362 8.17317 21.2388C9.38642 21.7413 10.6868 22 12 22C14.6522 22 17.1957 20.9464 19.0711 19.0711C20.9464 17.1957 22 14.6522 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7362 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2V2Z")
+      }
+    }
+    // pin
+    [d="M22 12L12.101 2.10101L10.686 3.51401L12.101 4.92901L7.15096 9.87801V9.88001L5.73596 8.46501L4.32196 9.88001L8.56496 14.122L2.90796 19.778L4.32196 21.192L9.97896 15.536L14.222 19.778L15.636 18.364L14.222 16.95L19.171 12H19.172L20.586 13.414L22 12Z"] {
+      d: path("M16.3637 4.3637H17.4546V2.18188H6.5455V4.3637H7.63641V13.091L5.45459 15.2728V17.4546H11.1273V21.8182H12.8728V17.4546H18.5455V15.2728L16.3637 13.091V4.3637ZM9.81823 4.3637H14.1819V14.1819H14.7273C15.0286 14.1819 15.2728 14.4261 15.2728 14.7273C15.2728 15.0286 15.0286 15.2728 14.7273 15.2728H9.27277C8.97153 15.2728 8.72732 15.0286 8.72732 14.7273C8.72732 14.4261 8.97153 14.1819 9.27277 14.1819H9.81823V4.3637Z")
+    }
+    // mark unread
+    [d="M14 3H20C21 3 22.0001 4 22.0001 5V19.0003C22.0001 20 21 21 20 21H14C13 21 6 13 6 13H2V11H6C6 11 13 3 14 3Z"] {
+      d: path("M18.84 7H16.22L10.5 4L4 7.41V17C3.46957 17 2.96086 16.7893 2.58579 16.4142C2.21071 16.0391 2 15.5304 2 15V7.17C2 6.5 2.28 6.06 2.81 5.81L10.5 2L18.05 5.81C18.5 6.09 18.78 6.5 18.84 7ZM7 8H20C20.5304 8 21.0391 8.21071 21.4142 8.58579C21.7893 8.96086 22 9.46957 22 10V19C22 19.5304 21.7893 20.0391 21.4142 20.4142C21.0391 20.7893 20.5304 21 20 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V10C5 9.46957 5.21071 8.96086 5.58579 8.58579C5.96086 8.21071 6.46957 8 7 8V8ZM20 11.67V10L13.5 13.31L7 10V11.67L13.5 15L20 11.67Z")
+    }
+    // delete
+    [d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z"] {display:none}
+    [d="M5 6.99902V18.999C5 20.101 5.897 20.999 7 20.999H17C18.103 20.999 19 20.101 19 18.999V6.99902H5ZM11 17H9V11H11V17ZM15 17H13V11H15V17Z"] {
+      d: path("M7.5 9.75H6V18.75H7.5V9.75ZM21.75 3H15V0.75C15 0.3 14.7 0 14.25 0H8.25C7.8 0 7.5 0.3 7.5 0.75V3H0.75C0.3 3 0 3.3 0 3.75C0 4.2 0.3 4.5 0.75 4.5H1.5V22.5C1.5 23.4 2.1 24 3 24H19.5C20.4 24 21 23.4 21 22.5V4.5H21.75C22.2 4.5 22.5 4.2 22.5 3.75C22.5 3.3 22.2 3 21.75 3ZM9 1.5H13.5V3H9V1.5ZM19.5 21.75C19.5 22.2 19.2 22.5 18.75 22.5H3.75C3.3 22.5 3 22.2 3 21.75V4.5H19.5V21.75ZM12 8.25H10.5V18.75H12V8.25ZM16.5 9.75H15V18.75H16.5V9.75Z")
+    }
+  }
+}
+
+// variables
 $scrollableContainer: ".scrollableContainer-15eg7h";
 $panels: ".panels-3wFtMD";
 $panel-account: ".container-YkUktl";
@@ -220,6 +266,7 @@ $colorInteractiveNormal: ".colorInteractiveNormal-36ZhyZ";
 :root {
   --showRtcConnectionStatusIcon: block; /* Show: block | Hide: none | show the vc ping/status icon */
   --jumboEmojiSize: 2rem; /* Old: 2rem | New: 3rem | size of jumbo emojis */
+  --animateReactions: 0; /* 0: Don't | 1: Do (probably won't look very good) */
 }
 .theme-dark, .theme-light {
   --font-primary: Whitney,gg sans,"Helvetica Neue",Helvetica,Arial,sans-serif!important;
@@ -3559,6 +3606,509 @@ html.theme-light {
       }
     }
   }
+  @if $messageStyle == 3 {
+    .message-2CShn3 {
+      position: relative;
+      background: none !important;
+      &:before {
+        display: none;
+      }
+      .emoji.jumboable {
+        width: var(--jumboEmojiSize);
+        height: var(--jumboEmojiSize);
+        min-height: var(--jumboEmojiSize);
+      }
+      #{$msgBtnContainer} {
+        #{$msgBtnContInner} {
+          top: 4px;
+          background: hsl(217.5,calc(var(--saturation-factor,1) * 6.9%),22.7%,0.7);
+          box-shadow: 0 0 4px 6px hsl(217.5,calc(var(--saturation-factor,1) * 6.9%),22.7%,0.7);
+          padding-left: 0;
+          .theme-light & {
+            background: #FFFB;
+            box-shadow: 0 0 4px 6px #FFFB;
+          }
+          @if $forceAmoledDark {
+            .theme-dark & {
+              background: #000B;
+              box-shadow: 0 0 4px 6px #000B;
+            }
+          } @else {
+            .theme-amoled & {
+              background: #000B;
+              box-shadow: 0 0 4px 6px #000B;
+            }
+          }
+          &:hover {
+            background: hsl(217.5,calc(var(--saturation-factor,1) * 6.9%),22.7%,0.9);
+            box-shadow: 0 0 4px 6px hsl(217.5,calc(var(--saturation-factor,1) * 6.9%),22.7%,0.9);
+            padding-left: 0;
+            .theme-light & {
+              background: #FFFE;
+              box-shadow: 0 0 4px 6px #FFFE;
+            }
+            @if $forceAmoledDark {
+              .theme-dark & {
+                background: #000E;
+                box-shadow: 0 0 4px 6px #000E;
+              }
+            } @else {
+              .theme-amoled & {
+                background: #000E;
+                box-shadow: 0 0 4px 6px #000E;
+              }
+            }
+          }
+        }
+        #{$msgBtnContHeader} {
+          top: 44px;
+        }
+        #{$msgBtnContWrap} {
+          height: 16px;
+          display: flex;
+          background: none !important;
+          box-shadow: none !important;
+        }
+        #{$msgBtnContButton} {
+          width: 16px;
+          height: 16px;
+          min-width: 16px;
+          margin-left: 4px;
+          padding: 0;
+          opacity: .3;
+          transition: .2s opacity;
+          background: none !important;
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+          &:hover {
+            opacity: .8;
+          }
+          .separator-PzTEkx {display:none}
+          &[aria-label="Publish"] {
+            width: auto;
+            height: auto;
+            opacity: 1;
+            &:after {
+              content: "Publish";
+              color: #fff;
+              font-size: 12px;
+              padding: 0 6px;
+              line-height: 16px;
+              border-radius: 3px;
+              background: var(--blurple);
+              transition: .18s;
+            }
+            &:hover:after {
+              background: var(--blurple-hover);
+            }
+            &:active:after {
+              background: var(--blurple-active);
+            }
+            .icon-1zidb7 {display:none}
+          }
+        }
+        @include msgBtnIcons;
+      }
+      &.cozyMessage-1DWF9U {
+        margin-left: 20px;
+        margin-right: 8px;
+        padding-left: 60px !important;
+        padding-right: 20px !important;
+        >.contents-2MsGLg>.messageContent-2t3eCI {
+          margin-left: 0;
+          padding-left: 0;
+          overflow: visible;
+        }
+        &:is(.replying-eZ7p5z, .mentioned-Tre-dv, .automodMessage-265YwJ) {
+          >.contents-2MsGLg>.messageContent-2t3eCI,
+          >.container-2sjPya {
+            border-left: solid 4px;
+            border-radius: 4px;
+            padding-left: 4px;
+            margin-left: -8px;
+          }
+        }
+        &.mentioned-Tre-dv>.contents-2MsGLg>.messageContent-2t3eCI,
+        &.mentioned-Tre-dv>.container-2sjPya {
+          background: var(--background-mentioned);
+          border-color: hsl(37.5,calc(var(--saturation-factor,1)*95.7%),54.1%);
+        }
+        &.automodMessage-265YwJ>.contents-2MsGLg>.messageContent-2t3eCI,
+        &.automodMessage-265YwJ>.container-2sjPya {
+          background: hsl(0,84.9%,61%,0.13);
+          border-color: var(--red);
+        }
+        &.replying-eZ7p5z>.contents-2MsGLg>.messageContent-2t3eCI,
+        &.replying-eZ7p5z>.container-2sjPya {
+          background: hsl(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%,0.13);
+          border-color: var(--blurple);
+        }
+        >.contents-2MsGLg>.avatar-2e8lTP {
+          left: 0;
+          top: 0;
+          width: 40px !important;
+          height: 40px !important;
+        }
+        >.contents-2MsGLg>.avatarDecoration-34OC0G {
+          left: calc(((40px * var(--decoration-to-avatar-ratio)) - 40px) / -2);
+          top: calc(((40px * var(--decoration-to-avatar-ratio)) - 40px) / -2);
+          width: calc(40px * 1.2) !important;
+          height: calc(40px * 1.2) !important;
+        }
+        .messageContent-2t3eCI {
+          &:before {
+            content: "";
+            float: right;
+            display: inline-flex;
+            width: 70px;
+            height: 1rem;
+          }
+        }
+        // reply
+        &.hasReply-2Cr4KE {
+          :is(.avatar-2e8lTP, .avatarDecoration-34OC0G) {
+            margin-top: 46px !important;
+          }
+          .repliedMessage-3Z6XBG:before {
+            --gutter: 20px;
+          }
+          #{$msgBtnContInner} {
+            margin-top: 24px;
+          }
+        }
+        &.isSystemMessage-QNv9ZH:not(.groupStart-3Mlgv1) {
+          #{$msgBtnContInner} {
+            margin-top: 22px;
+          }
+        }
+        // thread shit
+        &.hasThread-3h-KJV:after {
+          .font-size-12 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-14 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-15 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-16 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-18 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-20 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-24 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+        }
+        // timestamp
+        .timestamp-p1Df1m.alt-1dvXnH {
+          width: 48px;
+        }
+        @at-root .scrollerInner-2PPAp2 {
+          .backgroundFlash-1X5jVs {
+            margin-top: 0 !important;
+          }
+          // first message in a group
+          :is(.backgroundFlash-1X5jVs, .messageListItem-ZZ7v6g, .quotedChatMessage-PxNsZi) {
+            .groupStart-3Mlgv1, .isSystemMessage-QNv9ZH {
+              margin-top: 0;
+              padding-top: 20px;
+              border-top: solid 1px var(--background-modifier-accent);
+              >.contents-2MsGLg>:is(.avatar-2e8lTP, .avatarDecoration-34OC0G) {
+                margin-top: 20px;
+              }
+            }
+            .isSystemMessage-QNv9ZH {
+              #{$msgBtnContInner} {
+                margin-top: 24px;
+              }
+            }
+          }
+          .jump-1vIlrw {
+            top: 18px;
+          }
+          // last message in a group
+          :is(.backgroundFlash-1X5jVs, .messageListItem-ZZ7v6g, .quotedChatMessage-PxNsZi) {
+            &:has(+:is(.backgroundFlash-1X5jVs, .messageListItem-ZZ7v6g) .groupStart-3Mlgv1),
+            &:has(+.divider-IqmEqJ:is(.hasContent-1y12-u, .beforeGroup-1BvJAt)),
+            &:has(+.scrollerSpacer-3AqkT9),
+            &:has(.isSystemMessage-QNv9ZH) {
+              .message-2CShn3 {
+                padding-bottom: 20px;
+              }
+            }
+          }
+          .scrollerSpacer-3AqkT9 {
+            height: 0;
+          }
+          // divider
+          .divider-IqmEqJ {
+            margin-left: 20px !important;
+            margin-right: 6px !important;
+            &.beforeGroup-1BvJAt {
+              top: 0 !important;
+            }
+            &.isUnread-3Lojb- {
+              margin-right: 0;
+              border-color: hsl(0,calc(var(--saturation-factor,1)*84.9%),61%,0.4);
+            }
+            &.hasContent-31hcsn .unreadPill-3nEWYM {
+              display: none !important;
+            }
+            .content-3spvdd {
+              font-size: 14px;
+              border-radius: 8px;
+              z-index: 2;
+              padding: 0 10px;
+            }
+            .unreadPill-3nEWYM {
+              padding: 0 10px;
+              border-radius: 3px;
+              background: var(--background-primary);
+              right: unset;
+              text-align: center;
+              font-size: 14px;
+              color: hsl(0,calc(var(--saturation-factor,1)*84.9%),61%,0.8);
+              svg {
+                display: none;
+              }
+              [lang="en-GB"] &, [lang="en-US"] & {
+                font-size: 0;
+                &:after {
+                  content: "NEW MESSAGES";
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+          // date separator
+          .divider-IqmEqJ.hasContent-1y12-u {
+            margin-top: 0 !important;
+            margin-bottom: -1px !important;
+          }
+        }
+        @at-root .preview-QJ3OG3 {
+          .groupStart-3Mlgv1 {
+            margin-top: 0;
+            padding-top: 20px;
+            border-top: solid 1px var(--background-modifier-accent);
+            >.contents-2MsGLg>:is(.avatar-2e8lTP, .avatarDecoration-34OC0G) {
+              margin-top: 20px;
+            }
+          }
+          :has(+.groupStart-3Mlgv1) {
+            padding-bottom: 20px;
+          }
+        }
+      }
+      &.compact-2Nkcau {
+        margin-left: 20px;
+        margin-right: 8px;
+        padding-left: 60px !important;
+        padding-right: 20px !important;
+        .messageContent-2t3eCI {
+          &:before {
+            content: "";
+            float: right;
+            display: inline-flex;
+            width: 70px;
+            height: 1rem;
+          }
+        }
+        &.mentioned-Tre-dv {
+          background: var(--background-mentioned) content-box !important;
+        }
+        &.automodMessage-265YwJ {
+          background: hsl(0,84.9%,61%,0.13) content-box !important;
+        }
+        &.replying-eZ7p5z {
+          background: hsl(226.7,calc(var(--saturation-factor,1)*58.4%),65.1%,0.13) content-box !important;
+        }
+        // stupid fucking system message action thing
+        .messageContent-2t3eCI:has(.compact-3bMNvi):before {
+          display: none;
+        }
+        // thread shit
+        &.hasThread-3h-KJV:after {
+          .font-size-12 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-14 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-15 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-16 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-18 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-20 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+          .font-size-24 & {
+            left: 19px;
+            top: 64px;
+            bottom: 49px;
+            width: 37px;
+          }
+        }
+        // timestamp
+        .timestamp-p1Df1m:not(.timestampInline-_lS3aK) {
+          width: 60px;
+          position: relative;
+          top: -1px;
+          font-size: 0.75rem;
+        }
+        // reply bar
+        .repliedMessage-3Z6XBG {
+          left: 16px;
+        }
+        @at-root .scrollerInner-2PPAp2:has(.compact-2Nkcau) {
+          .backgroundFlash-1X5jVs {
+            margin-top: 0 !important;
+          }
+          // first message in a group
+          :is(.backgroundFlash-1X5jVs, .messageListItem-ZZ7v6g) {
+            .groupStart-3Mlgv1, .isSystemMessage-QNv9ZH {
+              margin-top: 0;
+              padding-top: 6px;
+              border-top: solid 1px var(--background-modifier-accent);
+            }
+          }
+          // last message in a group
+          :is(.backgroundFlash-1X5jVs, .messageListItem-ZZ7v6g) {
+            &:has(+:is(.backgroundFlash-1X5jVs, .messageListItem-ZZ7v6g) .groupStart-3Mlgv1),
+            &:has(+.divider-IqmEqJ:is(.hasContent-1y12-u, .beforeGroup-1BvJAt)),
+            &:has(+.scrollerSpacer-3AqkT9),
+            &:has(.isSystemMessage-QNv9ZH) {
+              .message-2CShn3 {
+                padding-bottom: 6px;
+              }
+            }
+          }
+          .scrollerSpacer-3AqkT9 {
+            height: 0;
+          }
+          // divider
+          .divider-IqmEqJ {
+            margin-left: 20px !important;
+            margin-right: 6px !important;
+            &.beforeGroup-1BvJAt {
+              top: 0 !important;
+            }
+            &.isUnread-3Lojb- {
+              margin-right: 0;
+              border-color: hsl(0,calc(var(--saturation-factor,1)*84.9%),61%,0.4);
+            }
+            &.hasContent-31hcsn .unreadPill-3nEWYM {
+              display: none !important;
+            }
+            .content-3spvdd {
+              font-size: 14px;
+              border-radius: 8px;
+              z-index: 2;
+              padding: 0 10px;
+            }
+            .unreadPill-3nEWYM {
+              padding: 0 10px;
+              border-radius: 3px;
+              background: var(--background-primary);
+              right: unset;
+              text-align: center;
+              font-size: 14px;
+              color: hsl(0,calc(var(--saturation-factor,1)*84.9%),61%,0.8);
+              svg {
+                display: none;
+              }
+              [lang="en-GB"] &, [lang="en-US"] & {
+                font-size: 0;
+                &:after {
+                  content: "NEW MESSAGES";
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+          // date separator
+          .divider-IqmEqJ.hasContent-1y12-u {
+            margin-top: 0 !important;
+            margin-bottom: -1px !important;
+          }
+        }
+      }
+      &.ephemeral-2nDdnn {
+        border-color: #0000 !important;
+        .theme-dark & {
+          background: linear-gradient(to right,#32353A 80%,#0000) !important;
+          box-shadow: -20px 0 #32353A, var(--background-primary) 8px 0, -20px -1px 0 0 #3e4146, -20px 1px #3e4146, 20px 1px #3e4146, 20px -1px #3e4146;
+        }
+        .theme-light & {
+          background: linear-gradient(to right,#EEE 80%,#0000) !important;
+          box-shadow: -20px 0 #EEE, var(--background-primary) 8px 0, -20px -1px 0 0 #eceeef, -20px 1px #eceeef, 20px 1px #eceeef, 20px -1px #eceeef;
+        }
+      }
+      .ephemeralMessage-11q8XZ {
+        font-size: .625rem;
+        .icon-2XqU5M {
+          display: none;
+        }
+      }
+      .icon-JRJzJz {
+        &[style="background-image: url(\"/assets/1f57f1c100434d1ff6569a495ada213e.svg\");"] {
+          background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/977292986029338654/4e4e1d9c907a3dc53d68f34e868fcb12.svg?) !important;
+        }
+      }
+    }
+  }
 }
 // reactions
 @at-root {
@@ -3602,6 +4152,8 @@ html.theme-light {
     }
   }
   :is(.reaction-3vwAF2, .reaction-102jx9, .reactionBtn-fVdJIx) {
+    animation: cubic-bezier(0.1, 1.0, 0.9, 1.1) reactionAnim .18s;
+    animation-iteration-count: var(--animateReactions);
     &, &:is(:hover, :active) {
       border: none;
       background: var(--background-modifier-accent);
@@ -5198,7 +5750,7 @@ html.theme-light {
             width: 16px !important;
             height: 16px !important;
           }
-          &:not(:has(>.clickable-28QF7i:nth-child(9))) {
+          &:not(:has(>:is(.clickable-28QF7i, .clickable-1knRMS):nth-child(9))) {
             min-height: 24px;
             gap: 4px;
             :is(.clickable-28QF7i, .clickable-1knRMS, .profileBadge-2YySEb, .profileBadge-12r2Nm) {
@@ -5206,7 +5758,7 @@ html.theme-light {
               height: 24px !important;
             }
           }
-          &:has(>.clickable-28QF7i:nth-child(13)) {
+          &:has(>:is(.clickable-28QF7i, .clickable-1knRMS):nth-child(13)) {
             min-height: 12px;
             :is(.clickable-28QF7i, .clickable-1knRMS, .profileBadge-2YySEb, .profileBadge-12r2Nm) {
               width: 12px !important;
@@ -7216,6 +7768,14 @@ html.theme-light {
           }
         }
       }
+    }
+  }
+  .lock-4DarK4 {
+    height: 16px;
+    margin-left: 0;
+    color: inherit;
+    path {
+      d: path("M16.5 9V6.75C16.5 3 13.5 0 9.75 0C6 0 3 3 3 6.75V9C1.35 9 0 10.35 0 12V24H19.5V12C19.5 10.35 18.15 9 16.5 9ZM4.5 6.75C4.5 3.9 6.9 1.5 9.75 1.5C12.6 1.5 15 3.9 15 6.75V9H4.5V6.75ZM18 21C18 21.9 17.4 22.5 16.5 22.5H3C2.1 22.5 1.5 21.9 1.5 21V12C1.5 11.1 2.1 10.5 3 10.5H16.5C17.4 10.5 18 11.1 18 12V21ZM9.75 13.5C9.3 13.5 9 13.8 9 14.25V18.75C9 19.2 9.3 19.5 9.75 19.5C10.2 19.5 10.5 19.2 10.5 18.75V14.25C10.5 13.8 10.2 13.5 9.75 13.5Z");
     }
   }
 }
