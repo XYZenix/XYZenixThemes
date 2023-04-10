@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "404";
-$themeDate: "Apr 9, 2023";
+$themeVersion: "405";
+$themeDate: "Apr 10, 2023";
 
 $debug: 0;
 
@@ -5298,6 +5298,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           background: hsl(217.5,calc(var(--saturation-factor,1) * 6.9%),22.7%,0.7);
           box-shadow: 0 0 4px 6px hsl(217.5,calc(var(--saturation-factor,1) * 6.9%),22.7%,0.7);
           padding-left: 0;
+          transition: .2s opacity;
           .theme-light & {
             background: #FFFB;
             box-shadow: 0 0 4px 6px #FFFB;
@@ -5431,30 +5432,37 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           width: calc(40px * 1.2) !important;
           height: calc(40px * 1.2) !important;
         }
-        .messageContent-2t3eCI {
-          &:before {
-            content: "";
-            float: right;
-            display: inline-flex;
-            width: 70px;
-            height: 1rem;
-          }
-        }
         // reply
         &.hasReply-2Cr4KE {
           :is(.avatar-2e8lTP, .avatarDecoration-34OC0G) {
             margin-top: 46px !important;
           }
           .repliedMessage-3Z6XBG:before {
-            --gutter: 20px;
+            .font-size-12 & {--gutter: 25px;bottom: -4px}
+            .font-size-14 & {--gutter: 23px;bottom: -3px}
+            .font-size-15 & {--gutter: 21px;bottom: -3px}
+            .font-size-16 & {--gutter: 20px;bottom: -2px}
+            .font-size-18 & {--gutter: 20px;bottom: 0}
+            .font-size-20 & {--gutter: 20px;bottom: 2px}
+            .font-size-24 & {--gutter: 20px;bottom: 4px}
           }
           #{$msgBtnContInner} {
             margin-top: 24px;
           }
         }
-        &.isSystemMessage-QNv9ZH:not(.groupStart-3Mlgv1) {
-          #{$msgBtnContInner} {
-            margin-top: 22px;
+        &.isSystemMessage-QNv9ZH {
+          .iconContainer-2rPbqG {
+            padding-top: 0.1rem;
+          }
+          &.groupStart-3Mlgv1 {
+            #{$msgBtnContInner} {
+              margin-top: 21px;
+            }
+          }
+          &:not(.groupStart-3Mlgv1) {
+            #{$msgBtnContInner} {
+              margin-top: 22px;
+            }
           }
         }
         // thread shit
@@ -5500,6 +5508,29 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             top: 64px;
             bottom: 49px;
             width: 37px;
+          }
+        }
+        &.hasThread-3h-KJV.hasReply-2Cr4KE:after {
+          .font-size-12 & {
+            top: 90px;
+          }
+          .font-size-14 & {
+            top: 90px;
+          }
+          .font-size-15 & {
+            top: 90px;
+          }
+          .font-size-16 & {
+            top: 90px;
+          }
+          .font-size-18 & {
+            top: 90px;
+          }
+          .font-size-20 & {
+            top: 90px;
+          }
+          .font-size-24 & {
+            top: 90px;
           }
         }
         // timestamp
@@ -5608,15 +5639,18 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         margin-right: 8px;
         padding-left: 60px !important;
         padding-right: 20px !important;
-        .messageContent-2t3eCI {
-          &:before {
-            content: "";
-            float: right;
-            display: inline-flex;
-            width: 70px;
-            height: 1rem;
-          }
+        // button container
+        &:is(.groupStart-3Mlgv1, .systemMessage-1H1Z20) #{$msgBtnContInner} {
+          margin-top: 0;
+          top: 8px;
         }
+        &.systemMessage-1H1Z20 #{$msgBtnContInner} {
+          top: 10px;
+        }
+        &:has(.repliedMessage-3Z6XBG) #{$msgBtnContInner} {
+          top: 26px;
+        }
+        // mentioned/automod blocked/replying/etc
         &.mentioned-Tre-dv {
           background: var(--background-mentioned) content-box !important;
         }
@@ -5631,48 +5665,41 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           display: none;
         }
         // thread shit
-        &.hasThread-3h-KJV:after {
-          .font-size-12 & {
-            left: 19px;
-            top: 64px;
-            bottom: 49px;
-            width: 37px;
-          }
-          .font-size-14 & {
-            left: 19px;
-            top: 64px;
-            bottom: 49px;
-            width: 37px;
-          }
-          .font-size-15 & {
-            left: 19px;
-            top: 64px;
-            bottom: 49px;
-            width: 37px;
-          }
-          .font-size-16 & {
-            left: 19px;
-            top: 64px;
-            bottom: 49px;
-            width: 37px;
-          }
-          .font-size-18 & {
-            left: 19px;
-            top: 64px;
-            bottom: 49px;
-            width: 37px;
-          }
-          .font-size-20 & {
-            left: 19px;
-            top: 64px;
-            bottom: 49px;
-            width: 37px;
-          }
-          .font-size-24 & {
-            left: 19px;
-            top: 64px;
-            bottom: 49px;
-            width: 37px;
+        &.hasThread-3h-KJV {
+          .container-2sjPya {
+            .spine-2vt3pM {
+              .font-size-12 & {
+                left: -19px;
+                width: 13px;
+              }
+              .font-size-14 & {
+                left: -25px;
+                width: 19px;
+              }
+              .font-size-15 & {
+                left: -28px;
+                width: 22px;
+              }
+              .font-size-16 & {
+                left: -31px;
+                width: 25px;
+              }
+              .font-size-18 & {
+                left: -37px;
+                width: 31px;
+                bottom: 32px;
+              }
+              .font-size-20 & {
+                left: -42px;
+                width: 36px;
+                bottom: 34px;
+              }
+              .font-size-24 & {
+                left: -54px;
+                width: 48px;
+                bottom: 38px;
+              }
+            }
           }
         }
         // timestamp
@@ -5757,6 +5784,21 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             margin-top: 0 !important;
             margin-bottom: -1px !important;
           }
+        }
+      }
+      // padding for action buttons
+      .messageContent-2t3eCI {
+        &:before {
+          content: "";
+          float: right;
+          display: inline-flex;
+          width: 70px;
+          height: 1rem;
+        }
+      }
+      :is(.container-3i3IzO, .repliedTextPreview-1bvxun) {
+        .messageContent-2t3eCI:before {
+          width: 0;
         }
       }
       &.ephemeral-2nDdnn {
