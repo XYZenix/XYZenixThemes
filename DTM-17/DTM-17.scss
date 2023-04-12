@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "195";
+$themeVersion: "196";
 $themeDate: "Apr 12, 2023";
 
 @use "sass:color";
@@ -4222,6 +4222,17 @@ html.theme-light {
               padding-bottom: 6px;
             }
           }
+        }
+      }
+      // special case for reply/mention bg (border radius fix)
+      &:is(.replying-eZ7p5z, .mentioned-Tre-dv):has(.container-2sjPya:not(:empty)) {
+        .container-2sjPya {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+        >.contents-2MsGLg>.messageContent-2t3eCI {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       }
     }
