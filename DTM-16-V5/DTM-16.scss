@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "412";
-$themeDate: "Apr 12, 2023";
+$themeVersion: "413 on branch: dtm-16-profile-themes";
+$themeDate: "Apr 13, 2023";
 
 $debug: 0;
 
@@ -7584,6 +7584,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
 @at-root {
   // profile popouts 2.0
   @if $profilesV2 {
+    // i was gonna make profile customization preview work but i got lazy and didn't feel like fixing it
     :is(.userPopoutOuter-3AVBmJ,.userPopoutOuter-1OHwPL):not(:is(.profileCustomizationPreview-2-Y173, .profileCustomizationPreview-3zZw6E)) {
       border-radius: 3px;
       padding: 0;
@@ -7605,11 +7606,15 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
       --scrollbar-thin-track: var(--override-scrollbar-thin-track) !important;
       --interactive-active: var(--override-interactive-active) !important;
       --input-placeholder-text: var(--text-muted) !important;
+      --profile-gradient-primary-color: var(--blurple);
+      --profile-gradient-secondary-color: var(--blurple);
       :is(.userPopoutInner-1hXSeY, .userPopoutInner-nv9Y92) {
         border-radius: 0;
         overflow-x: hidden;
         min-height: 130px;
-        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png), linear-gradient(var(--profile-theme-color-default) calc(100% - 4px), var(--profile-theme-color-default) calc(100% - 4px)) !important;
+        background-image: url(https://cdn.discordapp.com/attachments/733624227378495488/781767798208725022/background-pattern.png), linear-gradient(var(--profile-theme-color-default), var(--profile-gradient-secondary-color)) !important;
+        --profile-theme-color-default: var(--profile-gradient-primary-color) !important;
+        --profile-theme-color-light: linear-gradient(#fff2,#fff2), linear-gradient(var(--profile-gradient-primary-color), var(--profile-gradient-primary-color)) !important;
         background-size: 270px 213px, 100% 100% !important;
         html.theme-light & {
           --profile-bg-secondary: #fbfbfb;
