@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 39";
-$themeDate: "Apr 25, 2023";
+$themeVersion: "Alpha 40";
+$themeDate: "Apr 26, 2023";
 
 @use "sass:color";
 
@@ -352,7 +352,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
   --d8orG: hsl(18.1,calc(var(--saturation-factor,1)*100%),8.4%); //#2B0D00
 }
 
-@mixin scrollbar {
+@mixin scrollbar-legacy {
   &::-webkit-scrollbar {
     border: none;
     margin: none;
@@ -379,6 +379,45 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         background: linear-gradient(to left, var(--d8dA) 49%,var(--d8dC) 50%,var(--d8dF) 51%,var(--d8dF) 100%);
         border-bottom: solid 1px var(--d8d8);
         border-top: solid 1px var(--d8d8);
+      }
+    }
+  }
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    border: none;
+    margin: none;
+    padding: none;
+    width: 8px;
+    height: 8px;
+    &-track {
+      visibility: visible;
+      border: none;
+    }
+    &-thumb {
+      visibility: visible;
+      padding: 0;
+      margin: 0;
+      border-radius: 16px;
+      border: none;
+    }
+    .theme-light & {
+      background: rgba(78 78 78/0.26);
+      &-thumb {
+        background: linear-gradient(to left, var(--d8lC) 49%, var(--d8l5) 50%, var(--d8l3) 51%, var(--d8lC) 100%);
+        border-bottom: solid 1px var(--d8lD);
+        border-top: solid 1px var(--d8lD);
+      }
+    }
+    .theme-dark & {
+      &-track {
+        background: linear-gradient(var(--d8d8), var(--d8d9)) padding-box;
+        box-shadow: inset 1px 1px 2px #0008;
+      }
+      &-thumb {
+        background: linear-gradient(var(--d8d5), var(--d8d7)) padding-box;
+        box-shadow: inset 0 0 0 1px #fff1, inset 1px 1px #fff2, 0 1px 1px #000b;
       }
     }
   }
@@ -1086,22 +1125,33 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
       margin-left: 0;
       margin-right: 0;
       margin-top: 0;
-      background: linear-gradient(#0000, #494E5666);
+      .theme-light & {background: linear-gradient(#0000, #fff8)}
+      .theme-dark & {background: linear-gradient(#0000, hsla(var(--d8d6v), 0.3))}
       .divider-3qUeLQ {
         margin: 0;
-        border-top: solid 1px #0008;
-        border-bottom: solid 1px #494E56bb;
+        .theme-light & {
+          border-top: solid 1px var(--d8l8);
+          border-bottom: solid 1px var(--d8l0);
+        }
+        .theme-dark & {
+          border-top: solid 1px #0008;
+          border-bottom: solid 1px #494E56bb;
+        }
       }
       &:hover {
-        background: linear-gradient(#0000, #494E56aa);
+        .theme-light & {background: linear-gradient(#0000, #fff)}
+        .theme-dark & {background: linear-gradient(#0000, hsla(var(--d8d6v), 0.5))}
       }
       .textArea-7J7xQx {
-        background: linear-gradient(var(--d8dA), var(--d8d9) 50%, var(--d8dB) 50%, var(--d8dC));
         padding-left: 6px;
-        box-shadow: inset 0 0 0 1px #fff2, inset 0 1px #fff2, 0 1px #0008, 0 0 0 1px #000b;
         border-radius: 3px 3px 0 0;
-        .count-e4ipkH {
-
+        .theme-light & {
+          background: linear-gradient(var(--d8l2), var(--d8l5) 50%, var(--d8l7) 50%, var(--d8l5));
+          box-shadow: inset 0 0 0 1px #fff2, inset 0 1px #fff, 0 0 0 1px var(--d8lA);
+        }
+        .theme-dark & {
+          background: linear-gradient(var(--d8dA), var(--d8d9) 50%, var(--d8dB) 50%, var(--d8dC));
+          box-shadow: inset 0 0 0 1px #fff2, inset 0 1px #fff2, 0 1px #0008, 0 0 0 1px #000b;
         }
       }
       .progressBarContainer-1efroK {
@@ -1109,7 +1159,12 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         width: calc(100% - 16px);
         border-radius: 0;
         margin-bottom: 4px;
-        background: linear-gradient(var(--d8d6), #fff0);
+        .theme-light & {
+          background: linear-gradient(var(--d8l4),#0000);
+        }
+        .theme-dark & {
+          background: linear-gradient(var(--d8d6), #fff0);
+        }
         .progressBar-2yl2pi {
           border-radius: 0;
           background: linear-gradient(#7289da, #fff0);
@@ -1118,7 +1173,12 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
       .goalText-mbRUAP {
         font-weight: 600;
         text-transform: none;
-        text-shadow: 0 1px 3px #000b;
+        .theme-light & {
+          text-shadow: 0 -1px #fff8;
+        }
+        .theme-dark & {
+          text-shadow: 0 1px 3px #000b;
+        }
       }
       .progressFraction-LUvqt3 {
         
@@ -1401,7 +1461,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
       margin: 0;
       padding: 16px;
       .theme-light & {
-        background: linear-gradient(#dcdcdc,#d2d2d2 50%, #cccccc 50%, #dadada);
+        background: linear-gradient(var(--d8l5),var(--d8l6) 50%, var(--d8l7) 50%, var(--d8l5));
         box-shadow: inset 0 1px #fff8, inset 0 -1px #0002, 0 1px 3px #0008;
       }
       .theme-dark & {
@@ -1840,6 +1900,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
     // buttons
     .flex-2S1XBF.flex-3BkGQD.horizontal-112GEH.horizontal-1Piu5-.flex-3BkGQD.directionRow-2Iu2A9.justifyStart-2Mwniq.alignStretch-Uwowzr.noWrap-hBpHBz {
       border-radius: 3px;
+      gap: 1px;
       .theme-light & {
         background: linear-gradient(var(--d8l5), var(--d8l3) 50%, var(--d8l2) 50%, #FFF);
         box-shadow: inset 0 1px 5px #0006, 0 1px #fff;
@@ -1851,26 +1912,50 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
     }
     .button-12Fmur.enabled-9OeuTA {
       cursor: default;
-      border-radius: 3px;
+      border-radius: 0;
+      margin-top: 1px;
+      margin-bottom: 1px;
+      width: 30px;
+      height: 30px;
+      transition: .18s;
+      &:first-child {
+        border-radius: 2px 0 0 2px;
+        margin-left: 1px;
+      }
+      &:last-child {
+        border-radius: 0 2px 2px 0;
+        margin-right: 1px;
+      }
+      &:only-child {
+        border-radius: 2px;
+      }
+      .theme-light & {
+        background: #fff4;
+        box-shadow: 0 0, inset 0 0 0 1px #fff8;
+      }
+      .theme-dark & {
+        background: #fff1;
+        box-shadow: 0 0, inset 0 0 0 1px #fff2;
+      }
       &:hover {
         .theme-light & {
-          background: linear-gradient(var(--d8l5), var(--d8l4) 50%, var(--d8l9) 50%, var(--d8l7));
-          box-shadow: 0 1px 2px var(--d8lF), inset 0 0 0 1px #fff2, inset 0 1px #fff;
+          background: #fff2;
+          box-shadow: 0 1px 2px #0004, inset 0 0 0 1px #fff2, inset 0 1px #fff4;
           color: var(--d8dB);
         }
         .theme-dark & {
-          background: linear-gradient(var(--d8d5), var(--d8d7) 50%, var(--d8d9) 50%, var(--d8dC));
-          box-shadow: 0 1px 2px #000, inset 0 0 0 1px #fff1, inset 0 1px #fff4;
+          background: #fff2;
+          box-shadow: 0 1px 2px #000, inset 0 0 0 1px #fff2, inset 0 1px #fff4;
           color: #fff;
         }
       }
       &:active {
         .theme-light & {
-          background: linear-gradient(var(--d8l9), var(--d8l7) 50%, var(--d8l5) 50%, var(--d8l1));
-          box-shadow: inset 0 1px 2px #000b, 0 0 0 1px #fff8;
+          background: #0001;
+          box-shadow: inset 0 1px 2px #0004, 0 0 2px #fff3;
         }
         .theme-dark & {
-          background: linear-gradient(var(--d8dA), var(--d8d9) 50%, var(--d8dB) 50%, var(--d8dE));
+          background: #0002;
           box-shadow: inset 0 1px 2px #000, 0 0 2px #fff3;
         }
       }
@@ -2029,29 +2114,48 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
       margin-bottom: 2px;
       border-radius: 3px;
       overflow: hidden;
+      .theme-light & {
+        background: linear-gradient(var(--d8lA), var(--d8l9) 50%, var(--d8l8) 50%, var(--d8l7));
+        box-shadow: inset 0 1px 4px #0004, 0 0 0 1px var(--d8lD), 0 2px #fff6, 0 0 0 2px #fff4;
+      }
       .item-3mHhwr {
         margin-left: 2px;
         margin-right: 2px;
         &, &.addFriend-emTWY1 {
-          color: #aaa;
-          text-shadow: 0 1px 2px #0008;
+          color: var(--d8lG);
+          text-shadow: 0 -1px #fff4;
           background: #0000;
         }
         &:hover {
           color: #fff;
           background: linear-gradient(var(--d8d8), var(--d8d9) 50%, var(--d8dA) 50%, var(--d8dB));
           box-shadow: inset 0 1px #fff3, 0 0 0 1px #000b, 0 1px 2px #0008;
+          .theme-light & {
+            color: #000;
+            background: linear-gradient(var(--d8l3), var(--d8l5) 50%, var(--d8l7) 50%, var(--d8l6));
+            box-shadow: inset 0 1px #fff8, 0 0 0 1px var(--d8lF);
+          }
         }
         &:active {
           color: #aaa;
           background: linear-gradient(var(--d8dC), var(--d8dD) 50%, var(--d8dB) 50%, var(--d8dA));
           box-shadow: inset 0 1px 3px #0008, 0 0 0 1px #000b;
+          .theme-light & {
+            color: #000;
+            background: linear-gradient(var(--d8lA), var(--d8l8) 50%, var(--d8l6) 50%, var(--d8l4));
+            box-shadow: inset 0 1px 3px #0006, 0 0 0 1px var(--d8lF);
+          }
         }
         &.selected-1sf9UK {
           &, &.addFriend-emTWY1 {
             color: #eee;
             background: linear-gradient(var(--d8d5), var(--d8d7) 50%, var(--d8d9) 50%, var(--d8dA));
             box-shadow: inset 0 1px #fff2, 0 0 0 1px #000b;
+            .theme-light & {
+              color: #000;
+              background: linear-gradient(var(--d8l3), var(--d8l6) 50%, var(--d8l8) 50%, var(--d8l6));
+              box-shadow: inset 0 1px #fff2, 0 0 0 1px var(--d8lG);
+            }
           }
         }
         &:first-child {
@@ -2117,6 +2221,10 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
             background: linear-gradient(var(--d8d7), var(--d8dA)) border-box;
             box-shadow: inset 0 0 0 1px #fff2, inset 0 1px #fff3, 0 0 0 1px #0008, 0 1px 4px #0008;
             border-radius: 3px;
+            .theme-light & {
+              background: linear-gradient(var(--d8l2), var(--d8l6)) border-box;
+              box-shadow: inset 0 0 0 1px #fff8, inset 0 1px #fff, 0 0 0 1px var(--d8lD), 0 1px 4px #0008;
+            }
           }
         }
       }
@@ -2595,6 +2703,12 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         .newTopicsBarTopicSection-QcIQlL:active,
         .newTopicsBarTopicSection-QcIQlL:active~* {
           transform: translateY(-3px)
+        }
+        .topicsPillTextUnselected-3c2gbi {
+          margin-top: -4px;
+        }
+        .topicsPillTextSelected-1WEvgM {
+          margin-top: -1px;
         }
         &.newMessagesBar-1hF-9G, &.newTopicsBarContainer-MYPq92 {
           .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ, .newTopicsBarTopicSection-QcIQlL {
@@ -3166,6 +3280,11 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
       @media (min-width: 1920px) {
         border-image: linear-gradient(to right, #0000, var(--d8rd7) 100px, var(--d8rd7)) 1;
       }
+    }
+    .summaryEndContainer-2_5xXM {
+      height: 20px;
+      padding-left: 8px;
+      margin-top: -4px;
     }
   }
   // hover bg
@@ -4344,14 +4463,14 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
       box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff4, inset 0 1px #fff4, inset 0 -1px #0008, 0 0 1px 2px #fff2;
       z-index: 1;
       .theme-light & {
-        background-image: linear-gradient(var(--d8l8), var(--d8l6) 50%, var(--d8l4) 50%, var(--d8l2));
+        background-image: linear-gradient(var(--d8l1), var(--d8l4) 50%, var(--d8l2) 50%, var(--d8l0));
         text-shadow: 0 1px #fffb, 0 1px 3px #fffb;        
       }
       &:hover:not(:disabled) {
         background-image: linear-gradient(#ffffff0b,#ffffff0b), linear-gradient(var(--d8dD), var(--d8dC) 50%, var(--d8dB) 50%, var(--d8dB));
         box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff4, inset 0 1px #fff4, inset 0 -1px #0008, 0 0 3px 2px #fff6;
         .theme-light & {
-          background-image: linear-gradient(#fff6,#fff6), linear-gradient(var(--d8l8), var(--d8l6) 50%, var(--d8l4) 50%, var(--d8l2));
+          background-image: linear-gradient(var(--d8l0), var(--d8l1) 50%, var(--d8l3) 50%, var(--d8l0));
         }
       }
       &:active:not(:disabled) {
@@ -4394,6 +4513,9 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
   // switches
   @at-root {
     .container-1QtPKm {
+      background: none !important;
+      svg {display:none}
+      pointer-events: none;
       &.disabled-3_3z1m {
         pointer-events: none;
       }
@@ -4406,6 +4528,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
           content: "";
           display: block;
           border-radius: 50px;
+          pointer-events: all;
         }
         &:before {
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 1px #fff6, 0 0 0 1px #0006, 0 1px 4px #0008;

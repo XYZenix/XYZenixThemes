@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "417";
-$themeDate: "Apr 25, 2023";
+$themeVersion: "418";
+$themeDate: "Apr 26, 2023";
 
 $debug: 0;
 
@@ -107,6 +107,11 @@ $experiment13: 2;
 // 0 | Control: 2017-2020 radio bars
 // 1 | Treatment 1: 2015-2016 radio bars
 $experiment14: 1;
+
+// Attachments
+// 0 | Control
+// 1 | Treatment 1: No background
+$experiment15: 1;
 
 //.socialLinks-3ywLUf:after {
 //  content: "";
@@ -5796,6 +5801,22 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           height: 1rem;
         }
       }
+      // conversation summaries
+      @at-root {
+        .isSummaryDivider-2Hzy_S.noContent-1w8Nj5 {
+          margin: 0 0 -1px 0!important;
+          &:not(.isUnread-3Lojb-) {
+            border-color: #0000 !important;
+          }
+          .unreadPill-3nEWYM {
+            margin: 0 auto !important;
+            position: unset;
+          }
+        }
+        .summaryContent-2L3IwT {
+          margin: 0 auto;
+        }
+      }
       :is(.container-3i3IzO, .repliedTextPreview-1bvxun) {
         .messageContent-2t3eCI:before {
           width: 0;
@@ -6062,10 +6083,23 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         }
       }
     }
+    @if $experiment15 {
+      border: none;
+      background: none;
+      padding: 0;
+      +.hoverButtonGroup-2yZIzC {
+        top: 6px;
+        right: 0;
+        outline: none;
+      }
+    }
   }
   .wrapperAudio-1Bzv_Z.newMosaicStyle-31sBoZ {
     +.hoverButtonGroup-2yZIzC {
       top: 12px;
+      @if $experiment15 {
+        top: 6px;
+      }
     }
   }
   .iconWrapper-XpfprW {
@@ -11085,6 +11119,10 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
               }
             }
           }
+        }
+        // server insights
+        .error-2568aZ {
+          border-radius: 3px;
         }
         // audit log
         .customScroller-m1-jZn>div {
