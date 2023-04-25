@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 38";
-$themeDate: "Apr 22, 2023";
+$themeVersion: "Alpha 39";
+$themeDate: "Apr 25, 2023";
 
 @use "sass:color";
 
@@ -2591,11 +2591,13 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         .barButtonAlt-TQoCdZ:active,
         .barButtonMain-2GIx4o:active,
         .barButtonMain-2GIx4o:active+.barButtonAlt-TQoCdZ,
-        .barButtonMain-2GIx4o:active+.spinner-3xAPm0 {
+        .barButtonMain-2GIx4o:active+.spinner-3xAPm0,
+        .newTopicsBarTopicSection-QcIQlL:active,
+        .newTopicsBarTopicSection-QcIQlL:active~* {
           transform: translateY(-3px)
         }
-        &.newMessagesBar-1hF-9G {
-          .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ {
+        &.newMessagesBar-1hF-9G, &.newTopicsBarContainer-MYPq92 {
+          .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ, .newTopicsBarTopicSection-QcIQlL {
             border-radius: 0 0 3px 3px;
             border: solid 1px #000;
             border-top: none;
@@ -2625,6 +2627,60 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
             transform: translateY(3px)
           }
         }
+        &.topicsPillContainer-1LeYIf {
+          height: 24px;
+          min-height: 24px;
+          .topicsPillText-2isyFh, .topicsPillCaret-2_eSsS {
+            border-radius: 0 0 3px 3px;
+            border: solid 1px #000;
+            border-bottom: none;
+            background: linear-gradient(#3F434Bbb, #494E56bb 50%, #373B42bb 50%, #202329bb);
+            box-shadow: inset 0 0 0 1px #fff3;
+            .theme-light & {
+              background-image: linear-gradient(#dfdfdfbb, #ddddddbb 50%, #cbcbcbbb 50%, #e9e9e9bb);
+              border-color: #888 !important;
+              color: #000;
+              text-shadow: 0 1px #fffb, 0 1px 5px #fff8;
+              font-weight: 500;
+            }
+          }
+          .topicsPillText-2isyFh:active,
+          .topicsPillCaret-2_eSsS:active,
+          .topicsPillText-2isyFh:active+.topicsPillCarets-1H66Lb .topicsPillCaret-2_eSsS {
+            transform: translateY(-3px)
+          }
+          .newTopicsBarInitial-13a821 {
+            transform: translateY(-0.0001px);
+          }
+          .newTopicsBarTopicSection-QcIQlL {
+            height: 24px;
+          }
+          .topicsPillText-2isyFh {
+            height: 24px;
+            box-sizing: border-box;
+            padding: 5px 0 0 5px;
+            border-radius: 0 0 0 3px;
+            .topicsPillTextSelected-1WEvgM {
+              height: 16px;
+              padding: 0;
+            }
+          }
+          .topicsPillCarets-1H66Lb {
+            padding: 0;
+            gap: 0;
+            height: 24px;
+            .topicsPillCaret-2_eSsS {
+              margin: 0;
+              border-radius: 0;
+              border: solid 1px #000;
+              border-left: none;
+              height: 23px;
+              &.topicsCaretRight-2MQXQk {
+                border-radius: 0 0 3px 0;
+              }
+            }
+          }
+        }
         &.messagesErrorBar-1IQ1rH {
           .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ, .spinner-2RT7ZC {
             border-radius: 3px 3px 0 0;
@@ -2640,7 +2696,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
             transform: translateY(3px)
           }
         }
-        .barButtonMain-2GIx4o {
+        .barButtonMain-2GIx4o, .newTopicsBarTopicSection-QcIQlL {
           border-top-right-radius: 0 !important;
           border-bottom-right-radius: 0 !important;
           border-right: solid 1px black !important;
@@ -2659,7 +2715,7 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
             background-color: #0004;
           }
         }
-        .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ {
+        .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ, .topicsPillText-2isyFh, .newTopicsBarTopicSection-QcIQlL, .topicsPillCaret-2_eSsS {
           transition: .2s !important;
         }
         .spinner-2RT7ZC {
@@ -2686,6 +2742,9 @@ $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
         &.newMessagesBar-1hF-9G .spinner-3xAPm0 {
           border-radius: 0 0 3px 0
         }
+      }
+      .animatedBar-2xsz-8 {
+        animation: none !important;
       }
     }
     // user list
