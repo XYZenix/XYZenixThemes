@@ -1,0 +1,227 @@
+/*
+retro steam (2012)
+1.0
+apr 28 2023
+*/
+// titlebar control buttons
+.TitleBar.title-area {
+  .title-bar-actions {
+    gap: 2px;
+    margin-right: 6px;
+    max-height: 28px;
+    cursor: default;
+  }
+  .title-area-icon {
+    svg {display:none}
+    background-color: #0000 !important;
+    background-size: 100%;
+    background-position: center;
+    width: 16px;
+    height: 15px;
+    opacity: .5;
+    cursor: pointer;
+    margin-top: 8px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .closeButton {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 7.5L3 12H5L8 8.5L11 12H13L9 7.5L13 3H11L8 6.5L5 3H3L7 7.5Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+  }
+  .maximizeButton {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13 3H3V12H13V3ZM12 5H4V11H12V5Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+  }
+  .restoreButton {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13 3H5V5H3V12H11V10H13V3ZM6 5H11V9H12V4H6V5ZM4 7V11H10V7H4Z' fill='white'/%3E%3C/svg%3E%0A") !important;
+  }
+  .minimizeButton {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4' y='11' width='8' height='1' fill='white'/%3E%3C/svg%3E%0A") !important;
+  }
+}
+// main
+[class^="steamdesktop_Wrapper_"] {
+  [class^="steamdesktop_OuterFrame_"] {
+    background-color: #383635;
+    background-image: url("https://cdn.discordapp.com/attachments/1070828852441526304/1101298805204332634/image.png");
+    background-repeat: repeat-x;
+  }
+  // top bar
+  [class^="steamdesktop_TopBar_"] {
+    box-shadow: none;
+    background: none;
+    // titlebar
+    [class*="steamdesktop_TitleBar_"] {
+      // menu bar
+      [class*="rootmenu_RootMenuBar_"] {
+        height: 28px;
+        // option
+        [class*="rootmenu_RootMenuButton_2UyOB"] {
+          svg {display:none}
+          font-family: Arial;
+          padding: 0 2px;
+          cursor: default;
+          transition: 0s;
+          [class*="rootmenu_SteamButton_"] {
+            padding: 0;
+          }
+        }
+      }
+      // controls
+      [class*="titlebarcontrols_TitleBarControls_"] {
+        // notifs
+        [class*="titlebarcontrols_NotificationsButton_"] {
+          background: linear-gradient(#262625,#32302f);
+          border: solid 1px #605d5a;
+          box-shadow: inset 0 1px #413f3d;
+          border-top: none;
+          border-radius: 0 0 3px 3px;
+          margin-top: -8px;
+          padding: 0 4px;
+          height: 28px;
+          svg {
+            path {display:none}
+            background-image: url("https://cdn.discordapp.com/attachments/1070828852441526304/1101311154745266186/image.png");
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+          // has unread
+          &[class*="titlebarcontrols_HasNew_"] {
+            background: #5c7e10;
+            border-color: #577117;
+            box-shadow: inset -1px 0 #6a8925, inset 1px 0 #6a8925, inset 0 1px #789a2b;
+            svg {
+              background-image: url("https://cdn.discordapp.com/attachments/1070828852441526304/1101311135996710982/image.png");
+            }
+          }
+        }
+        // announcements
+        [class*="titlebarcontrols_AnnouncementsButton_"] {
+          background: linear-gradient(#262625,#32302f);
+          border: solid 1px #605d5a;
+          box-shadow: inset 0 1px #413f3d;
+          border-top: none;
+          border-radius: 0 0 3px 3px;
+          margin-top: -8px;
+          padding: 0 4px;
+          height: 28px;
+          svg {
+            // path {display:none}
+            // background-image: url("https://cdn.discordapp.com/attachments/1070828852441526304/1101311154745266186/image.png");
+            // background-position: center;
+            // background-repeat: no-repeat;
+          }
+          // has unread
+          &[class*="titlebarcontrols_Active_1oEwi"] {
+            background: #1999ff;
+            border-color: #127bd1;
+            box-shadow: inset -1px 0 #219bff, inset 1px 0 #219bff, inset 0 1px #45abff;
+            svg {
+              // background-image: url("https://cdn.discordapp.com/attachments/1070828852441526304/1101311135996710982/image.png");
+            }
+          }
+        }
+      }
+    }
+    // main navbar
+    [class^="steamdesktop_SuperNavBar_"]>[class^="supernav_SuperNav_"] {
+      // nav option
+      [class*="menu_MenuWrapper_"][class*="supernav_SuperNavMenu_"] {
+        cursor: default;
+        // inner
+        [class^="supernav_MenuButton_"] {
+          cursor: default;
+          font-family: Arial;
+          font-size: 23px;
+          &:after {display:none!important}
+        }
+        // selected
+        &[class*="supernav_Selected_"] {
+          [class^="supernav_MenuButton_"] {
+            color: #fff;
+            text-shadow: 0 0 6px #fff8, 0 0 4px #fff8, 0 0 2px #fff4;
+          }
+        }
+      }
+    }
+  }
+  // bottom bar
+  [class^="bottombar_BottomBar_"] {
+    box-shadow: none;
+    background: none;
+    // add game bar
+    [class*="bottombar_AddGameButton_"] {
+      margin-top: -32px;
+      z-index: 2;
+      // icon
+      [class*="bottombar_Icon_"] {
+        svg {display:none}
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.5 8V6H6V2.5H8V6H11.5V8H8V11.5H6V8H2.5Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 14px;
+        height: 14px;
+        margin-top: 2px;
+        opacity: .5;
+      }
+      // text
+      [class*="bottombar_Text_"] {
+        font-family: Arial;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #fff8;
+      }
+      &:hover {
+        [class*="bottombar_Icon_"] {
+          opacity: 1;
+        }
+        [class*="bottombar_Text_"]  {
+          color: #fff;
+        }
+      }
+    }
+    // downloads bar
+    [class*="bottombar_DownloadStatus_"] {
+      margin-top: -32px;
+      z-index: 2;
+      // icon
+      [class*="bottombar_Icon_"] {
+        display: none;
+      }
+      // text
+      [class*="bottombar_Queue_"] {
+        font-family: Arial;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #fff8;
+      }
+      &:hover {
+        [class*="bottombar_Queue_"]  {
+          color: #fff;
+        }
+      }
+    }
+  }
+  // content
+  [class^="steamdesktop_ContentFrame_"] {
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 3px;
+    border: solid 1px #171614;
+    box-shadow: 0 0 0 1px #4d4b48;
+    margin-top: 28px;
+    overflow: visible;
+    // url bar
+    [class^="steamdesktop_BrowserWrapper_"]>[class^="steamdesktop_URLBar_"] {
+      position: absolute;
+      z-index: 9999;
+      margin-top: -27px;
+      contain: none;
+      background: none;
+      box-shadow: none;
+      padding-left: 0;
+    }
+    [class^="steamdesktop_URLBarReplacement_"]:empty {
+      display: none;
+    }
+  }
+}
