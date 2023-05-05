@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 42";
-$themeDate: "May 2, 2023";
+$themeVersion: "Alpha 43";
+$themeDate: "May 6, 2023";
 
 @use "sass:color";
 
@@ -502,9 +502,14 @@ $exportAddons: false;
     --yellow-360: var(--yellow);
     --green-360: var(--green);
     --brand-500: var(--blurple);
-    --premium-tier-2-purple-for-gradients: #E292AA;
-    --premium-tier-2-purple-for-gradients-2: #CB83CF;
-    --premium-tier-2-pink-for-gradients: #B473F5;
+    --premium-tier-2-purple-for-gradients: hsl(342,calc(var(--saturation-factor,1)*58%),72.9%);
+    --premium-tier-2-purple-for-gradients-hsl: 342 calc(var(--saturation-factor)*58%) 72.9%;
+    --premium-tier-2-purple-for-gradients-2: hsl(296.8,calc(var(--saturation-factor,1)*44.2%),66.3%);
+    --premium-tier-2-purple-for-gradients-2-hsl: 296.8 calc(var(--saturation-factor)*44.2%) 66.3%;
+    --premium-tier-2-pink-for-gradients: hsl(270,calc(var(--saturation-factor,1)*86.7%),70.6%);
+    --premium-tier-2-pink-for-gradients-hsl: 270 calc(var(--saturation-factor)*86.7%) 70.6%;
+    --premium-tier-2-pink-for-gradients-2: hsl(296.8,calc(var(--saturation-factor,1)*44.2%),66.3%);
+    --premium-tier-2-pink-for-gradients-2-hsl: 296.8 calc(var(--saturation-factor)*44.2%) 66.3%;
   }
   [fill="hsl(235, calc(var(--saturation-factor, 1) * 85.6%), 64.7%)"],
   [fill="var(--brand-500)"],
@@ -3748,7 +3753,7 @@ $exportAddons: false;
       }
     }
     // content
-    .contentRegionScroller-2_GT_N {
+    @at-root :is(.contentRegionScroller-2_GT_N, .customScroller-m1-jZn) {
       @include scrollbar;
       .theme-dark & {
         background: linear-gradient(var(--d8d9),var(--d8dB)) fixed 0 0/cover;
@@ -3961,6 +3966,51 @@ $exportAddons: false;
           border-radius: 512px;
         }
       }
+      // tabs
+      .tabBar-11FwuO.top-Ktfr_T {
+        position: relative;
+        border-bottom: none;
+        padding-left: 4px;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -17px;
+          height: 16px;
+          border-radius: 3px 3px 0 0;
+          pointer-events: none;
+          border: solid 1px;
+          border-bottom: none;
+          mask: linear-gradient(#000,#0000);
+          -webkit-mask: linear-gradient(#000,#0000);
+        }
+        .theme-dark & {
+          &:after {
+            border-color: var(--d8dC);
+            box-shadow: inset 0 0 0 1px var(--d8d7);
+            background: hsl(var(--d8d7v),.5);
+          }
+        }
+        .tabBarItem-MeqDhW {
+          border-bottom-width: 1px;
+          margin-left: 0;
+          padding-left: 16px;
+          margin-right: 0;
+          padding-right: 16px;
+          &.brand-2EKq3J {
+            &:hover {
+              border-bottom-color: hsl(var(--d8br4v),.25);
+              background: linear-gradient(#0000 50%, hsl(var(--d8br8v),.1));
+            }
+            &.selected-1sf9UK {
+              border-bottom-color: var(--d8br4);
+              background: linear-gradient(#0000 50%, hsl(var(--d8br8v),.25));
+            }
+          }
+        }
+      }
       // privacy & safety tab
       :is(.formNotice-1JW4h2, .card-1J9m50.cardPrimary-3qRT__.card-16VQ8C) {
         background: linear-gradient(var(--d8d7), var(--d8d9) 50%, var(--d8dA) 50%, var(--d8dB));
@@ -3976,9 +4026,11 @@ $exportAddons: false;
       }
       // authorized apps tab
       .authedApp-8q3NA9 {
-        box-shadow: inset 0 1px 8px #0008, 0 1px #fff2;
-        background: linear-gradient(#0000,#0001);
         border: none;
+        .theme-dark & {
+          box-shadow: inset 0 1px 8px #0004, inset 0 1px #0002, 0 1px #fff2;
+          background: linear-gradient(#0000,#0001);
+        }
         .appAvatar-2htirv {
           border-radius: 3px;
           background: #0008;
