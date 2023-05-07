@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 43";
-$themeDate: "May 6, 2023";
+$themeVersion: "Alpha 44";
+$themeDate: "May 7, 2023";
 
 @use "sass:color";
 
@@ -1522,11 +1522,15 @@ $exportAddons: false;
         margin-left: -3px;
         border-radius: 0;
         cursor: default;
+        background: linear-gradient(to right, #fff3, #fff0);
+        background-position: -140px 0;
+        background-repeat: no-repeat;
+        transition: .24s background-position;
         .hoverRoll-2XwpoF, .avatar-1EWyVD, .nameTag-sc-gpq {
           cursor: inherit;
         }
-        &:hover, &:active {
-          background: linear-gradient(to right, #fff3, #fff0);
+        &:is(:hover, :active, [aria-expanded="true"]) {
+          background-position: 0 0;
         }
       }
     }
@@ -1910,7 +1914,7 @@ $exportAddons: false;
       gap: 1px;
       .theme-light & {
         background: linear-gradient(var(--d8l5), var(--d8l3) 50%, var(--d8l2) 50%, #FFF);
-        box-shadow: inset 0 1px 5px #0006, 0 1px #fff;
+        box-shadow: inset 0 0 0 1px var(--d8l8), inset 0 1px 5px #0006, 0 1px #fff;
       }
       .theme-dark & {
         background: linear-gradient(var(--d8dB), var(--d8dA) 50%, var(--d8d9) 50%, var(--d8d8));
@@ -1938,21 +1942,21 @@ $exportAddons: false;
       }
       .theme-light & {
         background: #fff4;
-        box-shadow: 0 0, inset 0 0 0 1px #fff8;
+        box-shadow: 0 0 #000, inset 0 0 0 1px #fff8;
       }
       .theme-dark & {
         background: #fff1;
-        box-shadow: 0 0, inset 0 0 0 1px #fff2;
+        box-shadow: 0 0 #000, inset 0 0 0 1px #fff2;
       }
       &:hover {
         .theme-light & {
           background: #fff2;
-          box-shadow: 0 1px 2px #0004, inset 0 0 0 1px #fff2, inset 0 1px #fff4;
+          box-shadow: 0 1px 3px #0008, inset 0 0 0 1px #fff2, inset 0 1px #fff4;
           color: var(--d8dB);
         }
         .theme-dark & {
           background: #fff2;
-          box-shadow: 0 1px 2px #000, inset 0 0 0 1px #fff2, inset 0 1px #fff4;
+          box-shadow: 0 1px 3px #000, inset 0 0 0 1px #fff2, inset 0 1px #fff4;
           color: #fff;
         }
       }
@@ -2114,7 +2118,21 @@ $exportAddons: false;
 // friends list
 @at-root {
   .container-2cd8Mz {
-    .tabBar-ra-EuL  {
+    .addFriendInputWrapper-kkoSV9 {
+      background: linear-gradient(var(--d8dD) 0%, var(--d8dC) 50%, var(--d8dB) 50%, var(--d8dA) 100%);
+      box-shadow: 0 0 0 1px #0006, inset 0 0 0 1px #fff2, inset 0 1px 4px #000;
+      border: none;
+      border-radius: 3px;
+      .theme-light & {
+        background: linear-gradient(var(--d8l4) 0%, var(--d8l3) 50%, var(--d8l2) 50%, var(--d8l1) 100%);
+        box-shadow: 0 0 0 1px var(--d8lC), inset 0 0 0 1px #fffb, inset 0 1px 2px #0004;
+      }
+      .input-3O04eu {
+        background: none !important;
+        box-shadow: none !important;
+      }
+    }
+    .tabBar-ra-EuL {
       background: linear-gradient(var(--d8dB), var(--d8dA) 50%, var(--d8d8) 50%, var(--d8d7));
       box-shadow: inset 0 1px 4px #000b, 0 0 0 1px #000b, 0 2px #fff4, 0 0 0 2px #fff1;
       margin-top: 2px;
@@ -2440,6 +2458,21 @@ $exportAddons: false;
             }
           }
         }
+      }
+    }
+  }
+}
+// library tab
+@at-root {
+  .container-36u7Lw {
+    .scroller-2XLwLg {
+      .theme-light & {
+        background: linear-gradient(var(--d8l4) 0%, #FFF 100%);
+        box-shadow: inset 0 3px 16px #0004;
+      }
+      .theme-dark & {
+        background: linear-gradient(var(--d8dA), var(--d8d9));
+        box-shadow: inset 0 3px 16px #0004;
       }
     }
   }
@@ -3970,13 +4003,12 @@ $exportAddons: false;
       .tabBar-11FwuO.top-Ktfr_T {
         position: relative;
         border-bottom: none;
-        padding-left: 4px;
         &:after {
           content: "";
           display: block;
           position: absolute;
-          left: 0;
-          right: 0;
+          left: -4px;
+          right: -4px;
           bottom: -17px;
           height: 16px;
           border-radius: 3px 3px 0 0;
@@ -4286,6 +4318,9 @@ $exportAddons: false;
         .theme-dark & {
           background: linear-gradient(var(--d8dB) 0%, var(--d8dD) 50%, var(--d8dE) 50%, var(--d8dC) 100%) !important;
         }
+      }
+      .container-3NTP7o {
+        border-radius: 3px;
       }
       // hypesquad tab
       .membershipDialog-2wAdpQ {
@@ -5814,6 +5849,9 @@ $exportAddons: false;
     border-radius: 3px;
     .input-3r5zZY {
       border-radius: 3px;
+    }
+    .scroller-2qwVWY {
+      @include scrollbar;
     }
     .theme-dark & {
       background: linear-gradient(var(--d8d8), var(--d8dA));
