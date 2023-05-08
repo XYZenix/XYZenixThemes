@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 44";
-$themeDate: "May 7, 2023";
+$themeVersion: "Alpha 45";
+$themeDate: "May 8, 2023";
 
 @use "sass:color";
 
@@ -1084,6 +1084,9 @@ $exportAddons: false;
     }
     // header
     .header-3OsQeK {
+      .communityInfoContainer-1dMVpU {
+        display: none;
+      }
       .theme-light & {
         background: linear-gradient(var(--d8l3),var(--d8l5) 50%, var(--d8l7) 50%,var(--d8l8));
         box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
@@ -1747,6 +1750,18 @@ $exportAddons: false;
               100% {background-image: var(--polling1)}
             }
           }
+          &:after {
+            content: "";
+            position: absolute;
+            inset: 1px 1px 0 1px;
+            border-radius: 2px;
+            background-image: linear-gradient(#aaa5, #0005), url(https://cdn.discordapp.com/attachments/815980008782561360/1067889931952869466/noise2.png);
+            background-size: 100% 100%, 256px 256px;
+            animation: .8s static-move linear infinite;
+            pointer-events: none;
+            transition: 3s opacity;
+            opacity: .3;
+          }
           .ping-2IpLcU {
             opacity: 0;
             position: absolute;
@@ -1777,6 +1792,9 @@ $exportAddons: false;
             .contents-3NembX {
               color: #61dba5;
             }
+            &:after {
+              opacity: .1;
+            }
           }
           &.rtcConnectionQualityAverage-USzsaD {
             &:before {
@@ -1786,6 +1804,9 @@ $exportAddons: false;
             .contents-3NembX {
               color: #FFBA5E;
             }
+            &:after {
+              opacity: .3;
+            }
           }
           &.rtcConnectionQualityBad-3fxsmZ {
             &:before {
@@ -1794,6 +1815,9 @@ $exportAddons: false;
             }
             .contents-3NembX {
               color: #FF6868;
+            }
+            &:after {
+              opacity: .5;
             }
           }
         }
