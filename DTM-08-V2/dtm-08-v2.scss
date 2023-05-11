@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 46";
-$themeDate: "May 9, 2023";
+$themeVersion: "Alpha 47";
+$themeDate: "May 11, 2023";
 
 @use "sass:color";
 
@@ -1709,7 +1709,7 @@ $exportAddons: false;
         // }
         .theme-dark &, .theme-light & {
           background: linear-gradient(var(--d8dE), var(--d8dD) 50%,var(--d8dE) 50%, var(--d8dF));
-          box-shadow: inset 0 1px 4px #0008, 0 1px #fff3, 0 0 0 1px #fff1;
+          box-shadow: inset 0 1px 4px #0008, 0 1px #fff3, 0 0 0 1px #fff1, inset 0 0 0 1px #000;
           &:after {
             background-image: linear-gradient(#0000,#9daae222 90%, #0000);
           }
@@ -3992,6 +3992,69 @@ $exportAddons: false;
           }
         }
       }
+      // server discovery tab and partner program tab
+      :is(.checklist-Asy_56, .checklistContainer-12xGp5) {
+        background: linear-gradient(var(--d8d7), var(--d8d9) 50%, var(--d8dA) 50%, var(--d8dB));
+        box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 0 0 1px #000b, 0 1px 4px #0004, 0 1px 4px #000b;
+        text-shadow: 0 1px 3px #000b;
+        border-radius: 3px;
+        border: none;
+        .theme-light & {
+          background: linear-gradient(var(--d8l2), var(--d8l1) 50%, var(--d8l3) 50%, var(--d8l4));
+          box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 0 0 1px var(--d8lB), 0 1px 4px #0004, 0 1px 4px #0004;
+          text-shadow: 0 1px #fff6;
+        }
+        :is(.header-Wl8ec-, .checklistHeader-3liG7E) {
+          background: #0002;
+          box-shadow: 0 1px #fff2, inset 0 -1px #0004;
+        }
+        :is(.separator-1py8Bj, .separator-2qVfIV) {
+          display: none;
+        }
+        .checklistItem-1gWPPD {
+          position: relative;
+          padding-left: 24px;
+          padding-right: 24px;
+          overflow: hidden;
+          &:not(:last-child) {
+            box-shadow: 0 1px #fff2, inset 0 -1px #0004;
+          }
+          .checklistIcon-D7psvE {
+            display: none;
+          }
+          &:after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 1px;
+          }
+          &:has(.checked-22NTbO) {
+            background: linear-gradient(to right, hsl(var(--d8gr5v),.1),#0000 50%);
+            &:after {
+              content: "";
+              background: hsl(var(--d8gr5v),.8);
+              box-shadow: 0 0 12px 2px var(--d8gr5);
+            }
+          }
+          &:has([fill="var(--yellow-300)"]) {
+            background: linear-gradient(to right, hsl(var(--d8yl5v),.1),#0000 50%);
+            &:after {
+              content: "";
+              background: hsl(var(--d8yl5v),.8);
+              box-shadow: 0 0 12px 2px var(--d8yl5);
+            }
+          }
+          &:has([fill="var(--red-400)"]) {
+            background: linear-gradient(to right, hsl(var(--d8rd5v),.1),#0000 50%);
+            &:after {
+              content: "";
+              background: hsl(var(--d8rd5v),.8);
+              box-shadow: 0 0 12px 2px var(--d8rd5);
+            }
+          }
+        }
+      }
       // my account tab
       .accountProfileCard-lbN7n- {
         background: linear-gradient(var(--d8d9), var(--d8dC));
@@ -4068,7 +4131,7 @@ $exportAddons: false;
         }
       }
       // privacy & safety tab
-      :is(.formNotice-1JW4h2, .card-1J9m50.cardPrimary-3qRT__.card-16VQ8C) {
+      :is(.formNotice-1JW4h2, .card-1J9m50.cardPrimary-pAe8Ed.card-16VQ8C) {
         background: linear-gradient(var(--d8d7), var(--d8d9) 50%, var(--d8dA) 50%, var(--d8dB));
         box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 0 0 1px #000b, 0 1px 4px #0004, 0 1px 4px #000b;
         text-shadow: 0 1px 3px #000b;
@@ -4917,6 +4980,8 @@ $exportAddons: false;
 }
 // notices
 @at-root {
+  html:is(.platform-web, .platform-linux, .platform-win):has(.notice-2HEN-u) {
+  }
   // banner notice (on top of app)
   .notice-2HEN-u {
     text-shadow: 0 0 3px black, 0 0 3px black;
