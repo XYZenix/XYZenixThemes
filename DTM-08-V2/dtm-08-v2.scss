@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 47";
-$themeDate: "May 11, 2023";
+$themeVersion: "Alpha 48";
+$themeDate: "May 13, 2023";
 
 @use "sass:color";
 
@@ -2777,6 +2777,7 @@ $exportAddons: false;
         }
         .topicsPillTextSelected-1WEvgM {
           margin-top: -1px;
+          margin-left: 2px;
         }
         &.newMessagesBar-1hF-9G, &.newTopicsBarContainer-MYPq92 {
           .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ, .newTopicsBarTopicSection-QcIQlL {
@@ -3315,7 +3316,7 @@ $exportAddons: false;
 @at-root {
   // divider
   .divider-IqmEqJ {
-    .content-3spvdd {
+    .content-3spvdd:not(.summaryEndContent-2bZ-Ni) {
       .theme-light & {
         background: linear-gradient(var(--d8l3), var(--d8l1) 50%, var(--d8l2) 50%, var(--d8l5));
         box-shadow: inset 0 0 0 1px #fff8, inset 0 1px #fff, 0 0 0 1px var(--d8lA), 0 1px 3px #0004;
@@ -3356,6 +3357,43 @@ $exportAddons: false;
       height: 20px;
       padding-left: 8px;
       margin-top: -4px;
+    }
+    .summaryEndIcon-eZuYUJ {
+      .theme-light & {
+        background: linear-gradient(var(--d8l3), var(--d8l1) 50%, var(--d8l2) 50%, var(--d8l5));
+        box-shadow: inset 0 0 0 1px #fff8, inset 0 1px #fff, 0 0 0 1px var(--d8lA), 0 1px 3px #0004;
+      }
+      .theme-dark & {
+        background: linear-gradient(var(--d8dB), var(--d8dC) 50%, var(--d8dD) 50%, var(--d8dC));
+        box-shadow: inset 0 0 0 1px #fff1, 0 0 0 1px #000b, 0 1px 3px #0008;
+      }
+      border-radius: 2px;
+      margin-bottom: -6px;
+      padding: 4px;
+    }
+    .summaryFeedbackWrapper-3fHDbC {
+      .theme-light & {
+        background: linear-gradient(var(--d8l3), var(--d8l1) 50%, var(--d8l2) 50%, var(--d8l5));
+        box-shadow: inset 0 0 0 1px #fff8, inset 0 1px #fff, 0 0 0 1px var(--d8lA), 0 1px 3px #0004;
+      }
+      .theme-dark & {
+        background: linear-gradient(var(--d8dB), var(--d8dC) 50%, var(--d8dD) 50%, var(--d8dC));
+        box-shadow: inset 0 0 0 1px #fff1, 0 0 0 1px #000b, 0 1px 3px #0008;
+      }
+      border-radius: 2px;
+      line-height: 16px;
+      height: 24px;
+      margin-top: -6px;
+      padding-right: 4px;
+      padding-left: 8px;
+      .thumbIcon-3EW1GB {
+        background: none;
+        width: 24px;
+        height: 24px;
+        box-sizing: border-box;
+        padding: 4px;
+        margin-top: 4px;
+      }
     }
   }
   // hover bg
@@ -4086,6 +4124,25 @@ $exportAddons: false;
           border-radius: 512px;
         }
       }
+      .birthdayFeatureBorder-24qmMm {
+        background: none;
+        border: solid 1px;
+        color: #f00;
+        border-radius: 3px;
+        box-shadow: inset 0 0 4px, 0 0 4px;
+        .background-yH6t2p {
+          background: none;
+        }
+        animation: 8s bday linear infinite;
+        @keyframes bday {
+          0% {color: var(--d8rd4)}
+          20% {color: var(--d8yl4)}
+          40% {color: var(--d8gr4)}
+          60% {color: var(--d8bl4)}
+          80% {color: var(--d8pr4)}
+          100% {color: var(--d8rd4)}
+        }
+      }
       // tabs
       .tabBar-11FwuO.top-Ktfr_T {
         position: relative;
@@ -4395,6 +4452,29 @@ $exportAddons: false;
         .howItWorksImageContainer-3U9Rdq {
           background: #0001;
           box-shadow: inset 0 -1px #0003, 0 1px #fff1;
+        }
+      }
+      // party mode
+      .achievementContainer-2jBIZt {
+        background: linear-gradient(var(--d8d9), var(--d8dB) 50%, var(--d8dC) 50%, var(--d8dA));
+        box-shadow: inset 0 1px #fff2, inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 1px 2px #000b, inset 0 9999px 0 0 #0000, 0 1px #fff2;
+        border: none;
+        border-radius: 2px;
+        transition: .5s;
+        margin-left: 2px;
+        margin-right: 2px;
+        &:hover {
+          transition: .08s;
+          box-shadow: inset 0 1px #7289da, inset 0 0 0 1px #7289da, 0 0 0 1px #000, 0 1px 2px #000b, inset 0 9999px 0 0 #0000, 0 1px #fff2;
+        }
+        &:active {
+          transition: .08s;
+          box-shadow: inset 0 0 0 1px #fff1, inset 0 0 0 0 #0000, 0 0 0 1px #000, 0 0 0 #000b, inset 0 9999px 0 0 #0002, 0 2px #fff2;
+        }
+        .achievementIconContainer-3KBnTp {
+          box-shadow: inset 0 1px 4px #0008, 0 1px #fff3;
+          border-radius: 3px;
+          background: #0004;
         }
       }
       // voice & video tab
@@ -4977,6 +5057,26 @@ $exportAddons: false;
     border-radius: 0 !important;
     overflow: visible;
   }
+  .akaBadge-ep3q0P {
+    line-height: 14px;
+    padding: 0 5px;
+    border-radius: 3px;
+    .theme-dark &,
+    .userProfileOuter-2tQwNf.theme-dark & {
+      background: #0006;
+      color: #fff;
+      border: dashed 1px #fff8;
+      box-shadow: 0 1px 2px #0008;
+    }
+    .theme-light &,
+    .userProfileOuter-2tQwNf.theme-light & {
+      text-shadow: 0 -1px #fff8;
+      background: #fff6;
+      color: #000;
+      border: dashed 1px #0008;
+      box-shadow: 0 1px 2px #0004;
+    }
+  }
 }
 // notices
 @at-root {
@@ -5275,6 +5375,43 @@ $exportAddons: false;
       }
     }
   }
+  // summaries
+  .topicsDropdown-m34Uwy {
+    border-radius: 3px;
+    overflow: hidden;
+    .topicsDropdownHeading-3qEbg4 {
+      border-radius: 0;
+      background: linear-gradient(var(--d8d6), var(--d8d8) 50%, var(--d8d9) 50%, var(--d8dB));
+      text-shadow: 0 1px 2px #0008;
+      align-items: center;
+      .topicsDropdownHeadingText-3X6Erm {
+        padding-top: 0;
+      }
+      .theme-light & {
+        background: linear-gradient(var(--d8l5), var(--d8l3) 50%, var(--d8l6) 50%, var(--d8l5));
+        text-shadow: 0 1px #fff8;
+      }
+    }
+    .topicsScroller-1t74J7 {
+      border-radius: 0;
+      background: linear-gradient(to bottom, var(--d8dD) 0%, var(--d8d9) 100%);
+      .theme-light & {
+        background: linear-gradient(to bottom, var(--d8l4) 0%, #FFF 100%);
+      }
+      .container-3jhHBq {
+        transition: .18s;
+        border-radius: 3px;
+        margin-right: 2px;
+        &:hover {
+          background: #ffffff04;
+          box-shadow: inset 0 0 0 1px var(--d8dG), inset 2px 2px #fff1, 1px 1px #fff1;
+        }        
+        .title-2paAm9 {
+          text-transform: none;
+        }
+      }
+    }
+  }
   // new boost modal
   .root-2zfUH6 {
     .scroller-36O4Tg {
@@ -5288,7 +5425,6 @@ $exportAddons: false;
         color: #fff;
       }
     }
-    // FUCK OFF
     .wrapper-3uUnvs {display:none!important}
   }
   // cards
@@ -5519,6 +5655,12 @@ $exportAddons: false;
     .assetsLargeImageUserPopoutV2-9ksyvz {
       -webkit-box-reflect: below 0px linear-gradient(#0000 50%, #0004);
       border-radius: 3px;
+    }
+    // preview
+    &.profileCustomizationPreview-3zZw6E {
+      .avatarUploaderInner-p38nm2 {
+        border-radius: 64px;
+      }
     }
   }
   // user profile
