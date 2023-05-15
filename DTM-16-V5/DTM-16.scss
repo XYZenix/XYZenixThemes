@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "425";
-$themeDate: "May 13, 2023";
+$themeVersion: "426";
+$themeDate: "May 15, 2023";
 
 $debug: 0;
 
@@ -103,12 +103,12 @@ $experiment12: 2;
 // 2 | Treatment 2: 2016 (credit: dav)
 $experiment13: 2;
 
-// Radio bars (203-01_radio_bars)
+// Radio bars (2023-01_radio_bars)
 // 0 | Control: 2017-2020 radio bars
 // 1 | Treatment 1: 2015-2016 radio bars
 $experiment14: 1;
 
-// Attachments
+// Attachments (2023-04_attachments)
 // 0 | Control
 // 1 | Treatment 1: No background
 $experiment15: 1;
@@ -6091,7 +6091,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         }
       }
     }
-    @if $experiment15 {
+    @if $experiment15 == 1 {
       border: none;
       background: none;
       padding: 0;
@@ -6105,7 +6105,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
   .wrapperAudio-1Bzv_Z.newMosaicStyle-31sBoZ {
     +.hoverButtonGroup-2yZIzC {
       top: 12px;
-      @if $experiment15 {
+      @if $experiment15 == 1 {
         top: 6px;
       }
     }
@@ -10634,7 +10634,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
       // server settings
       & {
         // overview
-        #overview-tab {
+        #overview-tab:not(:has(.channel-settings-overview)) {
           .children-2C96Ex>.flex-2S1XBF {
             flex-direction: row-reverse;
             gap: 16px;
@@ -11758,6 +11758,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           content: "";
           display: block;
           border-radius: 50px;
+          pointer-events: auto;
         }
         &:before {
           box-shadow: inset 0 1px 1px rgba(0 0 0/.15);
@@ -11807,10 +11808,15 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
             width: 26px;
           }
         }
-        background: #0000 !important;
         svg {
           display: none
         }
+        background: #0000 !important;
+      }
+      pointer-events: none;
+      background: #0000 !important;
+      svg {
+        display: none !important;
       }
     }
     .bd-switch {
@@ -11891,8 +11897,8 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
         opacity: 1;
         width: 0;
         &:before, &:after {
-          margin-top: -3px;
-          margin-left: -4px;
+          margin-top: -1px;
+          margin-left: -2px;
           transition: .2s;
           content: "";
           display: block;
@@ -14975,7 +14981,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
     border-radius: 3px;
   }
 }
-@if $experiment14 {
+@if $experiment14 == 1 {
   .item-1TA5qI {
     .radioBar-1XgZqD {
       padding: 8px 0 !important;
@@ -15585,7 +15591,7 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
       .toolsContainer-25FL6V {
         background: var(--bg-overlay-2);
       }
-      @if $experiment14 {
+      @if $experiment14 == 1 {
         .item-1TA5qI {
           .radioBar-1XgZqD {
             > div:not([class*="-"]) > svg:not(.icon-3UbRUF), .radioBarIcon-EiCq-C>svg {

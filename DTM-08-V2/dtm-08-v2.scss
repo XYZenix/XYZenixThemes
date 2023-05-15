@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 48";
-$themeDate: "May 13, 2023";
+$themeVersion: "Alpha 49";
+$themeDate: "May 15, 2023";
 
 @use "sass:color";
 
@@ -2778,6 +2778,7 @@ $exportAddons: false;
         .topicsPillTextSelected-1WEvgM {
           margin-top: -1px;
           margin-left: 2px;
+          background: none;
         }
         &.newMessagesBar-1hF-9G, &.newTopicsBarContainer-MYPq92 {
           .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ, .newTopicsBarTopicSection-QcIQlL {
@@ -3403,12 +3404,18 @@ $exportAddons: false;
     &.mentioned-Tre-dv {
       background-color: var(--background-mentioned-hover);
     }
+    &.ephemeral-2nDdnn, &.replying-eZ7p5z {
+      background-color: var(--background-message-highlight);
+    }
   }
   .theme-light .message-2CShn3.selected-2LX7Jy, .theme-light.mouse-mode.full-motion .message-2CShn3:hover {
     background: linear-gradient(#00000008, #00000010 50%, #00000007 50%, #00000014);
     box-shadow: inset 0 1px 4px #0001, 0 1px #fffb, 0 -1px #0004;
     &.mentioned-Tre-dv {
       background-color: var(--background-mentioned-hover);
+    }
+    &.ephemeral-2nDdnn, &.replying-eZ7p5z {
+      background-color: var(--background-message-highlight);
     }
   }
   .message-2CShn3 {
@@ -3472,6 +3479,19 @@ $exportAddons: false;
             box-shadow: inset 0 0 0 1px #fff2, 0 1px 3px #0008;
           }
         }
+      }
+    }
+    // mention bg
+    &.mentioned-Tre-dv {
+      &:before {
+        background: linear-gradient(var(--d8ylD), var(--d8yl4), var(--d8ylD));
+        width: 1px;
+      }
+    }
+    &.ephemeral-2nDdnn, &.replying-eZ7p5z {
+      &:before {
+        background: linear-gradient(var(--d8brD), var(--d8br4), var(--d8brD));
+        width: 1px;
       }
     }
   }
@@ -3608,6 +3628,12 @@ $exportAddons: false;
       d: path("M14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14ZM19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V12H19V19Z");
       transform: none;
     }
+  }
+}
+// mention tags
+@at-root {
+  .mention, .roleMention-11Aaqi {
+    box-shadow: inset 0 0 0 1px #fff2, 0 1px 2px #0008;
   }
 }
 // vc
