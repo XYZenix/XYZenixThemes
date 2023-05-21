@@ -7,10 +7,12 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 49";
-$themeDate: "May 15, 2023";
+$themeVersion: "Alpha 50";
+$themeDate: "May 21, 2023";
 
 @use "sass:color";
+@use "sass:math";
+@use "sass:string";
 
 $snowsgiving: false;
 
@@ -18,339 +20,370 @@ $guildsNoDark: ".theme-light .guilds-2JjMmN:not(.theme-dark)";
 $sideNoDark: ".theme-light .sidebar-1tnWFu:not(theme-dark)";
 $exportAddons: false;
 
+
+@function dec($num,$amt) {
+  $value: 1; 
+  @for $i from 1 through $amt {
+    $value: $value * 10;
+  }
+  @return math.round($num*$value)/$value;
+}
+@function ss($color) {
+  $h: dec(hue($color),1);
+  $s: dec(saturation($color),1);
+  $l: dec(lightness($color),1);
+  $a: dec(alpha($color),2);
+  $h: string.slice(#{$h},0,-4);
+  @if ($a < 1) {
+    @return #{hsl(#{$h}, calc(var(--saturation-factor, 1) * #{$s}), $l, $a)};
+  }
+  @return #{hsl($h, calc(var(--saturation-factor, 1) * #{$s}), $l)};
+}
+@function ssv($color) {
+  $h: dec(hue($color),1);
+  $s: dec(saturation($color),1);
+  $l: dec(lightness($color),1);
+  $a: dec(alpha($color),2);
+  $h: string.slice(#{$h},0,-4);
+  @if ($a < 1) {
+    @return #{#{$h}, calc(var(--saturation-factor, 1) * #{$s}), $l, $a};
+  }
+  @return #{$h, calc(var(--saturation-factor, 1) * #{$s}), $l};
+}
+
 // theme colors
 :root {
   // dark bg
-  --d8d0v: 213.3,calc(var(--saturation-factor,1)*4.3%),59%; //#92969B
-  --d8d1v: 218.2,calc(var(--saturation-factor,1)*4.6%),53.5%; //#83878E
-  --d8d2v: 218.2,calc(var(--saturation-factor,1)*4.4%),49.2%; //#787C83
-  --d8d3v: 216.9,calc(var(--saturation-factor,1)*5.5%),46.1%; //#6F747C
-  --d8d4v: 216.9,calc(var(--saturation-factor,1)*6.3%),40.6%; //#61666E
-  --d8d5v: 216.9,calc(var(--saturation-factor,1)*7.2%),35.5%; //#545961
-  --d8d6v: 216.9,calc(var(--saturation-factor,1)*8.2%),31.2%; //#494E56
-  --d8d7v: 220,calc(var(--saturation-factor,1)*8.7%),27.1%; //#3F434B
-  --d8d8v: 218.2,calc(var(--saturation-factor,1)*9.1%),23.7%; //#373B42
-  --d8d9v: 218.2,calc(var(--saturation-factor,1)*10.5%),20.6%; //#2F333A
-  --d8dAv: 216,calc(var(--saturation-factor,1)*11.4%),17.3%; //#272B31
-  --d8dBv: 220,calc(var(--saturation-factor,1)*12.3%),14.3%; //#202329
-  --d8dCv: 217.5,calc(var(--saturation-factor,1)*13.8%),11.4%; //#191C21
-  --d8dDv: 220,calc(var(--saturation-factor,1)*13%),9%; //#14161A
-  --d8dEv: 216,calc(var(--saturation-factor,1)*13.5%),7.3%; //#101215
-  --d8dFv: 220,calc(var(--saturation-factor,1)*10.3%),5.7%; //#0D0E10
-  --d8dGv: 240,calc(var(--saturation-factor,1)*5.9%),3.3%; //#080809
+  --d8d0v: #{ssv(#92969B)};
+  --d8d1v: #{ssv(#83878E)};
+  --d8d2v: #{ssv(#787C83)};
+  --d8d3v: #{ssv(#6F747C)};
+  --d8d4v: #{ssv(#61666E)};
+  --d8d5v: #{ssv(#545961)};
+  --d8d6v: #{ssv(#494E56)};
+  --d8d7v: #{ssv(#3F434B)};
+  --d8d8v: #{ssv(#373B42)};
+  --d8d9v: #{ssv(#2F333A)};
+  --d8dAv: #{ssv(#272B31)};
+  --d8dBv: #{ssv(#202329)};
+  --d8dCv: #{ssv(#191C21)};
+  --d8dDv: #{ssv(#14161A)};
+  --d8dEv: #{ssv(#101215)};
+  --d8dFv: #{ssv(#0D0E10)};
+  --d8dGv: #{ssv(#080809)};
 
-  --d8d0: hsl(213.3,calc(var(--saturation-factor,1)*4.3%),59%); //#92969B
-  --d8d1: hsl(218.2,calc(var(--saturation-factor,1)*4.6%),53.5%); //#83878E
-  --d8d2: hsl(218.2,calc(var(--saturation-factor,1)*4.4%),49.2%); //#787C83
-  --d8d3: hsl(216.9,calc(var(--saturation-factor,1)*5.5%),46.1%); //#6F747C
-  --d8d4: hsl(216.9,calc(var(--saturation-factor,1)*6.3%),40.6%); //#61666E
-  --d8d5: hsl(216.9,calc(var(--saturation-factor,1)*7.2%),35.5%); //#545961
-  --d8d6: hsl(216.9,calc(var(--saturation-factor,1)*8.2%),31.2%); //#494E56
-  --d8d7: hsl(220,calc(var(--saturation-factor,1)*8.7%),27.1%); //#3F434B
-  --d8d8: hsl(218.2,calc(var(--saturation-factor,1)*9.1%),23.7%); //#373B42
-  --d8d9: hsl(218.2,calc(var(--saturation-factor,1)*10.5%),20.6%); //#2F333A
-  --d8dA: hsl(216,calc(var(--saturation-factor,1)*11.4%),17.3%); //#272B31
-  --d8dB: hsl(220,calc(var(--saturation-factor,1)*12.3%),14.3%); //#202329
-  --d8dC: hsl(217.5,calc(var(--saturation-factor,1)*13.8%),11.4%); //#191C21
-  --d8dD: hsl(220,calc(var(--saturation-factor,1)*13%),9%); //#14161A
-  --d8dE: hsl(216,calc(var(--saturation-factor,1)*13.5%),7.3%); //#101215
-  --d8dF: hsl(220,calc(var(--saturation-factor,1)*10.3%),5.7%); //#0D0E10
-  --d8dG: hsl(240,calc(var(--saturation-factor,1)*5.9%),3.3%); //#080809
+  --d8d0: hsl(var(--d8d0v));
+  --d8d1: hsl(var(--d8d1v));
+  --d8d2: hsl(var(--d8d2v));
+  --d8d3: hsl(var(--d8d3v));
+  --d8d4: hsl(var(--d8d4v));
+  --d8d5: hsl(var(--d8d5v));
+  --d8d6: hsl(var(--d8d6v));
+  --d8d7: hsl(var(--d8d7v));
+  --d8d8: hsl(var(--d8d8v));
+  --d8d9: hsl(var(--d8d9v));
+  --d8dA: hsl(var(--d8dAv));
+  --d8dB: hsl(var(--d8dBv));
+  --d8dC: hsl(var(--d8dCv));
+  --d8dD: hsl(var(--d8dDv));
+  --d8dE: hsl(var(--d8dEv));
+  --d8dF: hsl(var(--d8dFv));
+  --d8dG: hsl(var(--d8dGv));
 
   // light bg
-  --d8l1v: 210,calc(var(--saturation-factor,1)*16.7%),97.6%; //#F8F9FA
-  --d8l2v: 240,calc(var(--saturation-factor,1)*12%),95.1%; //#F1F1F4
-  --d8l3v: 225,calc(var(--saturation-factor,1)*11.1%),92.9%; //#EBECEF
-  --d8l4v: 220,calc(var(--saturation-factor,1)*11.1%),89.4%; //#E1E3E7
-  --d8l5v: 222.9,calc(var(--saturation-factor,1)*10.4%),86.9%; //#DADCE1
-  --d8l6v: 222.9,calc(var(--saturation-factor,1)*8.4%),83.7%; //#D2D4D9
-  --d8l7v: 225,calc(var(--saturation-factor,1)*7.8%),80%; //#C8CAD0
-  --d8l8v: 222,calc(var(--saturation-factor,1)*8.3%),76.5%; //#BEC1C8
-  --d8l9v: 222,calc(var(--saturation-factor,1)*7.2%),72.9%; //#B5B8BF
-  --d8lAv: 222,calc(var(--saturation-factor,1)*6.5%),69.8%; //#ADB0B7
-  --d8lBv: 223.6,calc(var(--saturation-factor,1)*6.5%),66.9%; //#A5A8B0
-  --d8lCv: 223.6,calc(var(--saturation-factor,1)*6%),64.1%; //#9EA1A9
-  --d8lDv: 225,calc(var(--saturation-factor,1)*6%),60.8%; //#9598A1
-  --d8lEv: 225,calc(var(--saturation-factor,1)*5.6%),58%; //#8E919A
-  --d8lFv: 225,calc(var(--saturation-factor,1)*5.3%),55.3%; //#878A93
-  --d8lGv: 226.2,calc(var(--saturation-factor,1)*5.5%),53.5%; //#82858F
+  --d8l1v: #{ssv(#F8F9FA)};
+  --d8l2v: #{ssv(#F1F1F4)};
+  --d8l3v: #{ssv(#EBECEF)};
+  --d8l4v: #{ssv(#E1E3E7)};
+  --d8l5v: #{ssv(#DADCE1)};
+  --d8l6v: #{ssv(#D2D4D9)};
+  --d8l7v: #{ssv(#C8CAD0)};
+  --d8l8v: #{ssv(#BEC1C8)};
+  --d8l9v: #{ssv(#B5B8BF)};
+  --d8lAv: #{ssv(#ADB0B7)};
+  --d8lBv: #{ssv(#A5A8B0)};
+  --d8lCv: #{ssv(#9EA1A9)};
+  --d8lDv: #{ssv(#9598A1)};
+  --d8lEv: #{ssv(#8E919A)};
+  --d8lFv: #{ssv(#878A93)};
+  --d8lGv: #{ssv(#82858F)};
 
   --d8l0: #FFF; //#FFFFFF
-  --d8l1: hsl(210,calc(var(--saturation-factor,1)*16.7%),97.6%); //#F8F9FA
-  --d8l2: hsl(240,calc(var(--saturation-factor,1)*12%),95.1%); //#F1F1F4
-  --d8l3: hsl(225,calc(var(--saturation-factor,1)*11.1%),92.9%); //#EBECEF
-  --d8l4: hsl(220,calc(var(--saturation-factor,1)*11.1%),89.4%); //#E1E3E7
-  --d8l5: hsl(222.9,calc(var(--saturation-factor,1)*10.4%),86.9%); //#DADCE1
-  --d8l6: hsl(222.9,calc(var(--saturation-factor,1)*8.4%),83.7%); //#D2D4D9
-  --d8l7: hsl(225,calc(var(--saturation-factor,1)*7.8%),80%); //#C8CAD0
-  --d8l8: hsl(222,calc(var(--saturation-factor,1)*8.3%),76.5%); //#BEC1C8
-  --d8l9: hsl(222,calc(var(--saturation-factor,1)*7.2%),72.9%); //#B5B8BF
-  --d8lA: hsl(222,calc(var(--saturation-factor,1)*6.5%),69.8%); //#ADB0B7
-  --d8lB: hsl(223.6,calc(var(--saturation-factor,1)*6.5%),66.9%); //#A5A8B0
-  --d8lC: hsl(223.6,calc(var(--saturation-factor,1)*6%),64.1%); //#9EA1A9
-  --d8lD: hsl(225,calc(var(--saturation-factor,1)*6%),60.8%); //#9598A1
-  --d8lE: hsl(225,calc(var(--saturation-factor,1)*5.6%),58%); //#8E919A
-  --d8lF: hsl(225,calc(var(--saturation-factor,1)*5.3%),55.3%); //#878A93
-  --d8lG: hsl(226.2,calc(var(--saturation-factor,1)*5.5%),53.5%); //#82858F
+  --d8l1: hsl(var(--d8l1v));
+  --d8l2: hsl(var(--d8l2v));
+  --d8l3: hsl(var(--d8l3v));
+  --d8l4: hsl(var(--d8l4v));
+  --d8l5: hsl(var(--d8l5v));
+  --d8l6: hsl(var(--d8l6v));
+  --d8l7: hsl(var(--d8l7v));
+  --d8l8: hsl(var(--d8l8v));
+  --d8l9: hsl(var(--d8l9v));
+  --d8lA: hsl(var(--d8lAv));
+  --d8lB: hsl(var(--d8lBv));
+  --d8lC: hsl(var(--d8lCv));
+  --d8lD: hsl(var(--d8lDv));
+  --d8lE: hsl(var(--d8lEv));
+  --d8lF: hsl(var(--d8lFv));
+  --d8lG: hsl(var(--d8lGv));
 
   // blurple
-  --d8br0v: 229,calc(var(--saturation-factor,1)*71%),86.5%; //#C4CDF5
-  --d8br1v: 229.2,calc(var(--saturation-factor,1)*65.6%),81.8%; //#B2BDEF
-  --d8br2v: 228.5,calc(var(--saturation-factor,1)*61.8%),78.4%; //#A6B3EA
-  --d8br3v: 228.7,calc(var(--saturation-factor,1)*54.3%),75.1%; //#9DAAE2
-  --d8br4v: 228.3,calc(var(--saturation-factor,1)*50.7%),72.2%; //#94A2DC
-  --d8br5v: 228.2,calc(var(--saturation-factor,1)*46.3%),67.8%; //#8796D3
-  --d8br6v: 227.8,calc(var(--saturation-factor,1)*42.7%),63.7%; //#7B8BCA
-  --d8br7v: 227.4,calc(var(--saturation-factor,1)*38%),58.2%; //#6C7DBD
-  --d8br8v: 227,calc(var(--saturation-factor,1)*35.3%),53.9%; //#6072B3
-  --d8br9v: 226.8,calc(var(--saturation-factor,1)*30.9%),48.8%; //#5667A3
-  --d8brAv: 226.6,calc(var(--saturation-factor,1)*33.3%),44.7%; //#4C5D98
-  --d8brBv: 227,calc(var(--saturation-factor,1)*34%),39.8%; //#435288
-  --d8brCv: 227.4,calc(var(--saturation-factor,1)*32.9%),33.9%; //#3A4673
-  --d8brDv: 226.8,calc(var(--saturation-factor,1)*32.9%),29.8%; //#333E65
-  --d8brEv: 226.5,calc(var(--saturation-factor,1)*32.8%),23.9%; //#293251
-  --d8brFv: 228.8,calc(var(--saturation-factor,1)*32.7%),19.2%; //#212741
-  --d8brGv: 226.4,calc(var(--saturation-factor,1)*33.3%),12.9%; //#161B2C
+  --d8br0v: #{ssv(#C4CDF5)};
+  --d8br1v: #{ssv(#B2BDEF)};
+  --d8br2v: #{ssv(#A6B3EA)};
+  --d8br3v: #{ssv(#9DAAE2)};
+  --d8br4v: #{ssv(#94A2DC)};
+  --d8br5v: #{ssv(#8796D3)};
+  --d8br6v: #{ssv(#7B8BCA)};
+  --d8br7v: #{ssv(#6C7DBD)};
+  --d8br8v: #{ssv(#6072B3)};
+  --d8br9v: #{ssv(#5667A3)};
+  --d8brAv: #{ssv(#4C5D98)};
+  --d8brBv: #{ssv(#435288)};
+  --d8brCv: #{ssv(#3A4673)};
+  --d8brDv: #{ssv(#333E65)};
+  --d8brEv: #{ssv(#293251)};
+  --d8brFv: #{ssv(#212741)};
+  --d8brGv: #{ssv(#161B2C)};
   
-  --d8br0: hsl(229,calc(var(--saturation-factor,1)*71%),86.5%); //#C4CDF5
-  --d8br1: hsl(229.2,calc(var(--saturation-factor,1)*65.6%),81.8%); //#B2BDEF
-  --d8br2: hsl(228.5,calc(var(--saturation-factor,1)*61.8%),78.4%); //#A6B3EA
-  --d8br3: hsl(228.7,calc(var(--saturation-factor,1)*54.3%),75.1%); //#9DAAE2
-  --d8br4: hsl(228.3,calc(var(--saturation-factor,1)*50.7%),72.2%); //#94A2DC
-  --d8br5: hsl(228.2,calc(var(--saturation-factor,1)*46.3%),67.8%); //#8796D3
-  --d8br6: hsl(227.8,calc(var(--saturation-factor,1)*42.7%),63.7%); //#7B8BCA
-  --d8br7: hsl(227.4,calc(var(--saturation-factor,1)*38%),58.2%); //#6C7DBD
-  --d8br8: hsl(227,calc(var(--saturation-factor,1)*35.3%),53.9%); //#6072B3
-  --d8br9: hsl(226.8,calc(var(--saturation-factor,1)*30.9%),48.8%); //#5667A3
-  --d8brA: hsl(226.6,calc(var(--saturation-factor,1)*33.3%),44.7%); //#4C5D98
-  --d8brB: hsl(227,calc(var(--saturation-factor,1)*34%),39.8%); //#435288
-  --d8brC: hsl(227.4,calc(var(--saturation-factor,1)*32.9%),33.9%); //#3A4673
-  --d8brD: hsl(226.8,calc(var(--saturation-factor,1)*32.9%),29.8%); //#333E65
-  --d8brE: hsl(226.5,calc(var(--saturation-factor,1)*32.8%),23.9%); //#293251
-  --d8brF: hsl(228.8,calc(var(--saturation-factor,1)*32.7%),19.2%); //#212741
-  --d8brG: hsl(226.4,calc(var(--saturation-factor,1)*33.3%),12.9%); //#161B2C
+  --d8br0: hsl(var(--d8br0v));
+  --d8br1: hsl(var(--d8br1v));
+  --d8br2: hsl(var(--d8br2v));
+  --d8br3: hsl(var(--d8br3v));
+  --d8br4: hsl(var(--d8br4v));
+  --d8br5: hsl(var(--d8br5v));
+  --d8br6: hsl(var(--d8br6v));
+  --d8br7: hsl(var(--d8br7v));
+  --d8br8: hsl(var(--d8br8v));
+  --d8br9: hsl(var(--d8br9v));
+  --d8brA: hsl(var(--d8brAv));
+  --d8brB: hsl(var(--d8brBv));
+  --d8brC: hsl(var(--d8brCv));
+  --d8brD: hsl(var(--d8brDv));
+  --d8brE: hsl(var(--d8brEv));
+  --d8brF: hsl(var(--d8brFv));
+  --d8brG: hsl(var(--d8brGv));
 
   // red
-  --d8rd0v: 0,calc(var(--saturation-factor,1)*91.5%),86.1%; //#FCBBBB
-  --d8rd1v: 0,calc(var(--saturation-factor,1)*89.1%),82%; //#FAA8A8
-  --d8rd2v: 0,calc(var(--saturation-factor,1)*86.2%),77.3%; //#F79393
-  --d8rd3v: 0,calc(var(--saturation-factor,1)*83.7%),71.2%; //#F37878
-  --d8rd4v: 0,calc(var(--saturation-factor,1)*82.4%),66.7%; //#F06464
-  --d8rd5v: 0,calc(var(--saturation-factor,1)*83.9%),61%; //#EF4848
-  --d8rd6v: 0,calc(var(--saturation-factor,1)*77%),55.7%; //#E53737
-  --d8rd7v: 0,calc(var(--saturation-factor,1)*62.5%),50.8%; //#D03333
-  --d8rd8v: 0,calc(var(--saturation-factor,1)*61.6%),44.9%; //#B92C2C
-  --d8rd9v: 0.5,calc(var(--saturation-factor,1)*62.4%),39.6%; //#A42726
-  --d8rdAv: 0,calc(var(--saturation-factor,1)*63.7%),35.7%; //#952121
-  --d8rdBv: 0,calc(var(--saturation-factor,1)*65.6%),32%; //#871C1C
-  --d8rdCv: 0.6,calc(var(--saturation-factor,1)*67.9%),26.9%; //#731716
-  --d8rdDv: 0.8,calc(var(--saturation-factor,1)*68.4%),22.4%; //#601312
-  --d8rdEv: 0,calc(var(--saturation-factor,1)*70.8%),17.5%; //#4C0D0D
-  --d8rdFv: 0,calc(var(--saturation-factor,1)*75%),14.1%; //#3F0909
-  --d8rdGv: 0,calc(var(--saturation-factor,1)*78.6%),11%; //#320606
+  --d8rd0v: #{ssv(#FCBBBB)};
+  --d8rd1v: #{ssv(#FAA8A8)};
+  --d8rd2v: #{ssv(#F79393)};
+  --d8rd3v: #{ssv(#F37878)};
+  --d8rd4v: #{ssv(#F06464)};
+  --d8rd5v: #{ssv(#EF4848)};
+  --d8rd6v: #{ssv(#E53737)};
+  --d8rd7v: #{ssv(#D03333)};
+  --d8rd8v: #{ssv(#B92C2C)};
+  --d8rd9v: #{ssv(#A42726)};
+  --d8rdAv: #{ssv(#952121)};
+  --d8rdBv: #{ssv(#871C1C)};
+  --d8rdCv: #{ssv(#731716)};
+  --d8rdDv: #{ssv(#601312)};
+  --d8rdEv: #{ssv(#4C0D0D)};
+  --d8rdFv: #{ssv(#3F0909)};
+  --d8rdGv: #{ssv(#320606)};
 
-  --d8rd0: hsl(0,calc(var(--saturation-factor,1)*91.5%),86.1%); //#FCBBBB
-  --d8rd1: hsl(0,calc(var(--saturation-factor,1)*89.1%),82%); //#FAA8A8
-  --d8rd2: hsl(0,calc(var(--saturation-factor,1)*86.2%),77.3%); //#F79393
-  --d8rd3: hsl(0,calc(var(--saturation-factor,1)*83.7%),71.2%); //#F37878
-  --d8rd4: hsl(0,calc(var(--saturation-factor,1)*82.4%),66.7%); //#F06464
-  --d8rd5: hsl(0,calc(var(--saturation-factor,1)*83.9%),61%); //#EF4848
-  --d8rd6: hsl(0,calc(var(--saturation-factor,1)*77%),55.7%); //#E53737
-  --d8rd7: hsl(0,calc(var(--saturation-factor,1)*62.5%),50.8%); //#D03333
-  --d8rd8: hsl(0,calc(var(--saturation-factor,1)*61.6%),44.9%); //#B92C2C
-  --d8rd9: hsl(0.5,calc(var(--saturation-factor,1)*62.4%),39.6%); //#A42726
-  --d8rdA: hsl(0,calc(var(--saturation-factor,1)*63.7%),35.7%); //#952121
-  --d8rdB: hsl(0,calc(var(--saturation-factor,1)*65.6%),32%); //#871C1C
-  --d8rdC: hsl(0.6,calc(var(--saturation-factor,1)*67.9%),26.9%); //#731716
-  --d8rdD: hsl(0.8,calc(var(--saturation-factor,1)*68.4%),22.4%); //#601312
-  --d8rdE: hsl(0,calc(var(--saturation-factor,1)*70.8%),17.5%); //#4C0D0D
-  --d8rdF: hsl(0,calc(var(--saturation-factor,1)*75%),14.1%); //#3F0909
-  --d8rdG: hsl(0,calc(var(--saturation-factor,1)*78.6%),11%); //#320606
+  --d8rd0: hsl(var(--d8rd0v));
+  --d8rd1: hsl(var(--d8rd1v));
+  --d8rd2: hsl(var(--d8rd2v));
+  --d8rd3: hsl(var(--d8rd3v));
+  --d8rd4: hsl(var(--d8rd4v));
+  --d8rd5: hsl(var(--d8rd5v));
+  --d8rd6: hsl(var(--d8rd6v));
+  --d8rd7: hsl(var(--d8rd7v));
+  --d8rd8: hsl(var(--d8rd8v));
+  --d8rd9: hsl(var(--d8rd9v));
+  --d8rdA: hsl(var(--d8rdAv));
+  --d8rdB: hsl(var(--d8rdBv));
+  --d8rdC: hsl(var(--d8rdCv));
+  --d8rdD: hsl(var(--d8rdDv));
+  --d8rdE: hsl(var(--d8rdEv));
+  --d8rdF: hsl(var(--d8rdFv));
+  --d8rdG: hsl(var(--d8rdGv));
 
   // yellow
-  --d8yl0v: 25.9,calc(var(--saturation-factor,1)*100%),90%; //#FFE2CC
-  --d8yl1v: 27.8,calc(var(--saturation-factor,1)*100%),81.4%; //#FFCCA0
-  --d8yl2v: 30.9,calc(var(--saturation-factor,1)*100%),72.5%; //#FFBB73
-  --d8yl3v: 34.4,calc(var(--saturation-factor,1)*98.9%),63.3%; //#FEAF45
-  --d8yl4v: 37.5,calc(var(--saturation-factor,1)*93.2%),53.5%; //#F7A41A
-  --d8yl5v: 39.3,calc(var(--saturation-factor,1)*96.6%),45.9%; //#E69804
-  --d8yl6v: 39.1,calc(var(--saturation-factor,1)*98.1%),42%; //#D48B02
-  --d8yl7v: 38,calc(var(--saturation-factor,1)*88.9%),39%; //#BC7B0B
-  --d8yl8v: 38.9,calc(var(--saturation-factor,1)*98.8%),33.9%; //#AC7001
-  --d8yl9v: 38.6,calc(var(--saturation-factor,1)*98.7%),30.6%; //#9B6401
-  --d8ylAv: 38.4,calc(var(--saturation-factor,1)*98.6%),27.1%; //#895801
-  --d8ylBv: 38.3,calc(var(--saturation-factor,1)*98.3%),23.7%; //#784D01
-  --d8ylCv: 37.7,calc(var(--saturation-factor,1)*100%),19%; //#613D00
-  --d8ylDv: 37,calc(var(--saturation-factor,1)*100%),15.9%; //#513200
-  --d8ylEv: 36.6,calc(var(--saturation-factor,1)*100%),12.5%; //#402700
-  --d8ylFv: 34.8,calc(var(--saturation-factor,1)*100%),9.8%; //#321D00
-  --d8ylGv: 34.5,calc(var(--saturation-factor,1)*100%),7.8%; //#281700
+  --d8yl0v: #{ssv(#FFE2CC)};
+  --d8yl1v: #{ssv(#FFCCA0)};
+  --d8yl2v: #{ssv(#FFBB73)};
+  --d8yl3v: #{ssv(#FEAF45)};
+  --d8yl4v: #{ssv(#F7A41A)};
+  --d8yl5v: #{ssv(#E69804)};
+  --d8yl6v: #{ssv(#D48B02)};
+  --d8yl7v: #{ssv(#BC7B0B)};
+  --d8yl8v: #{ssv(#AC7001)};
+  --d8yl9v: #{ssv(#9B6401)};
+  --d8ylAv: #{ssv(#895801)};
+  --d8ylBv: #{ssv(#784D01)};
+  --d8ylCv: #{ssv(#613D00)};
+  --d8ylDv: #{ssv(#513200)};
+  --d8ylEv: #{ssv(#402700)};
+  --d8ylFv: #{ssv(#321D00)};
+  --d8ylGv: #{ssv(#281700)};
 
-  --d8yl0: hsl(25.9,calc(var(--saturation-factor,1)*100%),90%); //#FFE2CC
-  --d8yl1: hsl(27.8,calc(var(--saturation-factor,1)*100%),81.4%); //#FFCCA0
-  --d8yl2: hsl(30.9,calc(var(--saturation-factor,1)*100%),72.5%); //#FFBB73
-  --d8yl3: hsl(34.4,calc(var(--saturation-factor,1)*98.9%),63.3%); //#FEAF45
-  --d8yl4: hsl(37.5,calc(var(--saturation-factor,1)*93.2%),53.5%); //#F7A41A
-  --d8yl5: hsl(39.3,calc(var(--saturation-factor,1)*96.6%),45.9%); //#E69804
-  --d8yl6: hsl(39.1,calc(var(--saturation-factor,1)*98.1%),42%); //#D48B02
-  --d8yl7: hsl(38,calc(var(--saturation-factor,1)*88.9%),39%); //#BC7B0B
-  --d8yl8: hsl(38.9,calc(var(--saturation-factor,1)*98.8%),33.9%); //#AC7001
-  --d8yl9: hsl(38.6,calc(var(--saturation-factor,1)*98.7%),30.6%); //#9B6401
-  --d8ylA: hsl(38.4,calc(var(--saturation-factor,1)*98.6%),27.1%); //#895801
-  --d8ylB: hsl(38.3,calc(var(--saturation-factor,1)*98.3%),23.7%); //#784D01
-  --d8ylC: hsl(37.7,calc(var(--saturation-factor,1)*100%),19%); //#613D00
-  --d8ylD: hsl(37,calc(var(--saturation-factor,1)*100%),15.9%); //#513200
-  --d8ylE: hsl(36.6,calc(var(--saturation-factor,1)*100%),12.5%); //#402700
-  --d8ylF: hsl(34.8,calc(var(--saturation-factor,1)*100%),9.8%); //#321D00
-  --d8ylG: hsl(34.5,calc(var(--saturation-factor,1)*100%),7.8%); //#281700
+  --d8yl0: hsl(var(--d8yl0v));
+  --d8yl1: hsl(var(--d8yl1v));
+  --d8yl2: hsl(var(--d8yl2v));
+  --d8yl3: hsl(var(--d8yl3v));
+  --d8yl4: hsl(var(--d8yl4v));
+  --d8yl5: hsl(var(--d8yl5v));
+  --d8yl6: hsl(var(--d8yl6v));
+  --d8yl7: hsl(var(--d8yl7v));
+  --d8yl8: hsl(var(--d8yl8v));
+  --d8yl9: hsl(var(--d8yl9v));
+  --d8ylA: hsl(var(--d8ylAv));
+  --d8ylB: hsl(var(--d8ylBv));
+  --d8ylC: hsl(var(--d8ylCv));
+  --d8ylD: hsl(var(--d8ylDv));
+  --d8ylE: hsl(var(--d8ylEv));
+  --d8ylF: hsl(var(--d8ylFv));
+  --d8ylG: hsl(var(--d8ylGv));
   
   // green
-  --d8gr0v: 145.3,calc(var(--saturation-factor,1)*70.4%),89.4%; //#D1F7E1
-  --d8gr1v: 150,calc(var(--saturation-factor,1)*88.9%),75.3%; //#88F8C0
-  --d8gr2v: 151.8,calc(var(--saturation-factor,1)*79.1%),66.3%; //#65EDAD
-  --d8gr3v: 153.2,calc(var(--saturation-factor,1)*65%),57.5%; //#4CD99A
-  --d8gr4v: 154.5,calc(var(--saturation-factor,1)*55.7%),50.4%; //#3AC78B
-  --d8gr5v: 155,calc(var(--saturation-factor,1)*59.7%),45.7%; //#2FBA80
-  --d8gr6v: 154.8,calc(var(--saturation-factor,1)*58.3%),42.4%; //#2DAB76
-  --d8gr7v: 153.8,calc(var(--saturation-factor,1)*54.9%),40%; //#2E9E6D
-  --d8gr8v: 153.7,calc(var(--saturation-factor,1)*53.3%),36.1%; //#2B8D62
-  --d8gr9v: 153.2,calc(var(--saturation-factor,1)*50.9%),32.7%; //#297E58
-  --d8grAv: 152.8,calc(var(--saturation-factor,1)*49%),30%; //#277250
-  --d8grBv: 152.3,calc(var(--saturation-factor,1)*48.1%),26.5%; //#236446
-  --d8grCv: 152.6,calc(var(--saturation-factor,1)*49.6%),22.5%; //#1D563C
-  --d8grDv: 152.4,calc(var(--saturation-factor,1)*52.1%),18.8%; //#174932
-  --d8grEv: 152.7,calc(var(--saturation-factor,1)*59.5%),14.5%; //#0F3B27
-  --d8grFv: 154.7,calc(var(--saturation-factor,1)*76%),9.8%; //#062C1C
-  --d8grGv: 152.3,calc(var(--saturation-factor,1)*86.7%),5.9%; //#021C10
+  --d8gr0v: #{ssv(#D1F7E1)};
+  --d8gr1v: #{ssv(#88F8C0)};
+  --d8gr2v: #{ssv(#65EDAD)};
+  --d8gr3v: #{ssv(#4CD99A)};
+  --d8gr4v: #{ssv(#3AC78B)};
+  --d8gr5v: #{ssv(#2FBA80)};
+  --d8gr6v: #{ssv(#2DAB76)};
+  --d8gr7v: #{ssv(#2E9E6D)};
+  --d8gr8v: #{ssv(#2B8D62)};
+  --d8gr9v: #{ssv(#297E58)};
+  --d8grAv: #{ssv(#277250)};
+  --d8grBv: #{ssv(#236446)};
+  --d8grCv: #{ssv(#1D563C)};
+  --d8grDv: #{ssv(#174932)};
+  --d8grEv: #{ssv(#0F3B27)};
+  --d8grFv: #{ssv(#062C1C)};
+  --d8grGv: #{ssv(#021C10)};
   
-  --d8gr0: hsl(145.3,calc(var(--saturation-factor,1)*70.4%),89.4%); //#D1F7E1
-  --d8gr1: hsl(150,calc(var(--saturation-factor,1)*88.9%),75.3%); //#88F8C0
-  --d8gr2: hsl(151.8,calc(var(--saturation-factor,1)*79.1%),66.3%); //#65EDAD
-  --d8gr3: hsl(153.2,calc(var(--saturation-factor,1)*65%),57.5%); //#4CD99A
-  --d8gr4: hsl(154.5,calc(var(--saturation-factor,1)*55.7%),50.4%); //#3AC78B
-  --d8gr5: hsl(155,calc(var(--saturation-factor,1)*59.7%),45.7%); //#2FBA80
-  --d8gr6: hsl(154.8,calc(var(--saturation-factor,1)*58.3%),42.4%); //#2DAB76
-  --d8gr7: hsl(153.8,calc(var(--saturation-factor,1)*54.9%),40%); //#2E9E6D
-  --d8gr8: hsl(153.7,calc(var(--saturation-factor,1)*53.3%),36.1%); //#2B8D62
-  --d8gr9: hsl(153.2,calc(var(--saturation-factor,1)*50.9%),32.7%); //#297E58
-  --d8grA: hsl(152.8,calc(var(--saturation-factor,1)*49%),30%); //#277250
-  --d8grB: hsl(152.3,calc(var(--saturation-factor,1)*48.1%),26.5%); //#236446
-  --d8grC: hsl(152.6,calc(var(--saturation-factor,1)*49.6%),22.5%); //#1D563C
-  --d8grD: hsl(152.4,calc(var(--saturation-factor,1)*52.1%),18.8%); //#174932
-  --d8grE: hsl(152.7,calc(var(--saturation-factor,1)*59.5%),14.5%); //#0F3B27
-  --d8grF: hsl(154.7,calc(var(--saturation-factor,1)*76%),9.8%); //#062C1C
-  --d8grG: hsl(152.3,calc(var(--saturation-factor,1)*86.7%),5.9%); //#021C10
+  --d8gr0: hsl(var(--d8gr0v));
+  --d8gr1: hsl(var(--d8gr1v));
+  --d8gr2: hsl(var(--d8gr2v));
+  --d8gr3: hsl(var(--d8gr3v));
+  --d8gr4: hsl(var(--d8gr4v));
+  --d8gr5: hsl(var(--d8gr5v));
+  --d8gr6: hsl(var(--d8gr6v));
+  --d8gr7: hsl(var(--d8gr7v));
+  --d8gr8: hsl(var(--d8gr8v));
+  --d8gr9: hsl(var(--d8gr9v));
+  --d8grA: hsl(var(--d8grAv));
+  --d8grB: hsl(var(--d8grBv));
+  --d8grC: hsl(var(--d8grCv));
+  --d8grD: hsl(var(--d8grDv));
+  --d8grE: hsl(var(--d8grEv));
+  --d8grF: hsl(var(--d8grFv));
+  --d8grG: hsl(var(--d8grGv));
 
   // blue
-  --d8bl0v: 210,calc(var(--saturation-factor,1)*78.3%),91%; //#D6E8FA
-  --d8bl1v: 207.9,calc(var(--saturation-factor,1)*87.7%),84.1%; //#B3D9FA
-  --d8bl2v: 205.8,calc(var(--saturation-factor,1)*91.9%),75.7%; //#88C9FA
-  --d8bl3v: 201.9,calc(var(--saturation-factor,1)*96.7%),64.5%; //#4DBCFC
-  --d8bl4v: 197.9,calc(var(--saturation-factor,1)*90.3%),51.4%; //#13B0F3
-  --d8bl5v: 197,calc(var(--saturation-factor,1)*98.2%),44.5%; //#02A2E1
-  --d8bl6v: 196.9,calc(var(--saturation-factor,1)*100%),40.4%; //#0094CE
-  --d8bl7v: 197.9,calc(var(--saturation-factor,1)*89.9%),38.8%; //#0A87BC
-  --d8bl8v: 199.3,calc(var(--saturation-factor,1)*76.4%),38.2%; //#177CAC
-  --d8bl9v: 199.7,calc(var(--saturation-factor,1)*73.6%),34.1%; //#176D97
-  --d8blAv: 200.2,calc(var(--saturation-factor,1)*73.9%),30%; //#145F85
-  --d8blBv: 199.6,calc(var(--saturation-factor,1)*79.5%),24.9%; //#0D5172
-  --d8blCv: 199.1,calc(var(--saturation-factor,1)*88.3%),20.2%; //#064461
-  --d8blDv: 198.8,calc(var(--saturation-factor,1)*97.6%),16.1%; //#013851
-  --d8blEv: 199.4,calc(var(--saturation-factor,1)*100%),12.2%; //#002A3E
-  --d8blFv: 200,calc(var(--saturation-factor,1)*100%),9.4%; //#002030
-  --d8blGv: 203.2,calc(var(--saturation-factor,1)*100%),6.1%; //#00131F
+  --d8bl0v: #{ssv(#D6E8FA)};
+  --d8bl1v: #{ssv(#B3D9FA)};
+  --d8bl2v: #{ssv(#88C9FA)};
+  --d8bl3v: #{ssv(#4DBCFC)};
+  --d8bl4v: #{ssv(#13B0F3)};
+  --d8bl5v: #{ssv(#02A2E1)};
+  --d8bl6v: #{ssv(#0094CE)};
+  --d8bl7v: #{ssv(#0A87BC)};
+  --d8bl8v: #{ssv(#177CAC)};
+  --d8bl9v: #{ssv(#176D97)};
+  --d8blAv: #{ssv(#145F85)};
+  --d8blBv: #{ssv(#0D5172)};
+  --d8blCv: #{ssv(#064461)};
+  --d8blDv: #{ssv(#013851)};
+  --d8blEv: #{ssv(#002A3E)};
+  --d8blFv: #{ssv(#002030)};
+  --d8blGv: #{ssv(#00131F)};
   
-  --d8bl0: hsl(210,calc(var(--saturation-factor,1)*78.3%),91%); //#D6E8FA
-  --d8bl1: hsl(207.9,calc(var(--saturation-factor,1)*87.7%),84.1%); //#B3D9FA
-  --d8bl2: hsl(205.8,calc(var(--saturation-factor,1)*91.9%),75.7%); //#88C9FA
-  --d8bl3: hsl(201.9,calc(var(--saturation-factor,1)*96.7%),64.5%); //#4DBCFC
-  --d8bl4: hsl(197.9,calc(var(--saturation-factor,1)*90.3%),51.4%); //#13B0F3
-  --d8bl5: hsl(197,calc(var(--saturation-factor,1)*98.2%),44.5%); //#02A2E1
-  --d8bl6: hsl(196.9,calc(var(--saturation-factor,1)*100%),40.4%); //#0094CE
-  --d8bl7: hsl(197.9,calc(var(--saturation-factor,1)*89.9%),38.8%); //#0A87BC
-  --d8bl8: hsl(199.3,calc(var(--saturation-factor,1)*76.4%),38.2%); //#177CAC
-  --d8bl9: hsl(199.7,calc(var(--saturation-factor,1)*73.6%),34.1%); //#176D97
-  --d8blA: hsl(200.2,calc(var(--saturation-factor,1)*73.9%),30%); //#145F85
-  --d8blB: hsl(199.6,calc(var(--saturation-factor,1)*79.5%),24.9%); //#0D5172
-  --d8blC: hsl(199.1,calc(var(--saturation-factor,1)*88.3%),20.2%); //#064461
-  --d8blD: hsl(198.8,calc(var(--saturation-factor,1)*97.6%),16.1%); //#013851
-  --d8blE: hsl(199.4,calc(var(--saturation-factor,1)*100%),12.2%); //#002A3E
-  --d8blF: hsl(200,calc(var(--saturation-factor,1)*100%),9.4%); //#002030
-  --d8blG: hsl(203.2,calc(var(--saturation-factor,1)*100%),6.1%); //#00131F
+  --d8bl0: hsl(var(--d8bl0v));
+  --d8bl1: hsl(var(--d8bl1v));
+  --d8bl2: hsl(var(--d8bl2v));
+  --d8bl3: hsl(var(--d8bl3v));
+  --d8bl4: hsl(var(--d8bl4v));
+  --d8bl5: hsl(var(--d8bl5v));
+  --d8bl6: hsl(var(--d8bl6v));
+  --d8bl7: hsl(var(--d8bl7v));
+  --d8bl8: hsl(var(--d8bl8v));
+  --d8bl9: hsl(var(--d8bl9v));
+  --d8blA: hsl(var(--d8blAv));
+  --d8blB: hsl(var(--d8blBv));
+  --d8blC: hsl(var(--d8blCv));
+  --d8blD: hsl(var(--d8blDv));
+  --d8blE: hsl(var(--d8blEv));
+  --d8blF: hsl(var(--d8blFv));
+  --d8blG: hsl(var(--d8blGv));
 
   // purple
-  --d8pr0v: 264.6,calc(var(--saturation-factor,1)*79.6%),90.4%; //#E3D3FA
-  --d8pr1v: 265.4,calc(var(--saturation-factor,1)*85.5%),86.5%; //#D8BFFA
-  --d8pr2v: 266.2,calc(var(--saturation-factor,1)*85.5%),83.7%; //#D1B2F9
-  --d8pr3v: 267.5,calc(var(--saturation-factor,1)*81%),79.4%; //#C7A0F5
-  --d8pr4v: 268.3,calc(var(--saturation-factor,1)*76.5%),73.3%; //#B887EF
-  --d8pr5v: 269.8,calc(var(--saturation-factor,1)*77.6%),68.4%; //#AE70ED
-  --d8pr6v: 271.8,calc(var(--saturation-factor,1)*80.3%),64.1%; //#A85AED
-  --d8pr7v: 273.4,calc(var(--saturation-factor,1)*79.3%),58.2%; //#9E40E9
-  --d8pr8v: 274.2,calc(var(--saturation-factor,1)*64.8%),52.2%; //#9036D4
-  --d8pr9v: 274,calc(var(--saturation-factor,1)*60%),46.1%; //#7F2FBC
-  --d8prAv: 274.1,calc(var(--saturation-factor,1)*61.2%),39.4%; //#6D27A2
-  --d8prBv: 273.6,calc(var(--saturation-factor,1)*61.8%),33.9%; //#5D218C
-  --d8prCv: 273.8,calc(var(--saturation-factor,1)*63.5%),29%; //#501B79
-  --d8prDv: 274.1,calc(var(--saturation-factor,1)*66.9%),23.7%; //#421465
-  --d8prEv: 273.8,calc(var(--saturation-factor,1)*68.9%),20.2%; //#381057
-  --d8prFv: 274,calc(var(--saturation-factor,1)*71.4%),16.5%; //#2E0C48
-  --d8prGv: 273.3,calc(var(--saturation-factor,1)*76.3%),11.6%; //#200734
+  --d8pr0v: #{ssv(#E3D3FA)};
+  --d8pr1v: #{ssv(#D8BFFA)};
+  --d8pr2v: #{ssv(#D1B2F9)};
+  --d8pr3v: #{ssv(#C7A0F5)};
+  --d8pr4v: #{ssv(#B887EF)};
+  --d8pr5v: #{ssv(#AE70ED)};
+  --d8pr6v: #{ssv(#A85AED)};
+  --d8pr7v: #{ssv(#9E40E9)};
+  --d8pr8v: #{ssv(#9036D4)};
+  --d8pr9v: #{ssv(#7F2FBC)};
+  --d8prAv: #{ssv(#6D27A2)};
+  --d8prBv: #{ssv(#5D218C)};
+  --d8prCv: #{ssv(#501B79)};
+  --d8prDv: #{ssv(#421465)};
+  --d8prEv: #{ssv(#381057)};
+  --d8prFv: #{ssv(#2E0C48)};
+  --d8prGv: #{ssv(#200734)};
 
-  --d8pr0: hsl(264.6,calc(var(--saturation-factor,1)*79.6%),90.4%); //#E3D3FA
-  --d8pr1: hsl(265.4,calc(var(--saturation-factor,1)*85.5%),86.5%); //#D8BFFA
-  --d8pr2: hsl(266.2,calc(var(--saturation-factor,1)*85.5%),83.7%); //#D1B2F9
-  --d8pr3: hsl(267.5,calc(var(--saturation-factor,1)*81%),79.4%); //#C7A0F5
-  --d8pr4: hsl(268.3,calc(var(--saturation-factor,1)*76.5%),73.3%); //#B887EF
-  --d8pr5: hsl(269.8,calc(var(--saturation-factor,1)*77.6%),68.4%); //#AE70ED
-  --d8pr6: hsl(271.8,calc(var(--saturation-factor,1)*80.3%),64.1%); //#A85AED
-  --d8pr7: hsl(273.4,calc(var(--saturation-factor,1)*79.3%),58.2%); //#9E40E9
-  --d8pr8: hsl(274.2,calc(var(--saturation-factor,1)*64.8%),52.2%); //#9036D4
-  --d8pr9: hsl(274,calc(var(--saturation-factor,1)*60%),46.1%); //#7F2FBC
-  --d8prA: hsl(274.1,calc(var(--saturation-factor,1)*61.2%),39.4%); //#6D27A2
-  --d8prB: hsl(273.6,calc(var(--saturation-factor,1)*61.8%),33.9%); //#5D218C
-  --d8prC: hsl(273.8,calc(var(--saturation-factor,1)*63.5%),29%); //#501B79
-  --d8prD: hsl(274.1,calc(var(--saturation-factor,1)*66.9%),23.7%); //#421465
-  --d8prE: hsl(273.8,calc(var(--saturation-factor,1)*68.9%),20.2%); //#381057
-  --d8prF: hsl(274,calc(var(--saturation-factor,1)*71.4%),16.5%); //#2E0C48
-  --d8prG: hsl(273.3,calc(var(--saturation-factor,1)*76.3%),11.6%); //#200734
+  --d8pr0: hsl(var(--d8pr0v));
+  --d8pr1: hsl(var(--d8pr1v));
+  --d8pr2: hsl(var(--d8pr2v));
+  --d8pr3: hsl(var(--d8pr3v));
+  --d8pr4: hsl(var(--d8pr4v));
+  --d8pr5: hsl(var(--d8pr5v));
+  --d8pr6: hsl(var(--d8pr6v));
+  --d8pr7: hsl(var(--d8pr7v));
+  --d8pr8: hsl(var(--d8pr8v));
+  --d8pr9: hsl(var(--d8pr9v));
+  --d8prA: hsl(var(--d8prAv));
+  --d8prB: hsl(var(--d8prBv));
+  --d8prC: hsl(var(--d8prCv));
+  --d8prD: hsl(var(--d8prDv));
+  --d8prE: hsl(var(--d8prEv));
+  --d8prF: hsl(var(--d8prFv));
+  --d8prG: hsl(var(--d8prGv));
 
   // orange
-  --d8or0v: 11.7,calc(var(--saturation-factor,1)*67.2%),88%; //#F5D4CC
-  --d8or1v: 12.9,calc(var(--saturation-factor,1)*76.1%),82%; //#F4BDAE
-  --d8or2v: 14.7,calc(var(--saturation-factor,1)*86.4%),74.1%; //#F6A084
-  --d8or3v: 16.5,calc(var(--saturation-factor,1)*88.8%),68.6%; //#F68F68
-  --d8or4v: 20.8,calc(var(--saturation-factor,1)*93.2%),59.4%; //#F87A37
-  --d8or5v: 22.7,calc(var(--saturation-factor,1)*80.5%),51.8%; //#E76C21
-  --d8or6v: 23.4,calc(var(--saturation-factor,1)*77.4%),46.9%; //#D4631B
-  --d8or7v: 22.5,calc(var(--saturation-factor,1)*75.3%),42.9%; //#C0591B
-  --d8or8v: 21.7,calc(var(--saturation-factor,1)*71.3%),39.6%; //#AD511D
-  --d8or9v: 22.3,calc(var(--saturation-factor,1)*74.9%),35.9%; //#A04A17
-  --d8orAv: 22.3,calc(var(--saturation-factor,1)*77.5%),31.4%; //#8E4012
-  --d8orBv: 23.8,calc(var(--saturation-factor,1)*89.2%),25.5%; //#7B3507
-  --d8orCv: 24.2,calc(var(--saturation-factor,1)*92.9%),22%; //#6C2E04
-  --d8orDv: 24.1,calc(var(--saturation-factor,1)*97.9%),18.4%; //#5D2601
-  --d8orEv: 22.9,calc(var(--saturation-factor,1)*100%),14.9%; //#4C1D00
-  --d8orFv: 22.3,calc(var(--saturation-factor,1)*100%),12.2%; //#3E1700
-  --d8orGv: 18.1,calc(var(--saturation-factor,1)*100%),8.4%; //#2B0D00
+  --d8or0v: #{ssv(#F5D4CC)};
+  --d8or1v: #{ssv(#F4BDAE)};
+  --d8or2v: #{ssv(#F6A084)};
+  --d8or3v: #{ssv(#F68F68)};
+  --d8or4v: #{ssv(#F87A37)};
+  --d8or5v: #{ssv(#E76C21)};
+  --d8or6v: #{ssv(#D4631B)};
+  --d8or7v: #{ssv(#C0591B)};
+  --d8or8v: #{ssv(#AD511D)};
+  --d8or9v: #{ssv(#A04A17)};
+  --d8orAv: #{ssv(#8E4012)};
+  --d8orBv: #{ssv(#7B3507)};
+  --d8orCv: #{ssv(#6C2E04)};
+  --d8orDv: #{ssv(#5D2601)};
+  --d8orEv: #{ssv(#4C1D00)};
+  --d8orFv: #{ssv(#3E1700)};
+  --d8orGv: #{ssv(#2B0D00)};
 
-  --d8or0: hsl(11.7,calc(var(--saturation-factor,1)*67.2%),88%); //#F5D4CC
-  --d8or1: hsl(12.9,calc(var(--saturation-factor,1)*76.1%),82%); //#F4BDAE
-  --d8or2: hsl(14.7,calc(var(--saturation-factor,1)*86.4%),74.1%); //#F6A084
-  --d8or3: hsl(16.5,calc(var(--saturation-factor,1)*88.8%),68.6%); //#F68F68
-  --d8or4: hsl(20.8,calc(var(--saturation-factor,1)*93.2%),59.4%); //#F87A37
-  --d8or5: hsl(22.7,calc(var(--saturation-factor,1)*80.5%),51.8%); //#E76C21
-  --d8or6: hsl(23.4,calc(var(--saturation-factor,1)*77.4%),46.9%); //#D4631B
-  --d8or7: hsl(22.5,calc(var(--saturation-factor,1)*75.3%),42.9%); //#C0591B
-  --d8or8: hsl(21.7,calc(var(--saturation-factor,1)*71.3%),39.6%); //#AD511D
-  --d8or9: hsl(22.3,calc(var(--saturation-factor,1)*74.9%),35.9%); //#A04A17
-  --d8orA: hsl(22.3,calc(var(--saturation-factor,1)*77.5%),31.4%); //#8E4012
-  --d8orB: hsl(23.8,calc(var(--saturation-factor,1)*89.2%),25.5%); //#7B3507
-  --d8orC: hsl(24.2,calc(var(--saturation-factor,1)*92.9%),22%); //#6C2E04
-  --d8orD: hsl(24.1,calc(var(--saturation-factor,1)*97.9%),18.4%); //#5D2601
-  --d8orE: hsl(22.9,calc(var(--saturation-factor,1)*100%),14.9%); //#4C1D00
-  --d8orF: hsl(22.3,calc(var(--saturation-factor,1)*100%),12.2%); //#3E1700
-  --d8orG: hsl(18.1,calc(var(--saturation-factor,1)*100%),8.4%); //#2B0D00
+  --d8or0: hsl(var(--d8or0v));
+  --d8or1: hsl(var(--d8or1v));
+  --d8or2: hsl(var(--d8or2v));
+  --d8or3: hsl(var(--d8or3v));
+  --d8or4: hsl(var(--d8or4v));
+  --d8or5: hsl(var(--d8or5v));
+  --d8or6: hsl(var(--d8or6v));
+  --d8or7: hsl(var(--d8or7v));
+  --d8or8: hsl(var(--d8or8v));
+  --d8or9: hsl(var(--d8or9v));
+  --d8orA: hsl(var(--d8orAv));
+  --d8orB: hsl(var(--d8orBv));
+  --d8orC: hsl(var(--d8orCv));
+  --d8orD: hsl(var(--d8orDv));
+  --d8orE: hsl(var(--d8orEv));
+  --d8orF: hsl(var(--d8orFv));
+  --d8orG: hsl(var(--d8orGv));
 }
 
 @mixin scrollbar-legacy {
@@ -427,71 +460,71 @@ $exportAddons: false;
 // color fixes
 @at-root {
   :root, .theme-dark, .theme-light {
-    --blurple: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%);
-    --blurple-st: hsla(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%, 50%);
-    --blurple-hover: hsl(227.1,calc(var(--saturation-factor, 1) * 44.1%),58.6%);
-    --blurple-active: hsl(226.3,calc(var(--saturation-factor, 1) * 33.9%),52%);
-    --blurple-inverted: hsl(228,calc(var(--saturation-factor, 1) * 55.6%),98.2%);
-    --blurple-inverted-active: hsl(228.6,calc(var(--saturation-factor, 1) * 60%),93.1%);
-    --red: hsl(0,calc(var(--saturation-factor, 1) * 84.9%),61%);
-    --red-hover: hsl(0,calc(var(--saturation-factor, 1) * 66.1%),54.9%);
-    --red-active: hsl(0,calc(var(--saturation-factor, 1) * 54.2%),48.8%);
-    --red-inverted: hsl(0,calc(var(--saturation-factor, 1) * 80%),98%);
-    --red-inverted-active: hsl(0,calc(var(--saturation-factor, 1) * 85%),92.2%);
-    --yellow: hsl(37.5,calc(var(--saturation-factor, 1) * 95.7%),54.1%);
-    --yellow-hover: hsl(37.4,calc(var(--saturation-factor, 1) * 81.5%),48.6%);
-    --yellow-inverted: hsl(38.2,calc(var(--saturation-factor, 1) * 100%),97.8%);
-    --yellow-inverted-active: hsl(37.3,calc(var(--saturation-factor, 1) * 95.7%),90.8%);
-    --green: hsl(152.6,calc(var(--saturation-factor, 1) * 46%),48.6%);
-    --green-hover: hsl(152.6,calc(var(--saturation-factor, 1) * 46.2%),43.7%);
-    --green-active: hsl(152.3,calc(var(--saturation-factor, 1) * 45.7%),39%);
-    --green-inverted: hsl(156,calc(var(--saturation-factor, 1) * 38.5%),97.5%);
-    --green-inverted-active: hsl(153.9,calc(var(--saturation-factor, 1) * 43.4%),89.6%);
-    --brand-experiment-100: hsl(228,calc(var(--saturation-factor, 1) * 55.6%),98.2%);
-    --brand-experiment-130: hsl(228,calc(var(--saturation-factor, 1) * 62.5%),96.9%);
-    --brand-experiment-160: hsl(228,calc(var(--saturation-factor, 1) * 60%),95.1%);
-    --brand-experiment-200: hsl(228.6,calc(var(--saturation-factor, 1) * 60%),93.1%);
-    --brand-experiment-230: hsl(226.7,calc(var(--saturation-factor, 1) * 57.4%),90.8%);
-    --brand-experiment-260: hsl(225.9,calc(var(--saturation-factor, 1) * 58.6%),88.6%);
-    --brand-experiment-300: hsl(226.8,calc(var(--saturation-factor, 1) * 57.7%),86.1%);
-    --brand-experiment-330: hsl(226.9,calc(var(--saturation-factor, 1) * 59.1%),81.8%);
-    --brand-experiment-360: hsl(227.3,calc(var(--saturation-factor, 1) * 57.9%),77.6%);
-    --brand-experiment-400: hsl(226.3,calc(var(--saturation-factor, 1) * 58%),72%);
-    --brand-experiment-430: hsl(226.5,calc(var(--saturation-factor, 1) * 58.2%),70%);
-    --brand-experiment-460: hsl(226.9,calc(var(--saturation-factor, 1) * 58.5%),67.8%);
+    --blurple: #{ss(#7289da)};
+    --blurple-st: #{ss(#7289da80)};
+    --blurple-hover: #{ss(#677bc4)};
+    --blurple-active: #{ss(#5b6eae)};
+    --blurple-inverted: #{ss(#f8f9fd)};
+    --blurple-inverted-active: #{ss(#e3e7f8)};
+    --red: #{ss(#f04747)};
+    --red-hover: #{ss(#d84040)};
+    --red-active: #{ss(#c03939)};
+    --red-inverted: #{ss(#fef6f6)};
+    --red-inverted-active: #{ss(#fcdada)};
+    --yellow: #{ss(#faa61a)};
+    --yellow-hover: #{ss(#e19517)};
+    --yellow-inverted: #{ss(#fffbf4)};
+    --yellow-inverted-active: #{ss(#feedd1)};
+    --green: #{ss(#43b581)};
+    --green-hover: #{ss(#3ca374)};
+    --green-active: #{ss(#369167)};
+    --green-inverted: #{ss(#f6fbf9)};
+    --green-inverted-active: #{ss(#d9f0e6)};
+    --brand-experiment-100: #{ss(#f8f9fd)};
+    --brand-experiment-130: #{ss(#f2f4fc)};
+    --brand-experiment-160: #{ss(#ebeefa)};
+    --brand-experiment-200: #{ss(#e3e7f8)};
+    --brand-experiment-230: #{ss(#dae0f5)};
+    --brand-experiment-260: #{ss(#d1d9f3)};
+    --brand-experiment-300: #{ss(#c7d0f0)};
+    --brand-experiment-330: #{ss(#b5c1ec)};
+    --brand-experiment-360: #{ss(#a5b3e7)};
+    --brand-experiment-400: #{ss(#8ea1e1)};
+    --brand-experiment-430: #{ss(#869adf)};
+    --brand-experiment-460: #{ss(#7d92dd)};
     --brand-experiment: var(--blurple);
-    --brand-experiment-500: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%);
-    --brand-experiment-530: hsl(226.6,calc(var(--saturation-factor, 1) * 45.2%),59.2%);
-    --brand-experiment-560: hsl(226.6,calc(var(--saturation-factor, 1) * 35.3%),52.7%);
-    --brand-experiment-600: hsl(227.1,calc(var(--saturation-factor, 1) * 31%),44.3%);
-    --brand-experiment-630: hsl(226.2,calc(var(--saturation-factor, 1) * 31.3%),38.2%);
-    --brand-experiment-660: hsl(226.4,calc(var(--saturation-factor, 1) * 31%),33.5%);
-    --brand-experiment-700: hsl(226.8,calc(var(--saturation-factor, 1) * 30.8%),26.1%);
-    --brand-experiment-730: hsl(227.7,calc(var(--saturation-factor, 1) * 31.2%),24.5%);
-    --brand-experiment-760: hsl(226.7,calc(var(--saturation-factor, 1) * 31.6%),22.4%);
-    --brand-experiment-800: hsl(226.5,calc(var(--saturation-factor, 1) * 31.3%),19.4%);
-    --brand-experiment-830: hsl(225,calc(var(--saturation-factor, 1) * 31.6%),14.9%);
-    --brand-experiment-860: hsl(225,calc(var(--saturation-factor, 1) * 32%),9.8%);
-    --brand-experiment-900: hsl(228,calc(var(--saturation-factor, 1) * 29.4%),3.3%);
-    --brand-experiment-05a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.05);
-    --brand-experiment-10a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.1);
-    --brand-experiment-15a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.15);
-    --brand-experiment-20a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.2);
-    --brand-experiment-25a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.25);
-    --brand-experiment-30a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.3);
-    --brand-experiment-35a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.35);
-    --brand-experiment-40a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.4);
-    --brand-experiment-45a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.45);
-    --brand-experiment-50a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.5);
-    --brand-experiment-55a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.55);
-    --brand-experiment-60a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.6);
-    --brand-experiment-65a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.65);
-    --brand-experiment-70a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.7);
-    --brand-experiment-75a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.75);
-    --brand-experiment-80a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.8);
-    --brand-experiment-85a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.85);
-    --brand-experiment-90a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.9);
-    --brand-experiment-95a: hsl(226.7,calc(var(--saturation-factor, 1) * 58.4%),65.1%,0.95);
+    --brand-experiment-500: #{ss(hsl(226.7,58.4%,65.1%))};
+    --brand-experiment-530: #{ss(hsl(226.6,45.2%,59.2%))};
+    --brand-experiment-560: #{ss(hsl(226.6,35.3%,52.7%))};
+    --brand-experiment-600: #{ss(hsl(227.1,31%,44.3%))};
+    --brand-experiment-630: #{ss(hsl(226.2,31.3%,38.2%))};
+    --brand-experiment-660: #{ss(hsl(226.4,31%,33.5%))};
+    --brand-experiment-700: #{ss(hsl(226.8,30.8%,26.1%))};
+    --brand-experiment-730: #{ss(hsl(227.7,31.2%,24.5%))};
+    --brand-experiment-760: #{ss(hsl(226.7,31.6%,22.4%))};
+    --brand-experiment-800: #{ss(hsl(226.5,31.3%,19.4%))};
+    --brand-experiment-830: #{ss(hsl(225,31.6%,14.9%))};
+    --brand-experiment-860: #{ss(hsl(225,32%,9.8%))};
+    --brand-experiment-900: #{ss(hsl(228,29.4%,3.3%))};
+    --brand-experiment-05a: #{ss(rgba(114, 137, 218, 0.05))};
+    --brand-experiment-10a: #{ss(rgba(114, 137, 218, 0.1))};
+    --brand-experiment-15a: #{ss(rgba(114, 137, 218, 0.15))};
+    --brand-experiment-20a: #{ss(rgba(114, 137, 218, 0.2))};
+    --brand-experiment-25a: #{ss(rgba(114, 137, 218, 0.25))};
+    --brand-experiment-30a: #{ss(rgba(114, 137, 218, 0.3))};
+    --brand-experiment-35a: #{ss(rgba(114, 137, 218, 0.35))};
+    --brand-experiment-40a: #{ss(rgba(114, 137, 218, 0.4))};
+    --brand-experiment-45a: #{ss(rgba(114, 137, 218, 0.45))};
+    --brand-experiment-50a: #{ss(rgba(114, 137, 218, 0.5))};
+    --brand-experiment-55a: #{ss(rgba(114, 137, 218, 0.55))};
+    --brand-experiment-60a: #{ss(rgba(114, 137, 218, 0.6))};
+    --brand-experiment-65a: #{ss(rgba(114, 137, 218, 0.65))};
+    --brand-experiment-70a: #{ss(rgba(114, 137, 218, 0.7))};
+    --brand-experiment-75a: #{ss(rgba(114, 137, 218, 0.75))};
+    --brand-experiment-80a: #{ss(rgba(114, 137, 218, 0.8))};
+    --brand-experiment-85a: #{ss(rgba(114, 137, 218, 0.85))};
+    --brand-experiment-90a: #{ss(rgba(114, 137, 218, 0.9))};
+    --brand-experiment-95a: #{ss(rgba(114, 137, 218, 0.95))};
   }
   .theme-dark, .theme-light {
     --status-red-500: var(--red);
@@ -502,14 +535,14 @@ $exportAddons: false;
     --yellow-360: var(--yellow);
     --green-360: var(--green);
     --brand-500: var(--blurple);
-    --premium-tier-2-purple-for-gradients: hsl(342,calc(var(--saturation-factor,1)*58%),72.9%);
-    --premium-tier-2-purple-for-gradients-hsl: 342 calc(var(--saturation-factor)*58%) 72.9%;
-    --premium-tier-2-purple-for-gradients-2: hsl(296.8,calc(var(--saturation-factor,1)*44.2%),66.3%);
-    --premium-tier-2-purple-for-gradients-2-hsl: 296.8 calc(var(--saturation-factor)*44.2%) 66.3%;
-    --premium-tier-2-pink-for-gradients: hsl(270,calc(var(--saturation-factor,1)*86.7%),70.6%);
-    --premium-tier-2-pink-for-gradients-hsl: 270 calc(var(--saturation-factor)*86.7%) 70.6%;
-    --premium-tier-2-pink-for-gradients-2: hsl(296.8,calc(var(--saturation-factor,1)*44.2%),66.3%);
-    --premium-tier-2-pink-for-gradients-2-hsl: 296.8 calc(var(--saturation-factor)*44.2%) 66.3%;
+    --premium-tier-2-purple-for-gradients: #{ss(#e292aa)};
+    --premium-tier-2-purple-for-gradients-hsl: #{ssv(#e292aa)};
+    --premium-tier-2-purple-for-gradients-2: #{ss(#cb83cf)};
+    --premium-tier-2-purple-for-gradients-2-hsl: #{ssv(#cb83cf)};
+    --premium-tier-2-pink-for-gradients: #{ss(#b473f5)};
+    --premium-tier-2-pink-for-gradients-hsl: #{ssv(#b473f5)};
+    --premium-tier-2-pink-for-gradients-2: #{ss(#cb83cf)};
+    --premium-tier-2-pink-for-gradients-2-hsl: #{ssv(#cb83cf)};
   }
   [fill="hsl(235, calc(var(--saturation-factor, 1) * 85.6%), 64.7%)"],
   [fill="var(--brand-500)"],
@@ -1900,27 +1933,50 @@ $exportAddons: false;
         }
         .vc-spotify-button {
           cursor: default;
-          border-radius: 3px;
+          border-radius: 0;
+          margin-top: 1px;
+          margin-bottom: 1px;
           width: 100%;
+          transition: .18s;
+          margin-left: 1px;
+          &:first-child {
+            border-radius: 2px 0 0 2px;
+            margin-left: 1px;
+          }
+          &:last-child {
+            border-radius: 0 2px 2px 0;
+            margin-right: 1px;
+          }
+          &:only-child {
+            border-radius: 2px;
+          }
+          .theme-light & {
+            background: #fff4;
+            box-shadow: 0 0 #000, inset 0 0 0 1px #fff8;
+          }
+          .theme-dark & {
+            background: #fff1;
+            box-shadow: 0 0 #000, inset 0 0 0 1px #fff2;
+          }
           &:hover {
             .theme-light & {
-              background: linear-gradient(var(--d8l5), var(--d8l4) 50%, var(--d8l9) 50%, var(--d8l7));
-              box-shadow: 0 1px 2px var(--d8lF), inset 0 0 0 1px #fff2, inset 0 1px #fff;
+              background: #fff2;
+              box-shadow: 0 1px 3px #0008, inset 0 0 0 1px #fff2, inset 0 1px #fff4;
               color: var(--d8dB);
             }
             .theme-dark & {
-              background: linear-gradient(var(--d8d5), var(--d8d7) 50%, var(--d8d9) 50%, var(--d8dC));
-              box-shadow: 0 1px 2px #000, inset 0 0 0 1px #fff1, inset 0 1px #fff4;
+              background: #fff2;
+              box-shadow: 0 1px 3px #000, inset 0 0 0 1px #fff2, inset 0 1px #fff4;
               color: #fff;
             }
           }
           &:active {
             .theme-light & {
-              background: linear-gradient(var(--d8l9), var(--d8l7) 50%, var(--d8l5) 50%, var(--d8l1));
-              box-shadow: inset 0 1px 2px #000b, 0 0 0 1px #fff8;
+              background: #0001;
+              box-shadow: inset 0 1px 2px #0004, 0 0 2px #fff3;
             }
             .theme-dark & {
-              background: linear-gradient(var(--d8dA), var(--d8d9) 50%, var(--d8dB) 50%, var(--d8dE));
+              background: #0002;
               box-shadow: inset 0 1px 2px #000, 0 0 2px #fff3;
             }
           }
@@ -2172,7 +2228,7 @@ $exportAddons: false;
         margin-right: 2px;
         &, &.addFriend-emTWY1 {
           color: var(--d8lG);
-          text-shadow: 0 -1px #fff4;
+          text-shadow: 0 -1px #000A;
           background: #0000;
         }
         &:hover {
@@ -2781,6 +2837,7 @@ $exportAddons: false;
           background: none;
         }
         &.newMessagesBar-1hF-9G, &.newTopicsBarContainer-MYPq92 {
+          box-shadow: none;
           .barButtonMain-2GIx4o, .barButtonAlt-TQoCdZ, .newTopicsBarTopicSection-QcIQlL {
             border-radius: 0 0 3px 3px;
             border: solid 1px #000;
@@ -3799,10 +3856,27 @@ $exportAddons: false;
               }
               .theme-dark & {
                 background: linear-gradient(var(--d8dA), var(--d8d9) 50%, var(--d8dB) 50%, var(--d8dD));
-                box-shadow: inset 0 -1px #000;
+                box-shadow: inset 0 -1px #000, 0 -1px #000;
               }
               mask: linear-gradient(to right, #000, #0000);
               -webkit-mask: linear-gradient(to right, #000, #0000);
+            }
+            &:first-child {
+              overflow: visible;
+              &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -2px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: linear-gradient(to right, #000, #0000);
+                .theme-light & {
+                }
+                .theme-dark & {
+                }
+              }
             }
             .eyebrow-1Shfyi {
               z-index: 2;
@@ -4017,7 +4091,7 @@ $exportAddons: false;
             border-radius: 3px;
           }
           .tierHeaderUnlocked-1OpOLf {
-            background: linear-gradient(90deg,hsl(221,calc(var(--saturation-factor, 1)*70%),55.5%),hsl(269,calc(var(--saturation-factor, 1)*83.8%),71%)) !important;
+            background: linear-gradient(90deg,#{ss(#3e70dd)},#{ss(#b377f3)}) !important;
             * {
                 color: #fff !important;
             }
@@ -5133,7 +5207,8 @@ $exportAddons: false;
       }
     }
     &.colorDefault-1e8tQv {
-      background: linear-gradient(var(--d8br8), var(--d8br9) 50%, var(--d8brB) 50%, var(--d8brD));
+      // background: linear-gradient(var(--d8br8), var(--d8br9) 50%, var(--d8brB) 50%, var(--d8brD));
+      background: linear-gradient(var(--d8gr7), var(--d8gr8) 50%, var(--d8gr9) 50%, var(--d8grD));
     }
     &.colorPremium-1VK7r6,
     &.colorNeutral-1Ll2SQ {
@@ -5424,7 +5499,7 @@ $exportAddons: false;
       .theme-light & {
         background: linear-gradient(to bottom, var(--d8l4) 0%, #FFF 100%);
       }
-      .container-3jhHBq {
+      :is(.container-3jhHBq, .container-qNU81c) {
         transition: .18s;
         border-radius: 3px;
         margin-right: 2px;
@@ -5434,6 +5509,9 @@ $exportAddons: false;
         }        
         .title-2paAm9 {
           text-transform: none;
+        }
+        .feedbackContainer-bzHGHE {
+          background: none;
         }
       }
     }
@@ -5668,6 +5746,9 @@ $exportAddons: false;
       .iconInactive-26M06U {
         border-radius: 2px;
       }
+      .container-1gYwHN.containerWithContent-2Yws8V {
+        min-height: max-content;
+      }
       :is(.messageInputContainer-2rGDH8, .messageInputContainer-24qqTx) {
         border: none;
       }
@@ -5681,6 +5762,21 @@ $exportAddons: false;
     .assetsLargeImageUserPopoutV2-9ksyvz {
       -webkit-box-reflect: below 0px linear-gradient(#0000 50%, #0004);
       border-radius: 3px;
+    }
+    // spotify
+    @keyframes spotify {
+      0%     {transform: perspective(200px) rotateY(0);content:unset}
+      24.99% {transform: perspective(200px) rotateY(90deg);content:unset}
+      25%    {transform: perspective(200px) rotateY(-90deg);content:var(--logo)}
+      50%    {transform: perspective(200px) rotateY(0);content:var(--logo)}
+      74.99% {transform: perspective(200px) rotateY(90deg);content:var(--logo)}
+      75%    {transform: perspective(200px) rotateY(-90deg);content:unset}
+      100%   {transform: perspective(200px) rotateY(0);content:unset}
+    }
+    .assetsLargeImageSpotify-17ME3M {
+      --perspective: 1;
+      --logo: url("data:image/svg+xml,%3Csvg viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='36' fill='url(%23paint0_linear_4169_20165)'/%3E%3Cg filter='url(%23filter0_d_4169_20165)'%3E%3Crect x='8' y='8' width='20' height='20' rx='10' fill='%23111111'/%3E%3C/g%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M18 8C12.4772 8 8 12.4772 8 18C8 20.6478 9.02906 23.0552 10.709 24.8442C12.1013 23.1655 14.2029 22.0964 16.5542 22.0964C19.5747 22.0964 22.183 23.8606 23.4051 26.4148C26.1693 24.6356 28 21.5316 28 18C28 12.4772 23.5228 8 18 8ZM12.0375 14.599C15.2664 13.6328 20.846 13.8149 24.2279 15.7955H24.2284C24.6933 16.0685 25.2972 15.9169 25.5729 15.4571C25.8498 14.9978 25.6969 14.404 25.2296 14.131C21.336 11.8519 15.1743 11.6376 11.4677 12.747C10.9489 12.9025 10.6564 13.4427 10.8135 13.9542C10.9707 14.4655 11.519 14.7541 12.0375 14.599ZM22.9924 18.9953C23.3771 19.2288 23.8808 19.1089 24.1176 18.729C24.3545 18.3502 24.2329 17.8537 23.8483 17.6202C20.6092 15.6576 15.8717 15.1053 12.0609 16.2454C11.629 16.3752 11.385 16.8249 11.5154 17.2515C11.6467 17.6774 12.1036 17.9178 12.5363 17.7889C15.8725 16.7904 20.1719 17.2855 22.9924 18.9953ZM21.9337 21.7603C22.2419 21.9468 22.6454 21.8505 22.8333 21.5465C23.0225 21.2426 22.9248 20.846 22.6165 20.6594C19.8506 18.9928 16.422 18.6047 12.4249 19.5055C12.0721 19.5846 11.8524 19.9305 11.933 20.2777C12.0132 20.6249 12.364 20.8423 12.716 20.7632C16.3685 19.9404 19.47 20.2764 21.9337 21.7603Z' fill='url(%23paint1_radial_4169_20165)'/%3E%3Cpath d='M20.172 27.7635C19.4831 26.4705 18.1215 25.5904 16.5542 25.5904C15.3485 25.5904 14.2645 26.1112 13.5149 26.9402C14.8638 27.6183 16.3873 28 18 28C18.7459 28 19.4727 27.9183 20.172 27.7635Z' fill='url(%23paint2_radial_4169_20165)'/%3E%3Cdefs%3E%3Cfilter id='filter0_d_4169_20165' x='4' y='5' width='28' height='28' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='1'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_4169_20165'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_4169_20165' result='shape'/%3E%3C/filter%3E%3ClinearGradient id='paint0_linear_4169_20165' x1='18' y1='0' x2='18' y2='36' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%233F3F3F'/%3E%3Cstop offset='1' stop-color='%231D1D1D'/%3E%3C/linearGradient%3E%3CradialGradient id='paint1_radial_4169_20165' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(16.5 12) rotate(81.6341) scale(17.1828 12.0949)'%3E%3Cstop stop-color='%2394D243'/%3E%3Cstop offset='1' stop-color='%23659C43'/%3E%3C/radialGradient%3E%3CradialGradient id='paint2_radial_4169_20165' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(16.5 12) rotate(81.6341) scale(17.1828 12.0949)'%3E%3Cstop stop-color='%2394D243'/%3E%3Cstop offset='1' stop-color='%23659C43'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+      animation: 16s spotify linear infinite;
     }
     // preview
     &.profileCustomizationPreview-3zZw6E {
@@ -6516,5 +6612,47 @@ $exportAddons: false;
   }
   .scroller-3X7KbA :is(.folder-241Joy, .folderIconWrapper-1oRIZr) .guildIcon-2I5sfu.iconSizeSmol-qsFaRK {
     border-radius: 50px;
+  }
+}
+
+// might remove this later
+@keyframes goofy {
+  0% {transform:translateY(-40px);opacity:0;pointer-events:none}
+  99% {transform:translateY(-40px);opacity:0;pointer-events:none}
+  100% {transform:none;opacity:1;pointer-events:none}
+}
+.profileBadges-2pItdR {
+  .anchor-1X4H4q {
+    animation: 10s goofy cubic-bezier(0, 0, 0, 1.66);
+    &:nth-last-child(1) {animation-delay: -9.85s}
+    &:nth-last-child(2) {animation-delay: -9.80s}
+    &:nth-last-child(3) {animation-delay: -9.75s}
+    &:nth-last-child(4) {animation-delay: -9.70s}
+    &:nth-last-child(5) {animation-delay: -9.65s}
+    &:nth-last-child(6) {animation-delay: -9.60s}
+    &:nth-last-child(7) {animation-delay: -9.55s}
+    &:nth-last-child(8) {animation-delay: -9.50s}
+    &:nth-last-child(9) {animation-delay: -9.45s}
+    &:nth-last-child(10) {animation-delay: -9.40s}
+    &:nth-last-child(11) {animation-delay: -9.35s}
+    &:nth-last-child(12) {animation-delay: -9.35s}
+    &:nth-last-child(13) {animation-delay: -9.30s}
+    &:nth-last-child(14) {animation-delay: -9.25s}
+    &:nth-last-child(15) {animation-delay: -9.20s}
+    &:nth-last-child(16) {animation-delay: -9.15s}
+    &:nth-last-child(17) {animation-delay: -9.10s}
+    &:nth-last-child(18) {animation-delay: -9.05s}
+    &:nth-last-child(19) {animation-delay: -9.00s}
+    &:nth-last-child(20) {animation-delay: -8.95s}
+    &:nth-last-child(21) {animation-delay: -8.90s}
+    &:nth-last-child(22) {animation-delay: -8.85s}
+    &:nth-last-child(23) {animation-delay: -8.80s}
+    &:nth-last-child(24) {animation-delay: -8.75s}
+    &:nth-last-child(25) {animation-delay: -8.70s}
+    &:nth-last-child(26) {animation-delay: -8.65s}
+    &:nth-last-child(27) {animation-delay: -8.60s}
+    &:nth-last-child(28) {animation-delay: -8.55s}
+    &:nth-last-child(29) {animation-delay: -8.50s}
+    &:nth-last-child(30) {animation-delay: -8.45s}
   }
 }
