@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 51";
-$themeDate: "Jun 20, 2023";
+$themeVersion: "Alpha 52";
+$themeDate: "Jul 1, 2023";
 
 @use "sass:color";
 @use "sass:math";
@@ -608,7 +608,7 @@ $exportAddons: false;
   }
   // main scroller
   .scroller-3X7KbA {
-    padding-top: 0 !important;
+    padding-top: 48px !important;
     .theme-light & {
       background: linear-gradient(#FFF, var(--d8l4));
       box-shadow: inset 0 1px 8px #000;
@@ -623,9 +623,15 @@ $exportAddons: false;
     }
     // home
     .tutorialContainer-1pL9QS {
-      position: sticky;
+      position: fixed;
       top: 0;
       z-index: 9;
+      .platform-win & {
+        top: 22px;
+      }
+      .platform-osx & {
+        top: 32px;
+      }
       .listItem-3SmSlK {
         margin-bottom: 0;
       }
@@ -1725,12 +1731,14 @@ $exportAddons: false;
           content: "";
           position: absolute;
           top: -100px;
+          height: 100px;
+          box-sizing: border-box;
           left: 0;
           right: 0;
           bottom: 0;
           pointer-events: none;
-          animation: 4s scan-anim infinite linear;
-          @keyframes scan-anim {
+          animation: 4s scanAnim infinite linear;
+          @keyframes scanAnim {
             0% {transform: translateY(-32px)}
             100% {transform: translateY(132px)}
           }
@@ -1827,7 +1835,7 @@ $exportAddons: false;
             border-radius: 2px;
             background-image: linear-gradient(#aaa5, #0005), url(https://cdn.discordapp.com/attachments/815980008782561360/1067889931952869466/noise2.png);
             background-size: 100% 100%, 256px 256px;
-            animation: .8s static-move linear infinite;
+            animation: .8s staticMove linear infinite;
             pointer-events: none;
             transition: 3s opacity;
             opacity: .3;
@@ -2425,8 +2433,8 @@ $exportAddons: false;
               background: radial-gradient(#fff3, #0000 .9px);
               background-size: 6px 6px;
               background-position: 2px 2px;
-              animation: 2s activity-anim linear infinite;
-              @keyframes activity-anim {
+              animation: 2s activityAnim linear infinite;
+              @keyframes activityAnim {
                 0% {background-position: -8px -8px}
                 100% {background-position: 4px 4px}
               }
@@ -2502,8 +2510,8 @@ $exportAddons: false;
           .inner-3je51t>.applicationStreamingPreviewSize-17Trrk {
             background-image: linear-gradient(#aaa5, #0005), url(https://cdn.discordapp.com/attachments/815980008782561360/1067889931952869466/noise2.png);
             background-size: 100% 100%, 1024px 1024px;
-            animation: .8s static-move linear infinite;
-            @keyframes static-move {
+            animation: .8s staticMove linear infinite;
+            @keyframes staticMove {
               0% {background-position: 0 0, -1024px -4096px}
               100% {background-position: 0 0, 2048px 4096px}
             }
@@ -2558,8 +2566,8 @@ $exportAddons: false;
             }
             &:after {
               background: linear-gradient(#0000, #fff2 calc(100% - 4px), #0000);
-              animation: 4s activity-scan-anim infinite linear;
-              @keyframes activity-scan-anim {
+              animation: 4s activityScanAnim infinite linear;
+              @keyframes activityScanAnim {
                 0% {transform: translateY(-100%)}
                 100% {transform: translateY(120%)}
               }
@@ -3126,11 +3134,11 @@ $exportAddons: false;
     // search results
     @at-root {
       .searchResultsWrap-5RVOkx {
-        animation: .4s sidebar-open cubic-bezier(0, 0.48, 0.58, 1);
+        animation: .4s sidebarOpen cubic-bezier(0, 0.48, 0.58, 1);
         .theme-dark & {
           background: linear-gradient(to bottom, var(--d8dG), var(--d8dB));
         }
-        @keyframes sidebar-open {
+        @keyframes sidebarOpen {
           0% {margin-right: -400px}
         }
         box-shadow: -1px 0 16px #000b;
@@ -3186,7 +3194,7 @@ $exportAddons: false;
                 background: radial-gradient(#fff3, #0000 .9px);
                 background-size: 6px 6px;
                 background-position: 2px 2px;
-                animation: 2s activity-anim linear infinite;
+                animation: 2s activityAnim linear infinite;
               }
               .jumpToPageInlineInput-3Rc-Kv {
                 position: relative;
@@ -3302,7 +3310,7 @@ $exportAddons: false;
       border-radius: 3px;
       box-shadow: 0 1px #fff2;
     }
-    .uploadInput-3fblkw {
+    :is(.uploadInput-3fblkw, .thumbnailContainer-LoILOG) {
       border-radius: 3px;
       box-shadow: inset 0 1px 4px #0008, 0 1px #fff2;
       background: #0004;
@@ -3318,6 +3326,23 @@ $exportAddons: false;
           background: linear-gradient(var(--d8br8), var(--d8brC));
         }
       }
+    }
+  }
+  .container-JhuCwn {
+    .channelTextAreaInner-2_mflx {
+      background: none !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    // media
+    .container-12-eoM {
+      background: #0004;
+      box-shadow: inset 0 1px 4px #0008, 0 1px #fff2;
+      margin-left: 16px;
+      margin-right: 16px;
+      padding: 8px;
+      border-radius: 3px;
+      margin-bottom: 8px;
     }
   }
   // onboarding
@@ -3732,6 +3757,19 @@ $exportAddons: false;
     .theme-light & {
       background: linear-gradient(var(--d8l5) 0%, var(--d8l2) 50%, var(--d8l4) 50%, var(--d8l5) 100%);
       box-shadow: inset 0 0 0 1px #0004, 0 0 0 1px #fff8, 0 1px 3px #0005
+    }
+  }
+  // media channel embed
+  .postPreviewContainer-hhbOmo {
+    border-radius: 5px;
+    background: linear-gradient(var(--d8dB) 0%, var(--d8d7) 50%, var(--d8d9) 50%, var(--d8dA) 100%);
+    box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0008, 0 1px 3px #000;
+    .theme-light & {
+      background: linear-gradient(var(--d8l5) 0%, var(--d8l2) 50%, var(--d8l4) 50%, var(--d8l5) 100%);
+      box-shadow: inset 0 0 0 1px #0004, 0 0 0 1px #fff8, 0 1px 3px #0005
+    }
+    .descriptionContainer-2ZAH52 {
+      background: none;
     }
   }
   // attachments
@@ -6659,7 +6697,7 @@ $exportAddons: false;
         box-shadow: inset 0 1px 2px #0004, 0 1px #fff8;
       }
     }
-    .progressBar-1T6LYX {
+    .progressBar-3fV-Dd {
       border-radius: 1px;
       background: linear-gradient(var(--d8br6),var(--d8br9));
       box-shadow: inset 0 1px #fff5;
@@ -6690,9 +6728,9 @@ $exportAddons: false;
     }
   }
   .comboValue-1MDc9T {
-      animation: 5s infinite combo-rainbow;
+      animation: 5s infinite comboRainbow;
       .theme-light & {
-          animation: 5s infinite combo-rainbow-light;
+          animation: 5s infinite comboRainbowLight;
       }
   }
   .comboNameplate-2LHfRI .tip-WcKlNf {
@@ -6702,7 +6740,7 @@ $exportAddons: false;
       box-shadow: 0 0 5px 5px;
       border-radius: .2px;
   }
-  @keyframes combo-rainbow {
+  @keyframes comboRainbow {
       0% {color: #f88}
       16% {color:#ff8}
       33% {color:#8f8}
@@ -6711,7 +6749,7 @@ $exportAddons: false;
       83% {color:#f8f}
       100% {color:#f88}
   }
-  @keyframes combo-rainbow-light {
+  @keyframes combo-RainbowLight {
       0% {color: #B22}
       16% {color:#BB2}
       33% {color:#2B2}
@@ -6754,16 +6792,16 @@ $exportAddons: false;
       mask: none !important;
     }
     border-radius: 25px;
-    animation: server-anim-close .18s ease-in;
+    animation: serverAnimClose .18s ease-in;
     .wrapper-3kah-n, .childWrapper-1j_1ub, >svg>foreignObject>.wrapper-3kah-n[data-list-item-id="guildsnav___favorites"]>div.childWrapper-1j_1ub:has(.favoriteIcon-2kWmTP) {
       overflow: hidden;
       border-radius: 25px;
-      animation: server-anim-close .18s ease-in;
-      @keyframes server-anim-close {
+      animation: serverAnimClose .18s ease-in;
+      @keyframes serverAnimClose {
         0% {border-radius: 15px}
         100% {border-radius: 25px}
       }
-      @keyframes server-anim {
+      @keyframes serverAnim {
         0% {border-radius: 25px}
         20% {border-radius: 11.8px}
         35% {border-radius: 16.1px}
@@ -6773,13 +6811,13 @@ $exportAddons: false;
         100% {border-radius: 15px}
       }
       &:hover, &.selected-1Drb7Z {
-        animation: server-anim 1.5s;
+        animation: serverAnim 1.5s;
         animation-timing-function: ease-out;
         border-radius: 15px;
       }
     }
     &:has(:is(.wrapper-3kah-n:hover,.wrapper-3kah-n.selected-1Drb7Z)) {
-      animation: server-anim 1.5s;
+      animation: serverAnim 1.5s;
       animation-timing-function: ease-out;
       border-radius: 15px;
     }

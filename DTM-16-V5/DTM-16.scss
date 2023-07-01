@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "432";
-$themeDate: "Jun 20, 2023";
+$themeVersion: "433";
+$themeDate: "Jul 1, 2023";
 
 $debug: 0;
 
@@ -143,6 +143,12 @@ $experiment14: 1;
 // 0 | Control
 // 1 | Treatment 1: No background
 $experiment15: 1;
+
+// Invite Icons (2023-06_invite_icons)
+// 0 | Original icon (arrow out of box)
+// 1 | Treatment 1: Person (+)
+// 2 | Treatment 2: Link icon
+$experiment16: 0;
 
 //.socialLinks-3ywLUf:after {
 //  content: "";
@@ -3508,7 +3514,15 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
           display: none;
         }
         [d="M6.5 8.00667C7.88 8.00667 9 6.88667 9 5.50667C9 4.12667 7.88 3.00667 6.5 3.00667C5.12 3.00667 4 4.12667 4 5.50667C4 6.88667 5.12 8.00667 6.5 8.00667Z"] {
-          d: path("M6.3 3.4L8 1.7V11.5C8 11.8 8.2 12 8.5 12C8.8 12 9 11.8 9 11.5V1.7L10.7 3.4C10.9 3.6 11.2 3.6 11.4 3.4C11.6 3.2 11.6 2.9 11.4 2.7L8.9 0.2C8.9 0.2 8.9 0.2 8.9 0.1C8.8 0 8.6 0 8.5 0C8.4 0 8.2 0 8.1 0.1C8.1 0.1 8.1 0.1 8.1 0.2L5.6 2.7C5.4 2.9 5.4 3.2 5.6 3.4C5.8 3.5 6.1 3.5 6.3 3.4ZM14 4H12.5V5H13.5C13.8 5 14 5.2 14 5.5V14.5C14 14.8 13.8 15 13.5 15H3.5C3.2 15 3 14.8 3 14.5V5.5C3 5.2 3.2 5 3.5 5H4.5V4H3C2.4 4 2 4.4 2 5V15C2 15.6 2.4 16 3 16H14C14.6 16 15 15.6 15 15V5C15 4.4 14.6 4 14 4Z")
+          @if $experiment16 == 0 {
+            d: path("M6.3 3.4L8 1.7V11.5C8 11.8 8.2 12 8.5 12C8.8 12 9 11.8 9 11.5V1.7L10.7 3.4C10.9 3.6 11.2 3.6 11.4 3.4C11.6 3.2 11.6 2.9 11.4 2.7L8.9 0.2C8.9 0.2 8.9 0.2 8.9 0.1C8.8 0 8.6 0 8.5 0C8.4 0 8.2 0 8.1 0.1C8.1 0.1 8.1 0.1 8.1 0.2L5.6 2.7C5.4 2.9 5.4 3.2 5.6 3.4C5.8 3.5 6.1 3.5 6.3 3.4ZM14 4H12.5V5H13.5C13.8 5 14 5.2 14 5.5V14.5C14 14.8 13.8 15 13.5 15H3.5C3.2 15 3 14.8 3 14.5V5.5C3 5.2 3.2 5 3.5 5H4.5V4H3C2.4 4 2 4.4 2 5V15C2 15.6 2.4 16 3 16H14C14.6 16 15 15.6 15 15V5C15 4.4 14.6 4 14 4Z")
+          }
+          @if $experiment16 == 1 {
+            d: path("M10.5,7 C12.1838095,7 14,5.28666667 14,3.54545455 C14,1.80424242 12.1838095,0 10.5,0 C8.81619048,0 7,1.80424242 7,3.54545455 C7,5.28666667 8.81619048,7 10.5,7 Z M3,6 L3,4 L2,4 L2,6 L0,6 L0,7 L2,7 L2,9 L3,9 L3,7 L5,7 L5,6 L3,6 Z M10.5,8 C8.46571429,8 5,9.32848485 5,11.4242424 L5,13 L16,13 L16,11.4242424 C16,9.32848485 12.5342857,8 10.5,8 Z")
+          }
+          @if $experiment16 == 2 {
+            d: path("M7.05967 8.93968C7.333 9.19968 7.333 9.62635 7.05967 9.88635C6.79967 10.1463 6.373 10.1463 6.113 9.88635C4.813 8.58635 4.813 6.47301 6.113 5.17301L8.473 2.81301C9.773 1.51301 11.8863 1.51301 13.1863 2.81301C14.4863 4.11301 14.4863 6.22635 13.1863 7.52635L12.193 8.51968C12.1997 7.97301 12.113 7.42635 11.9263 6.90635L12.2397 6.58635C13.0263 5.80635 13.0263 4.53968 12.2397 3.75968C11.4597 2.97301 10.193 2.97301 9.413 3.75968L7.05967 6.11301C6.273 6.89301 6.273 8.15968 7.05967 8.93968ZM8.93967 6.11301C9.19967 5.85301 9.62633 5.85301 9.88633 6.11301C11.1863 7.41301 11.1863 9.52635 9.88633 10.8263L7.52633 13.1863C6.22633 14.4863 4.113 14.4863 2.813 13.1863C1.513 11.8863 1.513 9.77301 2.813 8.47301L3.80633 7.47968C3.79967 8.02635 3.88633 8.57301 4.073 9.09968L3.75967 9.41301C2.973 10.193 2.973 11.4597 3.75967 12.2397C4.53967 13.0263 5.80633 13.0263 6.58633 12.2397L8.93967 9.88635C9.72633 9.10635 9.72633 7.83968 8.93967 7.05968C8.66633 6.79968 8.66633 6.37301 8.93967 6.11301Z")
+          }
         }
         // mute
         [d="M9.01 11.085C9.015 11.1125 9.02 11.14 9.02 11.17L15 5.18V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 11.03 9.005 11.0575 9.01 11.085Z"] {
@@ -14112,65 +14126,144 @@ $colorInteractiveActive: ".colorInteractiveActive-30E9n8";
 }
 // new boost page
 .root-2zfUH6 {
-  .header-16U6Vf {
+  .guildStatus-3eFKo5 {
+    display: grid;
+    width: 660px;
+    margin: 0 auto 36px;
+    grid-template-columns: 64px auto 134px;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "a b d" "a c d";
+    background: var(--background-secondary);
+    border-radius: 8px;
+    padding: 16px;
+    .icon-1zKOXL {
+      grid-area: a;
+    }
+    .guildName-ZJjXt9 {
+      grid-area: b;
+      text-align: start;
+      margin-left: 16px;
+      margin-top: 4px;
+    }
+    .guildBoostCountWrapper-2LEr08 {
+      grid-area: c;
+      margin-left: 16px;
+      .guildBoostCount-1b-5sS {
+        justify-content: start;
+      }
+    }
+    .guildBoostCtas-187DtU {
+      grid-area: d;
+      gap: 8px;
+      flex-direction: column;
+      button {
+        border-radius: 3px;
+        margin-left: 0;
+        padding: 0;
+        min-width: 0;
+        min-height: 32px;
+        height: 32px;
+        box-shadow: none !important;
+        transform: none !important;
+        .contents-3NembX {
+          font-size: 14px;
+        }
+      }
+      .guildBoostCta-ugVE2M {
+        box-shadow: none !important;
+        transform: none !important;
+      }
+      .lookFilled-1H2Jvj.colorWhite-Eshn2o {
+        background: var(--blurple);
+        .contents-3NembX {color: #fff}
+        &:hover {background: var(--blurple-hover)}
+        &:active {background: var(--blurple-active)}
+      }
+      .lookOutlined-3RTC7c.colorWhite-Eshn2o {
+        border: none;
+        .contents-3NembX {
+          color: #fff;
+        }
+        .theme-dark & {
+          background: #{ss(#4f545c)};
+          &:hover:not(:disabled) {
+            background: #{ss(#72767d)};
+          }
+          &:active:not(:disabled) {
+            background: #{ss(#72767d)};
+          }
+        }
+        .theme-light & {
+          background: #{ss(#e3e5e8)};
+          &:hover:not(:disabled) {
+            background: #{ss(#c7ccd1)};
+          }
+          &:active:not(:disabled) {
+            background-color: #{ss(#e3e5e8)};
+          }
+        }
+      }
+    }
+  }
+  .header-1aIywd {
     background: none !important;
   }
-  :is(.display-lg-3SN7Sz, .heading-1ZrI0m) {
+  :is(.display-lg-3SN7Sz, .heading-2u4RIg) {
     font-family: var(--font-primary);
     font-size: 24px;
   }
-  .progressBarMarker-2dy17R {
+  .progressBarMarker-84rglL {
     background: var(--background-primary);
   }
-  .progressBarFill-1eX_h_ {
+  .progressBarFill-3YRwOi {
     background: #{ss(#c7d0f0)};
   }
-  .boostedTierIconBackground-2d03yZ {
-    background: var(--blurple);
+  .progressBarMarkerUnlocked-2zZyZm {
+    background: var(--background-primary);
   }
-  .progressBarMarkerUnlocked-2TzsEs .progressBarMarkerIndicator-3_FLlB {
+  .progressBarMarkerUnlocked-2zZyZm .progressBarMarkerIndicator-2it2LR {
     background: linear-gradient(90deg, #{ss(#b473f5)}, #{ss(#e292aa)}) !important;
   }
-  .tierCardCurrentTier-ed2p6N {
+  .tierCardCurrentTier-2zaZoV {
     background: var(--blurple);
     border-radius: 3px;
   }
-  .tierCards-1cjGnx {
-    .tierCard-3jmDDi {
+  .tierCards-2n57rb {
+    .tierCard-2HoGkY {
       border-radius: 3px;
       background: var(--background-tertiary);
       box-shadow: var(--elevation-high);
     }
   }
-  .topPerksCard-1OyFW_ {
+  .topPerksCard-1znJI8 {
     border-radius: 3px;
   }
-  .recommendedTierHighlight-1V298h {
+  .recommendedTierHighlight-1vvme_ {
     &:before, &:after {
       border-color: var(--blurple);
       border-radius: 3px;
     }
-    .recommendedTierHighlightTag-2Vgifo {
+    .recommendedTierHighlightTag-j-ZGmE {
       background: var(--blurple);
       border-radius: 3px;
     }
   }
-  .wrapper-1ReDXd {
+  .wrapper-3ViBpj {
     background: none;
     padding: 0;
-    .card-2bTCxE {
+    .card-2ZCHT- {
       border-radius: 3px;
       background: var(--background-tertiary);
       box-shadow: var(--elevation-high);
     }
   }
-  :is(.tierCardBorderHighlight-1xUN0G, .tierCardSparkleHighlight-3ti8F1, .bodyWave-Zyw7KS, .backgroundImages-3Mbm2C) {
+  :is(.tierCardBorderHighlight-1iA1iV, .tierCardSparkleHighlight-1KezWC, .bodyWave-wQyWfY, .backgroundImages-2m7jaB) {
     display: none !important;
   }
-  .wrapper-3uUnvs {
+  .wrapper-1LtZJL {
     display: none !important;
   }
-  @at-root .perkPreviewImage-2DwY44 {
+  @at-root .perkPreviewImage-2jd1Tx {
     display: none;
   }
 }

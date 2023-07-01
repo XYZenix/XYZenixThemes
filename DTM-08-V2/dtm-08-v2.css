@@ -478,7 +478,7 @@ rect[mask="url(#svg-mask-status-dnd)"] {
 }
 
 .scroller-3X7KbA {
-  padding-top: 0 !important;
+  padding-top: 48px !important;
 }
 .theme-light .scroller-3X7KbA {
   background: linear-gradient(#FFF, var(--d8l4));
@@ -493,9 +493,15 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   box-shadow: inset 0 1px 8px #0004;
 }
 .scroller-3X7KbA .tutorialContainer-1pL9QS {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 9;
+}
+.platform-win .scroller-3X7KbA .tutorialContainer-1pL9QS {
+  top: 22px;
+}
+.platform-osx .scroller-3X7KbA .tutorialContainer-1pL9QS {
+  top: 32px;
 }
 .scroller-3X7KbA .tutorialContainer-1pL9QS .listItem-3SmSlK {
   margin-bottom: 0;
@@ -1515,13 +1521,15 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   content: "";
   position: absolute;
   top: -100px;
+  height: 100px;
+  box-sizing: border-box;
   left: 0;
   right: 0;
   bottom: 0;
   pointer-events: none;
-  animation: 4s scan-anim infinite linear;
+  animation: 4s scanAnim infinite linear;
 }
-@keyframes scan-anim {
+@keyframes scanAnim {
   0% {
     transform: translateY(-32px);
   }
@@ -1624,7 +1632,7 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   border-radius: 2px;
   background-image: linear-gradient(#aaa5, #0005), url(https://cdn.discordapp.com/attachments/815980008782561360/1067889931952869466/noise2.png);
   background-size: 100% 100%, 256px 256px;
-  animation: 0.8s static-move linear infinite;
+  animation: 0.8s staticMove linear infinite;
   pointer-events: none;
   transition: 3s opacity;
   opacity: 0.3;
@@ -2230,9 +2238,9 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   background: radial-gradient(#fff3, #0000 0.9px);
   background-size: 6px 6px;
   background-position: 2px 2px;
-  animation: 2s activity-anim linear infinite;
+  animation: 2s activityAnim linear infinite;
 }
-@keyframes activity-anim {
+@keyframes activityAnim {
   0% {
     background-position: -8px -8px;
   }
@@ -2304,9 +2312,9 @@ rect[mask="url(#svg-mask-status-dnd)"] {
 .container-2cd8Mz .nowPlayingColumn-1eCBCN .scroller-hE2gWq .itemCard-3Etziu .inner-3je51t > .applicationStreamingPreviewSize-17Trrk {
   background-image: linear-gradient(#aaa5, #0005), url(https://cdn.discordapp.com/attachments/815980008782561360/1067889931952869466/noise2.png);
   background-size: 100% 100%, 1024px 1024px;
-  animation: 0.8s static-move linear infinite;
+  animation: 0.8s staticMove linear infinite;
 }
-@keyframes static-move {
+@keyframes staticMove {
   0% {
     background-position: 0 0, -1024px -4096px;
   }
@@ -2365,9 +2373,9 @@ rect[mask="url(#svg-mask-status-dnd)"] {
 }
 .container-2cd8Mz .nowPlayingColumn-1eCBCN .scroller-hE2gWq .itemCard-3Etziu .applicationStreamingPreviewSize-17Trrk:not(.root-3KaKPz):after {
   background: linear-gradient(#0000, #fff2 calc(100% - 4px), #0000);
-  animation: 4s activity-scan-anim infinite linear;
+  animation: 4s activityScanAnim infinite linear;
 }
-@keyframes activity-scan-anim {
+@keyframes activityScanAnim {
   0% {
     transform: translateY(-100%);
   }
@@ -2975,13 +2983,13 @@ rect[mask="url(#svg-mask-status-dnd)"] {
 }
 
 .searchResultsWrap-5RVOkx {
-  animation: 0.4s sidebar-open cubic-bezier(0, 0.48, 0.58, 1);
+  animation: 0.4s sidebarOpen cubic-bezier(0, 0.48, 0.58, 1);
   box-shadow: -1px 0 16px #000b;
 }
 .theme-dark .searchResultsWrap-5RVOkx {
   background: linear-gradient(to bottom, var(--d8dG), var(--d8dB));
 }
-@keyframes sidebar-open {
+@keyframes sidebarOpen {
   0% {
     margin-right: -400px;
   }
@@ -3078,7 +3086,7 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   background: radial-gradient(#fff3, #0000 0.9px);
   background-size: 6px 6px;
   background-position: 2px 2px;
-  animation: 2s activity-anim linear infinite;
+  animation: 2s activityAnim linear infinite;
 }
 .searchResultsWrap-5RVOkx .container-1-h9mY .pageControlContainer-1Mbe6M .pageControl-1Kt_nb .jumpToPageInlineInput-3Rc-Kv {
   position: relative;
@@ -3250,7 +3258,7 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   border-radius: 3px;
   box-shadow: 0 1px #fff2;
 }
-.container-3wLKDe .uploadInput-3fblkw {
+.container-3wLKDe :is(.uploadInput-3fblkw, .thumbnailContainer-LoILOG) {
   border-radius: 3px;
   box-shadow: inset 0 1px 4px #0008, 0 1px #fff2;
   background: #0004;
@@ -3266,6 +3274,21 @@ rect[mask="url(#svg-mask-status-dnd)"] {
 .theme-dark .pill-3pRQlO.selected-24z1Ou {
   border: solid 1px #000;
   background: linear-gradient(var(--d8br8), var(--d8brC));
+}
+
+.container-JhuCwn .channelTextAreaInner-2_mflx {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.container-JhuCwn .container-12-eoM {
+  background: #0004;
+  box-shadow: inset 0 1px 4px #0008, 0 1px #fff2;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 8px;
+  border-radius: 3px;
+  margin-bottom: 8px;
 }
 
 .theme-dark .container-2IKOsH {
@@ -3672,6 +3695,19 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   box-shadow: inset 0 0 0 1px #0004, 0 0 0 1px #fff8, 0 1px 3px #0005;
 }
 
+.postPreviewContainer-hhbOmo {
+  border-radius: 5px;
+  background: linear-gradient(var(--d8dB) 0%, var(--d8d7) 50%, var(--d8d9) 50%, var(--d8dA) 100%);
+  box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0008, 0 1px 3px #000;
+}
+.theme-light .postPreviewContainer-hhbOmo {
+  background: linear-gradient(var(--d8l5) 0%, var(--d8l2) 50%, var(--d8l4) 50%, var(--d8l5) 100%);
+  box-shadow: inset 0 0 0 1px #0004, 0 0 0 1px #fff8, 0 1px 3px #0005;
+}
+.postPreviewContainer-hhbOmo .descriptionContainer-2ZAH52 {
+  background: none;
+}
+
 .theme-dark .wrapperAudio-1Bzv_Z,
 .theme-dark .attachment-1PZZB2 {
   background: linear-gradient(var(--d8dB) 0%, var(--d8d7) 50%, var(--d8d9) 50%, var(--d8dA) 100%);
@@ -3985,7 +4021,7 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   display: none;
 }
 .sidebarRegionScroller-FXiQOh .sidebar-nqHbhN .info-3pQQBb:before {
-  content: "DTM-08 V2 Alpha 51 \aUpdated on Jun 20, 2023";
+  content: "DTM-08 V2 Alpha 52 \aUpdated on Jul 1, 2023";
   font-size: 12px;
   color: #fff8;
   text-transform: none;
@@ -6701,21 +6737,21 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   background: #0001 !important;
   box-shadow: inset 0 1px 2px #0004, 0 1px #fff8;
 }
-.container-3aTfKk .progressBar-1T6LYX {
+.container-3aTfKk .progressBar-3fV-Dd {
   border-radius: 1px;
   background: linear-gradient(var(--d8br6), var(--d8br9));
   box-shadow: inset 0 1px #fff5;
 }
-.container-3aTfKk .progressBar-1T6LYX[style*=green] {
+.container-3aTfKk .progressBar-3fV-Dd[style*=green] {
   background: linear-gradient(var(--d8gr4), var(--d8gr9));
 }
-.container-3aTfKk .progressBar-1T6LYX[style*=yellow] {
+.container-3aTfKk .progressBar-3fV-Dd[style*=yellow] {
   background: linear-gradient(var(--d8yl2v), var(--d8yl6));
 }
-.container-3aTfKk .progressBar-1T6LYX[style*=red] {
+.container-3aTfKk .progressBar-3fV-Dd[style*=red] {
   background: linear-gradient(var(--d8rd5), var(--d8rd8));
 }
-.container-3aTfKk .progressBar-1T6LYX[style*=orange] {
+.container-3aTfKk .progressBar-3fV-Dd[style*=orange] {
   background: linear-gradient(#F68F68, #D4631B);
 }
 
@@ -6733,10 +6769,10 @@ rect[mask="url(#svg-mask-status-dnd)"] {
 }
 
 .comboValue-1MDc9T {
-  animation: 5s infinite combo-rainbow;
+  animation: 5s infinite comboRainbow;
 }
 .theme-light .comboValue-1MDc9T {
-  animation: 5s infinite combo-rainbow-light;
+  animation: 5s infinite comboRainbowLight;
 }
 
 .comboNameplate-2LHfRI .tip-WcKlNf {
@@ -6748,7 +6784,7 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   border-radius: 0.2px;
 }
 
-@keyframes combo-rainbow {
+@keyframes comboRainbow {
   0% {
     color: #f88;
   }
@@ -6771,7 +6807,7 @@ rect[mask="url(#svg-mask-status-dnd)"] {
     color: #f88;
   }
 }
-@keyframes combo-rainbow-light {
+@keyframes combo-RainbowLight {
   0% {
     color: #B22;
   }
