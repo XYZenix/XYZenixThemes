@@ -23,12 +23,6 @@ Name | Description | Status | Image
 NewDragNDropModal | New drag&drop upload box from a short video that was shown on the Nitro tab, theme includes non nitro version | Temporarily abandoned | [Nitro](https://cdn.discordapp.com/attachments/581117911117070336/638606292843233310/unknown.png) / [Nitro Classic](https://cdn.discordapp.com/attachments/531523467636375554/590955254200401926/unknown.png) / [Non-Nitro](https://cdn.discordapp.com/attachments/531523467636375554/590955483863580682/unknown.png)
 MiniProfileRevert | Reverts the new mini profile UI update from July 2020 | Temporarily abandoned | N/A
 
-## Themes: Twitter
-
-Name | Description | State
------|-------------|------
-[Old Twitter Icons](/Old-Twitter-Icons-2.0.css) | Brings back the old twitter icons | Active
-
 ## Themes: Twitch
 
 Name | Description | State
