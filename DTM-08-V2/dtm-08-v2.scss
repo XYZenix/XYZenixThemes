@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 56";
+$themeVersion: "Alpha 57";
 $themeDate: "Jul 10, 2023";
 
 @use "sass:color";
@@ -897,13 +897,10 @@ $exportAddons: false;
         box-shadow: inset 0 1px #fff6, inset 0 2px #fff6;
         color: #222;
         .searchBarComponent-3N7dCG {
-          background: #0001;
-          box-shadow: 0 0 0 1px #C7C9CF,inset 0 0 0 1px #0002;
-          color: #111;
+          background: linear-gradient(var(--d8l3), var(--d8l2) 50%, var(--d8l1) 50%, var(--d8l2));
+          box-shadow: inset 0 1px 4px #0004, 0 0 0 1px #fff4, 0 1px #fffb;
+          color: #000;
           text-shadow: 0 1px #fffb;
-          &:hover {
-            box-shadow: 0 0 3px 1px #eee,inset 0 0 0 1px #0002;
-          }
         }
       }
       .theme-dark & {
@@ -2386,7 +2383,7 @@ $exportAddons: false;
         .peopleListItem-u6dGxF {
           border: none;
           box-shadow: 0 -1px #fff1;
-          &:is(:hover, :focus, :focus-within, .active-2UF8Zh) {
+          &:is(:hover, .active-2UF8Zh) {
             z-index: 1;
             position: relative;
             background: linear-gradient(var(--d8d7), var(--d8dA)) border-box;
@@ -4384,6 +4381,7 @@ $exportAddons: false;
           background: linear-gradient(var(--d8dC), var(--d8dD) 50%, var(--d8dB) 50%, var(--d8dA));
           box-shadow: inset 0 1px 8px #0008, 0 0 0 1px #fff1, 0 1px #fff2;
           border-radius: 3px;
+          position: relative;
           .theme-light & {
             background: linear-gradient(var(--d8l7), var(--d8l6) 50%, var(--d8l4) 50%, var(--d8l2));
             box-shadow: inset 0 1px 4px #0006, 0 0 0 1px #fff6, 0 1px #fffb;
@@ -7493,5 +7491,47 @@ $exportAddons: false;
         width: calc(var(--serverColumns) * 60px);
       }
     }
+  }
+  /* ============================== */
+  /* Hide Account Details           */
+  /* ============================== */
+  .background-3d_SjE:after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 160px;
+    height: 120px;
+    background: linear-gradient(var(--d8l4), var(--d8l6) 50%, var(--d8l7) 50%, var(--d8l4));
+    box-shadow: 0 0 0 1px var(--d8lG), inset 0 0 0 1px #fff;
+    border-radius: 5px;
+    transition: .3s;
+    transform-origin: center left;
+  }
+  .background-3d_SjE:hover:after {
+    transform: translate(-500px, 0);
+    transition: 8s;
+  }
+  .description-foE_WP .phoneRevealer-3SoOdz {
+    pointer-events: none;
+    &:after {
+      content: "";
+      text-align: center;
+      color: #000;
+      position: relative;
+      display: block;
+      width: 400px;
+      height: 20px;
+      margin-top: -18px;
+      background: linear-gradient(var(--d8l4), var(--d8l6) 50%, var(--d8l7) 50%, var(--d8l4));
+      box-shadow: 0 0 0 1px var(--d8lG), inset 0 0 0 1px #fff;
+      border-radius: 3px;
+    }
+  }
+  .theme-dark .background-3d_SjE:after,
+  .theme-dark .phoneRevealer-3SoOdz:after {
+    background: linear-gradient(var(--d8d9), var(--d8d8) 50%, var(--d8d9) 50%, var(--d8dB));
+    box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff2;
+    color: #fff;
   }
 }
