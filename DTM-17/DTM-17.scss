@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-17.theme.css
 */
 
-$themeVersion: "225";
-$themeDate: "Jul 15, 2023";
+$themeVersion: "226";
+$themeDate: "Jul 18, 2023";
 
 @use "sass:color";
 @use "sass:string";
@@ -1901,6 +1901,9 @@ html.theme-light {
       }
       @at-root {
         #{$panel-rtcConInner} {
+          .theme-dark & {
+            background: hsl(230,calc(var(--saturation-factor,1)*6.5%),18%);
+          }
           .actionButtons-2vEOUh {
             .lookFilled-1H2Jvj.colorBrand-2M3O3N {
               .theme-light & {
@@ -2035,8 +2038,14 @@ html.theme-light {
       }
      }
     .listeningAlong-6YvYsc {
+      .theme-dark & {
+        background: hsl(230,calc(var(--saturation-factor,1)*6.5%),18%);
+      }
     }
     #vc-spotify-player {
+      .theme-dark & {
+        background: hsl(230,calc(var(--saturation-factor,1)*6.5%),18%);
+      }
       --vc-spotify-green: var(--green);
       #vc-spotify-titles {
         .vc-spotify-ellipoverflow {
@@ -11744,6 +11753,78 @@ html.theme-light {
   }
   .container-22-IpK {
     display: none;
+  }
+}
+// (new) members tab
+@at-root {
+  .page-2dwf_i {
+    .content-1jQy2l {
+      background: var(--background-primary);
+      &:has(.mainTableContainer-1olPmq) {
+        padding: 0;
+        gap: 0;
+      }
+      .bannerContainer-1hFfQ1 {
+        border-radius: 0;
+        background: var(--blurple);
+        .heading-1W7Ix- .defaultColor-1EVLSt {color:#fff}
+        .lookFilled-1H2Jvj.colorBrand-2M3O3N {
+          color: var(--blurple);
+          background: #fff;
+          &:hover {background:var(--blurple-inverted)}
+          &:active {background:var(--blurple-inverted-active)}
+        }
+        .lookFilled-1H2Jvj.colorWhite-Eshn2o {
+          background: #0000;
+          border: solid 1px rgba(255 255 255/.3);
+          color: #fff;
+          transition: .17s border, .17s background;
+          &:hover:not(:disabled) {
+            background: #0000;
+            border-color: rgba(255 255 255/.6);
+            color: #fff;
+          }
+          &:active:not(:disabled) {
+            background: #{ss(rgba(114, 137, 218, 0.1))};
+            background: rgba(255 255 255/.1);
+            border-color: #fff;
+            color: #fff;
+          }
+        }
+      }
+      .searchHeaderContainer-1tLzKm {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+      .mainTableContainer-1olPmq {
+        border-radius: 0;
+        box-shadow: none;
+        .table-2Z1caJ {
+          padding: 0;
+          border: none;
+        }
+        .tableHeaderCellContainer-fAjuC1 {
+          padding: 8px;
+        }
+        .tableHeaderRow-2Jri1A {
+          .tableHeaderCellContainer-fAjuC1 {
+            &:first-child {padding-left: 32px}
+            &:last-child {padding-right: 32px}
+          }
+          &:first-child:after {
+            box-shadow: 0 1px var(--background-accent);
+            bottom: 0;
+          }
+        }
+        .roundedRow-2mAezB {
+          >td {
+            border-radius: 0 !important;
+            &:first-child {padding-left: 24px}
+            &:last-child {padding-right: 24px}
+          }
+        }
+      }
+    }
   }
 }
 // nitro page
