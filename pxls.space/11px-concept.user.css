@@ -1,0 +1,289 @@
+/* ==UserStyle==
+@name           [pxls.space] 11pixels's concept
+@namespace      github.com/xyzenix/xyzenixthemes
+@version        1.0
+@description    a theme based on a concept 11pixels made
+@author         11pixels
+@preprocessor   stylus
+==/UserStyle== */
+
+@-moz-document domain("pxls.space"), url-prefix("http://pxls.localhost:4567") {
+  body {
+    background: #777;
+  }
+  #palette {
+    background: linear-gradient(#434343dd,#141414dd);
+    backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 6px;
+    padding: 0;
+    >button {
+      width: 36px;
+      height: 16px;
+      min-height: 16px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: 0 1px 2px rgba(0 0 0 50%);
+      top: 0;
+      &.deselect-button {
+        display: none;
+      }
+      &.active {
+        box-shadow: 0 0 0 3px #fffb, inset 0 0 0 1px #0008, 0 1px 2px rgba(0 0 0 .5);
+        z-index: 10;
+      }
+      &.palette-color-special.checkerboard-background {
+        height: 36px;
+        &.active {
+          box-shadow: 0 0 0 3px #f00, inset 0 0 0 1px #0008, 0 1px 2px rgba(0 0 0 .5);
+        }
+      }
+    }
+  }
+  #ui-bottom {
+    container: uibottom / inline-size;
+  }
+  @container uibottom (width < 800px) {
+    #palette {
+      height: 102px;
+    }
+  }
+  @container uibottom (width < 400px) {
+    #palette {
+      height: 212px;
+    }
+  }
+  #board-container {
+    filter: drop-shadow(0 1px 4px rgba(0 0 0 .5));
+  }
+  #undo {
+    height: 40px !important;
+    width: 240px;
+    margin-top: -40px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #3E3E3E;
+    box-shadow: inset 0 0 0 2px #6B6B6B, 0 1px 2px rgba(0 0 0 .5);
+    transition: .3s transform;
+    border: none !important;
+    pointer-events: none;
+    transform: translateY(60px);
+    color: #fff;
+    &.open {
+      transform: translateY(-16px);
+      pointer-events: all;
+    }
+    &:hover {background: #444}
+    &:active {background: #333}
+    span {
+      opacity: 1 !important;
+      text-shadow: 0 1px 1px rgba(0 0 0 .5);
+    }
+  }
+  .palette-number {
+    top: 2px;
+    left: 3px;
+    margin: 0;
+    border: none;
+    opacity: .5;
+    color: #000;
+    font-weight: bold;
+    font-family: gg sans;
+    width: unset;
+    min-width: 0;
+    transform: none;
+    text-shadow: -1px -1px #fff, -1px 1px #fff, 1px -1px #fff, 1px 1px #fff;
+  }
+  .transparent.controls {
+    background: rgba(0 0 0 .75);
+    backdrop-filter: blur(16px);
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    position: absolute;
+    margin: 0;
+    align-items: center;
+  }
+  .transparent.controls button {
+    background: #3E3E3E;
+    box-shadow: inset 0 0 0 2px #6B6B6B, 0 1px 2px rgba(0 0 0 .5);
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    text-shadow: 0 1px 1px rgba(0 0 0 .5);
+    color: #fff;
+    font-weight: 200;
+    &:hover {background: #444}
+    &:active {background: #333}
+  }
+  #ui {
+    #main-bubble {
+      background: rgba(0 0 0 .8);
+      color: #fff;
+      font: bold x-small verdana,arial,helvetica,sans-serif;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      text-shadow: 0 0 4px #000, 0 0 4px #000, 0 0 2px #000;
+      a, #logout-icon, #cooldown {
+        color: #fff;
+        text-shadow: 0 0 4px #000, 0 0 4px #000, 0 0 2px #000;
+      }
+    }
+    #cooldown {
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+  #cursor-text {
+    border-radius: 3px;
+    border: none;
+    background: rgba(0 0 0 .8);
+    color: #fff;
+    font: bold x-small verdana,arial,helvetica,sans-serif;
+    width: auto;
+    height: auto;
+    line-height: 24px;
+  }
+  #lookup {
+    margin-top: 12px;
+    background: rgba(0 0 0 .95);
+    color: #fff;
+    font: bold x-small verdana,arial,helvetica,sans-serif;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    line-height: 100%;
+    text-shadow: none;
+    .text-button {
+      padding: 0;
+      color: #fff;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      text-shadow: none;
+      box-shadow: none;
+      font: bold x-small verdana,arial,helvetica,sans-serif;
+      &.dangerous-button {
+        color: #ff4500;
+      }
+      &:not(:first-of-type) {
+        margin-left: 8px;
+      }
+    }
+  }
+  #reticule {
+    transform: scale(0.8);
+    transition: .025s ease-in transform;
+    border-color: #fff;
+    border: none;
+    margin-top: 1px;
+    margin-left: 1px;
+    border-radius: 0;
+    box-shadow: 0 2px 6px 2px #0008, inset 0 0 0 1px #fff4, inset 0 1px #fff5, 0 1px 1px #0004;
+    &[style*="var(--general-background)"] {
+      box-shadow: 0 2px 6px 2px #0008, inset 0 0 0 1px #f00, inset 0 0 0 2px #fff4, inset 0 2px #fff5, 0 1px 1px #0004;
+      background: #fff6 !important;
+    }
+  }
+  /* i tried to do this without :has() and it refuses to work on firefox so i just gave up */
+  html:has(canvas:active) #reticule {
+    transform: scale(1);
+  }
+  #login-overlay:not([style*="display: none"]) {
+    background: #0000;
+    color: #fff;
+    ~#palette button {
+      opacity: .1;
+    }
+  }
+  #ui .admin.bubble {
+    background: rgba(0 0 0 .9) !important;
+    border-radius: 0;
+    >div {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      display: flex;
+      height: 32px;
+      position: relative;
+      margin-bottom: 8px;
+      --btnbg: #3e3e3e;
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 8px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        width: 150px;
+        background: linear-gradient(var(--btnbg),var(--btnbg)) padding-box, linear-gradient(#6B6B6B,#6B6B6B) border-box;
+        box-shadow: 0 1px 2px rgba(0 0 0 .5);
+        border: solid 2px #0000;
+        transition: .3s transform;
+        pointer-events: none;
+        color: #fff;
+      }
+      &:hover {--btnbg: #4a4a4a}
+      &:active {--btnbg: #333}
+      input[type=checkbox] {
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
+      input[type=checkbox]:checked+span {
+        --btnbg: #000;
+        color: #fff;
+        background: linear-gradient(var(--btnbg),var(--btnbg)) padding-box, linear-gradient(to right, #f00,#ff0,#0f0,#0ff,#00f,#f0f,#f00) border-box;
+        background-size: 1000px;
+        animation: 3s rainbow infinite linear;
+        @keyframes rainbow {
+          0% {background-position:0}
+          100% {background-position:-1000px}
+        }
+      }
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+  #ui #loading-bubble.bubble {
+    transform: none;
+    background: rgba(0 0 0 .9);
+    left: 0;
+    right: 0;
+    width: max-content;
+    font: x-small verdana,arial,helvetica,sans-serif;
+    box-shadow: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    pointer-events: none;
+    .loading-bubble-item {
+      color: #fff;
+      kbd {
+        background: none;
+        padding: 0;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+}

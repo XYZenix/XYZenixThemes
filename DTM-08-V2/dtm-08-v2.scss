@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 59";
-$themeDate: "Jul 24, 2023";
+$themeVersion: "Alpha 60";
+$themeDate: "Aug 4, 2023";
 
 @use "sass:color";
 @use "sass:math";
@@ -4724,7 +4724,7 @@ $exportAddons: false;
           }
         }
         .children-2C96Ex>.marginTop8-24uXGp:nth-child(2):before {
-          content: "message from 11pixels: light mode is not currently supported but it will be eventually i promise";
+          content: "light mode is not fully done but is in a decently usable state i guess";
           font-size: 14px;
           display: block;
           color: #eee;
@@ -6515,27 +6515,50 @@ $exportAddons: false;
   .contentWrapper-3vHNP2 {
     background: linear-gradient(var(--d8d9), var(--d8dB));
   }
-  .packHeader-w9jpYl, .header-1ULbqO {
-    background: linear-gradient(#0008,#000e);
-    box-shadow: inset 0 0 0 1px #000, inset 0 0 0 2px #fff4;
+  :is(.packHeader-w9jpYl, .header-1ULbqO) {
+    .theme-light & {
+      background: linear-gradient(var(--d8l1), var(--d8l4));
+      box-shadow: inset 0 0 0 1px #0004, inset 0 0 0 2px #fffb;
+    }
+    .theme-dark & {
+      background: linear-gradient(#0008,#000e);
+      box-shadow: inset 0 0 0 1px #000, inset 0 0 0 2px #fff4;
+    }
     border-radius: 3px;
     backdrop-filter: blur(8px);
     padding-left: 8px;
   }
   :is(.categoryList-2qRrlj, .categoryList-2GgCrD) {
-    background: linear-gradient(var(--d8dB), var(--d8dD));
+    .theme-light & {
+      background: linear-gradient(var(--d8l4), var(--d8l7));
+    }
+    .theme-dark & {
+      background: linear-gradient(var(--d8dB), var(--d8dD));
+    }
     border-bottom-left-radius: 3px;
     :is(.unicodeShortcut-3N8oDe, .standardStickerShortcut-ObSns3) {
-      background: var(--d8dD);
-      box-shadow: inset 0 1px #000b, inset 0 2px #fff2;
+      .theme-light & {
+        background: var(--d8l7);
+        box-shadow: inset 0 1px #0004, inset 0 2px #fffb;
+      }
+      .theme-dark & {
+        background: var(--d8dD);
+        box-shadow: inset 0 1px #000b, inset 0 2px #fff2;
+      }
     }
   }
   .emojiPicker-6YCk8a {
     border-radius: 3px 0 3px 3px;
   }
   .inspector-DFKXwB {
-    background: linear-gradient(var(--d8d9), var(--d8dB));
-    box-shadow: inset 0 1px #000b, inset 0 2px #fff2;
+    .theme-light & {
+      background: linear-gradient(var(--d8l2), var(--d8l5));
+      box-shadow: inset 0 1px #0004, inset 0 2px #fffb;
+    }
+    .theme-dark & {
+      background: linear-gradient(var(--d8d9), var(--d8dB));
+      box-shadow: inset 0 1px #000b, inset 0 2px #fff2;
+    }
     border-bottom-right-radius: 3px;
   }
   .emptyGuildUpsell-2s9mrR {
