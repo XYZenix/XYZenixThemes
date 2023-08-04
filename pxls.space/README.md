@@ -1,7 +1,7 @@
 # pxls.space themes
 
 - all of these were made with chrome and stylus in mind
-- they're userstyles, all using a preprocessor (stylus (and less for some reason))
+- they're userstyles, all using a preprocessor (stylus-lang)
 - i tried to make them work with all of pxls's themes
 - chat, settings, sidebars etc. are unthemed intentionally
 
