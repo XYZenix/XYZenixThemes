@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 60";
-$themeDate: "Aug 4, 2023";
+$themeVersion: "Alpha 61";
+$themeDate: "Aug 23, 2023";
 
 @use "sass:color";
 @use "sass:math";
@@ -3458,6 +3458,55 @@ $exportAddons: false;
     }
   }
 }
+// members tab in servers
+@at-root {
+  .content-1jQy2l.container-2qjEOK {
+    background: none;
+    .mainTableContainer-3Nxvkd {
+      border-radius: 3px;
+      .theme-light & {
+        box-shadow: inset 0 1px #fffd, 0 1px 3px hsla(var(--d8lGv),.8), 0 0 0 1px hsla(var(--d8lGv),.6);
+        background: linear-gradient(var(--d8l3),var(--d8l4));
+      }
+      .theme-dark & {
+        box-shadow: inset 0 1px #fff2, 0 1px 3px #0008, 0 0 0 1px #0008;
+        background: linear-gradient(var(--d8dB),var(--d8dA));
+      }
+      .table-2Z1caJ {
+        padding: 0;
+        .theme-light & {
+          border-top: solid 1px var(--d8l8);
+        }
+        .theme-dark & {
+          border-top: solid 1px var(--d8dD);
+        }
+      }
+      .tableHeaderRow-2Jri1A {
+        .theme-light & {
+          box-shadow: 0 1px #fff, inset 0 -1px var(--d8l6), inset 0 1px #fff;
+          background: linear-gradient(var(--d8l4), var(--d8l1));
+        }
+        .theme-dark & {
+          box-shadow: 0 1px var(--d8d8), inset 0 -1px var(--d8dD), inset 0 1px var(--d8d8);
+          background: linear-gradient(var(--d8dB),var(--d8dA));
+        }
+        .tableHeaderCellContainer-fAjuC1 {
+          transition: .17s background;
+          &:hover {
+            .theme-light & {background:#0001}
+            .theme-dark & {background:#fff1}
+          }
+        }
+        &:first-child:after {
+          display: none;
+        }
+      }
+      .tableHeaderCellContainer-fAjuC1 {
+        padding: 8px;
+      }
+    }
+  }
+}
 // call ui / vc ui
 .gameNightButton-3N8p1F, .gameNightVideo-1zyiR3 {
   display: none !important;
@@ -4929,6 +4978,38 @@ $exportAddons: false;
         box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #bbb, 0 2px 2px #ccc;
         .message-3C6JQ1, .contents-3NembX span {
           color: #000 !important;
+        }
+      }
+    }
+  }
+}
+// app directory
+@at-root {
+  .directoryContainer-z-0pgp {
+    .theme-dark & {background: linear-gradient(var(--d8d9), var(--d8dB))}
+    // top header
+    .header-XAevvr {
+    }
+    // home header
+    .container-29HCg7 {
+      // giant ugly text
+      .heading-3-j5fM {
+        font-weight: 800;
+        text-transform: none;
+        font-family: var(--font-display);
+      }
+      .searchBox-pyIJJj {
+        background: linear-gradient(var(--d8dD) 0%, var(--d8dC) 50%, var(--d8dB) 50%, var(--d8dA) 100%);
+        box-shadow: 0 0 0 1px #0006, inset 0 0 0 1px #fff2, inset 0 1px 4px #000;
+        border: none;
+        border-radius: 3px;
+        .theme-light & {
+          background: linear-gradient(var(--d8l4) 0%, var(--d8l3) 50%, var(--d8l2) 50%, var(--d8l1) 100%);
+          box-shadow: 0 0 0 1px var(--d8lC), inset 0 0 0 1px #fffb, inset 0 1px 2px #0004;
+        }
+        .input-3O04eu {
+          background: none !important;
+          box-shadow: none !important;
         }
       }
     }
@@ -7376,11 +7457,22 @@ $exportAddons: false;
       }
     }
     // twitter - it's not time accurate but come on now, this was the peak of twitter's UI
-    &:has(.connectionIcon-1iZ6F_[alt="Twitter"]) {
+    &:has(.connectionIcon-1iZ6F_:is([alt="Twitter"],[alt="X"])) {
       background: #fff;
       box-shadow: 0 0 0 1px rgb(0 0 0/.1);
       border-radius: 6px;
       --font-primary: "Helvetica Neue", Arial, Whitney, gg sans, sans-serif;
+      .connectionIcon-1iZ6F_ {
+        content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.2177 20.2976C15.798 20.2976 19.9327 14.0329 19.9327 8.58261V8.05011C20.7362 7.46091 21.435 6.74089 22 5.92012C21.2567 6.26235 20.4637 6.48437 19.6507 6.57791C20.5139 6.06164 21.1597 5.24885 21.4675 4.2913C20.6598 4.76183 19.7822 5.10021 18.8677 5.29365C17.3053 3.64491 14.7069 3.56109 13.0415 5.10571C11.9701 6.10222 11.5157 7.59694 11.8512 9.02114C8.54594 8.85772 5.46574 7.29769 3.37823 4.72983C2.28095 6.60789 2.84519 9.01622 4.66249 10.2114C4.00661 10.1858 3.36464 10.0146 2.78309 9.71026V9.7729C2.78257 11.7293 4.15628 13.417 6.07204 13.8136C5.46884 13.9751 4.83671 13.9965 4.22396 13.8763C4.76475 15.5538 6.31437 16.7003 8.07674 16.7267C6.62377 17.8749 4.82287 18.4936 2.97103 18.4808C2.65779 18.4808 2.31323 18.4495 2 18.4182C3.84433 19.6513 6.0148 20.3057 8.23336 20.2976' fill='%231DA1F2'/%3E%3C/svg%3E");
+      }
+      .connectionAccountLabel-28GEPk {
+        font-size: 0 !important;
+        margin-bottom: -3px;
+        &:after {
+          content: "Twitter";
+          font-size: 12px !important;
+        }
+      }
       .connectionHeader-Ixbb1s {
         border-radius: 0;
         background: #0000;
