@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "Alpha 61";
-$themeDate: "Aug 23, 2023";
+$themeVersion: "Alpha 62";
+$themeDate: "Aug 24, 2023";
 
 @use "sass:color";
 @use "sass:math";
@@ -1579,7 +1579,7 @@ $exportAddons: false;
       box-shadow: inset 0 1px 1px #fff3;
     }
     // all panels
-    :is(.container-YkUktl, .container-1zzFcN, .activityPanel-9icbyU, #vc-spotify-player) {
+    :is(.container-YkUktl, .container-1zzFcN, .activityPanel-9icbyU, #vc-spotify-player, .listeningAlong-6YvYsc) {
       .theme-light & {
         background: linear-gradient(#FFF, var(--d8l2) 50%, var(--d8l4) 50%, var(--d8l2));
         box-shadow: inset 0 0 0 1px #fffb, 0 1px 3px #0004;
@@ -2033,8 +2033,32 @@ $exportAddons: false;
         }
       }
     }
+    // listening along
+    .listeningAlong-6YvYsc {
+      width: auto;
+      .party-2WDLyg {
+        margin-right: 8px;
+      }
+    }
+    // activity panel
+    .gameIconWrapper-zXQ03M {
+      &:has(.liveBadge-3E8LQj) {
+        .gameIcon-1mDo1J {
+          clip-path: path("M32 0H0V33H20.2917C18.8666 31.4077 18 29.3051 18 27C18 22.0294 22.0294 18 27 18C28.8501 18 30.5699 18.5583 32 19.5155V0Z");
+        }
+      }
+      .gameIcon-1mDo1J {
+        box-shadow: 0 1px #fff3, inset 0 1px 3px #0008;
+        #{$sideNoDark} & {
+          box-shadow: 0 1px #fff, inset 0 1px 3px #0008;
+        }
+      }
+      .liveBadge-3E8LQj {
+        background: none;
+      }
+    }
     // buttons
-    :is(.actions-zk2vB_, .flex-2S1XBF.flex-3BkGQD.horizontal-112GEH.horizontal-1Piu5-.flex-3BkGQD.directionRow-2Iu2A9.justifyStart-2Mwniq.alignStretch-Uwowzr.noWrap-hBpHBz) {
+    :is(.actions-zk2vB_, .flex-2S1XBF.flex-3BkGQD.horizontal-112GEH.horizontal-1Piu5-.flex-3BkGQD.directionRow-2Iu2A9.justifyStart-2Mwniq.alignStretch-Uwowzr.noWrap-hBpHBz, .icons-3cpYoD) {
       border-radius: 3px;
       gap: 1px;
       .theme-light & {
