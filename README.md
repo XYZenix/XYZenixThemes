@@ -10,10 +10,9 @@ Name | Description  | State
 [DTM-16](https://github.com/XYZenix/DTM-16) | A theme that brings the old UI back | Active
 [DTM-17](https://github.com/XYZenix/DTM-17) | A modified version of DTM-16 that looks closer to 2017 and 2018 Discord | Active
 [ActivityStyleEmbeds](https://github.com/XYZenix/ActivityStyleEmbeds) | Changes the look of embeds to look like that of the embeds from the (removed) Activity Tab | [Available here](https://github.com/XYZenix/ActivityStyleEmbeds)
+[DTM-2K](/DTM-2K/) | Windows 2000 theme for Discord | Active
+DTM-20 | Brings back the 2020 look of Discord | Planned
 DTM-12 | A skeuomorphic theme for Discord based on concept by disctr4k | Abandoned
-DTM-20 | A theme where I tried to 'predict' what Discord would look like in 2020. This theme was made in 2019 (if i recall correctly) | Abandoned
-Unnamed Windows 95 theme | | Abandoned for now
-Unnamed classic terminal theme | | Abandoned for now
 Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI | Abandoned
 
 ### Mini-themes: Discord
