@@ -1,6 +1,6 @@
 # 11pixels/XYZenix's Themes
 
-This repo was created for my themes for various websites, etc.
+this repo contains various website themes made by 11pixels (with a few exceptions)
 
 ## Themes: Discord
 
@@ -20,8 +20,7 @@ Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI | Abandoned
 
 Name | Description | Status | Image
 -----|-------------|--------|------
-NewDragNDropModal | New drag&drop upload box from a short video that was shown on the Nitro tab, theme includes non nitro version | Temporarily abandoned | [Nitro](https://cdn.discordapp.com/attachments/581117911117070336/638606292843233310/unknown.png) / [Nitro Classic](https://cdn.discordapp.com/attachments/531523467636375554/590955254200401926/unknown.png) / [Non-Nitro](https://cdn.discordapp.com/attachments/531523467636375554/590955483863580682/unknown.png)
-MiniProfileRevert | Reverts the new mini profile UI update from July 2020 | Temporarily abandoned | N/A
+NewDragNDropModal | New drag&drop upload box from a short video that was shown on the Nitro tab, theme includes non nitro version | Abandoned | N/A
 
 ## Themes: Twitch
 
@@ -29,34 +28,19 @@ Name | Description | State
 -----|-------------|------
 [Twitch 2014](/Twitch2014.css) | Brings back the 2014 look of Twitch to some extent. **THIS IS MEANT TO BE USED ON STYLUS AS USERCSS** | Active
 
-## Themes: YouTube
+## Themes: [YouTube](/YoutubeThemes/)
 
-Name | Description | State
------|-------------|------
-[YouTube Predictions](/YouTube-Predictions.css) | A theme by [Zen](https://github.com/iamthebeast87) that tries to predict YouTube's near-future layout changes | Active
-[Darker YouTube](/Darker-YouTube.css) | A theme by [Zen](https://github.com/iamthebeast87) that makes dark mode a bit darker | Active
-[2013SubscribeButton](/2013SubscribeButton.css) | A mini-theme I made that makes the sub button look like the 2013 sub button. | Probably broken, definitely abandoned
+all youtube themes are located in [YoutubeThemes](/YoutubeThemes/), view the [README.md](/YoutubeThemes/README.md) there for a list
 
-## Themes: [Steam](/SteamLibraryThemes/)
-(all of the steam ones are abandoned for now)
+## Themes: [Steam](/SteamThemes/)
 
-ID | Style | Status
----|-------|-------
-001 | [Skeuomorphic + Glossy](/SteamLibraryThemes/steam-theme-001.css) | Not finished
-002 | [Discord](/SteamLibraryThemes/steam-theme-002.css) | Not finished
-N/A | Light mode | Planned
-N/A | Darker dark mode | Planned
-N/A | Terminal/retro | Planned
-N/A | Compact | Planned
-
-These will be located in the [SteamLibraryThemes](/SteamLibraryThemes/) directory, and I plan on keeping the name scheme
+all steam themes are located in [SteamThemes](/SteamThemes/), view the [README.md](/SteamThemes/README.md) there for a list
 
 
 ## Contributing
 if you want to contribute, you can open pull requests i guess
 
-for dtm-16 and dtm-17, pull requests should be modifying the .scss file, don't compile it yourself, i'll do it instead (so hopefully it doesn't create a mess of merge conflicts)
+most themes use scss, compiled using [dart-sass](https://sass-lang.com/dart-sass/)
+so if you're going to open a pull request modifying those themes, either don't provide a modified .css file, or use dart-sass with the default settings so the output is the same and doesn't end up changing 500 other unrelated things due to slight formatting differences
 
-for dtm-08, there's just a .css file
-
-the rest of the themes aren't really worth contributing to but if you really want to, go ahead, all of them should be just .css and no scss/sass
+if there is no scss file, it's safe to assume there was no scss used so just modify the css file itself
