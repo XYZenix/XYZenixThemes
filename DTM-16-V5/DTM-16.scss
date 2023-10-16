@@ -7,7 +7,7 @@
 * @source https://github.com/XYZenix/XYZenixThemes/blob/master/DTM-16.theme.css
 */
 
-$themeVersion: "474";
+$themeVersion: "475";
 $themeDate: "Oct 16, 2023";
 
 $debug: 0;
@@ -3233,7 +3233,7 @@ $colorInteractiveActive: ".colorInteractiveActive-1W8YKn";
     padding: 0;
   }
   // menus - server settings
-  #{$mGuildHeader} {
+  :is(#{$mGuildHeader}, #favorites-header-popout) {
     background: #fff;
     border-radius: 5px;
     .theme-dark & {
@@ -4875,7 +4875,7 @@ $colorInteractiveActive: ".colorInteractiveActive-1W8YKn";
       padding-left: 30px;
       font-weight: 500;
       letter-spacing: .7px;
-      white-space: pre-wrap;
+      white-space: nowrap;
       line-height: 12px;
     }
     #{$memberListItem} {
@@ -7915,20 +7915,37 @@ $colorInteractiveActive: ".colorInteractiveActive-1W8YKn";
                     margin-right: 4px;
                   }
                 }
+                .buttonsWrapper-2ARRp1:not(:empty) {
+                  margin-left: -10px;
+                  margin-bottom: -10px;
+                  margin-right: -10px;
+                }
                 .buttonColor-_0gSD_ {
-                  background: #0000 !important;
-                  border: solid 1px #ffffff4d;
+                  background: #fff0;
+                  border-top: solid 1px rgba(255,255,255,.1);
+                  border-left: none;
+                  border-bottom: solid 1px #0000;
+                  border-right: none;
+                  border-radius: 0;
+                  .contents-3NembX {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 15px;
+                  }
                   &:not(:disabled) {
                     transition: .18s;
                     opacity: 1;
                     &:hover {
-                      border-color: #ffffff99;
+                      background: rgba(255,255,255,.05);
                     }
                     &:active {
-                      border-color: #fff;
-                      background: #ffffff1a !important;
+                      background: rgba(255,255,255,.1);
                     }
                   }
+                }
+                .button-TGAkj4:not(:first-child) {
+                  margin-left: 0;
+                  border-left: solid 1px rgba(255,255,255,.1);
                 }
               }
               // add bot / upgrade buttons
@@ -8000,6 +8017,52 @@ $colorInteractiveActive: ".colorInteractiveActive-1W8YKn";
                 }
               }
             }
+          }
+        }
+        // clyde shit
+        .lastEditedByContainer-2ujgTg {
+          &:empty {
+            padding-top: 0;
+          }
+        }
+        // edit clyde
+        .editClydeButton-1EJ7XD {
+          margin: 0;
+          border-top: solid 1px rgba(255,255,255,.1);
+          transition: 0s;
+          &:hover {
+            background: rgba(0,0,0,.05);
+          }
+          &:active {
+            background: rgba(0,0,0,.1);
+          }
+          .contents-3NembX {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 15px;
+            svg {
+              display: none;
+            }
+          }
+        }
+        // message clyde
+        .messageClydeButton-3Iro1f {
+          background: var(--blurple);
+          border: solid 1px var(--blurple-hover);
+          .contents-3NembX {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+            svg {
+              display: none;
+            }
+          }
+          &:hover {
+            background: var(--blurple-hover);
+          }
+          &:active {
+            background: var(--blurple-active);
+            border-color: var(--blurple-active);
           }
         }
         // context menu shit that's in the account popout
@@ -8170,6 +8233,30 @@ $colorInteractiveActive: ".colorInteractiveActive-1W8YKn";
         --profile-theme-color-dark: #{ss(#54338d)};
         .headerText-3g1XK9 .overflow-1wOqNV:before {
           background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M2 4.5C2 4.22386 2.22386 4 2.5 4H11.2V7.5L14 4V12L11.2 8.5V12H2.5C2.22386 12 2 11.7761 2 11.5V4.5Z' fill='black'/%3E%3C/svg%3E") !important;
+        }
+        .activityUserPopoutV2-3eKqzY .buttonColor-_0gSD_ .contents-3NembX:before {
+          content: "";
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          margin-bottom: -1px;
+          margin-right: 5px;
+          border-radius: 8px;
+          background: #f04747;
+          animation: live-pulse 1.5s infinite;
+        }
+        @keyframes live-pulse {
+          0% {
+            box-shadow: 0 0 10px 2px rgba(0,0,0,.12), 0 0 rgba(240,71,71,.42);
+          }
+        
+          70% {
+            box-shadow: 0 0 10px 2px rgba(0,0,0,.12), 0 0 10px 10px #0000;
+          }
+        
+          100% {
+            box-shadow: 0 0 10px 2px rgba(0,0,0,.12), 0 0 #0000;
+          }
         }
       }
       // mine
