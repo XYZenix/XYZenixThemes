@@ -27,6 +27,13 @@ Name | Description | State
 -----|-------------|------
 [Twitch 2014](/Twitch2014.css) | Brings back the 2014 look of Twitch to some extent. **THIS IS MEANT TO BE USED ON STYLUS AS USERCSS** | Active
 
+## Themes: osu!
+
+Name | Description | State
+-----|-------------|------
+[oldsu](/Other/osu/old-osu/old-osu.css) | Brings back the pre-2018 osu! look.  **UNFINISHED**  | Unknown
+
+
 ## Themes: [YouTube](/YoutubeThemes/)
 
 all youtube themes are located in [YoutubeThemes](/YoutubeThemes/), view the [README.md](/YoutubeThemes/README.md) there for a list
