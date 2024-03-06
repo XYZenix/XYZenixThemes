@@ -1,3 +1,5 @@
-themes for the osu website
+themes for the osu! website
 
-also this isn't finished and idk when it will be
+Name | Description | Status
+-----|-------------|------
+[old osu! site theme](/Other/osu/old-osu/) | a theme that tries to replicate the old osu! website | work in progress

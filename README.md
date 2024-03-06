@@ -35,6 +35,9 @@ all youtube themes are located in [YoutubeThemes](/YoutubeThemes/), view the [RE
 
 all steam themes are located in [SteamThemes](/SteamThemes/), view the [README.md](/SteamThemes/README.md) there for a list
 
+## Themes: [osu! site](/Other/osu/)
+
+all osu! site themes are located in [/Other/osu](/Other/osu/), view the [README.md](/Other/osu/README.md) there for a list
 
 ## Contributing
 if you want to contribute, you can open pull requests i guess
