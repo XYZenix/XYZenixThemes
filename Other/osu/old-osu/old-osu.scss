@@ -1,0 +1,741 @@
+// theme build 1
+
+// body
+.osu-layout--body, .osu-layout--body-landing {
+  background: #a9a9ff linear-gradient(#686ec2, #a9a9ff 183px);
+  background-repeat: no-repeat;
+  --font-default: "Arial Grande",Tahoma,Helvetica,Arial,sans-serif;
+  --font-content: "Arial Grande",Tahoma,Helvetica,Arial,sans-serif;
+  font-family: "Arial Grande",Tahoma,Helvetica,Arial,sans-serif;
+}
+.osu-layout__section {
+  margin-bottom: 40px;
+}
+// header
+.header-v4__bg-container, .nav2-header__transition-overlay, .nav2-header__triangles {
+  display: none;
+}
+.nav2-header {
+  position: unset;
+}
+.nav2-header__body .nav2.js-nav-button {
+  height: 146px;
+  justify-content: flex-end;
+  >.nav2__colgroup {
+    flex: 0;
+    width: 100%;
+  }
+}
+.header-v4__container {
+  padding-top: 0;
+  min-height: 0;
+}
+.js-header-is-pinned {
+  .nav2 {
+    height: 90px
+  }
+}
+// header logo
+.nav2__col.nav2__col--logo {
+  width: 0 !important;
+  height: 175px !important;
+  position: absolute;
+  top: 0;
+  .nav2__logo-link {
+    width: 0 !important;
+    height: 175px !important;
+  }
+  .nav2__logo--bg {display:none!important}
+  .nav2__logo {
+    background-image: url("https://s.ppy.sh/images/head-logo.png");
+    width: 175px !important;
+    height: 175px !important;
+    left: -107px;
+    top: 0;
+    clip-path: path("M165 87.5C165 130.302 130.302 165 87.5 165C44.6979 165 10 130.302 10 87.5C10 44.6979 44.6979 10 87.5 10C130.302 10 165 44.6979 165 87.5Z");
+    transform: none !important;
+  }
+  +div {
+    margin-left: 52px;
+  }
+}
+// header links
+.nav2 {
+  flex-direction: column;
+}
+// primary nav
+.nav2__colgroup.nav2__colgroup--menu {
+  height: 24px;
+  align-self: flex-end;
+  flex: 1;
+  background: #fed5f2;
+  .nav2__col.nav2__col--menu {
+    height: 24px;
+    .nav2__menu-link-main {
+      color: #4e2151;
+      line-height: 24px;
+      font-size: 11px;
+      font-weight: bold;
+      transition: 0s;
+      padding-right: 2.25em;
+      &.js-menu--active {
+        background: #f375c5;
+        color: #fff;
+      }
+      .u-relative {
+        position: unset;
+        &:after {
+          content: " »";
+          position: absolute;
+          display: block;
+          right: 0.75em;
+          top: 0.8em;
+          width: 10px;
+          height: 10px;
+          text-indent: -999em;
+          overflow: hidden;
+          background: url("https://s.ppy.sh/images/arrows-ffffff.png") no-repeat 0 -100px;
+        }
+      }
+    }
+    &:hover .u-relative:after {
+      background-position: -10px -100px;
+    }
+    .nav2__menu-popup {
+      left: 0;
+    }
+    .simple-menu {
+      left: 0 !important;
+      padding: 0;
+      margin-top: 20px;
+      border-radius: 0;
+      background: #eca1dd !important;
+      .simple-menu__item {
+        padding: 0 1em;
+        line-height: 24px;
+        font-size: 11px;
+        font-weight: bold;
+        color: #4e2151;
+        border-radius: 0;
+        &:hover {
+          background: #f375c5;
+          color: #fff;
+        }
+        &:before {display:none!important}
+      }
+    }
+  }
+  .nav2__menu-link-bar {display:none}
+  .nav2__menu-link-main--search {
+    height: 24px;
+    border-radius: 0;
+    padding: 0 !important;
+    &.u-section--bg-normal {
+      background: #f375c5 !important;
+      color: #fff !important;
+    }
+  }
+}
+// secondary nav
+.nav2__colgroup--icons {
+  justify-content: end;
+  background: #fff;
+  border-radius: 4px 4px 0 0;
+  border: solid 2px #5a539a;
+  border-width: 2px 2px 0 2px;
+  color: #666;
+  .avatar--nav2 {
+    width: 24px;
+    height: 24px;
+    border-radius: 0;
+    box-shadow: none !important;
+  }
+  .nav-button {
+    padding: 0;
+  }
+  .nav-button--twitter {
+    position: absolute;
+    background: url(https://s.ppy.sh/images/social.png);
+    top: 6px;
+    width: 61px;
+    height: 62px;
+    background-position: -61px 0;
+    right: 100px;
+    &:hover {
+      background-position: -61px 62px;
+    }
+    span {display:none}
+  }
+  .nav-button--support {
+    position: absolute;
+    background: url(https://s.ppy.sh/images/social.png);
+    top: 6px;
+    width: 61px;
+    height: 62px;
+    right: 40px;
+    background-position: -122px 0;
+    &:hover {
+      background-position: -122px 62px;
+    }
+    span {display:none}
+  }
+  .nav2__notification-container {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    .notification-icon {
+      color: #666 !important;
+    }
+    gap: 8px;
+  }
+}
+// header menus
+.nav2-header__menu-bg {
+  display: none;
+}
+// content
+.header-v4__content, .osu-page {
+  max-width: 864px;
+}
+.header-v4__row {
+  .game-mode {
+    position: unset;
+  }
+}
+.header-v4__row--title {
+  background: #f0ecfa;
+  border: solid 2px #5a539a;
+  border-top: none;
+  border-bottom: none;
+  display: none;
+}
+.header-v4__row--bar {
+  background: #f0ecfa;
+  border: solid 2px #5a539a;
+  border-top: none;
+  border-bottom: none;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.user-home {
+  padding-left: 0;
+  padding-right: 0;
+  background: #f0ecfa;
+  border: solid 2px #5a539a;
+  border-top: none;
+  box-shadow: none;
+  border-radius: 0 0 4px 4px;
+  .user-home__news {
+    width: 500px;
+    margin-right: 0;
+    box-sizing: border-box;
+    padding-left: 7px;
+    padding-right: 8px;
+    .user-home__news-title {
+      font-size: 17px;
+      color: #de3397;
+      font-weight: 400;
+      padding-top: 4px;
+      padding-bottom: 5px;
+    }
+    .news-post-preview {
+      box-shadow: none;
+      .news-post-preview__image {
+        border-radius: 5px 5px 0 0;
+      }
+      .news-post-preview__body {
+        background: #fff;
+        padding: 5px 3px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #d2d4fa;
+        border-top: solid 1px #e869a2;
+        .news-post-preview__post-date {
+          margin: 0 8px 0 0;
+          color: #000;
+          font-size: 13px;
+          border-color: #d2d4fa;
+        }
+        .news-post-preview__post-title {
+          color: #3843a6;
+          font-size: 13px;
+          font-weight: bold;
+          margin: 0 0 2px 0;
+        }
+        .news-post-preview__post-content {
+          color: #000;
+          font-size: 11px;
+          p {margin:0}
+        }
+      }
+    }
+    .user-home__news-posts-group {
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      .news-post-preview--collapsed {
+        margin-bottom: 4px;
+      }
+    }
+    .user-home__news-posts-group--more {
+      color: #3843a6;
+      margin: 0;
+    }
+  }
+  .user-home__right-sidebar {
+    width: 360px;
+    margin-left: 0;
+    background: #0000;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-shadow: none;
+    .user-home__status-box {
+      .user-online-status {
+        margin: 0;
+      }
+      .user-online-status__item {
+        padding: 0;
+        flex: 1;
+        .user-online-status__label {
+          color: #cc2e8a;
+          font-size: 11px;
+        }
+        .user-online-status__value {
+          color: #cc2e8a;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+      .user-online-status__item--chart {
+        .fancy-graph {
+          width: 350px;
+          .fancy-graph__hover-area {
+            width: 350px;
+          }
+          g {
+            transform-origin: center left;
+            transform: scaleX(calc(350/334)) translate(0,25px);
+          }
+          .fancy-graph__line {
+            // stroke: #ffd0f6;
+            stroke: #de3397;
+          }
+          .fancy-graph__circle {
+            stroke: #0000ff;
+            fill: #0000ff;
+          }
+        }
+      }
+    }
+    .user-home__buttons {
+      z-index: 2;
+      position: relative;
+      .user-home__button {
+        margin: 0 !important;
+        a {
+          background: cyan;
+          width: 356px;
+          height: 55px;
+          transform: none !important;
+          box-shadow: none !important;
+          border-radius: 0 !important;
+          margin: 0 !important;
+          span {display:none}
+          &[href="https://osu.ppy.sh/home/download"] {
+            background: url("https://s.ppy.sh/images/osu-download.png");
+          }
+          &[href="https://osu.ppy.sh/store/listing"] {
+            background: url("https://s.ppy.sh/images/osu-goodies.png");
+          }
+          &[href="https://osu.ppy.sh/home/support"] {
+            background: url("https://s.ppy.sh/images/osu-support.png");
+          }
+        }
+      }
+    }
+    .user-home__beatmap-list-title {
+      font-size: 17px;
+      color: #de3397;
+      font-weight: 400;
+      padding-top: 16px;
+      padding-bottom: 5px;
+    }
+    .user-home__beatmapsets {
+      border: solid 2px #9799cc;
+      border-radius: 4px;
+      margin-top: 0;
+      .user-home-beatmapset {
+        margin: 0;
+        width: 100%;
+        padding: 1px 4px;
+        background: #e3e1fa !important;
+        &:nth-child(odd) {
+          background: #edebfa !important;
+        }
+        .beatmapset-cover {
+          width: 80px;
+        }
+        .user-home-beatmapset__meta {
+          color: #3843a6;
+          .user-home-beatmapset__playmode-icon {
+            font-size: 6pt;
+          }
+          .user-home-beatmapset__title,
+          .user-home-beatmapset__artist,
+          .user-home-beatmapset__creator {
+            font-size: 8pt;
+          }
+        }
+        .user-home-beatmapset__chevron {display:none}
+      }
+    }
+  }
+}
+.osu-layout__row {
+  max-width: 864px;
+}
+.header-v4__container {
+  .header-nav-v4 {
+    flex: 1;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    gap: 8px;
+    &:before {display:none}
+    .header-nav-v4__item {
+      flex: 1;
+      justify-content: center;
+      .header-nav-v4__link {
+        flex: 1;
+        background: #e7e4fc;
+        border: solid 2px #978cd0;
+        border-radius: 5px;
+        line-height: 30px;
+        font-size: 16px;
+        padding: 0 8px;
+        height: 30px;
+        box-sizing: content-box;
+        font-size: 16px;
+        padding: 0;
+        text-align: center;
+        line-height: 30px;
+        color: #3843a6;
+        transition: 0s !important;
+        font-weight: 400 !important;
+        &:before {display:none!important}
+        &:hover {
+          text-shadow: #e5c6db 1px 1px 2px;
+        }
+        &.header-nav-v4__link--active {
+          background: #bea8f4;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.beatmapsets-search {
+  padding: 1px 20px;
+  background: #f0ecfa;
+  border: solid 2px #5a539a;
+  border-top: none;
+  border-bottom: none;
+  box-shadow: none;
+  .beatmapsets-search__cover {display:none}
+  .beatmapsets-search__input-container {
+    margin: 0;
+  }
+  .beatmapsets-search__input {
+    border: solid 1px #90ace7 !important;
+    background: none;
+    color: #000;
+    padding: 1px 2px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  .beatmapsets-search__icon {display: none}
+  .beatmapsets-search__filter-grid {
+    .beatmapsets-search-filter__header {
+      color: #000;
+      font-size: 8pt;
+    }
+    .beatmapsets-search-filter__item {
+      color: #3843a6;
+      font-size: 8pt;
+      &.beatmapsets-search-filter__item--featured-artists {
+        text-shadow: 0 0 10px #efcfe1;
+      }
+      &.beatmapsets-search-filter__item--active {
+        color: #000;
+        font-weight: bold;
+      }
+    }
+  }
+  .beatmapsets-search__expand-link {
+    color: #3843a6;
+    font-size: 8pt;
+    font-weight: bold;
+  }
+}
+.beatmapsets {
+  padding: 0;
+  background: #f0ecfa;
+  border: solid 2px #5a539a;
+  border-top: none;
+  border-bottom: none;
+  .beatmapsets__content {
+    padding: 0 2px;
+    .beatmapsets__item {
+      margin: 2px 0;
+      width: 50%;
+    }
+    .beatmapset-panel {
+      padding: 0;
+      height: 60px;
+      border: solid 1px #dad7fb;
+      background: #e7e4fc;
+      border-radius: 5px;
+      overflow: hidden;
+      --menu-container-width: 0px;
+      &:hover {
+        --menu-container-width: 24px;
+      }
+      .beatmapset-panel__menu-container {
+        border-radius: 0 5px 5px 0;
+        &:before, &:after {display:none}
+      }
+      .beatmapset-panel__play-container {
+        width: 80px;
+        border-radius: 5px 0 0 5px;
+      }
+      .beatmapset-panel__info {
+        border-radius: 0;
+        background: #e7e4fc;
+        .beatmapset-panel__info-row--title {
+          color: #000;
+          font-size: 12.8px;
+          text-shadow: none;
+          font-weight: normal;
+        }
+        :is(.beatmapset-panel__info-row--artist, .beatmapset-panel__info-row--mapper) {
+          color: #75787a;
+          font-size: 9.6px;
+          text-shadow: none;
+          font-weight: normal;
+          a {
+            color: #3843a6;
+          }
+        }
+        .beatmapset-panel__info-row--extra {
+
+        }
+        .beatmapset-panel__info-row--stats {
+          position: absolute;
+          opacity: 1;
+          display: flex;
+          bottom: 0;
+          right: 0;
+          color: #000;
+          z-index: 2;
+          .beatmapset-panel__stats-item-icon {
+            color: #000;
+          }
+        }
+        .beatmapset-panel__main-link {
+          color: inherit;
+        }
+      }
+      .beatmapset-panel__cover-container {
+        .beatmapset-cover {
+          border-radius: 5px 0 0 5px;
+        }
+        .beatmapset-panel__cover-col--info {
+          display: none;
+        }
+      }
+    }
+  }
+  .beatmapsets__toolbar {
+    background: #d7d2fb;
+    box-shadow: 0 1px #a79ef3;
+    padding: 0 4px;
+    width: max-content;
+    margin: 0 auto;
+    .beatmapsets__toolbar-item {
+
+    }
+    .sort__items {
+      margin: 0;
+    }
+    .sort__item.sort__item--title {
+      margin: 0 8px 0 0;
+      color: #000;
+    }
+    .sort__item.sort__item--button {
+      margin: 0;
+      padding: 0;
+      color: #3843a6;
+      margin-left: 8px;
+      margin-right: 8px;
+      background: none;
+    }
+    .sort__item--active {
+      background: none;
+      font-weight: bold;
+    }
+    .sort.sort--beatmapsets {
+      padding: 0;
+    }
+    .sort.hidden-xs {
+      display: none;
+      .sort__item--active {
+        color: #000;
+      }
+    }
+  }
+}
+@media (min-width: 900px) {
+  .beatmaps-popup {
+    --panel-height: 60px;
+  }
+}
+// wiki
+.osu-page--wiki {
+  position: relative;
+  padding-left: 1em;
+  padding-right: 1em;
+  background: #f0ecfa;
+  border: solid 2px #5a539a;
+  border-top: none;
+  box-shadow: none;
+  border-radius: 0 0 4px 4px;
+  color: #000;
+  .wiki-search {
+    padding: 0;
+    .wiki-search__bar {
+      background: #fff;
+      border: solid 1px #90ace7;
+      border-radius: 3px;
+      padding: 0 2px;
+      &:focus, &:focus-within {
+        box-shadow: inset 0 1px 3px rgba(0,0,0,.05), 0 0 8px rgba(82,168,236,.6);
+        border-color: #56b4ef;
+      }
+      .wiki-search__input {
+        color: #000;
+        font-size: 8pt;
+        &::placeholder {
+          color: rgba(0,0,0,.5)
+        }
+      }
+      .wiki-search__button {
+        color: #000;
+        font-size: 8pt;
+      }
+    }
+  }
+  .wiki-main-page__blurb {
+    color: #000;
+  }
+  .wiki-main-page-panel {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    min-height: 0;
+    box-shadow: none;
+    .wiki-main-page__heading {
+      background: #bbf;
+      font-weight: bold;
+      color: #000;
+      font-size: 8pt;
+      line-height: 16px;
+      margin: 0;
+    }
+    .wiki-main-page__paragraph {
+      color: #000;
+      font-size: 8pt;
+      margin: 0;
+      font-weight: normal;
+    }
+    a {
+      color: #0645ad;
+      font-size: 8pt;
+      line-height: 1.125em;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .osu-md--wiki {
+    .osu-md__header {
+      color: #cc2e8a;
+      text-shadow: #efcfe1 0px 0px 10px;
+      font-weight: normal;
+      border: none;
+    }
+    .osu-md__link {
+      color: #0645ad;
+    }
+    code {
+      background: #f9f9f9;
+      color: #000;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+  @media (min-width: 900px) {
+    .wiki-page {
+      grid-template-columns: 1fr;
+    }
+    .wiki-page__toc {
+      border: solid 2px #6261ae;
+      position: absolute;
+      top: 0;
+      padding: 1em 0 0 0;
+      width: 10em;
+      left: -10.5em;
+      background: #ffffff;
+      border-radius: 5px;
+      overflow: visible;
+      max-height: unset;
+      .sidebar__title {
+        font-weight: normal;
+        color: #444444;
+        text-transform: none;
+        margin: 0;
+        padding: 0 .25em .25em 1.75em;
+        cursor: default;
+        border: none;
+      }
+      .sidebar__mobile-toggle {
+        margin: 0;
+      }
+      .wiki-toc-list {
+        padding: .5em 0 0 0;
+        margin: 0 0 0 1.25em;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAAAAAAphRnkAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAClJREFUeF61yMEJACAQxMCN/Xfr/yIsaAfOJxC2UTPWS6f5gABhUTedBz7fGPSonIP/AAAAAElFTkSuQmCC);
+        background-repeat: no-repeat;
+        background-position: top left;
+        .wiki-toc-list__item {
+          line-height: 1.125em;
+          padding: 0;
+          padding-bottom: 0.5em;
+          margin: 0;
+          overflow: hidden;
+          a {
+            color: #0645ad;
+            font-size: 8pt;
+            line-height: 1.125em;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// footer
+footer.footer {
+  background: #37344a url('https://s.ppy.sh/images/footer_bg.jpg');
+  box-shadow: 0 0 8px #000d;
+}
