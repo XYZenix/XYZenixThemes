@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "92";
-$themeDate: "Mar 10, 2024";
+$themeVersion: "93";
+$themeDate: "Mar 12, 2024";
 
 @use "sass:color";
 @use "sass:math";
@@ -610,7 +610,7 @@ $exportAddons: false;
   }
   // main scroller
   .scroller__3d071 {
-    padding-top: 48px !important;
+    padding-top: 56px !important;
     .theme-light & {
       background: linear-gradient(#FFF, var(--d8l4));
       box-shadow: inset 0 1px 8px #000;
@@ -766,7 +766,13 @@ $exportAddons: false;
       }
     }
     .tutorialContainer__890ea+.listItem_fa7b36 {
-      margin-top: 8px;
+      margin-bottom: 0;
+      &:has(.svg_ad7356) {
+        margin-bottom: 8px;
+      }
+      +.listItem_fa7b36 {
+        margin-top: 8px;
+      }
       .wrapper_d281dd {
         .childWrapper__01b9c {
           .theme-light & {
@@ -2778,6 +2784,13 @@ $exportAddons: false;
     background: linear-gradient(to bottom, var(--d8dG) 0%, var(--d8dB) 100%);
     .theme-light & {
       background: linear-gradient(to bottom, var(--d8l4) 0%, #FFF 100%);
+    }
+    // no you fucking don't
+    &.page__0b66e.page__0b66e {
+      background: linear-gradient(to bottom, var(--d8dG) 0%, var(--d8dB) 100%) !important;
+      .theme-light & {
+        background: linear-gradient(to bottom, var(--d8l4) 0%, #FFF 100%) !important;
+      } 
     }
     // chat + member list container
     @at-root .content__1a4fe {
