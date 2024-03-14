@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "93";
-$themeDate: "Mar 12, 2024";
+$themeVersion: "94";
+$themeDate: "Mar 14, 2024";
 
 @use "sass:color";
 @use "sass:math";
@@ -1560,6 +1560,55 @@ $exportAddons: false;
           }
         }
         &.mentionsBar__4b47a {
+          .theme-dark &, .theme-light & {
+            background: linear-gradient(var(--d8rd6), var(--d8rd8) 50%, var(--d8rdB) 50%, var(--d8rd8));
+            &:active {
+              background: linear-gradient(var(--d8rdC), var(--d8rdB) 50%, var(--d8rd9) 50%, var(--d8rdB));
+            }
+          }
+        }
+      }
+    }
+    // old unread bar
+    .container__88123 {
+      display: flex;
+      justify-content: center;
+      .bar_edc096 {
+        padding: 0 8px;
+        border-radius: 3px;
+        .theme-light & {
+          background: linear-gradient(var(--d8l1), var(--d8l4) 50%, var(--d8l6) 50%, var(--d8l7));
+          box-shadow: inset 0 0 0 1px #fff8, 0 0 0 1px #0003, 0 1px 4px #0004;
+          &:active {
+            background: linear-gradient(var(--d8l9), var(--d8l7) 50%, var(--d8l4) 50%, var(--d8l2));
+            box-shadow: inset 0 1px 3px #0004, 0 0 0 1px #fff;
+          }
+        }
+        .theme-dark & {
+          background: linear-gradient(var(--d8dA), var(--d8d9) 50%, var(--d8dB) 50%, var(--d8dC));
+          box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0008, 0 1px 4px #0008, inset 0 1px #fff2;
+          &:active {
+            background: linear-gradient(var(--d8dB), var(--d8dC) 50%, var(--d8dB) 50%, var(--d8dA));
+            box-shadow: inset 0 1px 3px #000b, 0 0 0 1px #fff1;
+          }
+        }
+        opacity: .8;
+        &:hover, &:active {
+          opacity: 1;
+        }
+        .text__467e0 {
+          font-weight: 400;
+          text-transform: none;
+          .theme-light & {
+            text-shadow: 0 1px #fffb;
+            color: #000 !important;
+          }
+          .theme-dark & {
+            text-shadow: 0 1px 2px #0008;
+            color: #fff !important;
+          }
+        }
+        &.mention__1afd3 {
           .theme-dark &, .theme-light & {
             background: linear-gradient(var(--d8rd6), var(--d8rd8) 50%, var(--d8rdB) 50%, var(--d8rd8));
             &:active {
@@ -6824,6 +6873,17 @@ $exportAddons: false;
             background: linear-gradient(#FFF, var(--d8l4));
             box-shadow: inset 0 0 0 1px #fff1, inset 0 1px #fff3, 0 0 0 1px #545961bb, 0 1px 4px #54596188;
           }
+          .tabBarContainer__63f55 {
+            margin-left: 0;
+            margin-right: 0;
+            padding-left: 16px;
+            padding-right: 16px;
+            .theme-dark & {
+              background: linear-gradient(#0000, rgba(0,0,0,.25));
+              box-shadow: 0 1px rgba(255,255,255,.15);
+              border-bottom: none;
+            }
+          }
           .scroller-1jBQYo {
             @include scrollbar;
             &::-webkit-scrollbar-track {
@@ -6839,21 +6899,6 @@ $exportAddons: false;
               :is(.eyebrow_f53856, .headerText__7d203) {
                 margin-right: -12px;
               }
-            }
-          }
-          :is(.eyebrow_f53856, .headerText__7d203) {
-            margin-left: -12px;
-            margin-right: -4px;
-            padding-left: 12px;
-            padding-top: 4px;
-            padding-bottom: 4px;
-            .theme-dark & {
-              background: linear-gradient(var(--d8d8), var(--d8d7) 50%, var(--d8d9) 50%, var(--d8dA));
-              box-shadow: 0 -1px #000b, 0 1px #000b, inset 0 -1px #fff1, inset 1px 1px #fff1;
-            }
-            .theme-light & {
-              background: linear-gradient(var(--d8l2), var(--d8l1) 50%, var(--d8l4) 50%, var(--d8l3));
-              box-shadow: 0 -1px var(--d8lC), 0 1px var(--d8lC), inset 0 -1px #fff, inset 1px 1px #fffb;
             }
           }
         }
