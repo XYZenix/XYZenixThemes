@@ -7,8 +7,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "94";
-$themeDate: "Mar 14, 2024";
+$themeVersion: "95";
+$themeDate: "Mar 19, 2024";
 
 @use "sass:color";
 @use "sass:math";
@@ -3762,7 +3762,21 @@ $exportAddons: false;
           padding: 0;
           border-radius: 0;
         }
-        .contextMenuContainer_fc4df6 {visibility: hidden;width:0;height:0;position:absolute;overflow:hidden}
+        .contextMenuContainer_fc4df6 {
+          width: 36px;
+          height: 36px;
+          >svg {
+            >foreignObject {
+              width: 36px;
+              height: 36px;
+              -webkit-mask: none !important;
+              mask: none !important;
+            }
+          }
+          .contextMenuNub__7c02f {
+            display: none;
+          }
+        }
         .unmasked_ef4172 {display: block}
         .leftDivider__5b854 {display:none}
         :is(.buttonSpacing_ffd686, .voiceEffectsActionBar__9d61c) {gap:1px}
