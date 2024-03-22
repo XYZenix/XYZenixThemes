@@ -1,0 +1,251 @@
+/* ==UserStyle==
+@name           [YouTube] V3 - Early Hitchhiker
+@namespace      xyzenix.github.io
+@version        1
+@author         11pixels
+@preprocessor   stylus
+==/UserStyle== */
+
+@-moz-document domain("youtube.com") {
+  :root {
+    --sub-icon: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACiSURBVDhPY2QAgl+/fv0H0aQCNjY2RkZyNcMAE5TGAH9//oSy8AOcBuyJCWZ4sm8XlIcb4PTCejsTMC1iYMRgUFTBwKugBOajA5wugIE3F84x7E2IYLg4oYvh99cvUFEEIGgACLBwcjFwS0ozMLOxQ0UQgKAB8t7+DC5L1zKohEczMLGyQkWRACgMsOFdiZH/X1+9glUOGdMuHRALKEzKbIwAiNBm8KaH9oIAAAAOZVhJZk1NACoAAAAIAAAAAAAAANJTkwAAAABJRU5ErkJggg==");
+    --subbed-icon: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJCAYAAADkZNYtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADsSURBVChTYyAFMEJpnCAtLU3k////WUDmOSaIEHaQlZUlAaRqGRkZBYD4MDNEGBMkJyfLA6kKoCKhf//+Nc+ePfs1Y2hoKJuwsLAoUODVrFmzfoMUpqenqwKpUiCWBCrumDFjxlGQOGNGRoY0UGEe0F2Xfvz4sYGDg0MaKF7GxMQkDqRXz5w5cxFIIQgwnzlz5rOJiQkL0IQkFhYWbSDtClII1Hz2/fv3069du/YXqpYB7EFJSck9QGoDUKEmEIsBbbrPzMw8cfXq1b9A8jAA9uCBAwf+GRsbXwGaJgvk/gNqmAq0/glIDgEYGACvGVJfzlCG6AAAAA5lWElmTU0AKgAAAAgAAAAAAAAA0lOTAAAAAElFTkSuQmCC");
+  }
+  .video-extras-sparkbar-likes {
+    background: #590;
+  }
+  .actionable #watch-like:active .yt-uix-button-content, .actionable #watch-like.yt-uix-button-toggled .yt-uix-button-content {
+    color: #590;
+  }
+  .yt-uix-button-icon-watch-like {
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vfl3V2paT.png) -45px -252px;
+    background-size: auto;
+    width: 23px;
+    height: 23px
+  }
+  .yt-uix-button-icon-watch-dislike {
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vfl3V2paT.png) -97px -43px;
+    background-size: auto;
+    width: 23px;
+    height: 23px;
+    padding-bottom: 1px
+  }
+  .yt-uix-button:hover .yt-uix-button-icon-watch-like {
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vfl3V2paT.png) -26px -14px
+  }
+  .actionable .yt-uix-button:active .yt-uix-button-icon-watch-like,.actionable .yt-uix-button.yt-uix-button-toggled .yt-uix-button-icon-watch-like {
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vfl3V2paT.png) 0 -255px
+  }
+  .yt-uix-button:active .yt-uix-button-icon-watch-dislike,.yt-uix-button.yt-uix-button-toggled .yt-uix-button-icon-watch-dislike {
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vfl3V2paT.png) -158px -39px
+  }
+  .yt-uix-button-panel:hover #watch-like-dislike-buttons .yt-uix-button-text.yt-uix-button-toggled {
+    border-color: #c6c6c6;
+    background-color: #e9e9e9;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.20);
+    background-image: linear-gradient(to bottom,#f8f8f8 0,#eee 100%)
+  }
+  .yt-uix-button-panel:hover .yt-uix-button-text:not(:is(:hover,:active)) {
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    border-color: #d3d3d3;
+    background-color: #f8f8f8;
+    background-image: linear-gradient(to bottom,#fcfcfc 0,#f8f8f8 100%)
+  }
+  #watch7-headline {
+    padding-top: 13px;
+  }
+  .watch-title-text-container {
+    width: 100%;
+    font-size: 17.1px; // for long titles, will figure out later
+    font-size: 19px;
+    // letter-spacing: -0.855px;
+    font-weight: bold;
+  }
+  .guide-view-more:hover, .guide-flyout-container:hover > .guide-flyout-trigger, .guide-collections-flyout-container:hover > .guide-flyout-trigger, #guide-container .guide-item:hover, #guide-container .guide-collection-item:hover .guide-item {
+    background: linear-gradient(to bottom,#444 0,#222 100%);
+  }
+  #guide-container .guide-item.guide-item-selected, #guide-container .guide-collection-item .guide-item.guide-item-selected, #guide-container .guide-item.guide-item-selected:hover {
+    background: linear-gradient(to bottom,#af2b26 0,#942422 100%);
+  }
+  // sub button
+  .yt-uix-button-subscription-container {
+    .yt-uix-button-subscribe-branded {
+      background: linear-gradient(#fff, #e0e0e0);
+      border-radius: 2px;
+      border: solid 1px #ccc;
+      .yt-uix-button-content {
+        font-weight: bold;
+        margin-right: -6px;
+        font-size: 11px;
+        line-height: 13px;
+        color: #333;
+        text-shadow: 0 1px #fff;
+      }
+      .yt-uix-button-icon-wrapper {
+        display: none;
+      }
+      &:before {
+        margin-left: -7px;
+        margin-top: -1px;
+        height: 22px;
+        max-height: 22px;
+        line-height: 16px;
+        width: 24px;
+        border: 1px solid #880904;
+        text-align: center;
+        border-radius: 2px 0 0 2px;
+        background: no-repeat var(--sub-icon) center #a9382e;
+      }
+      &:hover {
+        background: linear-gradient(#fff, #d2d2d2);
+        border-color: #333;
+        &:before {
+          background: no-repeat var(--sub-icon) center, linear-gradient(to bottom,#b85046 0,#91251e 100%);
+          border-color: #6c0400;
+        }
+      }
+      &:active {
+        box-shadow: inset 0 2px 2px rgba(0,0,0,.75);
+        background: linear-gradient(to top,#fff 0,#d2d2d2 100%);
+        border-color: #333;
+        &:before {
+          background: no-repeat var(--sub-icon) center, linear-gradient(to top,#b85046 0,#91251e 100%);
+          border-color: #6c0400;
+          box-shadow: inset 0 2px 2px rgba(0,0,0,.75);
+        }
+      }
+      &:focus {
+        outline: 0;
+        border-color: #6892e7;
+        box-shadow: 0 0 5px rgba(104,146,231,.5);
+        &:active {
+          box-shadow: inset 0 2px 2px rgba(0,0,0,.75), 0 0 5px rgba(104,146,231,.5);
+        }
+      }
+    }
+    .yt-uix-button-subscribed-branded {
+      padding-left: 8px;
+      padding-right: 12px;
+      .yt-uix-button-icon-wrapper {
+        display: none;
+      }
+      &:before {
+        background: var(--subbed-icon) !important;
+        width: 11px !important;
+        height: 9px !important;
+        margin-top: -3px;
+      }
+      .yt-uix-button-content {
+        font-size: 11px;
+        line-height: 22px;
+        margin-right: -6px;
+        height: 24px;
+        font-weight: bold;
+        >span {
+          display: block !important;
+          line-height: 0;
+          opacity: 0;
+          overflow: visible;
+        }
+        .subscribed-label {
+          opacity: 1;
+          line-height: 22px;
+        }
+        .unsubscribe-label {
+          visibility: hidden;
+          line-height: 0;
+          opacity: 0;
+        }
+      }
+      &:hover {
+        background: #a9382e;
+        border: 1px solid #880904;
+        &:before {
+          background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vfl3V2paT.png) -83px -267px !important;
+          width: 10px !important;
+          height: 10px !important;
+          margin-top: -3px !important;
+        }
+        .yt-uix-button-content {
+          color: #fff;
+          text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+          opacity: .9;
+          .subscribed-label {
+            opacity: 0;
+            visibility: hidden;
+            line-height: 0;
+          }
+          .unsubscribe-label {
+            opacity: 1;
+            visibility: visible;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+    .yt-uix-subscription-preferences-button {
+      &:before {
+        background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vfl4eJIXC.webp) 0 -2016px;
+        background-position: -60px -1458px;
+        width: 12px;
+        height: 12px;
+        margin-top: -1px;
+      }
+    }
+    .yt-subscription-button-subscriber-count-branded-horizontal {
+      margin-left: 6px;
+      border-left: 1px solid #ccc !important;
+      border-radius: 2px;
+      position: relative;
+      &:before {
+        content: "";
+        margin-top: 2px;
+        border-color: #0000 #ccc;
+        position: absolute;
+        top: 3px;
+        left: -6px;
+        border-width: 6px 6px 6px 0;
+        border-style: solid;
+      }
+      &:after {
+        content: "";
+        margin-top: 2px;
+        position: absolute;
+        top: 4px;
+        left: -5px;
+        border-width: 5px 5px 5px 0;
+        border-style: solid;
+        border-color: #0000 #fafafa;
+      }
+    }
+  }
+  #watch-like, #watch-dislike, #watch-like:hover, #watch-dislike:hover {
+    opacity: 1;
+  }
+  .distiller_stream-options .right-options {display:none}
+  #watch7-headline.yt-uix-expander-collapsed h1 {
+    overflow: visible;
+    white-space: normal;
+  }
+  #watch7-secondary-actions .yt-uix-button:hover, #watch7-secondary-actions .yt-uix-button:active, #watch7-secondary-actions .yt-uix-button.yt-uix-button-active, #watch7-secondary-actions .yt-uix-button.yt-uix-button-toggled {
+    border-bottom-color: #930;
+  }
+  #watch7-secondary-actions .yt-uix-button:focus {
+    border-color: #3f76b7;
+  }
+  .distiller_yt-thread .sentiment .count, .distiller_yt-thread .sentiment .count_active {
+    color: #090;
+  }
+  .share-service-icon-whatsapp {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' fill='%231C9D10'/%3E%3Cg clip-path='url(%23clip0_2947_4568)'%3E%3Cpath d='M10.6273 24.2293L10.9909 24.4451C12.5148 25.3506 14.2629 25.828 16.0467 25.8297H16.0501C21.5239 25.8297 25.98 21.3752 25.9817 15.8998C25.9834 13.2461 24.9505 10.7522 23.075 8.87491C21.1994 6.99765 18.7071 5.96304 16.0535 5.96304C10.5746 5.96304 6.12019 10.4175 6.1168 15.8913C6.1168 17.7668 6.64005 19.5948 7.63559 21.1748L7.87173 21.5502L6.8677 25.2147L10.6273 24.2293ZM4 28.0535L5.69378 21.8628C4.64727 20.0518 4.09853 17.9962 4.09853 15.8913C4.10193 9.30472 9.46188 3.94647 16.0484 3.94647C19.2457 3.94647 22.2459 5.19005 24.502 7.44955C26.7581 9.70736 28 12.7076 28 15.8998C27.9966 22.4863 22.635 27.8462 16.0501 27.8462H16.045C14.0454 27.8462 12.0798 27.3434 10.3351 26.392L4 28.0535Z' fill='white'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.375 11.4396C13.6119 11.968 14.1296 13.2875 14.1979 13.4211C14.2648 13.5547 14.3103 13.7111 14.2207 13.8887C14.1311 14.0664 14.0871 14.1772 13.9535 14.3336C13.8199 14.49 13.6726 14.6813 13.5526 14.8013C13.419 14.9349 13.2809 15.0791 13.4357 15.3464C13.5921 15.6136 14.1281 16.4866 14.9207 17.1942C15.9395 18.1022 16.7989 18.3846 17.0661 18.5182C17.3333 18.6518 17.4897 18.629 17.6446 18.4514C17.7995 18.2737 18.3112 17.6725 18.4888 17.4052C18.668 17.138 18.8456 17.182 19.0901 17.2716C19.3345 17.3612 20.6464 18.0065 20.9136 18.1401C21.1808 18.2737 21.3585 18.3405 21.4253 18.4514C21.4906 18.5637 21.4906 19.0982 21.2689 19.7207C21.0472 20.3432 19.957 20.9445 19.4681 20.9885C18.9792 21.0326 18.5207 21.2087 16.2659 20.3205C13.5542 19.25 11.8415 16.4699 11.7079 16.2923C11.5742 16.1131 10.6177 14.8453 10.6177 13.5319C10.6177 12.2186 11.307 11.5733 11.5515 11.306C11.7959 11.0388 12.0859 10.972 12.2636 10.972C12.4412 10.972 12.6204 10.972 12.7753 10.9781C12.965 10.9857 13.1746 10.9948 13.375 11.4396Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2947_4568'%3E%3Crect width='24' height='24.107' fill='white' transform='translate(4 3.94647)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-position: 0;
+    background-size: contain;
+  }
+  .comments-iframe-container {
+    max-width: unset;
+  }
+  // gbar fuckup fix
+  .gaiabar {
+    z-index: 2 !important;
+  }
+}
