@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           [YouTube] V3 - 2011 Player
 @namespace      xyzenix.github.io
-@version        4
+@version        5
 @author         11pixels
 @preprocessor   stylus
 @var  checkbox autohide  "Autohide (super broken, please don't bother using this. if it breaks the video progress bar, disable this then zoom out, hover over player, zoom back in, and just don't use this option)" 0
@@ -122,47 +122,47 @@
       }
       .ytp-button-play, .ytp-button-replay {
         &:after {background-position: 0 0}
-        &:hover:after {background-position: -29px 0}
+        &:hover:after, &:active:after {background-position: -29px 0}
       }
       .ytp-button-pause {
         &:after {background-position: 0 -24px}
-        &:hover:after {background-position: -29px -24px}
+        &:hover:after, &:active:after {background-position: -29px -24px}
       }
       .ytp-button-volume[data-value=max] {
         &:after {background-position: 0 -48px}
-        &:hover:after {background-position: -29px -48px}
+        &:hover:after, &:active:after {background-position: -29px -48px}
       }
       .ytp-button-volume[data-value=loud] {
         &:after {background-position: 0 -48px}
-        &:hover:after {background-position: -29px -48px}
+        &:hover:after, &:active:after {background-position: -29px -48px}
       }
       .ytp-button-volume[data-value=normal] {
         &:after {background-position: 0 -72px}
-        &:hover:after {background-position: -29px -72px}
+        &:hover:after, &:active:after {background-position: -29px -72px}
       }
       .ytp-button-volume[data-value=quiet] {
         &:after {background-position: 0 -96px}
-        &:hover:after {background-position: -29px -96px}
+        &:hover:after, &:active:after {background-position: -29px -96px}
       }
       .ytp-button-volume[data-value=min] {
         &:after {background-position: 0 -96px}
-        &:hover:after {background-position: -29px -96px}
+        &:hover:after, &:active:after {background-position: -29px -96px}
       }
       .ytp-button-volume[data-value=off] {
         &:after {background-position: 0 -120px}
-        &:hover:after {background-position: -29px -120px}
+        &:hover:after, &:active:after {background-position: -29px -120px}
       }
       .ytp-button-prev {
         &:after {background-position: -58px -194px}
-        &:hover:after {background-position: -87px -194px}
+        &:hover:after, &:active:after {background-position: -87px -194px}
       }
       .ytp-button-next {
         &:after {background-position: -58px -218px}
-        &:hover:after {background-position: -87px -218px}
+        &:hover:after, &:active:after {background-position: -87px -218px}
       }
       .ytp-subtitles-button {
         background: none !important;
-        width: 27px;
+        width: 27px !important;
         &:after {
           content: "";
           background-image: var(--v3-2011-player-i1);
@@ -175,8 +175,9 @@
           transform: translateY(1px);
         }
       }
-      .ytp-subtitles-button:hover, .ytp-subtitles-button-active {
+      .ytp-subtitles-button:hover, .ytp-subtitles-button:active, .ytp-subtitles-button-active {
         background: none !important;
+        width: 27px !important;
         &:after {
           content: "";
           background-image: var(--v3-2011-player-i1);
@@ -201,7 +202,7 @@
           height: 24px;
           background: no-repeat var(--v3-2011-player-i1) -122px -144px;
         }
-        &:hover:after {background-position: -151px -144px}
+        &:hover:after, &:active:after {background-position: -151px -144px}
       }
       .ytp-subtitles-button-active:focus,
       .ytp-subtitles-button-active:hover {
@@ -279,7 +280,7 @@
       }
       .ytp-size-toggle-large {
         &:after {background-position: 0 -144px}
-        &:hover:after {background-position: -29px -144px}
+        &:hover:after, &:active:after {background-position: -29px -144px}
         box-shadow: inset 0 1px #ccc, 0 0 4px #b3b3b3, inset -1px -1px #f2f2f2 !important;
         &:active {
           box-shadow: inset 0 1px #ccc, inset 1px 1px 4px #aaa, 0 0 4px #b3b3b3, inset -1px -1px #f2f2f2 !important;
@@ -287,7 +288,7 @@
       }
       .ytp-size-toggle-small {
         &:after {background-position: 0 -168px}
-        &:hover:after {background-position: -29px -168px}
+        &:hover:after, &:active:after {background-position: -29px -168px}
         box-shadow: inset 0 1px #ccc, 0 0 4px #b3b3b3, inset -1px -1px #f2f2f2 !important;
         &:active {
           box-shadow: inset 0 1px #ccc, inset 1px 1px 4px #aaa, 0 0 4px #b3b3b3, inset -1px -1px #f2f2f2 !important;
@@ -296,13 +297,13 @@
       .ytp-button-fullscreen-enter {
         padding-right: 2px;
         &:after {background-position: 0 -192px}
-        &:hover:after {background-position: -29px -192px}
+        &:hover:after, &:active:after {background-position: -29px -192px}
         z-index: 2;
       }
       .ytp-button-fullscreen-exit {
         padding-right: 2px;
         &:after {background-position: 0 -218px}
-        &:hover:after {background-position: -29px -218px}
+        &:hover:after, &:active:after {background-position: -29px -218px}
         z-index: 2;
       }
       .ytp-settings-button, .ytp-settings-button-active {
