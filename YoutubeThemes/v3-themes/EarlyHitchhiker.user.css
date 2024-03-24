@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           [YouTube] V3 - Early Hitchhiker
 @namespace      xyzenix.github.io
-@version        1
+@version        2
 @author         11pixels
 @preprocessor   stylus
 ==/UserStyle== */
@@ -243,6 +243,45 @@
   }
   .comments-iframe-container {
     max-width: unset;
+  }
+  // notifications
+  #yt-masthead-user {
+    #sb-button-notify {
+      width: 32px;
+      border: solid 1px #d3d3d3;
+      background: linear-gradient(#fcfcfc, #f8f8f8);
+      text-shadow: 0 1px rgba(255,255,255,.5);
+      &:hover {
+        border-color: #c6c6c6;
+        background: linear-gradient(#f8f8f8, #eee);
+      }
+      &:active {
+        border-color: #c6c6c6;
+        background: #e9e9e9;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.2);
+      }
+      &.sb-notif-on {
+        border-color: #c13828;
+        background: #d94a38;
+        color: #fff;
+      }
+      &.sb-notif-off {
+        &:before {
+          content: "0";
+          font-size: 11px;
+          opacity: 1;
+        }
+      }
+      .yt-uix-button-content {
+        background: none;
+        position: unset;
+        border: none;
+        background: none;
+      }
+      .yt-uix-button-icon-wrapper {
+        display: none;
+      }
+    }
   }
   // gbar fuckup fix
   .gaiabar {
