@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           [YouTube] V3 - 2011 Player
 @namespace      xyzenix.github.io
-@version        5
+@version        6
 @author         11pixels
 @preprocessor   stylus
 @var  checkbox autohide  "Autohide (super broken, please don't bother using this. if it breaks the video progress bar, disable this then zoom out, hover over player, zoom back in, and just don't use this option)" 0
@@ -558,8 +558,9 @@
         box-shadow: 0 0 !important;
       }
     }
-    .html5-video-player:not(.ytp-block-autohide) .html5-scrubber-button {
+    .html5-video-player:not(.ytp-block-autohide) .html5-scrubber-button:after {
       transform: scale(0.01);
+      transition: .5s var(--v3-2011-player-cb) !important;
     }
     #watch7-sidebar {
       margin-top: calc(-390px + 26px);
