@@ -1,9 +1,10 @@
 /* ==UserStyle==
 @name           [YouTube] V3 - Beta Hitchhiker
 @namespace      xyzenix.github.io
-@version        1
+@version        2
 @author         11pixels
 @preprocessor   stylus
+@var select comments "Comment style" ["default:Default", "beta:Beta", "alt:Alt"]
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
@@ -65,6 +66,29 @@
           height: 2.95em;
           color: #555;
         }
+        .yt-uix-button-icon-watch-like {
+          background: no-repeat var(--v3-beta-hh-icons) 0 -85px;
+          width: 13px;
+          height: 15px;
+          margin-left: 5px;
+          margin-right: 8px;
+        }
+        .yt-uix-button-icon-watch-dislike {
+          background: no-repeat var(--v3-beta-hh-icons) 0 -53px;
+          width: 13px;
+          height: 15px;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        .yt-uix-button-toggled {
+          opacity: 1;
+          .yt-uix-button-icon-watch-like {
+            background: no-repeat var(--v3-beta-hh-icons) 0 0;
+          }
+          .yt-uix-button-icon-watch-dislike {
+            background: no-repeat var(--v3-beta-hh-icons) 0 -102px;
+          }
+        }
       }
       #watch7-secondary-actions {
         .yt-uix-button {
@@ -113,6 +137,9 @@
               width: 16px;
               height: 16px;
             }
+          }
+          .yt-uix-button-icon-action-panel-report {
+            background: no-repeat var(--v3-beta-hh-icons) 0 -34px;
           }
         }
       }
@@ -186,64 +213,132 @@
     #watch-discussion {
       border: none;
       border-bottom: 1px solid #ccc;
-      --hover-color: #999;
-      --hover-owner-color: #eee;
-      &:hover {
-        --hover-color: #1c62b9;
-        --hover-color: #2793e6;
-        --hover-owner-color: #dbe4eb;
-      }
-      .distiller-header {
-        .distiller_yt_headline {
-          color: var(--hover-color);
-          text-transform: capitalize;
-          line-height: 1.9231em;
-          border-bottom: 1px solid #e6e6e6;
-          width: 100%;
+    }
+    if comments is beta {
+      #watch-discussion {
+        --hover-color: #999;
+        --hover-owner-color: #eee;
+        &:hover {
+          --hover-color: #1c62b9;
+          --hover-color: #2793e6;
+          --hover-owner-color: #dbe4eb;
+        }
+        .distiller-header {
+          .distiller_yt_headline {
+            color: var(--hover-color);
+            text-transform: capitalize;
+            line-height: 1.9231em;
+            border-bottom: 1px solid #e6e6e6;
+            width: 100%;
+          }
+        }
+        .stream_content {
+          .distiller_yt-thread {
+            border-top: 1px solid #e6e6e6;
+            padding: 13px 0;
+            .author span, .link_action span {
+              color: var(--hover-color);
+            }
+            .channel_owner span {
+              background: var(--hover-owner-color);
+            }
+            .action_bar {
+              .reply-button {
+                color: #555;
+                margin-right: 12px;
+              }
+              .separator {
+                display: none;
+              }
+              .sentiment .oz-distiller-yt-like {
+                background:no-repeat var(--v3-beta-hh-icons2) -165px -180px;
+                width:12px;
+                height:12px
+              }
+              .sentiment .oz-distiller-yt-like:hover,
+              .sentiment.active .oz-distiller-yt-like {
+                background-position: -233px -124px;
+              }
+              .sentiment .oz-distiller-yt-dislike {
+                background:no-repeat var(--v3-beta-hh-icons2) 0 -6px;
+                width:12px;
+                height:12px
+              }
+              .sentiment .oz-distiller-yt-dislike:hover,
+              .sentiment.active .oz-distiller-yt-dislike {
+                background-position: 0 -6px;
+              }
+            }
+            .jfk-button-text span {
+              color: var(--hover-color);
+            }
+            .distiller_yt-thread_user-content.yt-uix-expander-collapsed .cssAction_Expander {
+              top: 87px;
+            }
+          }
         }
       }
-      .stream_content {
+    }
+    if comments is alt {
+      #watch-discussion {
+        box-shadow: inset 0 0 0 1px #fff;
+        background: #f8f8f8;
+        .all-comments {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          .distiller_yt_headline {
+            font-size: 10px;
+            flex: 1 auto;
+            flex-shrink: 0;
+            background: none;
+            text-shadow: 0 1px #fff;
+          }
+          &:after, &:before {
+            content: "";
+            display: flex;
+            width: 100%;
+            height: 1px;
+            background: #e0e0e0;
+            box-shadow: 0 1px #fff;
+          }
+        }
+        .distiller_yt_instance {
+          background: #0000;
+        }
         .distiller_yt-thread {
-          border-top: 1px solid #e6e6e6;
-          padding: 13px 0;
-          .author span, .link_action span {
-            color: var(--hover-color);
+          padding-bottom: 0;
+          margin-bottom: 24px;
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            inset: 0px;
+            opacity: 0;
+            transition: .1s linear;
+            background: linear-gradient(#fff calc(100% - 8px), #f8f8f8);
+            border-radius: 3px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.25);
           }
-          .channel_owner span {
-            background: var(--hover-owner-color);
+          img, a, span {
+            position: relative;
           }
-          .action_bar {
-            .reply-button {
-              color: #555;
-              margin-right: 12px;
-            }
-            .separator {
-              display: none;
-            }
-            .sentiment .oz-distiller-yt-like {
-              background:no-repeat var(--v3-beta-hh-icons2) -165px -180px;
-              width:12px;
-              height:12px
-            }
-            .sentiment .oz-distiller-yt-like:hover,
-            .sentiment.active .oz-distiller-yt-like {
-              background-position: -233px -124px;
-            }
-            .sentiment .oz-distiller-yt-dislike {
-              background:no-repeat var(--v3-beta-hh-icons2) 0 -6px;
-              width:12px;
-              height:12px
-            }
-            .sentiment .oz-distiller-yt-dislike:hover,
-            .sentiment.active .oz-distiller-yt-dislike {
-              background-position: 0 -6px;
-            }
+          .cssAction_Expander {
+            background: #f8f8f8;
+            transition: .1s linear;
           }
-          .jfk-button-text span {
-            color: var(--hover-color);
+          &:hover {
+            &:before {
+              opacity: 1;
+              inset: -8px;
+            }
+            .cssAction_Expander {background-color:#fff}
           }
-          .distiller_yt-thread_user-content.yt-uix-expander-collapsed .cssAction_Expander {
-            top: 87px;
+          .distiller_yt-post_comment_section {
+            &, .loader {
+              margin-top: 0;
+            }
           }
         }
       }
