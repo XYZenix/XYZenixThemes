@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           [YouTube] V3 - Early Hitchhiker
 @namespace      xyzenix.github.io
-@version        3
+@version        2
 @author         11pixels
 @preprocessor   stylus
 ==/UserStyle== */
@@ -248,6 +248,7 @@
   #yt-masthead-user {
     #sb-button-notify {
       width: 32px;
+      text-align: center;
       border: solid 1px #d3d3d3;
       background: linear-gradient(#fcfcfc, #f8f8f8);
       text-shadow: 0 1px rgba(255,255,255,.5);
@@ -277,6 +278,7 @@
         position: unset;
         border: none;
         background: none;
+        width: auto;
       }
       .yt-uix-button-icon-wrapper {
         display: none;
@@ -290,20 +292,23 @@
   // other stuff
   html[cosmic-buttons] {
     .yt-uix-button-subscribed-branded:not(:hover):not(:active),
-    #yt-masthead-user #sb-button-notify.sb-notif-off {
+    #yt-masthead-user #sb-button-notify.sb-notif-off,
+    .yt-uix-button-panel:hover #watch7-sentiment-actions button {
       border-color: #ccc #ccc #aaa !important;
       box-shadow: inset 0 0 1px #fff;
       background: linear-gradient(to bottom,#fafafa 0,#dcdcdc 100%);
       color: #555;
       text-shadow: 0 1px 0 #fff;
     }
-    #yt-masthead-user #sb-button-notify.sb-notif-off:hover {
+    #yt-masthead-user #sb-button-notify.sb-notif-off:hover,
+    .yt-uix-button-panel #watch7-sentiment-actions button:hover {
       border-color: #aaa #aaa #999 !important;
       background-image: linear-gradient(to bottom,#f0f0f0 0,#e6e6e6 100%);
       box-shadow: 0 1px 2px rgba(0,0,0,0.25),inset 0 0 3px #fff;
     }
     .yt-uix-button-subscribed-branded:active:not(:hover),
-    #yt-masthead-user #sb-button-notify.sb-notif-off:active {
+    #yt-masthead-user #sb-button-notify.sb-notif-off:active,
+    .yt-uix-button-panel #watch7-sentiment-actions button:active {
       border-color: #888 #aaa #ccc !important;
       box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
       background: linear-gradient(to bottom,#c8c8c8 0,#e6e6e6 100%);
@@ -317,6 +322,25 @@
     .yt-uix-button-subscribed-branded:hover:active:not([disabled]) {
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.75) !important;
       border-color: #666 !important;
+    }
+    .video-list-item .stat.badge {
+      height: 1.7em;
+    }
+    .related-video .yt-badge {
+      color: #666 !important;
+      background-color: #dfdfdf;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 1px #bfbfbf;
+      border: 0;
+      margin-right: 1px;
+      font-size: 10px;
+      line-height: 1.7em;
+      height: auto;
+    }
+  }
+  @media (min-width: 1166px) and (max-width: 1281px) {
+    #watch7-sidebar {
+      margin-top: 0;
     }
   }
 }
