@@ -1,0 +1,371 @@
+@use "vars" as *;
+@use "funcs" as *;
+// nitro and server boost stuff
+@at-root {
+  .app_b1f720+div+.layerContainer_a2fcaa .root__6d24f {
+    #{$button} {
+      padding: 10px 20px;
+      width: auto;
+      height: auto;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    :is(.closeButton__8177f, .keybind_a619c1) {
+      .theme-dark & {
+        color: #{ss(#72767d)};
+        svg {color: #{ss(#dcddde)}}
+      }
+    }
+  }
+  .content__6b3bc {
+    .bar__73988 {
+      x: 8px;
+      width: 8px;
+      color: #{ss(#ebedef)};
+      .theme-dark & {color: #{ss(#202225)}}
+      &.foreground_c092e2 {color: #{ss(#c7d0f0)}}
+    }
+    :is(.theme-dark, .theme-light) & {
+      :is(.tierAccomplished_bf2573, .tierCurrent_c5372d, .tierFirst__1a572) {
+        background: linear-gradient(90deg,#{ss(#b473f5)},#{ss(#e292aa)}) !important;
+      }
+      .tierHeaderUnlocked__960f7 {
+        background: linear-gradient(90deg,#{ss(#b473f5)},#{ss(#e292aa)});
+        .tierIcon_fc03d4 {color: #fff}
+        .tierUnlocked_f689f4 {
+          background: #fff;
+          color: var(--blurple);
+        }
+        .lookFilled__950dd.colorBrand__27d57 {
+          background: none;
+          color: #fff;
+          border: solid 1px #fff6;
+          transition: .18s;
+          &:hover {border-color: #fff}
+          &:active {
+            border-color: #fff;
+            background: #fff2;
+          }
+        }
+      }
+    }
+  }
+  .progressBar_d41287 {
+    background: linear-gradient(90deg, #{ss(#b473f5)}, #{ss(#e292aa)});
+  }
+  .container_bc43c1:hover .progressBar_d41287 {
+    background: linear-gradient(90deg,#{ss(#b473f5)},#{ss(#e292aa)} 34%,#{ss(#b473f5)} 67%,#{ss(#e292aa)});
+    background-size: 300% 100%;
+  }
+  .tierTitleActive__2823a {
+    color: #fff;
+    h3, div {color: inherit !important}
+  }
+  .grid_d33a08 {grid-template-columns: repeat(5,108px)}
+  .premiumFeatureBorder__6ac04:has(.tryItOutLayout_f54a16) {
+    display: none;
+  }
+  .wrapper_ac2306 .gradient__79da8 {
+    background: none;
+  }
+}
+// new boost page
+.root__6d24f {
+  .guildStatus__4fec0 {
+    display: grid;
+    width: 660px;
+    margin: 0 auto 36px;
+    grid-template-columns: 64px auto 134px;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "a b d" "a c d";
+    background: var(--background-secondary);
+    border-radius: 8px;
+    padding: 16px;
+    .icon__94164 {
+      grid-area: a;
+    }
+    .guildName__488eb {
+      grid-area: b;
+      text-align: start;
+      margin-left: 16px;
+      margin-top: 4px;
+      color: var(--header-primary) !important;
+    }
+    .guildStatusCopy__0c403 {
+      color: var(--header-secondary);
+    }
+    .guildBoostCountWrapper__98177 {
+      grid-area: c;
+      margin-left: 16px;
+      .guildBoostCount__19679 {
+        justify-content: start;
+      }
+    }
+    .guildBoostCtas__51760 {
+      grid-area: d;
+      gap: 8px;
+      flex-direction: column;
+      button {
+        border-radius: 3px;
+        margin-left: 0;
+        padding: 0;
+        min-width: 0;
+        min-height: 32px;
+        height: 32px;
+        box-shadow: none !important;
+        transform: none !important;
+        .contents__322f4 {
+          font-size: 14px;
+        }
+      }
+      .guildBoostCta__129de {
+        box-shadow: none !important;
+        transform: none !important;
+      }
+      .lookFilled__950dd.colorWhite__0033e {
+        background: var(--blurple);
+        .contents__322f4 {color: #fff}
+        &:hover {background: var(--blurple-hover)}
+        &:active {background: var(--blurple-active)}
+      }
+      .lookOutlined__014b5.colorWhite__0033e {
+        border: none;
+        .contents__322f4 {
+          color: #fff;
+        }
+        .theme-dark & {
+          background: #{ss(#4f545c)};
+          &:hover:not(:disabled) {
+            background: #{ss(#72767d)};
+          }
+          &:active:not(:disabled) {
+            background: #{ss(#72767d)};
+          }
+        }
+        .theme-light & {
+          background: #{ss(#e3e5e8)};
+          .contents__322f4 {
+            color: var(--header-primary);
+          }
+          &:hover:not(:disabled) {
+            background: #{ss(#c7ccd1)};
+          }
+          &:active:not(:disabled) {
+            background-color: #{ss(#e3e5e8)};
+          }
+        }
+      }
+    }
+  }
+  .header_b9d0dd {
+    background: none !important;
+  }
+  :is(.display-lg__20734, .heading__388a7) {
+    font-family: var(--font-primary);
+    font-size: 24px;
+  }
+  .progressBarMarker__28bea {
+    background: var(--background-primary);
+  }
+  .progressBarMarkerLabel_db9994 {
+    color: var(--header-primary);
+  }
+  .progressBarFill__455be {
+    background: #{ss(#c7d0f0)};
+  }
+  .theme-light & {
+    .progressBarTrack__669df {
+      background: var(--background-modifier-accent);
+    }
+    .boostedTierIconBackground__16aae {
+      background: var(--background-modifier-accent);
+    }
+  }
+  .progressBarMarkerUnlocked__9a628 {
+    background: var(--background-primary);
+    .progressBarMarkerIndicator_ec16e4 {
+      background: linear-gradient(90deg, #{ss(#b473f5)}, #{ss(#e292aa)}) !important;
+    }
+  }
+  .tierCardCurrentTier__633bb {
+    background: var(--blurple);
+    border-radius: 3px;
+  }
+  .tierCards_a0105f {
+    .tierCard__292e9 {
+      border-radius: 3px;
+      background: var(--background-tertiary);
+      box-shadow: var(--elevation-high);
+      :is(.tierCardHeading__27545, .tierCardListItem_cdf44a) {
+        color: var(--header-primary) !important;
+      }
+      .tierCardBoostRequirement_b8c8fd {
+        color: var(--header-secondary) !important;
+      }
+    }
+  }
+  .topPerksCard__0e34b {
+    border-radius: 3px;
+  }
+  .recommendedTierHighlight__34465 {
+    &:before, &:after {
+      border-color: var(--blurple);
+      border-radius: 3px;
+    }
+    .recommendedTierHighlightTag_bac630 {
+      background: var(--blurple);
+      border-radius: 3px;
+    }
+  }
+  .wrapper_d3adb0 {
+    background: none;
+    padding: 0;
+    .card__67edb {
+      border-radius: 3px;
+      background: var(--background-tertiary);
+      box-shadow: var(--elevation-high);
+    }
+  }
+  :is(.tierCardBorderHighlight__502a7, .tierCardSparkleHighlight_f59b10, .bodyWave__4a827, .backgroundImages__3c5e4, .wrapper_f8ffc2) {
+    display: none !important;
+  }
+  @at-root .perkPreviewImage__34031 {
+    display: none;
+  }
+}
+
+// discord's 100,000,000th nitro page redesign
+.premiumContainer__11813 {
+  :is(.heroHeading_cafc56, .bottomIllustration_d1806a) {display:none}
+}
+.applicationStore__444b9 {
+  .homeWrapper_d63773 {
+    .mainPageScroller_a3deff {
+      .heroHeading_cafc56 {
+        height: 216px;
+        [data-text-variant="display-lg"] {
+          font-family: var(--font-display);
+          font-size: 16px;
+        }
+        .trialPill_fe4ced.hidden__174b8 {
+          display: none;
+        }
+      }
+      .headerArt__63edd, .bottomIllustration_d1806a, .giftNitro__1c0d9 {display:none}
+    }
+    .allPerksScroller__2c9d5 {
+      .heroHeading_cafc56 {
+        height: 216px;
+        .headerArt__9eca8 {display:none}
+        .containerInner__645e3 {
+          top: 0;
+          [data-text-variant="display-lg"] {
+            font-family: var(--font-display);
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    :is(.cardContainer_d674b8, .cardContainer__7abf8) {
+      min-height: 64px;
+      .card_e97590 {
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: none;
+        .cardDescription_efa634 {
+          display: none;
+        }
+        :is(.cardImage_a87f5e, .carouselCardImage_e89743) {
+          display: none;
+        }
+      }
+    }
+    .cardContainer__7abf8 {
+      min-height: 160px;
+    }
+  }
+}
+// collectibles shop
+.shop_b31ed2 {
+  .content__76dcf & .page__8ffff {margin-top: 0}
+  .heroBanner_e16ab1 {display:none}
+  .pageWrapperFullscreen__0c78f {
+    left: 0;
+  }
+  .shopBanner_e2f915, .condensedBannerContainer__8f66e {
+    border-radius: 4px;
+  }
+  .cardsContainer__8b28d {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    .shopCard__3d319 {
+      padding: 8px;
+      border-radius: 4px;
+      .cardText_a31179 {
+        padding: 0;
+      }
+      .detailsWrapper__573b5 {
+        justify-content: start;
+        .innerBlur__23958 {
+          opacity: 1;
+        }
+        .innerHover__055b0 {
+          opacity: 1;
+          transform: none;
+          .buttonsContainer__82d24 {
+            gap: 1px;
+            button {
+              border-radius: 0;
+              div {
+                font-weight: bold;
+                font-size: 14px;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+      .checkmarkWrapper_c139b2+.cardText_a31179 .detailsWrapper__573b5 .innerBlur__23958 .priceTag__82cc2 {
+        font-size: 12px;
+        font-weight: bold;
+        color: var(--text-muted);
+        text-transform: uppercase;
+      }
+      .productName__651db {
+        padding: 12px 12px 0;
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 1;
+      }
+      .priceTag__82cc2 {
+        gap: 0;
+        padding: 0 12px;
+        h2 {
+          font-size: 12px;
+        }
+        &.partialOwnStateContainer_f36ea2 {
+          opacity: 1;
+          div {
+            font-size: 12px;
+            font-weight: bold;
+            color: var(--text-muted);
+            text-transform: uppercase;
+          }
+          .iconWrapper__50d21 {
+            display: none;
+          }
+        }
+      }
+      .avatarDecoration_cf681a, .profileEffects__9b664 {
+        display: block !important;
+      }
+      .avatarDecoration_cf681a .avatarStack__789b4 {
+        width: 100%;
+        height: 100%;
+        clip-path: none;
+        margin: 0;
+      }
+    }
+  }
+}

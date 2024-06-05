@@ -1,0 +1,132 @@
+@use "vars" as *;
+
+// badges/tags
+@at-root {
+  .iconBadge__19638.participating__64cf0 {
+    background: var(--green);
+  }
+  .default__23a5a {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath fill='%23F04747' d='m14.25 4.8-1.06-1.05L9 7.95l-4.2-4.2-1.05 1.06L7.95 9l-4.2 4.2 1.06 1.05L9 10.05l4.2 4.2 1.05-1.06L10.05 9l4.2-4.2Z'/%3E%3C/svg%3E");
+  }
+  :is(.headerBarInner_dc1a41, .tabBarItemContainer__5d798) .textBadge_f05120,
+  :is(.tabBarItem_c09345+.textBadge_f05120, .betaTagIcon_d65f20) {
+    border-radius: 3px;
+    background: var(--blurple) !important;
+    text-shadow: 0 1px 0 rgba(0 0 0 / 25%);
+    box-shadow: 0 1px 0 rgb(0 0 0 / 25%), inset 0 1px 0 hsl(0deg 0% 100% / 15%);
+  }
+  .tabBarItem_c09345+.textBadge_f05120 {
+    background: var(--red) !important;
+  }
+  .categoryItem__0608f .new__689fa {
+    border-radius: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background: var(--blurple);
+    text-shadow: 0 1px 0 rgba(0 0 0 / 25%);
+    box-shadow: 0 1px 0 rgb(0 0 0 / 25%), inset 0 1px 0 hsl(0deg 0% 100% / 15%);
+    .newText__57553 {
+      font-weight: 500;
+    }
+  }
+  .tabBarItemContainer__5d798 .textBadge_f05120[style="background-color: var(--status-danger);"] {
+    background: var(--red) !important;
+  }
+  .newBadge_e55d5e.textBadge_f05120 {
+    background: var(--blurple) !important;
+    border-radius: 3px;
+    .newBadgeText__874d1 {
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+  // bot tags
+  @at-root {
+    #{$botTag} {
+      &#{$botTag}#{$botTag} {
+        padding: 1px 2px;
+        border-radius: 3px;
+        font-size: 10px;
+        box-sizing: border-box;
+        line-height: 12px;
+        vertical-align: baseline;
+        position: relative;
+        inset: -2px auto auto auto;
+        display: inline-block;
+        #{$botTagText} {
+          font-size: inherit;
+          line-height: inherit;
+          font-weight: 500;
+          position: unset;
+          display: inline;
+        }
+        .botTagVerified__3e0e4 {
+          margin-right: 0px;
+          margin-left: -1px;
+          width: 12px;
+          height: 12px;
+          path {
+            transform: scale(calc(10/16));
+            transform-origin: center;
+            d: path("M15.246 4.06065L5.69896 13.6077L0.935425 8.84419L3.05675 6.72286L5.69896 9.36508L13.1247 1.93933L15.246 4.06065Z");
+            .show-redesigned-icons & {
+              transform: none;
+              d: path("M19.246 8.06065L9.69896 17.6077L4.93542 12.8442L7.05675 10.7229L9.69896 13.3651L17.1247 5.93933L19.246 8.06065Z");
+            }
+          }
+        }
+      }
+    }
+    #{$botTagRegular} {
+      background: var(--blurple);
+      color: #fff;
+    }
+    #{$botTagInvert} {
+      background: #fff;
+      color: var(--blurple);
+    }
+    .botTagRemix_b2d431 {
+      background: var(--text-normal);
+      color: var(--background-primary);
+    }
+  }
+  // mentions badge
+  .numberBadge__40d6f {
+    background-clip: padding-box;
+    background-color: var(--red);
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.25), inset 0 1px 0 hsla(0,0%,100%,.15);
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    height: unset !important;
+    padding: 3px 4px !important;
+    text-shadow: 0 1px 0 rgba(0,0,0,.25);
+    text-transform: uppercase;
+    padding-left: 2px;
+    min-width: 16px !important;
+    width: auto !important;
+    .link_ddbb36 &.numberBadge__43366 {
+      background: var(--background-accent);
+    }
+  }
+  // new badge and beta badge
+  @at-root {
+    .betaTag-2eEO-r.textBadge_f05120, .alphaBetaTag__8e1a5,
+    .newBadge__93a46.textBadge_f05120.base__5ed84.eyebrow_c15ff6.baseShapeRound_c1de89,
+    .textBadge_f05120.base__5ed84.eyebrow_c15ff6.baseShapeRound_c1de89 {
+      background: var(--blurple) !important;
+      border-radius: 2px;
+      color: #fff;
+      --interactive-active: #fff;
+    }
+    .wrapper__3ed10+.textBadge__9b873 {
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--blurple) !important;
+    }
+  }
+}
+

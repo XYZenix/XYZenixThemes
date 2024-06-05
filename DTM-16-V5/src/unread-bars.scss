@@ -1,0 +1,156 @@
+@use "vars" as *;
+@use "funcs" as *;
+// chat bars (unread, error, jump to present)
+@at-root {
+  #{$bar-base} {
+    left: 20px;
+    right: 20px;
+    z-index: 4;
+    #{$bar-main}, #{$bar-alt} {height: 26px}
+    #{$bar-alt} {
+      text-transform: uppercase;
+      font-size: 12px;
+      color: hsla(0,0%,100%,.6);
+      transition: color .2s;
+      &:hover {color: #fff}
+      & svg {display: none}
+    }
+  }
+  #{$bar-jump}, #{$bar-error} {
+    border-radius: 3px 3px 0 0;
+    opacity: 1;
+    padding-bottom: 0;
+  }
+  #{$bar-jump} {
+    background: #{ss(rgba(153,170,181,.9))};
+    transition: .2s background-color;
+    .theme-dark & {
+      background: #{ss(rgba(115,127,141,.9))};
+    }
+    &:hover {
+      background: #{ss(#99aab5)};
+      .theme-dark & {
+        background: #{ss(#737f8d)};
+      }
+    }
+  }
+  #{$bar-newMsg} {
+    border-radius: 0 0 3px 3px;
+    opacity: 1;
+    transition: .2s background-color;
+    background: #{ss(rgba(114, 137, 218, 0.9))};
+    height: 26px;
+    &:hover {background: var(--blurple)}
+    #{$bar-main}, #{$bar-alt} {font-weight: 500}
+  }
+  // chat bars (new, unfortunately cannot make them identical to old ones)
+  .newMessagesPill__26926, .newMessagesClear__308be, .jumpToPresentButton_b22607 {
+    background: none;
+    border-radius: 0;
+    transition: .18s;
+    &:hover {background: var(--background-modifier-accent)}
+  }
+  .newTopicsBarContainer__8c1e3 {
+    border-radius: 0 0 3px 3px;
+    &:active {padding-top: 1px}
+  }
+  .newMessagesPillContainer__0afdc {
+    transition: .18s;
+    background: var(--background-accent);
+    left: unset;
+    right: unset;
+    margin: 0 auto;
+    position: unset;
+    height: 26px;
+    padding-top: 2px;
+    transform: translateY(-2px);
+    border-radius: 0 0 3px 3px;
+    box-shadow: none !important;
+    overflow: hidden;
+    width: calc(100% - 40px);
+    justify-content: space-between;
+    background: var(--blurple);
+    opacity: .9;
+    transition: .18s background-color;
+    &:hover {opacity:1}
+    &:active {transform:translateY(-1px)}
+    .newMessagesPill__26926, .newMessagesClear__308be {
+      height: 26px;
+      box-sizing: border-box;
+      background: #0000 !important;
+      border: none;
+    }
+    * {color: #fff !important}
+    .newMessagesPill__26926 {flex: 1 0}
+  }
+  .jumpToPresentButton_b22607 {
+    transition: .18s;
+    background: var(--background-accent);
+    margin-right: 16px;
+    position: unset;
+    height: 24px;
+    border-radius: 3px;
+    box-shadow: var(--elevation-stroke);
+    &:hover {box-shadow: var(--elevation-medium)}
+  }
+  .container__45e29 {
+    bottom: 0;
+    .navigator__2971c {
+      width: 100%;
+      margin-left: 20px;
+      margin-right: 20px;
+      height: 26px;
+      border-radius: 3px 3px 0 0;
+      background: #{ss(rgba(115, 127, 141, 0.9))};
+      transition: .18s background-color;
+      &:hover {
+        background: #{ss(#737f8d)};
+      }
+      .theme-light & {
+        background: rgba(153, 170, 181, 0.9);
+        &:hover {
+          background: #{ss(#99aab5)};
+        }
+      }
+      &:active {
+        transform: translateY(1px);
+      }
+      .button__78cb5 {
+        background: #0000 !important;
+        height: 26px;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        justify-content: space-between;
+        .icon_e00668 {
+          display: none;
+        }
+        &:before {
+          content: "You're viewing older messages";
+          font-size: 14px;
+        }
+        &:after {
+          content: "Jump to present";
+          float: right;
+          text-transform: uppercase;
+          color: #fff9;
+        }
+        font-size: 12px;
+        &:hover:after {
+          color: #fffb;
+        }
+      }
+      .button__78cb5, .text__6a682 {
+        color: #fff;
+      }
+    }
+  }
+  .animatedBar-2xsz-8 {
+    animation: none !important;
+  }
+  .chatContent_f087cb:has(.header__8863a) .topicsPillPadForumPostActions-31TaC6 {
+    top: 44px;
+  }
+}
