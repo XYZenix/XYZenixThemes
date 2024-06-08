@@ -3,7 +3,7 @@
 @use "options" as *;
 @use "funcs" as *;
 // settings ui
-@if ($debug < 1) and $redoSettingsUI {
+@if ($debug < 1) {
   .baseLayer__2b890 {
     transition: opacity .4s;
     transform: none !important;
@@ -686,9 +686,20 @@
               .theme-dark & {color: var(--header-secondary)}
             }
           }
-          .soundRow_afb019 {
-            display: inline-block;
-            width: 50%;
+          div:not([class])+div:not([class])>div:not([class])>.sectionTitle__3e02b+.children_aba8cb {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .container__7ad1e {
+            justify-content: space-between;
+            &:not(.soundRow_afb019) {
+              .note__24c83 {
+                flex: 1;
+              }
+              .divider__14bb6 {
+                justify-self: end;
+              }
+            }
             .soundIcon__85115 {
               opacity: 1;
               path {
@@ -1668,6 +1679,36 @@
               d: path("M16.5 9V6.75C16.5 3 13.5 0 9.75 0C6 0 3 3 3 6.75V9C1.35 9 0 10.35 0 12V24H19.5V12C19.5 10.35 18.15 9 16.5 9ZM4.5 6.75C4.5 3.9 6.9 1.5 9.75 1.5C12.6 1.5 15 3.9 15 6.75V9H4.5V6.75ZM18 21C18 21.9 17.4 22.5 16.5 22.5H3C2.1 22.5 1.5 21.9 1.5 21V12C1.5 11.1 2.1 10.5 3 10.5H16.5C17.4 10.5 18 11.1 18 12V21ZM9.75 13.5C9.3 13.5 9 13.8 9 14.25V18.75C9 19.2 9.3 19.5 9.75 19.5C10.2 19.5 10.5 19.2 10.5 18.75V14.25C10.5 13.8 10.2 13.5 9.75 13.5Z");
             }
           }
+          .roleRow_dc2631 {
+            &:hover:not(.roleRowDisableHover_c9454c) {
+              box-shadow: 0 2px 1px 0 rgba(0,0,0,.1);
+              .theme-light & {
+                background: #{ss(rgba(153,170,181,.2))};
+              }
+              .theme-dark & {
+                background: #{ss(#414449)};
+              }
+            }
+            .circleButton_c3a5df {
+              border-radius: 3px;
+              transition: background-color .2s;
+              svg {
+                transition: color .2s;
+              }
+              .theme-light & {
+                background: #{ss(#99aab5)};
+                &:hover {
+                  background: #{ss(#869aa7)};
+                }
+              }
+              .theme-dark & {
+                background: #{ss(#2e3136)};
+                &:hover {
+                  background: #{ss(#4f545c)};
+                }
+              }
+            }
+          }
         }
         // emoji
         #emoji-tab {
@@ -1742,7 +1783,7 @@
             background-repeat: no-repeat;
           }
           .breadcrumbs__22ae2+.wrapper__8e058 .iconWrapper_fda12f {display: none}
-          &:has(.platformIcon__04d19[src="/assets/f6cfd7e6d7835c749f04.svg"]) {
+          &:has(.platformIcon__04d19:is([src="/assets/f6cfd7e6d7835c749f04.svg"], [src="/assets/0e6f4bc32f054cb9b1f2.svg"])) {
             --integcolor: #{ss(#cb2120)};
             .expandableHeader_a70cdd .wrapper__8e058:before {
               content: "";

@@ -1362,9 +1362,8 @@
   .container__84c26 {
     background: var(--background-primary);
     --search-popout-option-fade: linear-gradient(90deg,#0000,var(--background-primary) 80%);
-  }
-  .container__84c26.elevationBorderHigh__24051 {
-    box-shadow: 0 2px 6px rgb(0 0 0 / 80%);
+    .theme-light & {box-shadow: 0 2px 6px rgba(0,0,0,.2)}
+    .theme-dark & {box-shadow: 0 2px 10px 0 rgba(0,0,0,.2)}
     border-radius: 5px;
     .header__00739 {
       font-weight: 600;
@@ -1373,10 +1372,23 @@
         color: #{ss(#cacbce)};
       }
     }
+    .queryContainer_c1cb2f {
+      padding: 20px;
+      &.focused__68b93 {
+        .theme-light & {background: #f3f3f3}
+        .theme-dark & {background: #{ss(#2f3136)}}
+      }
+      .queryText__92bb8 strong {
+        color: var(--text-normal);
+      }
+    }
     .option__91497 {
       .theme-light & {
-        &:hover, &:hover:after {
+        &:hover, &[aria-selected=true] {
           background: #f3f3f3;
+        }
+        &:hover:after, &[aria-selected=true]:after {
+          background: linear-gradient(to right, #0000, #f3f3f3 50%);
         }
         .plusIcon__3ff01 {
           background-color: #{ss(#99aab5)};
@@ -1391,8 +1403,11 @@
         }
       }
       .theme-dark & {
-        &:hover, &:hover:after {
+        &:hover, &[aria-selected=true] {
           background: #{ss(#2f3136)};
+        }
+        &:hover:after, &[aria-selected=true]:after {
+          background: linear-gradient(to right, #0000, #{ss(#2f3136)} 50%);
         }
         .plusIcon__3ff01 {
           background-color: #{ss(#99aab5)};
@@ -1413,9 +1428,8 @@
       transition: .18s opacity;
       &:hover {opacity: 1}
     }
-    // help
-    [d="M12 2C6.486 2 2 6.487 2 12C2 17.515 6.486 22 12 22C17.514 22 22 17.515 22 12C22 6.487 17.514 2 12 2ZM12 18.25C11.31 18.25 10.75 17.691 10.75 17C10.75 16.31 11.31 15.75 12 15.75C12.69 15.75 13.25 16.31 13.25 17C13.25 17.691 12.69 18.25 12 18.25ZM13 13.875V15H11V12H12C13.104 12 14 11.103 14 10C14 8.896 13.104 8 12 8C10.896 8 10 8.896 10 10H8C8 7.795 9.795 6 12 6C14.205 6 16 7.795 16 10C16 11.861 14.723 13.429 13 13.875Z"] {
-      d: path("M10.875 18.75H13.125V16.5H10.875V18.75ZM12 0.75C5.79 0.75 0.75 5.79 0.75 12C0.75 18.21 5.79 23.25 12 23.25C18.21 23.25 23.25 18.21 23.25 12C23.25 5.79 18.21 0.75 12 0.75ZM12 21C7.03875 21 3 16.9612 3 12C3 7.03875 7.03875 3 12 3C16.9612 3 21 7.03875 21 12C21 16.9612 16.9612 21 12 21ZM12 5.25C9.51375 5.25 7.5 7.26375 7.5 9.75H9.75C9.75 8.5125 10.7625 7.5 12 7.5C13.2375 7.5 14.25 8.5125 14.25 9.75C14.25 12 10.875 11.7188 10.875 15.375H13.125C13.125 12.8438 16.5 12.5625 16.5 9.75C16.5 7.26375 14.4863 5.25 12 5.25Z");
+    .searchLearnMore__17e18 path {
+      d: path("M11 18h2v-2h-2v2Zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4Z");
     }
     // delete
     [d="M15 3.999V2H9V3.999H3V5.999H21V3.999H15Z"] {
