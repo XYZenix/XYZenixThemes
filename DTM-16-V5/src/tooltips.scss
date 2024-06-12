@@ -164,12 +164,95 @@
       color: var(--blurple);
       transition: .17s;
       .contents__322f4 {
+        transition: .17s;
         font-size: 14px;
       }
       &:hover, &:active {
         background: var(--blurple);
         color: #fff;
         border-top-color: #0000;
+      }
+    }
+  }
+  // reaction tooltip
+  .reactionTooltip__20d0b {
+    .theme-dark &, .theme-light & {box-shadow: 0 2px 4px 1px rgb(0 0 0 / 10%)}
+    background: var(--blurple);
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 10px;
+    --text-normal: rgba(255,255,255,.75);
+    --background-modifier-accent: rgba(255,255,255,.25);
+    --text-link: #fff;
+    .burstReactionTooltipNitroIcon__7d212 {
+      margin-right: 8px;
+      width: 16px;
+      height: 16px;
+      path {
+        fill: #fff;
+      }
+    }
+    .reactionTooltipEmoji__196c4 {
+      width: 24px;
+      height: 24px;
+      min-height: 24px;
+      margin-right: 8px;
+    }
+    .reactionTooltipText__19974 {
+      margin: 0;
+    }
+    .burstReactionTooltipPrompt__1296d {
+      margin-top: 8px;
+    }
+    .reactionEmojiDetailsClickable__3af57 {
+      background: rgba(255,255,255,.1);
+      transition: .17s;
+      div, svg {
+        color: #fff;
+      }
+      &:hover {
+        background: rgba(255,255,255,.15);
+      }
+      &:active {
+        background: rgba(255,255,255,.2);
+      }
+    }
+    .emojiDetailsLoader_de4fe1 {
+      background: var(--blurple-hover);
+      box-shadow: none;
+      .popoutLoadingBackground__2e14a {
+        -webkit-mask: none;
+        mask: none;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      .popoutLoadingForeground__1d922 {
+        animation: 2s spinner-chasing-dots-rotate infinite linear;
+        inset: unset;
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        position: relative;
+        background: none;
+        &:before, &:after {
+          content: "";
+          width: 60%;
+          height: 60%;
+          position: absolute;
+          inset: unset;
+          top: 0;
+          background: #fff;
+          border-radius: 50%;
+          animation: 2s spinner-chasing-dots-bounce infinite ease-in-out;
+        }
+        &:after {
+          animation-delay: -1s;
+          top: unset;
+          bottom: 0;
+        }
       }
     }
   }

@@ -201,44 +201,88 @@
             .font-size-12 & {
               left: 19px;
               top: 64px;
-              bottom: 49px;
-              width: 37px;
+              bottom: 47px;
+              width: 35px;
             }
             .font-size-14 & {
               left: 19px;
               top: 64px;
-              bottom: 49px;
-              width: 37px;
+              bottom: 47px;
+              width: 35px;
             }
             .font-size-15 & {
               left: 19px;
               top: 64px;
               bottom: 49px;
-              width: 37px;
+              width: 35px;
             }
             .font-size-16 & {
               left: 19px;
               top: 64px;
               bottom: 49px;
-              width: 37px;
+              width: 35px;
             }
             .font-size-18 & {
               left: 19px;
               top: 64px;
-              bottom: 49px;
-              width: 37px;
+              bottom: 51px;
+              width: 35px;
             }
             .font-size-20 & {
               left: 19px;
               top: 64px;
-              bottom: 49px;
-              width: 37px;
+              bottom: 53px;
+              width: 35px;
             }
             .font-size-24 & {
               left: 19px;
               top: 64px;
+              bottom: 58px;
+              width: 35px;
+            }
+          }
+          &.isSystemMessage__0f7c5.hasThread__44ae4:after {
+            .font-size-12 & {
+              left: 32px;
+              top: 40px;
+              bottom: 46px;
+              width: 22px;
+            }
+            .font-size-14 & {
+              left: 28px;
+              top: 43px;
               bottom: 49px;
-              width: 37px;
+              width: 26px;
+            }
+            .font-size-15 & {
+              left: 26px;
+              top: 44px;
+              bottom: 49px;
+              width: 28px;
+            }
+            .font-size-16 & {
+              left: 23px;
+              top: 46px;
+              bottom: 49px;
+              width: 31px;
+            }
+            .font-size-18 & {
+              left: 23px;
+              top: 49px;
+              bottom: 51px;
+              width: 31px;
+            }
+            .font-size-20 & {
+              left: 24px;
+              top: 51px;
+              bottom: 54px;
+              width: 30px;
+            }
+            .font-size-24 & {
+              left: 24px;
+              top: 56px;
+              bottom: 58px;
+              width: 30px;
             }
           }
           &.hasThread__44ae4.hasReply__602e2:after {
@@ -666,6 +710,9 @@
       0% {transform: scale(0)}
       100% {transform: scale(1)}
     }
+    // nullify the stupid shake anim
+    @keyframes shake__1b557 {from{transform:none}to{transform:none}}
+    @keyframes shake__4fc2f {from{transform:none}to{transform:none}}
     .container__62863 {
       .reactions__2ede2 {
         &:hover {
@@ -1240,13 +1287,6 @@
             display: inline-block;
             position: relative;
             background: none;
-            @keyframes spinner-chasing-dots-rotate {
-              100% {transform: rotate(360deg)}
-            }
-            @keyframes spinner-chasing-dots-bounce {
-              0%,100% {transform: scale(0)}
-              50% {transform: scale(1)}
-            }
             &:before, &:after {
               content: "";
               width: 60%;
@@ -1449,6 +1489,109 @@
         background: #073642;
         background: #0000;
       }
+    }
+  }
+}
+@if $redoMessages {
+  @if $debug {
+    .chat__52833 {
+      margin-right: 563px;
+    }
+  }
+  // chat messages
+  @at-root {
+    .messageListItem__050f9 {
+      .message_ccca67 {
+        background: none !important;
+        &.cozyMessage__9f4fd {
+          padding-left: 80px;
+          padding-top: 0;
+          padding-bottom: 0;
+          .avatar__08316 {
+            left: 20px;
+            margin-top: 0;
+          }
+          // action bar
+          .container__2f489 {
+            top: 0;
+            .wrapper__4e6b6 {
+            }
+          }
+          &.groupStart__7b93c {
+            margin-top: 40px;
+            &:before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: -20px;
+              left: 20px;
+              right: 20px;
+              height: 1px;
+              pointer-events: none;
+              background: #{ss(#eceeef)};
+              .theme-dark & {
+                background: rgba(255,255,255,.04);
+              }
+            }
+            .container__2f489 {
+              top: calc(22px + var(--dtm16-reply-height, 0px));
+            }
+          }
+          &.hasReply__602e2 {
+            --dtm16-reply-height: 21px;
+          }
+        }
+        // action bar
+        .container__2f489 {
+          transition: .2s opacity;
+          .wrapper__4e6b6.wrapper__4e6b6 {
+            box-shadow: none;
+            background: var(--background-primary);
+            gap: 4px;
+            height: 16px;
+            .button_d4bf9b {
+              min-width: 16px;
+              width: 16px;
+              height: 16px;
+              padding: 0;
+              opacity: .4;
+              transition: .2s opacity;
+              background: none !important;
+              .theme-light & {color: #{ss(#99aab5)}}
+              .theme-dark & {color: #fff}
+              &:hover {
+                opacity: 1;
+              }
+              >svg {
+                width: 16px;
+                height: 16px;
+              }
+            }
+          }
+        }
+        // action bar pad
+        .contents_d3ae0d .messageContent_abea64:before {
+          content: "";
+          float: right;
+          display: inline-flex;
+          width: 80px;
+          height: 1rem;
+        }
+        .contents_d3ae0d {
+
+        }
+      }
+    }
+    // spacer
+    .scrollerSpacer__6b1b6 {
+      height: 20px;
+    }
+  }
+  // general markup
+  @at-root {
+    .markup_a7e664 {
+      .theme-light & {color: #{ss(#737f8d)}}
+      .theme-dark & {color: rgba(255,255,255,.7)}
     }
   }
 }
