@@ -135,7 +135,7 @@
               font-weight: 400;
             }
           }
-          &:is(.replying_d5deea, .mentioned_d5deea) {
+          &:is(.replying_d5deea, .mentioned_d5deea):not(.systemMessage_d5deea) {
             >.contents_ec86aa>.messageContent_ec86aa,
             >.container_b558d0 {
               border-left: solid 4px;
@@ -144,8 +144,8 @@
               margin-left: -8px;
             }
           }
-          &.mentioned_d5deea>.contents_ec86aa>.messageContent_ec86aa,
-          &.mentioned_d5deea>.container_b558d0 {
+          &.mentioned_d5deea:not(.systemMessage_d5deea)>.contents_ec86aa>.messageContent_ec86aa,
+          &.mentioned_d5deea:not(.systemMessage_d5deea)>.container_b558d0 {
             background: var(--background-mentioned);
             border-color: #{ss(#faa61a)};
           }
@@ -194,6 +194,9 @@
             }
             &:not(.groupStart_d5deea) {
               #{$msgBtnContInner} {margin-top: 22px}
+            }
+            .content_e62b38>.anchor_af404b.anchorUnderlineOnHover_af404b {
+              color: var(--header-primary);
             }
           }
           // thread shit
@@ -422,13 +425,13 @@
           &.systemMessage_d5deea #{$msgBtnContInner} {top: 10px}
           &:has(.repliedMessage_ec86aa) #{$msgBtnContInner} {top: 26px}
           // mentioned/automod blocked/replying/etc
-          &.mentioned_d5deea {
+          &.mentioned_d5deea:not(.systemMessage_d5deea) {
             background: var(--background-mentioned) content-box !important;
           }
           // &.automodMessage_d5deea {
           //   background: hsl(0,84.9%,61%,0.13) content-box !important;
           // }
-          &.replying_d5deea {
+          &.replying_d5deea:not(.systemMessage_d5deea) {
             background: #{ss(rgba(114, 137, 218, 0.13))} content-box !important;
           }
           // stupid fucking system message action thing
@@ -552,6 +555,18 @@
             .divider_d5deea.hasContent_d5deea {
               margin-top: 0 !important;
               margin-bottom: -1px !important;
+            }
+          }
+          // emoji
+          .emoji.jumboable {
+            width: 1.375em;
+            height: 1.375em;
+            min-height: 1.375em;
+          }
+          // system message
+          &.systemMessage_d5deea {
+            .content_e62b38>.anchor_af404b.anchorUnderlineOnHover_af404b {
+              color: var(--header-primary);
             }
           }
         }

@@ -1558,3 +1558,52 @@
 .content_a4d4d9 {
   background: var(--background-primary);
 }
+// dms header
+.subtitleContainer_a7d72e {
+  &:has(.avatar_a7d72e) {
+    .titleWrapper_e44302 h1:before {
+      content: "@";
+      color: #8a8e94;
+      font-weight: 300;
+      margin-right: 3px;
+      margin-left: 12px;
+    }
+    .titleWrapper_e44302 h1:after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 64px;
+      background: #{ss(#747f8d)};
+      margin-left: 5px;
+    }
+  }
+  &:not(:has(.channelName_f0fccd)) .avatar_a7d72e {
+    display: none;
+  }
+  &:has(.avatar_a7d72e rect[mask="url(#svg-mask-status-dnd)"]) {
+    .titleWrapper_e44302 h1:after {
+      background: var(--red);
+    }
+  }
+  &:has(.avatar_a7d72e rect[mask="url(#svg-mask-status-idle)"]) {
+    .titleWrapper_e44302 h1:after {
+      background: var(--yellow);
+    }
+  }
+  &:has(.avatar_a7d72e rect[mask="url(#svg-mask-status-online)"]) {
+    .titleWrapper_e44302 h1:after {
+      background: var(--green);
+    }
+  }
+  // aka tag
+  .akaBadge_d6c26f {
+    border-radius: 3px;
+    box-shadow: none !important;
+    background: #{ss(#737f8d)} !important;
+    font-size: 10px;
+    font-weight: 400;
+    padding: 1px 3px;
+    line-height: 1.4;
+  }
+}
