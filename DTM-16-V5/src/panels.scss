@@ -184,9 +184,6 @@
             background: none;
             border: solid 1px #{ss(rgba(116, 127, 141, 0.4))};
             color: #fff6;
-            .theme-light .sidebar_a4d4d9:not(.theme-dark) & {
-              color: #0006;
-            }
             &:is(:hover:not(:disabled), :active:not(:disabled)) {
               background: none;
               border-color: #{ss(rgba(114, 137, 218, 0.53))};
@@ -215,6 +212,9 @@
                 background: #{ss(rgba(250, 166, 26, 0.1))};
               }
             }
+          }
+          .theme-light .sidebar_a4d4d9:not(.theme-dark) & {
+            color: rgba(0,0,0,.75);
           }
         } @else if $experiment1 == 2 {
           background: #{color.adjust($blurple, $alpha: -0.9)};
