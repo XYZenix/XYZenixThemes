@@ -73,7 +73,21 @@
         height: inherit;
         .side_a0 {
           overflow: visible !important;
-          .header_a0:first-of-type {
+          // user settings search
+          >[style="margin-bottom: 8px;"] {
+            .searchBar_e7c031 {
+              margin: 4px 0 0 12px;
+            }
+            .inner_effbe2 {
+              &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+              }
+            }
+          }
+          // main header
+          .header_a0:first-of-type, [style="margin-bottom: 8px;"]+.header_a0 {
+            order: -1;
             font-weight: 600;
             font-size: 14px;
             color: #fff;
@@ -94,7 +108,7 @@
               color: var(--text-muted);
             }
           }
-          .header_a0:not(:first-of-type) {
+          .header_a0:not(:first-of-type):not([style="margin-bottom: 8px;"]+.header_a0) {
             display: none;
           }
           :is(.item_a0, .ui-tab-bar-item) {
@@ -523,7 +537,7 @@
           }
         }
         // authorized apps
-        #authorized-apps-tab {
+        @at-root .contentColumn_c25c6d#authorized-apps-tab {
           .authedApp_f0135d {
             .labelBold-199Hd8 {
               font-weight: bold;
@@ -543,7 +557,7 @@
           }
         }
         // sessions
-        #sessions-tab {
+        @at-root .contentColumn_c25c6d#sessions-tab {
           .sessionIcon_c7a2c0 {
             border-radius: 3px;
             background: var(--background-accent);
@@ -573,7 +587,7 @@
           }
         }
         // voice & video
-        #voice-\&-video-tab {
+        @at-root .contentColumn_c25c6d#voice-\&-video-tab {
           .select_f6639d {
             &:has(.deviceOptionCertified_dfcd87) {
               .value_f6639d:before {
@@ -658,8 +672,8 @@
           }
           .notches_e5cdf3.gray_e5cdf3 {color: var(--background-primary)}
         }
-        // text & video
-        #text-\&-images-tab {
+        // text & images
+        @at-root .contentColumn_c25c6d#text-\&-images-tab {
           .children_a6ae9b:before {
             content: "[11pixels] A while back I updated message styling using :has(). There may be issues in super specific cases I couldn't think of - if you encounter any, open an issue on XYZenix/XYZenixThemes";
             color: var(--text-normal);
@@ -671,7 +685,7 @@
           }
         }
         // notifications
-        #notifications-tab {
+        @at-root .contentColumn_c25c6d#notifications-tab {
           .divider_ae36e5.marginTop40_f7730b.marginBottom40_f7730b+div>div>.sectionTitle_a6ae9b+.children_a6ae9b {
             display: inline;
           }
@@ -710,7 +724,7 @@
           }
         }
         // keybinds
-        #keybinds-tab {
+        @at-root .contentColumn_c25c6d#keybinds-tab {
           .children_a6ae9b {margin-bottom: 20px}
           .container_f20685 {
             padding: 0;
@@ -793,7 +807,7 @@
           }
         }
         // streamer mode
-        #streamer-mode-tab {
+        @at-root .contentColumn_c25c6d#streamer-mode-tab {
           .formNotice_aae945 {
             background: none;
             border: none;
@@ -814,7 +828,7 @@
           }
         }
         // registered games
-        #game-activity-tab {
+        @at-root .contentColumn_c25c6d#game-activity-tab {
           .activeGame_fd966d {
             padding: 14px 15px;
             padding-right: 33px;
@@ -1048,7 +1062,7 @@
           }
         }
         // game overlay
-        #overlay-tab {
+        @at-root .contentColumn_c25c6d#overlay-tab {
           &:before {
             content: "DTM-16 will not fully work in the in-game overlay as there is no decent method of testing or applying themes in the overlay.";
             border-radius: 5px;
@@ -1064,7 +1078,7 @@
           }
         }
         // subscriptions tab
-        #subscriptions-tab {
+        @at-root .contentColumn_c25c6d#subscriptions-tab {
           // nitro subscription banner
           .banner_b12c98 {
             background-size: cover;
@@ -1217,7 +1231,7 @@
           }
         }
         // boosts tab
-        #nitro-server-boost-tab {
+        @at-root .contentColumn_c25c6d#nitro-server-boost-tab {
           // stupid banner
           .wrapper_e74e54 {
             display: none;
@@ -1235,7 +1249,7 @@
       // server settings
       & {
         // overview
-        #overview-tab:not(:has(.channel-settings-overview)) {
+        @at-root .contentColumn_c25c6d#overview-tab:not(:has(.channel-settings-overview)) {
           .children_a6ae9b>.flex_bba380 {
             flex-direction: row-reverse;
             gap: 16px;
@@ -1316,7 +1330,7 @@
           }
         }
         // server template
-        #guild_templates-tab {
+        @at-root .contentColumn_c25c6d#guild_templates-tab {
           .descriptionSection_c38f8d {
             .eyebrow_dc00ef {
               color: var(--header-secondary);
@@ -1333,7 +1347,7 @@
           }
         }
         // roles
-        #roles-tab {
+        @at-root .contentColumn_c25c6d#roles-tab {
           padding-top: 0;
           .container_cc7b67 {
             border: solid 1px var(--background-tertiary);
@@ -1745,7 +1759,7 @@
           }
         }
         // emoji
-        #emoji-tab {
+        @at-root .contentColumn_c25c6d#emoji-tab {
           padding-top: 28px;
           .sectionTitle_a6ae9b h2 {
             margin-bottom: 0;
@@ -1801,7 +1815,7 @@
           }
         }
         // integrations
-        #integrations-tab {
+        @at-root .contentColumn_c25c6d#integrations-tab {
           --integcolor: #{ss(#593695)};
           .expandableHeader_a9c36f .wrapper_d5408a:before {
             content: "";
@@ -1904,7 +1918,7 @@
         .error_dd4615 {
           border-radius: 3px;
         }
-        #analytics-tab {
+        @at-root .contentColumn_c25c6d#analytics-tab {
           .formText_b89ec7 p {
             font-size: 12px;
             line-height: 1;
@@ -1952,7 +1966,7 @@
           }
         }
         // discovery
-        #discovery-tab {
+        @at-root .contentColumn_c25c6d#discovery-tab {
           .image_bbfa4c {
             margin-top: 0;
           }
@@ -2024,6 +2038,9 @@
           }
         }
         // bans
+        #bans-tab {
+          padding: 0;
+        }
         .container_c90ddb {
           height: 100%;
           width: 100%;
@@ -2177,21 +2194,21 @@
               }
             }
           }
-          .container_b6cd66.__MISSINGNO__ {
-            width: 660px;
-            .theme-light & {
-              background: #F9F9F9 !important;
-              .message_b6cd66, .contents_dd4f85 span {
-                color: #000 !important;
-              }
-            }
-          }
+          // .container_b6cd66.__MISSINGNO__ {
+          //   width: 660px;
+          //   .theme-light & {
+          //     background: #F9F9F9 !important;
+          //     .message_b6cd66, .contents_dd4f85 span {
+          //       color: #000 !important;
+          //     }
+          //   }
+          // }
         }
       }
       // channel settings
       & {
         // overview
-        #overview-tab .channel-settings-overview {
+        @at-root .contentColumn_c25c6d#overview-tab .channel-settings-overview {
           .divider_ae36e5 {
             visibility: hidden;
             margin-top: 0;
@@ -2214,7 +2231,7 @@
           }
         }
         // permissions
-        #permissions-tab {
+        @at-root .contentColumn_c25c6d#permissions-tab {
           .header_a0 {
             .category-237uUF {
               display: block;
