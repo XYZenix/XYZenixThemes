@@ -852,18 +852,17 @@
       height: 20px;
     }
     // media mosaic
-    .wrapperAudio_f316dd.newMosaicStyle_f316dd,
-    .attachment_a4623d.newMosaicStyle_a4623d {
+    .wrapperAudio_f72aac.newMosaicStyle_f72aac {
       padding: 10px;
       border-radius: 3px;
-      +.hoverButtonGroup__304b2 {
+      +.hoverButtonGroup_e5c1dc {
         border: none;
         opacity: 1;
         top: 16px;
         right: 12px;
         filter: none;
         background: none;
-        .hoverButton_be4802 {
+        .hoverButton_e5c1dc {
           background: none !important;
           [d="M16.293 9.293L17.707 10.707L12 16.414L6.29297 10.707L7.70697 9.293L11 12.586V2H13V12.586L16.293 9.293ZM18 20V18H20V20C20 21.102 19.104 22 18 22H6C4.896 22 4 21.102 4 20V18H6V20H18Z"] {
             d: path("M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z");
@@ -874,15 +873,18 @@
         border: none;
         background: none;
         padding: 0;
-        +.hoverButtonGroup__304b2 {
+        +.hoverButtonGroup_e5c1dc {
           top: 6px;
           right: 0;
           outline: none;
         }
       }
     }
-    .wrapperAudio_f316dd.newMosaicStyle_f316dd {
-      +.hoverButtonGroup__304b2 {
+    .oneByOneGridSingle_cda674 {
+      border-radius: 3px;
+    }
+    .wrapperAudio_f72aac.newMosaicStyle_f72aac {
+      +.hoverButtonGroup_e5c1dc {
         top: 12px;
         @if $experiment15 == 1 {top: 6px}
       }
@@ -902,15 +904,15 @@
     .mediaAttachmentsContainer__242e2 {
       position: relative;
     }
-    .hoverButtonGroup__304b2 {
+    .hoverButtonGroup_e5c1dc {
       transition: .18s;
       border-radius: 3px;
-      &:not(.nonMediaAttachment_ef83c1) {
+      &:not(.nonMediaMosaicItem_e5c1dc) {
         right: unset;
         left: 4px;
       }
       filter: drop-shadow(0 1px 6px #0004);
-      .hoverButton_be4802 {
+      .hoverButton_e5c1dc {
         border-radius: 3px;
         transition: .18s;
         padding: 4px;
@@ -935,24 +937,69 @@
       }
     }
     .nonMediaAttachmentItem__80bd4:has(.footer_ad9cbd) {
-      .hoverButtonGroup__304b2.nonMediaAttachment_ef83c1 {
+      .hoverButtonGroup_e5c1dc.nonMediaMosaicItem_e5c1dc {
         right: -24px;
         top: 0px;
         width: 24px;
         height: 24px;
       }
-      .hoverButton_be4802.removeAttachmentHoverButton__161a2 {
+      .hoverButton_e5c1dc.removeAttachmentHoverButton__161a2 {
         width: 24px;
         height: 24px;
         padding: 0;
       }
     }
-    .wrapper_f316dd:has(video) {
+    .wrapper_f72aac:has(video) {
       min-width: 96px;
       min-height: 96px;
     }
     .visualMediaItemContainer_df7417 {
       border-radius: 0;
+    }
+    // media loading
+    .imageLoadingOverlay_d4597d {
+      margin: 0;
+      inset: 50% auto auto 50%;
+      opacity: 1 !important;
+      margin: -24px 0 0 -24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 3px;
+      background: var(--background-secondary);
+      color: var(--blurple);
+      animation: .5s media-loading-fadein;
+      transition: .1s;
+      &:not([style*="opacity: 1"]) {opacity:0!important}
+      @keyframes media-loading-fadein {
+        from {background:#0000;color:#0000}
+        to {background:var(--background-secondary);color:var(--blurple)}
+      }
+      .spinner_b6db20 {
+        position: relative;
+        margin: 5px;
+        color: inherit;
+      }
+      .cornerLoadingSpinner_d4597d {
+        animation: none;
+        color: inherit;
+        &:before, &:after {
+          content: "";
+          background-color: currentColor;
+          color: inherit;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          animation: spinner-wandering-cubes 1.8s infinite ease-in-out;
+        }
+        &:after {
+          animation-delay: -0.9s;
+        }
+      }
+      .spinningCircleInner_b6db20 {
+        display: none;
+      }
     }
     // clip
     .messageAttachmentWithFooter__05fa9 {
@@ -979,7 +1026,7 @@
           text-shadow: 0 2px 4px #000;
         }
       }
-      &:has(.wrapperControlsHidden_f316dd) .container_c94b03 {
+      &:has(.wrapperControlsHidden_f72aac) .container_c94b03 {
         opacity: 0 !important;
       }
     }

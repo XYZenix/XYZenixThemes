@@ -726,15 +726,15 @@
         // keybinds
         @at-root .contentColumn_c25c6d#keybinds-tab {
           .children_a6ae9b {margin-bottom: 20px}
-          .container_f20685 {
+          .container_bc1f7a {
             padding: 0;
             border: none;
             background: none;
             flex: 1;
             justify-content: flex-end;
             box-shadow: none;
-            .iconDiv_f20685 {display: none}
-            .text_f20685 {
+            .iconDiv_bc1f7a {display: none}
+            .text_bc1f7a {
               color: var(--red) !important;
               background: #{ss(#fdeded)};
               .theme-dark & {
@@ -1559,14 +1559,15 @@
                 }
               }
               .searchContainer_fe3229 {margin-top: 8px}
-              .container_f20685 {
+              // notice box (managed role etc)
+              .container_bc1f7a {
                 border: none;
                 background: none;
                 color: var(--red);
                 padding-top: 0;
                 padding-bottom: 0;
-                .iconDiv_f20685 {display: none}
-                .text_f20685 {
+                .iconDiv_bc1f7a {display: none}
+                .text_bc1f7a {
                   font-size: 12px;
                   font-weight: 400;
                   color: inherit !important;
@@ -2112,6 +2113,67 @@
             }
           }
         }
+        // ven
+        @at-root #vencordsettings-tab {
+          .vc-settings-donate {
+            background: var(--deprecated-card-editable-bg);
+          }
+          .vc-settings-quickActions-card {
+            padding: 0;
+            border: none;
+          }
+          .vc-settings-quickActions-pill {
+            border-radius: 3px;
+            background: var(--blurple);
+            color: #fff;
+            transition: .2s;
+            &:hover {
+              background: var(--blurple-hover);
+            }
+            &:active {
+              background: var(--blurple-active);
+            }
+          }
+          .lookBlank_dd4f85.colorBrand_dd4f85.sizeMedium_dd4f85 {
+            padding: 0;
+            font-size: inherit;
+            height: auto;
+          }
+        }
+        @at-root #vencordplugins-tab {
+          .vc-plugins-info-card {
+            background: var(--deprecated-card-editable-bg);
+          }
+        }
+        @at-root #vencordthemes-tab {
+          .vc-settings-card:not(.vc-settings-quickActions-card) {
+            background: var(--deprecated-card-editable-bg);
+          }
+          .vc-settings-quickActions-card {
+            padding: 0;
+            border: none;
+          }
+          .vc-settings-quickActions-pill {
+            border-radius: 3px;
+            background: var(--blurple);
+            color: #fff;
+            transition: .2s;
+            &:hover {
+              background: var(--blurple-hover);
+            }
+            &:active {
+              background: var(--blurple-active);
+            }
+          }
+        }
+        @at-root #vencordsettingssync-tab {
+          .vc-backup-restore-card {
+            border-radius: 3px;
+            background: color-mix(in srgb, #0000 100%, var(--yellow) 10%);
+            color: var(--yellow);
+            >div {gap:8px!important}
+          }
+        }
         // unsaved changes notices
         & {
           .saveNoticeContainer_d5bf6c {
@@ -2440,7 +2502,7 @@
                 opacity: 1;
               }
             }
-            .group_e3c4bb {
+            .group_d25d19 {
               display: block;
               position: relative;
               order: -1;
@@ -2449,7 +2511,7 @@
               border: none;
               border-radius: 0;
               margin-right: 8px;
-              .item_e3c4bb {
+              .item_d25d19 {
                 border: solid 2px;
                 position: absolute;
                 top: 0;
@@ -2468,16 +2530,17 @@
                   left: 0;
                   width: 14px;
                   height: 14px;
+                  cursor: pointer;
                   background: currentColor;
                   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M12 3.5 3.5 12 2 10.5 10.5 2 12 3.5Z' clip-rule='evenodd'/%3E%3C/svg%3E");
                   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M12 3.5 3.5 12 2 10.5 10.5 2 12 3.5Z' clip-rule='evenodd'/%3E%3C/svg%3E");
                 }
-                &.passthrough_e3c4bb {
+                &.passthrough_d25d19 {
                   background: none;
                   border-color: var(--interactive-muted);
                   color: var(--interactive-muted);
                 }
-                &.deny_e3c4bb {
+                &.deny_d25d19 {
                   background: var(--red);
                   border-color: var(--red);
                   z-index: 3;
@@ -2485,11 +2548,11 @@
                     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath fill='%23fff' d='M8.4 7 12 3.5 10.5 2 7 5.6 3.5 2 2 3.5 5.6 7 2 10.5 3.5 12 7 8.4l3.5 3.6 1.5-1.5L8.4 7Z'/%3E%3C/svg%3E");
                     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath fill='%23fff' d='M8.4 7 12 3.5 10.5 2 7 5.6 3.5 2 2 3.5 5.6 7 2 10.5 3.5 12 7 8.4l3.5 3.6 1.5-1.5L8.4 7Z'/%3E%3C/svg%3E");
                   }
-                  &:not(.selected_e3c4bb)+.passthrough_e3c4bb:not(.selected_e3c4bb) {
+                  &:not(.selected_d25d19)+.passthrough_d25d19:not(.selected_d25d19) {
                     z-index: 4;
                   }
                 }
-                &.allow_e3c4bb {
+                &.allow_d25d19 {
                   background: var(--green);
                   border-color: var(--green);
                   z-index: 2;
@@ -2498,7 +2561,7 @@
                     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M4.9 12.4.6 8l1.5-1.4 2.8 2.8 7-7 1.5 1.4-8.5 8.5Z' clip-rule='evenodd'/%3E%3C/svg%3E");
                   }
                 }
-                &.selected_e3c4bb {
+                &.selected_d25d19 {
                   opacity: 1;
                   pointer-events: none;
                 }
