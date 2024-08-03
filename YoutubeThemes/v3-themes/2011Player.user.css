@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           [YouTube] V3 - 2011 Player
 @namespace      xyzenix.github.io
-@version        6
+@version        7
 @author         11pixels
 @preprocessor   stylus
 @var  checkbox autohide  "Autohide (super broken, please don't bother using this. if it breaks the video progress bar, disable this then zoom out, hover over player, zoom back in, and just don't use this option)" 0
@@ -809,6 +809,18 @@
   }
   #watch7-playlist-tray .video-list-item:last-of-type {
     margin-bottom: 0;
+  }
+  /* chapters */
+  .ytp-chapter-marker {
+      background: linear-gradient(to right, #0000 3px, #fffa 3px, #fffa 6px, #0000 6px);
+      height: 12px;
+    }
+  .html5-video-player:not(.ytp-block-autohide) {
+    .ytp-chapter-marker {
+      bottom: 0;
+      transition: .5s var(--v3-2011-player-cb), .0s transform;
+      height: 3px;
+    }
   }
   if autohide {
     .html5-video-player {
