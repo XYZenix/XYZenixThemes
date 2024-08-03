@@ -6,8 +6,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "131";
-$themeDate: "Jul 23, 2024";
+$themeVersion: "132";
+$themeDate: "Jul 24, 2024";
 
 @use "sass:color";
 @use "sass:math";
@@ -1897,6 +1897,7 @@ $exportAddons: false;
           }
         }
         .rtcConnectionStatus_c02c63 {
+          overflow: visible;
           &:before {
             position: absolute;
             content: "";
@@ -1945,6 +1946,12 @@ $exportAddons: false;
             right: -4px;
             width: 32px;
             height: 32px;
+          }
+          .rtcConnectionStatusLabel_c02c63 {
+            contain: none;
+            :is(.default_e07331, .hovered_e07331) {
+              overflow: visible;
+            }
           }
           .labelWrapper_c02c63 {
             padding-left: 4px;
@@ -2351,6 +2358,31 @@ $exportAddons: false;
       .theme-light & {
         background: linear-gradient(to bottom, var(--d8l6) 0%, var(--d8l4) 50%, var(--d8l3) 50%, var(--d8l2) 100%);
         box-shadow: inset 0 1px 3px #0008, 0 1px #fff8;
+      }
+    }
+    // search filters
+    @at-root {
+      .searchAnswer_b0fa94, .searchFilter_b0fa94 {
+        border-radius: 3px;
+        max-height: 18px;
+        .theme-light & {
+          background: linear-gradient(var(--d8l2), var(--d8l2) 50%, var(--d8l4) 50%, var(--d8l7));
+          box-shadow: inset 0 0 0 1px rgba(0 0 0/.25), 0 0 0 1px rgba(255 255 255/.5);
+        }
+        .theme-dark & {
+          background: linear-gradient(var(--d8d8), var(--d8d6) 50%, var(--d8dA) 50%, var(--d8d9));
+          box-shadow: inset 0 0 0 1px rgba(255 255 255/.1), 0 0 0 1px rgba(0 0 0/.25);
+        }
+      }
+      .searchAnswer_b0fa94 {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .searchFilter_b0fa94 {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-right: 3px !important;
+        margin-left: 0 !important;
       }
     }
     .container__33507 {
@@ -3437,6 +3469,36 @@ $exportAddons: false;
           }
         }
       }
+      // activity cards
+      .container_c64476 {
+        max-width: 200px;
+        margin-left: 16px;
+        border-radius: 3px;
+        .theme-light & {
+          background: linear-gradient(var(--d8l4), var(--d8l2) 50%, var(--d8l4) 50%, var(--d8l6));
+          box-shadow: 0 1px 4px rgba(0 0 0/.15), 0 0 0 1px rgba(0 0 0/.15), inset 0 0 0 1px rgba(255 255 255/.5);
+          &:hover, &.selected_c64476 {
+            background: linear-gradient(var(--d8l1), var(--d8l0) 50%, var(--d8l2) 50%, var(--d8l2 ));
+            box-shadow: 0 1px 6px rgba(0 0 0/.25), 0 0 0 1px rgba(0 0 0/.25), inset 0 0 0 1px rgb(255 255 255);
+          }
+          &:active {
+            background: linear-gradient(var(--d8l4), var(--d8l5) 50%, var(--d8l4) 50%, var(--d8l3));
+            box-shadow: inset 0 1px 8px rgba(0 0 0/.15), inset 0 0 0 1px rgba(0 0 0/.1), 0 1px rgb(255 255 255);
+          }
+        }
+        .theme-dark & {
+          background: linear-gradient(var(--d8dA), var(--d8dB) 50%, var(--d8dC) 50%, var(--d8dB));
+          box-shadow: inset 0 0 0 1px rgba(255 255 255/.1), 0 1px 3px rgba(0 0 0/.75);
+          &:hover, &.selected_c64476 {
+            background: linear-gradient(var(--d8d8), var(--d8d9) 50%, var(--d8dA) 50%, var(--d8d9));
+            box-shadow: inset 0 0 0 1px rgba(255 255 255/.25), 0 1px 5px rgb(0 0 0);
+          }
+          &:active {
+            background: linear-gradient(var(--d8dA), var(--d8dB) 50%, var(--d8dD) 50%, var(--d8dC));
+            box-shadow: inset 0 1px 5px rgba(0 0 0/.75), 0 0 0 1px rgba(255 255 255/.15), 0 1px rgba(255 255 255/.1);
+          }
+        }
+      }
     }
     // search results
     @at-root {
@@ -3452,6 +3514,67 @@ $exportAddons: false;
         .searchHeader_b7c924 {
           background: linear-gradient(var(--d8d6), var(--d8d9) 50%, var(--d8dB) 50%, var(--d8dC));
           .theme-light & {background: linear-gradient(var(--d8l2), var(--d8l4) 50%, var(--d8l6) 50%, var(--d8l8))}
+          .searchHeaderTabList_b7c924 {
+            background: linear-gradient(var(--d8dB), var(--d8dA) 50%, var(--d8d8) 50%, var(--d8d7));
+            box-shadow: inset 0 1px 4px #000b, 0 0 0 1px #000b, 0 2px #fff4, 0 0 0 2px #fff1;
+            border-radius: 3px;
+            overflow: hidden;
+            gap: 0;
+            flex: 0 auto;
+            .theme-light & {
+              background: linear-gradient(var(--d8lA), var(--d8l9) 50%, var(--d8l8) 50%, var(--d8l7));
+              box-shadow: inset 0 1px 4px #0004, 0 0 0 1px var(--d8lD), 0 2px #fff6, 0 0 0 2px #fff4;
+            }
+            .item_a0 {
+              margin: 0 2px;
+              color: var(--d8l8);
+              padding: 4px 10px;
+              text-shadow: 0 -1px #000A;
+              background: #0000;
+              .theme-light & {
+                color: var(--d8d8);
+                text-shadow: 0 -1px #fff4;
+              }
+              &:hover {
+                color: #fff;
+                background: linear-gradient(var(--d8d8), var(--d8d9) 50%, var(--d8dA) 50%, var(--d8dB));
+                box-shadow: inset 0 1px #fff3, 0 0 0 1px #000b, 0 1px 2px #0008;
+                .theme-light & {
+                  color: #000;
+                  background: linear-gradient(var(--d8l3), var(--d8l5) 50%, var(--d8l7) 50%, var(--d8l6));
+                  box-shadow: inset 0 1px #fff8, 0 0 0 1px var(--d8lF);
+                }
+              }
+              &:active {
+                color: #aaa;
+                background: linear-gradient(var(--d8dC), var(--d8dD) 50%, var(--d8dB) 50%, var(--d8dA));
+                box-shadow: inset 0 1px 3px #0008, 0 0 0 1px #000b;
+                .theme-light & {
+                  color: #000;
+                  background: linear-gradient(var(--d8lA), var(--d8l8) 50%, var(--d8l6) 50%, var(--d8l4));
+                  box-shadow: inset 0 1px 3px #0006, 0 0 0 1px var(--d8lF);
+                }
+              }
+              &.selected_a0 {
+                &, &.addFriend_c2739c {
+                  color: #eee;
+                  background: linear-gradient(var(--d8d5), var(--d8d7) 50%, var(--d8d9) 50%, var(--d8dA));
+                  box-shadow: inset 0 1px #fff2, 0 0 0 1px #000b;
+                  .theme-light & {
+                    color: #000;
+                    background: linear-gradient(var(--d8l3), var(--d8l6) 50%, var(--d8l8) 50%, var(--d8l6));
+                    box-shadow: inset 0 1px #fff2, 0 0 0 1px var(--d8lG);
+                  }
+                }
+              }
+              &:first-child {
+                margin-left: 0;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
         }
         .scroller_c2b47d {
           margin-bottom: 64px;
