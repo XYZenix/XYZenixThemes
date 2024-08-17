@@ -13,16 +13,18 @@
       border-color: var(--blurple);
     }
   }
-  @at-root :is(.peopleListItem_d51464, .messageRequestItem_a5de62) {
+  // .container_a43b87 = member apps
+  @at-root :is(.peopleListItem_d51464, .messageRequestItem_a5de62, .container_a43b87) {
     border-radius: 3px !important;
-    &.active_d51464, &:hover {
+    background: none;
+    &:is(.active_d51464, .selected_a43b87), &:hover {
       background: #414449;
       box-shadow: 0 2px 1px 0 rgb(0 0 0 / 10%);
       .theme-light & {
         background: #{ss(rgba(153, 170, 181, 0.2))};
       }
     }
-    .actionButton_e01b91 {
+    :is(.actionButton_e01b91, .overflowMenuContainer_a43b87) {
       border-radius: 3px;
       transition: .3s;
       background: var(--background-secondary-alt);

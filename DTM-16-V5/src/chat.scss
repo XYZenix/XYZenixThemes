@@ -1241,6 +1241,9 @@
   .container_f1fd9c {
     background: var(--background-primary) !important;
     .scrollerContainer_c6b11b {background: #0000 !important}
+    .pageBody_c2efea {
+      background: var(--background-primary) !important;
+    }
     .prompt_c6b11b, .profileCard_c6b11b {
       border: solid 1px var(--background-tertiary) !important;
       border-radius: 3px;
@@ -1404,6 +1407,9 @@
 }
 // server guide
 @at-root {
+  .header_f1fd9c.themed_fc4f04 {
+    background: var(--background-primary) !important;
+  }
   .background_e85cee {
     background: var(--background-primary);
     :is(.sidebarCardWrapper_e85cee, .container_b53f4f .row_b53f4f, .action_e3f878) {
@@ -1616,4 +1622,56 @@
   padding-right: 16px;
   border-radius: 3px;
   border: solid 1px var(--deprecated-card-bg);
+}
+// member apps
+@at-root {
+  .content_ebb939 {
+    // application setup
+    .editCard_cd99d3.noBackground_cd99d3 {
+      background: none;
+      border: none;
+    }
+    .backgroundContainer_ceff93 {
+      border-radius: 3px;
+      border: solid 1px var(--background-tertiary);
+      background: var(--deprecated-card-editable-bg);
+      .item_eb92a8 {
+        border: none;
+      }
+      .multipleChoiceIcon_bd5b94 svg {
+        box-shadow: none !important;
+        background: none !important;
+      }
+    }
+    .actionButtonsContainer_ceff93 {
+      visibility: visible;
+      opacity: 0;
+      transition: .2s;
+      right: -32px;
+      .actionButton_ceff93 {
+        padding: 0;
+        border-radius: 0;
+        background: none !important;
+        transition: .2s;
+        width: 16px;
+        height: 16px;
+        color: var(--header-primary);
+        opacity: .5;
+        &:hover {
+          opacity: 1;
+        }
+        // delete
+        [d="M5.06 7a1 1 0 0 0-1 1.06l.76 12.13a3 3 0 0 0 3 2.81h8.36a3 3 0 0 0 3-2.81l.75-12.13a1 1 0 0 0-1-1.06H5.07ZM11 12a1 1 0 1 0-2 0v6a1 1 0 1 0 2 0v-6Zm3-1a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1Z"] {
+          d: path("M7.5 9.75H6V18.75H7.5V9.75ZM21.75 3H15V0.75C15 0.3 14.7 0 14.25 0H8.25C7.8 0 7.5 0.3 7.5 0.75V3H0.75C0.3 3 0 3.3 0 3.75C0 4.2 0.3 4.5 0.75 4.5H1.5V22.5C1.5 23.4 2.1 24 3 24H19.5C20.4 24 21 23.4 21 22.5V4.5H21.75C22.2 4.5 22.5 4.2 22.5 3.75C22.5 3.3 22.2 3 21.75 3ZM9 1.5H13.5V3H9V1.5ZM19.5 21.75C19.5 22.2 19.2 22.5 18.75 22.5H3.75C3.3 22.5 3 22.2 3 21.75V4.5H19.5V21.75ZM12 8.25H10.5V18.75H12V8.25ZM16.5 9.75H15V18.75H16.5V9.75Z");
+        }
+      }
+    }
+    .formFieldContainer_ceff93:hover .actionButtonsContainer_ceff93 {
+      opacity: 1;
+    }
+    // pending etc
+    .container_a43b87 {
+      border-radius: 0;
+    }
+  }
 }
