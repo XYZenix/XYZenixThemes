@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           2014 twitch v2
 @namespace      github.com/openstyles/stylus
-@version        1.4
+@version        1.4.1
 @description    brings back 2014 twitch to an extent
 @author         11pixels
 @preprocessor   less
@@ -110,10 +110,10 @@
       }
     }
     // following/browse buttons
-    .yErBe {
+    .IiIjZ {
       padding-left: 0 !important;
       padding-right: 0 !important;
-      .gVGdtM {
+      .jDgJoG {
         padding-left: 1rem !important; 
         padding-right: 1rem !important;
         color: inherit;
@@ -140,16 +140,16 @@
       }
     }
     // more button
-    .bnYKjH .juTzIB {
+    .hKEeil.hKEeil {
       path {
         d: path("M8.00049 1.99951H12.0005V5.99951H8.00049V1.99951Z M8.00049 13.9995H12.0005V17.9995H8.00049V13.9995Z M12.0005 8.00049H8.00049V12.0005H12.0005V8.00049Z");
         fill: #909090 !important;
       }
     }
     // prime loot, notifs, messages buttons
-    .cClrQk {
+    .czRfnU button {
       border-radius: 0;
-      color: #909090;
+      color: #909090 !important;
       &:hover {
         background: #1b1b1b !important;
         color: #eee;
@@ -159,6 +159,13 @@
         color: #eee;
         box-shadow: inset 0 1px 0 rgb(0 0 0 / 25%);
       }
+      * {
+        fill: currentColor;
+      }
+    }
+    // "get ad free"
+    .ScCoreButtonSecondary-sc-ocjdkq-2 {
+      display: none !important;
     }
     // notif thing on buttons
     .cdQwuK {
@@ -342,7 +349,8 @@
     // info bar on top
     #live-channel-stream-information>div {
       // avatar
-      .tw-halo {
+      .intermediateHalo--SavC4 {
+        border-radius: 0;
         border: solid 4px #fff;
         box-shadow: 0 0 0 1px #b7b7b7;
         background: #000;
@@ -366,10 +374,10 @@
       .kEqDRM {
         padding: 0 !important;
       }
-      .kmkULv {
-        .gfqupx {
-          width: 74px;
-          margin-left: -2px;
+      .liveIndicator--x8p4l {
+        .tw-channel-status-text-indicator {
+          width: 72px;
+          top: 25px;
           position: relative;
           background: #6441a5;
           border-radius: 0;
@@ -432,23 +440,30 @@
       .ecdmOJ.ecdmOJ {
         margin-right: 8px !important;
       }
-      .gyuRLA {
-        .fESWAr.fESWAr.fESWAr.fESWAr.fESWAr {
-          border-radius: 0 !important;
+      [data-target="channel-header-right"] {
+        // reaction button
+        .hljDeB.hljDeB.hljDeB.hljDeB.hljDeB {
+          display: none !important;
+        }
+        // follow & notifs button
+        .cwtKyw.cwtKyw.cwtKyw.cwtKyw.cwtKyw {
+          .iMILUc.iMILUc.iMILUc.iMILUc.iMILUc {
+            border-radius: 0 !important;
+          }
           span {
             display: none;
           }
           div[style] {
             transform: none !important;
           }
-          .haarjl.haarjl.haarjl.haarjl.haarjl {
-            border-radius: 0 !important;
-          }
-          .vsMnv.vsMnv.vsMnv.vsMnv.vsMnv {
-            margin-right: 0 !important;
-          }
         }
         .haarjl.haarjl.haarjl.haarjl.haarjl {
+          border-radius: 0 !important;
+        }
+        .bgnKmX.bgnKmX.bgnKmX.bgnKmX.bgnKmX {
+          margin-right: 0 !important;
+        }
+        .bzcGMK.bzcGMK.bzcGMK.bzcGMK.bzcGMK {
           border-radius: 0 !important;
         }
       }
@@ -521,7 +536,7 @@
       background: #e5e5e5 !important;
       border-bottom: solid 1px #00000040 !important;
       // title
-      .a-ddfr {
+      .xxjeD {
         display: flex !important;
         width: 100% !important;
         flex: 1 auto !important;
@@ -546,20 +561,20 @@
         }
       }
       // chat button in community tab and vice versa
-      .fwYNwg {
+      .dpXUHc {
         position: unset !important;
         flex: 1 auto !important;
         width: 100%;
         margin-right: 0 !important;
-        .cClrQk {
+        .kBtJDm {
           display: flex !important;
           width: auto;
         }
-        .itnkhV {display:none}
-        .jYKWrK {
+        .kbdfeJ {display:none}
+        .kBtJDm {
           width: 100%;
         }
-        .ScButtonIcon-sc-9yap0r-0 {
+        .ScCoreButton-sc-ocjdkq-0 {
           width: 100%;
           .mxWhiteBtn();
         }
@@ -583,7 +598,7 @@
           border-left-width: 0 !important;
         }
       }
-      .fwYNwg:has(button[aria-label="Go back to Chat"]) {
+      .dpXUHc:has(button[aria-label="Go back to Chat"]) {
         order: -1;
         >div>button {
           border-right-width: 0 !important;
@@ -625,6 +640,10 @@
         }
         .twitch-emote, .chat-line__message--emote {
           //max-height: 20px;
+        }
+        .chat-line__username {
+          background: none !important;
+          filter: none !important;
         }
       }
       // status message
@@ -684,19 +703,19 @@
         border-radius: 0 !important;
       }
       .ffz-badge[data-badge="moderator"] {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAo0lEQVQ4Ed3SsQ2DMBCFYZZiAURFSx8kqkisgFKwStZhpx9d9IwOgxJjpQEasHX36dlHUdziAd7AbO/sAznEoDkLcsiUncgh7T+QKglRUevP7ZKkIdYMhNgfTIhNqExKEiUY1PQAXsINOz9qoBbWCzuP6Igj0AjrfOLkbzU/AbvckGwzgJ+YEPtj10Yg3Nm69xVyyBQXhmnG+4drFe+Qw+JLbC4MagEp4PbTygAAAABJRU5ErkJggg==) #090;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAo0lEQVQ4Ed3SsQ2DMBCFYZZiAURFSx8kqkisgFKwStZhpx9d9IwOgxJjpQEasHX36dlHUdziAd7AbO/sAznEoDkLcsiUncgh7T+QKglRUevP7ZKkIdYMhNgfTIhNqExKEiUY1PQAXsINOz9qoBbWCzuP6Igj0AjrfOLkbzU/AbvckGwzgJ+YEPtj10Yg3Nm69xVyyBQXhmnG+4drFe+Qw+JLbC4MagEp4PbTygAAAABJRU5ErkJggg==") #090;
       }
       .ffz-badge[data-badge="staff"] {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAk0lEQVQ4EeXSMQrCMBQG4G5CB8HTuAk9gHdwdvUw3VyE4gG8Q0G80ycPUghFxeckGggJJO/jfyFN818DB9wwoPu4e7Q4FizAbQrDHosowhLXgl2yUBT2WGFdJYpU7dsYzrPiAGKOkTADbZ5AgZ2yWPciWQ6bWihvNW/3e7F+Sp5aH7Q5poD6csHix8d/29VnP7y/AzklFcDNe/MFAAAAAElFTkSuQmCC) #6441a5;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAk0lEQVQ4EeXSMQrCMBQG4G5CB8HTuAk9gHdwdvUw3VyE4gG8Q0G80ycPUghFxeckGggJJO/jfyFN818DB9wwoPu4e7Q4FizAbQrDHosowhLXgl2yUBT2WGFdJYpU7dsYzrPiAGKOkTADbZ5AgZ2yWPciWQ6bWihvNW/3e7F+Sp5aH7Q5poD6csHix8d/29VnP7y/AzklFcDNe/MFAAAAAElFTkSuQmCC") #6441a5;
       }
       .ffz-badge[data-badge="admin"] {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAA3ElEQVQ4EdXSMWqCQRCGYUkT8AAWQvAAAbERIYTUNjZphdxB7ALpQpqAhNQ2QRARPICtYJc7PbLwb1gWln/TJQvDLN/M9+6wTKfz7w5GIX49OCbYY4lXnJt4wRM2oacVjC98t8S6BvTYAgmPTGtA1xlojV2mXdWAupnpAbNM69aAxo3pEz+GcMdHUxvXgFbJ68/RgLdEX0W9mHFKDPNmHYZYJPqpCIiF7GO3iTnsVlyLXewvZtxlU0VzzGHi+yIgLaCf/UmEvIda2lt1xw0OOOK2ylRqQg+DUv3v6hdM7JE1rq+WCQAAAABJRU5ErkJggg==) #f00;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAA3ElEQVQ4EdXSMWqCQRCGYUkT8AAWQvAAAbERIYTUNjZphdxB7ALpQpqAhNQ2QRARPICtYJc7PbLwb1gWln/TJQvDLN/M9+6wTKfz7w5GIX49OCbYY4lXnJt4wRM2oacVjC98t8S6BvTYAgmPTGtA1xlojV2mXdWAupnpAbNM69aAxo3pEz+GcMdHUxvXgFbJ68/RgLdEX0W9mHFKDPNmHYZYJPqpCIiF7GO3iTnsVlyLXewvZtxlU0VzzGHi+yIgLaCf/UmEvIda2lt1xw0OOOK2ylRqQg+DUv3v6hdM7JE1rq+WCQAAAABJRU5ErkJggg==") #f00;
       }
       .ffz-badge[data-badge="broadcaster"] {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAk0lEQVQ4Ee3SsQnDMBSEYdfpsko2yADBe2QJD5Bt0hpCMLjLTl9Q8R6vMY6aVBaIO/H+O4TQMBzr/y+AESs+G7vNxrgZznjEORXvjYJavLQArpgbnwVhfiiJwqmykU+twx6fBWF6wpWNfGod9vgsCNMRvlc28ql4VWDDzy2AC56NyYIwuO18gaUxhT9hivOh+y/wBeOlv+1NNN09AAAAAElFTkSuQmCC) #000;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAk0lEQVQ4Ee3SsQnDMBSEYdfpsko2yADBe2QJD5Bt0hpCMLjLTl9Q8R6vMY6aVBaIO/H+O4TQMBzr/y+AESs+G7vNxrgZznjEORXvjYJavLQArpgbnwVhfiiJwqmykU+twx6fBWF6wpWNfGod9vgsCNMRvlc28ql4VWDDzy2AC56NyYIwuO18gaUxhT9hivOh+y/wBeOlv+1NNN09AAAAAElFTkSuQmCC") #000;
       }
       .ffz-badge[data-badge="premium"] {
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAd0lEQVQ4Ee2R2wnAIAxF3boL1C2kC9WdTlGMhOCrH6U/CmLM43hNnNvrnw4AAYiTfQPnUGEH4FORjb0FCcRbEHAAVxNokjNEJ5p4AkUdr7ZOrM5iAFbVGqhAZ18L9sF814pEdkNJnmoTIM7F8SfQePwC3Oc3HXgAanA5KVc8KN0AAAAASUVORK5CYII=) #6441a5;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAd0lEQVQ4Ee2R2wnAIAxF3boL1C2kC9WdTlGMhOCrH6U/CmLM43hNnNvrnw4AAYiTfQPnUGEH4FORjb0FCcRbEHAAVxNokjNEJ5p4AkUdr7ZOrM5iAFbVGqhAZ18L9sF814pEdkNJnmoTIM7F8SfQePwC3Oc3HXgAanA5KVc8KN0AAAAASUVORK5CYII=") #6441a5;
       }
     }
     // input but not
@@ -796,13 +815,13 @@
           [data-a-target="chat-settings"] {
             .mxWhiteBtn();
             svg {
-              background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAkCAYAAACE7WrnAAABh0lEQVRIDe1WO2rDQBB9GFUuhNleKXwHF4njJqRWrZs4RSBfYhwnpHWh4CIgVKS0D+FjqNYhJrxFI+SV1iEQQhI8MMzvzWNndgUC/qK8A6B+WcYAwkbXNQCqCmunGvgsSdIgCF4ATABcVSQkoj+paikAYrtlu92ejUajBwAzAK8AFg0i+szNiCG2mwWAiIRZls0bzTrWjs3zfE6sl4iFKIrulChJkkVZlm9U+pqPouh+H4neTt1QFMWFiAyo9JWoGlnxLc6d47NpOp0eKaryWxit11ZEMmocx/WO+v3+JYABAFP5logYxdcErpOm6U1jhGcAeaX0LdFqtbp1+9w4NMY8aYPPGmNI6r+14XB43uv17DtZr9fL5pj0meMbIoZY9xR1LCInm81mWZblo4iMRYQ7suPQZ441EhJbN3Y5InLsPDa9KQtn7VMSD7G9za7aIfdLNuB+0Rr7rPfYO29GH+Me203kftEa+2w3yzdndRdKq7HPKq5lDzuy/wLcm1f+8Y68M/9Y4QMbSkJzI+PgvQAAAABJRU5ErkJggg==);
+              background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAkCAYAAACE7WrnAAABh0lEQVRIDe1WO2rDQBB9GFUuhNleKXwHF4njJqRWrZs4RSBfYhwnpHWh4CIgVKS0D+FjqNYhJrxFI+SV1iEQQhI8MMzvzWNndgUC/qK8A6B+WcYAwkbXNQCqCmunGvgsSdIgCF4ATABcVSQkoj+paikAYrtlu92ejUajBwAzAK8AFg0i+szNiCG2mwWAiIRZls0bzTrWjs3zfE6sl4iFKIrulChJkkVZlm9U+pqPouh+H4neTt1QFMWFiAyo9JWoGlnxLc6d47NpOp0eKaryWxit11ZEMmocx/WO+v3+JYABAFP5logYxdcErpOm6U1jhGcAeaX0LdFqtbp1+9w4NMY8aYPPGmNI6r+14XB43uv17DtZr9fL5pj0meMbIoZY9xR1LCInm81mWZblo4iMRYQ7suPQZ441EhJbN3Y5InLsPDa9KQtn7VMSD7G9za7aIfdLNuB+0Rr7rPfYO29GH+Me203kftEa+2w3yzdndRdKq7HPKq5lDzuy/wLcm1f+8Y68M/9Y4QMbSkJzI+PgvQAAAABJRU5ErkJggg==");
               background-position: 1px 1px;
               path {display:none}
             }
           }
           // send btn
-          .irxuMc, .jYKWrK {
+          .jOVwMQ, .kBtJDm, .kBtJDm>button {
             width: 100%;
           }
           .ScCoreButtonPrimary-sc-ocjdkq-1[data-a-target="chat-send-button"] {
@@ -830,4 +849,12 @@
   .tw-tooltip-layer {display:none}
   // live badge in theater mode
   .gfqupx {border-radius:0!important}
+  // whatever this is
+  .guest-star-avatar__mini-outer-border {
+    background: #202020;
+    .tw-avatar {
+      width: 12px;
+      height: 12px;
+    }
+  }
 }
