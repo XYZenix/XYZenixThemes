@@ -6,8 +6,8 @@
 * @source https://github.com/XYZenix/XYZenixThemes/
 */
 
-$themeVersion: "141";
-$themeDate: "Aug 20, 2024";
+$themeVersion: "142";
+$themeDate: "Aug 27, 2024";
 
 @use "sass:color";
 @use "sass:math";
@@ -2645,13 +2645,15 @@ $exportAddon_neonEmbed: false;
     height: 48px;
     padding-top: 0;
     padding-bottom: 0;
-    .theme-dark & {
-      background: linear-gradient(to bottom, var(--d8d8) 0%,var(--d8dA) 50%,var(--d8dB) 50%,var(--d8dC) 100%);
-      box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
-    }
-    .theme-light & {
-      background: linear-gradient(var(--d8l3), var(--d8l5) 50%, var(--d8l7) 50%, var(--d8l8));
-      box-shadow: inset 0 1px 1px #fff3;
+    &:not(.clanDiscoveryToolbar_ef6870) {
+      .theme-dark & {
+        background: linear-gradient(to bottom, var(--d8d8) 0%,var(--d8dA) 50%,var(--d8dB) 50%,var(--d8dC) 100%);
+        box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
+      }
+      .theme-light & {
+        background: linear-gradient(var(--d8l3), var(--d8l5) 50%, var(--d8l7) 50%, var(--d8l8));
+        box-shadow: inset 0 1px 1px #fff3;
+      }
     }
     :is(.filterPill_ac1501, .buttonPill_ac1501) {
       border-radius: 3px;
@@ -2705,6 +2707,12 @@ $exportAddon_neonEmbed: false;
         }
       }
     }
+  }
+}
+// clan modal
+.modal_e37740 {
+  >.close_e37740 {
+    z-index: 40;
   }
 }
 // clan app
@@ -3502,6 +3510,7 @@ $exportAddon_neonEmbed: false;
         opacity: 1 !important;
         backdrop-filter: blur(5px);
         height: 26px;
+        right: 16px;
         cursor: default;
         .barButtonAlt_cf58b5:active,
         .barButtonMain_cf58b5:active,
@@ -5832,7 +5841,7 @@ $exportAddon_neonEmbed: false;
           }
         }
         // twitch integration
-        .integration_e2a436 {
+        .integrationWrapper_e2a436 {
           background: linear-gradient(var(--d8d9), var(--d8dA) 50%, var(--d8dB) 50%, var(--d8dC));
           box-shadow: inset 0 1px 4px #000b, 0 1px #fff2;
           border-radius: 3px;
@@ -9505,7 +9514,7 @@ $exportAddon_neonEmbed: false;
           color: #222;
           font-weight: bold;
         }
-        .integration_e2a436 {
+        .integrationWrapper_e2a436 {
           border-radius: 0;
           background: #e3e3e3;
           box-shadow: inset 0 0 0 1px #c1c1c1, 0 1px #e3e3e3, inset 0 2px #ebebeb;
@@ -9618,7 +9627,7 @@ $exportAddon_neonEmbed: false;
           color: #222;
           font-weight: bold;
         }
-        .integration_e2a436 {
+        .integrationWrapper_e2a436 {
           border-radius: 3px;
           background: #e0e0e0;
           box-shadow: inset 0 1px 3px #0006, 0 1px #fff;
@@ -9723,6 +9732,7 @@ $exportAddon_neonEmbed: false;
       box-shadow: 0 0 0 1px rgb(0 0 0/.1);
       border-radius: 6px;
       --font-primary: "Helvetica Neue", Arial, Whitney, gg sans, sans-serif;
+      --font-display: var(--font-primary);
       .connectionIcon_e2a436 {
         content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%231DA1F2' d='M8.22 20.3c7.58 0 11.71-6.27 11.71-11.72v-.53A8.9 8.9 0 0 0 22 5.92a8 8 0 0 1-2.35.66 4.14 4.14 0 0 0 1.82-2.29c-.81.47-1.69.81-2.6 1a4.14 4.14 0 0 0-5.83-.18 4.07 4.07 0 0 0-1.19 3.91 11.66 11.66 0 0 1-8.47-4.29 4.1 4.1 0 0 0 1.28 5.48c-.65-.02-1.3-.2-1.88-.5v.06a4.13 4.13 0 0 0 3.3 4.04 4.1 4.1 0 0 1-1.86.07 4.11 4.11 0 0 0 3.86 2.85A8.14 8.14 0 0 1 2 18.42a11.14 11.14 0 0 0 6.23 1.88'/%3E%3C/svg%3E");
       }
@@ -9758,6 +9768,7 @@ $exportAddon_neonEmbed: false;
         }
       }
       .metadataContainer_e2a436 {
+        height: 48px;
         border-radius: 0;
         background: #0000;
         padding: 0 8px 0 0;
@@ -9765,6 +9776,22 @@ $exportAddon_neonEmbed: false;
         box-shadow: none;
         --interactive-active: #aaa;
         box-shadow: 0 1px rgb(0 0 0/.1);
+        .connectionMetadataUpsellTag_e2a436 {
+          margin-left: 16px;
+          box-shadow: none;
+          background: #{ss(#3a87ad)} !important;
+          border-radius: 3px;
+          padding: 2px 4px;
+          font-size: 11.844px;
+          text-transform: capitalize;
+          font-weight: bold;
+          line-height: 14px;
+          color: #ffffff;
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        }
+        .connectionMetadataUpsellDescription_e2a436 {
+          color: #222;
+        }
         .connectedAccountVanityMetadata_a1f026 {
           display: flex;
           flex-direction: column-reverse;
