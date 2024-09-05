@@ -294,7 +294,35 @@
         .circleIconButton_db6521 {
           overflow: hidden;
           border-radius: 25px;
-          animation: server-anim-close .18s ease-in;
+          .theme-dark &, .theme-dark.custom-theme-background &,
+          .theme-light &, .theme-light.custom-theme-background & {
+            background: none;
+          }
+          border: dashed 1px currentColor;
+          color: var(--interactive-muted);
+          border-radius: 50%;
+          &:is(:hover, :active, .selected_db6521) {
+            color: var(--interactive-normal);
+            background: none;
+          }
+        }
+        .guildNotif_e3bac1 {
+          background-color: var(--blurple);
+          border-radius: 3px;
+          box-shadow: 0 1px 0 rgb(0 0 0 / .25), inset 0 1px 0 rgb(255 255 255 / .15);
+          color: var(--white);
+          font-size: 12px;
+          font-weight: 500;
+          height: unset;
+          line-height: 12px;
+          padding: 3px 4px;
+          text-shadow: 0 1px 0 rgb(0 0 0 / .25);
+          width: unset;
+          margin-bottom: -6px;
+          margin-right: -6px;
+          &:before {
+            content: "NEW";
+          }
         }
         .item_fd07a3 {
           width: 10px;
@@ -304,11 +332,6 @@
           .theme-dark & {
             background: #fffb;
           }
-        }
-        .circleIconButton_db6521:not(.selected_db6521):hover, .circleIconButton_db6521.selected_db6521 {
-          animation: server-anim 1.5s;
-          animation-timing-function: ease-out;
-          border-radius: 15px;
         }
       }
     }
