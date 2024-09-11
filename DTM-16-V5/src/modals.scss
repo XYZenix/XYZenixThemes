@@ -162,22 +162,36 @@
   }
   // pins
   .messagesPopoutWrap_ac90a2 {
-    background: #fff;
-    .theme-dark & {
-      background: #{ss(#2f3136)};
-    }
+    border-radius: 5px;
+    border: solid 1px var(--dtm-16-classic-popout-border-color);
+    background: var(--dtm-16-classic-popout-background);
+    box-shadow: var(--dtm-16-classic-popout-shadow);
     .header_ac90a2 {
       background: var(--background-primary);
       padding: 12px 20px;
-      box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
-      .theme-dark & {
-        box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+      background: var(--dtm-16-classic-popout-header-background);
+      box-shadow: var(--dtm-16-classic-popout-header-shadow);
+      border: none;
+      z-index: 1;
+      .titleContainer_ac90a2 {
+        svg {
+          display: none;
+        }
+        [data-text-variant="text-lg/semibold"] {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 19px;
+          color: var(--dtm-16-classic-popout-header-title-color) !important;
+        }
       }
-      .heading-md-medium-2DVCeJ {
-        font-weight: 700;
-        color: #{ss(#737f8d)} !important;
-        .theme-dark & {
-          color: #fff !important;
+    }
+    .messagesPopout_ac90a2 {
+      padding: 13px 5px 7px 13px;
+      &::-webkit-scrollbar {
+        width: 14px;
+        &-thumb {
+          border-radius: 12px;
+          border-width: 3px;
         }
       }
     }
@@ -220,8 +234,69 @@
       .theme-light & {color: #{ss(#737f8d)}}
     }
     .footer_ac90a2 {
-      .theme-dark & {background: #{ss(#2b2d32)}}
-      .theme-light & {background: #{ss(#f5f6f8)}}
+      background: var(--dtm-16-classic-popout-footer-background);
+      padding: 10px;
+      .tip_b5053a {
+        color: #{ss(#99aab5)};
+        opacity: 1;
+      }
+    }
+  }
+  // for later
+  .popoutContainer_a6fde8 {
+    border-radius: 5px;
+    border: solid 1px var(--dtm-16-classic-popout-border-color);
+    background: var(--dtm-16-classic-popout-background);
+    box-shadow: var(--dtm-16-classic-popout-shadow);
+    .header_ac90a2 {
+      background: var(--background-primary);
+      padding: 12px 20px;
+      background: var(--dtm-16-classic-popout-header-background);
+      box-shadow: var(--dtm-16-classic-popout-header-shadow);
+      border: none;
+      z-index: 1;
+      .titleContainer_ac90a2 {
+        svg {
+          display: none;
+        }
+        [data-text-variant="text-lg/semibold"] {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 19px;
+          color: var(--dtm-16-classic-popout-header-title-color) !important;
+        }
+      }
+    }
+    @at-root :is(.recentMentionsPopout_ddb5b4, .popoutContainer_a6fde8) .messageContainer_a6fde8 {
+      border-radius: 0;
+      background: none !important;
+      box-shadow: none;
+      .message_a6fde8 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        border: 2px solid #{ss(rgba(28,36,43,.06))};
+        transition: border-color .2s;
+        &:hover {
+          border-color: #{ss(rgba(28,36,43,.12))};
+        }
+        .theme-dark & {
+          border-color: #{ss(rgba(28,36,43,.6))};
+          background: #{ss(#36393e)};
+          &:hover {
+            border-color: #{ss(rgba(28,36,43,.8))}
+          }
+        }
+      }
+      .channelHeader_b1a721, .container_cdf946 {
+        background: none;
+        border: none;
+        padding: 0;
+        margin-left: 4px;
+        margin-bottom: 10px;
+      }
     }
   }
   // oauth
@@ -1776,8 +1851,58 @@
   }
   // recent mentions
   .recentMentionsPopout_ddb5b4 {
+    border-radius: 5px;
+    border: solid 1px var(--dtm-16-classic-popout-border-color);
+    background: var(--dtm-16-classic-popout-background);
+    box-shadow: var(--dtm-16-classic-popout-shadow);
     .header_f0cd33 {
-      padding: 0;
+      padding: 12px 20px 0;
+      background: var(--dtm-16-classic-popout-header-background);
+      box-shadow: var(--dtm-16-classic-popout-header-shadow);
+      border: none;
+      z-index: 1;
+      .inboxIcon_f0cd33 {
+        display: none;
+      }
+      .inboxTitle_f0cd33 {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        color: var(--dtm-16-classic-popout-header-title-color) !important;
+      }
+      .controls_f0cd33 {
+        margin-bottom: -12px;
+      }
+      [d="M3 5v-.75C3 3.56 3.56 3 4.25 3s1.24.56 1.33 1.25C6.12 8.65 9.46 12 13 12h1a8 8 0 0 1 8 8 2 2 0 0 1-2 2 .21.21 0 0 1-.2-.15 7.65 7.65 0 0 0-1.32-2.3c-.15-.2-.42-.06-.39.17l.25 2c.02.15-.1.28-.25.28H9a2 2 0 0 1-2-2v-2.22c0-1.57-.67-3.05-1.53-4.37A15.85 15.85 0 0 1 3 5Z"] {
+        transform: translateY(4px);
+      }
+    }
+    .headerTabs_f0cd33 {
+      margin: 0;
+    }
+    .tabBar_f0cd33 {
+      max-width: unset;
+      margin-top: 15px;
+      border-bottom-color: var(--dtm-16-mini-tabs-border);
+      .tab_f0cd33 {
+        padding: 0 0 15px;
+        color: var(--dtm-16-mini-tab-color-alt);
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 500;
+        margin-bottom: -1px;
+        text-transform: capitalize;
+        +.tab_f0cd33 {
+          margin-left: 12px;
+        }
+        &:hover {
+          border-color: currentColor;
+        }
+        &.selected_a0 {
+          color: var(--dtm-16-mini-tab-selected-color-alt);
+          border-color: currentColor;
+        }
+      }
     }
     // For You icons
     @at-root .image_f9bbb4 {
