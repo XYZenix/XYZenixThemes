@@ -1860,7 +1860,7 @@
       background: var(--dtm-16-classic-popout-header-background);
       box-shadow: var(--dtm-16-classic-popout-header-shadow);
       border: none;
-      z-index: 1;
+      z-index: 12;
       .inboxIcon_f0cd33 {
         display: none;
       }
@@ -1901,6 +1901,93 @@
         &.selected_a0 {
           color: var(--dtm-16-mini-tab-selected-color-alt);
           border-color: currentColor;
+        }
+      }
+    }
+    // messages
+    .messagesPopout_ac90a2 {
+      .channelHeader_f3978e {
+        padding: 13px 0 10px 0;
+        height: 18px;
+        box-sizing: content-box;
+        top: -13px;
+        background: var(--dtm-16-classic-popout-background);
+        .channelNameSection_f3978e {
+          flex-direction: row;
+          align-items: baseline;
+        }
+        :is(.dmIcon_f3978e, .guildIcon_f3978e) {
+          width: 18px;
+          height: 18px;
+          border-radius: 4px;
+          margin-right: 4px;
+        }
+        .channelName_f3978e>svg {
+          width: 14px;
+          height: 14px;
+        }
+        .channelNameSpan_f3978e {
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 18px;
+        }
+        .subtextContainer_f3978e {
+          font-size: 11px;
+          font-weight: 500;
+          line-height: 14px;
+          margin-left: 4px;
+          position: relative;
+          top: 1px;
+          .theme-dark & {
+            color: rgba(255 255 255/.3) !important;
+          }
+          .theme-light & {
+            color: #{ss(rgba(79 84 92/.3))} !important;
+          }
+        }
+        .closeButton_ddb5b4 {
+          width: 18px;
+          height: 18px;
+          min-width: 18px;
+          min-height: 18px;
+          margin-left: 4px;
+          background: none;
+        }
+      }
+      .messageContainer_ddb5b4 {
+        margin-left: 0;
+        border-radius: 5px;
+        border: 2px solid #{ss(rgba(28,36,43,.06))};
+        transition: border-color .2s;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        &:hover {
+          border-color: #{ss(rgba(28,36,43,.12))};
+        }
+        .theme-dark & {
+          border-color: #{ss(rgba(28,36,43,.6))};
+          background: #{ss(#36393e)};
+          &:hover {
+            border-color: #{ss(rgba(28,36,43,.8))}
+          }
+        }
+        .jumpButton_ac3dc2 {
+          background: #ebebeb;
+          color: #{ss(rgba(115,127,141,.6))};
+          transition: .2s color;
+          padding: 2px 8px;
+          height: auto;
+          .text_ac3dc2 {
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 14px;
+            color: inherit;
+          }
+          &:hover {color: #{ss(#737f8d)}}
+          .theme-dark & {
+            background: #{ss(#535559)};
+            color: hsla(0,0%,100%,.3);
+          }
         }
       }
     }
