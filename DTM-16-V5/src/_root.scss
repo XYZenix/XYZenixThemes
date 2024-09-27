@@ -12,8 +12,8 @@
 @use "vars" as *;
 @use "sass:math";
 
-$themeVersion: "563";
-$themeDate: "Sep 15, 2024";
+$themeVersion: "564";
+$themeDate: "Sep 27, 2024";
 
 $themeName: "DTM-16";
 
@@ -501,7 +501,12 @@ $themeName: "DTM-16";
 }
 // theme vars
 @at-root {
+  :root {
+    --custom-app-launcher-width: 346px;
+    --custom-app-launcher-height: 328px;
+  }
   .theme-dark {
+    --dtm-16-message-separator-color: hsla(0,0%,100%,.04);
     --dtm-16-switch-label: #fff;
     --dtm-16-switch-description: rgba(255 255 255/.5);
     --dtm-16-mini-tabs-border: rgba(255 255 255/.1);
@@ -522,8 +527,29 @@ $themeName: "DTM-16";
     --dtm-16-new-dm-popout-subtitle-color: rgba(255 255 255/.3);
     --dtm-16-new-dm-popout-friend-selected-bg: linear-gradient(to right,#{ss(#282b30)} 85%,#0000);
     --dtm-16-new-dm-popout-footer-bg: #{ss(rgba(40 43 48/.6))};
+    --dtm-16-download-apps-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cmask id='b' width='50' height='50' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:luminance'%3E%3Cpath fill='%23fff' d='M25 50a25 25 0 1 0 0-50 25 25 0 0 0 0 50Z'/%3E%3C/mask%3E%3Cg mask='url(%23b)'%3E%3Cpath stroke='%23fff' stroke-opacity='.1' stroke-width='4' d='M25 50a25 25 0 1 0 0-50 25 25 0 0 0 0 50Z'/%3E%3C/g%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M17 35v2h16v-2' clip-rule='evenodd' opacity='.3'/%3E%3Cpath fill='%2343B581' fill-rule='evenodd' d='M31.59 23.59 26 29.17V13h-2v16.17l-5.58-5.59L17 25l8 8 8-8' clip-rule='evenodd'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h50v50H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    --dtm-16-download-apps-bg: #{ss(#2e3136)};
+    --dtm-16-download-apps-bg-hover: #{ss(#43464a)};
+    --dtm-16-download-apps-text: rgba(255 255 255/.3);
+    --dtm-16-download-apps-text-hover: rgba(255 255 255/.5);
+    --dtm-16-chat-textarea-border: hsla(0,0%,100%,.2);
+    --dtm-16-chat-textarea-bg: hsla(0,0%,100%,.06);
+    --dtm-16-server-button-color: var(--interactive-muted);
+    --dtm-16-region-picker-border: #{ss(#515358)};
+    --dtm-16-region-picker-button-color: #{ss(#d7d7d8)};
+    --dtm-16-region-picker-text-color: #{ss(#d7d7d8)};
+    --dtm-16-settings-eyebrow-color: #{ss(#b9bbbe)};
+    --dtm-16-activity-panel-text-color: var(--text-normal);
+    --dtm-16-activity-panel-text: #fff;
+    --dtm-16-chat-header-channel-name-color: #fff;
+    --dtm-16-server-settings-emoji-input-hover-bg: rgba(0 0 0/.05);
+    --dtm-16-server-settings-emoji-input-hover-border: #{ss(#282B30)};
+    --dtm-16-server-settings-emoji-remove-border: #{ss(rgba(240 71 71/.3))};
+    --dtm-16-server-settings-emoji-remove-hover-bg: #{ss(rgba(240 71 71/.1))};
+    --dtm-16-member-list-header-color: rgba(255,255,255,.4);
   }
   .theme-light {
+    --dtm-16-message-separator-color: #{ss(#eceeef)};
     --dtm-16-switch-label: #000;
     --dtm-16-switch-description: #{ss(#87909c)};
     --dtm-16-mini-tabs-border: rgb(240 240 240);
@@ -544,6 +570,25 @@ $themeName: "DTM-16";
     --dtm-16-new-dm-popout-subtitle-color: #{ss(rgba(115 127 141/.3))};
     --dtm-16-new-dm-popout-friend-selected-bg: linear-gradient(to right,#{ss(#f3f3f3)} 85%,#0000);
     --dtm-16-new-dm-popout-footer-bg: #{ss(rgba(153 170 181/.1))};
+    --dtm-16-download-apps-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cmask id='b' width='50' height='50' x='0' y='0' maskUnits='userSpaceOnUse' style='mask-type:luminance'%3E%3Cpath fill='%23fff' d='M25 50a25 25 0 1 0 0-50 25 25 0 0 0 0 50Z'/%3E%3C/mask%3E%3Cg mask='url(%23b)'%3E%3Cpath stroke='%23000' stroke-opacity='.1' stroke-width='4' d='M25 50a25 25 0 1 0 0-50 25 25 0 0 0 0 50Z'/%3E%3C/g%3E%3Cpath fill='%232E3136' fill-rule='evenodd' d='M17 35v2h16v-2' clip-rule='evenodd' opacity='.3'/%3E%3Cpath fill='%2343B581' fill-rule='evenodd' d='M31.59 23.59 26 29.17V13h-2v16.17l-5.58-5.59L17 25l8 8 8-8' clip-rule='evenodd'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h50v50H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    --dtm-16-download-apps-bg: #{ss(#e9ebec)};
+    --dtm-16-download-apps-bg-hover: #f3f3f3;
+    --dtm-16-download-apps-text: #{ss(rgb(115 127 141/1))};
+    --dtm-16-download-apps-text-hover: #{ss(rgb(46 49 54/1))};
+    --dtm-16-chat-textarea-border: #{ss(#dadddf)};
+    --dtm-16-chat-textarea-bg: #fff;
+    --dtm-16-server-button-color: var(--interactive-normal);
+    --dtm-16-region-picker-border: #cdcdcd;
+    --dtm-16-region-picker-button-color: var(--blurple);
+    --dtm-16-region-picker-text-color: #{ss(#99aab5)};
+    --dtm-16-settings-eyebrow-color: #{ss(#87909c)};
+    --dtm-16-activity-panel-text: #{ss(#72767d)};
+    --dtm-16-chat-header-channel-name-color: #{ss(#4f545c)};
+    --dtm-16-server-settings-emoji-input-hover-bg: rgba(249 249 249/.6);
+    --dtm-16-server-settings-emoji-input-hover-border: #{ss(#dadddf)};
+    --dtm-16-server-settings-emoji-remove-border: #{ss(#FCDADA)};
+    --dtm-16-server-settings-emoji-remove-hover-bg: #{ss(#FDEDED)};
+    --dtm-16-member-list-header-color: #{ss(#99aab5)};
   }
 }
 // connection icons

@@ -1,0 +1,184 @@
+@use "funcs" as *;
+@use "exps" as *;
+
+// unfinished, third iteration of visual refresh
+// might need help with this lol
+
+html.visual-refresh {
+  // top bar
+  .bar_b66418 {
+    display: contents;
+    .sidebar_b66418, .center_b66418 {
+      display: none;
+    }
+  }
+  // sidebar
+  .sidebar_a4d4d9 {
+    min-width: 320px;
+    grid-template-columns: 80px auto;
+    // servers
+    .guilds_a4d4d9 {
+      width: 80px;
+      margin-bottom: 0;
+      .svg_c5f96a {
+        width: 48px;
+        height: 48px;
+      }
+    }
+    // channels
+    .sidebarList_a4d4d9 {
+      border-radius: 0;
+      border: none;
+      background: var(--background-secondary);
+      // the actual channels
+      .container_ee69e0 {
+        padding-bottom: 0;
+        background: none;
+      }
+      .channel_c91bad {
+        max-width: max(var(--custom-guild-sidebar-width), 240px);
+      }
+      .scroller_c47fa9 {
+        border-left: none;
+        margin-bottom: var(--custom-app-panels-height,0);
+      }
+    }
+    // panels
+    .panels_a4d4d9 {
+      left: 80px;
+      right: 0;
+      bottom: 0;
+      width: auto;
+      border-radius: 0;
+      border: none;
+      .buttons_b2ca13 {
+        gap: 0;
+      }
+      // disconnect button
+      button:has(>.button_b28df7) {
+        margin-left: 0;
+        border-radius: 0;
+        background-color: var(--background-secondary);
+        padding: 0;
+        width: 32px;
+        transition: 0s;
+        &:hover {
+          background-color: var(--background-secondary) !important;
+        }
+        &:active {
+          @if $experiment21 == 0 {
+            background: #{ss(#33373c)} !important;
+          }
+          @if $experiment21 == 1 {
+            background: #{ss(#2c2e33)} !important;
+            box-shadow: none !important;
+          }
+        }
+      }
+      &:after {
+        content: "Inbox • Support • Change Log • Download Apps";
+      }
+      // vc actions icons
+      .buttonIcon_adcaac {
+        width: 20px !important;
+        height: 20px !important;
+      }
+      // move shit
+      @at-root {
+        html.visual-refresh {
+          .anchor_af404b[href="https://support.discord.com"] {
+            left: 128px;
+          }
+          .recentsIcon_ea0547 {
+            position: fixed;
+            contain: none;
+            color: var(--header-primary);
+            font-size: 10px;
+            font-weight: 500;
+            bottom: 7px;
+            left: 91px;
+            line-height: 11px;
+            z-index: 2;
+            padding: 0;
+            margin: 0;
+            text-decoration: none !important;
+            .sidebar_a4d4d9.theme-dark+* & {
+              color: #fff;
+            }
+            &:not(:hover) {
+              opacity: 0;
+            }
+            &:after {
+              content: "Inbox";
+            }
+            .iconWrapper_fc4f04 {
+              position: absolute;
+              inset: 0;
+              opacity: 0 !important;
+              margin: 0;
+              padding: 0;
+              svg {
+                display: none;
+              }
+            }
+          }
+          .layer_cd0de5:has(.recentMentionsPopout_ddb5b4) {
+            inset: auto auto 32px 90px !important;
+          }
+        }
+      }
+    }
+  }
+  // chat form
+  .form_a7d72e {
+    padding: 20px 0 0;
+    margin: 0 20px;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 -1px 0 rgba(0,0,0,.1);
+    @at-root html.theme-dark.visual-refresh .form_a7d72e {border-top: solid 1px hsla(0,0%,100%,.06)}
+    .scrollableContainer_d0696b {
+      background: var(--dtm-16-chat-textarea-bg);
+    }
+  }
+  // search bar
+  .searchBar_a46bef {
+    height: 28px;
+    border-radius: 3px;
+    .DraftEditor-root {
+      line-height: 22px;
+    }
+    .icon_a46bef {
+      margin-top: -1px;
+      margin-right: 4px;
+    }
+  }
+  // dms member list
+  .membersWrap_cbd271 {
+    --custom-channel-members-bg: var(--background-secondary);
+  }
+  // member list
+  .container_cbd271 {
+    --custom-channel-members-bg: var(--background-secondary);
+    .membersGroup_cbd271 {
+      text-transform: uppercase;
+    }
+  }
+  // messages
+  .cozy_f9f2ca {
+    .avatar_f9f2ca {
+      --custom-message-avatar-size: 40px !important;
+    }
+    .header_f9f2ca {
+      padding-bottom: 0;
+    }
+  }
+  // titlebar
+  .typeWindows_a934d8 {
+    height: 22px;
+    .winButton_a934d8 {
+      width: 28px;
+      height: 22px;
+    }
+  }
+}

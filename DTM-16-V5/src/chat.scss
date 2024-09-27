@@ -56,15 +56,8 @@
   .focusRing_d0696b {border-radius: 5px}
   #{$scrollableContainer} {
     border-radius: 3px;
-    border: 2px solid;
-    .theme-dark & {
-      background-color: hsla(0,0%,100%,.06);
-      border-color: hsla(0,0%,100%,.2);
-    }
-    .theme-light & {
-      background-color: #fff;
-      border-color: #{ss(#dadddf)};
-    }
+    border: 2px solid var(--dtm-16-chat-textarea-border);
+    background: var(--dtm-16-chat-textarea-bg);
     .attachWrapper_f298d4 {
       position: unset;
       width: 45px;
@@ -325,10 +318,12 @@
         height: auto;
         font-size: 12px;
         text-transform: uppercase;
-        font-weight: 700;
         background: none !important;
         color: var(--blurple);
-        .contents_dd4f85 {color: var(--blurple)}
+        .contents_dd4f85 {
+          color: var(--blurple);
+          font-weight: 700;
+        }
         &:hover {text-decoration: underline}
       }
     }
@@ -519,7 +514,45 @@
 }
 // app launcher
 .channelAppLauncher_df39bd {
-  display: none;
+  margin: 0;
+  margin-right: -16px;
+  width: 16px;
+  overflow: hidden;
+  &:hover .button_df39bd {
+    left: 0;
+  }
+  .buttonContainer_df39bd {
+    margin: 0;
+  }
+  .buttonContainer_df39bd {
+    position: absolute;
+    inset: 0;
+  }
+  .button_df39bd {
+    position: absolute;
+    top: 0;
+    left: -16px;
+    bottom: 30px;
+    border-radius: 0 3px 3px 0;
+    width: 16px;
+    height: auto;
+    transition: .1s;
+    background: linear-gradient(var(--dtm-16-chat-textarea-border), var(--dtm-16-chat-textarea-border)), linear-gradient(var(--dtm-16-chat-textarea-bg), var(--dtm-16-chat-textarea-bg));
+    &.buttonActive_df39bd {
+      left: 0;
+    }
+    .lottieIcon_f73ef7 {
+      width: 14px !important;
+      height: 14px !important;
+    }
+  }
+}
+.channelBottomBarArea_a7d72e:has(.channelAppLauncher_df39bd:hover),
+.channelBottomBarArea_a7d72e:has(.channelAppLauncher_df39bd .buttonActive_df39bd) {
+  .scrollableContainer_d0696b {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
 }
 // beginning of chat
 .container_c2668b {
@@ -535,6 +568,44 @@
     background-size: 192px 80px,216px 64px;
     background-repeat: no-repeat,no-repeat;
     border-color: #ffffff05;
+  }
+  .checkboxWrapper_f6cde8 {
+    .input_f6cde8 {
+      width: 18px !important;
+      height: 18px !important;
+    }
+    .checkbox_f6cde8 {
+      width: 18px !important;
+      height: 18px !important;
+      border-radius: 2px;
+      box-sizing: border-box;
+      border: solid 2px;
+      transition: .2s;
+      .theme-dark & {border-color: var(--background-accent)}
+      .theme-light & {border-color: #cdcdcd}
+      svg {
+        display: none;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 6px;
+        display: table;
+        width: 4px;
+        height: 10px;
+        border-radius: 0;
+        border: 2px solid #0000;
+        border-top-width: 0;
+        border-left-width: 0;
+        transform: rotate(45deg);
+      }
+      &.checked_f6cde8 {
+        &:after {
+          border-color: #fff;
+        }
+      }
+    }
   }
 }
 // shit to do with threads sidebar
@@ -744,6 +815,7 @@
         font-weight: 700;
         letter-spacing: .04em;
         line-height: 24px;
+        color: var(--dtm-16-chat-header-channel-name-color);
       }
       // onboarding tab icon
       svg {
@@ -1710,5 +1782,35 @@
     .container_a43b87 {
       border-radius: 0;
     }
+  }
+}
+// ingame overlay
+.overlay_e17343 {
+  // form
+  .footerContent_ac9afa {
+    padding: 0 20px;
+  }
+  .channelTextArea_d0696b {
+    padding: 20px 0 0;
+    border-top: solid 1px rgba(255 255 255/.06);
+    box-shadow: 0 -1px rgba(0 0 0/.1);
+    border-radius: 0;
+  }
+  .typingWrapper_ac9afa {
+    margin-top: 3px;
+    margin-bottom: 1px;
+  }
+  .wrapper_faf5ab {
+    margin-bottom: 0;
+  }
+  // chat overlay ingame
+  .activateContainer_ac9afa {
+    height: 95px;
+    box-sizing: border-box;
+    padding-top: 20px;
+    align-items: start;
+  }
+  .autocomplete_bea0d0 {
+    margin-bottom: -20px;
   }
 }

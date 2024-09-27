@@ -341,6 +341,7 @@
                 // about
                 .lineClamp2Plus_d4306b {
                   -webkit-line-clamp: 8 !important;
+                  line-clamp: 8 !important;
                 }
                 // message textbox
                 .messageInputContainer_f2c0a8 {
@@ -1641,7 +1642,8 @@
               >[style="opacity: 0.45;"] {
                 display: none !important;
               }
-              >.pointerEvents_c51b4e {
+              >.pointerEvents_c51b4e:not([fill=transparent]),
+              .cursorDefault_c51b4e>rect {
                 x: 70px;
                 y: 70px;
                 width: 20px;
@@ -1651,6 +1653,22 @@
                 rx: 99;
                 -webkit-mask: no-repeat url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' rx='10' fill='black'/%3E%3C/svg%3E%0A") center/cover;
                 mask: no-repeat url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' rx='10' fill='black'/%3E%3C/svg%3E%0A") center/cover;
+              }
+              >circle[r="14"][cx="68"][cy="68"] {
+                display: none;
+              }
+              .cursorDefault_c51b4e {
+                x: 0;
+                y: 0;
+                overflow: visible;
+                >rect {
+                  x: 22;
+                  y: 18;
+                }
+                +.pointerEvents_c51b4e[fill=transparent] {
+                  x: 72;
+                  y: 72;
+                }
               }
             }
             .avatarDecoration_c51b4e {
@@ -1690,9 +1708,11 @@
           display: contents;
         }
         .invisibleContainer_d0a252 {display:none!important}
-        @at-root .biteSizeInner_c69a7b .visibleContainer_d0a252 {
-          position: unset;
-          display: block;
+        @at-root .biteSizeInner_c69a7b {
+          .visibleContainer_d0a252 {
+            position: unset;
+            display: block;
+          }
           .popover_bba79b, .focusTarget_dc8280 {
             display: none !important;
           }
@@ -1713,6 +1733,16 @@
             background: none;
             padding: 0;
             border-radius: 0;
+            text-align: center;
+          }
+          .addStatusIcon_d0a252 {
+            --interactive-normal: rgba(255 255 255/.8);
+          }
+          .addStatusPrompt_d0a252 {
+            color: rgba(255 255 255/.8);
+            &:hover {
+              color: rgba(255 255 255);
+            }
           }
         }
       }
@@ -1978,6 +2008,10 @@
           font-weight: 700;
           color: var(--override-header-secondary);
         }
+        .text_fc9b46 {
+          font-size: 11px;
+          line-height: 13px;
+        }
       }
       // about me
       div:has(>.descriptionClamp_abaf7d) {
@@ -2042,6 +2076,7 @@
         padding-right: 5px;
         max-width: 230px !important;
         gap: 0 !important;
+        contain: paint;
         >span {
           order: -3;
         }
@@ -2053,6 +2088,17 @@
           position: unset;
           &:not(.roleRemoveButtonCanRemove_f9575e):not(:has(.roleVerifiedIcon_f9575e)) {
             margin-left: -4px;
+          }
+          .svg_a26d7b.roleDot_f9575e {
+            overflow: visible;
+            pointer-events: none;
+            position: absolute;
+            z-index: -1;
+            .dot_a26d7b {
+              transform: scale(512);
+              transform-origin: center;
+            }
+            .dotBorderBase_a26d7b, .dotBorderColor_a26d7b {display:none}
           }
         }
         .roleRemoveIcon_f9575e {
@@ -2082,6 +2128,8 @@
             z-index: -2;
             pointer-events: none;
           }
+        }
+        .roleRemoveButton_f9575e {
           &:after {
             content: "";
             background: var(--override-background-secondary);
@@ -2140,7 +2188,7 @@
       }
       // spotify icon
       .platformIcon_ae1fa2 {
-        filter: brightness(2);
+        filter: grayscale(1) brightness(2);
       }
       // activity progress bar
       .bar_b5cd55 {
@@ -2323,6 +2371,13 @@
       @at-root .accountProfilePopoutWrapper_b2ca13 {
         .container_c32acf {
           order: -20;
+          --header-primary: rgba(255 255 255) !important;
+          --text-normal: rgba(255 255 255/.75) !important;
+          --interactive-normal: rgba(255 255 255/.75) !important;
+          --interactive-hover: rgba(255 255 255) !important;
+        }
+        .button_f9d37d.hover_f9d37d {
+          opacity: 1;
         }
         .usernameRow_c32acf, .tags_c32acf {
           text-align: center;
@@ -2346,11 +2401,23 @@
           }
         }
         div:has(>.descriptionClamp_abaf7d) {
-          padding-bottom: 12px;
+          display: none;
         }
         .menus_ad5fac {
+          background: var(--override-background-secondary);
           gap: 0;
           order: 100;
+          .overlayBackground_c69a7b {
+            background: none !important;
+            padding: 0;
+          }
+          .menuDivider_ad5fac {
+            margin: 0;
+          }
+          .button_dd4f85 {
+            padding: 0 8px;
+            font-size: 14px;
+          }
         }
         .menuOverlay_ad5fac {
           border-radius: 0;
@@ -2359,7 +2426,7 @@
     }
   }
   // settings preview
-  .preview_bad983 {
+  :is(.preview_bad983, .previewContainer_a9d381) {
     .biteSizeOuter_c69a7b {
       .header_f4c122 {
         display: contents;

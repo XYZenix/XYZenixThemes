@@ -1,5 +1,6 @@
 @use "options" as *;
 @use "funcs" as *;
+@use "_exps" as *;
 // server list
 @if not $redoServers {
   @at-root {
@@ -54,6 +55,47 @@
         [d="M23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0ZM7.74 9.3A2 2 0 0 1 9.3 7.75l7.22-1.45a1 1 0 0 1 1.18 1.18l-1.45 7.22a2 2 0 0 1-1.57 1.57l-7.22 1.45a1 1 0 0 1-1.18-1.18L7.74 9.3Z"] {
           d: path("M4.80155 9.60429C4.80155 6.94677 6.94677 4.80155 9.60429 4.80155C12.2618 4.80155 14.407 6.94677 14.407 9.60429C14.407 12.2618 12.2618 14.407 9.60429 14.407C6.94677 14.407 4.80155 12.2618 4.80155 9.60429ZM16.0079 14.407H15.1648L14.866 14.1189C15.9119 12.9022 16.5416 11.3226 16.5416 9.60429C16.5416 5.77277 13.4358 2.66699 9.60429 2.66699C5.77277 2.66699 2.66699 5.77277 2.66699 9.60429C2.66699 13.4358 5.77277 16.5416 9.60429 16.5416C11.3226 16.5416 12.9022 15.9119 14.1189 14.866L14.407 15.1648V16.0079L19.7434 21.3337L21.3337 19.7434L16.2807 14.6803L16.0079 14.407Z");
         }
+        @if $experiment22 != 3 {
+          &[data-list-item-id="guildsnav___app-download-button"] {
+            border: none;
+            background-image: var(--dtm-16-download-apps-bg-image) !important;
+            background-color: var(--dtm-16-download-apps-bg) !important;
+            transition: .2s;
+            opacity: 1 !important;
+            svg {
+              display: none;
+            }
+            @at-root .listItem_c96c45:has([data-list-item-id="guildsnav___app-download-button"]) {
+              flex-direction: column;
+              position: relative;
+              overflow: hidden;
+              .listItemWrapper_dfb2f8 {
+                margin: 0 auto 3px;
+                transform: none !important;
+              }
+              .pill_db6521 {
+                display: none;
+              }
+              foreignObject {
+                overflow: visible;
+              }
+              &:hover .circleIconButton_db6521 {
+                background-color: var(--dtm-16-download-apps-bg-hover) !important;
+              }
+              &:after {
+                content: "Download Apps";
+                text-transform: uppercase;
+                color: var(--dtm-16-download-apps-text);
+                font-size: 10px;
+                text-align: center;
+                transition: .2s;
+              }
+              &:hover:after {
+                color: var(--dtm-16-download-apps-text-hover);
+              }
+            }
+          }
+        }
       }
       @at-root .wrapper_c5f96a {
         .highlight_c5f96a {display:none}
@@ -100,13 +142,19 @@
           }
         }
       }
-      .pill_a5ad63.wrapper_fd07a3 {
+      :is(.pill_a5ad63.wrapper_c4cd66, .pill_dcc7a4.wrapper_c4cd66) {
         height: 50px;
-        .item_fd07a3 {
-          width: 10px;
-          min-height: 10px;
+        opacity: .5;
+        transition: .2s;
+        .item_c4cd66 {
+          margin-left: -6px;
+          width: 12px;
+          min-height: 12px;
           border-radius: 50px;
         }
+      }
+      @at-root .listItem_c96c45:has(.wrapper_f90abb.selected_f90abb) :is(.pill_a5ad63, .pill_dcc7a4) {
+        opacity: 1;
       }
       .wrapper_c5f96a {
         foreignObject {
@@ -260,6 +308,37 @@
             height: 50px;
           }
         }
+        // dragging
+        .svg_afd438.placeholderMask_f734d8 {
+          &:not(.miniPlaceholder_bc7085) {
+            width: 50px;
+            height: 50px;
+          }
+          foreignObject {
+            -webkit-mask: none;
+            mask: none;
+            .dragInner_f734d8 {
+              border-radius: 64px;
+              background: none;
+              box-sizing: border-box;
+              border: dashed 1px var(--dtm-16-server-button-color);
+            }
+          }
+          &.miniPlaceholder_bc7085 {
+            .dragInner_f734d8 {
+              border-color: var(--interactive-active);
+            }
+          }
+        }
+        // drag target over
+        .target_b7c66a.dragOver_b7c66a:before {
+          border-radius: 0;
+        }
+        // drag target combine
+        .centerTarget_b7c66a.dragOver_b7c66a:before {
+          background: var(--green);
+          left: -8px;
+        }
         .__MISSINGNO__ {
           width: 50px !important;
           height: 50px !important;
@@ -284,6 +363,9 @@
         width: 50px;
         height: 50px;
       }
+      .container_aa1bff .expandedFolderBackground_bc7085 {
+        bottom: 8px;
+      }
       // discovery
       .footer_aa1bff {
         width: 80px;
@@ -299,17 +381,15 @@
             background: none;
           }
           border: dashed 1px currentColor;
-          color: var(--interactive-muted);
+          color: var(--dtm-16-server-button-color);
           border-radius: 50%;
           &:is(:hover, :active, .selected_db6521) {
-            color: var(--interactive-normal);
+            color: var(--dtm-16-server-button-color);
             background: none;
           }
           html.theme-light .guilds_a4d4d9:not(.theme-dark) & {
-            color: var(--interactive-normal);
             opacity: .75;
             &:is(:hover, :active, .selected_db6521) {
-              color: var(--interactive-normal);
               opacity: 1;
               background: none;
             }
@@ -343,6 +423,12 @@
           }
         }
       }
+    }
+  }
+  // overlay
+  .overlay_e17343 {
+    .wrapper_fea3ef {
+      width: 80px;
     }
   }
 }

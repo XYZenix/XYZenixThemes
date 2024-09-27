@@ -220,6 +220,11 @@
             font-weight: bold;
             text-transform: uppercase;
           }
+          // activity
+          .gameIcon_a9e62c {
+            border-color: var(--deprecated-card-bg);
+            border-radius: 3px;
+          }
         }
       }
       // category
@@ -296,12 +301,66 @@
         .channelName-3KPsGw:before {display: inline}
         .typeThread_d8bfb3 .channelName-3KPsGw:before {display: none}
       }
+      // voice drag
+      .containerUserOver_f6f816:after {
+        background: #{ss(rgba(67,181,129,.4))};
+        border-radius: 0;
+        border: solid 4px var(--green);
+        left: 0;
+        z-index: -1;
+      }
+      // channel drag
+      .containerDragAfter_f6f816:after, // channel
+      .containerDragBefore_f6f816:before, // channel
+      .containerDragAfter_a08117:before, // category
+      .containerDragBefore_a08117:before { // category
+        background: var(--green);
+        box-shadow: none;
+        border-radius: 0;
+        left: 0;
+      }
+      // onboarding - show all vc button (credit: dav)
+      .voiceChannelsButton_a08117 {
+        background: transparent !important;
+        border: 0;
+        border-radius: 0;
+        margin-left: 0;
+        padding-left: 18px;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 34px;
+        justify-content: unset;
+        .voiceChannelsToggleIcon_a08117, [data-text-variant="text-sm/medium"] {
+          color: var(--header-primary);
+          opacity: 0.3;
+          font-size: 12px;
+          text-transform: uppercase;
+          text-decoration: underline;
+          transition: opacity .2s ease;
+        }
+        &:hover :is(.voiceChannelsToggleIcon_a08117, [data-text-variant="text-sm/medium"]) {opacity: 1}
+        [data-text-variant="text-sm/medium"] {transform: translateY(1px)}
+        .voiceChannelsToggleIcon_a08117 {
+          transform: none;
+          path {
+            d: path("M19.6 1.3986 2.8 1.3986C1.253 1.3986 0 2.653 0 4.1986L0 20.9986C0 22.5456 1.253 23.7986 2.8 23.7986L19.6 23.7986C21.147 23.7986 22.4 22.5456 22.4 20.9986L22.4 4.1986C22.4 2.653 21.147 1.3986 19.6 1.3986ZM18.4 4.1986 4 4.1986C3.3376 4.1986 2.8 4.7362 2.8 5.3986L2.8 19.7986C2.8 20.461 3.3376 20.9986 4 20.9986L18.4 20.9986C19.0624 20.9986 19.6 20.461 19.6 19.7986L19.6 5.3986C19.6 4.7362 19.0624 4.1986 18.4 4.1986ZM5.6 9.7986 11.2 16.7986 16.8 9.7986 5.6 9.7986Z");
+            fill-rule: evenodd;
+          }
+        }
+      }
+      .sectionDivider_c43953+.containerDefault_a08117+.containerDefault_f6f816+.containerDefault_f6f816+.containerDefault_f6f816~.voiceChannelsButton_a08117 .voiceChannelsToggleIcon_a08117 {
+        transform: rotateX(180deg);
+      }
     }
     // voice users
     .list_a478e5 {
       position: relative;
       [draggable="true"] .voiceUser_d80634 {cursor: move}
+      .draggable_ac3629 {
+        height: 28px;
+      }
       .voiceUser_d80634 {
+        height: 28px;
         .content_d80634 {
           background: none !important;
           .icon_d80634 {
@@ -328,6 +387,10 @@
           width: 22px;
           height: 22px;
           box-sizing: border-box;
+          border: solid 2px #0000;
+          border-radius: 512px;
+          background-clip: content-box;
+          margin: 2px 5px 2px;
           &.avatarSpeaking_d80634 {
             border: solid 2px var(--green);
             box-shadow: inset 0 0 0 2px var(--background-secondary);
@@ -336,12 +399,43 @@
         .username_d80634 {
           color: var(--header-primary);
           opacity: .5;
+          font-size: 13px;
+          line-height: 24px;
+          font-weight: 400;
         }
         .avatarSpeaking_d80634+.container_d0fc80 .username_d80634 {
           opacity: 1;
         }
         &:hover :is(.username_d80634, .icon_d80634) {
           opacity: 1;
+        }
+        .icons_d80634 {
+          svg {
+            overflow: visible;
+          }
+          [d="M22 4v1.51a6 6 0 0 1-1.76 4.25l-4.1 4.1a.5.5 0 0 0-.14.35v3.74a3 3 0 0 1-.66 1.87l-1.79 2.24a.5.5 0 0 1-.86-.14l-1.86-5.02a.5.5 0 0 0-.11-.18l-3.46-3.46a.5.5 0 0 0-.17-.11l-4.8-1.85a.5.5 0 0 1-.15-.85l2.02-1.73A3 3 0 0 1 6.1 8h3.68a.5.5 0 0 0 .36-.15l4.1-4.1A6 6 0 0 1 18.48 2H20a2 2 0 0 1 2 2Zm-5 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"] {
+            transform-origin: center;
+            transform: scale(calc(24/16));
+          }
+        }
+        &.overlap_d80634 {
+          margin-right: 0;
+        }
+        // clan tag
+        .chipletContainer_d0fc80 {
+          position: relative;
+          top: -4px;
+        }
+      }
+      // +more
+      .moreContainer_ac3629 {
+        border: solid 2px var(--background-accent);
+        background: none;
+        padding: 0 4px;
+        margin: 2px 0 2px -3px;
+        [data-text-variant="text-sm/medium"] {
+          font-size: 11px;
+          line-height: 18px;
         }
       }
     }
@@ -473,6 +567,10 @@
               font-weight: 500;
               font-size: 10px;
             }
+          }
+          // MARKETING SLOP GO BRRRRRRR
+          .marketingButtonBackground_a25714 {
+            display: none !important;
           }
           .highlighted_ec8679 .content_ec8679 {
             .theme-light &, .theme-dark & {opacity:1}
