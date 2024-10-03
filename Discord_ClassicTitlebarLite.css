@@ -1,0 +1,82 @@
+/**
+* @name ClassicTitlebar Lite
+* @author 11pixels
+* @version 1
+* @description Restores the 2016 titlebar
+*/
+.typeWindows_a934d8.titleBar_a934d8 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-app-region: no-drag;
+  pointer-events: all;
+  height: auto;
+  width: auto;
+  margin: 12px;
+  gap: 8px;
+  contain: none;
+  .wordmark_a934d8 {
+    display: none;
+  }
+  .winButton_a934d8 {
+    width: 24px;
+    height: 24px;
+    position: unset;
+    background: currentColor;
+    position: relative;
+    inset: unset;
+    -webkit-app-region: no-drag;
+    pointer-events: all;
+    mask: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z' fill='white'/%3E%3C/svg%3E%0A");
+    svg {
+      display: none;
+    }
+  }
+  .winButton_a934d8+.winButton_a934d8 {
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23D9D9D9' fill-rule='evenodd' d='M5 5v14h14V5H5Zm2 2v10h10V7H7Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  .winButton_a934d8+.winButton_a934d8+.winButton_a934d8 {
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M18 18v-2H6v2h12Z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  }
+}
+.platform-win {
+  #app-mount:after {
+    content: "";
+    position: fixed;
+    inset: 12px 12px auto auto;
+    width: 88px;
+    height: 24px;
+    z-index: 99999999;
+    pointer-events: none;
+    -webkit-app-region: no-drag;
+  }
+  .sidebar_a4d4d9 {
+    border-radius: 0;
+  }
+  .toolbar_fc4f04 {
+    margin-right: 104px;
+  }
+  .headerBar_d175a8 {
+    -webkit-app-region: drag;
+  }
+  .title_a7d72e {
+    -webkit-app-region: drag;
+    >* {
+      -webkit-app-region: no-drag;
+    }
+  }
+  .headerBar_accde0 {
+    padding-right: 118px;
+  }
+  .standardSidebarView_c25c6d {
+    -webkit-app-region: no-drag;
+    &:after {
+    content: "";
+    position: absolute;
+    -webkit-app-region: drag;
+    inset: 0 0 auto 0;
+    height: 48px;
+    z-index: 9999;
+    }
+  }
+}

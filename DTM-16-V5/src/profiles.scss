@@ -1,6 +1,7 @@
 @use "vars" as *;
 @use "options" as *;
 @use "funcs" as *;
+@use "exps" as *;
 // user profiles
 @if not $redoProfiles {
   @at-root {
@@ -2029,13 +2030,14 @@
         }
       }
       // roles
-      div:has(>.root_e6f2d0) {
+      .root_e6f2d0 {
         order: 10;
         background: var(--override-background-secondary);
-        padding: 14px 10px 0 10px;
+        padding: 14px 10px;
         &:before {
           content: "ROLES";
           display: block;
+          width: 100%;
           margin-bottom: 4px;
           font-size: 11px;
           line-height: 14px;
@@ -2464,6 +2466,69 @@
           border-radius: 0;
           box-shadow: none;
           background: var(--blurple);
+        }
+      }
+    }
+  }
+  // acocunt panel
+  @if $experiment23 == 1 {
+    .accountProfilePopoutWrapper_b2ca13 {
+      left: -8px;
+      .biteSizeOuter_c69a7b {
+        width: 240px !important;
+        border-radius: 5px !important;
+        overflow: hidden !important;
+        box-shadow: var(--ov-dtm-16-classic-popout-shadow) !important;
+        border: solid 1px var(--ov-dtm-16-classic-popout-border-color) !important;
+        background: var(--ov-dtm-16-account-panel-user-popout-background) !important;
+        .mask_d5fdb1 {
+          display: none;
+        }
+        .avatar_f94206 {
+          margin-top: 20px;
+          width: 60px;
+          height: 60px;
+          min-height: 60px;
+          .wrapper_c51b4e {
+            width: 60px !important;
+            height: 60px !important;
+          }
+          .avatarStack_c51b4e {
+            background: none !important;
+            border: none !important;
+            width: 60px !important;
+            height: 60px !important;
+          }
+          .overlay_f94206:after {
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+          }
+          circle, rect {
+            display: none;
+          }
+        }
+        .dotSpacer_c32acf, .dotSpacer_c32acf~* {
+          display: none;
+        }
+        .nickname_c32acf {
+          font-size: 16px;
+          line-height: auto;
+          font-weight: 600;
+          color: var(--ov-dtm-16-chat-header-channel-name-color);
+        }
+        .nicknameIcons_c32acf {
+          display: none;
+        }
+        .userTagUsername_c32acf {
+          font-size: 12px;
+          line-height: auto;
+          font-weight: 600;
+          color: var(--override-text-muted);
+        }
+        .card_ae1fa2 {
+          display: none;
         }
       }
     }

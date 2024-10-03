@@ -271,7 +271,7 @@
         div:first-of-type>:is(.sectionTitle-3j2YI1, .sectionTitle_a6ae9b):first-of-type {
           display: none;
         }
-        :is(.h5_c46f6a.eyebrow_c46f6a.title_b3a5c2, .h1_c46f6a.title_c46f6a.defaultColor_c46f6a.defaultMarginh1_c46f6a, .h5_c46f6a.eyebrow_c46f6a.defaultMarginh5_c46f6a, .h5_c46f6a.eyebrow_c46f6a.marginBottom8_f7730b) {
+        :is(.h5_c46f6a.eyebrow.title_b3a5c2, .h1_c46f6a.title_c46f6a.defaultColor_c46f6a.defaultMarginh1_c46f6a, .h5_c46f6a.eyebrow.defaultMarginh5_c46f6a, .h5_c46f6a.eyebrow.marginBottom8_f7730b) {
           color: #87909c;
           font-size: 11px;
           font-weight: 700;
@@ -2959,6 +2959,11 @@
   }
   // connections tab in user settings because i am too lazy to put this in the settings section
   @at-root {
+    .connectionList_e2a436 {
+      >div:not([class]) {
+        display: contents;
+      }
+    }
     @if $experiment10 == 2 {
       .connectionList_e2a436 {
         .connection_e2a436 {
@@ -3099,16 +3104,14 @@
         .connectHeader_e2a436 {
           font-size: 11px;
           font-weight: 700;
-          color: #87909c !important;
+          color: var(--dtm-16-settings-eyebrow-color) !important;
           text-transform: uppercase;
           margin-bottom: 0;
-          .theme-dark & {color:var(--text-normal) !important}
         }
         [data-text-variant="text-xs/normal"] {
           font-size: 11px;
           font-weight: 500;
-          color: #87909c !important;
-          .theme-dark & {color:var(--text-normal) !important}
+          color: color-mix(in srgb, var(--background-primary) 50%, var(--dtm-16-settings-eyebrow-color)) !important;
         }
         .accountButtonInner_e2a436 {
           border: 1px solid rgba(153,170,181,.3);
@@ -3232,12 +3235,12 @@
           }
         }
         .integrationsWrapper_e2a436 {
-          .eyebrow_c46f6a .defaultColor_a595eb {
+          .eyebrow .defaultColor_a595eb {
             color: #fff;
             font-size: 11px;
             font-weight: 700;
           }
-          >.eyebrow_c46f6a+div:not([style]) {
+          >.eyebrow+div:not([style]) {
             display: flex;
             grid-gap: 8px 16px;
             flex-flow: wrap;
