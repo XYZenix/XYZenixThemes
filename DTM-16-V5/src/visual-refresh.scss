@@ -5,6 +5,43 @@
 // might need help with this lol
 
 html.visual-refresh {
+  // inputs
+  .floatingOn_c46f6a, .floatingAbove_c46f6a {
+    transition: 0s;
+    padding: 6px;
+    margin: 0;
+    position: unset;
+    transform: none;
+    background: none;
+    padding-left: 0;
+  }
+  .container_effbe2, .input_f8bc55 {
+    background: var(--deprecated-text-input-bg);
+    border: solid 1px var(--deprecated-text-input-border);
+    transition: .2s;
+    border-radius: 3px;
+    padding: 10px;
+    :is(.theme-dark,.theme-light,.theme-darker,.theme-midnight) & {
+      font-weight: 400;
+    }
+    &:hover {
+      border-color: var(--deprecated-text-input-border);
+    }
+    &:focus, &:focus-within, &:focus:hover {
+      border-color: var(--blurple);
+    }
+    &::placeholder {
+      .theme-light & {
+        color: var(--interactive-muted);
+      }
+      :is(.theme-dark,.theme-light,.theme-darker,.theme-midnight) & {
+        font-weight: 400;
+      }
+    }
+  }
+  .input_f8bc55[value]:not([value=""]) {
+    background: var(--deprecated-text-input-bg);
+  }
   // top bar
   .children_a934d8 {
     height: auto;
@@ -53,6 +90,10 @@ html.visual-refresh {
       // dms
       .privateChannels_f0963d {
         background: none;
+      }
+      // unreads bar
+      .bar_eba0ba {
+        border: none;
       }
       // cringe discovery
       .container_e462a4 {
@@ -176,9 +217,9 @@ html.visual-refresh {
   // member list
   .container_cbd271 {
     --custom-channel-members-bg: var(--background-secondary);
-    .membersGroup_cbd271 {
-      text-transform: uppercase;
-    }
+  }
+  .membersGroup_cbd271 {
+    text-transform: uppercase !important;
   }
   // messages
   .cozy_f9f2ca {
@@ -196,5 +237,26 @@ html.visual-refresh {
       width: 28px;
       height: 22px;
     }
+  }
+  // profile
+  .wrapper_cb78f1 {
+    .button_f9d37d {
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      background: rgba(0 0 0/.5);
+    }
+  }
+  .multipleButtons_e9f973 .button_dd4f85 {
+    line-height: 16px;
+    padding: 2px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 36px;
+    border-radius: 3px;
+  }
+  // settings search
+  .searchBar_e7c031 {
+    padding: 0;
   }
 }

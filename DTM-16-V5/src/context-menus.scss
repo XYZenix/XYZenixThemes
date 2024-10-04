@@ -243,6 +243,17 @@
         color: #{ss(#646e7a)};
       }
     }
+    .item_d90b3d:before {
+      width: 18px;
+      height: 18px;
+      left: 16px;
+      position: absolute;
+      background: currentColor;
+      color: #{ss(#8e98a3)};
+      .theme-dark & {
+        color: #{ss(#646e7a)};
+      }
+    }
     .item_d90b3d {
       color: #{ss(#99aab5)};
       font-size: 15px;
@@ -259,7 +270,7 @@
         .theme-dark & {
           color: #fff;
         }
-        #{$iconContainer} {
+        #{$iconContainer}, &:before {
           color: #{ss(#737f8d)};
         }
         path {
@@ -337,6 +348,12 @@
     // leave
     #guild-header-popout-leave path {
       d: path("M19 3H5C3.89 3 3 3.89 3 5V9H5V5H19V19H5V15H3V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89 20.1 3 19 3ZM10.08 15.58L11.5 17L16.5 12L11.5 7L10.08 8.41L12.67 11H3V13H12.67L10.08 15.58Z")
+    }
+    // vencord permissions
+    #guild-header-popout-perm-viewer-permissions:before {
+      content: "";
+      -webkit-mask: no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M9 9H3.75c.397 3.082 2.46 5.835 5.25 6.69V9h5.25V4.725L9 2.393V9ZM9 .75l-6.75 3v4.5c0 4.162 2.88 8.047 6.75 9 3.87-.953 6.75-4.838 6.75-9v-4.5L9 .75Z' clip-rule='evenodd'/%3E%3C/svg%3E") center/contain;
+      mask: no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M9 9H3.75c.397 3.082 2.46 5.835 5.25 6.69V9h5.25V4.725L9 2.393V9ZM9 .75l-6.75 3v4.5c0 4.162 2.88 8.047 6.75 9 3.87-.953 6.75-4.838 6.75-9v-4.5L9 .75Z' clip-rule='evenodd'/%3E%3C/svg%3E") center/contain;
     }
   }
   // menus - chat textbox
