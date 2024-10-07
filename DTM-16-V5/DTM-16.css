@@ -22,7 +22,7 @@
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "567" "\a" "Oct 4, 2024";
+  content: "DTM-16 Build " "568" "\a" "Oct 7, 2024";
 }
 
 .theme-dark, .theme-light {
@@ -2142,11 +2142,6 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   background-image: linear-gradient(90deg, hsl(221.1, calc(var(--saturation-factor, 1) * 70%), 55.5%), hsl(269, calc(var(--saturation-factor, 1) * 83.8%), 71%));
 }
 
-.preview_c31d36 .previewMessage_c31d36 .message_d5deea {
-  margin-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
 .premiumTrialBadge-pEqntF.premiumTrialAcknowledgedBadge-2QxbU_, .shineContainer_a669f8 {
   display: none;
 }
@@ -2157,10 +2152,6 @@ rect[mask="url(#svg-mask-status-dnd)"] {
 
 .imageUploaderIconWrapper_de76e4 {
   width: 100%;
-}
-
-.preview_c31d36 {
-  background: var(--background-secondary) !important;
 }
 
 .childContainer_ff7d90 {
@@ -6961,6 +6952,25 @@ div.cardContainer_c22357 {
 }
 .vc-permviewer-modal-container .vc-permviewer-modal-perms-item-icon {
   border: none;
+}
+
+.imagePickerContainer_f2f431 .optionBox_f2f431 {
+  border: solid 1px var(--background-tertiary);
+  background: var(--deprecated-card-editable-bg);
+}
+.imagePickerContainer_f2f431 .optionBox_f2f431 .gifIconContainer_f2f431 {
+  background: rgba(0, 0, 0, 0.8);
+}
+.imagePickerContainer_f2f431 .optionBox_f2f431 .gifIcon_f2f431 {
+  background: none;
+  color: var(--interactive-active);
+  width: 24px;
+  height: 24px;
+}
+
+.modalHeader_fede6c + div #gif-picker-tab-panel {
+  width: auto;
+  max-height: 60vh;
 }
 
 .notice_be03aa {
@@ -16732,6 +16742,10 @@ html.theme-light .biteSizeInner_c69a7b .footer_b8cc6d:not(:empty) {
   opacity: 0.3;
   cursor: default;
 }
+:where(.contentRegion_c25c6d) .eyebrow_c46f6a {
+  color: var(--dtm-16-settings-eyebrow-color);
+}
+
 .layer_d4b6c5:not(.baseLayer_d4b6c5) #my-account-tab .accountProfileCard_b69b77 {
   background: none;
   padding: 0;
@@ -16928,10 +16942,12 @@ html.theme-light .biteSizeInner_c69a7b .footer_b8cc6d:not(:empty) {
   margin-top: 0;
   padding-top: 0;
 }
-.layer_d4b6c5:not(.baseLayer_d4b6c5) #privacy-\&-safety-v2-tab .settingsSection_fd1dd8 > h3:first-child {
+.layer_d4b6c5:not(.baseLayer_d4b6c5) #content-\&-social-tab .settingsPage_a2c19a > h3:first-child,
+.layer_d4b6c5:not(.baseLayer_d4b6c5) #data-\&-privacy-tab .settingsPage_a2c19a > h3:first-child {
   display: none;
 }
-.layer_d4b6c5:not(.baseLayer_d4b6c5) #privacy-\&-safety-v2-tab .categorySubGroup_ac24fe[role=radiogroup] {
+.layer_d4b6c5:not(.baseLayer_d4b6c5) #content-\&-social-tab .radioGroup_bb13f7,
+.layer_d4b6c5:not(.baseLayer_d4b6c5) #data-\&-privacy-tab .radioGroup_bb13f7 {
   gap: 0;
 }
 .layer_d4b6c5:not(.baseLayer_d4b6c5) .categoryHeader_dbd848 {
@@ -17000,6 +17016,14 @@ html.theme-light .biteSizeInner_c69a7b .footer_b8cc6d:not(:empty) {
 }
 #authorized-apps-tab .authedApp_f0135d .permissionCheckmark_f0135d {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M2.83887 8.32083L6.34685 11.8288L14.3866 3.78906' stroke='%237289DA' stroke-width='3'/%3E%3C/svg%3E");
+}
+
+.contentColumn_c25c6d#accessibility-tab .preview_c31d36 {
+  padding: 0 0 16px;
+  background: none;
+  border-radius: 0;
+  border: none;
+  border-bottom: solid 1px var(--background-modifier-accent);
 }
 
 .contentColumn_c25c6d#sessions-tab .sessionIcon_c7a2c0 {
@@ -17643,18 +17667,122 @@ html:not(.platform-web) .contentColumn_c25c6d#game-activity-tab .marginTop40_f77
 .contentColumn_c25c6d#subscriptions-tab .subscriptionRows_a206c7 + div h3 {
   display: none;
 }
-.contentColumn_c25c6d#subscriptions-tab .sectionAccountCredit_e70817 {
-  padding-bottom: 0;
-  border-bottom: none;
-  margin-bottom: 8px;
+.contentColumn_c25c6d#subscriptions-tab .subscriptionRows_a206c7 + div .detailsBlock_a206c7 {
+  background: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
 }
-.contentColumn_c25c6d#subscriptions-tab .sectionAccountCredit_e70817 > h2 {
+.contentColumn_c25c6d#subscriptions-tab .subscriptionRows_a206c7 + div .detailsBlock_a206c7 + .detailsBlock_a206c7 {
+  border-left: solid 1px var(--background-modifier-accent);
+  padding-left: 16px;
+}
+.contentColumn_c25c6d#subscriptions-tab hr + div > [data-text-variant="heading-md/bold"] {
   font-size: 12px;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--dtm-16-settings-eyebrow-color);
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0 0 2px;
+}
+.contentColumn_c25c6d#subscriptions-tab hr + div > [data-text-variant="text-md/normal"] {
+  font-size: 11px;
+  line-height: 13px;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7 [data-text-variant="heading-xl/semibold"] {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7 [data-text-variant="text-md/normal"] {
+  font-size: 12px;
+  line-height: 1;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_dcf630 {
+  background: var(--green);
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_dcf630 .manageSubscriptionsButton_dcf630 {
+  transition: 0.2s opacity;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_dcf630 .manageSubscriptionsButton_dcf630:hover {
+  opacity: 0.9;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_dcf630 .manageSubscriptionsButton_dcf630:active {
+  opacity: 0.8;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_dcf630 .manageSubscriptionsButton_dcf630 .contents_dd4f85 {
+  color: var(--green);
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_a78d9e {
+  background: var(--badge-partner);
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_a78d9e .lookFilled_dd4f85.colorBrandInverted_dd4f85 {
+  transform: none !important;
+  transition: 0.2s opacity;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_a78d9e .lookFilled_dd4f85.colorBrandInverted_dd4f85:hover {
+  opacity: 0.9;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_a78d9e .lookFilled_dd4f85.colorBrandInverted_dd4f85:active {
+  opacity: 0.8;
+}
+.contentColumn_c25c6d#subscriptions-tab .guildBoostingSubscriptionRow_a206c7.card_a78d9e .lookFilled_dd4f85.colorBrandInverted_dd4f85 .contents_dd4f85 {
+  color: var(--badge-partner);
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCreditTitle_e70817 {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dtm-16-settings-eyebrow-color);
   text-transform: uppercase;
   line-height: 1;
   margin: 0 0 8px;
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCreditDescription_e70817 {
+  font-size: 11px;
+  line-height: 13px;
+}
+.contentColumn_c25c6d#subscriptions-tab .hr_e70817 {
+  display: none;
+}
+.contentColumn_c25c6d#subscriptions-tab .noItemsCard_e70817 {
+  padding: 0;
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCredit_e70817 {
+  background: none;
+  padding: 0;
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCreditRow_ca73a1 {
+  padding: 8px 0;
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCreditRow_ca73a1:first-child {
+  padding-top: 0;
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCreditRow_ca73a1:last-child {
+  padding-bottom: 0;
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCreditRow_ca73a1 div[class=""] {
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background: conic-gradient(#933, #993, #393, #399, #339, #939, #933);
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCreditRow_ca73a1 [data-text-variant="heading-md/semibold"] {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--header-primary);
+}
+.contentColumn_c25c6d#subscriptions-tab .accountCreditRow_ca73a1 [data-text-variant="text-md/semibold"] {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dtm-16-settings-eyebrow-color);
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .contentColumn_c25c6d#nitro-server-boost-tab .wrapper_e74e54 {
@@ -18590,6 +18718,59 @@ html:not(.platform-web) .contentColumn_c25c6d#game-activity-tab .marginTop40_f77
 }
 .contentColumn_c25c6d#analytics-tab .developerPortalCtaWrapper_cfaf72 {
   order: 727;
+}
+
+.contentColumn_c25c6d#safety-tab .header_abe1fa {
+  display: none;
+}
+.contentColumn_c25c6d#safety-tab .changelog_abe1fa {
+  display: none;
+}
+.contentColumn_c25c6d#safety-tab .safetyChecklist_abe1fa {
+  margin: 0;
+  border-radius: 0;
+  background: none;
+}
+.contentColumn_c25c6d#safety-tab .safetyChecklist_abe1fa .divider_abe1fa {
+  margin: 0;
+}
+.contentColumn_c25c6d#safety-tab .safetyChecklist_abe1fa .safetyStepRow_abe1fa {
+  padding: 8px 0;
+}
+.contentColumn_c25c6d#safety-tab .safetyChecklist_abe1fa .safetyStepRow_abe1fa:first-child {
+  padding-top: 0;
+}
+.contentColumn_c25c6d#safety-tab .safetyChecklist_abe1fa .safetyStepRow_abe1fa:last-child {
+  padding-bottom: 0;
+}
+.contentColumn_c25c6d#safety-tab .simpleItemWrapper_e1b877 {
+  background: var(--deprecated-card-bg);
+  border: solid 1px var(--background-tertiary);
+  border-radius: 3px;
+}
+.contentColumn_c25c6d#safety-tab :is(.simpleItemWrapper_e1b877, .editCard_cd99d3) .valuePill_e1b877 {
+  background: var(--background-tertiary);
+  border-radius: 3px;
+}
+.contentColumn_c25c6d#safety-tab .contentExpandContainer_a3cc4a .settingsDescriptionContainer_e5c5d5 {
+  height: auto;
+}
+
+.contentColumn_c25c6d#community-tab .upsellContainer_d0de76 {
+  background: none;
+}
+.contentColumn_c25c6d#community-tab .upsellContainer_d0de76 :is(.upsellContent_d0de76, .upsellClose_d0de76) {
+  display: none;
+}
+.contentColumn_c25c6d#community-tab .upsellContainer_d0de76 .upsellFooter_d0de76 {
+  background: none;
+  padding: 0 0 24px;
+  border-radius: 0;
+  border-bottom: solid 1px var(--background-modifier-accent);
+}
+.contentColumn_c25c6d#community-tab .upsellContainer_d0de76 .upsellFooter_d0de76 button {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .contentColumn_c25c6d#discovery-tab .image_bbfa4c {

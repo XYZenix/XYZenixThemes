@@ -328,6 +328,11 @@
           }
         }
       }
+      @at-root {
+        :where(.contentRegion_c25c6d) .eyebrow_c46f6a {
+          color: var(--dtm-16-settings-eyebrow-color);
+        }
+      }
     }
     // specific tabs
     & {
@@ -541,11 +546,12 @@
         }
         // privacy & safety
         // new ver
-        #privacy-\&-safety-v2-tab {
-          .settingsSection_fd1dd8>h3:first-child {
+        #content-\&-social-tab,
+        #data-\&-privacy-tab {
+          .settingsPage_a2c19a>h3:first-child {
             display: none;
           }
-          .categorySubGroup_ac24fe[role="radiogroup"] {
+          .radioGroup_bb13f7 {
             gap: 0;
           }
         }
@@ -618,6 +624,16 @@
             .permissionCheckmark_f0135d {
               background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M2.83887 8.32083L6.34685 11.8288L14.3866 3.78906' stroke='%237289DA' stroke-width='3'/%3E%3C/svg%3E");
             }
+          }
+        }
+        // accessibility
+        @at-root .contentColumn_c25c6d#accessibility-tab {
+          .preview_c31d36 {
+            padding: 0 0 16px;
+            background: none;
+            border-radius: 0;
+            border: none;
+            border-bottom: solid 1px var(--background-modifier-accent);
           }
         }
         // sessions
@@ -1283,19 +1299,123 @@
             h3 {
               display: none;
             }
+            .detailsBlock_a206c7 {
+              background: none;
+              border-radius: 0;
+              margin: 0;
+              padding: 0;
+              +.detailsBlock_a206c7 {
+                border-left: solid 1px var(--background-modifier-accent);
+                padding-left: 16px;
+              }
+            }
           }
-          // credit
-          .sectionAccountCredit_e70817 {
-            padding-bottom: 0;
-            border-bottom: none;
-            margin-bottom: 8px;
-            >h2 {
+          // other sub types
+          hr+div {
+            >[data-text-variant="heading-md/bold"] {
               font-size: 12px;
               font-weight: 700;
-              color: var(--text-muted);
+              color: var(--dtm-16-settings-eyebrow-color);
               text-transform: uppercase;
               line-height: 1;
+              margin: 0 0 2px;
+            }
+            >[data-text-variant="text-md/normal"] {
+              font-size: 11px;
+              line-height: 13px;
+            }
+          }
+          .guildBoostingSubscriptionRow_a206c7 {
+            [data-text-variant="heading-xl/semibold"] {
+              margin: 0;
+              font-size: 16px;
+              font-weight: 600;
+              letter-spacing: .5px;
+              text-transform: uppercase;
               margin: 0 0 8px;
+            }
+            [data-text-variant="text-md/normal"] {
+              font-size: 12px;
+              line-height: 1;
+            }
+            &.card_dcf630 {
+              // server subs
+              background: var(--green);
+              .manageSubscriptionsButton_dcf630 {
+                transition: .2s opacity;
+                &:hover {opacity:.9}
+                &:active {opacity:.8}
+                .contents_dd4f85 {
+                  color: var(--green);
+                }
+              }
+            }
+            &.card_a78d9e {
+              // app subs
+              background: var(--badge-partner);
+              .lookFilled_dd4f85.colorBrandInverted_dd4f85 {
+                transform: none !important;
+                transition: .2s opacity;
+                &:hover {opacity:.9}
+                &:active {opacity:.8}
+                .contents_dd4f85 {
+                  color: var(--badge-partner);
+                }
+              }
+
+            }
+          }
+          // credit
+          .accountCreditTitle_e70817 {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dtm-16-settings-eyebrow-color);
+            text-transform: uppercase;
+            line-height: 1;
+            margin: 0 0 8px;
+          }
+          .accountCreditDescription_e70817 {
+            font-size: 11px;
+            line-height: 13px;
+          }
+          .hr_e70817 {
+            display: none;
+          }
+          .noItemsCard_e70817 {
+            padding: 0;
+          }
+          .accountCredit_e70817 {
+            background: none;
+            padding: 0;
+          }
+          .accountCreditRow_ca73a1 {
+            padding: 8px 0;
+            &:first-child {
+              padding-top: 0;
+            }
+            &:last-child {
+              padding-bottom: 0;
+            }
+            div[class=""] {
+              padding: 4px;
+              border-radius: 4px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              align-self: center;
+              background: conic-gradient(#933, #993, #393, #399, #339, #939, #933);
+            }
+            [data-text-variant="heading-md/semibold"] {
+              font-size: 15px;
+              font-weight: 400;
+              color: var(--header-primary);
+            }
+            [data-text-variant="text-md/semibold"] {
+              font-size: 12px;
+              font-weight: 700;
+              color: var(--dtm-16-settings-eyebrow-color);
+              text-transform: uppercase;
+              line-height: 1;
             }
           }
         }
@@ -2184,6 +2304,63 @@
           }
           .developerPortalCtaWrapper_cfaf72 {
             order: 727;
+          }
+        }
+        // safety setup
+        @at-root .contentColumn_c25c6d#safety-tab {
+          .header_abe1fa {display:none}
+          // this stupid ass changelog needs to go
+          .changelog_abe1fa {
+            display: none;
+          }
+          .safetyChecklist_abe1fa {
+            margin: 0;
+            border-radius: 0;
+            background: none;
+            .divider_abe1fa {
+              margin: 0;
+            }
+            .safetyStepRow_abe1fa {
+              padding: 8px 0;
+              &:first-child {padding-top: 0}
+              &:last-child {padding-bottom: 0}
+            }
+          }
+          .simpleItemWrapper_e1b877 {
+            background: var(--deprecated-card-bg);
+            border: solid 1px var(--background-tertiary);
+            border-radius: 3px;
+          }
+          :is(.simpleItemWrapper_e1b877, .editCard_cd99d3) {
+            .valuePill_e1b877 {
+              background: var(--background-tertiary);
+              border-radius: 3px;
+            }
+          }
+          .contentExpandContainer_a3cc4a {
+            .settingsDescriptionContainer_e5c5d5 {
+              height: auto;
+            }
+          }
+        }
+        // community overview
+        @at-root .contentColumn_c25c6d#community-tab {
+          // this shouldn't be dismissible
+          .upsellContainer_d0de76 {
+            background: none;
+            :is(.upsellContent_d0de76, .upsellClose_d0de76) {
+              display: none;
+            }
+            .upsellFooter_d0de76 {
+              background: none;
+              padding: 0 0 24px;
+              border-radius: 0;
+              border-bottom: solid 1px var(--background-modifier-accent);
+              button {
+                margin-top: 0;
+                margin-bottom: 0;
+              }
+            }
           }
         }
         // discovery
