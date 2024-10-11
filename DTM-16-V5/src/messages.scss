@@ -521,13 +521,17 @@
           .repliedMessage_f9f2ca {
             left: 16px;
           }
-          @at-root .scrollerInner_e2e187:has(.compact_f9f2ca) {
-            .backgroundFlash_d5deea {
+          // compact mode bs
+          @at-root .scrollerInner_e2e187 {
+            .compact_f9f2ca .avatar_f9f2ca {
+              padding: 0 !important;
+            }
+            .backgroundFlash_d5deea:has(.compact_f9f2ca) {
               margin-top: 0 !important;
             }
             // first message in a group
-            :is(.backgroundFlash_d5deea, .messageListItem_d5deea) {
-              .groupStart_d5deea, .isSystemMessage_f9f2ca {
+            .backgroundFlash_d5deea, .messageListItem_d5deea {
+              .groupStart_d5deea.compact_f9f2ca, .isSystemMessage_f9f2ca.compact_f9f2ca {
                 margin-top: 0;
                 padding-top: 6px;
                 border-top: solid 1px var(--background-modifier-accent);
@@ -539,7 +543,7 @@
               &:has(+.divider_d5deea:is(.hasContent_d5deea, .beforeGroup_d5deea)),
               &:has(+.scrollerSpacer_e2e187),
               &:has(.isSystemMessage_f9f2ca) {
-                .message_d5deea {
+                .message_d5deea.compact_f9f2ca {
                   padding-bottom: 6px;
                 }
               }
@@ -548,48 +552,48 @@
               height: 0;
             }
             // divider
-            .divider_d5deea {
-              margin-left: 20px !important;
-              margin-right: 6px !important;
-              &.beforeGroup_d5deea {
-                top: 0 !important;
-              }
-              &.isUnread_c2654d {
-                margin-right: 0;
-                border-color: #{ss(rgba(240, 71, 71, 0.4))};
-              }
-              &.hasContent_c2654d .unreadPill_c2654d {
-                display: none !important;
-              }
-              .content_c2654d {
-                font-size: 14px;
-                border-radius: 8px;
-                z-index: 2;
-                padding: 0 10px;
-              }
-              .unreadPill_c2654d {
-                padding: 0 10px;
-                border-radius: 3px;
-                background: var(--background-primary);
-                right: unset;
-                text-align: center;
-                font-size: 14px;
-                color: #{ss(rgba(240, 71, 71, 0.8))};
-                svg {display: none}
-                [lang="en-GB"] &, [lang="en-US"] & {
-                  font-size: 0;
-                  &:after {
-                    content: "NEW MESSAGES";
-                    font-size: 14px;
-                  }
-                }
-              }
-            }
+            // .divider_d5deea {
+            //   margin-left: 20px !important;
+            //   margin-right: 6px !important;
+            //   &.beforeGroup_d5deea {
+            //     top: 0 !important;
+            //   }
+            //   &.isUnread_c2654d {
+            //     margin-right: 0;
+            //     border-color: #{ss(rgba(240, 71, 71, 0.4))};
+            //   }
+            //   &.hasContent_c2654d .unreadPill_c2654d {
+            //     display: none !important;
+            //   }
+            //   .content_c2654d {
+            //     font-size: 14px;
+            //     border-radius: 8px;
+            //     z-index: 2;
+            //     padding: 0 10px;
+            //   }
+            //   .unreadPill_c2654d {
+            //     padding: 0 10px;
+            //     border-radius: 3px;
+            //     background: var(--background-primary);
+            //     right: unset;
+            //     text-align: center;
+            //     font-size: 14px;
+            //     color: #{ss(rgba(240, 71, 71, 0.8))};
+            //     svg {display: none}
+            //     [lang="en-GB"] &, [lang="en-US"] & {
+            //       font-size: 0;
+            //       &:after {
+            //         content: "NEW MESSAGES";
+            //         font-size: 14px;
+            //       }
+            //     }
+            //   }
+            // }
             // date separator
-            .divider_d5deea.hasContent_d5deea {
-              margin-top: 0 !important;
-              margin-bottom: -1px !important;
-            }
+            // .divider_d5deea.hasContent_d5deea {
+            //   margin-top: 0 !important;
+            //   margin-bottom: -1px !important;
+            // }
           }
           // emoji
           .emoji.jumboable {
