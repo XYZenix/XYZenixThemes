@@ -1448,13 +1448,13 @@
       }
     }
     // regular file embed
-    .mosaicItem_e5c1dc .attachment_b52bef {
+    .file_f46c86 {
       border-radius: 0;
       border: none;
       background: none;
       padding: 0;
       width: fit-content;
-      max-width: min(600px, 50vw);
+      max-width: min(380px, 50vw);
       .icon_b52bef {
         filter: none;
       }
@@ -1464,19 +1464,28 @@
         color: var(--text-muted);
         margin: 2px 0;
       }
-      +.hoverButtonGroup_d0395d {
-        border: none;
-        opacity: 1;
-        top: 50%;
-        transform: translateY(-50%);
-        right: unset;
-        left: 100%;
-        filter: none;
-        outline: none;
-        background: none;
-        .hoverButton_d0395d {
-          background: none !important;
+    }
+    .file_f46c86+.hoverButtonGroup_d0395d,
+    .fileWrapper_f46c86+.hoverButtonGroup_d0395d {
+      border: none;
+      opacity: 1;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      left: unset;
+      filter: none;
+      outline: none;
+      background: none;
+      .hoverButton_d0395d {
+        background: none !important;
+        opacity: .5;
+        transition: .2s opacity;
+        &:hover {
+          opacity: 1;
         }
+      }
+      .removeMosaicItemHoverButton_e5c1dc svg path {
+        color: var(--red) !important;
       }
     }
   }
@@ -1858,7 +1867,7 @@
       .avatarDecoration_f9f2ca {
         left: 0;
       }
-      .attachment_b52bef {
+      .file_f46c86 {
         border: none;
         background: none;
         padding: 0;
