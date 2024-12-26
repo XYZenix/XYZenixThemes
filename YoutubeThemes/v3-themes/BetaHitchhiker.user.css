@@ -1,12 +1,13 @@
 /* ==UserStyle==
 @name           [YouTube] V3 - Beta Hitchhiker
 @namespace      xyzenix.github.io
-@version        1
+@version        2
 @author         11pixels
 @preprocessor   stylus
 @var select comments "Comment style" ["default:Default", "beta:Beta", "alt:Alt"]
 @var checkbox experiments "Enable experimental shit" 0
-@var checkbox darkmode  "darkness be upon ye" 0
+@var checkbox darkmode_old  "darkness be upon ye" 0
+@var checkbox darkmode_ "dark mode but good (unfinished)" 0
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
@@ -23,6 +24,11 @@
     #watch7-headline {
       padding: 15px 19px 0;
       border: none;
+      .sponsorBlockCategoryPill {
+        padding: 0 4px;
+        border-radius: 0;
+        margin-top: -12px;
+      }
       #watch-headline-title {
         margin-bottom: 12px;
         margin-top: -4px;
@@ -415,7 +421,7 @@
       }
     }
   }
-  if darkmode {
+  if darkmode_old {
     dark-btn() {
       background: linear-gradient(#2a2a2a, #222);
       border-color: #1a1a1a !important;
@@ -512,6 +518,62 @@
     img[src="https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif"] {
       filter: contrast(.48) drop-shadow(0 1px 1px #000);
       opacity: 1 !important;
+    }
+  }
+  if darkmode_ {
+    body {
+      #watch7-content {
+        border-color: #000;
+      }
+      #watch7-user-header {
+        border-bottom-color: #000 !important;
+      }
+      .yt-uix-button-panel:hover .yt-uix-button-text:not(:is(:hover, :active)) {
+        background: #111;
+        color: #aaa !important;
+        text-shadow: 0 1px #000;
+        border-color: #222;
+      }
+      #watch7-content #watch7-action-buttons #watch7-secondary-actions .yt-uix-button .yt-uix-button-content::before  {
+        filter: invert(1);
+      }
+      #watch7-content #watch7-action-panels {
+        background: #111;
+        #watch-description::before {
+          color: #aaa !important;
+        }
+        border-color: #222;
+      }
+      .watch-view-count {
+        color: #aaa !important;
+      }
+      #watch7-action-buttons {
+        border-color: #000 !important;
+      }
+      #watch-description-toggle .yt-uix-button {
+        text-shadow: none !important;
+        color: #aaa;
+      }
+      #watch7-content .yt-uix-button-panel:hover #watch-description-toggle .yt-uix-button {
+        background: #222 !important;
+        border-color: #333;
+      }
+      #watch7-content #watch-discussion {
+        background: #111 !important;
+        border-color: #000 !important;
+        box-shadow: none;
+      }
+      #watch7-content #watch-discussion .all-comments a {
+        color: #666 !important;
+        text-shadow: 0 1px #000 !important;
+      }
+      #watch7-content #watch-discussion .all-comments::after, #watch7-content #watch-discussion .all-comments::before  {
+        box-shadow: 0 1px #222;
+        background: #000;
+      }
+      #watch7-content #watch-discussion .distiller_yt-thread::before  {
+        background: #222;
+      }
     }
   }
 }
