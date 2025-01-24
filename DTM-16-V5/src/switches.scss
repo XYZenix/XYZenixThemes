@@ -132,6 +132,11 @@
       @supports not (-moz-appearance: none) {
         .container_cebd1c {
           border-radius: 0;
+          .enable-forced-colors & {
+            border: none !important;
+            width: 18px;
+            height: 18px;
+          }
           width: 18px;
           height: 18px;
           .input_cebd1c {
@@ -167,6 +172,9 @@
               border-top-width: 0;
               border-left-width: 0;
               transform: rotate(45deg);
+              .enable-forced-colors & {
+                opacity: 0;
+              }
             }
             &:checked {
               &:before {
@@ -174,7 +182,12 @@
                 background-size: 14px 14px;
                 border-color: var(--blurple);
               }
-              &:after {border-color: #fff}
+              &:after {
+                border-color: #fff;
+                .enable-forced-colors & {
+                  opacity: 1;
+                }
+              }
             }
           }
           background: #0000 !important;

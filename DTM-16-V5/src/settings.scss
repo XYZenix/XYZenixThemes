@@ -32,6 +32,17 @@
     background: #0000;
     .standardSidebarView_c25c6d {
       background: #0000;
+      @media (forced-colors: active) {
+        @at-root {
+          .layer_d4b6c5:not(.baseLayer_d4b6c5):has(>.standardSidebarView_c25c6d),
+          .layer_d4b6c5:not(.baseLayer_d4b6c5):has(>div>.standardSidebarView_c25c6d) {
+            outline: solid 1px ButtonText;
+          }
+        }
+        .sidebar_c25c6d {
+          border-right: solid 1px ButtonText;
+        }
+      }
     }
     // sidebar
     #{$settings-sidebar} {
@@ -82,6 +93,9 @@
               &::-webkit-scrollbar {
                 width: 0;
                 height: 0;
+              }
+              .input_effbe2 {
+                border: none;
               }
             }
           }
@@ -183,7 +197,11 @@
           }
           .separator_a0 {
             width: 20px;
-            background-color: hsla(0,0%,100%,.1)
+            background-color: hsla(0,0%,100%,.1);
+            .enable-forced-colors & {
+              background: ButtonText !important;
+              opacity: .2;
+            }
           }
         }
         overflow-y: scroll !important;
@@ -246,6 +264,9 @@
             content:"Done";
             font-size: 16px;
             font-weight: 400;
+          }
+          .enable-forced-colors & {
+            outline: solid 1px ButtonText !important;
           }
         }
         .keybind_df5532 {
@@ -345,6 +366,7 @@
               background: none;
               padding: 0;
               border-radius: 0;
+              border: none;
               .background_b69b77 {
                 padding: 0;
                 margin: 0;
@@ -465,6 +487,7 @@
                   background-size: 18px 18px;
                   background-position: 4px 4px;
                   color: transparent !important;
+                  text-indent: -99999px;
                   transition: opacity .2s ease;
                 }
                 .lookFilled_dd4f85.colorPrimary_dd4f85 {
@@ -605,6 +628,9 @@
             &.selected_a0 {
               color: var(--dtm-16-mini-tab-selected-color);
               border-color: currentColor;
+            }
+            @media (forced-colors: active) {
+              margin-bottom: 0;
             }
           }
         }
@@ -1455,6 +1481,9 @@
                 box-shadow: 0 1px #f0f0f0;
                 .theme-dark & {box-shadow: 0 1px var(--background-accent)}
                 transition: 0s;
+                .enable-forced-colors & {
+                  forced-color-adjust: none;
+                }
                 &::placeholder {
                   color: #dadddf;
                   .theme-dark & {color:var(--interactive-muted)}

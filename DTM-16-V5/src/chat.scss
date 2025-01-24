@@ -140,6 +140,11 @@
               background: none;
               box-shadow: none;
               height: 24px;
+              @at-root {
+                .enable-forced-colors .wrapper_f7e168 {
+                  background: ButtonFace !important;
+                }
+              }
               .button_f7e168 {
                 padding: 0;
                 background: none;
@@ -1491,14 +1496,18 @@
       --radio-bar-accent-color: var(--header-primary);
       background: #0000 !important;
       border-color: #0000 !important;
-      :is(.colorStandard-21JIj7, .title-1yyp9V, [data-text-variant="text-md/medium"]) {
+      .enable-forced-colors & {
+        border: none !important;
+        --background-primary: Canvas;
+      }
+      [data-text-variant="text-md/medium"] {
         color: var(--radio-bar-accent-color) !important;
         font-weight: 400;
       }
-      :is(.colorHeaderSecondary-g5teka, .icon-1ykL9s, .size14-3fJ-ot, [data-text-variant="text-sm/normal"]) {
+      [data-text-variant="text-sm/normal"] {
         color: var(--header-secondary) !important;
       }
-      > div:not([class*="-"]) > svg:not(.icon_eb92a8), .radioBarIcon-EiCq-C>svg {
+      > div:not([class*="-"]) > svg:not(.icon_eb92a8) {
         path {display: none}
         border-radius: 50%;
         box-sizing: border-box;
@@ -1513,7 +1522,6 @@
     }
     &:not([aria-checked="true"]) {
       &:is(:hover, :active) {
-        .radioBarIcon-EiCq-C>svg,
         .radioBar_eb92a8 > div:not([class*="-"]) > svg:not(.icon_eb92a8) {
           background: #{ss(rgba(114, 137, 218, 0.4))};
           box-shadow: inset 0 0 0 7px var(--background-primary);
@@ -1530,10 +1538,10 @@
           box-shadow: inset 0 0 0 7px var(--background-primary);
           .theme-light & {border-color: #cdcdcd}
         }
-        :is(.colorStandard-21JIj7, .title-1yyp9V, [data-text-variant="text-md/medium"]) {
+        [data-text-variant="text-md/medium"] {
           color: var(--radio-bar-accent-color) !important;
         }
-        :is(.colorHeaderSecondary-g5teka, .icon-1ykL9s, .size14-3fJ-ot, [data-text-variant="text-sm/normal"]) {
+        [data-text-variant="text-sm/normal"] {
           color: var(--header-secondary) !important;
         }
       }
