@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "168";
-$themeDate: "Feb 1, 2025";
+$themeVersion: "169";
+$themeDate: "Feb 6, 2025";
 
 @use "sass:color";
 @use "sass:math";
@@ -1035,15 +1035,20 @@ $exportAddon_neonEmbed: false;
     .theme-dark & {background: linear-gradient(to bottom, var(--d8dG) 0%,var(--d8dB) 100%)}
     // search bar
     .searchBar__35e86 {
-      .searchBarComponent__35e86 {
+      :is(.searchBarComponent__35e86, .button__201d5.lookFilled__201d5.colorPrimary__201d5) {
         border-radius: 2px;
         transition: .18s box-shadow;
+        text-align: left;
+        padding: 1px 6px;
+        justify-content: start;
+        height: 28px;
+        min-height: 0;
       }
       .theme-light & {
         background: linear-gradient(var(--d8l3), var(--d8l5) 50%, var(--d8l7) 50%, var(--d8l8));
         box-shadow: inset 0 1px #fff6, inset 0 2px #fff6;
         color: #222;
-        .searchBarComponent__35e86 {
+        :is(.searchBarComponent__35e86, .button__201d5.lookFilled__201d5.colorPrimary__201d5) {
           background: linear-gradient(var(--d8l3), var(--d8l2) 50%, var(--d8l1) 50%, var(--d8l2));
           box-shadow: inset 0 1px 4px #0004, 0 0 0 1px #fff4, 0 1px #fffb;
           color: #000;
@@ -1054,12 +1059,19 @@ $exportAddon_neonEmbed: false;
         background: linear-gradient(to bottom, var(--d8d8) 0%,var(--d8dA) 50%,var(--d8dB) 50%,var(--d8dC) 100%);
         box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
         color: #fff;
-        .searchBarComponent__35e86 {
+        :is(.searchBarComponent__35e86, .button__201d5.lookFilled__201d5.colorPrimary__201d5) {
           background: linear-gradient(to bottom,var(--d8dD) 0%,var(--d8dC) 50%,var(--d8dB) 50%,var(--d8dB) 100%);
           box-shadow: inset 0 1px 3px #0008, 0 1px #fff2, 0 0 0 1px #fff1;
           color: #fff8;
           text-shadow: none;
           cursor: text;
+        }
+      }
+      .visual-refresh & {
+        border-bottom: none;
+        height: 48px;
+        .contents__201d5 {
+          display: contents;
         }
       }
     }
@@ -1142,6 +1154,11 @@ $exportAddon_neonEmbed: false;
               }
             }
           }
+        }
+      }
+      .visual-refresh & {
+        .sectionDivider__35e86 {
+          visibility: hidden;
         }
       }
     }
@@ -1860,6 +1877,19 @@ $exportAddon_neonEmbed: false;
       .flex__7c0ba {
         margin-right: 1px;
       }
+      .micButtonParent__37e49 {
+        >button {
+          &:first-child {
+            border-radius: 2px 0 0 2px;
+            &:not(:last-child) {
+              border-radius: 0 2px 2px 0;
+            }
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
     }
     // vc panel
     .wrapper_e131a9 .container_e131a9 {
@@ -2008,7 +2038,7 @@ $exportAddon_neonEmbed: false;
         a {
           pointer-events: none;
           .channel_e131a9 {
-            color: var(--d8d2);
+            color: var(--d8d2) !important;
             pointer-events: all;
             padding-left: 4px;
             padding-right: 32px;
@@ -2017,6 +2047,14 @@ $exportAddon_neonEmbed: false;
             letter-spacing: .2px;
             font-size: 8px;
             text-shadow: 0 0 8px;
+            [data-text-variant="text-sm/medium"] {
+              color: var(--d8d2) !important;
+              text-transform: uppercase;
+              font-weight: 700;
+              letter-spacing: .2px;
+              font-size: 8px;
+              text-shadow: 0 0 8px;
+            }
           }
         }
         +.flex__7c0ba {
@@ -2570,6 +2608,9 @@ $exportAddon_neonEmbed: false;
   .headerBar__8a7fc {
     height: 48px;
     backdrop-filter: blur(16px);
+    .visual-refresh & {
+      padding-right: 88px;
+    }
     .theme-dark & {
       background: linear-gradient(hsla(var(--d8d4v),.25), hsla(var(--d8d3v),.25) 50%, hsla(var(--d8d0v),.25) 50%, hsla(var(--d8d7v),.25) 50%);
       box-shadow: inset 0 1px #fff2, inset 0 2px #fff1, 0 1px rgba(0 0 0/.75), 0 1px 8px rgba(0 0 0/.5), inset 0 -1px rgba(255 255 255/.2);
@@ -2583,6 +2624,10 @@ $exportAddon_neonEmbed: false;
       margin-top: 6px;
       .item_b3f026 {
         margin-top: 14px;
+        .visual-refresh & {
+          height: auto;
+          padding-top: 0;
+        }
         .theme-dark & {
           text-shadow: 0 1px 2px rgba(0 0 0/.5);
         }
@@ -2713,6 +2758,9 @@ $exportAddon_neonEmbed: false;
       .item__133bf {
         margin-left: 2px;
         margin-right: 2px;
+        .visual-refresh & {
+          border-radius: 3px;
+        }
         &, &.addFriend__133bf {
           color: var(--d8l8);
           text-shadow: 0 -1px #000A;
@@ -3045,8 +3093,10 @@ $exportAddon_neonEmbed: false;
 // chat
 @at-root {
   .chat_f75fb0 {
-    background: linear-gradient(to bottom, var(--d8dG) 0%, var(--d8dB) 100%);
-    .theme-light & {
+    &, .visual-refresh & {
+      background: linear-gradient(to bottom, var(--d8dG) 0%, var(--d8dB) 100%);
+    }
+    .theme-light &, .theme-light.visual-refresh & {
       background: linear-gradient(to bottom, var(--d8l4) 0%, #FFF 100%);
     }
     // no you fucking don't
@@ -3076,6 +3126,9 @@ $exportAddon_neonEmbed: false;
           }
         }
         @include scrollbar;
+      }
+      .visual-refresh & {
+        background: #0000;
       }
     }
     // thread notice
@@ -6278,6 +6331,9 @@ $exportAddon_neonEmbed: false;
       background: linear-gradient(var(--d8dA),var(--d8d9));
       border-radius: 8px;
       box-shadow: inset 0 1px 3px 1px, 0 0 0 1px #fff2;
+      .visual-refresh & {
+        gap: 0;
+      }
       .theme-light & {
         background: #FFF;
         box-shadow: inset 0 1px 3px #0008;
@@ -6304,6 +6360,10 @@ $exportAddon_neonEmbed: false;
   // buttons
   @at-root {
     :is(.lookFilled__201d5, .ctaButton__1066d) {
+      .visual-refresh & {
+        border: none;
+        border-radius: 3px;
+      }
       &:is(.colorBrand__201d5, .colorBrandNew__8872c) {
         background: linear-gradient(to bottom, var(--d8br5) 0%, var(--d8br6) 50%, var(--d8br8) 50%,var(--d8brA) 100%);
         text-shadow: 0 -1px #000, 0 1px 3px #0004;
@@ -6364,8 +6424,11 @@ $exportAddon_neonEmbed: false;
       background-image: linear-gradient(var(--d8dD), var(--d8dC) 50%, var(--d8dB) 50%, var(--d8dB));
       border: 1px solid;
       text-shadow: 0 -1px #000, 0 1px 3px #0004;
-      box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff4, inset 0 1px #fff4, inset 0 -1px #0008, 0 0 1px 2px #fff2;
+      box-shadow: 0 0 0 1px #000b, inset 0 0 0 px #fff4, inset 0 1px #fff4, inset 0 -1px #0008, 0 0 1px 2px #fff2;
       z-index: 1;
+      .visual-refresh & {
+        border-radius: 3px;
+      }
       .theme-light & {
         background-image: linear-gradient(var(--d8l1), var(--d8l4) 50%, var(--d8l2) 50%, var(--d8l0));
         text-shadow: 0 1px #fffb, 0 1px 3px #fffb;        
@@ -6665,7 +6728,7 @@ $exportAddon_neonEmbed: false;
         box-shadow: inset 0 0 0 1px #fff3, 0 0 0 1px #000a, 0 1px 3px #000b;
         border-radius: 3px;
         .tooltipPointer__382e7 {
-          border-top-color: #000a;
+          border-top-color: #000a !important;
         }
       }
       .theme-light & {
@@ -6673,7 +6736,7 @@ $exportAddon_neonEmbed: false;
         box-shadow: inset 0 0 0 1px #fff8, 0 0 0 1px var(--d8lB), 0 1px 3px #0006;
         color: #000;
         .tooltipPointer__382e7 {
-          border-top-color: var(--d8lB);
+          border-top-color: var(--d8lB) !important;
         }
       }
     }
@@ -8775,6 +8838,377 @@ $exportAddon_neonEmbed: false;
   top: 0;
   left: 0;
 }*/
+
+// visual "we needed to justify our paychecks so we made sure the app runs like half-life 2 on the xbox so all your themes run like the e&e version of gta 5 would run on the xbox 360- oh what's that? you want us to fix all the tiny bugs in the ui and improve performance? sorry that doesn't make us money so why don't you come work at Discord and fix it yourself" refresh
+@at-root {
+  .visual-refresh .base_c48ade {
+    display: flex;
+    flex-direction: row;
+    --custom-app-top-bar-height: 0;
+    --guildbar-avatar-size: 48px;
+    .bar_c38106 {
+      position: absolute;
+      z-index: 101;
+      top: 0;
+      right: 0;
+      height: 48px;
+      padding: 0 8px 0 0;
+      box-sizing: border-box;
+      gap: 0;
+      -webkit-app-region: unset;
+      .title_c38106, .leading_c38106 {
+        display: none;
+      }
+      .trailing_c38106 {
+        gap: 0;
+        .iconWrapper__9293f {
+          width: 24px;
+          height: 24px;
+          margin: 0 8px;
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+        .recentsIcon_c99c29:nth-last-child(3)+a {
+          display: none;
+        }
+      }
+    }
+    .content_c48ade {
+      display: contents;
+    }
+    .sidebar_c48ade {
+      display: grid;
+      grid-template-columns: 72px 240px;
+      grid-template-rows: [start] 1fr [panels-start] min-content [end];
+      grid-template-areas: "guilds channels" "guilds panels";
+      --custom-app-panels-height: 0;
+      width: 312px;
+      .sidebarList_c48ade {
+        grid-area: channels;
+        border-radius: 0;
+        border: none;
+        width: 240px !important;
+        .header_f37cb1 {
+          border: none;
+          height: auto;
+          padding: 12px 16px;
+          .dropdownButton__2637a {
+            width : auto;
+            height: auto;
+            padding: 0;
+          }
+        }
+        .interactive_bf202d {
+          border-radius: 3px;
+        }
+        .dm__972a0 .link__972a0, .linkButton__972a0 .link__972a0 {
+          padding-top: 0;
+          padding-bottom: 0;
+          min-height: 42px;
+        }
+        .link__2ea32 {
+          border-radius: 3px;
+        }
+        .container__7aaec {
+          .bar__7aaec {
+            border: none;
+          }
+          &.bottom__7aaec {
+            bottom: 0;
+          }
+        }
+        // channel category
+        .wrapper__29444 {
+          .icon__29444 {
+            position: absolute;
+            left: 2px;
+          }
+          [data-text-variant="text-sm/medium"] {
+            font-weight: 400;
+            text-shadow: 0 1px 2px #0008;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: .02em;
+          }
+        }
+        // vc user cap
+        .wrapper__260e1 {
+          border: none;
+          .total__260e1:after {
+            content: "";
+            display: block;
+          }
+        }
+        .animatedContainer_f37cb1 {
+          top: 0;
+          border-bottom: none;
+          .bannerImg_f37cb1 {
+            width: 240px;
+          }
+        }
+        .bannerVisible_f37cb1 .headerContent_f37cb1 {
+          filter: drop-shadow(0 1px 1px var(--bg-backdrop));
+          .name_f37cb1 {
+            color: var(--header-primary);
+          }
+        }
+      }
+      .guilds_c48ade {
+        grid-area: guilds;
+        margin: 0;
+        width: 72px;
+        // home
+        .tutorialContainer__1f388 {
+          .wrapper_cc5dd2>svg>foreignObject {
+            width: 72px;
+          }
+        }
+        .wrapper_cc5dd2>svg>foreignObject {
+          width: 48px;
+          height: 48px;
+        }
+        .stack_dbd263.none_d125d2 {
+          gap: 0 !important;
+        }
+        // end buttons
+        .tutorialContainer__650eb, .tutorialContainer__650eb~.listItem__650eb {
+          margin-top: 8px;
+        }
+      }
+      .panels_c48ade {
+        grid-area: panels;
+        position: relative;
+        inset: auto;
+        margin: 0;
+        width: auto;
+        border: none;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        .devBanner__56d75 {
+          order: 999;
+        }
+        .container__37e49 {
+          min-height: 0;
+          .avatar__37e49 {
+            width: 32px !important;
+            height: 32px !important;
+            >svg {
+              width: 39px;
+              height: 39px;
+            }
+          }
+        }
+        .connection_e131a9 {
+          [data-text-variant="text-md/medium"] {
+            font-size: 14px;
+            line-height: 1;
+          }
+        }
+      }
+      .sidebarResizeHandle_c48ade, &:after {
+        display: none;
+      }
+    }
+    .chat_f75fb0 {
+      border-top: none;
+      .title_f75fb0.container__9293f.themed__9293f {
+        padding-right: 88px;
+        padding-left: 8px;
+      }
+    }
+    .header_c791b2.container__9293f.themed__9293f,
+    .header__0b563.container__9293f.themed__9293f {
+      border-top: none;
+      padding-right: 88px;
+      min-height: 48px;
+      height: 48px;
+    }
+    .container__133bf {
+      border-top: none;
+      .container__9293f.themed__9293f {
+        padding: 8px 88px 8px 8px;
+        min-height: 48px;
+        .tabBar__133bf {
+          .item_b3f026 {
+            min-height: 24px;
+            padding: 2px 8px;
+          }
+        }
+      }
+    }
+    .container__9293f {
+      border-bottom: none;
+      min-height: 48px;
+      .toolbar__9293f {
+        gap: 0;
+        .iconWrapper__9293f {
+          width: 24px;
+          height: 24px;
+          margin: 0 8px;
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+    // vc ui
+    .container__722ff {
+      z-index: 102;
+    }
+    .shopViewWrapper__6db1d {
+      .headerBar__80679 {
+        border-top: none;
+        height: 48px;
+        padding-right: 88px;
+        .balanceWidgetMenu__80679 {
+          margin-right: 0;
+        }
+      }
+    }
+    .searchBar__97492 {
+      height: 24px;
+      width: 144px;
+      border-radius: 3px;
+      padding: 0;
+      border: none;
+      .DraftEditor-root {
+        line-height: 24px;
+      }
+      .DraftEditor-editorContainer {
+        height: 20px;
+      }
+    }
+    .focused__97492 .searchBar__97492 {
+      width: 240px;
+    }
+    .container__0f2e8 {
+      border: none;
+    }
+    .layout__91a9d {
+      border-radius: 3px;
+    }
+    .form_f75fb0 {
+      margin-top: -8px;
+      padding: 0 20px;
+      .attachButton__0923f {
+        height: 44px;
+      }
+      .slateTextArea_ec4baf {
+        min-height: 0;
+        padding: 0 10px 0 0;
+        margin-left: 0;
+      }
+      .textArea__74017 {
+        min-height: 44px;
+        height: 44px;
+      }
+      .fontSize12Padding__74017 {padding-bottom:14px;padding-top:14px}
+      .fontSize14Padding__74017 {padding-bottom:12px;padding-top:13px}
+      .fontSize15Padding__74017 {padding-bottom:12px;padding-top:12px}
+      .fontSize16Padding__74017 {padding-bottom:11px;padding-top:11px}
+      .fontSize18Padding__74017 {padding-bottom:9px;padding-top:9px}
+      .fontSize20Padding__74017 {padding-bottom:9px;padding-top:8px}
+      .fontSize24Padding__74017 {padding-bottom:6px;padding-top:5px}
+      .buttons__74017 {
+        height: 44px;
+      }
+      @at-root .visual-refresh-chat-input {
+        .channelBottomBarArea_f75fb0 {
+          margin: 0;
+        }
+        .channelTextArea_f75fb0 {
+          border: none;
+          border-radius: 0;
+          display: grid;
+          border-radius: 3px;
+          grid-template-columns: [start] min-content [chatBox-start] 1fr [chatBox-end] min-content [end];
+          grid-template-areas: "floatingBars floatingBars floatingBars" "stackedBars stackedBars stackedBars" "attachButton chatBox chatButtons";
+          @at-root .visual-refresh-chat-input.theme-light .channelTextArea_f75fb0 {
+            background: linear-gradient(var(--d8l5), var(--d8l4) 50%, var(--d8l2) 50%, #FFF);
+            box-shadow: inset 0 0 0 1px #fffb, 0 0 0 1px #fffb;
+            border: solid 1px var(--d8lC);
+          }
+          @at-root .visual-refresh-chat-input.theme-dark .channelTextArea_f75fb0 {
+            background: linear-gradient(var(--d8dD), var(--d8dC) 50%, var(--d8dB) 50%, var(--d8dB));
+            box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #fff1;
+            border: solid 1px #000;
+          }
+          .floatingBars__74017 {
+            grid-area: floatingBars;
+          }
+          .stackedBars__74017 {
+            grid-area: stackedBars;
+            background: none;
+            margin-top: 0;
+            margin-left: -1px;
+            margin-right: -1px;
+            border: none;
+            .actions__841c8 {
+              margin-right: 0;
+            }
+          }
+          .scrollableContainer__74017 {
+            grid-area: chatBox;
+            background: none;
+            border: none;
+            box-shadow: none;
+          }
+          .attachButton__0923f {
+            margin-left: 0;
+            padding: 10px;
+            @at-root .visual-refresh-chat-input.theme-light .attachButton__0923f {
+              border-right: solid 1px #3F4144;
+              border-image: linear-gradient(#0000 10%, var(--d8lC) 30%, var(--d8lC) 70%, #0000 90%) 1;
+            }
+            @at-root .visual-refresh-chat-input.theme-dark .attachButton__0923f {
+              border-right: solid 1px #3F4144;
+              border-image: linear-gradient(#0000 10%, #3f4144 30%, #3f4144 70%, #0000 90%) 1;
+            }
+          }
+          .accessoryBar__74017 {
+            display: contents;
+            .accessoryBarLeft__74017 {
+              grid-area: attachButton;
+            }
+            .accessoryBarRight__74017 {
+              grid-area: chatButtons;
+              padding-right: 8px;
+              .buttons__74017 {
+                gap: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    // invite embed
+    .wrapper_d5f3cd {
+      border: none;
+      .eyebrow_b717a1 {
+        font-size: 12px;
+        line-height: 1.3333333333333333;
+        font-weight: 700;
+      }
+    }
+  }
+  .visual-refresh {
+    .tooltip__382e7 {
+      border: none;
+      .tooltipPointerBg__382e7 {
+        display: none;
+      }
+    }
+    .tooltipTop__382e7 .tooltipPointer__382e7 {margin-top:0}
+    .tooltipLeft__382e7 .tooltipPointer__382e7 {margin-left:0}
+    .tooltipRight__382e7 .tooltipPointer__382e7 {margin-right:0}
+    :is(.tooltipBottom__382e7, .tooltipCenter__382e7) .tooltipPointer__382e7 {margin-bottom:0}
+  }
+}
+
 
 @if $exportAddon_roundedIcons {
   /* ============================== */
