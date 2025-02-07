@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "169";
-$themeDate: "Feb 6, 2025";
+$themeVersion: "170";
+$themeDate: "Feb 7, 2025";
 
 @use "sass:color";
 @use "sass:math";
@@ -8842,10 +8842,9 @@ $exportAddon_neonEmbed: false;
 // visual "we needed to justify our paychecks so we made sure the app runs like half-life 2 on the xbox so all your themes run like the e&e version of gta 5 would run on the xbox 360- oh what's that? you want us to fix all the tiny bugs in the ui and improve performance? sorry that doesn't make us money so why don't you come work at Discord and fix it yourself" refresh
 @at-root {
   .visual-refresh .base_c48ade {
-    display: flex;
-    flex-direction: row;
     --custom-app-top-bar-height: 0;
     --guildbar-avatar-size: 48px;
+    grid-template-columns: [start] 72px [guilds-end] 240px [channelsEnd] 1fr [end];
     .bar_c38106 {
       position: absolute;
       z-index: 101;
@@ -8874,6 +8873,12 @@ $exportAddon_neonEmbed: false;
           display: none;
         }
       }
+    }
+    &:has(>.notice__6e2b9)>.bar_c38106 {
+      top: 36px;
+    }
+    .notice__6e2b9 {
+      border-top: none;
     }
     .content_c48ade {
       display: contents;
@@ -8954,6 +8959,9 @@ $exportAddon_neonEmbed: false;
             color: var(--header-primary);
           }
         }
+      }
+      &.hasNotice_c48ade>.sidebarList_c48ade {
+        margin-top: 36px;
       }
       .guilds_c48ade {
         grid-area: guilds;
