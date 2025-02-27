@@ -235,7 +235,7 @@
         margin-bottom: -4px;
       }
       .voiceUsers__68617 {gap:4px}
-      .flex__7c0ba>button {
+      .buttons__37e49>button {
         .lottieIcon__5eb9b {
           &, svg, g, path {
             display: block !important;
@@ -714,7 +714,7 @@
       }
     }
     // panel button groups
-    #{$panelButton} {
+    #{$panelButton}:is(#{$panelButton}, .redGlow__67645.enabled__67645) {
       background-color: var(--background-secondary);
       border-radius: 0;
       .custom-theme-background & {
@@ -802,12 +802,14 @@
           fill: currentColor;
         }
       }
-      @at-root #{$panels} .micButtonParent__37e49>#{$panelButton} {
-        border-right: 1px solid #dedede;
-        .theme-dark & {
-          border-right-color: #{ss(#1c1e22)};
+      @at-root #{$panels} .micButtonParent__37e49 {
+        margin: 0 !important;
+        >#{$panelButton} {
+          border-right: 1px solid #dedede;
+          .theme-dark & {
+            border-right-color: #{ss(#1c1e22)};
+          }
         }
-
       }
       &:not(:only-child):not(:last-child) {
         border-right: 1px solid #dedede;
@@ -880,7 +882,7 @@
         }
       }
     }
-    :is(#{$panel-account} .flex__7c0ba, .wrapper_e131a9 .connection_e131a9 .flex__7c0ba, .activityPanel_c48ade .actions__4cd01, .listeningAlong_e0cf27 .icons_e0cf27) {
+    :is(#{$panel-account} .buttons__37e49, .wrapper_e131a9 .connection_e131a9 .flex__7c0ba, .activityPanel_c48ade .actions__4cd01, .listeningAlong_e0cf27 .icons_e0cf27) {
       box-sizing: border-box;
       display: flex;
       border: 1px solid #dedede;
@@ -900,12 +902,12 @@
       }
     }
     // account
-    #{$panel-account} .flex__7c0ba {
+    #{$panel-account} .buttons__37e49 {
       min-width: 98px;
     }
     // account (lottie)
     .container__37e49 {
-      .flex__7c0ba {
+      .buttons__37e49 {
         >button {
           .lottieIcon__5eb9b {
             &, svg, g, path {
