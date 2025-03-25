@@ -1,0 +1,256 @@
+@use "options" as *;
+@use "exps" as *;
+@use "funcs" as *;
+// switches
+@at-root {
+  @supports not (-moz-appearance: none) {
+  }
+  .container__87bf1 {
+    border-radius: 0;
+    border-color: #0000 !important;
+    .enable-forced-colors & {
+      border: none !important;
+      width: 18px;
+      height: 18px;
+    }
+    width: 18px;
+    height: 18px;
+    .input__87bf1 {
+      opacity: 1;
+      width: 0;
+      &:before, &:after {
+        margin-top: -1px;
+        margin-left: -1px;
+        transition: .2s;
+        content: "";
+        display: block;
+        border-radius: 50px;
+      }
+      &:before {
+        width: 18px;
+        height: 18px;
+        border-radius: 2px;
+        box-sizing: border-box;
+        border: solid 2px var(--dtm-16-checkbox-border-off);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        display: table;
+        width: 4px;
+        height: 10px;
+        border-radius: 0;
+        border: 2px solid #0000;
+        border-top-width: 0;
+        border-left-width: 0;
+        transform: rotate(45deg);
+        .enable-forced-colors & {
+          opacity: 0;
+        }
+      }
+      &:checked {
+        &:before {
+          background: var(--blurple);
+          background-size: 14px 14px;
+          border-color: var(--blurple);
+        }
+        &:after {
+          border-color: #fff;
+          .enable-forced-colors & {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    background: #0000 !important;
+    svg {display: none}
+  }
+  // switches in role settings
+  @supports not (-moz-appearance: none) {
+    .permissionsWrapper__16663 {
+      .container__0d850 .input__87bf1 {
+        &:checked {
+          &:before {
+            background: var(--green);
+            border-color: var(--green);
+          }
+        }
+      }
+    }
+  }
+  @supports not (-moz-appearance: none) {
+    // switches - channel role overrides
+    .group__344e6 {
+      border: none;
+    }
+    .item__344e6 {
+      path, g {
+        display: none;
+      }
+      cursor: pointer;
+      width: 36px;
+      border: solid 1px #{ss(#18191c)};
+      .theme-light & {border-color: #{ss(#dadddf)}}
+      &:first-of-type {border-radius: 3px 0 0 3px}
+      &:nth-of-type(2) {border-left: none; border-right: none}
+      &:last-of-type {border-radius: 0 3px 3px 0}
+      &:not(.selected__344e6):hover {background: none}
+      svg {background: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.2852 15.675C2.8352 15.5325 2.4752 15.1725 2.3252 14.7225L14.7227 2.325C15.1727 2.475 15.5327 2.835 15.6752 3.285L3.2852 15.675Z' fill='%23747F8D'/%3E%3C/svg%3E%0A") center}
+      &.selected__344e6 {
+        svg {background:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.2852 15.675C2.8352 15.5325 2.4752 15.1725 2.3252 14.7225L14.7227 2.325C15.1727 2.475 15.5327 2.835 15.6752 3.285L3.2852 15.675Z' fill='white'/%3E%3C/svg%3E%0A") center}
+        background: #{ss(#747f8d)};
+      }
+      &.allow__344e6 {
+        svg {background:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.75 5.25L6.75 14.25L2.625 10.125L3.6825 9.0675L6.75 12.1275L14.6925 4.1925' fill='%2343B581'/%3E%3C/svg%3E") center}
+        &.selected__344e6 {
+          border-color: var(--green);
+          background: var(--green);
+          svg {background:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.75 5.25L6.75 14.25L2.625 10.125L3.6825 9.0675L6.75 12.1275L14.6925 4.1925' fill='white'/%3E%3C/svg%3E%0A") center}
+        }
+      }
+      &.deny__344e6 {
+        svg {background:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.25 4.8075L13.1925 3.75L9 7.9425L4.8075 3.75L3.75 4.8075L7.9425 9L3.75 13.1925L4.8075 14.25L9 10.0575L13.1925 14.25L14.25 13.1925L10.0575 9' fill='%23F04747'/%3E%3C/svg%3E%0A") center}
+        &.selected__344e6 {
+          border-color: var(--red);
+          background: var(--red);
+          svg {background:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.25 4.8075L13.1925 3.75L9 7.9425L4.8075 3.75L3.75 4.8075L7.9425 9L3.75 13.1925L4.8075 14.25L9 10.0575L13.1925 14.25L14.25 13.1925L10.0575 9' fill='white'/%3E%3C/svg%3E%0A") center}
+        }
+      }
+    }
+  }
+  // radio bars
+  :root {
+    .radioGroup__963c3 {
+      gap: 0;
+    }
+    .item__001a7 {
+      background: none !important;
+      border-radius: 0;
+      .radioBar__001a7 {
+        padding: 0 !important;
+        gap: 10px;
+        border: none;
+        border-radius: 0;
+      }
+      // .radioIndicator__001a7.radioBarIcon_ac72c6 {
+      //   width: 30px;
+      //   height: 30px;
+      //   margin: -1px 0 0 -1px;
+      //   .refreshIconStroke__001a7 {
+      //     stroke: var(--dtm-16-switch-ring);
+      //     stroke-width: 1.25px;
+      //     transition: .24s;
+      //   }
+      //   .refreshIconFill__001a7 {
+      //     transition: .24s;
+      //   }
+      //   &.radioIndicatorChecked__001a7 {
+      //     .refreshIconFill__001a7 {
+      //       fill: var(--blurple);
+      //     }
+      //     .refreshIconStroke__001a7 {
+      //       stroke: var(--blurple);
+      //     }
+      //   }
+      // }
+      .radioIndicatorGroup__001a7 {
+        .radioIndicator__001a7 {display:none}
+        width: 30px;
+        height: 30px;
+        box-sizing: border-box;
+        border: solid 1px var(--dtm-16-switch-ring);
+        border-radius: 50%;
+        display: flex;
+        min-width: 30px;
+        place-items: center;
+        justify-content: center;
+        overflow: visible;
+        &:after {
+          content: "";
+          display: block;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: var(--blurple);
+          opacity: 0;
+          transition: opacity .3s ease;
+        }
+        .icon__001a7 {
+          display: none;
+        }
+      }
+      &:hover .radioIndicatorGroup__001a7:after {
+        opacity: .2;
+      }
+      &[aria-checked="true"] .radioIndicatorGroup__001a7:after {
+        opacity: 1;
+      }
+      .radioItemName_ac72c6 {
+        .icon_ac72c6 {
+          order: 2;
+          margin-left: auto;
+        }
+      }
+      .radioLabelName_ac72c6, .info__001a7 div[data-text-variant="text-md/medium"] {
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 400;
+        color: var(--radio-bar-accent-color, var(--interactive-active));
+      }
+      .radioBarLabel_ac72c6 {
+        order: 5;
+        .icon_ac72c6 {
+          margin: 0 8px 0 0;
+          order: -1;
+        }
+      }
+      .radioLabelDescription_ac72c6, .info__001a7 div[data-text-variant="text-sm/normal"] {
+        font-size: 11px;
+        line-height: 13px;
+        color: var(--dtm-16-switch-description) !important;
+      }
+      +.item__001a7 {
+        margin-top: 12px;
+      }
+    }
+  }
+  html:not(.visual-refresh) {
+    .item__001a7 {
+      .radioBar__001a7 {
+        .radioIndicatorChecked__001a7, .radioBarIcon_ac72c6, >[class=""] {
+          width: 30px;
+          height: 30px;
+          box-sizing: border-box;
+          border: solid 1px var(--dtm-16-switch-ring);
+          border-radius: 50%;
+          display: flex;
+          min-width: 30px;
+          place-items: center;
+          justify-content: center;
+          overflow: visible;
+          &:after {
+            content: "";
+            display: block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--blurple);
+            opacity: 0;
+            transition: opacity .3s ease;
+          }
+          svg {
+            display: none;
+          }
+        }
+        &:hover>[class=""]:after, &:hover .radioBarIcon_ac72c6:after {
+          opacity: .2;
+        }
+        .radioIndicatorChecked__001a7:after {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+}

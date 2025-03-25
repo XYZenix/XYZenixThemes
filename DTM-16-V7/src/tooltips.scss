@@ -1,0 +1,222 @@
+@use "funcs" as *;
+@use "mixins" as *;
+@at-root {
+  .layerContainer_da8173 {
+    .tooltip__382e7 {
+      --tooltip-color: var(--blurple);
+      border-radius: 3px;
+      border: none;
+      box-shadow: 0 2px 4px 1px rgba(0,0,0,.1);
+      background: var(--tooltip-color, var(--blurple));
+      color: #fff;
+      &.tooltipRed__382e7 {--tooltip-color: var(--red)}
+      &.tooltipYellow__382e7 {--tooltip-color: var(--yellow)}
+      &.tooltipGreen__382e7 {--tooltip-color: var(--green)}
+      .tooltipContent__382e7 {
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        // server badge tooltip
+        .tooltipBodyContainer__7d7fe {
+          padding: 0;
+          div[class="text-xs/bold_cf4812"] {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 16px;
+            text-transform: uppercase;
+            color: #fff !important;
+          }
+          div[class="text-xs/medium_cf4812"] {
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 16px;
+            color: #fff !important;
+          }
+        }
+        .muteText_b1f768 {
+          color: #fff !important;
+          font-size: 10px;
+        }
+        .tooltipPremiumFooterContainer__7d7fe {
+          margin: 5px 0 0;
+          background: none;
+          gap: 5px;
+          width: auto;
+          .tooltipPremiumFooterSegment__7d7fe {
+            border-radius: 3px;
+            background: #0000;
+            border: solid 1px #fff6;
+            height: 16px;
+            width: max-content;
+            white-space: nowrap;
+            >div[data-text-variant="text-xs/semibold"] {
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 12px;
+              text-transform: uppercase;
+            }
+          }
+        }
+        // server tooltip
+        .rowGuildName_b1f768 {
+          align-items: center;
+          .flowerStarContainer__3e3b0 {
+            margin: 0 4px 0 0;
+            .flowerStar__3e3b0 path {
+              fill: #fff;
+            }
+            .childContainer__3e3b0 path {
+              fill: var(--tooltip-color, var(--blurple));
+            }
+          }
+          .guildNameText_b1f768 {
+            color: inherit;
+          }
+        }
+        .row_b1f768 {
+          --prefer-16px-icons: true;
+          +.row_b1f768 {
+            margin-top: 4px;
+          }
+          .rowIcon_b1f768 {
+            color: #fff;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+          }
+          .avatarContainerMasked__183c2, .avatarContainer__183c2 {
+            width: 16px;
+            height: 16px;
+          }
+        }
+        .invitesDisabledTooltip_b1f768 {
+          font-size: 10px;
+          font-weight: 500;
+          color: #fff !important;
+        }
+        // react bar
+        .emojiTooltipText__040f0[data-text-variant="text-xs/normal"] {
+          font-size: 10px;
+          color: #fff !important;
+        }
+        // emoji hover
+        .tooltip__0f481 {
+          .clickCTA__0f481 {
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 12px;
+            color: #fff !important;
+          }
+        }
+        // nitro badge
+        .tooltipContainer_f240e3 {
+          padding: 0;
+          >img {
+            width: auto;
+            height: 48px;
+          }
+          .tooltipWordmarkContainer_f240e3 {
+            // margin-top: 0;
+            // margin-bottom: -4px;
+            display: none;
+          }
+          // .tooltipWordmark_f240e3 {
+          //   color: #fff;
+          // }
+          h1 {
+            margin-top: 4px;
+            color: #fff !important;
+            text-transform: uppercase;
+            font-style: oblique;
+            line-height: 1;
+            font-size: 18px;
+          }
+          .tooltipDescription_f240e3 {
+            color: #fff !important;
+            font-size: 10px;
+            margin-top: 0;
+          }
+        }
+        // disgusting slop
+        .shopMarketingTooltipContent__4ed1a {
+          .avatarContainer__4ed1a {
+            display: none;
+          }
+        }
+        // soundmoji details
+        .infoTooltip__14ad3 {
+          .infoSoundContainer__14ad3 {
+            border-radius: 0;
+            background: none;
+            padding: 0;
+          }
+          .infoSoundContainer__14ad3 {gap:0}
+          .infoSoundIcon__14ad3 {display:none}
+          .infoSoundInnerContainer__14ad3 {
+            justify-content: center;
+            text-align: center;
+            div[data-text-variant="text-md/semibold"] {
+              font-size: 14px;
+              font-weight: 500;
+              line-height: 1;
+            }
+            div[data-text-variant="text-sm/normal"] {
+              font-size: 10px;
+              font-weight: 500;
+              line-height: 12px;
+              color: #fff !important;
+            }
+          }
+        }
+        // lobby
+        .linkedLobbyEducationTooltip_f75fb0 {
+          div[data-text-variant="text-md/semibold"] {
+            @include dtm16_eyebrow;
+            color: #fff !important;
+          }
+          div[data-text-variant="text-sm/medium"] {
+            font-size: 12px;
+            color: #fff !important;
+            a {
+              color: #fff !important;
+            }
+          }
+          .linkedLobbyEducationTooltipCloseIcon_f75fb0 {
+            color: #fff;
+          }
+        }
+      }
+      .tooltipPointer__382e7 {
+        border-top-color: var(--tooltip-color, var(--blurple));
+        &.tooltipPointerBg__382e7 {
+          display: none;
+        }
+      }
+      &.tooltipTop__382e7  .tooltipPointer__382e7 {margin-top: 0}
+      &.tooltipLeft__382e7  .tooltipPointer__382e7 {margin-left: 0}
+      &.tooltipRight__382e7  .tooltipPointer__382e7 {margin-right: 0}
+      &.tooltipBottom__382e7  .tooltipPointer__382e7 {margin-bottom: 0}
+      &.tooltipGrey__382e7 {
+        --tooltip-color: #fff;
+        box-shadow: 0 2px 4px 1px rgba(0,0,0,.1);
+        border: 1px solid #{ss(#dbdde1)};
+        border-radius: 5px;
+        .tooltipContent__382e7 {
+          padding: 6px 10px;
+          color: #{ss(#87909c)};
+          font-size: 12px;
+          line-height: 12px;
+          font-weight: 700;
+        }
+      }
+    }
+    // stream preview
+    .streamPreview__6da2d {
+      box-shadow: var(--elevation-stroke), var(--elevation-high);
+      .body__6da2d {
+        background: var(--background-secondary-alt);
+      }
+    }
+  }
+}
