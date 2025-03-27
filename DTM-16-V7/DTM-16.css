@@ -41,12 +41,19 @@
   name: "Three Buttons on Top Right of Header";
   note: "enable this if you're using something like the friends popout experiment";
 }
+@property --dtm-16-hide-windows-titlebar {
+  syntax: "true | false";
+  inherits: true;
+  initial-value: false;
+  name: "Hide Windows Titlebar";
+  note: "self explanatory";
+}
 .socialLinks__7df54:before {
   display: block;
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "1022" "\a" "Mar 28, 2025";
+  content: "DTM-16 Build " "1023" "\a" "Mar 28, 2025";
 }
 
 .theme-dark, .theme-light {
@@ -421,7 +428,7 @@ html:not(.visual-refresh) {
 
 @container style(--dtm-16-header-three-buttons: true) {
   body {
-    --dtm-16-header-button-spacing: 116px !important;
+    --dtm-16-header-button-spacing: 116px;
   }
 }
 :root, html.theme-dark.visual-refresh, html.theme-light.visual-refresh, .theme-dark.visual-refresh, .theme-light.visual-refresh, .visual-refresh .theme-dark, .visual-refresh .theme-light {
@@ -469,6 +476,11 @@ html:not(.visual-refresh) {
   --bg-mod-strong: var(--background-accent);
   --bg-mod-faint: var(--background-modifier-accent);
   --header-muted: var(--channels-default);
+}
+@container style(--dtm-16-header-three-buttons: true) {
+  :root, html.theme-dark.visual-refresh, html.theme-light.visual-refresh, .theme-dark.visual-refresh, .theme-light.visual-refresh, .visual-refresh .theme-dark, .visual-refresh .theme-light {
+    --dtm-16-header-button-spacing: 116px;
+  }
 }
 
 .theme-dark {
@@ -1300,7 +1312,7 @@ html.theme-light {
   transform-origin: top right;
   transform: scale(0.75);
 }
-.bar_c38106 .trailing_c38106 .recentsIcon_c99c29:nth-last-child(3) + a {
+.bar_c38106 .trailing_c38106 .recentsIcon_c99c29:nth-last-child(3 of :not(span):not(.winButtons_c38106)) ~ a {
   display: none;
 }
 html:not(.platform-win) .bar_c38106 {
@@ -1361,6 +1373,24 @@ html.platform-win .bar_c38106 .trailing_c38106 .recentsIcon_c99c29:nth-last-chil
   display: none;
 }
 
+@container style(--dtm-16-hide-windows-titlebar: true) {
+  .bar_c38106.systemBar_c38106.systemBar_c38106.systemBar_c38106.systemBar_c38106 {
+    display: none !important;
+  }
+
+  .base_c48ade {
+    margin-top: 0 !important;
+  }
+
+  #app-mount .container__133bf .peopleColumn__133bf .searchBar__5ec2f {
+    top: 0 !important;
+  }
+}
+@container style(--dtm-16-header-three-buttons: true) {
+  #app-mount .container__133bf .peopleColumn__133bf .searchBar__5ec2f {
+    right: 183px !important;
+  }
+}
 path[d="M2 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9Zm3.5 2a.5.5 0 0 0-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3Z"] {
   d: path("M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7v-5z");
 }
@@ -8275,7 +8305,7 @@ html:not(.visual-refresh) .folderIcon__48112 .folder__48112 {
 :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"]), :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.5 8c.28 0 .5.22.5.5V9c0 .1 0 .2.02.31.03.34-.21.69-.56.69H9.85l-.67 4h4.97l.28-1.68c.06-.34.44-.52.77-.43a3 3 0 0 0 .8.11c.27 0 .47.24.43.5l-.25 1.5H20a1 1 0 1 1 0 2h-4.15l-.86 5.16a1 1 0 0 1-1.98-.32l.8-4.84H8.86l-.86 5.16A1 1 0 0 1 6 20.84L6.82 16H3a1 1 0 1 1 0-2h4.15l.67-4H4a1 1 0 1 1 0-2h4.15l.86-5.16a1 1 0 1 1 1.98.32L10.19 8h2.31Z"]), :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M11.45 8c.35 0 .6.35.55.7-.02.2-.02.4 0 .6.04.35-.2.7-.55.7h-1.6l-.67 4h4.97l.26-1.55c.05-.27.31-.45.59-.45h.92c.31 0 .55.28.5.58L16.18 14H20a1 1 0 1 1 0 2h-4.15l-.86 5.16a1 1 0 0 1-1.98-.32l.8-4.84H8.86l-.86 5.16A1 1 0 0 1 6 20.84L6.82 16H3a1 1 0 1 1 0-2h4.15l.67-4H4a1 1 0 0 1 0-2h4.15l.86-5.16a1 1 0 1 1 1.98.32L10.19 8h1.26Z"]), :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M19.56 2a3 3 0 0 0-2.46 1.28 3.85 3.85 0 0 1-1.86 1.42l-8.9 3.18a.5.5 0 0 0-.34.47v10.09a3 3 0 0 0 2.27 2.9l.62.16c1.57.4 3.15-.56 3.55-2.12a.92.92 0 0 1 1.23-.63l2.36.94c.42.27.79.62 1.07 1.03A3 3 0 0 0 19.56 22h.94c.83 0 1.5-.67 1.5-1.5v-17c0-.83-.67-1.5-1.5-1.5h-.94Zm-8.53 15.8L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]), :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.33 5.74a.5.5 0 0 1 .67.47V9a3 3 0 0 0 3 3h5.5c.28 0 .5.22.5.5v8c0 .83-.67 1.5-1.5 1.5h-.94a3 3 0 0 1-2.46-1.28 3.86 3.86 0 0 0-1.07-1.03l-2.36-.94a.92.92 0 0 0-1.23.63 2.92 2.92 0 0 1-3.55 2.12l-.62-.15A3 3 0 0 1 6 18.44V8.35c0-.2.13-.4.33-.47l6-2.14Zm-1.3 12.06L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]), :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.43 5.7a.5.5 0 0 1 .6.72l-.63 1.1c-1.22 2.13.46 4.48 2.64 4.48h6.46c.28 0 .5.22.5.5v8c0 .83-.67 1.5-1.5 1.5h-.94a3 3 0 0 1-2.46-1.28 3.85 3.85 0 0 0-1.07-1.03l-2.36-.94a.92.92 0 0 0-1.23.63 2.92 2.92 0 0 1-3.55 2.12l-.62-.15A3 3 0 0 1 6 18.44V8.35c0-.2.13-.4.33-.47l6.1-2.18Zm-1.4 12.1L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]), :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M15 2a3 3 0 0 1 3 3v12H5.5a1.5 1.5 0 0 0 0 3h14a.5.5 0 0 0 .5-.5V5h1a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h10Zm-.3 5.7a1 1 0 0 0-1.4-1.4L9 10.58l-2.3-2.3a1 1 0 0 0-1.4 1.42l3 3a1 1 0 0 0 1.4 0l5-5Z"]), :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M24 5.7c0-1.54-.2-2.66-.34-3.23C23.35 1.17 22.3.92 21.2.68a.68.68 0 0 0-.62.18c-.16.16-.35.33-.58.32a19.27 19.27 0 0 0-2 0c-.23 0-.42-.16-.58-.32a.68.68 0 0 0-.62-.18c-1.1.24-2.15.5-2.46 1.8-.13.56-.34 1.68-.34 3.22v2.23a1.4 1.4 0 0 0 2.66.63l.8-1.6c.1-.2.34-.3.56-.25.26.06.62.12.98.12s.72-.06.98-.12a.5.5 0 0 1 .56.25l.8 1.6A1.4 1.4 0 0 0 24 7.93V5.7Z"]) {
   display: none;
 }
-:root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"]) + .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.5 8c.28 0 .5.22.5.5V9c0 .1 0 .2.02.31.03.34-.21.69-.56.69H9.85l-.67 4h4.97l.28-1.68c.06-.34.44-.52.77-.43a3 3 0 0 0 .8.11c.27 0 .47.24.43.5l-.25 1.5H20a1 1 0 1 1 0 2h-4.15l-.86 5.16a1 1 0 0 1-1.98-.32l.8-4.84H8.86l-.86 5.16A1 1 0 0 1 6 20.84L6.82 16H3a1 1 0 1 1 0-2h4.15l.67-4H4a1 1 0 1 1 0-2h4.15l.86-5.16a1 1 0 1 1 1.98.32L10.19 8h2.31Z"]) + .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M11.45 8c.35 0 .6.35.55.7-.02.2-.02.4 0 .6.04.35-.2.7-.55.7h-1.6l-.67 4h4.97l.26-1.55c.05-.27.31-.45.59-.45h.92c.31 0 .55.28.5.58L16.18 14H20a1 1 0 1 1 0 2h-4.15l-.86 5.16a1 1 0 0 1-1.98-.32l.8-4.84H8.86l-.86 5.16A1 1 0 0 1 6 20.84L6.82 16H3a1 1 0 1 1 0-2h4.15l.67-4H4a1 1 0 0 1 0-2h4.15l.86-5.16a1 1 0 1 1 1.98.32L10.19 8h1.26Z"]) + .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M19.56 2a3 3 0 0 0-2.46 1.28 3.85 3.85 0 0 1-1.86 1.42l-8.9 3.18a.5.5 0 0 0-.34.47v10.09a3 3 0 0 0 2.27 2.9l.62.16c1.57.4 3.15-.56 3.55-2.12a.92.92 0 0 1 1.23-.63l2.36.94c.42.27.79.62 1.07 1.03A3 3 0 0 0 19.56 22h.94c.83 0 1.5-.67 1.5-1.5v-17c0-.83-.67-1.5-1.5-1.5h-.94Zm-8.53 15.8L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]) + .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.33 5.74a.5.5 0 0 1 .67.47V9a3 3 0 0 0 3 3h5.5c.28 0 .5.22.5.5v8c0 .83-.67 1.5-1.5 1.5h-.94a3 3 0 0 1-2.46-1.28 3.86 3.86 0 0 0-1.07-1.03l-2.36-.94a.92.92 0 0 0-1.23.63 2.92 2.92 0 0 1-3.55 2.12l-.62-.15A3 3 0 0 1 6 18.44V8.35c0-.2.13-.4.33-.47l6-2.14Zm-1.3 12.06L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]) + .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.43 5.7a.5.5 0 0 1 .6.72l-.63 1.1c-1.22 2.13.46 4.48 2.64 4.48h6.46c.28 0 .5.22.5.5v8c0 .83-.67 1.5-1.5 1.5h-.94a3 3 0 0 1-2.46-1.28 3.85 3.85 0 0 0-1.07-1.03l-2.36-.94a.92.92 0 0 0-1.23.63 2.92 2.92 0 0 1-3.55 2.12l-.62-.15A3 3 0 0 1 6 18.44V8.35c0-.2.13-.4.33-.47l6.1-2.18Zm-1.4 12.1L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]) + .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M15 2a3 3 0 0 1 3 3v12H5.5a1.5 1.5 0 0 0 0 3h14a.5.5 0 0 0 .5-.5V5h1a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h10Zm-.3 5.7a1 1 0 0 0-1.4-1.4L9 10.58l-2.3-2.3a1 1 0 0 0-1.4 1.42l3 3a1 1 0 0 0 1.4 0l5-5Z"]) + .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M24 5.7c0-1.54-.2-2.66-.34-3.23C23.35 1.17 22.3.92 21.2.68a.68.68 0 0 0-.62.18c-.16.16-.35.33-.58.32a19.27 19.27 0 0 0-2 0c-.23 0-.42-.16-.58-.32a.68.68 0 0 0-.62-.18c-1.1.24-2.15.5-2.46 1.8-.13.56-.34 1.68-.34 3.22v2.23a1.4 1.4 0 0 0 2.66.63l.8-1.6c.1-.2.34-.3.56-.25.26.06.62.12.98.12s.72-.06.98-.12a.5.5 0 0 1 .56.25l.8 1.6A1.4 1.4 0 0 0 24 7.93V5.7Z"]) + .name__2ea32:before {
+:root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M10.99 3.16A1 1 0 1 0 9 2.84L8.15 8H4a1 1 0 0 0 0 2h3.82l-.67 4H3a1 1 0 1 0 0 2h3.82l-.8 4.84a1 1 0 0 0 1.97.32L8.85 16h4.97l-.8 4.84a1 1 0 0 0 1.97.32l.86-5.16H20a1 1 0 1 0 0-2h-3.82l.67-4H21a1 1 0 1 0 0-2h-3.82l.8-4.84a1 1 0 1 0-1.97-.32L15.15 8h-4.97l.8-4.84ZM14.15 14l.67-4H9.85l-.67 4h4.97Z"]) ~ .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.5 8c.28 0 .5.22.5.5V9c0 .1 0 .2.02.31.03.34-.21.69-.56.69H9.85l-.67 4h4.97l.28-1.68c.06-.34.44-.52.77-.43a3 3 0 0 0 .8.11c.27 0 .47.24.43.5l-.25 1.5H20a1 1 0 1 1 0 2h-4.15l-.86 5.16a1 1 0 0 1-1.98-.32l.8-4.84H8.86l-.86 5.16A1 1 0 0 1 6 20.84L6.82 16H3a1 1 0 1 1 0-2h4.15l.67-4H4a1 1 0 1 1 0-2h4.15l.86-5.16a1 1 0 1 1 1.98.32L10.19 8h2.31Z"]) ~ .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M11.45 8c.35 0 .6.35.55.7-.02.2-.02.4 0 .6.04.35-.2.7-.55.7h-1.6l-.67 4h4.97l.26-1.55c.05-.27.31-.45.59-.45h.92c.31 0 .55.28.5.58L16.18 14H20a1 1 0 1 1 0 2h-4.15l-.86 5.16a1 1 0 0 1-1.98-.32l.8-4.84H8.86l-.86 5.16A1 1 0 0 1 6 20.84L6.82 16H3a1 1 0 1 1 0-2h4.15l.67-4H4a1 1 0 0 1 0-2h4.15l.86-5.16a1 1 0 1 1 1.98.32L10.19 8h1.26Z"]) ~ .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M19.56 2a3 3 0 0 0-2.46 1.28 3.85 3.85 0 0 1-1.86 1.42l-8.9 3.18a.5.5 0 0 0-.34.47v10.09a3 3 0 0 0 2.27 2.9l.62.16c1.57.4 3.15-.56 3.55-2.12a.92.92 0 0 1 1.23-.63l2.36.94c.42.27.79.62 1.07 1.03A3 3 0 0 0 19.56 22h.94c.83 0 1.5-.67 1.5-1.5v-17c0-.83-.67-1.5-1.5-1.5h-.94Zm-8.53 15.8L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]) ~ .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.33 5.74a.5.5 0 0 1 .67.47V9a3 3 0 0 0 3 3h5.5c.28 0 .5.22.5.5v8c0 .83-.67 1.5-1.5 1.5h-.94a3 3 0 0 1-2.46-1.28 3.86 3.86 0 0 0-1.07-1.03l-2.36-.94a.92.92 0 0 0-1.23.63 2.92 2.92 0 0 1-3.55 2.12l-.62-.15A3 3 0 0 1 6 18.44V8.35c0-.2.13-.4.33-.47l6-2.14Zm-1.3 12.06L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]) ~ .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M12.43 5.7a.5.5 0 0 1 .6.72l-.63 1.1c-1.22 2.13.46 4.48 2.64 4.48h6.46c.28 0 .5.22.5.5v8c0 .83-.67 1.5-1.5 1.5h-.94a3 3 0 0 1-2.46-1.28 3.85 3.85 0 0 0-1.07-1.03l-2.36-.94a.92.92 0 0 0-1.23.63 2.92 2.92 0 0 1-3.55 2.12l-.62-.15A3 3 0 0 1 6 18.44V8.35c0-.2.13-.4.33-.47l6.1-2.18Zm-1.4 12.1L8 16.7v1.73a1 1 0 0 0 .76.97l.62.15c.5.13 1-.17 1.12-.67.1-.41.29-.78.53-1.1Z"]) ~ .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M15 2a3 3 0 0 1 3 3v12H5.5a1.5 1.5 0 0 0 0 3h14a.5.5 0 0 0 .5-.5V5h1a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h10Zm-.3 5.7a1 1 0 0 0-1.4-1.4L9 10.58l-2.3-2.3a1 1 0 0 0-1.4 1.42l3 3a1 1 0 0 0 1.4 0l5-5Z"]) ~ .name__2ea32:before, :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32:has(> .icon__2ea32 > path[d="M24 5.7c0-1.54-.2-2.66-.34-3.23C23.35 1.17 22.3.92 21.2.68a.68.68 0 0 0-.62.18c-.16.16-.35.33-.58.32a19.27 19.27 0 0 0-2 0c-.23 0-.42-.16-.58-.32a.68.68 0 0 0-.62-.18c-1.1.24-2.15.5-2.46 1.8-.13.56-.34 1.68-.34 3.22v2.23a1.4 1.4 0 0 0 2.66.63l.8-1.6c.1-.2.34-.3.56-.25.26.06.62.12.98.12s.72-.06.98-.12a.5.5 0 0 1 .56.25l.8 1.6A1.4 1.4 0 0 0 24 7.93V5.7Z"]) ~ .name__2ea32:before {
   content: "#";
 }
 :root .container__2637a .wrapper__2ea32 .link__2ea32 .iconContainer__2ea32 .icon__2ea32 > path[d="M12 3a1 1 0 0 0-1-1h-.06a1 1 0 0 0-.74.32L5.92 7H3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2.92l4.28 4.68a1 1 0 0 0 .74.32H11a1 1 0 0 0 1-1V3ZM15.1 20.75c-.58.14-1.1-.33-1.1-.92v-.03c0-.5.37-.92.85-1.05a7 7 0 0 0 0-13.5A1.11 1.11 0 0 1 14 4.2v-.03c0-.6.52-1.06 1.1-.92a9 9 0 0 1 0 17.5Z"],
@@ -9095,17 +9125,17 @@ html:not(.visual-refresh) .panels_c48ade .container__37e49 .nameTag__37e49 {
   background: var(--dtm-16-panel-button-bg-hover);
   box-shadow: var(--dtm-16-panel-button-active-shadow);
 }
-:root .panels_c48ade .container_e131a9 .voiceButtonsContainer_e131a9 > .button__67645:not(:first-child) {
+:root .panels_c48ade .container_e131a9 .voiceButtonsContainer_e131a9 > .button__67645:not(:nth-child(1 of :not(span))) {
   box-shadow: var(--dtm-16-panel-button-shadow);
 }
-:root .panels_c48ade .container_e131a9 .voiceButtonsContainer_e131a9 > .button__67645:not(:last-child) {
+:root .panels_c48ade .container_e131a9 .voiceButtonsContainer_e131a9 > .button__67645:not(:nth-last-child(1 of :not(span))) {
   border-right: solid 1px var(--background-tertiary);
 }
-:root .panels_c48ade .container_e131a9 .voiceButtonsContainer_e131a9 > .button__67645:first-child {
+:root .panels_c48ade .container_e131a9 .voiceButtonsContainer_e131a9 > .button__67645:nth-child(1 of :not(span)) {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-:root .panels_c48ade .container_e131a9 .voiceButtonsContainer_e131a9 > .button__67645:last-child {
+:root .panels_c48ade .container_e131a9 .voiceButtonsContainer_e131a9 > .button__67645:nth-last-child(1 of :not(span)) {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -9304,18 +9334,18 @@ html:not(.visual-refresh) .panels_c48ade .container__37e49 .nameTag__37e49 {
   border-radius: 0;
   transition: 0s;
 }
-:root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:first-child {
+:root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:nth-child(1 of :not(span)) {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-:root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:last-child {
+:root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:nth-last-child(1 of :not(span)) {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-:root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:not(:first-child) {
+:root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:not(:nth-child(1 of :not(span))) {
   box-shadow: var(--dtm-16-panel-button-shadow);
 }
-:root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:not(:last-child) {
+:root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:not(:nth-last-child(1 of :not(span))) {
   border-right: solid 1px var(--background-tertiary);
 }
 :root .panels_c48ade .activityPanel_c48ade .actions__4cd01 button:hover {
@@ -9511,9 +9541,6 @@ html:not(.visual-refresh) .panels_c48ade .container__37e49 .nameTag__37e49 {
   width: 24px;
   height: 24px;
   color: var(--dtm-16-header-button-fg);
-}
-#app-mount .container__9293f.container__9293f .toolbar__9293f .iconWrapper__9293f foreignObject .icon__9293f {
-  margin: 2px auto auto 2px;
 }
 #app-mount .container__9293f.container__9293f .toolbar__9293f .iconWrapper__9293f:hover .icon__9293f, #app-mount .container__9293f.container__9293f .toolbar__9293f .iconWrapper__9293f:active .icon__9293f {
   opacity: 1;

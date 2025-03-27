@@ -13,7 +13,7 @@
 @use "vars" as *;
 @use "sass:math";
 
-$themeVersion: "1022";
+$themeVersion: "1023";
 $themeDate: "Mar 28, 2025";
 
 $themeName: "DTM-16";
@@ -58,6 +58,13 @@ $debug: 0;
   initial-value: false;
   name: "Three Buttons on Top Right of Header";
   note: "enable this if you're using something like the friends popout experiment";
+}
+@property --dtm-16-hide-windows-titlebar {
+  syntax: "true | false";
+  inherits: true;
+  initial-value: false;
+  name: "Hide Windows Titlebar";
+  note: "self explanatory";
 }
 
 :root {
@@ -768,7 +775,7 @@ $debug: 0;
   }
   @container style(--dtm-16-header-three-buttons: true) {
     body {
-      --dtm-16-header-button-spacing: 116px !important;
+      --dtm-16-header-button-spacing: 116px;
     }
   }
   :root, html.theme-dark.visual-refresh, html.theme-light.visual-refresh, .theme-dark.visual-refresh, .theme-light.visual-refresh, .visual-refresh .theme-dark, .visual-refresh .theme-light {
@@ -776,6 +783,9 @@ $debug: 0;
     --custom-app-launcher-height: 328px;
     // --dtm-16-header-button-spacing: 68px;
     --dtm-16-header-button-spacing: 72px;
+    @container style(--dtm-16-header-three-buttons: true) {
+      --dtm-16-header-button-spacing: 116px;
+    }
     --blurple-50: var(--blurple);
     --brand-500: var(--blurple);
     --brand-360: var(--blurple);
