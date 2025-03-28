@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "174";
-$themeDate: "Mar 27, 2025";
+$themeVersion: "175";
+$themeDate: "Mar 28, 2025";
 
 @use "sass:color";
 @use "sass:math";
@@ -68,7 +68,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
   inherits: true;
   initial-value: false;
   name: "Multiple Server Columns";
-  note: "don't use. please.";
+  note: "broken, don't use - might fix someday";
 }
 @property --dtm-08-hide-account-details {
   syntax: "true | false";
@@ -2419,6 +2419,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
       }
       .gameIcon__8c6c2 {
         box-shadow: 0 1px #fff3, inset 0 1px 3px #0008;
+        border-radius: 3px;
         #{$sideNoDark} & {
           box-shadow: 0 1px #fff, inset 0 1px 3px #0008;
         }
@@ -3629,7 +3630,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
         margin-left: 1px;
         @at-root {
           .membersWrap_c8ffbb {
-            background: #0000;
+            background: #0000 !important;
             .members_c8ffbb {
               background: #0000;
               @include scrollbar;
@@ -3936,13 +3937,14 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
   }
   // forum channel
   .container_f369db {
-    background: #0000;
+    background: #0000 !important;
     .scrollerBase__99f8c {
       @include scrollbar;
     }
     .mainCard_f369db {
       &.header_f369db {
         border-radius: 3px;
+        border: none;
         .theme-dark & {
           background: linear-gradient(var(--d8dD) 0%, var(--d8dC) 50%, var(--d8dB) 50%, var(--d8dA) 100%)!important;
           box-shadow: 0 0 0 1px #0006, inset 0 0 0 1px #fff2, inset 0 1px 4px #000;
@@ -9858,7 +9860,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
     color: #fff;
   }
 }
-@container style(--dtm-08-neon-embeds: true) {
+@container style(--dtm-08-neon-embed: true) {
   .theme-dark .embedWrapper_b7e1cb {
     max-width: calc(100vw - 560px);
     border: none;
