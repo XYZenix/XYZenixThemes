@@ -53,7 +53,7 @@
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "1025" "\a" "Apr 5, 2025";
+  content: "DTM-16 Build " "1026" "\a" "Apr 6, 2025";
 }
 
 .theme-dark, .theme-light {
@@ -1227,6 +1227,18 @@ html.theme-light {
 :root.visual-refresh .base_c48ade {
   grid-template-areas: "titleBar titleBar titleBar" "notice notice notice" "guildsList channelsList page";
   grid-template-rows: [top] min-content [titlebarEnd] min-content [page] max-content [end];
+}
+:root.visual-refresh .base_c48ade.vc-betterFolders-sidebar-grid {
+  grid-template-columns: [start] 80px [guilds-end] min-content [betterFoldersSidebar-end] 240px [channelsEnd] 1fr [end];
+  grid-template-areas: "titleBar titleBar titleBar titleBar" "guildsList betterFoldersSidebar notice notice" "guildsList betterFoldersSidebar channelsList page";
+}
+:root.visual-refresh .base_c48ade.vc-betterFolders-sidebar-grid .sidebar_c48ade {
+  grid-template-columns: [start] 80px [guilds-end] min-content [betterFoldersSidebar-end] 240px [end];
+  grid-template-areas: "guilds betterFoldersSidebar sidebar" "guilds betterFoldersSidebar panels";
+  width: auto !important;
+}
+:root.visual-refresh .base_c48ade.vc-betterFolders-sidebar-grid .guilds_c48ade {
+  margin-bottom: 0 !important;
 }
 :root.visual-refresh .base_c48ade .sidebar_c48ade {
   display: grid;
