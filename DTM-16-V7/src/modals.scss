@@ -1862,6 +1862,110 @@
         }
       }
     }
+    // emoji info
+    .popoutContainer__0f481 {
+      box-shadow: var(--elevation-low);
+      border-radius: 3px;
+      background: #fff;
+      .emojiSection_d5cd2d {
+        background: var(--blurple);
+        border-radius: 3px;
+        padding: 0;
+        >.flex__7c0ba {
+          display: grid;
+          grid-template-areas: "a b" "c c";
+          grid-template-columns: [a] min-content [a-end] 1fr;
+          .primaryEmoji_d5cd2d, .assetWrapper__31fc2 {
+            grid-area: a;
+            margin: 10px;
+          }
+          >.flex__7c0ba {
+            display: contents;
+            [data-text-variant="text-md/semibold"] {
+              grid-area: b;
+              align-content: center;
+              color: #fff;
+            }
+            [data-text-variant="text-sm/normal"] {
+              grid-area: c;
+              padding: 10px;
+              background: #fff;
+              color: #{ss(#72767D)};
+            }
+          }
+        }
+        &:not(:last-child) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        +.guildSection_d5cd2d {
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 10px;
+            right: 10px;
+            height: 1px;
+            background: rgba(0,0,0,.1);
+          }
+        }
+      }
+      .guildSection_d5cd2d {
+        background: #fff;
+        border-radius: 0 0 3px 3px;
+        padding: 12px;
+        .guildTitle_d5cd2d {
+          font-size: 12px;
+          font-weight: 800;
+          line-height: 1;
+          text-transform: uppercase;
+          color: #{ss(#72767D)};
+          margin-bottom: 6px;
+        }
+        .svg__2338f:has(.guildIcon_d5cd2d) {
+          flex: 0 0 auto !important;
+          border-radius: 3px;
+          foreignObject {
+            -webkit-mask: none;
+            mask: none;
+          }
+        }
+        .guildName_d5cd2d {
+          color: #000;
+          font-weight: 300;
+        }
+        [data-text-variant="text-xs/normal"] {
+          color: #{ss(#72767D)} !important;
+        }
+        .dotSeparator_d5cd2d {
+          background-color: #{ss(#72767D)};
+        }
+        .truncatingText_d5cd2d {
+          margin-left: 6px;
+          .truncatingText_d5cd2d {
+            margin-left: 0;
+          }
+        }
+      }
+      .popoutLoadingBackground__0f481 {
+        mask: none;
+        .popoutLoadingForeground__0f481 {display:none}
+        &:before,&:after {
+          content: "";
+          background-color: var(--blurple);
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: calc(50% - 16px);
+          left: calc(50% - 16px);
+          animation: spinner-wandering-cubes 1.8s infinite ease-in-out;
+        }
+        &:after {
+          animation-delay: -.9s;
+        }
+      }
+    }
   }
   // new go live modal
   .root__7f727 {
