@@ -53,7 +53,7 @@
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "1030" "\a" "Apr 19, 2025";
+  content: "DTM-16 Build " "1031" "\a" "Apr 21, 2025";
 }
 
 .theme-dark, .theme-light {
@@ -8603,7 +8603,6 @@ html:not(.visual-refresh) .folderIcon__48112 .folder__48112 {
   d: path("");
 }
 :root .container__2637a .wrapper__2ea32 .link__2ea32 :is(.numberBadge__2b1f5, .textBadge__2b1f5) {
-  background: var(--red);
   border-radius: 3px;
   min-width: 0;
   width: auto !important;
@@ -8734,6 +8733,9 @@ html:not(.visual-refresh) .folderIcon__48112 .folder__48112 {
   left: -6px;
   border-radius: 6px;
   z-index: 2;
+}
+:root .container__2637a .wrapper__2ea32 .unread__2ea32 + .link__2ea32:before {
+  background: none !important;
 }
 :root .container__2637a .wrapper__2ea32.modeMuted__2ea32 .linkTop__2ea32 {
   opacity: var(--dtm-16-sidebar-item-opacity-muted);
@@ -17195,6 +17197,50 @@ html:not(.visual-refresh) .container_a592e1 .tabs__65d41 .tab__65d41 {
   font-weight: 300;
   font-size: 16px;
   text-transform: uppercase;
+}
+
+:root.visual-refresh #vc-spotify-player {
+  background: var(--background-secondary-alt);
+  box-sizing: border-box;
+  padding: 10px;
+  border-top: solid 1px var(--background-tertiary);
+  border-radius: 0;
+  border-bottom: none;
+}
+:root.visual-refresh #vc-spotify-player .vc-spotify-button {
+  background: var(--background-secondary);
+  border: solid 1px var(--background-tertiary);
+  border-radius: 0;
+  margin: 0 -1px 0 0;
+}
+:root.visual-refresh #vc-spotify-player .vc-spotify-button:first-child {
+  border-radius: 3px 0 0 3px;
+}
+:root.visual-refresh #vc-spotify-player .vc-spotify-button:last-child {
+  border-radius: 0 3px 3px 0;
+  margin: 0;
+}
+
+:root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Disable Game Activity"], :root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Enable Game Activity"] {
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+}
+:root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Disable Game Activity"] .contents__201d5:before, :root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Enable Game Activity"] .contents__201d5:before {
+  display: none !important;
+}
+:root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Disable Game Activity"] .contents__201d5 > svg, :root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Enable Game Activity"] .contents__201d5 > svg {
+  display: block;
+}
+:root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Disable Game Activity"] .contents__201d5 [d="M3.06 20.4q-1.53 0-2.37-1.065T.06 16.74l1.26-9q.27-1.8 1.605-2.97T6.06 3.6h11.88q1.8 0 3.135 1.17t1.605 2.97l1.26 9q.21 1.53-.63 2.595T20.94 20.4q-.63 0-1.17-.225T18.78 19.5l-2.7-2.7H7.92l-2.7 2.7q-.45.45-.99.675t-1.17.225Zm14.94-7.2q.51 0 .855-.345T19.2 12q0-.51-.345-.855T18 10.8q-.51 0-.855.345T16.8 12q0 .51.345 .855T18 13.2Zm-2.4-3.6q.51 0 .855-.345T16.8 8.4q0-.51-.345-.855T15.6 7.2q-.51 0-.855.345T14.4 8.4q0 .51.345 .855T15.6 9.6ZM6.9 13.2h1.8v-2.1h2.1v-1.8h-2.1v-2.1h-1.8v2.1h-2.1v1.8h2.1v2.1Z"], :root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Enable Game Activity"] .contents__201d5 [d="M3.06 20.4q-1.53 0-2.37-1.065T.06 16.74l1.26-9q.27-1.8 1.605-2.97T6.06 3.6h11.88q1.8 0 3.135 1.17t1.605 2.97l1.26 9q.21 1.53-.63 2.595T20.94 20.4q-.63 0-1.17-.225T18.78 19.5l-2.7-2.7H7.92l-2.7 2.7q-.45.45-.99.675t-1.17.225Zm14.94-7.2q.51 0 .855-.345T19.2 12q0-.51-.345-.855T18 10.8q-.51 0-.855.345T16.8 12q0 .51.345 .855T18 13.2Zm-2.4-3.6q.51 0 .855-.345T16.8 8.4q0-.51-.345-.855T15.6 7.2q-.51 0-.855.345T14.4 8.4q0 .51.345 .855T15.6 9.6ZM6.9 13.2h1.8v-2.1h2.1v-1.8h-2.1v-2.1h-1.8v2.1h-2.1v1.8h2.1v2.1Z"] {
+  d: path("M16.5 6V0h-9v6l4.5 4.5L16.5 6ZM9 1.5h6v3.9l-3 3-3-3V1.5Zm-3 6 4.5 4.5L6 16.5H0v-9h6ZM1.5 9h3.9l3 3-3 3H1.5V9ZM18 16.5 13.5 12 18 7.5h6v9h-6Zm.6-7.5-3 3 3 3h3.9V9h-3.9ZM12 13.5 7.5 18v6h9v-6L12 13.5Zm-3 9v-3.9l3-3 3 3v3.9H9Z");
+  clip-rule: evenodd;
+  fill-rule: evenodd;
+  fill: currentColor;
+  transform: scale(calc(16/20));
+  transform-origin: center;
+}
+:root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Disable Game Activity"]:not(:hover):not(:active) .contents__201d5 > svg, :root.visual-refresh .container__37e49 .buttons__37e49 > button.button__67645[aria-label="Enable Game Activity"]:not(:hover):not(:active) .contents__201d5 > svg {
+  opacity: 0.3;
 }
 
 html.custom-theme-background.theme-dark #app-mount .channelBottomBarArea_f75fb0 .channelTextArea__74017 {
