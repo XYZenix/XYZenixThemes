@@ -13,8 +13,8 @@
 @use "vars" as *;
 @use "sass:math";
 
-$themeVersion: "1031";
-$themeDate: "Apr 21, 2025";
+$themeVersion: "1032";
+$themeDate: "Apr 25, 2025";
 
 $themeName: "DTM-16";
 
@@ -65,6 +65,13 @@ $debug: 0;
   initial-value: false;
   name: "Hide Windows Titlebar";
   note: "self explanatory";
+}
+@property --dtm-16-outline-on-chat-avatar-focus {
+  syntax: "true | false";
+  inherits: true;
+  initial-value: false;
+  name: "2015 Concept: Outline chat avatars on focus";
+  note: "i don't owe you an explanation";
 }
 
 :root {
@@ -339,6 +346,7 @@ $debug: 0;
     --green-active: #{ss(#369167)};
     --green-inverted: #{ss(#f6fbf9)};
     --green-inverted-active: #{ss(#d9f0e6)};
+    --purple: #{ss(#593695)};
     --brand-experiment-100: #{ss(#f8f9fd)};
     --brand-experiment-130: #{ss(#f2f4fc)};
     --brand-experiment-160: #{ss(#ebeefa)};
@@ -404,6 +412,10 @@ $debug: 0;
     --file-icon-webcode: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='102' fill='none'%3E%3Cpath fill='%23F4F6FC' fill-rule='evenodd' stroke='%237289DA' stroke-width='2' d='M1 6.99306C1 3.68319 3.68269 1 6.99816 1H51.3458C55.8977 1 71 16.392 71 21.0914v73.9113C71 98.3149 68.3201 101 65.0016 101H6.99842C3.68558 101 1 98.3123 1 95.0069V6.99306Z' clip-rule='evenodd'/%3E%3Cpath fill='%23697EC4' fill-rule='evenodd' d='M24.37 76.8002h-2.58l9.84-26.1h2.58l-9.84 26.1Zm25.06-13.68-11.31 7.56v-2.79l8.76-5.79v-.12l-8.76-5.79v-2.79l11.31 7.56v2.16Z' clip-rule='evenodd' opacity='.8'/%3E%3Cpath stroke='%23C9D2F0' stroke-width='2' d='M46.9999 5H8.98534c-2.7598 0-4.99706 2.22899-4.99706 5.0022V17' opacity='.6'/%3E%3Cpath fill='%23000' fill-rule='evenodd' stroke='%23000' stroke-width='2' d='M51 7.10628c0-3.31208 1.8947-4.10231 4.2418-1.75524L68.7582 18.8674c2.3427 2.3427 1.5552 4.2418-1.7553 4.2418H54.0014c-1.6576 0-3.0014-1.343-3.0014-3.0013V7.10628Z' clip-rule='evenodd' opacity='.07'/%3E%3Cpath fill='%23F4F6FC' fill-rule='evenodd' stroke='%237289DA' stroke-width='2' d='M52 3.99691c0-3.312087 1.8947-4.102315 4.2418-1.75524L69.7582 15.758c2.3427 2.3427 1.5552 4.2418-1.7553 4.2418H55.0014c-1.6576 0-3.0014-1.343-3.0014-3.0013V3.99691Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23C9D2F0' stroke-opacity='.6' stroke-width='2' d='M55 7v7.5024C55 15.8818 56.1097 17 57.5 17H60'/%3E%3C/svg%3E");
     --file-icon-audio: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='102' fill='none'%3E%3Cpath fill='%23F4F6FC' fill-rule='evenodd' stroke='%237289DA' stroke-width='2' d='M1 6.99306C1 3.68319 3.68269 1 6.99816 1H51.3458C55.8977 1 71 16.392 71 21.0914v73.9113C71 98.3149 68.3201 101 65.0016 101H6.99842C3.68558 101 1 98.3123 1 95.0069V6.99306Z' clip-rule='evenodd'/%3E%3Cpath fill='%238596CF' d='M34.2 47.6001v15.4c-.8-.3-1.7-.4-2.5-.4-4.2 0-7.5 3.3-7.5 7.5s3.3 7.5 7.5 7.5 7.5-3.3 7.5-7.5v-17.5h6.7v-5H34.2Z'/%3E%3Cpath stroke='%23C9D2F0' stroke-width='2' d='M46.9999 5H8.98534c-2.7598 0-4.99706 2.22899-4.99706 5.0022V17' opacity='.6'/%3E%3Cpath fill='%23000' fill-rule='evenodd' stroke='%23000' stroke-width='2' d='M51 7.10628c0-3.31208 1.8947-4.10231 4.2418-1.75524L68.7582 18.8674c2.3427 2.3427 1.5552 4.2418-1.7553 4.2418H54.0014c-1.6576 0-3.0014-1.343-3.0014-3.0013V7.10628Z' clip-rule='evenodd' opacity='.07'/%3E%3Cpath fill='%23F4F6FC' fill-rule='evenodd' stroke='%237289DA' stroke-width='2' d='M52 3.99691c0-3.312087 1.8947-4.102315 4.2418-1.75524L69.7582 15.758c2.3427 2.3427 1.5552 4.2418-1.7553 4.2418H55.0014c-1.6576 0-3.0014-1.343-3.0014-3.0013V3.99691Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23C9D2F0' stroke-opacity='.6' stroke-width='2' d='M55 7v7.5024C55 15.8818 56.1097 17 57.5 17H60'/%3E%3C/svg%3E");
     --file-icon-unknown: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='102' fill='none'%3E%3Cpath fill='%23F4F6FC' fill-rule='evenodd' stroke='%237289DA' stroke-width='2' d='M1 6.99306C1 3.68319 3.68269 1 6.99816 1H51.3458C55.8977 1 71 16.392 71 21.0914v73.9113C71 98.3149 68.3201 101 65.0016 101H6.99842C3.68558 101 1 98.3123 1 95.0069V6.99306Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23C9D2F0' stroke-width='2' d='M46.9999 5H8.98534c-2.7598 0-4.99706 2.22899-4.99706 5.0022V17' opacity='.6'/%3E%3Cpath fill='%23000' fill-rule='evenodd' stroke='%23000' stroke-width='2' d='M51 7.10628c0-3.31208 1.8947-4.10231 4.2418-1.75524L68.7582 18.8674c2.3427 2.3427 1.5552 4.2418-1.7553 4.2418H54.0014c-1.6576 0-3.0014-1.343-3.0014-3.0013V7.10628Z' clip-rule='evenodd' opacity='.07'/%3E%3Cpath fill='%23F4F6FC' fill-rule='evenodd' stroke='%237289DA' stroke-width='2' d='M52 3.99691c0-3.312087 1.8947-4.102315 4.2418-1.75524L69.7582 15.758c2.3427 2.3427 1.5552 4.2418-1.7553 4.2418H55.0014c-1.6576 0-3.0014-1.343-3.0014-3.0013V3.99691Z' clip-rule='evenodd'/%3E%3Cpath stroke='%23C9D2F0' stroke-opacity='.6' stroke-width='2' d='M55 7v7.5024C55 15.8818 56.1097 17 57.5 17H60'/%3E%3C/svg%3E");
+  }
+  .theme-dark, .theme-light, .visual-refresh:is(.theme-dark,.theme-light) {
+    --modal-background: var(--background-primary);
+    --background-mod-subtle: var(--background-modifier-active);
   }
   .theme-dark:not(.theme-midnight):not(html.theme-midnight .theme-dark),
   .visual-refresh.theme-dark:not(.theme-midnight):not(html.theme-midnight .theme-dark),
@@ -1107,6 +1119,9 @@ $debug: 0;
     --dtm-16-key-active-border: var(--background-floating);
     --dtm-16-key-active-shadow: inset 0 -2px 0 #{ss(#242629)};
     --dtm-16-key-active-color: #{ss(#c5c5c6)};
+    
+    --dtm-16-account-panel-user-popout-background: #{ss(#26282c)};
+    --dtm-16-chat-header-channel-name-color: #fff;
 
     --dtm-16-discovery-splash-bg: url("https://static.discord.com/assets/76456a67ca3d139def36fd3ba871b230.png");
 
@@ -1391,6 +1406,9 @@ $debug: 0;
     --dtm-16-key-active-bg: #fff;
     --dtm-16-key-active-shadow: inset 0 -2px 0 #{ss(#e8edf9)};
     --dtm-16-key-active-color: #000;
+
+    --dtm-16-account-panel-user-popout-background: #{ss(#e9eaed)};
+    --dtm-16-chat-header-channel-name-color: #{ss(#4f545c)};
 
     --dtm-16-discovery-splash-bg: url("https://static.discord.com/assets/757e956c407d352bb77320c83e3c6159.png");
 

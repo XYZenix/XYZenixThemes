@@ -1,9 +1,10 @@
 @use "vars" as *;
 @use "options" as *;
 @use "funcs" as *;
+@use "mixins" as *;
 @use "exps" as *;
 // shrimplified profile ui
-.biteSize_c0bea0.outer_c0bea0 {
+.user-profile-popout.outer_c0bea0 {
   padding: 0;
   .inner_dc0b43 {
     padding-left: 0;
@@ -37,7 +38,7 @@
   }
 }
 @at-root {
-  .biteSize_c0bea0.outer_c0bea0 {
+  .user-profile-popout.outer_c0bea0 {
     width: 250px;
     border-radius: 3px;
     background: var(--profile-theme-color-default) var(--profile-banner-background-pattern);
@@ -69,7 +70,7 @@
     &.custom-profile-theme {
       padding: 0;
     }
-    @at-root .inner_c0bea0.biteSize_c0bea0 {
+    @at-root .user-profile-popout .inner_c0bea0 {
       overflow: visible;
       gap: 0;
       padding: 0;
@@ -82,7 +83,7 @@
       .header__5be3e {
         display: contents;
         // banner
-        @at-root .inner_c0bea0.biteSize_c0bea0 .mask__68edb {
+        @at-root .user-profile-popout .inner_c0bea0 .mask__68edb {
           order: -35;
           min-width: 250px !important;
           min-height: 87.5px !important;
@@ -95,7 +96,7 @@
           }
         }
         // avatar
-        @at-root .inner_c0bea0.biteSize_c0bea0 :is(.avatar__75742, .avatar_f9d668) {
+        @at-root .user-profile-popout .inner_c0bea0 :is(.avatar__75742, .avatar_f9d668, .avatar_d28e10) {
           display: block;
           position: unset;
           align-self: center;
@@ -191,12 +192,18 @@
           }
           .popover__2d0ab {display:none}
         }
+        @at-root .user-profile-popout .inner_c0bea0 .avatar__75742 {
+          margin-bottom: 16px;
+          >.avatar__75742 {
+            margin-top: 0;
+          }
+        }
         // custom status
         >div:not([class]) {
           display: contents;
         }
         .invisibleContainer_af9888 {display:none!important}
-        @at-root .inner_c0bea0.biteSize_c0bea0 {
+        @at-root .user-profile-popout .inner_c0bea0 {
           .visibleContainer_af9888 {
             position: unset;
             display: block;
@@ -225,6 +232,7 @@
           }
           .addStatusIcon_ab8609 {
             --interactive-normal: rgba(255 255 255/.8);
+            --text-normal: rgba(255 255 255/1);
           }
           .addStatusPrompt_ab8609 {
             color: rgba(255 255 255/.8);
@@ -234,12 +242,12 @@
           }
         }
         @at-root {
-          .referenceContainer_ab8609.biteSize_ab8609 {
+          .user-profile-popout .referenceContainer_ab8609 {
             display: none;
           }
-          .container_ab8609.biteSize_ab8609 {
+          .user-profile-popout .container_ab8609 {
             display: contents;
-            .outer_ab8609.biteSize_ab8609 {
+            .outer_ab8609 {
               display: contents;
               &:before, &:after {
                 content: none;
@@ -337,15 +345,15 @@
             display: none;
           }
           // clan tag
-          ~.clickable__4a25c {
+          ~.clickable__10651 {
             text-align: center;
             order: -10;
             margin-bottom: 8px;
-            .chipletContainerInner__4a25c {
-              background: rgba(255 255 255/.1);
-              .text__4a25c {
-                color: rgba(255 255 255) !important;
-              }
+          }
+          .chipletContainerInner__10651 {
+            background: rgba(255 255 255/.1);
+            .text__10651 {
+              color: rgba(255 255 255/.5) !important;
             }
           }
           // nickname icons...sorry
@@ -533,6 +541,7 @@
         .roleCircle__4f569 {
           width: 0;
           height: 0;
+          filter: none !important;
         }
         :is(.roleFlowerStar_dfa8b6, .roleCircle__4f569) {
           &:before {
@@ -700,6 +709,9 @@
           border-top-width: 1px;
           border-color: rgba(255 255 255/.2);
           transition: .2s !important;
+          .contents__201d5 {
+            color: #fff !important;
+          }
           +button,+span+button {
             border-left-width: 1px;
           }
@@ -847,7 +859,7 @@
       }
       // status shit
       @at-root .themeContainer_ce8328 {
-        .outer_ab8609.biteSize_ab8609 .inner_ab8609 {
+        &.user-profile-popout .outer_ab8609 .inner_ab8609 {
           margin: 8px 0 !important;
         }
         .popover_bba79b.popover_bba79b {
@@ -1001,11 +1013,30 @@
   }
   // settings preview
   :is(.preview__44061, .previewContainer__92e52) {
-    .biteSize_c0bea0.outer_c0bea0 {
-      .header_ba7f98 {
+    .user-profile-popout.outer_c0bea0 {
+      .header__5a2c6 {
         display: contents;
         div[class=""] {
           display: contents;
+        }
+        .avatar_d28e10 {
+          position: relative;
+          inset: unset;
+          order: -30;
+          foreignObject {
+            x: 4px;
+            y: 4px;
+          }
+          .avatarStack__44b0c:after {
+            margin-top: 4px;
+            left: 4px;
+          }
+          .overlayIcon_d28e10 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
         }
       }
       .invisibleContainer_af9888  {
@@ -1026,14 +1057,14 @@
     }
   }
   // account panel
-  .outer_c0bea0.biteSize_c0bea0.themeContainer_ce8328 {
+  .outer_c0bea0.user-profile-popout.themeContainer_ce8328 {
     width: 220px !important;
     box-sizing: border-box !important;
     border-radius: 5px !important;
     overflow: hidden !important;
-    box-shadow: var(--ov-dtm-16-classic-popout-shadow) !important;
-    border: solid 1px var(--ov-dtm-16-classic-popout-border-color) !important;
-    background: var(--ov-dtm-16-account-panel-user-popout-background) !important;
+    box-shadow: var(--dtm-16-classic-popout-shadow) !important;
+    border: solid 1px var(--dtm-16-classic-popout-border-color) !important;
+    background: var(--dtm-16-account-panel-user-popout-background) !important;
     .mask__68edb {
       display: none;
     }
@@ -1074,7 +1105,7 @@
       font-size: 16px;
       line-height: auto;
       font-weight: 600;
-      color: var(--ov-dtm-16-chat-header-channel-name-color);
+      color: var(--dtm-16-chat-header-channel-name-color);
     }
     .nicknameIcons__63ed3 {
       display: none;
@@ -1083,7 +1114,7 @@
       font-size: 12px;
       line-height: auto;
       font-weight: 600;
-      color: var(--override-text-muted);
+      color: var(--text-muted);
     }
     .card__39ec2 {
       display: none;
@@ -1091,7 +1122,7 @@
     .body_ce8328 {
       display: contents;
       .container__63ed3 {
-        margin-top: 16px;
+        margin-top: 0;
       }
       .menus_ce8328 {
         gap: 0;
@@ -1190,17 +1221,28 @@
       }
     }
   }
+  // fucking anything at this point
+  .outer_c0bea0 {
+    .popover__2d0ab {display:none!important}
+  }
+  // pathetic excuse of an attempt to revert status colors to something less painful to look at
+  :is(rect,circle,path) {
+    &[fill="#40a258"] {fill:var(--green)}
+    &[fill="#cc954c"] {fill:var(--yellow)}
+    &[fill="#d83a41"] {fill:var(--red)}
+    &[fill="#9147ff"] {fill:var(--purple)}
+  }
 }
 // full profile
 @at-root {
   .profileEffects__01370 {display:none}
   @if $experiment2 == 1 {
-    :root .outer_c0bea0.fullSize_c0bea0 {
+    :root .outer_c0bea0.user-profile-modal {
       padding: 0;
       border-radius: 8px;
       background: var(--background-secondary);
     }
-    .inner_c0bea0.fullSize_c0bea0 {
+    .user-profile-modal .inner_c0bea0 {
       display: grid;
       grid-template-areas: "banner banner banner banner" "avatar username buttons circles" "status status status status" "body body body body";
       grid-template-rows: [start] min-content [avatar-start] min-content [status-start] min-content [body-start] auto [end];
@@ -1499,12 +1541,12 @@
     }
   }
   @if $experiment2 == 2 {
-    :root .outer_c0bea0.fullSize_c0bea0 {
+    :root .outer_c0bea0.user-profile-modal {
       padding: 0;
       border-radius: 8px;
       background: var(--background-primary);
     }
-    .inner_c0bea0.fullSize_c0bea0 {
+    .user-profile-modal .inner_c0bea0 {
       display: grid;
       grid-template-areas: "banner banner banner banner" "avatar circles circles circles" "avatar username username username" "avatar status status status" "avatar buttons request spamton" "avatar tabs tabs tabs" "body body body body";
       grid-template-columns: [avatar-start] 213px [username-start] min-content [request-start] min-content [spamton-start] auto [end];
@@ -1841,7 +1883,7 @@
       }
     }
   }
-  .inner_c0bea0.fullSize_c0bea0 {
+  .user-profile-modal .inner_c0bea0 {
     .body__24502 {
       // about tab
       .scroller_fcb628 {
@@ -1939,6 +1981,7 @@
           .roleCircle__4f569 {
             width: 0;
             height: 0;
+            filter: none !important;
           }
           :is(.roleFlowerStar_dfa8b6, .roleCircle__4f569) {
             &:before {
@@ -1988,8 +2031,67 @@
     }
   }
   @media (forced-colors: active) {
-    .inner_c0bea0.fullSize_c0bea0 {
+    .user-profile-modal .inner_c0bea0 {
       border: none;
+    }
+  }
+  // tabs
+  .outer_c0bea0 .container_d1d9f3 .scroller_ac477d {
+    .section_bf424d {
+      .headings_bf424d {
+        .header_bf424d {
+          @include dtm16_eyebrow;
+        }
+        [data-text-variant="text-xs/normal"] {
+          font-size: 14px;
+          font-weight: 300;
+          margin-top: 8px;
+        }
+      }
+      .card__39ec2 {
+        border-radius: 0;
+        background: none;
+        border: none;
+        border-bottom: solid 1px var(--background-modifier-accent);
+        padding: 8px 0 16px;
+        display: grid;
+        grid-template-areas: "title title" "content pieceofshit";
+        grid-template-columns: auto min-content;
+        align-items: center;
+        gap: 0;
+        >header {
+          grid-area: title;
+          margin-bottom: 8px;
+          [data-text-variant="text-xs/medium"] {
+            @include dtm16_eyebrow;
+          }
+        }
+        >:not(header) {
+          grid-area: content;
+        }
+        &:last-of-type {
+          border-bottom: none;
+        }
+        .body__39ec2 {
+          flex: 1;
+          .container_e928f4 {
+            border-color: var(--background-tertiary);
+            background: none;
+          }
+        }
+        .headerContextMenu__39ec2 {
+          position: unset;
+          display: contents;
+          .contextMenu__39ec2 {
+            order: 2;
+            grid-area: pieceofshit;
+            svg {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+      }
     }
   }
 }

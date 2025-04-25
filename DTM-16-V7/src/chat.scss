@@ -611,6 +611,7 @@
           }
         }
         .channelAppLauncher_e6e74f {
+          display: none; // nobody fucking uses this
           margin: 0;
           margin-right: -16px;
           width: 16px;
@@ -698,6 +699,12 @@
             color: var(--dtm-16-chat-textbox-attach-button-fg-active);
           }
         }
+        // slop command "attach" ""button""
+        .attachButton__74017 {
+          .icon__4d3a9 {
+            padding: 8px 6px 8px 24px;
+          }
+        }
         .attachWrapper__0923f {
           &:active .attachButton__0923f {
             border-color: var(--dtm-16-chat-textbox-attach-button-border-active);
@@ -754,7 +761,8 @@
             opacity: .3;
           }
           >.channelAppLauncher_e6e74f {
-            &:nth-child(3) {display:none}
+            display: none; // nobody fucking uses this
+            // &:nth-child(3) {display:none}
             button {
               color: var(--header-primary);
               opacity: .3;
@@ -904,6 +912,9 @@
               padding: 0;
             }
           }
+          .nameContainer__703b9 {
+            color: unset !important;
+          }
         }
         .scheduledMessageBar_ba21b4 {
           height: 30px;
@@ -921,6 +932,14 @@
         +.scrollableContainer__74017 {
           border-top-left-radius: 0;
           border-top-right-radius: 0;
+        }
+        // slop command ui
+        .bar__84522 {
+          border-radius: 3px 3px 0 0;
+          background: linear-gradient(var(--dtm-16-chat-textbox-bg), var(--dtm-16-chat-textbox-bg)),
+          linear-gradient(var(--dtm-16-chat-textbox-border), var(--dtm-16-chat-textbox-border));
+          padding-top: 0;
+          padding-bottom: 0;
         }
       }
       .typing_b88801 {
@@ -1039,6 +1058,14 @@
           }
         }
       }
+      // dogshit APPS commands button
+      .entryPointButtonContainer_f75fb0 {
+        margin: 0 0 30px;
+        height: auto;
+        .entryPointAppCommandButton_a83188 {
+          height: 46px;
+        }
+      }
     }
   }
   :is(.page_c48ade, .chat_f75fb0) {
@@ -1064,6 +1091,50 @@
       }
       .chatContent_f75fb0 {
         background: none;
+      }
+      .formSection_fb64c9 {
+        .sectionTitle__7bffb {
+          label, span {
+            @include dtm16_eyebrow;
+          }
+        }
+        .checkboxWrapper_f525d3 {
+          .input_f525d3 {
+            width: 18px !important;
+            height: 18px !important;
+          }
+          .checkbox_f525d3 {
+            width: 18px !important;
+            height: 18px !important;
+            border-radius: 2px;
+            box-sizing: border-box;
+            border: solid 2px var(--dtm-16-checkbox-border-off);
+            transition: .2s;
+            svg {
+              display: none;
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              top: 3px;
+              left: 6px;
+              display: table;
+              width: 4px;
+              height: 10px;
+              border-radius: 0;
+              border: 2px solid #0000;
+              border-top-width: 0;
+              border-left-width: 0;
+              transform: rotate(45deg);
+            }
+            &.checked_f525d3 {
+              border-color: var(--blurple);
+              &:after {
+                border-color: #fff;
+              }
+            }
+          }
+        }
       }
     }
     &.threadSidebarOpen_f75fb0 {

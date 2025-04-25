@@ -150,7 +150,11 @@
               font-size: 12px;
               line-height: 12px;
               color: #fff !important;
-              >span {display:none}
+              >span:not(.nameContainer__703b9) {display:none}
+              .name__703b9 {
+                filter: none !important;
+                color: #fff !important;
+              }
             }
           }
           .infoSection__0f2e8 {
@@ -259,14 +263,18 @@
       }
     }
     // server tags
-    .chipletContainerInner__4a25c {
-      background: none;
+    .clanTagChiplet_c19a55, .clanTagChiplet__5bdf8, .chipletContainerInner__10651 {
+      max-width: 36px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .chipletContainerInner__10651 {
+      background: var(--background-modifier-accent);
       border-radius: 2px;
-      color: var(--text-muted);
-      outline: solid 1px var(--background-tertiary);
-      outline-offset: -1px;
-      &:hover {
-        outline-color: var(--background-accent);
+      .text__10651 {font-size: 10px;color:var(--text-muted)!important}
+      .badge__10651 {display:none}
+      &:hover, &:active {
+        background: var(--background-modifier-accent);
       }
     }
   }

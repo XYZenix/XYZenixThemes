@@ -546,6 +546,19 @@
         padding-left: 42px;
       }
     }
+    // new custom status popout
+    .profilePreview_dbc4b7 {
+      display: none;
+    }
+    .inputContainer_dbc4b7 {
+      .emojiButtonContainer_dbc4b7 {
+        ~.inputWrapper__0f084 {
+          textarea {
+            padding-left: 40px;
+          }
+        }
+      }
+    }
     // expression picker: emoji tab
     .wrapper_c0e32c {
       box-shadow: var(--elevation-stroke), var(--elevation-high);
@@ -1895,6 +1908,22 @@
             }
           }
         }
+        .ctaButton_d5cd2d {
+          margin: 12px;
+          width: calc(100% - 24px);
+          box-shadow: 0 0 0 16px #fff;
+          border-radius: 3px;
+          padding: 10px 16px;
+          min-width: 0;
+          min-height: 0;
+          height: auto;
+          background: var(--blurple);
+          &:is(:hover:not(:disabled), :active:not(:disabled)) {background: var(--blurple-hover)}
+          div {
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
         &:last-child {
           display: grid;
           grid-template-areas: "a b" "c c";
@@ -1902,6 +1931,9 @@
           .primaryEmoji_d5cd2d {
             grid-area: a;
             margin: 10px;
+          }
+          &:has(>div:only-child) {
+            display: flex;
           }
         }
         &:not(:last-child) {
@@ -1957,9 +1989,13 @@
             margin-left: 0;
           }
         }
+        .showMoreEmojis_d5cd2d {
+          --interactive-active: #000;
+        }
       }
       .popoutLoadingBackground__0f481 {
         mask: none;
+        background: #fff;
         .popoutLoadingForeground__0f481 {display:none}
         &:before,&:after {
           content: "";
@@ -2001,6 +2037,31 @@
               font-size: 16px;
               font-weight: 500;
             }
+          }
+        }
+      }
+      // role icon
+      .popoutContainer__8641f {
+        padding: 16px;
+        .truncatingText__8641f {
+          [data-text-variant="heading-md/semibold"] {
+            color: var(--blurple);
+          }
+          [data-text-variant="text-sm/normal"] {
+            color: var(--text-muted);
+          }
+        }
+        .lookFilled__201d5.colorPrimary__201d5 {
+          border-radius: 3px;
+          padding: 10px 16px;
+          min-width: 0;
+          min-height: 0;
+          height: auto;
+          background: var(--blurple);
+          &:is(:hover:not(:disabled), :active:not(:disabled)) {background: var(--blurple-hover)}
+          div {
+            font-size: 16px;
+            font-weight: 500;
           }
         }
       }
@@ -2144,6 +2205,89 @@
             height: 16px;
             color: #{ss(#72767d)};
             transition: color .2s;
+          }
+        }
+      }
+    }
+  }
+  // server profile popout
+  .container__86bf6 {
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+    background: none;
+    opacity: .98;
+    width: 250px;
+    &.spinnerContainer__86bf6 {
+      background: #fff;
+    }
+    .container__86ab2 {
+      border: none;
+      border-radius: 3px;
+      background: #fff;
+      .banner__86ab2 {
+        display: none;
+      }
+      .avatarContainer__86ab2 {
+        margin: 0;
+        background: var(--blurple);
+        width: 100%;
+        justify-content: center;
+        padding: 20px 0 10px;
+        .avatarWrapper__86ab2 {
+          background: rgba(255 255 255/.25);
+        }
+      }
+      .header__99f53 {
+        background: var(--blurple);
+        margin: 0;
+        padding-bottom: 20px;
+        align-items: center;
+        .nameContainer__99f53 {
+          justify-content: center;
+          .guildName__99f53 {color: #fff !important}
+          .guildIconV2Container__85d16 {display:none}
+        }
+        .members__99f53 {
+          justify-content: center;
+          margin: 5px 0;
+          .dot__99f53 {background:rgba(255 255 255/.6)}
+          .dotOnline__99f53 {background:#fff}
+          [data-text-variant="text-sm/normal"] {color:#fff!important}
+        }
+        .established__99f53 {
+          [data-text-variant="text-sm/normal"] {
+            font-size: 12px;
+            line-height: 1;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff !important;
+          }
+        }
+      }
+      .body__86ab2 {
+        [data-text-variant="text-sm/normal"],
+        [data-text-variant="text-sm/medium"] {
+          color: #000 !important;
+          font-weight: 300;
+        }
+        .trait_d452e4 {
+          border: solid 1px rgba(0 0 0/.25);
+          border-radius: 2px;
+        }
+      }
+      .buttonContainer__86ab2 {
+        &:empty {padding:0}
+        .lookFilled__201d5 {
+          border-radius: 3px;
+          padding: 10px 16px;
+          min-width: 0;
+          min-height: 0;
+          height: auto;
+          background: var(--blurple);
+          &:is(:hover:not(:disabled), :active:not(:disabled)) {background: var(--blurple-hover)}
+          div {
+            font-size: 16px;
+            font-weight: 500;
           }
         }
       }
