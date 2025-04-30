@@ -1,8 +1,11 @@
 @use "funcs" as *;
+@use "mixins" as *;
 @at-root {
   :root .guilds_c48ade {
     width: 80px;
-    background: var(--background-tertiary);
+    &.wrapper_ef3116.guilds_c48ade { // override fast follows experiment
+      background: var(--background-tertiary);
+    }
     // top section
     .topSection_ef3116 {
       padding-top: 8px;
@@ -12,16 +15,16 @@
       height: 36px;
       font-size: 11px;
       font-weight: 400;
-        .text__3b95d:after {
-          content: "";
-          display: inline-block;
-          width: 12px;
-          height: 12px;
-          margin-left: 4px;
-          position: relative;
-          top: 2px;
-          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 12V0h12v12'/%3E%3Cpath fill='%23FFF' d='M5.25 2v5.22L3 5 2 6l4 4 4-4-1-1-2.28 2.22V2'/%3E%3C/g%3E%3C/svg%3E");
-        }
+      .text__3b95d:after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-left: 4px;
+        position: relative;
+        top: 2px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 12V0h12v12'/%3E%3Cpath fill='%23FFF' d='M5.25 2v5.22L3 5 2 6l4 4 4-4-1-1-2.28 2.22V2'/%3E%3C/g%3E%3C/svg%3E");
+      }
     }
     .unreadMentionsIndicatorBottom_ef3116 {
       padding-bottom: 0;
@@ -63,14 +66,13 @@
     .listItem__650eb {
       width: 80px;
       .wrapper_cc5dd2 {
-        width: 50px;
-        height: 50px;
+        width: 50px !important;
+        height: 50px !important;
         >.svg_cc5dd2 {
           inset: auto;
           contain: none;
           foreignObject {
-            -webkit-mask: none;
-            mask: none;
+            @include mask(none);
             overflow: visible;
             x: -4;
             y: -4;
@@ -260,14 +262,73 @@
       background: var(--background-secondary);
     }
     // server folders
-    .wrapper__48112 {
-      .expandedFolderBackground__48112 {
+    .folderGroup__48112 {
+      width: 80px;
+      min-height: 50px;
+      >.listItem__650eb {
+        min-height: 50px;
+      }
+      .folderHeader__48112 {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+      }
+      .expandedFolderBackground__48112, .folderGroupBackground__48112 {
         left: 15px;
         width: 50px;
         bottom: 4px;
         border-radius: 16px 16px 25px 25px;
         background: var(--background-modifier-accent);
         border: none;
+      }
+      .folderButton__48112 {
+        width: 50px;
+        height: 50px;
+        .wrapper_cc5dd2 {
+          width: 50px !important;
+          height: 50px !important;
+          margin-top: -8px;
+          margin-left: -4px;
+          .folderIconWrapper__48112 {
+            padding: 0;
+            .folderIcon__48112 {
+              width: 50px;
+              height: 50px;
+              >svg {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+          .folderPreviewWrapper__48112 {
+            width: 50px;
+            height: 50px;
+            margin-top: -2px;
+            border-radius: 16px;
+            padding: 6px;
+            .folderPreview__48112 {
+              gap: 1px 2px;
+              .icon_f34534 {
+                border-radius: 50px;
+                width: 18px;
+                height: 18px;
+              }
+            }
+          }
+          >.svg_cc5dd2 {
+            overflow: hidden;
+            top: 4px;
+            .folderButtonContent__48112 {
+              margin-top: -4px;
+            }
+          }
+        }
+      }
+      &.isExpanded__48112 .folderButton__48112 .wrapper_cc5dd2 {
+        margin-top: -4px;
+        .folderPreviewWrapper__48112 {
+          margin-top: 8px;
+        }
       }
       .folder__48112 {
         margin-left: -5px;
@@ -303,6 +364,11 @@
         }
       }
     }
+    // fix
+      .blobContainer_e5445c .wrapper_cc5dd2 {
+        width: 50px !important;
+        height: 50px !important;
+      }
     // drag
     .placeholderMask__87847 {
       width: 50px;
