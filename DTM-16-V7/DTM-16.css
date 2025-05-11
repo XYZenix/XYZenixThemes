@@ -60,7 +60,7 @@
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "1036" "\a" "May 5, 2025";
+  content: "DTM-16 Build " "1037" "\a" "May 11, 2025";
 }
 
 .theme-dark, .theme-light {
@@ -8416,6 +8416,13 @@ img[src="/assets/2ccd0ae2e8934844.png"] {
 :root .guilds_c48ade .listItem__650eb .upperBadge_cc5dd2 .iconBadge__650eb.isCurrentUserConnected__650eb > .icon__2b1f5 {
   color: var(--green);
 }
+:root .guilds_c48ade .listItem__650eb .upperBadge_cc5dd2 .unavailableBadge__650eb {
+  background: var(--background-tertiary);
+  box-shadow: inset 0 0 0 1px var(--red);
+}
+:root .guilds_c48ade .listItem__650eb .upperBadge_cc5dd2 .unavailableBadge__650eb .icon__2b1f5 {
+  color: var(--red);
+}
 :root .guilds_c48ade .guildSeparator__252b6 {
   height: 2px;
   border-radius: 0;
@@ -8562,11 +8569,22 @@ html:not(.visual-refresh) .guilds_c48ade .wrapper__48112 .stack_dbd263 {
 :root .guilds_c48ade .guildsError_e8d03f {
   width: 50px;
   height: 50px;
+  border-radius: 64px;
   background: hsl(0, calc(var(--saturation-factor, 1) * 84.9%), 61%, 0.1);
   border-color: var(--red);
+  text-decoration: none;
 }
 :root .guilds_c48ade .guildsError_e8d03f:hover {
   background: var(--red);
+}
+:root .guilds_c48ade .guildsError_e8d03f > svg {
+  display: none;
+}
+:root .guilds_c48ade .guildsError_e8d03f:after {
+  content: "!";
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 html:not(.visual-refresh) .wrapper__48112 {

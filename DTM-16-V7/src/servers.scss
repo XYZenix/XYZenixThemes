@@ -254,6 +254,11 @@
             color: var(--green);
           }
         }
+        .unavailableBadge__650eb {
+          background: var(--background-tertiary);
+          box-shadow: inset 0 0 0 1px var(--red);
+          .icon__2b1f5 {color: var(--red)}
+        }
       }
     }
     .guildSeparator__252b6 {
@@ -407,10 +412,21 @@
     .guildsError_e8d03f {
       width: 50px;
       height: 50px;
+      border-radius: 64px;
       background: #{ss(rgba(240,71,71,.1))};
       border-color: var(--red);
+      text-decoration: none;
       &:hover {
         background: var(--red);
+      }
+      >svg {
+        display: none;
+      }
+      &:after {
+        content: "!";
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
       }
     }
   }
