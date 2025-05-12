@@ -1,0 +1,35 @@
+@use "sass:color";
+@use "sass:string";
+@use "sass:math";
+
+@function dec($num,$amt) {
+  $value: 1; 
+  @for $i from 1 through $amt {
+    $value: $value * 10;
+  }
+  @return math.round($num*$value)/$value;
+}
+
+// converts color to a saturation-slider compatible piece of shit i will never deal with again
+@function ss($color) {
+  $h: dec(hue($color),1);
+  $s: dec(saturation($color),1);
+  $l: dec(lightness($color),1);
+  $a: dec(alpha($color),2);
+  $h: string.slice(#{$h},0,-4);
+  @if ($a < 1) {
+    @return #{hsl(#{$h}, calc(var(--saturation-factor, 1) * #{$s}), $l, $a)};
+  }
+  @return #{hsl($h, calc(var(--saturation-factor, 1) * #{$s}), $l)};
+}
+@function ssv($color) {
+  $h: dec(hue($color),1);
+  $s: dec(saturation($color),1);
+  $l: dec(lightness($color),1);
+  $a: dec(alpha($color),2);
+  $h: string.slice(#{$h},0,-4);
+  @if ($a < 1) {
+    @return #{#{$h}, calc(var(--saturation-factor, 1) * #{$s}), $l, $a};
+  }
+  @return #{$h, calc(var(--saturation-factor, 1) * #{$s}), $l};
+}
