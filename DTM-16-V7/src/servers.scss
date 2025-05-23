@@ -74,12 +74,12 @@
           foreignObject {
             @include mask(none);
             overflow: visible;
+            x: 0;
+            y: 0;
+          }
+          &[viewBox^="-4 -4"] foreignObject {
             x: -4;
             y: -4;
-            &[width="48"] {
-              x: 0;
-              y: 0;
-            }
           }
         }
         .wrapper__6e9f8 {
@@ -192,6 +192,18 @@
             }
           }
         }
+        @at-root {
+          .folderButtonContent__48112 {
+            position: relative !important;
+            transform: translate3d(0, -50px, 0) !important;
+          }
+          .full-motion .folderButtonContent__48112 {
+            transition: transform var(--custom-folder-item-animation-duration) ease-out !important;
+          }
+          .isExpanded__48112 .folderButtonContent__48112 {
+            transform: translateZ(0) !important;
+          }
+        }
       }
       .wrapper__58105 {
         height: 50px;
@@ -289,11 +301,10 @@
       .folderButton__48112 {
         width: 50px;
         height: 50px;
+        padding: 0 !important;
         .wrapper_cc5dd2 {
           width: 50px !important;
           height: 50px !important;
-          margin-top: -8px;
-          margin-left: -4px;
           .folderIconWrapper__48112 {
             padding: 0;
             .folderIcon__48112 {
@@ -308,11 +319,12 @@
           .folderPreviewWrapper__48112 {
             width: 50px;
             height: 50px;
-            margin-top: -2px;
             border-radius: 16px;
             padding: 6px;
             .folderPreview__48112 {
-              gap: 1px 2px;
+              gap: 2px;
+              width: auto;
+              height: auto;
               .icon_f34534 {
                 border-radius: 50px;
                 width: 18px;
@@ -320,26 +332,27 @@
               }
             }
           }
+          .folderButtonInner__48112 {
+            width: 50px;
+            height: 50px;
+          }
           >.svg_cc5dd2 {
-            overflow: hidden;
+            overflow: visible;
             top: 0;
-            .folderButtonContent__48112 {
-              margin-top: 0;
+            foreignObject {
+              width: 50px;
+              height: 50px;
+              @include mask(none);
             }
           }
         }
         &[aria-expanded="false"] {
           .wrapper_cc5dd2>.svg_cc5dd2 {
-            overflow: hidden;
-            top: 4px;
-            .folderButtonContent__48112 {
-              margin-top: -4px;
-            }
+            overflow: visible;
           }
         }
       }
       &.isExpanded__48112 .folderButton__48112 .wrapper_cc5dd2 {
-        margin-top: -4px;
         .folderPreviewWrapper__48112 {
           margin-top: 8px;
         }
