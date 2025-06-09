@@ -106,7 +106,8 @@
             }
           }
           .panelTitleContainer__37e49 {
-            >div[data-text-variant="text-sm/medium"] {
+            >div[data-text-variant="text-sm/medium"],
+            >div[data-text-variant="text-md/medium"] {
               font-size: 14px;
               font-weight: 400;
               line-height: 16px;
@@ -114,7 +115,8 @@
             }
           }
           .panelSubtextContainer__37e49 {
-            >div[data-text-variant="text-xs/normal"] {
+            >div[data-text-variant="text-xs/normal"],
+            >div[data-text-variant="text-xs/medium"] {
               opacity: .4;
             }
             >div[data-text-variant="text-xs/normal"],
@@ -278,6 +280,13 @@
           }
         }
       }
+      @at-root .visual-refresh.align-chat-input .container__37e49 {
+        .avatarWrapper__37e49>.avatar__37e49>svg {
+          transform-origin: top left;
+          transform: scale(calc(30/32));
+        }
+
+      }
       // non visual refresh fix
       @at-root html:not(.visual-refresh) .panels_c48ade .container__37e49 {
         .avatarWrapper__37e49>.avatar__37e49>svg {
@@ -354,6 +363,47 @@
               font-weight: 500;
               line-height: 16px;
             }
+            @at-root .visual-refresh.align-chat-input {
+              .inner_e131a9, .connection_e131a9 {
+                height: auto !important;
+              }
+              .rtcConnectionStatus__06d62 {
+                display: grid !important;
+                height: auto !important;
+                grid-template-areas: "ping top" "btm btm";
+                grid-template-columns: [ping-start] min-content [top-start] 1fr [end];
+                >.ping__06d62 {
+                  grid-area: ping;
+                  width: 14px !important;
+                  height: 14px !important;
+                  margin: 0 4px 0 0 !important;
+                  padding: 0 !important;
+                  border-radius: 0 !important;
+                  border: none !important;
+                }
+                .labelWrapper__06d62 {
+                  display: contents;
+                  >button {
+                    grid-area: top;
+                    justify-content: start;
+                    .rtcConnectionStatusLabel__06d62 {
+                      margin-top: 0;
+                    }
+                  }
+                  >a {
+                    grid-area: btm;
+                    padding: 0;
+                    [data-text-variant="text-xs/medium"] {
+                      color: var(--text-muted) !important;
+                      margin-top: -1px;
+                      font-size: 10px;
+                      font-weight: 500;
+                      line-height: 12px;
+                    }
+                  }
+                }
+              }
+            }
           }
           div[data-text-variant="text-sm/medium"] {
             font-size: inherit;
@@ -372,6 +422,11 @@
         .voiceUsers__68617 {
           margin-top: 8px;
           gap: 3px;
+          &.collapsed__68617 {
+            >.avatarContainer__68617:nth-child(7 of .avatarContainer__68617)~.avatarContainer__68617 {
+              display: none;
+            }
+          }
         }
         .voiceButtonsContainer_e131a9 {
           margin-left: 10px;
