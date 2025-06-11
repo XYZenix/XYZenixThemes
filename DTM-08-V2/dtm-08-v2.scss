@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "182";
-$themeDate: "May 7, 2025";
+$themeVersion: "183";
+$themeDate: "Jun 11, 2025";
 
 @use "sass:color";
 @use "sass:math";
@@ -761,6 +761,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
       }
       .listItem__650eb {
         margin-bottom: 0;
+        width: 72px;
       }
       .pill__1f388 {
         display: none;
@@ -832,10 +833,19 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
       }
       .wrapper_cc5dd2 {
         width: 72px !important;
-        left: -12px;
+        height: 48px !important;
+        left: 0;
         >svg {
-          width: 72px;
-          height: 48px;
+          width: 52px;
+          height: 52px;
+          top: 0;
+          left: 0;
+          >foreignObject {
+            x: -4;
+            y: -4;
+            width: 72px;
+            height: 48px;
+          }
         }
       }
       @if $snowsgiving {
@@ -860,7 +870,8 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
       .listItemWrapper_dfb2f8:active {
         transform: none;
       }
-      +.listItem__650eb .guildSeparator__252b6 {
+      +.listItem__650eb .guildSeparator__252b6,
+      +#guild-list-unread-dms+.listItem__650eb .guildSeparator__252b6 {
         display: none;
       }
       .lowerBadge_cc5dd2 {
@@ -872,16 +883,6 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
       .upperBadge_cc5dd2 {
         right: -12px;
       }
-    }
-    // open party
-    @at-root .wrapper_cc5dd2 {
-      .highlight_cc5dd2 {display:none}
-    }
-    .broadcastBadge_f9623d {
-      width: 16px;
-      height: 16px;
-      margin-top: 2px;
-      margin-left: 2px;
     }
     // servers
     .wrapper__6e9f8 {
@@ -907,6 +908,9 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
           box-shadow: inset 0 0 0 1px #0008, inset 0 -1px 3px #0008, inset 0 2px 3px #fff6;
         }
       }
+    }
+    .listItem__650eb {
+      width: 72px;
     }
     .tutorialContainer__1f388+.listItem__650eb {
       margin-bottom: 0;
@@ -950,6 +954,15 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
         width: 48px;
         border-radius: 4px;
       }
+      .folderHeader__48112 {
+        width: 48px;
+        height: 48px;
+        .folderButton__48112 {
+          width: 48px;
+          height: 48px;
+          padding: 0;
+        }
+      }
       .folderIcon__48112 {
         border-radius: 4px;
       }
@@ -964,6 +977,13 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
       border-radius: 4px;
       width: 48px !important;
       height: 48px !important;
+      // attempt to fix broken hitbox caused by idiots that need svgs to mask out a circle on a square
+      >.svg_cc5dd2 {
+        pointer-events: none;
+        >foreignObject {
+          pointer-events: auto;
+        }
+      }
       foreignObject {
         mask: none !important;
         -webkit-mask: none !important;
@@ -9474,8 +9494,8 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
                 height: 21px;
                 box-shadow: inset 0 0 0 1px #777, inset 0 2px #fff;
                 border-radius: 0;
-                left: -6px;
-                top: -3px;
+                left: 0;
+                top: 0;
                 background: #eee;
               }
             }
@@ -9832,7 +9852,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
     --serverColumnsWidth: calc(calc(var(--serverColumns,1) * 60px) + 12px);
     width: var(--serverColumnsWidth);
     .tutorialContainer__1f388 {
-      margin-left: -12px;
+      margin-left: 0;
       :is(.listItem__650eb, .wrapper_cc5dd2, foreignObject, .wrapper__6e9f8, .childWrapper__6e9f8) {
         width: var(--serverColumnsWidth);
       }
@@ -9855,7 +9875,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
         margin-top: 0;
         margin-bottom: 0;
       }
-      .listItem__650eb:has(.guildSeparator__252b6) {
+      .listItem__650eb:has(>.guildSeparator__252b6) {
         display: none; // i fucking give up
       }
       .wrapper__48112 {
