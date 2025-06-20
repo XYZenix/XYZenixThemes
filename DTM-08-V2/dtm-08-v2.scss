@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "184";
-$themeDate: "Jun 11, 2025";
+$themeVersion: "185";
+$themeDate: "Jun 20, 2025";
 
 @use "sass:color";
 @use "sass:math";
@@ -879,7 +879,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
         display: none;
       }
       .lowerBadge_cc5dd2 {
-        right: -12px;
+        right: 0;
         >div {
           border-bottom-right-radius: 0;
         }
@@ -9282,8 +9282,17 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
       }
       .slateTextArea_ec4baf {
         min-height: 0;
-        padding: 0 10px 0 0;
+        padding: var(--DTM08-slateTextArea-padding, 0) 10px var(--DTM08-slateTextArea-padding, 0) 0;
         margin-left: 0;
+        @at-root {
+          html.font-size-12 {--DTM08-slateTextArea-padding:14px}
+          html.font-size-14 {--DTM08-slateTextArea-padding:13px}
+          html.font-size-15 {--DTM08-slateTextArea-padding:12px}
+          html.font-size-16 {--DTM08-slateTextArea-padding:11px}
+          html.font-size-18 {--DTM08-slateTextArea-padding:10px}
+          html.font-size-20 {--DTM08-slateTextArea-padding:8px}
+          html.font-size-24 {--DTM08-slateTextArea-padding:6px}
+        }
       }
       .textArea__74017 {
         min-height: 44px;
@@ -9370,6 +9379,37 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
               }
             }
           }
+        }
+      }
+    }
+    // fix align-chat-input
+    @at-root html.visual-refresh.align-chat-input {
+      .messagesWrapper__36d07 {
+        mask: none !important;
+        -webkit-mask: none !important;
+      }
+      .scrollerContent__36d07 {
+        padding-bottom: 0 !important;
+        >.scroller__36d07 {
+          &::-webkit-scrollbar-track {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+      .typing_b88801 {
+        left: 20px;
+        right: 20px;
+        bottom: 1px;
+        top: unset !important;
+        padding-left: 0 !important;
+        .typingDots_b88801 {
+          margin-left: 0 !important;
+        }
+        .text_b88801 {
+          margin-left: 4px !important;
+        }
+        .cooldownWrapper_b21699 {
+          padding-right: 0 !important;
         }
       }
     }
