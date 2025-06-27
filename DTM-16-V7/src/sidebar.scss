@@ -1,4 +1,5 @@
 @use "funcs" as *;
+@use "mixins" as *;
 @at-root {
   :root {
     .sidebarList_c48ade {
@@ -310,7 +311,7 @@
     }
     // guild channels
     .container__2637a {
-      margin-left: 0; // WHAT WERE YOU PEOPLE SMOKING
+      margin-left: 0;
       .container_f37cb1 {
         background: var(--bg-overlay-2, var(--background-secondary));
         .header_f37cb1 {
@@ -426,6 +427,15 @@
             background: var(--dtm-16-scrollbar-thumb-brand);
             border-radius: 8px;
             background-clip: padding-box;
+          }
+        }
+      }
+      @at-root .align-chat-input .container__2637a {
+        @include mask(none !important);
+        .scroller__629e4 {
+          padding-bottom: 0;
+          &::-webkit-scrollbar-track {
+            margin-bottom: 0;
           }
         }
       }

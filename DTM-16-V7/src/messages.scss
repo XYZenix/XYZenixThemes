@@ -563,6 +563,17 @@
         font-size: inherit;
         font-weight: inherit;
       }
+      .bumpBox_cacd02 {
+        border-radius: 3px;
+        background: var(--deprecated-card-editable-bg);
+        border: solid 1px var(--background-tertiary);
+      }
+    }
+    // align-chat-input fix
+    @at-root .align-chat-input {
+      .scrollerSpacer__36d07 {
+        height: 0;
+      }
     }
     // THE SKELETON APPEARS
     .wrapper_d852db {
@@ -613,7 +624,7 @@
       }
     }
     // rich embed
-    .embedWrapper_b7e1cb {
+    .embedFull__623de {
       border-width: 0 0 0 4px;
       border-left-color: var(--dtm-16-messages-embed-border-left);
       background: none;
@@ -961,6 +972,37 @@
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' stroke='%23FFF' stroke-width='2' d='M5 19.07c0 .55.37.76.85.46l11.24-7.15c.47-.3.48-.78 0-1.09L5.85 4.14c-.47-.3-.85-.1-.85.46v14.47Z'/%3E%3C/svg%3E") no-repeat;
       }
     }
+    // audio embed
+    .wrapperAudio_cf09d8 {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: none;
+      .audioControls_cf09d8 {
+        border-radius: 3px;
+      }
+      +.hoverButtonGroup__06ab4 {
+        border: none;
+        opacity: 1;
+        top: 0;
+        right: 0;
+        left: unset;
+        filter: none;
+        outline: none;
+        background: none;
+        .hoverButton__06ab4 {
+          background: none !important;
+          opacity: .5;
+          transition: .2s opacity;
+          &:hover {
+            opacity: 1;
+          }
+        }
+        .removeMosaicItemHoverButton__6c706 svg path {
+          color: var(--red) !important;
+        }
+      }
+    }
     // app discovery embed
     .container__4bfb6 {
       border: solid 1px var(--dtm-16-messages-invite-embed-border);
@@ -1156,7 +1198,7 @@
         font-weight: 500;
       }
     }
-    .visualMediaItemContainer_f4758a, .oneByOneGridSingle_f4758a, .imgContainer__8f9ad {
+    .visualMediaItemContainer_f4758a, .oneByOneGridSingle_f4758a, .imgContainer__8f9ad, .threeByThreeGrid_f4758a {
       border-radius: 3px;
     }
     // general markup
