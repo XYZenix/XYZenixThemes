@@ -4,22 +4,24 @@ this repo contains various website themes made by 11pixels (with a few exception
 
 ## Themes: Discord
 
-Name | Description  | State
------|--------------|------
-[DTM-08](https://github.com/XYZenix/DTM-08) | A skeuomorphic/glossy theme for Discord | Active
-[DTM-16](https://github.com/XYZenix/DTM-16) | A theme that brings the old UI back | Active
-[DTM-17](https://github.com/XYZenix/DTM-17) | A modified version of DTM-16 that looks closer to 2017 and 2018 Discord | Abandoned
-[ActivityStyleEmbeds](https://github.com/XYZenix/ActivityStyleEmbeds) | Changes the look of embeds to look like that of the embeds from the (removed) Activity Tab | Sort-of abandoned, [available here](https://github.com/XYZenix/ActivityStyleEmbeds)
-[DTM-2K](/DTM-2K/) | Windows 2000 theme for Discord | Abandoned
-DTM-20 | Brings back the 2020 look of Discord | Cancelled
-DTM-12 | A skeuomorphic theme for Discord based on concept by disctr4k | Abandoned
-Discord Sword & Shield | Theme based on Pokémon Sword/Shield UI | Abandoned
-
-### Mini-themes: Discord
-
-Name | Description | Status | Image
------|-------------|--------|------
-NewDragNDropModal | New drag&drop upload box from a short video that was shown on the Nitro tab, theme includes non nitro version | Abandoned | N/A
+* [DTM-08](https://github.com/XYZenix/DTM-08) - a skeuomorphic/glossy theme for discord.
+  * the original version (v1) was written entirely in css, and has not been maintained since 2023
+  * **the current version (v2)** is the main version you're probably looking for and is just barely being maintained
+  * the rewrite (v3) is very slowly being worked on due to a lack of motivation
+* [DTM-16](https://github.com/XYZenix/DTM-16) - a theme that brings back the 2016 discord ui
+  * v5 is the previous and now abandoned version of the theme
+  * v6 was a planned rewrite which took too long to get going so i gave up on it
+  * **v7 is the current version** which is somewhat actively maintained
+* [ActivityStyleEmbeds](https://github.com/XYZenix/ActivityStyleEmbeds) - a small theme that restyles embeds to look like the old activity feed embeds from 2019. this theme is barely being maintained and might break and not be fixed for a long time.
+* ~~DTM-12~~ - refers to several different themes all labeled DTM-12, all abandoned a long time ago
+  * first one was based on a concept by disctr4k, it was the most finished of these but was abandoned because i couldn't follow the style it was going for.
+  * second one was based on an AIMP skin, it was never finished but i took inspiration from it in a part of DTM-08
+  * third one was meant to be based on youtube's 2012 refresh ui, it was never finished
+* ~~DTM-17~~ - a theme that was meant to bring back the 2017 discord ui. this theme was a fork of DTM-16 and has been abandoned. i suggest checking out [dav's DTM-18](https://github.com/davart154/DTM-18)
+* ~~DTM-20~~ - was a planned theme that never got made. check [milbits's oldcord](https://github.com/milbits/oldcord) instead
+* ~~DTM-2K~~ - an abandoned theme based on windows 2000's system ui
+* ~~discord sword/shield~~ - was a theme based on pokémon sword & shield's ui. this theme was abandoned
+* ~~NewDragNDropModal~~ - was a mini theme based on a modal i saw in a short promo video in discord's game store back when that existed. this theme was abandoned
 
 ## Themes: Twitch
 

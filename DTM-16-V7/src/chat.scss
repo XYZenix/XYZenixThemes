@@ -717,6 +717,7 @@
           }
         }
         .attachWrapper__0923f {
+          padding: 0;
           &:active .attachButton__0923f {
             border-color: var(--dtm-16-chat-textbox-attach-button-border-active);
             background: var(--dtm-16-chat-textbox-attach-button-bg-active);
@@ -727,8 +728,14 @@
         }
         .inner__74017 {
           padding-left: 0;
-          &.sansAttachButtonCreatePost__74017, &.innerDisabled__74017.sansAttachButton__74017 {
+          &.sansAttachButtonCreatePost__74017 {
             padding-left: 8px;
+          }
+          &.innerDisabled__74017.sansAttachButton__74017 {
+            padding-left: 8px;
+            .attachWrapper__0923f { // "sans attach button"
+              margin-left: -8px;
+            }
           }
           html:not(.visual-refresh) & {
             .fontSize15Padding__74017 {

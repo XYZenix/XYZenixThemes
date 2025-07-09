@@ -83,6 +83,7 @@
     .scrollerInner__36d07>.groupStart__5126c:not(.flash__03436) {
       margin-left: 19px;
       margin-right: 6px;
+      margin-top: 0;
       background: var(--dtm-16-messages-blocked-card-bg);
       border: solid 1px var(--dtm-16-messages-blocked-card-border);
       border-radius: 3px;
@@ -124,6 +125,9 @@
         margin-top: calc(var(--dtm-16-gs-groupstart-margin) / 2) !important;
         --dtm-16-gs-dividier-display: none;
       }
+    }
+    .messageListItem__5126c:has(+.groupStart__5126c) {
+      padding-bottom: 20px;
     }
     // welcome message
     .container__00de6 {
@@ -571,9 +575,13 @@
     }
     // align-chat-input fix
     @at-root .align-chat-input {
-      .scrollerSpacer__36d07 {
-        height: 0;
+      .scrollerInner__36d07>li:last-of-type {
+        padding-bottom: 0;
       }
+    }
+    // god only fucking knows what i'm fixing here
+    .scrollerSpacer__36d07 {
+      max-height: 20px;
     }
     // THE SKELETON APPEARS
     .wrapper_d852db {
@@ -940,6 +948,80 @@
       // path[d="M10.5906 6.39993L9.19223 7.29993C8.99246 7.39993 8.89258 7.39993 8.69281 7.29993C8.59293 7.19993 8.39317 7.09993 8.29328 6.99993C7.89375 6.89993 7.5941 6.99993 7.29445 7.19993L6.79504 7.49993L4.29797 9.19993C3.69867 9.49993 2.99949 9.39993 2.69984 8.79993C2.30031 8.29993 2.50008 7.59993 2.99949 7.19993L5.99598 5.19993C6.79504 4.69993 7.79387 4.49993 8.69281 4.69993C9.49188 4.89993 10.0912 5.29993 10.5906 5.89993C10.7904 6.09993 10.6905 6.29993 10.5906 6.39993Z"] {
       //   transform: translate(-1px,.5px);
       // }
+    }
+    // slop invite embed
+    .message__5126c .guildInviteContainer__083ae {
+      background: var(--dtm-16-messages-invite-embed-bg);
+      border: solid 1px var(--dtm-16-messages-invite-embed-border);
+      border-radius: 3px;
+      padding: 8px 10px;
+      width: 400px;
+      display: flex;
+      flex-direction: row;
+      .cardHeightMeasure__083ae {
+        flex-direction: row;
+        .banner__083ae, .established__6e500, .body_dca174 {display:none}
+        .avatarContainer_dca174 {
+          min-width: 50px;
+          width: 50px;
+          max-width: 50px;
+          min-height: 50px;
+          height: 50px;
+          max-height: 50px;
+          border-radius: 15px;
+          padding: 0;
+          margin: 0;
+          overflow: hidden;
+          >svg {
+            width: 50px;
+            height: 50px;
+            >foreignObject {
+              @include mask(unset);
+            }
+          }
+          .avatarWrapper_dca174 {
+            >svg {
+              transform: scale(calc(70/64));
+              >foreignObject {
+                @include mask(unset);
+              }
+            }
+          }
+        }
+        .header__6e500 {
+          align-self: center;
+          margin: 0;
+          padding: 0 10px;
+          flex: 1;
+          .members__6e500 {
+            margin-top: 4px;
+          }
+          .memberCount__6e500 {
+            div[data-text-variant] {
+              font-size: 12px;
+              line-height: 16px;
+              font-weight: 600;
+              color: #{ss(#72767d)} !important;
+            }
+          }
+        }
+      }
+      .footer__083ae {
+        flex: 0;
+        display: flex;
+        align-items: center;
+        .buttonContainer__083ae {
+          padding: 0;
+        }
+        .button__6af3a.sm__6af3a {
+          height: 40px;
+          min-height: 0;
+          max-height: unset;
+          min-width: 90px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
     }
     // video embed
     .wrapper__926d7 {
