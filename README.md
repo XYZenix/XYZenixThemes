@@ -27,7 +27,7 @@ this repo contains various website themes made by 11pixels (with a few exception
 
 Name | Description | State
 -----|-------------|------
-[Twitch 2014](/Twitch2014.css) | Brings back the 2014 look of Twitch to some extent. **THIS IS MEANT TO BE USED ON STYLUS AS USERCSS** | Active
+[Twitch 2014](/Twitch2014.user.css) | Brings back the 2014 look of Twitch to some extent. **THIS IS MEANT TO BE USED ON STYLUS AS USERCSS** | Active
 
 ## Themes: [YouTube](/YoutubeThemes/)
 
