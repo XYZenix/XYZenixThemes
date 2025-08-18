@@ -389,7 +389,7 @@
           }
         }
         // accessories or something
-        .container_b7e1cb {
+        @at-root .container_b7e1cb {
           &:after {
             position: absolute;
             top: 0;
@@ -1005,6 +1005,14 @@
               color: #{ss(#72767d)} !important;
             }
           }
+          .guildBadge__85d16 {
+            .flowerStar__3e3b0 {
+              path {fill: var(--background-accent)}
+            }
+            .childContainer__3e3b0 {
+              path {fill: var(--interactive-active)}
+            }
+          }
         }
       }
       .footer__083ae {
@@ -1219,6 +1227,27 @@
         border-radius: 3px;
         background: var(--background-secondary) !important;
         border: solid 1px var(--background-tertiary);
+        .header__98ba8 {
+          [data-text-variant="text-sm/semibold"] {
+            @include dtm16_eyebrow;
+          }
+        }
+        .img__98ba8 {
+          border-radius: 3px;
+          border: none;
+        }
+        .actionWrapper__98ba8 {
+          .primaryButton__98ba8.lookFilled__201d5 {
+            background: var(--green);
+            &:not([disabled]) {
+              &:hover {background: var(--green-hover)}
+              &:active {background: var(--green-active)}
+            }
+            .contents__201d5 {
+              color: #fff;
+            }
+          }
+        }
       }
     }
     // regular file embed
@@ -1320,6 +1349,10 @@
         .roleDot__57082 {
           margin: -1px -2px;
         }
+      }
+      blockquote, blockquote>span {
+        color: inherit;
+        font-size: inherit;
       }
     }
   }

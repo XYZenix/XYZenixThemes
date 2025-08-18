@@ -13,8 +13,8 @@
 @use "vars" as *;
 @use "sass:math";
 
-$themeVersion: "1044";
-$themeDate: "Jul 24, 2025";
+$themeVersion: "1045";
+$themeDate: "Aug 18, 2025";
 
 $themeName: "DTM-16";
 
@@ -72,6 +72,20 @@ $debug: 0;
   initial-value: false;
   name: "2015 Concept: Outline chat avatars on focus";
   note: "i don't owe you an explanation";
+}
+@property --dtm-16-activity-feed-style {
+  syntax: "v1 | v1-1 | v2";
+  inherits: true;
+  initial-value: v1;
+  name: "activity feed card style";
+  note: "choose your flavor of the discord activity feed!";
+}
+@property --dtm-16-old-game-profile {
+  syntax: "true | false";
+  inherits: true;
+  initial-value: false;
+  name: "old game profile";
+  note: "has way less information and is way smaller";
 }
 
 :root {
@@ -949,7 +963,12 @@ $debug: 0;
     --dtm-16-friends-list-table-action-bg-hover: #{ss(#4f545c)};
     --dtm-16-friends-list-activity-feed-item-bg: var(--background-tertiary);
     --dtm-16-friends-list-activity-feed-item-border: var(--background-secondary);
-    --dtm-16-friends-list-activity-feed-item-section-bg: #{ss(#3e4148)};
+    --dtm-16-friends-list-activity-feed-item-section-bg: #{ss(rgba(79,84,92,.3))};
+
+    --dtm-16-activity-feed-v2-card-bg: #{ss(#202225)};
+    --dtm-16-activity-feed-v2-card-bg-hover: #{ss(#18191c)};
+    --dtm-16-activity-feed-v2-card-bg-inner: #{ss(#2f3136)};
+    --dtm-16-activity-feed-v2-separator: #{ss(#292b2f)};
     
     --dtm-16-chat-header-name-prefix: #{ss(#8a8e94)};
     --dtm-16-chat-header-name-color: #fff;
@@ -1238,6 +1257,24 @@ $debug: 0;
     --dtm-16-friends-list-activity-feed-item-bg: #{ss(#f6f6f7)};
     --dtm-16-friends-list-activity-feed-item-border: #{ss(#dcddde)};
     --dtm-16-friends-list-activity-feed-item-section-bg: #fff;
+
+    --dtm-16-activity-feed-v0-card-border: #{ss(#dcddde)};
+    --dtm-16-activity-feed-v0-card-header-bg: #{ss(#f6f6f7)};
+
+    --dtm-16-activity-feed-v1-bg: #{ss(#f6f6f7)};
+    --dtm-16-activity-feed-v1-card-bg: #{ss(#f6f6f7)};
+    --dtm-16-activity-feed-v1-card-header-bg: #{ss(rgba(220,221,222,.6))};
+    --dtm-16-activity-feed-v1-card-header-bg-hover: #{ss(#dcddde)};
+    --dtm-16-activity-feed-v1-card-body-bg: #fff;
+
+    --dtm-16-activity-feed-v2-card-bg: #fff;
+    --dtm-16-activity-feed-v2-card-bg-hover: #{ss(#e3e5e8)};
+    --dtm-16-activity-feed-v2-card-bg-inner: #{ss(#ebedef)};
+    --dtm-16-activity-feed-v2-border: #{#e3e5e8};
+    --dtm-16-activity-feed-v2-border-width-first: 1px 1px 0;
+    --dtm-16-activity-feed-v2-border-width-middle: 0 1px;
+    --dtm-16-activity-feed-v2-border-width-last: 0 1px 1px 1px;
+    --dtm-16-activity-feed-v2-separator: #{ss(#ebedef)};
     
     --dtm-16-chat-header-name-prefix: #{ss(#8a8e94)};
     --dtm-16-chat-header-name-color: #{ss(#4f545c)};
