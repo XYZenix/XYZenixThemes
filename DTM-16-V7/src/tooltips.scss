@@ -2,7 +2,7 @@
 @use "mixins" as *;
 @at-root {
   .layerContainer_da8173 {
-    .tooltip__382e7 {
+    @at-root .tooltip__382e7 {
       --tooltip-color: var(--blurple);
       border-radius: 3px;
       border: none;
@@ -238,6 +238,33 @@
           line-height: 12px;
           font-weight: 700;
         }
+      }
+    }
+    @at-root .tooltip__4e35b {
+      border-radius: 3px;
+      border: none;
+      box-shadow: 0 2px 4px 1px rgba(0,0,0,.1);
+      background: var(--blurple);
+      color: #fff;
+      padding: 5px 10px;
+      .caretFill__4e35b {
+        fill: var(--blurple);
+        transform: scale(calc(20/24));
+        +mask {display:none}
+      }
+      .tooltipContent__4e35b {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        >[data-text-variant="text-sm/medium"] {
+          all: inherit;
+        }
+      }
+      .richTooltipContent_a89985 {
+        padding: 0;
+      }
+      .defaultColor__4bd52 {
+        color: #fff;
       }
     }
     // stream preview
