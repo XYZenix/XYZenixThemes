@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "189";
-$themeDate: "Sep 24, 2025";
+$themeVersion: "190";
+$themeDate: "Oct 5, 2025";
 
 @use "sass:color";
 @use "sass:math";
@@ -731,6 +731,10 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
 @at-root {
   .unreadMentionsIndicatorTop_ef3116 {
     top: 48px
+  }
+  .wrapper_ef3116 {
+    -webkit-mask: none !important;
+    mask: none !important;
   }
   // main scroller
   .scroller_ef3116 {
@@ -5759,6 +5763,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
           border-radius: 512px;
         }
       }
+      .container__8279f {display:none}
       // tabs
       .tabBar_d6f9e9.top_b3f026 {
         position: relative;
@@ -6330,7 +6335,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
 }
 // layers
 @at-root {
-  .layerContainer_da8173:not(.layer__960e4.baseLayer__960e4 .layerContainer_da8173) {
+  .layerContainer__59d0d:not(.layer__960e4.baseLayer__960e4 .layerContainer__59d0d) {
     z-index: 1004;
   }
 }
@@ -6516,10 +6521,10 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
 @at-root {
   // radio bars
   @at-root {
-    .item__001a7.disabled__001a7 {
+    .item__5a85a[data-disabled="true"] {
       pointer-events: none;
     }
-    .radioBar__001a7 {
+    :is(.radioBar__001a7, .item__5a85a) {
       --status-green-600: #43b581;
       --status-yellow-560: #faa61a;
       --status-red-500: #f04747;
@@ -6597,6 +6602,19 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
         }
         &:last-of-type {
           margin-bottom: 0;
+        }
+      }
+      >.item__5a85a {
+        padding: 12px;
+        margin-bottom: 2px;
+        border-radius: 0; 
+        &:first-of-type {
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+        }
+        &:last-of-type {
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
         }
       }
     }
@@ -6723,8 +6741,9 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
     .shineContainer__6a443 {
       display: none;
     }
+  }
     .button_a22cb0 {
-      &.primary__6af3a {
+      &.primary_a22cb0 {
         border: none;
         border-radius: 3px;
         background: linear-gradient(to bottom, var(--d8br5) 0%, var(--d8br6) 50%, var(--d8br8) 50%,var(--d8brA) 100%);
@@ -6739,7 +6758,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
           box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff2, inset 0 1px #fff2, inset 0 -1px #0002, 0 0 1px 2px #fff6;
         }
       }
-      &.secondary__6af3a {
+      &.secondary_a22cb0 {
         border: none;
         border-radius: 3px;
         background: linear-gradient(to bottom, var(--d8d2) 0%, var(--d8d4) 50%, var(--d8d5) 50%,var(--d8d8) 100%);
@@ -6755,21 +6774,39 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
         }
       }
     }
-  }
   // switches
   @at-root {
-    .container__6f89e {
+    .control__28dfe {
+      display: contents;
+    }
+    .container__3f21e {
+      display: contents;
+    }
+    .container_a28278:not(#\#) {
+      width: 42px;
+    }
+    :is(.container__3f21e, .container_a28278) {
       background: none !important;
       border: none;
-      svg {display:none}
+      div, svg {display:none}
+      span {all:unset!important;display:contents!important}
+      width: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
       pointer-events: none;
-      &.disabled__6f89e {
+      position: relative;
+      &.disabled__6f89e, &[data-disabled="true"] {
         pointer-events: none;
       }
-      .input__6f89e {
+      input[type="checkbox"] {
         opacity: 1;
         width: 0;
         appearance: none;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        inset: unset;
         background: #0000 !important;
         &:before, &:after {
           transition: 0.1s;
@@ -9432,6 +9469,7 @@ $sideNoDark: ".theme-light .sidebar_c48ade:not(theme-dark)";
       .fontSize24Padding__74017 {padding-bottom:6px;padding-top:5px}
       .buttons__74017 {
         height: 44px;
+        >.button__74017 {display:none}
         .button__74017 {
           background: none !important;
         }

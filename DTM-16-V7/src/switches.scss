@@ -3,7 +3,7 @@
 @use "funcs" as *;
 // switches
 @at-root {
-  .container__6f89e {
+  :is(.container__3f21e, .container_a28278) {
     border-radius: 0;
     border-color: #0000 !important;
     .enable-forced-colors & {
@@ -11,12 +11,20 @@
       width: 18px;
       height: 18px;
     }
+    >span:not(#\#) {
+      display: contents !important;
+    }
+    >div:not(#\#) {
+      display: none !important;
+    }
     width: 18px;
     height: 18px;
-    .input__6f89e {
+    input[type="checkbox"]:not(#\#) {
+      all: unset;
       opacity: 1;
       width: 0;
       appearance: none;
+      position: relative;
       &:before, &:after {
         margin-top: -1px;
         margin-left: -1px;
@@ -124,10 +132,10 @@
     .radioGroup__963c3 {
       gap: 0;
     }
-    .item__001a7 {
+    .item__1bda4 {
       background: none !important;
       border-radius: 0;
-      .radioBar__001a7 {
+      .radioBar__1bda4 {
         padding: 0 !important;
         gap: 10px;
         border: none;
@@ -154,8 +162,8 @@
       //     }
       //   }
       // }
-      .radioIndicatorGroup__001a7 {
-        .radioIndicator__001a7 {display:none}
+      .radioIndicatorGroup__1bda4 {
+        .radioIndicator__1bda4 {display:none}
         width: 30px;
         height: 30px;
         box-sizing: border-box;
@@ -180,10 +188,10 @@
           display: none;
         }
       }
-      &:hover .radioIndicatorGroup__001a7:after {
+      &:hover .radioIndicatorGroup__1bda4:after {
         opacity: .2;
       }
-      &[aria-checked="true"] .radioIndicatorGroup__001a7:after {
+      &[aria-checked="true"] .radioIndicatorGroup__1bda4:after {
         opacity: 1;
       }
       .radioItemName_ac72c6 {
@@ -249,6 +257,23 @@
         .radioIndicatorChecked__001a7:after {
           opacity: 1 !important;
         }
+      }
+    }
+  }
+}
+.container__28dfe[data-layout=horizontal] {
+  grid-template-areas: "control labels" "empty helper-text";
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  .labelContainer__28dfe {
+    .description__28dfe {
+      font-size: 11px;
+      line-height: 13px;
+      font-weight: 400;
+      color: var(--dtm-16-switch-description);
+      .emojiContainer__75abc>.emoji {
+        width: 16px;
+        height: 16px;
       }
     }
   }

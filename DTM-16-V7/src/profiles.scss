@@ -509,6 +509,9 @@
         >span {
           order: -3;
         }
+        >span:not([id]):not([class]) {
+          display: contents;
+        }
         .roleName_dfa8b6 {
           color: rgba(255 255 255);
           order: -2;
@@ -516,10 +519,13 @@
         .roleRemoveButton_dfa8b6 {
           position: unset;
           &:not(.roleRemoveButtonCanRemove_dfa8b6):not(:has(.roleVerifiedIcon_dfa8b6)) {
-            margin-left: -4px;
+            margin-left: -8px;
           }
           &:not(.roleRemoveButtonCanRemove_dfa8b6):not(:has(.roleVerifiedIcon_dfa8b6)):not(:has(>.svg__4f569.roleDot_dfa8b6)) {
-            margin-left: -4px;
+            margin-left: -8px;
+          }
+          &.roleRemoveButtonCanRemove_dfa8b6 {
+            margin-right: 4px;
           }
           .svg__4f569.roleDot_dfa8b6 {
             overflow: visible;
@@ -1255,6 +1261,9 @@
         }
       }
     }
+    .popover_c97e55 {
+      min-height: 16px;
+    }
   }
   // fucking anything at this point
   .outer_c0bea0 {
@@ -1985,12 +1994,16 @@
           >span {
             order: -3;
           }
+          >span:not([id]):not([class]) {
+            display: contents;
+          }
           .roleName_dfa8b6 {
             color: rgba(255 255 255);
             order: -2;
           }
           .roleRemoveButton_dfa8b6 {
             position: unset;
+            order: 2;
             // &:not(.roleRemoveButtonCanRemove_dfa8b6):not(:has(.roleVerifiedIcon_dfa8b6)) {
             //   margin-left: -4px;
             // }

@@ -814,12 +814,16 @@
             &#connections-tab {
               .sectionTitle__7bffb {display:none}
               padding: 0;
-              .connectContainer_c7f964 {
-                background: none;
-                border-radius: 0;
-                padding: 20px 4px 20px 20px;
-                border-bottom: solid 1px var(--background-modifier-accent);
+              .children__7bffb>.container__28dfe {
+                padding: 20px;
+                .connectionsContainer_c7f964 {
+                  padding: 0;
+                }
+                +.divider__1de9c {
+                  margin: 0 0 16px !important;
+                }
                 .accountButtonInner_c7f964 {
+                  border-radius: 3px;
                   border: solid 1px var(--background-accent);
                   background-color: #0000;
                   &:hover {
@@ -827,21 +831,33 @@
                     border-color: #0000;
                   }
                 }
+                [data-text-variant="text-md/medium"] {
+                  @include dtm16_eyebrow;
+                }
+                [data-text-variant="text-sm/normal"] {
+                  font-size: 10px;
+                }
               }
-              .connection_c7f964 {
+              @at-root .connection_c7f964:not(#\#) {
+                all: unset;
+                display: flex;
+                flex-direction: column;
                 --connection-color: var(--blurple);
                 border-radius: 3px;
                 border: solid 1px var(--connection-color);
                 background: var(--connection-color);
                 margin-bottom: 20px;
                 .connectionHeader_c7f964 {
-                  padding-left: 0;
-                  padding-right: 0;
-                  margin-left: 20px;
-                  margin-right: 20px;
+                  all: unset;
+                  display: flex;
+                  padding: 20px 0;
+                  margin: 0 20px;
                   border-bottom: solid 1px rgba(255 255 255/.2);
-                  border-radius: 0;
                   background: none;
+                  order: -2;
+                  >div:not([class]) {
+                    flex: 1;
+                  }
                   .connectionAccountLabelContainer_c7f964 {
                     color: rgba(255,255,255,.9);
                   }
@@ -856,16 +872,46 @@
                     height: 36px;
                   }
                 }
-                .labelRow__0d850 {
-                  .title__0d850 .defaultColor__4bd52 {
-                    margin-top: 2px;
-                    color: #fff;
-                    font-size: 16px;
-                    font-weight: 400;
-                    line-height: 16px;
+                .connectionOptions_c7f964 {
+                  all: unset;
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  padding: 12px 20px;
+                  order: -1;
+                  .container__28dfe {
+                    all: unset;
+                    display: flex;
+                    &[data-disabled="true"] {
+                      opacity: .3;
+                    }
+                    .control__28dfe {
+                      order: -2;
+                      input[type=checkbox]:not(:checked):before {
+                        border-color: rgba(255 255 255/.5);
+                      }
+                      input[type=checkbox]:checked:before {
+                        background: #fff;
+                        border-color: #fff;
+                      }
+                      input[type=checkbox]:checked:after {
+                        border-color: var(--connection-color);
+                      }
+                    }
+                    .labelContainer__28dfe {
+                      margin: 0 0 0 8px;
+                    }
+                    .label__28dfe {
+                      margin-top: 2px;
+                      color: #fff;
+                      font-size: 16px;
+                      font-weight: 400;
+                      line-height: 16px;
+                    }
                   }
                 }
+                .connectedAccountSeparator_c7f964 {display:none}
                 .integrationsWrapper_c7f964 {
+                  padding-top: 8px;
                   h3 .defaultColor__4bd52 {
                     color: #fff;
                     font-size: 11px;
@@ -885,22 +931,6 @@
                     border-radius: 3px;
                     padding: 10px;
                     margin: 0;
-                    .button__201d5.lookFilled__201d5 {
-                      border: solid 1px #0000004d;
-                      background: var(--connection-color) !important;
-                      padding: 5px 16px;
-                      min-height: 0px;
-                      height: auto;
-                      min-width: 0px;
-                      font-size: 14px;
-                      font-weight: 600;
-                      transition: 0s;
-                      flex-shrink: 0;
-                      &:active {
-                        background: linear-gradient(#0002, #0002) padding-box, linear-gradient(var(--connection-color), var(--connection-color)) border-box !important;
-                        border-color: #0000004d;
-                      }
-                    }
                     [data-text-variant="text-md/semibold"] {
                       font-weight: 400;
                       text-overflow: ellipsis;
@@ -930,28 +960,22 @@
                     }
                   }
                 }
+                .metadataContainer_c7f964 {
+                  margin-bottom: 20px;
+                }
                 :is(.metadataContainer_c7f964, .container-QlmnKJ, .container__0d793) {
                   background: rgba(0,0,0,.1);
                   border: 1px solid rgba(0,0,0,.3);
                   border-radius: 3px;
                   --interactive-active: #fff;
                   --text-normal: #fff;
+                  --text-default: #fff;
+                  --text-secondary: #fff;
                   --text-link: #fffb;
                   --text-link-low-saturation: #fffb;
-                  .button__201d5.lookFilled__201d5 {
-                    border: solid 1px #0000004d;
-                    background: var(--connection-color) !important;
-                    padding: 5px 16px;
-                    min-height: 0px;
-                    height: auto;
-                    min-width: 0px;
-                    font-size: 14px;
-                    font-weight: 600;
-                    transition: 0s;
-                    &:active {
-                      background: linear-gradient(#0002, #0002) padding-box, linear-gradient(var(--connection-color), var(--connection-color)) border-box !important;
-                      border-color: #0000004d;
-                    }
+                  .connectedAccountVanityMetadata_fffe42 {
+                    font-size: 12px;
+                    line-height: 1;
                   }
                   .connectedAccountVanityMetadataTag_fffe42 {
                     border-radius: 3px;
@@ -961,6 +985,34 @@
                   .connectionMetadataUpsellTag_c7f964.connectionMetadataUpsellTag_c7f964 {
                     background: #fff !important;
                     color: color-mix(in srgb, #000 10%, var(--connection-color, var(--blurple))) !important;
+                  }
+                }
+                .integrationWrapper_c7f964, .metadataContainer_c7f964 {
+                  .button_a22cb0:not(#\#) {
+                    &, & * {
+                      all: unset;
+                    }
+                    & * {
+                      display: contents;
+                    }
+                    &:not(#\#):not(#\#) {
+                      cursor: pointer;
+                      border: solid 1px #0000004d;
+                      background: var(--connection-color) !important;
+                      color: #fff;
+                      padding: 5px 16px;
+                      min-height: 0px;
+                      height: auto;
+                      min-width: 0px;
+                      font-size: 14px;
+                      font-weight: 400;
+                      transition: 0s;
+                      flex-shrink: 0;
+                      &:active {
+                        background: linear-gradient(#0002, #0002) padding-box, linear-gradient(var(--connection-color), var(--connection-color)) border-box !important;
+                        border-color: #0000004d;
+                      }
+                    }
                   }
                 }
                 .connectionAccountLabelVerified_c7f964 {
@@ -1056,7 +1108,7 @@
               .stack_dbd263>.title__3e443 {
                 display: none;
               }
-              .presets__67a11 {
+              :is(.basicThemeSelectors_fbfab6, .basicThemeSelectors_fbfab6+section) {
                 .themeSelectionContainer__36dee {
                   width: auto;
                   height: auto;
