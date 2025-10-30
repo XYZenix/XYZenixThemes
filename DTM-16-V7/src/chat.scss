@@ -478,7 +478,7 @@
         .separator__5808f {
           margin: 8px 0 0;
         }
-        .button__201d5  {
+        .button_a22cb0  {
           margin: 8px;
           padding: 0;
           height: auto;
@@ -781,7 +781,7 @@
           height: 42px;
           gap: 4px;
           // gift
-          >.button__74017.colorBrand__201d5 {display:none}
+          >.button__74017.colorBrand_a22cb0 {display:none}
           // also gift
           >.container_eaf2fb, >.container_c0c49a, >.button__74017 {display:none}
           .button__74017 {
@@ -1117,13 +1117,13 @@
       }
     }
   }
-  :is(.page_c48ade, .chat_f75fb0) {
+  :is(.page__5e434, .chat_f75fb0) {
     // chat sidebar
     .chatLayerWrapper__01ae2 {
       .container__01ae2 {
-        border: none !important;
-        border-radius: 0;
-        z-index: 101;
+        contain: none;
+        position: relative;
+        z-index: 103;
         // header
         .container__9293f.themed__9293f {
           .iconWrapper__9293f, .titleWrapper__9293f {
@@ -1207,6 +1207,9 @@
   }
   // new thread sidebar
   .container_fb64c9.container_fb64c9 {
+    contain: none;
+    position: relative;
+    z-index: 103;
     background: var(--bg-overlay-1, var(--background-primary));
     .container__9293f {
       border-bottom: none !important;
@@ -1214,7 +1217,7 @@
     }
   }
   // empty page?
-  #app-mount .page_c48ade {
+  #app-mount .page__5e434 {
     background: var(--background-primary);
   }
   // members tab
@@ -1222,7 +1225,7 @@
     background: var(--bg-overlay-1, var(--background-primary)) !important;
     .header_c791b2 {
       .tabsContainer_c791b2 {
-        .item_b3f026 {
+        .item_aa8da2 {
           min-width: 56px;
           line-height: 18px;
           font-size: 14px;
@@ -1250,7 +1253,7 @@
             color: var(--dtm-16-header-tab-fg);
             background: var(--dtm-16-header-tab-hover-bg);
           }
-          &.selected_b3f026 {
+          &.selected_aa8da2 {
             background: var(--dtm-16-header-tab-active-bg);
             color: var(--dtm-16-header-tab-active-fg);
             .numberBadge__2b1f5 {
@@ -1467,7 +1470,7 @@
         border: none;
         border-radius: 3px;
         box-shadow: var(--elevation-stroke), var(--elevation-high);
-        .button__201d5 {
+        .button_a22cb0 {
           .contents__201d5 {
             div[data-text-variant="text-sm/semibold"] {
               all: inherit;
@@ -1496,7 +1499,7 @@
         border-bottom-color: var(--dtm-16-mini-tabs-border);
         gap: 12px;
         padding-top: 0;
-        .item_b3f026 {
+        .item_aa8da2 {
           padding-bottom: 15px;
           color: var(--dtm-16-mini-tab-color);
           font-size: 14px;
@@ -1511,7 +1514,7 @@
           &:hover {
             border-color: currentColor !important;
           }
-          &.selected_b3f026 {
+          &.selected_aa8da2 {
             color: var(--dtm-16-mini-tab-selected-color);
             border-color: currentColor !important;
           }
@@ -1741,13 +1744,13 @@
         height: 48px;
         padding: 0 20px;
         .searchHeaderTabList_f3b986 {
-          .item_b3f026 {
+          .item_aa8da2 {
             padding: 15px 8px;
             border-radius: 0;
             background: none !important;
             color: var(--text-normal);
             font-size: 14px;
-            &:hover, &.selected_b3f026, &:active {
+            &:hover, &.selected_aa8da2, &:active {
               background: none;
               box-shadow: inset 0 -2px var(--interactive-active);
               color: var(--interactive-active);
@@ -1802,15 +1805,15 @@
         }
       }
       @if $legacy_experiment18 == 0 {
-          .searchResult__02a39 {
-            background: var(--background-primary);
-            border: solid 2px var(--dtm-16-classic-popout-message-group-border);
-            border-radius: 4px;
-            transition: border-color .2s;
-            &:hover {
-              border-color: var(--dtm-16-classic-popout-message-group-border-hover);
-            }
+        .searchResult__02a39 {
+          background: var(--background-primary);
+          border: solid 2px var(--dtm-16-classic-popout-message-group-border);
+          border-radius: 4px;
+          transition: border-color .2s;
+          &:hover {
+            border-color: var(--dtm-16-classic-popout-message-group-border-hover);
           }
+        }
       }
       @if $legacy_experiment18 == 1 {
         .searchResult__02a39 {
