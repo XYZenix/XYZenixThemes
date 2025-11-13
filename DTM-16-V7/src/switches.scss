@@ -74,6 +74,42 @@
     background: #0000 !important;
     svg {display: none}
   }
+  // checkboxes
+  .checkboxOption__714a9:not(#\#) {
+    .checkboxIndicator__714a9:not(#\#) {
+      width: 18px !important;
+      height: 18px !important;
+      border-radius: 2px;
+      background: none;
+      box-sizing: border-box;
+      border: solid 2px var(--dtm-16-checkbox-border-off);
+      transition: .2s;
+      svg {
+        display: none;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 4px;
+        display: table;
+        width: 4px;
+        height: 10px;
+        border-radius: 0;
+        border: 2px solid #0000;
+        border-top-width: 0;
+        border-left-width: 0;
+        transform: rotate(45deg);
+      }
+    }
+    &[data-selected="true"]:not(#\#) .checkboxIndicator__714a9:not(#\#) {
+      border-color: var(--blurple);
+      background: var(--blurple);
+      &:after {
+        border-color: #fff;
+      }
+    }
+  }
   // switches in role settings
   @supports not (-moz-appearance: none) {
     .permissionsWrapper__16663 {
@@ -220,6 +256,53 @@
       }
       +.item__88a69 {
         margin-top: 12px;
+      }
+    }
+    .group__64e61 {
+      .radioGroupOption__64e61:not(#\#) {
+        .radioIndicator__64e61 {
+          width: 30px;
+          height: 30px;
+          .outerRadioBase__64e61 {
+            stroke-width: calc(1px * calc(30/40));
+            fill: none;
+            stroke: var(--background-accent);
+          }
+          .outerRadioFill__64e61 {
+            display: none;
+          }
+          .innerDotRadio__64e61 {
+            r: calc(7 * calc(40/30));
+            fill: var(--blurple);
+            opacity: 0;
+            transition: .2s opacity;
+          }
+        }
+        &:hover .radioIndicator__64e61 .innerDotRadio__64e61 {
+          opacity: .2;
+        }
+        &[data-selected="true"] .radioIndicator__64e61 .innerDotRadio__64e61 {
+          opacity: 1;
+        }
+        .stack_dbd263[data-direction="vertical"] {
+          gap: 0;
+          [data-text-variant="text-sm/normal"] {
+            font-size: 11px;
+            line-height: 13px;
+            font-weight: 400;
+            color: var(--dtm-16-switch-description);
+            .emojiContainer__75abc>.emoji {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+        .label__64e61 {
+          line-height: 30px;
+          [data-text-variant] {
+            line-height: inherit;
+          }
+        }
       }
     }
   }

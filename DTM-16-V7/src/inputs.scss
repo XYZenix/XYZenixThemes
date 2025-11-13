@@ -2,13 +2,14 @@
 @at-root {
   :root {
     // normal input
-    :is(.input__0ed4f, .wrapper__3412a:where(:not(.select__3f413))) {
+    :is(.input__0ed4f, .wrapper__72c38:where(:not(:is(.select__3f413,.selectField__5fa2f)))) {
       border: none;
       background: none;
       border-radius: 0;
       box-shadow: 0 1px var(--dtm-16-input-text-border);
       padding-left: 2px;
       padding-right: 2px;
+      &:not(#\#) {outline: none}
       &:is(:focus, :focus-within) {
         box-shadow: 0 2px var(--dtm-16-input-text-border-focus);
         border: none;
@@ -97,10 +98,11 @@
       }
     }
     // select
-    .select__3f413 {
+    :is(.select__3f413,.selectField__5fa2f) {
       border-radius: 3px;
       background: none;
       border: solid 1px var(--background-secondary-alt);
+      &:not(#\#) {outline: none}
       &:is(:hover,.open__3f413) {
         border: solid 1px var(--background-tertiary);
       }
@@ -126,8 +128,8 @@
       border: solid 1px var(--background-tertiary);
     }
     // key
-    .combo_fcddc1 {
-      .key_fcddc1 {
+    .combo__61c93 {
+      .key__61c93 {
         border-radius: 2px;
         border: solid 1px var(--dtm-16-key-border);
         background: var(--dtm-16-key-bg);
@@ -204,5 +206,9 @@
         }
       }
     }
+  }
+  // focus ring
+  .focus-rings-ring {
+    box-shadow: 0 0 0 4px var(--blurple), 0 0 8px 4px var(--blurple);
   }
 }

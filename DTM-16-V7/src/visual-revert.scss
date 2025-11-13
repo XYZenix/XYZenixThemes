@@ -30,7 +30,7 @@
       width: 240px;
       --custom-app-panels-height: 0;
     }
-    >.sidebarResizeHandle_c48ade,
+    >.sidebarResizeHandle__5e434,
     &:after {display:none}
     >.panels__5e434 {
       grid-area: panels;
@@ -55,6 +55,18 @@
   }
   .trailing_c38106 {
     gap: 8px;
+    >div:not([class]):not([style]) {
+      display: contents;
+    }
+    .clickable_c99c29 {
+      margin: 0;
+      padding: 0;
+      width: 30px;
+      justify-content: center;
+      .badge_c99c29 {
+        inset-inline-end: 5px;
+      }
+    }
     .iconWrapper__9293f {
       width: 30px;
       height: 30px;
@@ -63,7 +75,6 @@
         display: none;
       }
       &[aria-label="DevTools"] {
-        margin-left: -16px;
         background: none !important;
       }
       .icon__9293f {
@@ -101,7 +112,7 @@
       .iconBadge__9293f {
         top: 3px;
         right: 3px;
-        border: solid 2px var(--background-primary);
+        border: solid 2px var(--override-background-primary);
         background: var(--red);
         width: 12px;
         height: 12px;
@@ -170,6 +181,7 @@
     }
     .trailing_c38106 .clickable_c99c29:nth-last-child(3 of :not(span))+a {display:block}
     .trailing_c38106 .clickable_c99c29:nth-last-child(4 of :not(span))+a {display:none}
+    .trailing_c38106>div:nth-child(2 of :not([class]):not([style])):nth-last-child(3 of :not(span)) [aria-label="DevTools"] {display:none}
   }
 }
 

@@ -65,7 +65,7 @@
               d: path("M14.4167 18.9476L20.4167 13.0436C21.0025 12.4672 21.0025 11.5326 20.4167 10.9562L14.4167 5.0522C13.831 4.47579 12.8812 4.47579 12.2954 5.0522C11.7096 5.62862 11.7096 6.56317 12.2954 7.13958L17.2348 11.9999L12.2954 16.8602C11.7096 17.4366 11.7096 18.3712 12.2954 18.9476C12.8812 19.524 13.831 19.524 14.4167 18.9476Z");
             }
           }
-          .checkbox__09aca.box__09aca {
+          .checkbox__09aca {
             margin: -1px 0 0 -1px;
             width: 18px !important;
             height: 18px !important;
@@ -92,10 +92,12 @@
               }
             }
           }
-          .checkboxItem__714a9 {
+          .checkboxOption__714a9 {
             margin: -1px 0 0 -1px;
             width: 18px !important;
             height: 18px !important;
+            min-width: 18px;
+            min-height: 18px;
             box-sizing: border-box;
             background: #0000;
             border: solid 2px var(--dtm-16-checkbox-off-border);
@@ -120,7 +122,7 @@
               }
             }
           }
-          .radioIndicator__88a69.radioIcon_c1e9c4 {
+          .radioIndicator__64e61.radioIcon_c1e9c4 {
             width: 18px;
             height: 18px;
             margin: -1px 0 0 -1px;
@@ -137,6 +139,35 @@
                 fill: var(--blurple);
               }
               .refreshIconStroke__88a69 {
+                stroke: var(--blurple);
+              }
+            }
+          }
+          .standaloneRadioIndicator__64e61 {
+            width: 18px;
+            height: 18px;
+            margin: -1px 0 0 -1px;
+            .radioIndicator__64e61 {
+              width: 18px;
+              height: 18px;
+            }
+            .outerRadioBase__64e61 {
+              stroke: var(--dtm-16-checkbox-off-border);
+              stroke-width: 5px;
+              transition: .24s;
+            }
+            .outerRadioFill__64e61 {
+              transition: .24s;
+            }
+            .innerDotRadio__64e61 {
+              r: 10;
+            }
+            &[data-selected="true"] {
+              .outerRadioFill__64e61 {
+                fill: var(--blurple);
+              }
+              .outerRadioBase__64e61 {
+                fill: var(--blurple);
                 stroke: var(--blurple);
               }
             }
@@ -232,6 +263,7 @@
         padding: 10px 14px;
         .label_c1e9c4 {
           font-size: 15px;
+          font-weight: 400;
         }
         >.iconContainer_c1e9c4 {
           order: -1;
@@ -269,6 +301,45 @@
       // useless options
       #guild-header-popout-guild-tag, #guild-header-popout-application-directory {
         display: none;
+      }
+      @container style(--dtm-16-plink: v2015) {
+        width: 240px;
+        border-radius: 0;
+        .item_c1e9c4 {
+          height: 44px;
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0 24px;
+          &:hover, &:active, &.focused_c1e9c4 {
+            background: none;
+          }
+          &:not([role="menuitemcheckbox"]) .iconContainer_c1e9c4 {
+            display: none;
+          }
+          &[role="menuitemcheckbox"] .iconContainer_c1e9c4 {
+            order: 2;
+            height: 16px;
+            margin: 0;
+          }
+          .label_c1e9c4 {
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+      @container style(--dtm-16-plink: v2016) and style(--dtm-16-oreo: true) {
+        --dtm-16-context-menu-bg: #fff;
+        --dtm-16-context-menu-bs: 0 1px 4px rgba(0,0,0,.2);
+        --dtm-16-context-menu-separator: #{ss(#f5f5f5)};
+        --dtm-16-context-menu-item-fg: #{ss(#99aab5)};
+        --dtm-16-context-menu-item-bg-hover: #f9f9f9;
+        --dtm-16-context-menu-item-fg-hover: #{ss(#737f8d)};
+        --dtm-16-context-menu-item-danger-fg: var(--red);
+        --dtm-16-context-menu-item-danger-fg-hover: #{ss(#ec1616)};
+        --dtm-16-context-menu-item-brand-fg: var(--blurple);
+        --dtm-16-context-menu-item-brand-fg-hover: #{ss(#5f72b5)};
+        --dtm-16-context-menu-slider-bg: #{ss(#dbdde1)};
+        --dtm-16-checkbox-off-border: #{ss(#cdcdcd)};
       }
     }
     &#guild-context {

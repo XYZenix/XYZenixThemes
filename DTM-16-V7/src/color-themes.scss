@@ -2,15 +2,30 @@
   .channelBottomBarArea_f75fb0 .channelTextArea__74017 {
     html.custom-theme-background.theme-dark & {background: var(--bg-overlay-2, none) !important}
     html.custom-theme-background.theme-light & {background: var(--bg-overlay-3, none) !important}
-    
+  }
+  // forums
+  .container_f369db {
+    html.custom-theme-background & {
+      background: var(--bg-overlay-3) !important;
+      .list_f369db::-webkit-scrollbar {
+        &, &-track, &-track-piece {
+          background: none !important;
+        }
+        &-thumb {
+          border-color: #0000 !important;
+          background: var(--bg-overlay-6) !important;
+          background-clip: padding-box !important;
+        }
+      }
+    }
   }
   .panels__5e434 {
-    :is(.container__37e49 .buttons__37e49, .container_e131a9 .voiceButtonsContainer_e131a9, .activityPanel__5e434 .panelButtonContainer__4cd01) {
+    :is(.container__37e49 .buttons__37e49, .container_e131a9 .voiceButtonsContainer_e131a9, .activityPanel__5e434 .panelButtonContainer__4cd01, .activityPanel__5e434 .actions__4cd01) {
       button {
         html.custom-theme-background & {background: none}
         html.custom-theme-background.theme-light & {background: rgba(255 255 255/.25)!important}
       }
-      >button:not(:last-child), .micButtonParent__37e49>button:first-child {
+      >button:not(:nth-last-child(1 of :not(span))), .micButtonParent__37e49>button:nth-child(1 of :not(span)) {
         html.custom-theme-background.theme-dark & {border-right: solid 1px rgba(0 0 0/.5) !important}
         html.custom-theme-background.theme-light & {border-right: solid 1px rgba(255 255 255/.75) !important}
       }
