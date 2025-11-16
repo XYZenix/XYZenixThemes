@@ -7,7 +7,7 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "195";
+$themeVersion: "196";
 $themeDate: "Nov 16, 2025";
 
 @use "sass:color";
@@ -9213,16 +9213,16 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
     }
     .sidebar__5e434 {
       display: grid;
-      grid-template-columns: 72px auto;
+      grid-template-columns: 72px calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width));
       grid-template-rows: [start] 1fr [panels-start] min-content [end];
       grid-template-areas: "guilds channels" "guilds panels";
       --custom-app-panels-height: 0;
-      width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width));
+      width: var(--custom-guild-sidebar-width);
       .sidebarList__5e434 {
         grid-area: channels;
         border-radius: 0;
         border: none;
-        width: auto;
+        max-width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width));
         .header_f37cb1 {
           border: none;
           height: auto;
