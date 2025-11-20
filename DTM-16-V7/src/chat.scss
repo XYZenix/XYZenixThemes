@@ -280,7 +280,7 @@
       }
     }
     // bottom bars
-    .bottomBar__0f481 {
+    @at-root .bottomBar__0f481:not(#\#) {
       bottom: 0;
       margin: 0 20px;
       box-shadow: none;
@@ -683,6 +683,9 @@
           border-radius: 3px;
           .inner__74017 {
             padding-left: 8px !important;
+            @container style(--dtm-16-plink: v2017) {
+              padding-left: 12px !important;
+            }
           }
           .scrollableContainer__74017 {
             border-color: var(--blurple);
@@ -1216,7 +1219,7 @@
   :is(.page__5e434, .chat_f75fb0) {
     // chat sidebar
     .chatLayerWrapper__01ae2 {
-      .container__01ae2 {
+      .container__01ae2:where(:not(.chatTarget__01ae2)) {
         contain: none;
         position: relative;
         z-index: 103;
@@ -1763,6 +1766,7 @@
       @container style(--dtm-16-oreo: true) {
         --background-primary: #fff;
         --background-secondary: #{ss(#fbfbfb)};
+        --background-secondary-alt: #{ss(#fbfbfb)};
         --header-primary: #{ss(#060607)};
         --header-secondary: #{ss(#87909c)};
         --interactive-normal: #{ss(#4f5660)};
@@ -1771,6 +1775,9 @@
         --text-normal: #{ss(#2e3338)};
         --text-muted: #{ss(#747f8d)};
         --text-link: #{ss(#00b0f4)};
+        .react-datepicker {
+          --primary-630: #dcddde;
+        }
       }
       border-radius: 5px;
       .header__56fec {
