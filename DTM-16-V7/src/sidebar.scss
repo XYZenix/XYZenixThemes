@@ -413,7 +413,7 @@
           .name_f37cb1 {
             font-weight: 500;
           }
-          @at-root .header_f37cb1 .headerButton_f37cb1 {
+          @at-root .header_f37cb1 .headerButton_f37cb1, .header_f37cb1 .headerContent_f37cb1 .headerChildren_f37cb1 {
             position: relative;
             min-width: 18px;
             min-height: 18px;
@@ -460,6 +460,33 @@
             }
           }
           .headerChildren_f37cb1 {display:none}
+          >.headerContent_f37cb1 {
+            display: contents;
+            >span {display:none}
+            .guildDropdown_f37cb1 {
+              position: absolute;
+              inset: 0;
+              border-radius: 0;
+              background: none;
+              height: auto;
+              padding: 0 24px;
+              .headerChildren_f37cb1 {
+                display: block;
+                svg {display:none}
+              }
+              &[aria-expanded="true"] .headerChildren_f37cb1 {
+                &:before, &:after {
+                  transform: rotate(-90deg);
+                }
+                &:before {
+                  opacity: 0;
+                }
+                &:after {
+                  opacity: 0.8;
+                }
+              }
+            }
+          }
         }
         .animatedContainer_f37cb1 {
           .bannerImage_f37cb1:before {
