@@ -19,6 +19,106 @@
 		flex: 0 0 190px;
 		box-sizing: border-box;
 		padding: 0;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 14px;
+      height: 14px;
+      &-track {
+        margin-bottom: 0 !important;
+        border: solid 3px #0000;
+        border-radius: 8px;
+      }
+      &-track-piece, &-thumb {
+        border: solid 3px #0000;
+        border-radius: 8px;
+      }
+      &-thumb {
+        border-color: #0000 !important;
+        background-color: var(--dtm-16-scrollbar-thumb-brand) !important;
+        background-clip: padding-box !important;
+      }
+      @media (forced-colors: active) {
+        &-track-piece {
+          background: none !important;
+          border: none !important;
+        }
+        & {
+          background: ButtonFace !important;
+          border: solid 1px ButtonText !important;
+          border-radius: 8px;
+        }
+        &-thumb {
+          border-color: transparent !important;
+          forced-color-adjust: none !important;
+        }
+      }
+    }
+    &:not(:hover) {
+      &::-webkit-scrollbar-thumb {
+        background: none !important;
+      }
+    }
+    .searchBarContainer_cf016e {
+      --use-alt-input-style: true;
+      margin: 14px 0 8px 14px;
+      order: -100;
+    }
+    .fixedContent__409aa, .section__409aa, .nav__409aa {
+      display: contents;
+    }
+    .fixedContent__409aa {
+      >div {
+        display: contents;
+      }
+      .item_caf372 {
+        border-radius: 0;
+        padding: 8px 6px 10px 16px;
+        border-left: solid 4px #0000;
+        color: var(--interactive-active);
+        .profileCustomizationTab__99464 {
+          display: contents;
+          .wrapper__44b0c {display:none}
+          .textContainer__99464 {
+            display: contents;
+            color: inherit !important;
+            >.lineClamp1__4bd52 {display:none}
+          }
+          .editProfilesRow__99464 {
+            display: contents;
+            svg {display:none}
+            .lineClamp1__4bd52 {
+              color: inherit !important;
+            }
+          }
+        }
+        .lineClamp1__4bd52 {opacity:.3}
+        &:hover, &:active, &.active_caf372 {
+          border-left-color: var(--blurple-st);
+          background: none !important;
+          .lineClamp1__4bd52 {
+            opacity: 1;
+          }
+        }
+        &.active_caf372 {
+          border-left-color: var(--blurple);
+        }
+      }
+    }
+    .emptySearchResultsContainer_cf016e {
+      [data-text-variant="text-sm/semibold"] {
+        padding: 8px 0 8px 20px;
+        display: block;
+        color: var(--interactive-normal) !important;
+        font-size: 14px;
+        font-weight: 200;
+      }
+      [data-text-variant="text-sm/normal"] {
+        display: none;
+      }
+    }
+    [data-settings-sidebar-item="account_panel"] {
+      order: -80;
+    }
 	}
 	// sidebar header crap
 	.fixedContent__409aa {
@@ -30,17 +130,9 @@
 	}
 	// sidebar scroller
 	.navScroller__409aa {
-		padding: 8px 0;
+		padding: 0;
 		margin: 0;
-		&::-webkit-scrollbar {
-			width: 14px;
-			&-track {
-			}
-			&-thumb {
-				border-width: 3px;
-				border-radius: 8px;
-			}
-		}
+    display: contents;
 		.nav__409aa {
 			gap: 0;
 		}
@@ -55,7 +147,7 @@
 				content: "";
 				display: block;
         width: 20px;
-        height: 1px;
+        min-height: 1px;
         margin: 8px 20px;
         background-color: var(--dtm-16-settings-sidebar-separator);
         .enable-forced-colors & {
@@ -93,12 +185,39 @@
 				line-height: 1.25em;
 				opacity: .3;
 			}
+      &[data-list-item-id="settings-sidebar___logout_sidebar_item"] {
+        display: block;
+        position: absolute;
+        bottom: 18px;
+        left: 220px;
+        z-index: 999;
+        background-color: transparent !important;
+        border-radius: 3px !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%2387909C' d='M13,13.5c0,0.3-0.2,0.5-0.5,0.5h-11C1.2,14,1,13.8,1,13.5v-12C1,1.2,1.2,1,1.5,1h11C12.8,1,13,1.2,13,1.5 V4h1V1c0-0.6-0.4-1-1-1H1C0.4,0,0,0.4,0,1v13c0,0.6,0.4,1,1,1h12c0.6,0,1-0.4,1-1v-3h-1V13.5z M15.5,7H3.7l3.2-3.2 C7,3.6,7,3.3,6.9,3.1C6.7,3,6.4,3,6.2,3.1l-4,4c0,0,0,0-0.1,0C2,7.2,2,7.4,2,7.5l0,0l0,0c0,0.1,0,0.3,0.1,0.4c0,0,0,0,0.1,0l4,4 c0.2,0.2,0.5,0.2,0.7,0s0.2-0.5,0-0.7L3.7,8h11.8C15.8,8,16,7.8,16,7.5S15.8,7,15.5,7z'/%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat !important;
+        background-size: 16px 16px !important;
+        background-position: center !important;
+        font-size: 0 !important;
+        padding: 0;
+        width: 40px !important;
+        height: 38px !important;
+        transition: .15s;
+        box-shadow: none !important;
+        box-sizing: border-box;
+        border: none !important;
+        &:hover, &:active {
+          background-color: var(--red) !important;
+          box-shadow: none !important;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23FFFFFF' d='M13,13.5c0,0.3-0.2,0.5-0.5,0.5h-11C1.2,14,1,13.8,1,13.5v-12C1,1.2,1.2,1,1.5,1h11C12.8,1,13,1.2,13,1.5 V4h1V1c0-0.6-0.4-1-1-1H1C0.4,0,0,0.4,0,1v13c0,0.6,0.4,1,1,1h12c0.6,0,1-0.4,1-1v-3h-1V13.5z M15.5,7H3.7l3.2-3.2 C7,3.6,7,3.3,6.9,3.1C6.7,3,6.4,3,6.2,3.1l-4,4c0,0,0,0-0.1,0C2,7.2,2,7.4,2,7.5l0,0l0,0c0,0.1,0,0.3,0.1,0.4c0,0,0,0,0.1,0l4,4 c0.2,0.2,0.5,0.2,0.7,0s0.2-0.5,0-0.7L3.7,8h11.8C15.8,8,16,7.8,16,7.5S15.8,7,15.5,7z'/%3E%3C/svg%3E") !important;
+        }
+        .itemContent_caf372 {display:none}
+      }
 		}
 		.devToolsEducation__7aac8 {
 			padding: 0 20px;
 		}
-		.clickable__2debe, .links__7aac8 {
-			padding: 0 20px;
+		.clickable__2debe, .links__7aac8, .bd-version-info {
+			padding: 0 20px 8px;
 			display: block;
 		}
 	}
@@ -114,10 +233,10 @@
 			padding: 18px 40px;
 			height: 75px;
 			box-sizing: border-box;
-			background: var(--background-secondary);
+			background: var(--override-background-secondary);
 			border-width: 1px 0 0 0;
 			border-style: solid none none none;
-			border-color: var(--background-secondary-alt);
+			border-color: var(--override-background-secondary-alt);
 			h1 {display:none}
       .button_a22cb0.icon-only_a22cb0 {
         border-radius: 3px;
@@ -155,4 +274,12 @@
 			}
 		}
 	}
+  .customizationSection_ace4f5 .bioTextAreaContainer__6a919 {
+    border-radius: 0;
+    border: none;
+    background: none;
+    .editor__1b31f {
+      padding: 8px;
+    }
+  }
 }
