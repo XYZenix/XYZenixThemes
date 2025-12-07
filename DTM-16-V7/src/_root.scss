@@ -13,8 +13,8 @@
 @use "vars" as *;
 @use "sass:math";
 
-$themeVersion: "1067";
-$themeDate: "Nov 27, 2025";
+$themeVersion: "1069";
+$themeDate: "Dec 7, 2025";
 
 $themeName: "DTM-16";
 
@@ -52,12 +52,19 @@ $debug: 0;
   name: "Hide VC Panel Action Buttons";
   note: "full = removes them entirely; partial = shows them on hover; none = doesn't hide them"
 }
+@property --dtm-16-titlebar-button-count {
+  syntax: "<integer>";
+  inherits: true;
+  initial-value: 2;
+  name: "Titlebar Button Count";
+  note: "Change this to match the amount of buttons (not counting the minimize/maximize/close buttons) you have on the right end of the titlebar. NOTE 1: DTM-16 automatically hides the help button when the update button is present so you don't have to worry about it. NOTE 2: If you open any issues about the titlebar buttons clipping into the header contents (e.g. the search bar), I *WILL* close your issue as invalid and link you to this line of text. No, there is no better way to handle this without making the theme lag more, sorry. You could use the classic titlebar plugin, but don't expect it to work flawlessly with DTM-16, supporting client mods and client mod plugins is not a priority for this theme.";
+}
 @property --dtm-16-header-three-buttons {
   syntax: "true | false";
   inherits: true;
   initial-value: false;
-  name: "Three Buttons on Top Right of Header";
-  note: "enable this if you're using something like the friends popout experiment";
+  name: "[DEPRECATED]";
+  note: "If you were using --dtm-16-header-three-buttons before, set --dtm-16-titlebar-button-count to 3 for the same behavior! Otherwise ignore this, it no longer does anything. (this note will be removed whenever i decide to do a proper cleanup of my themes)";
 }
 @property --dtm-16-hide-windows-titlebar {
   syntax: "true | false";
@@ -817,25 +824,10 @@ $debug: 0;
 }
 // theme vars
 @at-root {
-  html:not(.visual-refresh) {
-    --custom-app-launcher-width: 346px;
-    --custom-app-launcher-height: 328px;
-    // --dtm-16-header-button-spacing: 68px;
-    --dtm-16-header-button-spacing: 0px;
-  }
-  @container style(--dtm-16-header-three-buttons: true) {
-    body {
-      --dtm-16-header-button-spacing: 116px;
-    }
-  }
   :root, html.theme-dark, html.theme-light, .theme-dark, .theme-light, .visual-refresh .theme-dark, .visual-refresh .theme-light {
     --custom-app-launcher-width: 346px;
     --custom-app-launcher-height: 328px;
-    // --dtm-16-header-button-spacing: 68px;
-    --dtm-16-header-button-spacing: 72px;
-    @container style(--dtm-16-header-three-buttons: true) {
-      --dtm-16-header-button-spacing: 116px;
-    }
+    --dtm-16-header-button-spacing: calc(38px * var(--dtm-16-titlebar-button-count));
     --blurple-50: var(--blurple);
     --brand-500: var(--blurple);
     --brand-360: var(--blurple);

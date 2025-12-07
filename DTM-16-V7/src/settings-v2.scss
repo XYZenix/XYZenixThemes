@@ -22,7 +22,7 @@
     overflow-y: scroll;
     &::-webkit-scrollbar {
       width: 14px;
-      height: 14px;
+      height: 0;
       &-track {
         margin-bottom: 0 !important;
         border: solid 3px #0000;
@@ -177,7 +177,7 @@
         	opacity: 1;
         }
       }
-			.icon_caf372:first-child {
+			.icon_caf372:first-child, .vc-icon:first-child {
 				display: none;
 			}
 			[data-text-variant="text-md/medium"] {
@@ -218,8 +218,12 @@
 		}
 		.clickable__2debe, .links__7aac8, .bd-version-info {
 			padding: 0 20px 8px;
-			display: block;
+      display: block;
 		}
+    .clickable__2debe {
+			display: flex;
+      flex-direction: column;
+    }
 	}
 	.content_e9e3ed {
 		border-radius: 0 5px 5px 0;
@@ -261,6 +265,12 @@
         }
         .enable-forced-colors & {
           outline: solid 1px ButtonText !important;
+        }
+      }
+      .contentHeaderLeft_e9e3ed {
+        margin-left: 40px;
+        >.textBadge__2b1f5 {
+          display: none;
         }
       }
 		}

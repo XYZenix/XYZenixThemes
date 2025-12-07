@@ -1269,28 +1269,41 @@
     // slop embed
     .embed__98ba8 {
       border-radius: 3px;
+      color: var(--header-primary);
+      >div {
+        background: none !important;
+      }
       .contentContainer__98ba8 {
         border-radius: 3px;
         background: var(--background-secondary) !important;
         border: solid 1px var(--background-tertiary);
         .header__98ba8 {
-          [data-text-variant="text-sm/semibold"] {
-            @include dtm16_eyebrow;
-          }
+          @include dtm16_eyebrow;
         }
         .img__98ba8 {
           border-radius: 3px;
           border: none;
         }
+        .content__98ba8 {
+          .contentTitle__98ba8, .contentInfoWrapper__98ba8 {
+            color: var(--header-primary);
+          }
+        }
         .actionWrapper__98ba8 {
-          .primaryButton__98ba8.lookFilled_a22cb0 {
+          .disabledReason__98ba8 {
+            color: var(--header-primary);
+          }
+          .button_a22cb0.overlay-primary_a22cb0 {
             background: var(--green);
+            color: #fff;
             &:not([disabled]) {
               &:hover {background: var(--green-hover)}
               &:active {background: var(--green-active)}
             }
-            .contents__201d5 {
-              color: #fff;
+            &[disabled] {
+              background: #949494;
+              color: #ddd;
+              opacity: 1;
             }
           }
         }
@@ -1411,6 +1424,33 @@
       blockquote, blockquote>span {
         color: inherit;
         font-size: inherit;
+      }
+    }
+    // checkpoint
+    .container__74acd {
+      --font-primary: cursive;
+      --font-display: cursive;
+      --font-headline: cursive;
+      border: solid 2px red;
+      border-image: conic-gradient(red,orange,yellow,lime,cyan,blue,indigo,purple,magenta,red) 1;
+      h3[data-text-variant="display-sm"],
+      div[data-text-variant="text-sm/bold"],
+      .statText__74acd {
+        text-transform: lowercase;
+      }
+      .asset__74acd {
+        content: url("https://cdn.discordapp.com/emojis/915752170278752326.webp?size=16&animated=true");
+      }
+      .stat__74acd>svg {
+        width: 16px;
+        height: 16px;
+      }
+      .powerText__74acd>[data-text-variant="text-xs/bold"] {
+        font-size: 0;
+        &:after {
+          content: "-7.060035e+218k";
+          font-size: 12px;
+        }
       }
     }
   }
