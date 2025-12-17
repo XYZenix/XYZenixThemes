@@ -1759,9 +1759,11 @@
   // search
   @at-root {
     // search autocomplete
-    ._55c999adcf6db265-container._55c999adcf6db265-container {
+    :is(._55c999adcf6db265-container._55c999adcf6db265-container,
+    .f1c5c9823fbd3ef8-container) {
       background: var(--background-primary);
       border: none;
+      border-radius: 5px;
       --search-popout-option-fade: linear-gradient(90deg,#0000,var(--background-primary) 80%);
       .theme-light & {box-shadow: 0 2px 6px rgba(0,0,0,.2)}
       .theme-dark & {box-shadow: 0 2px 10px 0 rgba(0,0,0,.2)}
@@ -1777,11 +1779,13 @@
         --text-normal: #{ss(#2e3338)};
         --text-muted: #{ss(#747f8d)};
         --text-link: #{ss(#00b0f4)};
+        --text-subtle: var(--text-muted);
+        --text-default: var(--text-normal);
+        --text-strong: var(--text-muted);
         .react-datepicker {
           --primary-630: #dcddde;
         }
       }
-      border-radius: 5px;
       ._56fec8e8b8048fe0-header {
         @include dtm16_eyebrow;
       }
@@ -1843,6 +1847,34 @@
           ._56fec8e8b8048fe0-plusIcon {background-color: #{ss(#99aab5)}!important}
           ._56fec8e8b8048fe0-filter, ._56fec8e8b8048fe0-displayedNick {color: #{ss(#4f545c)}!important}
           ._56fec8e8b8048fe0-answer, ._56fec8e8b8048fe0-displayUsername {color: #{ss(#caccce)}!important}
+        }
+      }
+      ._1bb324526a52affb-itemContainer {
+        background: #0000 !important;
+        ._1bb324526a52affb-item {
+          border-radius: 3px;
+        }
+        &[aria-selected="true"], &:hover {
+          ._1bb324526a52affb-item {
+            ._1bb324526a52affb-itemIcon {
+              color: var(--text-normal);
+            }
+            .theme-light & {
+              background: #f3f3f3;
+              --text-normal: #{ss(#4f545c)};
+              --text-muted: #{ss(#caccce)};
+            }
+            .theme-dark & {
+              background: #{ss(#2f3136)};
+              --text-normal: #{ss(#caccce)};
+              --text-muted: #{ss(#72767d)};
+            }
+            @container style(--dtm-16-oreo: true) {
+              background: #f3f3f3 !important;
+              --text-normal: #{ss(#4f545c)} !important;
+              --text-muted: #{ss(#caccce)} !important;
+            }
+          }
         }
       }
       ._56fec8e8b8048fe0-searchLearnMore, ._56fec8e8b8048fe0-searchClearHistory {
