@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "199";
-$themeDate: "Dec 18, 2025";
+$themeVersion: "200";
+$themeDate: "Dec 20, 2025";
 
 @use "sass:color";
 @use "sass:math";
@@ -5443,8 +5443,9 @@ $sideNoDark: ".theme-light ._5e434347c823b592-sidebar:not(theme-dark)";
             display: none;
           }
         }
-        ._2debea61131de3de-info {
-          &:before {
+        @at-root {
+          ._2debea61131de3de-info:before,
+          ._7aac80f6cab00c3b-links:before {
             content: "DTM-08 V2 Build #{$themeVersion} \A Updated on #{$themeDate}";
             font-size: 12px;
             color: var(--text-muted);
@@ -5739,7 +5740,7 @@ $sideNoDark: ".theme-light ._5e434347c823b592-sidebar:not(theme-dark)";
         }
       }
       // my account tab
-      ._1fed1dd06c7aabf7-accountProfileCard {
+      @at-root ._1fed1dd06c7aabf7-accountProfileCard {
         background: linear-gradient(var(--d8d9), var(--d8dC));
         box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000a, 0 1px 4px #0008;
         border-radius: 3px;
@@ -6398,6 +6399,9 @@ $sideNoDark: ".theme-light ._5e434347c823b592-sidebar:not(theme-dark)";
           background: linear-gradient(var(--d8dA), var(--d8dC) 40%, var(--d8dD) 60%, var(--d8dC));
           /* box-shadow: inset 0 0 0 1px #fff1, inset 0 1px #fff2, 0 0 0 1px #000b, 0 1px 4px #0008; */
         }
+        .theme-light & {
+          background: linear-gradient(var(--d8l2), var(--d8l3) 40%, var(--d8l5) 60%, var(--d8l4));
+        }
         .caf372efc4d47562-item {
           border-radius: 3px;
           .theme-light & {
@@ -6916,6 +6920,9 @@ $sideNoDark: ".theme-light ._5e434347c823b592-sidebar:not(theme-dark)";
         background: linear-gradient(to bottom, var(--d8d2) 0%, var(--d8d4) 50%, var(--d8d5) 50%,var(--d8d8) 100%);
         text-shadow: 0 -1px #000, 0 1px 3px #0004;
         box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff4, inset 0 1px #fff4, inset 0 -1px #0008, 0 0 1px 2px #fff2;
+        div {
+          color: #fff;
+        }
         &:hover:not(:disabled) {
           background: linear-gradient(to bottom, var(--d8d0) 0%, var(--d8d2) 50%, var(--d8d4) 50%,var(--d8d5) 100%);
           box-shadow: 0 0 0 1px #000b, inset 0 0 0 1px #fff4, inset 0 1px #fff8, inset 0 -1px #6662, 0 0 3px 2px #fff6;
