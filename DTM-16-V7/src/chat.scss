@@ -75,8 +75,8 @@
         }
       }
       // search bar
-      ._974928fe84ca9647-search {
-        ._974928fe84ca9647-searchBar {
+      .c322aadb96ff59c9-search {
+        .c322aadb96ff59c9-searchBar {
           background: var(--bg-overlay-3, var(--dtm-16-header-search-bar-bg));
           border-radius: 3px;
           height: 28px;
@@ -130,7 +130,7 @@
           .bd818628221af7aa-searchFilter {border-radius: 2px 0 0 2px}
           .bd818628221af7aa-searchAnswer {border-radius: 0 2px 2px 0}
         }
-        &._974928fe84ca9647-open ._974928fe84ca9647-searchBar {
+        &.c322aadb96ff59c9-open .c322aadb96ff59c9-searchBar {
           width: 244px;
         }
       }
@@ -986,6 +986,39 @@
             }
           }
         }
+        // bug replication
+        @container style(--dtm-16-plink: v2015) or style(--dtm-16-plink: v2016) {
+          ._740174f3d6a2c8fe-inner {
+            padding-left: 0;
+            position: relative;
+            >._740174f3d6a2c8fe-textArea:first-child {margin-left: 10px}
+            ._0923f156a0410684-uploadInput {position: absolute}
+            ._0923f156a0410684-attachWrapper, ._740174f3d6a2c8fe-attachButton {
+              position: unset;
+              margin-left: 0;
+              width: 45px;
+              margin-right: 10px;
+              flex: unset;
+              flex-shrink: 0.35;
+              ._0923f156a0410684-attachButton {
+                width: 100%;
+                margin: 0;
+                padding-left: 0;
+                padding-right: 0;
+              }
+            }
+            ._740174f3d6a2c8fe-attachButton {
+              ._4d3a93bb8f6e0dd9-icon {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                width: 100% !important;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+              }
+            }
+          }
+        }
       }
       ._740174f3d6a2c8fe-stackedBars {
         border: none;
@@ -1760,7 +1793,7 @@
   @at-root {
     // search autocomplete
     :is(._55c999adcf6db265-container._55c999adcf6db265-container,
-    .f1c5c9823fbd3ef8-container) {
+    .b6544fb09f373e60-container) {
       background: var(--background-primary);
       border: none;
       border-radius: 5px;
@@ -1786,7 +1819,7 @@
           --primary-630: #dcddde;
         }
       }
-      ._56fec8e8b8048fe0-header {
+      ._16eb0bfd5c5a90d1-header {
         @include dtm16_eyebrow;
       }
       ._55c999adcf6db265-queryContainer {
@@ -1817,46 +1850,46 @@
           color: var(--text-normal);
         }
       }
-      ._56fec8e8b8048fe0-option {
+      ._16eb0bfd5c5a90d1-option {
         box-shadow: none;
         .theme-light & {
           &:hover, &[aria-selected=true] {background: #f3f3f3;}
           &:hover:after, &[aria-selected=true]:after {background: linear-gradient(to right, #0000, #f3f3f3 50%)}
-          ._56fec8e8b8048fe0-plusIcon {
+          ._16eb0bfd5c5a90d1-plusIcon {
             background-color: #{ss(#99aab5)};
             clip-path: path("M10 8V4H8V8H4V10H8V14H10V10H14V8H10Z");
             polygon {display:none}
           }
-          ._56fec8e8b8048fe0-filter, ._56fec8e8b8048fe0-displayedNick {color: #{ss(#4f545c)}}
-          ._56fec8e8b8048fe0-answer, ._56fec8e8b8048fe0-displayUsername {color: #{ss(#caccce)}}
+          ._16eb0bfd5c5a90d1-filter, ._16eb0bfd5c5a90d1-displayedNick {color: #{ss(#4f545c)}}
+          ._16eb0bfd5c5a90d1-answer, ._16eb0bfd5c5a90d1-displayUsername {color: #{ss(#caccce)}}
         }
         .theme-dark & {
           &:hover, &[aria-selected=true] {background: #{ss(#2f3136)}}
           &:hover:after, &[aria-selected=true]:after {background: linear-gradient(to right, #0000, #{ss(#2f3136)} 50%)}
-          ._56fec8e8b8048fe0-plusIcon {
+          ._16eb0bfd5c5a90d1-plusIcon {
             background-color: #{ss(#99aab5)};
             clip-path: path("M10 8V4H8V8H4V10H8V14H10V10H14V8H10Z");
             polygon {display:none}
           }
-          ._56fec8e8b8048fe0-filter, ._56fec8e8b8048fe0-displayedNick {color: #{ss(#caccce)}}
-          ._56fec8e8b8048fe0-answer, ._56fec8e8b8048fe0-displayUsername  {color: #{ss(#72767d)}}
+          ._16eb0bfd5c5a90d1-filter, ._16eb0bfd5c5a90d1-displayedNick {color: #{ss(#caccce)}}
+          ._16eb0bfd5c5a90d1-answer, ._16eb0bfd5c5a90d1-displayUsername  {color: #{ss(#72767d)}}
         }
         @container style(--dtm-16-oreo: true) {
           &:hover, &[aria-selected=true] {background: #f3f3f3!important}
           &:hover:after, &[aria-selected=true]:after {background: linear-gradient(to right, #0000, #f3f3f3 50%)!important}
-          ._56fec8e8b8048fe0-plusIcon {background-color: #{ss(#99aab5)}!important}
-          ._56fec8e8b8048fe0-filter, ._56fec8e8b8048fe0-displayedNick {color: #{ss(#4f545c)}!important}
-          ._56fec8e8b8048fe0-answer, ._56fec8e8b8048fe0-displayUsername {color: #{ss(#caccce)}!important}
+          ._16eb0bfd5c5a90d1-plusIcon {background-color: #{ss(#99aab5)}!important}
+          ._16eb0bfd5c5a90d1-filter, ._16eb0bfd5c5a90d1-displayedNick {color: #{ss(#4f545c)}!important}
+          ._16eb0bfd5c5a90d1-answer, ._16eb0bfd5c5a90d1-displayUsername {color: #{ss(#caccce)}!important}
         }
       }
-      ._1bb324526a52affb-itemContainer {
+      ._8de16516b8d9f538-itemContainer {
         background: #0000 !important;
-        ._1bb324526a52affb-item {
+        ._8de16516b8d9f538-item {
           border-radius: 3px;
         }
         &[aria-selected="true"], &:hover {
-          ._1bb324526a52affb-item {
-            ._1bb324526a52affb-itemIcon {
+          ._8de16516b8d9f538-item {
+            ._8de16516b8d9f538-itemIcon {
               color: var(--text-normal);
             }
             .theme-light & {
@@ -1877,13 +1910,13 @@
           }
         }
       }
-      ._56fec8e8b8048fe0-searchLearnMore, ._56fec8e8b8048fe0-searchClearHistory {
+      ._16eb0bfd5c5a90d1-searchLearnMore, ._16eb0bfd5c5a90d1-searchClearHistory {
         color: #{ss(#99aab5)};
         opacity: .8;
         transition: .18s opacity;
         &:hover {opacity: 1}
       }
-      ._56fec8e8b8048fe0-searchLearnMore path {
+      ._16eb0bfd5c5a90d1-searchLearnMore path {
         d: path("M11 18h2v-2h-2v2Zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8Zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4Z");
       }
       // delete
@@ -1893,14 +1926,14 @@
     }
     // results wrapper
     // search results page
-    .a9e7064fdee8e9b0-searchResultsWrap {
-      .f3b986a284a18c78-searchHeader {
+    .a98f3b020416ad54-searchResultsWrap {
+      .ae7890a1b8e75804-searchHeader {
         background: var(--background-secondary);
         box-shadow: var(--elevation-low);
         border-bottom: none;
         height: 48px;
         padding: 0 20px;
-        .f3b986a284a18c78-searchHeaderTabList {
+        .ae7890a1b8e75804-searchHeaderTabList {
           .aa8da23faa27393c-item {
             padding: 15px 8px;
             border-radius: 0;
@@ -1914,13 +1947,13 @@
             }
           }
         }
-        .f3b986a284a18c78-totalResults div[data-text-variant="text-md/medium"] {
+        .ae7890a1b8e75804-totalResults div[data-text-variant="text-md/medium"] {
           font-weight: 400;
           font-size: 14px;
           color: var(--text-normal);
         }
       }
-      ._02a39cb2980ceaaf-button {
+      ._80bf8435713f6adb-button {
         .theme-light & {background:rgba(115,127,141,.6);color:#ebebeb}
         .theme-dark & {background:#535559;color:rgba(255,255,255,.6)}
         color: var(--interactive-normal);
@@ -1943,7 +1976,7 @@
           }
         }
       }
-      .c68065c20f8328a7-channelNameContainer:after {
+      .a7e67f4ddd7c6bb2-channelNameContainer:after {
         content: "";
         display: block;
         width: 100%;
@@ -1952,7 +1985,7 @@
         margin-left: 8px;
         background: var(--background-modifier-accent);
       }
-      .a9e7064fdee8e9b0-scroller {
+      .a98f3b020416ad54-scroller {
         &::-webkit-scrollbar {
           width: 14px;
           &-track, &-thumb {
@@ -1962,7 +1995,7 @@
         }
       }
       @if $legacy_experiment18 == 0 {
-        ._02a39cb2980ceaaf-searchResult {
+        ._80bf8435713f6adb-searchResult {
           background: var(--background-primary);
           border: solid 2px var(--dtm-16-classic-popout-message-group-border);
           border-radius: 4px;
@@ -1973,7 +2006,7 @@
         }
       }
       @if $legacy_experiment18 == 1 {
-        ._02a39cb2980ceaaf-searchResult {
+        ._80bf8435713f6adb-searchResult {
           border-radius: 4px;
           transition: .17s box-shadow;
           &:hover {
