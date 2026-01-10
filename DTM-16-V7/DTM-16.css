@@ -96,7 +96,7 @@
   font-size: 12px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "1077" "\a" "Dec 25, 2025";
+  content: "DTM-16 Build " "1078" "\a" "Jan 10, 2026";
 }
 
 .theme-dark, .theme-light {
@@ -5262,6 +5262,13 @@ img[src="/assets/2ccd0ae2e8934844.png"] {
 ._4e35b986167c457d-tooltip .b1f768426adf64d9-rowGuildName .b1f768426adf64d9-guildNameText {
   color: inherit;
 }
+._4e35b986167c457d-tooltip ._918165dab2b1e10b-listItemTooltipContent {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 12px;
+  color: #fff;
+  align-items: center;
+}
 ._4e35b986167c457d-tooltip .b1f768426adf64d9-row {
   --prefer-16px-icons: true;
 }
@@ -7829,15 +7836,18 @@ img[src="/assets/2ccd0ae2e8934844.png"] {
 :root ._49fc18ba07c5025f-root .content__67dba .container__0d850 .labelRow__0d850 div[data-text-variant="text-md/semibold"] {
   font-weight: 400;
 }
-._5a8382cf5c9d77df-container[data-layout=horizontal] {
+._5a8382cf5c9d77df-container:has(.a2827844fe91d55f-switchIndicator),
+._5a8382cf5c9d77df-container:has(._3f21e80f8677ec40-container) {
   grid-template-areas: "control labels" "empty helper-text";
   grid-template-columns: min-content 1fr;
   column-gap: 8px;
 }
-._5a8382cf5c9d77df-container[data-layout=horizontal] ._5a8382cf5c9d77df-labelContainer {
+._5a8382cf5c9d77df-container:has(.a2827844fe91d55f-switchIndicator) ._5a8382cf5c9d77df-labelContainer,
+._5a8382cf5c9d77df-container:has(._3f21e80f8677ec40-container) ._5a8382cf5c9d77df-labelContainer {
   margin-bottom: 0;
 }
-._5a8382cf5c9d77df-container[data-layout=horizontal] ._5a8382cf5c9d77df-control {
+._5a8382cf5c9d77df-container:has(.a2827844fe91d55f-switchIndicator) ._5a8382cf5c9d77df-control,
+._5a8382cf5c9d77df-container:has(._3f21e80f8677ec40-container) ._5a8382cf5c9d77df-control {
   transform: translate(1px, 1px);
 }
 
@@ -17419,17 +17429,17 @@ html:not(.visual-refresh) #app-mount ._740174f3d6a2c8fe-scrollableContainer ._74
 .c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container[data-disabled=true] {
   opacity: 0.3;
 }
-.c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-control {
+.c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-control:has(> .a2827844fe91d55f-container) {
   order: -2;
 }
-.c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-control input[type=checkbox]:not(:checked):before {
+.c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-control:has(> .a2827844fe91d55f-container) input[type=checkbox]:not(:checked):before {
   border-color: rgba(255, 255, 255, 0.5);
 }
-.c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-control input[type=checkbox]:checked:before {
+.c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-control:has(> .a2827844fe91d55f-container) input[type=checkbox]:checked:before {
   background: #fff;
   border-color: #fff;
 }
-.c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-control input[type=checkbox]:checked:after {
+.c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-control:has(> .a2827844fe91d55f-container) input[type=checkbox]:checked:after {
   border-color: var(--connection-color);
 }
 .c7f964e7e0fc8b47-connection:not(#\#) .c7f964e7e0fc8b47-connectionOptions ._5a8382cf5c9d77df-container ._5a8382cf5c9d77df-labelContainer {
@@ -19768,6 +19778,10 @@ html:not(.visual-refresh) #app-mount ._740174f3d6a2c8fe-scrollableContainer ._74
 .abd9a8b9030934e3-container .e9e3ed8b8badfe05-content .e9e3ed8b8badfe05-contentHeader h1 {
   display: none;
 }
+.theme-dark .abd9a8b9030934e3-container .e9e3ed8b8badfe05-content .e9e3ed8b8badfe05-contentHeader {
+  background: var(--override-background-secondary-alt);
+  border-color: var(--override-background-tertiary);
+}
 .abd9a8b9030934e3-container .e9e3ed8b8badfe05-content .e9e3ed8b8badfe05-contentHeader .a22cb0c66246f5d3-button.a22cb0c66246f5d3-icon-only {
   border-radius: 3px;
   width: auto;
@@ -19998,6 +20012,18 @@ html.theme-light .user-profile-popout.c0bea05627c5dc35-outer {
 }
 .user-profile-popout .c0bea05627c5dc35-inner :is(._75742e4cc9019aeb-avatar, .avatar_f9d668, .d28e107656edce18-avatar) ._44b0c28be7879b7b-wrapper ._44b0c28be7879b7b-mask._44b0c28be7879b7b-svg > [style="opacity: 0.45;"] {
   display: none !important;
+}
+.user-profile-popout .c0bea05627c5dc35-inner :is(._75742e4cc9019aeb-avatar, .avatar_f9d668, .d28e107656edce18-avatar) ._44b0c28be7879b7b-wrapper ._44b0c28be7879b7b-mask._44b0c28be7879b7b-svg > g {
+  transform: none !important;
+}
+.user-profile-popout .c0bea05627c5dc35-inner :is(._75742e4cc9019aeb-avatar, .avatar_f9d668, .d28e107656edce18-avatar) ._44b0c28be7879b7b-wrapper ._44b0c28be7879b7b-mask._44b0c28be7879b7b-svg > g > svg[viewBox="0 0 40 24"] {
+  transform: translate(70px, 70px);
+}
+.user-profile-popout .c0bea05627c5dc35-inner :is(._75742e4cc9019aeb-avatar, .avatar_f9d668, .d28e107656edce18-avatar) ._44b0c28be7879b7b-wrapper ._44b0c28be7879b7b-mask._44b0c28be7879b7b-svg > g > svg[viewBox="0 0 40 24"] > rect {
+  width: 20px;
+  height: 20px;
+  -webkit-mask: no-repeat url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' rx='10' fill='black'/%3E%3C/svg%3E%0A") center/cover;
+  mask: no-repeat url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' rx='10' fill='black'/%3E%3C/svg%3E%0A") center/cover;
 }
 .user-profile-popout .c0bea05627c5dc35-inner :is(._75742e4cc9019aeb-avatar, .avatar_f9d668, .d28e107656edce18-avatar) ._44b0c28be7879b7b-wrapper ._44b0c28be7879b7b-mask._44b0c28be7879b7b-svg > ._44b0c28be7879b7b-pointerEvents:not([fill=transparent]),
 .user-profile-popout .c0bea05627c5dc35-inner :is(._75742e4cc9019aeb-avatar, .avatar_f9d668, .d28e107656edce18-avatar) ._44b0c28be7879b7b-wrapper ._44b0c28be7879b7b-mask._44b0c28be7879b7b-svg g > rect {
