@@ -519,10 +519,11 @@
         }
       }
       // roles
-      .fccfdf3cfff21921-root {
+      .af3987915705da59-roleListContainer {
         order: 10;
         background: var(--override-background-secondary);
         padding: 14px 10px;
+        margin: 0;
         &:before {
           content: "ROLES";
           display: block;
@@ -571,7 +572,7 @@
           }
         }
       }
-      .dfa8b6b94cddb191-role {
+      .af3987915705da59-role {
         position: relative;
         border: solid 1px rgba(255 255 255/0);
         background: #0000;
@@ -594,7 +595,7 @@
         >span:has(>img) {
           order: -3;
         }
-        .dfa8b6b94cddb191-roleName {
+        .af3987915705da59-roleName {
           color: rgba(255 255 255);
           order: -2;
           margin: 0;
@@ -604,30 +605,22 @@
             }
           }
         }
-        .dfa8b6b94cddb191-roleRemoveButton {
+        ._4f569b8941af22d1-roleCircle {
+          display: contents;
+        }
+        .af3987915705da59-removeButton {
           position: unset;
           gap: 0;
-          display: contents;
-          ._4f569b8941af22d1-roleCircle {
-            display: contents;
-          }
           box-sizing: border-box;
-          &.dfa8b6b94cddb191-roleRemoveButtonCanRemove {
-            margin-right: 4px;
-          }
-          ._4f569b8941af22d1-svg.dfa8b6b94cddb191-roleDot {
-            overflow: visible;
-            pointer-events: none;
-            position: absolute;
-            z-index: -1;
-            ._4f569b8941af22d1-dot {
-              transform: scale(512);
-              transform-origin: center;
-            }
-            ._4f569b8941af22d1-dotBorderBase, ._4f569b8941af22d1-dotBorderColor {display:none}
-          }
+          color: var(--override-interactive-normal);
+          margin: 0 0 0 4px;
+          padding: 0;
+          min-width: 0;
+          width: min-content;
+          min-height: 0;
+          height: min-content;
         }
-        .dfa8b6b94cddb191-roleRemoveIcon {
+        .af3987915705da59-roleRemoveIcon {
           position: unset;
           display: block;
           margin: 0 -4px 0 6px;
@@ -648,7 +641,7 @@
           height: 0;
           filter: none !important;
         }
-        :is(.dfa8b6b94cddb191-roleFlowerStar, ._4f569b8941af22d1-roleCircle) {
+        :is(.af3987915705da59-roleFlowerStar, ._4f569b8941af22d1-roleCircle) {
           &:before {
             content: "";
             background: inherit;
@@ -660,8 +653,6 @@
             z-index: -2;
             pointer-events: none;
           }
-        }
-        .dfa8b6b94cddb191-roleRemoveButton {
           &:after {
             content: "";
             background: var(--override-background-secondary);
@@ -675,14 +666,14 @@
             pointer-events: none;
           }
         }
-        .dfa8b6b94cddb191-roleFlowerStar {
+        .af3987915705da59-roleFlowerStar {
           width: 0 !important;
           height: 0 !important;
           svg {
             display: none;
           }
         }
-        &:has(.dfa8b6b94cddb191-roleFlowerStar):before {
+        &:has(.af3987915705da59-roleFlowerStar):before {
           content: "";
           display: inline-block;
           width: 12px;
@@ -690,6 +681,11 @@
           background: var(--text-normal);
           @include mask(no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12.71,4.22C14.66,2.27 17.83,2.27 19.78,4.22C21.73,6.17 21.73,9.34 19.78,11.29L18.29,12.78C18.3,11.96 18.17,11.14 17.89,10.36L18.36,9.88C19.54,8.71 19.54,6.81 18.36,5.64C17.19,4.46 15.29,4.46 14.12,5.64L10.59,9.17C9.41,10.34 9.41,12.24 10.59,13.41M13.41,9.17C13.8,8.78 14.44,8.78 14.83,9.17C16.78,11.12 16.78,14.29 14.83,16.24V16.24L11.29,19.78C9.34,21.73 6.17,21.73 4.22,19.78C2.27,17.83 2.27,14.66 4.22,12.71L5.71,11.22C5.7,12.04 5.83,12.86 6.11,13.65L5.64,14.12C4.46,15.29 4.46,17.19 5.64,18.36C6.81,19.54 8.71,19.54 9.88,18.36L13.41,14.83C14.59,13.66 14.59,11.76 13.41,10.59C13,10.2 13,9.56 13.41,9.17Z' /%3E%3C/svg%3E") center/cover);
         }
+      }
+      .af3987915705da59-pillButton, .af3987915705da59-addButton {
+        border: solid 1px color-mix(in srgb, var(--override-text-muted) 50%, #0000);
+        background: color-mix(in srgb, var(--override-text-muted) 10%, #0000);
+        border-radius: 3px;
       }
       // idk
       div:not([class])[aria-hidden="true"] {
@@ -2183,7 +2179,7 @@
       }
       // role tags
       .af81925d9be830f2-root {
-        .dfa8b6b94cddb191-role {
+        .af3987915705da59-role {
           position: relative;
           border: solid 1px rgba(255 255 255/0);
           background: #0000;
@@ -2200,20 +2196,20 @@
           >span:not([id]):not([class]) {
             display: contents;
           }
-          .dfa8b6b94cddb191-roleName {
+          .af3987915705da59-roleName {
             color: rgba(255 255 255);
             order: -2;
           }
-          .dfa8b6b94cddb191-roleRemoveButton {
+          .af3987915705da59-roleRemoveButton {
             position: unset;
             order: 2;
-            // &:not(.dfa8b6b94cddb191-roleRemoveButtonCanRemove):not(:has(.dfa8b6b94cddb191-roleVerifiedIcon)) {
+            // &:not(.af3987915705da59-roleRemoveButtonCanRemove):not(:has(.af3987915705da59-roleVerifiedIcon)) {
             //   margin-left: -4px;
             // }
-            // &:not(.dfa8b6b94cddb191-roleRemoveButtonCanRemove):not(:has(.dfa8b6b94cddb191-roleVerifiedIcon)):not(:has(>._4f569b8941af22d1-svg.dfa8b6b94cddb191-roleDot)) {
+            // &:not(.af3987915705da59-roleRemoveButtonCanRemove):not(:has(.af3987915705da59-roleVerifiedIcon)):not(:has(>._4f569b8941af22d1-svg.af3987915705da59-roleDot)) {
             //   margin-left: -4px;
             // }
-            ._4f569b8941af22d1-svg.dfa8b6b94cddb191-roleDot {
+            ._4f569b8941af22d1-svg.af3987915705da59-roleDot {
               overflow: visible;
               pointer-events: none;
               position: absolute;
@@ -2225,7 +2221,7 @@
               ._4f569b8941af22d1-dotBorderBase, ._4f569b8941af22d1-dotBorderColor {display:none}
             }
           }
-          .dfa8b6b94cddb191-roleRemoveIcon {
+          .af3987915705da59-roleRemoveIcon {
             position: unset;
             display: block;
             margin: 0 -4px 0 6px;
@@ -2241,7 +2237,7 @@
             height: 0;
             filter: none !important;
           }
-          :is(.dfa8b6b94cddb191-roleFlowerStar, ._4f569b8941af22d1-roleCircle) {
+          :is(.af3987915705da59-roleFlowerStar, ._4f569b8941af22d1-roleCircle) {
             &:before {
               content: "";
               background: inherit;
@@ -2254,7 +2250,7 @@
               pointer-events: none;
             }
           }
-          .dfa8b6b94cddb191-roleRemoveButton {
+          .af3987915705da59-roleRemoveButton {
             &:after {
               content: "";
               background: var(--override-background-secondary);
@@ -2268,14 +2264,14 @@
               pointer-events: none;
             }
           }
-          .dfa8b6b94cddb191-roleFlowerStar {
+          .af3987915705da59-roleFlowerStar {
             width: 0 !important;
             height: 0 !important;
             svg {
               display: none;
             }
           }
-          &:has(.dfa8b6b94cddb191-roleFlowerStar):before {
+          &:has(.af3987915705da59-roleFlowerStar):before {
             content: "";
             display: inline-block;
             width: 12px;
