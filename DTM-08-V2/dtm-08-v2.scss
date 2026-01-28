@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "200";
-$themeDate: "Dec 20, 2025";
+$themeVersion: "201";
+$themeDate: "Jan 29, 2026";
 
 @use "sass:color";
 @use "sass:math";
@@ -2220,7 +2220,10 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
             color: #4DBCFC;
           }
         }
-        .rtcConnectionStatus__06d62 {
+        @at-root .rtcConnectionStatusWrapper__06d62 {
+          padding-right: 24px;
+        }
+        @at-root .rtcConnectionStatus__06d62 {
           overflow: visible;
           height: auto;
           &:before {
@@ -2272,6 +2275,18 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
             right: -4px;
             width: 32px;
             height: 32px;
+            padding: 0;
+          }
+          .clickablePing__06d62 {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: -4px;
+            width: 32px;
+            height: 32px;
+            >.ping__06d62 {
+              position: static;
+            }
           }
           .rtcConnectionStatusLabel__06d62 {
             contain: none;
