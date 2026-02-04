@@ -13,8 +13,8 @@
 @use "vars" as *;
 @use "sass:math";
 
-$themeVersion: "1082";
-$themeDate: "Jan 29, 2026";
+$themeVersion: "1083";
+$themeDate: "Feb 4, 2026";
 
 $themeName: "DTM-16";
 
@@ -99,7 +99,14 @@ $debug: 0;
   inherits: true;
   initial-value: v2016;
   name: "UI Version";
-  note: "Whether to replicate the 2015, 2016, or 2017 UI. 2016 by default and will be the only accurate option";
+  note: "Whether to replicate the 2015, 2016, or 2017 UI. 2016 by default and will be the only accurate option. Stylin for the chat textarea is controlled separately.";
+}
+@property --dtm-16-plink-ctb {
+  syntax: "v2016 | v2017p1 | v2017p2 | v2017p3 | v2017 | v2019";
+  inherits: true;
+  initial-value: v2016;
+  name: "Chat Textarea Version";
+  note: "If you set UI version to 2015 or 2016, leave this to the default value of v2016. If you set --dtm-16-plink to v2017, obviously set this to v2017. If you're really bored, go ahead and use the other options."
 }
 @property --dtm-16-oreo {
   syntax: "true | false";
@@ -1013,20 +1020,30 @@ $debug: 0;
     --dtm-16-chat-textbox-border: rgba(255,255,255,.2);
     --dtm-16-chat-textbox-bg: rgba(255,255,255,.06);
     --dtm-17-chat-textbox-bg: #{ss(hsla(218,5%,47%,.3))};
+    --dtm-19-chat-textbox-bg: #{ss(hsla(218,5%,47%,.18))};
     &.custom-theme-background, &.custom-theme-background .theme-light {
       --dtm-17-chat-textbox-bg: rgba(255,255,255,.02);
+      --dtm-19-chat-textbox-bg: rgba(255,255,255,.05);
     }
     --dtm-16-chat-textbox-placeholder: rgba(255,255,255,.2);
     --dtm-16-chat-textbox-color: rgba(255,255,255,.7);
     --dtm-16-chat-textbox-attach-button-fg: rgba(255,255,255,.2);
     --dtm-16-chat-textbox-attach-button-fg-hover: #ffffff;
     --dtm-16-chat-textbox-attach-button-fg-active: #ffffff;
+    --dtm-17p3-chat-textbox-attach-button-fg: rgba(255,255,255,.3);
+    --dtm-17p3-chat-textbox-attach-button-fg-hover: #ffffff;
+    --dtm-17p3-chat-textbox-attach-button-fg-active: #ffffff;
     --dtm-17-chat-textbox-attach-button-fg: #fff;
     --dtm-17-chat-textbox-attach-button-border: hsla(0,0%,100%,.1);
     --dtm-16-chat-textbox-attach-button-border-hover: rgba(255,255,255,.2);
     --dtm-16-chat-textbox-attach-button-border-active: #0000;
     --dtm-16-chat-textbox-attach-button-bg-hover: rgba(255,255,255,.06);
     --dtm-16-chat-textbox-attach-button-bg-active: rgba(255,255,255,.2);
+    --dtm-16-chat-textbox-button-opacity: .15;
+    --dtm-16-chat-textbox-emoji-button-opacity: .15;
+    --dtm-16-chat-textbox-button-opacity-hover: 1;
+    --dtm-16-chat-textbox-bar-button-opacity: .5;
+    --dtm-16-chat-autocomplete-item-hover-bg: rgba(0,0,0,.12);
     --dtm-16-chat-typing: hsla(0, 0%, 100%, .8);
     --dtm-16-chat-divider-line: #{ss(#474a4f)};
     --dtm-16-chat-divider-color: #{ss(rgba(153,170,181,.5))};
@@ -1337,22 +1354,30 @@ $debug: 0;
     --dtm-16-chat-textbox-border: #{ss(#dadddf)};
     --dtm-16-chat-textbox-bg: #fff;
     --dtm-17-chat-textbox-bg: #{ss(#f6f6f7)};
+    --dtm-19-chat-textbox-bg: #{ss(#ebedef)};
     &.custom-theme-background, &.custom-theme-background .theme-light {
       --dtm-16-chat-textbox-border: rgba(255,255,255,.8);
       --dtm-16-chat-textbox-bg: rgba(255,255,255,.2);
       --dtm-17-chat-textbox-bg: rgba(0,0,0,.02);
+      --dtm-19-chat-textbox-bg: rgba(0,0,0,.05);
     }
     --dtm-16-chat-textbox-placeholder: #{ss(#dadddf)};
     --dtm-16-chat-textbox-color: #{ss(#747f8d)};
     --dtm-16-chat-textbox-attach-button-fg: #{ss(#747f8d)};
     --dtm-16-chat-textbox-attach-button-fg-hover: #{ss(#747f8d)};
     --dtm-16-chat-textbox-attach-button-fg-active: #{ss(#747f8d)};
+    --dtm-17p3-chat-textbox-attach-button-fg: #{ss(#747f8d7f)};
     --dtm-17-chat-textbox-attach-button-fg: #{ss(#4f545c)};
     --dtm-17-chat-textbox-attach-button-border: #{ss(hsla(218,5%,47%,.1))};
     --dtm-16-chat-textbox-attach-button-border-hover: #{ss(#dadddf)};
     --dtm-16-chat-textbox-attach-button-border-active: #{ss(#dadddf)};
     --dtm-16-chat-textbox-attach-button-bg-hover: #f9f9f9;
     --dtm-16-chat-textbox-attach-button-bg-active: #{ss(#e9ebec)};
+    --dtm-16-chat-textbox-button-opacity: .15;
+    --dtm-16-chat-textbox-emoji-button-opacity: .5;
+    --dtm-16-chat-textbox-button-opacity-hover: 1;
+    --dtm-16-chat-textbox-bar-button-opacity: .25;
+    --dtm-16-chat-autocomplete-item-hover-bg: rgba(0,0,0,.03);
     --dtm-16-chat-typing: #{ss(#737f8d)};
     --dtm-16-chat-divider-line: #{ss(#eceeef)};
     --dtm-16-chat-divider-color: #{ss(#99aab5)};
@@ -1533,7 +1558,10 @@ $debug: 0;
     --dtm-16-panel-button-shadow: inset 1px 0 rgba(255,255,255,.05);
     --dtm-16-panel-button-bg-hover: var(--background-primary);
     --dtm-16-chat-textbox-bg: #{ss(rgba(46,47,51,.25))};
+    --dtm-17-chat-textbox-bg: rgba(255,255,255,.05);
     --dtm-16-chat-textbox-border: rgba(255,255,255,.1);
+    --dtm-17-panel-bg: #{ss(#111416)};
+    --dtm-17-panel-button-bg-hover: rgba(255,255,255,.05);
     --dtm-16-member-list-activity-card-bg: rgba(0,0,0,.1);
     --dtm-16-member-list-activity-card-border: rgba(0,0,0,.5);
     --dtm-16-input-text-border: rgba(255,255,255,.2);
