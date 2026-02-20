@@ -279,6 +279,9 @@
           display: none;
         }
       }
+      .breadcrumbsNav__6989f {
+        display: none; // TODO properly theme this later
+      }
 		}
 		.panel__6131a {
 			margin: 0;
@@ -298,6 +301,9 @@
       padding: 8px;
     }
   }
+  .section__409aa:last-child:after {
+    content: none;
+  }
   // audit logs
   @at-root {
     .customHeader__5906b {
@@ -311,6 +317,120 @@
     }
     .divider__5906b {
       display: none;
+    }
+  }
+  // profile preview
+  @at-root {
+    .previewsContainer__44061 {
+      .header__5a2c6 {
+        display: contents;
+      }
+      .mask__68edb, .avatar_d28e10 {
+        order: -10;
+      }
+      .avatar_d28e10 {
+        margin-bottom: 16px !important;
+        position: relative;
+        width: 90px !important;
+        height: 90px !important;
+        min-height: 90px !important;
+        max-height: 90px !important;
+      }
+      .overlay_d28e10:after {
+        inset: 4px auto auto 4px;
+        content: "CHANGE AVATAR";
+        display: grid;
+        place-content: center;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1.2;
+        box-sizing: border-box;
+        padding-inline: 10px;
+      }
+      .overlayIcon_d28e10 {
+        display: none !important;
+      }
+    }
+  }
+  // emoji settings
+  @at-root {
+    .table_e7d73e {
+      border: none;
+      border-radius: 0;
+    }
+    .tableHeader_e7d73e {
+      padding: 0;
+      background: #0000;
+      margin: 0;
+      border: none;
+      [data-text-variant="text-sm/semibold"] {
+        font-weight: 800;
+        font-size: 12px;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+    }
+    .tableBody_e7d73e {
+      padding: 0;
+    }
+    .column_e7d73e {
+      margin: 0;
+    }
+    .emojiRow_e7d73e:not(#\#) {
+      border-radius: 0;
+      border: none;
+      background: none;
+      &:before {content:none}
+    }
+    .emojiColumn_e7d73e {
+      min-width: 72px;
+      width: 72px;
+    }
+    .emojiRow_e7d73e {
+      .emojiAliasInputContainer_e7d73e {
+        &:before, &:after {
+          display: none !important;
+        }
+      }
+      div.input__4f074 {
+        display: none !important;
+      }
+      .input__4f074 {
+        opacity: 1 !important;
+        background: #0000 !important;
+        border: solid 1px #0000 !important;
+        outline: none !important;
+        padding: 8px;
+        width: 194px;
+        height: auto;
+        margin: 0;
+        height: 40px !important;
+        position: unset !important;
+      }
+      .emojiAliasPlaceholder_e7d73e {
+        display: none;
+      }
+      &:hover .input__4f074 {
+        border-radius: 3px;
+        background: var(--dtm-16-server-settings-emoji-input-hover-bg) !important;
+        border-color: var(--dtm-16-server-settings-emoji-input-hover-border) !important;
+      }
+    }
+    .columnLabel_e7d73e, .column_e7d73e {
+      min-width: 220px;
+      max-width: 220px;
+      width: 220px;
+    }
+    .emojiRowTools_e7d73e {
+      button {
+        min-width: 0;
+        min-height: 0;
+        padding: 8px !important;
+      }
+      .buttonChildrenWrapper_a22cb0 {
+        min-width: 0;
+      }
     }
   }
 }

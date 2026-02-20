@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "201";
-$themeDate: "Jan 29, 2026";
+$themeVersion: "202";
+$themeDate: "Feb 20, 2026";
 
 @use "sass:color";
 @use "sass:math";
@@ -1130,21 +1130,24 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
     .theme-light & {background: linear-gradient(to bottom, #ffffff 0%,#eaeaea 100%)}
     .theme-dark & {background: linear-gradient(to bottom, var(--d8dG) 0%,var(--d8dB) 100%)}
     // search bar
-    .searchBar__35e86 {
-      :is(.searchBarComponent__35e86, .button_a22cb0.lookFilled__201d5.colorPrimary__201d5) {
+    .searchBar_e6b769 {
+      .button_a22cb0 {
         border-radius: 2px;
         transition: .18s box-shadow;
         text-align: left;
         padding: 1px 6px;
-        justify-content: start;
         height: 28px;
         min-height: 0;
+        .buttonChildrenWrapper_a22cb0 {
+          justify-content: start;
+          padding: 0;
+        }
       }
       .theme-light & {
         background: linear-gradient(var(--d8l3), var(--d8l5) 50%, var(--d8l7) 50%, var(--d8l8));
         box-shadow: inset 0 1px #fff6, inset 0 2px #fff6;
         color: #222;
-        :is(.searchBarComponent__35e86, .button_a22cb0.lookFilled__201d5.colorPrimary__201d5) {
+        .button_a22cb0:not(#\#) {
           background: linear-gradient(var(--d8l3), var(--d8l2) 50%, var(--d8l1) 50%, var(--d8l2));
           box-shadow: inset 0 1px 4px #0004, 0 0 0 1px #fff4, 0 1px #fffb;
           color: #000;
@@ -1155,7 +1158,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         background: linear-gradient(to bottom, var(--d8d8) 0%,var(--d8dA) 50%,var(--d8dB) 50%,var(--d8dC) 100%);
         box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
         color: #fff;
-        :is(.searchBarComponent__35e86, .button_a22cb0.lookFilled__201d5.colorPrimary__201d5) {
+        .button_a22cb0:not(#\#) {
           background: linear-gradient(to bottom,var(--d8dD) 0%,var(--d8dC) 50%,var(--d8dB) 50%,var(--d8dB) 100%);
           box-shadow: inset 0 1px 3px #0008, 0 1px #fff2, 0 0 0 1px #fff1;
           color: #fff8;
@@ -1969,9 +1972,10 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         padding: 0;
         justify-content: space-between;
       }
-      .avatarWrapper__37e49 {
+      .accountPopoutButtonWrapper__37e49 {
         height: calc(100% + 8px);
-        margin-left: -3px;
+        margin-left: -4px;
+        padding-left: 4px !important;
         border-radius: 0;
         flex: 1;
         padding: 0;
@@ -1990,7 +1994,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
       .flex__7c0ba {
         margin-right: 1px;
       }
-      .micButtonParent__37e49:not(#\#) {
+      .audioButtonParent__5e764:not(#\#) {
         margin: 0 !important;
         >button {
           &:nth-child(1 of :not(span)) {
@@ -2004,8 +2008,8 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
             border-radius: 0;
           }
         }
-        .buttonChevron__37e49 {display:none}
-        +.micButtonParent__37e49:not(#\#) {
+        .buttonChevron__5e764 {display:none}
+        +.audioButtonParent__5e764:not(#\#) {
           >button {
             border-radius: 0 !important;
             margin-left: 0;
@@ -6693,14 +6697,18 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
     .item__5a85a[data-disabled="true"] {
       pointer-events: none;
     }
-    :is(.radioBar__88a69, .item__5a85a) {
+    :is(.radioGroupOption__64e61) {
       --status-green-600: #43b581;
       --status-yellow-560: #faa61a;
       --status-red-500: #f04747;
+      padding: 8px;
       .theme-dark & {
         border: solid 1px #000;
         background: linear-gradient(var(--d8d7), var(--d8d9) 50%, var(--d8dA) 50%, var(--d8d9));
         box-shadow: inset 0 0 0 1px #fff2,0 1px #fff1,0 1px 5px #000;
+        &[data-selected="true"] {
+          box-shadow: inset 0 0 12px var(--blurple-st), inset 0 0 0 1px var(--blurple), 0 1px #fff1, 0 1px 5px #000;
+        }
       }
       .theme-light & {
         border: solid 1px var(--d8lA);
@@ -6708,9 +6716,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         box-shadow: inset 0 0 0 1px #fff8, 0 1px 2px #0008;
       }
       &:hover {
-        .theme-dark & {
+        .theme-dark &:where(:not([data-selected="true"])) {
           background: linear-gradient(var(--d8d6),var(--d8d8) 50%,var(--d8d9) 50%,var(--d8d8));
-          box-shadow: inset 0 0 0 1px #fff2,0 1px #fff1,0 1px 8px 1px #000;
+          box-shadow: inset 0 0 0 1px #fff2, 0 1px #fff1, 0 1px 8px 1px #000;
         }
         .theme-light & {
           background: linear-gradient(#FFF, var(--d8l1) 50%, var(--d8l3) 50%, var(--d8l4));
@@ -6718,7 +6726,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         }
       }
       &:active, [role="radio"][aria-checked="true"] & {
-        .theme-dark & {
+        .theme-dark &:where(:not([data-selected="true"])) {
           background: linear-gradient(var(--d8dB), var(--d8dB) 50%, var(--d8dA) 50%, var(--d8d8));
           box-shadow: inset 0 0 0 1px #fff1,0 2px #fff1,inset 0 1px 8px #000
         }
@@ -6758,16 +6766,18 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         background: linear-gradient(var(--d8dA),var(--d8d9));
         box-shadow: inset 0 1px 3px 1px #000, 0 0 0 1px #fff2;
       }
-      >:is(.item__88a69, .answer__4c520) {
+      >:is(.radioGroupOption__64e61, .answer__4c520) {
         margin-bottom: 2px;
-        :is(.radioBar__88a69, .answerInner__4c520) {
+        &.radioGroupOption__64e61, .answerInner__4c520 {
           border-radius: 0;
         }
-        &:first-of-type :is(.radioBar__88a69, .answerInner__4c520) {
+        &:first-of-type .answerInner__4c520,
+        &.radioGroupOption__64e61:first-of-type {
           border-top-left-radius: 4px;
           border-top-right-radius: 4px;
         }
-        &:last-of-type :is(.radioBar__88a69, .answerInner__4c520) {
+        &:last-of-type .answerInner__4c520,
+        &.radioGroupOption__64e61:last-of-type {
           border-bottom-left-radius: 4px;
           border-bottom-right-radius: 4px;
         }
