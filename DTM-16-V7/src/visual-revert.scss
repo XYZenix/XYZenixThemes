@@ -59,11 +59,26 @@
     >div:not([class]):not([style]) {
       display: contents;
     }
-    .clickable_c99c29 {
+    :is(.clickable__9293f, .clickable_c99c29):not(#\#) {
       margin: 0;
       padding: 0;
-      width: 30px;
       justify-content: center;
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      min-height: 30px;
+      max-width: 30px;
+      max-height: 30px;
+      border-radius: 3px;
+      background: none !important;
+      &:is([aria-selected=true], [aria-expanded=true], .selected__9293f):not(#\#) {
+        @container style(--dtm-16-plink: v2015) or style(--dtm-16-plink: v2016) {
+          background: var(--dtm-16-header-button-active-bg) !important;
+        }
+      }
+      svg:not(#\#) {
+        background: none !important;
+      }
       foreignObject {
         @include mask(none !important);
         &[mask="url(#svg-mask-header-bar-badge-bottom)"] {
@@ -74,8 +89,8 @@
         margin: 0;
         inset: 2px 5px auto auto;
       }
-      .svg__2338f,
-      .svg__2338f[viewBox="0 0 20 20"] foreignObject {
+      svg,
+      svg[viewBox="0 0 20 20"] foreignObject {
         width: 24px;
         height: 24px;
       }
@@ -124,6 +139,11 @@
         y: -2px;
         -webkit-mask: none !important;
         mask: none !important;
+        svg {
+          all: unset !important;
+          width: 24px !important;
+          height: 24px !important;
+        }
       }
       .iconBadge__9293f {
         top: 3px;

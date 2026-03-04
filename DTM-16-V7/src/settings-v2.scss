@@ -261,6 +261,8 @@
         font-weight: 500;
         transform: none !important;
         transition: .2s background-color;
+        aspect-ratio: unset;
+        padding: 10px 20px;
         &:hover {background: var(--blurple-hover)}
         &:active {background: var(--blurple-active)}
         .buttonChildrenWrapper_a22cb0 {display:none}
@@ -304,23 +306,52 @@
   .section__409aa:last-child:after {
     content: none;
   }
-  // audit logs
+  // shared
   @at-root {
-    .customHeader__5906b {
-      position: sticky;
-      top: 0;
-      background: var(--background-primary);
-      z-index: 2;
-      .labelContainer__5a838 {
-        display: none;
-      }
-    }
-    .divider__5906b {
-      display: none;
+    .panel__6131a .stack_dbd263 [data-text-variant="heading-xl/normal"] {
+      color: var(--header-secondary) !important;
+      line-height: 1;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
     }
   }
-  // profile preview
+  // user » account
   @at-root {
+    .container__75920[data-debug-key="account_authentication_category"] {
+      .container__35859.positive__35859 {
+        background: none;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        .iconDiv__35859 {
+          width: 12px;
+          height: 14px;
+          overflow: hidden;
+          svg {
+            width: 14px;
+            height: 14px;
+          }
+          path {
+            d: path("M13.71 10.29H3.43V8.57a5.15 5.15 0 0 1 10.28 0zM6.86 20.57h3.43v-6.86H6.86zM8.57 0A8.57 8.57 0 0 0 0 8.57v12C0 22.47 1.54 24 3.43 24H13.7c1.9 0 3.43-1.54 3.43-3.43v-12A8.57 8.57 0 0 0 8.57 0");
+            fill: var(--green);
+          }
+        }
+        .text__35859 {
+          margin-left: 4px;
+          color: var(--green) !important;
+          font-size: 12px;
+          font-weight: 800;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  // user » profile customization
+  @at-root {
+    .baseLayout__44061 {
+      grid-template-columns: auto 250px;
+    }
     .previewsContainer__44061 {
       .header__5a2c6 {
         display: contents;
@@ -353,7 +384,22 @@
       }
     }
   }
-  // emoji settings
+  // server » audit logs
+  @at-root {
+    .customHeader__5906b {
+      position: sticky;
+      top: 0;
+      background: var(--background-primary);
+      z-index: 2;
+      .labelContainer__5a838 {
+        display: none;
+      }
+    }
+    .divider__5906b {
+      display: none;
+    }
+  }
+  // server » emoji settings
   @at-root {
     .table_e7d73e {
       border: none;
