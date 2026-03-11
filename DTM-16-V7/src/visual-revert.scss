@@ -59,6 +59,7 @@
     >div:not([class]):not([style]) {
       display: contents;
     }
+    // TODO: delete
     :is(.clickable__9293f, .clickable_c99c29):not(#\#) {
       margin: 0;
       padding: 0;
@@ -95,6 +96,7 @@
         height: 24px;
       }
     }
+    // TODO: delete
     .iconWrapper__9293f {
       width: 30px;
       height: 30px;
@@ -156,9 +158,18 @@
         transform: scale(0.75);
       }
     }
+    // TODO: delete
     .clickable_c99c29:nth-last-child(3 of :not(span):not(.winButtons_c38106))~a {
       display: none;
     }
+    .clickable__81391:nth-last-child(4 of :not(span):not(.winButtons_c38106))~a,
+    a:nth-last-child(3 of :not(span):not(.winButtons_c38106))~div>.clickable__81391[aria-label="DevTools"] {
+      display: none !important;
+    }
+    .disabled__81391 {
+      opacity: 1;
+    }
+    // TODO: delete
     .smallButton__85643 {
       .svg__2338f {
         padding: 0;
@@ -169,6 +180,74 @@
         padding: 0;
         width: 24px;
         height: 24px;
+      }
+    }
+    .clickable__81391:not(#\#) {
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      min-height: 30px;
+      max-width: 30px;
+      max-height: 30px;
+      border-radius: 3px;
+      background: none !important;
+      &:is([aria-selected=true], [aria-expanded=true], .selected__81391):not(#\#) {
+        @container style(--dtm-16-plink: v2015) or style(--dtm-16-plink: v2016) {
+          background: var(--dtm-16-header-button-active-bg) !important;
+        }
+      }
+      svg:not(#\#) {
+        background: none !important;
+      }
+      foreignObject {
+        @include mask(none !important);
+        &[mask="url(#svg-mask-header-bar-badge-bottom)"] {
+          @include mask(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M0 24h24V6a6 6 0 1 1-6-6H0zM24 0h-6a6 6 0 0 1 6 6z'/%3E%3C/svg%3E") !important);
+        }
+      }
+      .badge__81391 {
+        margin: 0;
+        inset: 2px 5px auto auto;
+      }
+      .badgeContainer__81391>svg,
+      &>svg {
+        width: 24px;
+        height: 24px;
+      }
+      &[aria-label="DevTools"] {
+        background: none !important;
+        path {
+          transform: scale(calc(20/24)) !important;
+        }
+      }
+      .icon__9293f {
+        opacity: .6;
+        transition: opacity .2s;
+        width: 24px;
+        height: 24px;
+        color: var(--dtm-16-header-button-fg);
+      }
+      [d="M12 2a1 1 0 0 1 1 1v10.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V3a1 1 0 0 1 1-1ZM3 20a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2H3Z"] {
+        d: path("M12 17L8 13H11V3H13V13H16L12 17Z M4 19H20V21H4V19Z");
+      }
+      .bounce__1aa44 {
+        animation: none !important;
+        fill: currentColor;
+        d: path("M15 5.62a7.5 7.5 0 0 1 4.35 5.42A4.98 4.98 0 0 1 19 21H6a6 6 0 0 1-.65-11.96A7.53 7.53 0 0 1 9 5.63v2.26A5.54 5.54 0 0 0 6.71 11H6a4 4 0 1 0 0 8h13a3 3 0 1 0 0-6h-1.5v-.5c0-1.93-1-3.63-2.5-4.61V5.62Z M13 13V3h-2v10H8l4 4 4-4h-3Z");
+      }
+      >svg>foreignObject {
+        x: -2px;
+        y: -2px;
+        -webkit-mask: none !important;
+        mask: none !important;
+        svg {
+          all: unset !important;
+          width: 24px !important;
+          height: 24px !important;
+        }
       }
     }
   }
