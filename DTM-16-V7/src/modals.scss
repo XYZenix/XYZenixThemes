@@ -5,6 +5,11 @@
   .platform-win .app_a3002d~.layerContainer__59d0d {
     top: 22px;
   }
+  .platform-win .app_a3002d~#popover-portal {
+    .layer__529b0 .layer__529b0 {
+      top: -22px !important;
+    }
+  }
   :root {
     // shared components
     .rootWithShadow__49fc1 {
@@ -67,6 +72,10 @@
       border-radius: 3px;
       border: none;
       background: var(--background-primary);
+      width: auto;
+      &.modal_e44912 {
+        width: 100%;
+      }
       .labelContainer__5a838:not(.container__5a838 .labelContainer__5a838) [data-text-variant="text-md/medium"] {
         @include dtm16_eyebrow;
       }
@@ -320,8 +329,11 @@
           --header-primary: rgba(255 255 255/1);
           --header-secondary: rgba(255 255 255/.8);
           --text-primary: rgba(255 255 255/1);
+          --text-strong: rgba(255 255 255/1);
           --text-normal: rgba(255 255 255/.8);
+          --text-default: rgba(255 255 255/.8);
           --text-muted: rgba(255 255 255/.6);
+          --text-subtle: rgba(255 255 255/.6);
           .hero_af3b89.hero_af3b89.hero_af3b89.hero_af3b89 {
             --interactive-normal: rgba(255 255 255/.8);
             --interactive-hover: rgba(255 255 255/1);
@@ -460,6 +472,7 @@
     }
     .container__8a031:has(>.quickswitcher_ac6cb0) {
       max-width: 570px;
+      width: 100%;
       height: 365px;
       background: none;
       box-shadow: none;
@@ -596,8 +609,11 @@
         path[d="M10.56 1.1c-.46.05-.7.53-.64.98.18 1.16-.19 2.2-.98 2.53-.8.33-1.79-.15-2.49-1.1-.27-.36-.78-.52-1.14-.24-.77.59-1.45 1.27-2.04 2.04-.28.36-.12.87.24 1.14.96.7 1.43 1.7 1.1 2.49-.33.8-1.37 1.16-2.53.98-.45-.07-.93.18-.99.64a11.1 11.1 0 0 0 0 2.88c.06.46.54.7.99.64 1.16-.18 2.2.19 2.53.98.33.8-.14 1.79-1.1 2.49-.36.27-.52.78-.24 1.14.59.77 1.27 1.45 2.04 2.04.36.28.87.12 1.14-.24.7-.95 1.7-1.43 2.49-1.1.8.33 1.16 1.37.98 2.53-.07.45.18.93.64.99a11.1 11.1 0 0 0 2.88 0c.46-.06.7-.54.64-.99-.18-1.16.19-2.2.98-2.53.8-.33 1.79.14 2.49 1.1.27.36.78.52 1.14.24.77-.59 1.45-1.27 2.04-2.04.28-.36.12-.87-.24-1.14-.96-.7-1.43-1.7-1.1-2.49.33-.8 1.37-1.16 2.53-.98.45.07.93-.18.99-.64a11.1 11.1 0 0 0 0-2.88c-.06-.46-.54-.7-.99-.64-1.16.18-2.2-.19-2.53-.98-.33-.8.14-1.79 1.1-2.49.36-.27.52-.78.24-1.14a11.07 11.07 0 0 0-2.04-2.04c-.36-.28-.87-.12-1.14.24-.7.96-1.7 1.43-2.49 1.1-.8-.33-1.16-1.37-.98-2.53.07-.45-.18-.93-.64-.99a11.1 11.1 0 0 0-2.88 0ZM16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"] {
           d: path("M12.9 2.7H11q-1 .1-1.1 1.1v1.5a7 7 0 0 0-2.8 1.6L6 6a1.2 1.2 0 0 0-1.6.5L3.4 8A1.2 1.2 0 0 0 4 9.7l1.3.7a7 7 0 0 0 0 3.2l-1.3.7a1.2 1.2 0 0 0-.4 1.6l.9 1.5A1 1 0 0 0 6 18l1.2-.8a7 7 0 0 0 2.8 1.6v1.5q.1 1 1.1 1.1H13q1-.1 1.1-1.1v-1.5q1.5-.5 2.8-1.6l1.2.8a1.2 1.2 0 0 0 1.6-.5l1-1.5a1.2 1.2 0 0 0-.5-1.6l-1.3-.7a7 7 0 0 0 0-3.2l1.3-.7a1.2 1.2 0 0 0 .4-1.6l-.9-1.5A1.2 1.2 0 0 0 18 6l-1.2.8A7 7 0 0 0 14 5.3V3.8q-.1-1-1.1-1.1m1.8 9.3a2.7 2.7 0 1 1-5.4 0 2.7 2.7 0 0 1 5.4 0");
         }
-        @at-root .bottomControls_e4cb9a .viewersIcon_d6b206 path:last-child {
+        @at-root .bottomControls_e4cb9a .viewersIcon_d6b206 path {
           d: path("M19 19L23 19 23 16.5C23 14.17 18.33 13 16 13 15.71 13 15.38 13.02 15.03 13.05 15.2979181 13.2440097 15.5471657 13.4534892 15.7720754 13.6791778 17.5922944 14.6769857 19 16.1183086 19 18L19 19zM14.3335577 10.4967128C14.8098529 10.8147627 15.3828086 11 16 11 17.66 11 18.99 9.66 18.99 8 18.99 6.34 17.66 5 16 5 15.3827845 5 14.8098082 5.18525173 14.3335019 5.5033244 14.7574619 6.23791814 15 7.09053797 15 8.00006693 15 8.90955601 14.7574832 9.76214095 14.3335577 10.4967128zM9 12C6.79 12 5 10.21 5 8 5 5.79 6.79 4 9 4 11.21 4 13 5.79 13 8 13 10.21 11.21 12 9 12zM9 14C11.67 14 17 15.34 17 18L17 20 1 20 1 18C1 15.34 6.33 14 9 14z");
+          ~path {
+            d: path("");
+          }
         }
         .justifyEnd_abf706>div:nth-last-child(1 of :not(span[style="display: none;"])) {
           .lottieIcon__5eb9b {
@@ -868,6 +884,21 @@
             background: #{ss(rgba(114,137,218,.95))};
           }
         }
+      }
+    }
+    // expression picker: kaomoji tab
+    .wrapper__81b99 {
+      .header__81b99 {
+        background: var(--background-primary);
+        border-bottom: solid 1px var(--background-tertiary);
+        padding-top: 12px;
+        margin: 0;
+        .container__5a838 {
+          --use-alt-input-style: true;
+        }
+      }
+      .kaomojiGridItem__81b99 .hasText_a22cb0 {
+        padding: 8px 4px !important;
       }
     }
     // expression picker: shared
@@ -2171,6 +2202,7 @@
     @container style(--dtm-16-old-game-profile: true) {
       .gameProfileModal__8e830 {
         padding-left: 221px;
+        border-radius: 3px;
         background: var(--background-tertiary);
         position: relative;
         width: 700px;
@@ -2810,6 +2842,7 @@
       @include mask(no-repeat url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><path d="M0 0H10L5 5Z"/></svg>'));
     }
   }
+  // rtc connection popout
   .debugPanelStandalone__50387 {
     background: none;
     display: flex;
@@ -2863,6 +2896,114 @@
       height: 6px;
       background: #fff;
       @include mask(no-repeat url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><path d="M0 0H10L5 5Z"/></svg>'));
+    }
+  }
+  .container__50387 {
+    background: #fff;
+    padding: 14px 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px 5px 3px 3px;
+    box-shadow: var(--elevation-high);
+    >h2 {display:none}
+    &:before {
+      content: "Voice Connection";
+      padding: 13px;
+      margin: -14px -20px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      background: var(--blurple);
+      flex: 1;
+      color: #fff;
+      text-align: center;
+      border-radius: 3px 3px 0 0;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 20px;
+      width: 12px;
+      height: 6px;
+      background: #fff;
+      @include mask(no-repeat url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><path d="M0 0H10L5 5Z"/></svg>'));
+    }
+    .tabs__50387 {
+      &:after {
+        background: #f0f0f0;
+      }
+    }
+    .tabBarItem__50387:not(#\#) {
+      color: #{ss(#87909c)};
+      &:hover, &:active, &:focus {
+        color: #{ss(#87909c)};
+        &:after {background: #{ss(#87909c)}}
+      }
+      &.selected_aa8da2 {
+        color: var(--blurple);
+        &:after {background: var(--blurple)}
+      }
+    }
+    .popoutText_effb26 {
+      color: #{ss(#87909c)};
+      font-size: 12px;
+      line-height: 1.2;
+      &.popoutTextDetails_effb26 {
+        color: #{ss(#8a8e94)};
+        font-size: 14px;
+        line-height: calc(9/7);
+      }
+    }
+    .separator_effb26 {
+      border: 1px solid #f0f0f0;
+      border-bottom: none;
+      margin: 14px -15px;
+    }
+    .secured_effb26 {
+      >svg {
+        background: var(--green);
+        width: 9px;
+        height: 12px;
+        >* {display:none}
+        @include mask(no-repeat url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 47 9 12"><path d="M8 53v-2.7c0-2-1.4-3.3-3.5-3.3S1 48.3 1 50.3V53H0v6h9v-6zm-6-2c0-2 1-3 2.5-3S7 49 7 51v2H2z"/></svg>') center/9px 12px);
+      }
+    }
+    [data-text-variant="text-xs/normal"] {
+      color: #{ss(#8a8e94)} !important;
+      font-size: 14px;
+      line-height: calc(9/7);
+    }
+    [data-text-variant="text-sm/bold"] {
+      color: #{ss(#87909c)} !important;
+      font-size: 12px;
+      text-transform: uppercase;
+      line-height: 1;
+      font-weight: 600;
+    }
+    .tag__9351a {
+      background: var(--green);
+      border-radius: 3px;
+      padding: 3px 6px;
+      border-radius: 3px;
+      path {
+        d: path("M13.71 10.29H3.43V8.57a5.15 5.15 0 0 1 10.28 0zM6.86 20.57h3.43v-6.86H6.86zM8.57 0A8.57 8.57 0 0 0 0 8.57v12C0 22.47 1.54 24 3.43 24H13.7c1.9 0 3.43-1.54 3.43-3.43v-12A8.57 8.57 0 0 0 8.57 0");
+        fill: #fff;
+      }
+      [data-text-variant="text-xs/medium"] {
+        color: #fff !important;
+        font-size: 12px;
+        text-transform: uppercase;
+        line-height: 1;
+        font-weight: 600;
+      }
+    }
+    .code__1a1f5 {
+      background: #fcfcfc;
+    }
+    .codeText__1a1f5 {
+      color: #{ss(#72767d)} !important;
     }
   }
   // soundboard

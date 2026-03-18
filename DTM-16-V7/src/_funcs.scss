@@ -7,15 +7,15 @@
   @for $i from 1 through $amt {
     $value: $value * 10;
   }
-  @return math.round($num*$value)/$value;
+  @return calc(math.round($num*$value)/$value);
 }
 
 // converts color to a saturation-slider compatible piece of shit i will never deal with again
 @function ss($color) {
-  $h: dec(hue($color),1);
-  $s: dec(saturation($color),1);
-  $l: dec(lightness($color),1);
-  $a: dec(alpha($color),2);
+  $h: dec(color.channel($color, "hue", $space: hsl),1);
+  $s: dec(color.channel($color, "saturation", $space: hsl),1);
+  $l: dec(color.channel($color, "lightness", $space: hsl),1);
+  $a: dec(color.channel($color, "alpha", $space: hsl),2);
   $h: string.slice(#{$h},0,-4);
   @if ($a < 1) {
     @return #{hsl(#{$h}, calc(var(--saturation-factor, 1) * #{$s}), $l, $a)};
@@ -23,10 +23,10 @@
   @return #{hsl($h, calc(var(--saturation-factor, 1) * #{$s}), $l)};
 }
 @function ssv($color) {
-  $h: dec(hue($color),1);
-  $s: dec(saturation($color),1);
-  $l: dec(lightness($color),1);
-  $a: dec(alpha($color),2);
+  $h: dec(color.channel($color, "hue", $space: hsl),1);
+  $s: dec(color.channel($color, "saturation", $space: hsl),1);
+  $l: dec(color.channel($color, "lightness", $space: hsl),1);
+  $a: dec(color.channel($color, "alpha", $space: hsl),2);
   $h: string.slice(#{$h},0,-4);
   @if ($a < 1) {
     @return #{#{$h}, calc(var(--saturation-factor, 1) * #{$s}), $l, $a};

@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "207";
-$themeDate: "Mar 12, 2026";
+$themeVersion: "208";
+$themeDate: "Mar 16, 2026";
 
 @use "sass:color";
 @use "sass:math";
@@ -18,19 +18,20 @@ $snowsgiving: false;
 
 $guildsNoDark: ".theme-light .guilds__5e434:not(.theme-dark)";
 $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
-
 @function dec($num,$amt) {
-  $value: 1;
+  $value: 1; 
   @for $i from 1 through $amt {
     $value: $value * 10;
   }
-  @return math.round($num*$value)/$value;
+  @return calc(math.round($num*$value)/$value);
 }
+
+// converts color to a saturation-slider compatible piece of shit i will never deal with again
 @function ss($color) {
-  $h: dec(hue($color),1);
-  $s: dec(saturation($color),1);
-  $l: dec(lightness($color),1);
-  $a: dec(alpha($color),2);
+  $h: dec(color.channel($color, "hue", $space: hsl),1);
+  $s: dec(color.channel($color, "saturation", $space: hsl),1);
+  $l: dec(color.channel($color, "lightness", $space: hsl),1);
+  $a: dec(color.channel($color, "alpha", $space: hsl),2);
   $h: string.slice(#{$h},0,-4);
   @if ($a < 1) {
     @return #{hsl(#{$h}, calc(var(--saturation-factor, 1) * #{$s}), $l, $a)};
@@ -38,10 +39,10 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
   @return #{hsl($h, calc(var(--saturation-factor, 1) * #{$s}), $l)};
 }
 @function ssv($color) {
-  $h: dec(hue($color),1);
-  $s: dec(saturation($color),1);
-  $l: dec(lightness($color),1);
-  $a: dec(alpha($color),2);
+  $h: dec(color.channel($color, "hue", $space: hsl),1);
+  $s: dec(color.channel($color, "saturation", $space: hsl),1);
+  $l: dec(color.channel($color, "lightness", $space: hsl),1);
+  $a: dec(color.channel($color, "alpha", $space: hsl),2);
   $h: string.slice(#{$h},0,-4);
   @if ($a < 1) {
     @return #{#{$h}, calc(var(--saturation-factor, 1) * #{$s}), $l, $a};
@@ -6002,7 +6003,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         }
       }
       // my account tab
-      @at-root .accountProfileCard__1fed1 {
+      @at-root .accountProfileCard_a27e58 {
         background: linear-gradient(var(--d8d9), var(--d8dC));
         box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #000a, 0 1px 4px #0008;
         border-radius: 3px;
@@ -6010,12 +6011,12 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
           background: linear-gradient(var(--d8l1), var(--d8l5));
           box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px var(--d8lC), 0 1px 4px #0008;
         }
-        .badgeList__1fed1 {
+        .badgeList_a27e58 {
           padding: 0;
           background: none;
           border-radius: 0;
         }
-        .background__1fed1 {
+        .background_a27e58 {
           background: linear-gradient(var(--d8dC), var(--d8dD) 50%, var(--d8dB) 50%, var(--d8dA));
           box-shadow: inset 0 1px 8px #0008, 0 0 0 1px #fff1, 0 1px #fff2;
           border-radius: 3px;
@@ -6025,7 +6026,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
             box-shadow: inset 0 1px 4px #0006, 0 0 0 1px #fff6, 0 1px #fffb;
           }
         }
-        .fieldList__1fed1 {
+        .fieldList_a27e58 {
           background: #0000;
         }
       }
@@ -10259,7 +10260,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
   }
 }
 @container style(--dtm-08-hide-account-details: true) {
-  .background__1fed1:after {
+  .background_a27e58:after {
     content: "";
     position: absolute;
     bottom: 8px;
@@ -10272,7 +10273,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
     transition: .3s;
     transform-origin: center left;
   }
-  .background__1fed1:hover:after {
+  .background_a27e58:hover:after {
     transform: translate(-500px, 0);
     transition: 8s;
   }
@@ -10292,7 +10293,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
       border-radius: 3px;
     }
   }
-  .theme-dark .background__1fed1:after,
+  .theme-dark .background_a27e58:after,
   .theme-dark .phoneRevealer__2666b:after {
     background: linear-gradient(var(--d8d9), var(--d8d8) 50%, var(--d8d9) 50%, var(--d8dB));
     box-shadow: 0 0 0 1px #000, inset 0 0 0 1px #fff2;

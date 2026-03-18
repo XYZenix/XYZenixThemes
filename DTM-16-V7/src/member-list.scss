@@ -65,6 +65,7 @@
           font-size: 12px;
           text-transform: uppercase;
           color: var(--dtm-16-member-list-header-color);
+          --prefer-16px-icons: true;
           div[role="button"] {
             min-width: 16px;
             min-height: 16px;
@@ -156,11 +157,14 @@
             .wrapper__44b0c { //avatar
               box-shadow: 0 0 0 2px var(--current-activity-color);
               background-color: var(--current-activity-color);
+              transform-origin: top left;
+              transition: transform .2s;
             }
             .userName__0f2e8 {
               margin-top: -6px;
               font-size: 12px;
               line-height: 12px;
+              transition: .2s margin, .2s font-size;
               color: #fff !important;
               >span:not(.nameContainer__703b9) {display:none}
               .name__703b9 {
@@ -264,6 +268,15 @@
               bottom: -1px;
               height: 64px;
               border-radius: 3px;
+            }
+            .wrapper__44b0c {
+              transform: scale(calc(18/16));
+            }
+            .userName__0f2e8 {
+              font-size: 14px;
+              line-height: calc(9/7);
+              margin-left: 2px;
+              margin-top: 0;
             }
           }
         }

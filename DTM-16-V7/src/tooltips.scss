@@ -194,14 +194,16 @@
       }
     }
     @at-root .tooltip__4e35b {
+      --tooltip-color: var(--blurple);
       border-radius: 3px;
       border: none;
       box-shadow: 0 2px 4px 1px rgba(0,0,0,.1);
-      background: var(--blurple);
+      background: var(--tooltip-color, var(--blurple));
       color: #fff;
+      padding: 0;
       padding: 5px 10px;
       .caretFill__4e35b {
-        fill: var(--blurple);
+        fill: var(--tooltip-color, var(--blurple));
         transform: scale(calc(20/24));
         +mask {display:none}
       }
@@ -325,6 +327,47 @@
       .muteText_b1f768 {
         color: #fff !important;
         font-size: 10px;
+      }
+      @container style(--dtm-16-plink: v2017) {
+        --tooltip-color: #000;
+        padding: 8px 12px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+        font-size: 14px;
+        line-height: 1.2;
+        color: #{ss(rgb(220, 221, 222))};
+        .muteText_b1f768 {
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
+    }
+    @at-root #app-mount {
+      @container style(--dtm-16-plink: v2017) {
+        .tooltip_c36707:not(#\#) .tooltipContent_c36707,
+        .tooltip__4e35b {
+          padding: 8px 12px;
+        }
+        .tooltip_c36707:not(#\#), .tooltip__4e35b:not(#\#) {
+          --tooltip-color: #000;
+          border-radius: 5px;
+          box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+          .rowGuildName_b1f768 {
+            font-size: 14px;
+            line-height: 1.2;
+            color: #{ss(rgb(220, 221, 222))}
+          }
+        }
+        .tooltip_c36707:not(#\#) .tooltipContent_c36707,
+        .tooltip__4e35b:not(#\#) .tooltipContent__4e35b {
+          font-size: 14px;
+          line-height: 1.2;
+          color: #{ss(rgb(220, 221, 222))};
+          :is(.tooltipContent__4e35b, .listItemTooltipContent__91816, .muteText_b1f768, .invitesDisabledTooltip_b1f768) {
+            font-size: inherit;
+            line-height: inherit;
+          }
+        }
       }
     }
     // stream preview

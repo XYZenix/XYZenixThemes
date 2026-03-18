@@ -92,20 +92,40 @@
         }
       }
       .channel__972a0 {
-        margin: 0;
+        margin-inline-start: if(
+          style(--dtm-16-plink: v2017): 8px;
+          else: 0;
+        );
         padding: 0;
         border-radius: 0;
         max-width: unset;
         &:after, .shine_ebee1d, .glow_ebee1d {display:none}
-        >.interactive_bf202d {
+        >.interactive__972a0 {
           padding-top: 1px;
           padding-bottom: 1px;
-          border-radius: 0;
+          border-radius: if(
+            style(--dtm-16-plink: v2017): 5px;
+            else: 0;
+          );
           position: relative;
-          &:is(:hover, :active, :focus, .selected_bf202d) {
-            background: var(--dtm-16-channel-bg-selected);
+          &:is(:hover, :active, :focus, .interactiveSelected__972a0) {
+            background: if(
+              style(--dtm-16-plink: v2017): var(--dtm-17-channel-bg-hover);
+              else: var(--dtm-16-channel-bg-selected)
+            );
+          }
+          &.selected_bf202d {
+            background: if(
+              style(--dtm-16-plink: v2017): var(--dtm-17-channel-bg-selected);
+              else: var(--dtm-16-channel-bg-selected)
+            );
+          }
+          &:is(:hover, :active, :focus, .interactiveSelected__972a0) {
             &:before {
-              content: "";
+              content: if(
+                style(--dtm-16-plink: v2017): none;
+                else: "";
+              );
               position: absolute;
               inset: 0 auto 0 0;
               width: 2px;
@@ -129,7 +149,11 @@
             padding: 0;
           }
           .link__972a0 {
-            padding: 0 0 0 20px;
+            padding: 0;
+            padding-inline: if(
+              style(--dtm-16-plink: v2017): 8px;
+              else: #{"20px 0"};
+            );
             height: 42px;
             .content__20a53 {
               opacity: var(--dtm-16-sidebar-item-opacity);
@@ -150,65 +174,81 @@
               font-weight: inherit;
               line-height: inherit;
             }
-            &:is([href="/channels/@me"], [href="/store"], [href="/shop"], [href="/message-requests"], [href="/library"], [href="/family-center"], [href="/channels/@me/activity"], [href="/quest-home"]) {
-              .avatar__20a53 {
-                width: 30px;
-                height: 30px;
-                border-radius: 64px;
-                background-color: #{ss(#4f545c)};
-                background-size: 30px 30px;
-                background-position: center;
-                background-repeat: no-repeat;
-                svg {
-                  display: none;
-                }
-              }
-            }
-            &[href="/store"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='none'%3E%3Cpath fill='%23fff' d='M25.48 48.4a3 3 0 0 1-3 2.94h-1.63a3 3 0 0 1-3-2.94 3 3 0 0 1 3-2.94h1.63a3 3 0 0 1 3 2.94Zm73.82-.8c7.08 14.68.54 32.3-14.98 39.25-14.98 6.68-32.96.27-39.77-14.42a27.96 27.96 0 0 1-2.45-9.34h-6a3 3 0 0 1-3-2.94 3 3 0 0 1 3-2.94h8.72a3 3 0 0 0 3-2.94 3 3 0 0 0-3-2.93h-13.9a3 3 0 0 1-2.99-2.94 3 3 0 0 1 3-2.94h19.34a3 3 0 0 0 3-2.93 3 3 0 0 0-3-2.94h-7.9a4.55 4.55 0 1 1 0-9.08h30.78c10.9.53 21.25 6.68 26.15 17.09Zm-34.43-2.95a16.69 16.69 0 0 0-8.43 22.31c3.95 8.44 14.14 12.15 22.76 8.27a16.69 16.69 0 0 0 8.43-22.3c-3.95-8.45-14.14-12.15-22.76-8.28Zm13.73 5.62 5.44 9.08c.28.53.28.8 0 1.33l-5.44 9.08c-.28.53-.82.53-1.1.53H66.89c-.54 0-.81-.26-1.09-.53l-5.44-9.08c-.28-.53-.28-.8 0-1.33l5.44-9.08c.28-.53.82-.53 1.1-.53h10.6c.54-.27.81 0 1.09.53Z'/%3E%3C/svg%3E")}
-            &[href="/library"] {
-              .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='none'%3E%3Cpath fill='%23fff' d='M78 48 66 60l12 12h22V48M48 78v22h24V78L60 66M42 48H20v24h22l12-12m18-18V20H48v22l12 12 12-12Z'/%3E%3C/svg%3E")}
-              .progressContainer__81ae5 {
-                .progressCircle__28edc {
-                  width: 24px;
-                  height: 24px;
-                  .circleOverlay__28edc {
-                    width: 20px;
-                    height: 20px;
-                    overflow: visible;
-                    margin-top: -4px;
-                    margin-left: -4px;
-                  }
-                  .circleBackgroundAlt__68862 {
-                    fill: var(--background-tertiary);
-                    cx: 10;
-                    cy: 10;
-                    r: 12;
-                  }
-                  .circleBackground__68862 {
-                    fill: var(--background-primary);
-                    cx: 10;
-                    cy: 10;
-                    r: 10;
-                  }
-                  .circleProgress__68862 {
-                    cx: 10;
-                    cy: 10;
-                    r: 11;
-                    stroke-width: 2px;
-                  }
-                  .downloadIcon__81ae5 {
-                    width: 16px;
-                    height: 16px;
+            @container style(--dtm-16-plink: v2015) or style(--dtm-16-plink: v2016) {
+              &:is([href="/channels/@me"], [href="/store"], [href="/shop"], [href="/message-requests"], [href="/library"], [href="/family-center"], [href="/channels/@me/activity"], [href="/quest-home"], [href="/icymi"]) {
+                .avatar__20a53 {
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 64px;
+                  background-color: #{ss(#4f545c)};
+                  background-size: 30px 30px;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  svg {
+                    display: none;
                   }
                 }
               }
+              &[href="/store"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='none'%3E%3Cpath fill='%23fff' d='M25.48 48.4a3 3 0 0 1-3 2.94h-1.63a3 3 0 0 1-3-2.94 3 3 0 0 1 3-2.94h1.63a3 3 0 0 1 3 2.94Zm73.82-.8c7.08 14.68.54 32.3-14.98 39.25-14.98 6.68-32.96.27-39.77-14.42a27.96 27.96 0 0 1-2.45-9.34h-6a3 3 0 0 1-3-2.94 3 3 0 0 1 3-2.94h8.72a3 3 0 0 0 3-2.94 3 3 0 0 0-3-2.93h-13.9a3 3 0 0 1-2.99-2.94 3 3 0 0 1 3-2.94h19.34a3 3 0 0 0 3-2.93 3 3 0 0 0-3-2.94h-7.9a4.55 4.55 0 1 1 0-9.08h30.78c10.9.53 21.25 6.68 26.15 17.09Zm-34.43-2.95a16.69 16.69 0 0 0-8.43 22.31c3.95 8.44 14.14 12.15 22.76 8.27a16.69 16.69 0 0 0 8.43-22.3c-3.95-8.45-14.14-12.15-22.76-8.28Zm13.73 5.62 5.44 9.08c.28.53.28.8 0 1.33l-5.44 9.08c-.28.53-.82.53-1.1.53H66.89c-.54 0-.81-.26-1.09-.53l-5.44-9.08c-.28-.53-.28-.8 0-1.33l5.44-9.08c.28-.53.82-.53 1.1-.53h10.6c.54-.27.81 0 1.09.53Z'/%3E%3C/svg%3E")}
+              &[href="/library"] {
+                .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='none'%3E%3Cpath fill='%23fff' d='M78 48 66 60l12 12h22V48M48 78v22h24V78L60 66M42 48H20v24h22l12-12m18-18V20H48v22l12 12 12-12Z'/%3E%3C/svg%3E")}
+                .progressContainer__81ae5 {
+                  .progressCircle__28edc {
+                    width: 24px;
+                    height: 24px;
+                    .circleOverlay__28edc {
+                      width: 20px;
+                      height: 20px;
+                      overflow: visible;
+                      margin-top: -4px;
+                      margin-left: -4px;
+                    }
+                    .circleBackgroundAlt__68862 {
+                      fill: var(--background-tertiary);
+                      cx: 10;
+                      cy: 10;
+                      r: 12;
+                    }
+                    .circleBackground__68862 {
+                      fill: var(--background-primary);
+                      cx: 10;
+                      cy: 10;
+                      r: 10;
+                    }
+                    .circleProgress__68862 {
+                      cx: 10;
+                      cy: 10;
+                      r: 11;
+                      stroke-width: 2px;
+                    }
+                    .downloadIcon__81ae5 {
+                      width: 16px;
+                      height: 16px;
+                    }
+                  }
+                }
+              }
+              &[href="/channels/@me"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='none'%3E%3Cg clip-path='url(%23a)' clip-rule='evenodd'%3E%3Cpath stroke='%23fff' stroke-width='8' d='M47.34 88C27.82 87.96 28 82.76 28 82.76s.26-6.88 1.2-8.86c.96-1.98 14.1-6.04 14.1-6.04l.06-1.45c-5.6-2.18-8.91-9.63-8.91-18.5 0-10.47 5.75-15.8 12.89-15.9l.2-.01c7.15.1 12.9 5.44 12.9 15.91 0 8.87-3.31 16.32-8.92 18.5l.05 1.45s13.17 4.06 14.12 6.04c.95 1.98 1.21 8.86 1.21 8.86s.18 5.2-19.36 5.24h-.2Z'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M68 44c0-2.2 1.75-4 4.01-4H92a4 4 0 1 1 0 8H72a4 4 0 0 1-4-4Zm4 12a4 4 0 0 1 3.96-4h16.08a4 4 0 0 1 0 8H75.96A3.97 3.97 0 0 1 72 56Zm4 12a4 4 0 0 1 4-4h12a4 4 0 1 1 0 8H80a4 4 0 0 1-4-4Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M24 28h72v64H24z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")}
+              &[href="/message-requests"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23fff' d='M24 6H8a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm-7 12h-2v-2h2v2Zm1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2Z'/%3E%3C/svg%3E")}
+              &[href="/shop"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23fff' d='M16 17a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm4 5h2v-9.3a4.5 4.5 0 0 0 2 .3v9h2v4H6v-4h2v-9a4.5 4.5 0 0 0 2-.3V22h2v-2c0-1.3 2.7-2 4-2 1.3 0 4 .7 4 2v2ZM6 6h20v2.5a2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0V6Z'/%3E%3C/svg%3E")}
+              &[href="/family-center"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='none' viewBox='-3 -3 30 30'%3E%3Cpath fill='%23fff' d='M15.77 13.68a6.08 6.08 0 0 0-.74-.63c.35-.03.68-.05.97-.05 2.33 0 7 1.17 7 3.5V19h-4v-1c0-1.88-1.4-3.32-3.23-4.32ZM14.33 5.5A2.99 2.99 0 0 1 19 8a2.99 2.99 0 0 1-4.66 2.5 4.98 4.98 0 0 0 0-5ZM9 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4Z'/%3E%3C/svg%3E")}
+              &[href="/channels/@me/activity"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M10 16V8l5 4zm2-12a8 8 0 1 0 0 16 8 8 0 0 0 0-16'/%3E%3C/svg%3E")}
+              &[href="/quest-home"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M8.6 19.3a7 7 0 0 1 6.8 0A.8.8 0 0 0 16 18l-1.4-.7 1.1-.8a3 3 0 0 0 4.2-1.3l-.2-.7a3 3 0 0 0-1.5-.6 3 3 0 0 0 2-3l-.6-.6-1.2.2a3 3 0 0 0 .4-4l-.7-.2A3 3 0 0 0 17 7.5a3 3 0 0 0-3.7-3l-.4.6a3 3 0 0 0 2.7 3.1 6 6 0 0 1 1 3.4c0 2.8-2 4.9-4.5 4.9-2.4 0-4.5-2.1-4.5-4.9a6 6 0 0 1 1-3.4 3 3 0 0 0 2.8-3l-.5-.6a3 3 0 0 0-3.7 3 3 3 0 0 0-1.3-1.3l-.7.2a3 3 0 0 0 .4 4l-1.2-.2-.5.6v.2a3 3 0 0 0 2 2.8q-.9 0-1.6.6-.3.2-.2.7a3 3 0 0 0 4.2 1.3l1.1.8L8 18a.8.8 0 1 0 .7 1.3'/%3E%3C/svg%3E")}
+              &[href="/icymi"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M 11 15 H 6 L 13 1 V 9 H 18 L 11 23 V 15 Z'/%3E%3C/svg%3E")}
             }
-            &[href="/channels/@me"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' fill='none'%3E%3Cg clip-path='url(%23a)' clip-rule='evenodd'%3E%3Cpath stroke='%23fff' stroke-width='8' d='M47.34 88C27.82 87.96 28 82.76 28 82.76s.26-6.88 1.2-8.86c.96-1.98 14.1-6.04 14.1-6.04l.06-1.45c-5.6-2.18-8.91-9.63-8.91-18.5 0-10.47 5.75-15.8 12.89-15.9l.2-.01c7.15.1 12.9 5.44 12.9 15.91 0 8.87-3.31 16.32-8.92 18.5l.05 1.45s13.17 4.06 14.12 6.04c.95 1.98 1.21 8.86 1.21 8.86s.18 5.2-19.36 5.24h-.2Z'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M68 44c0-2.2 1.75-4 4.01-4H92a4 4 0 1 1 0 8H72a4 4 0 0 1-4-4Zm4 12a4 4 0 0 1 3.96-4h16.08a4 4 0 0 1 0 8H75.96A3.97 3.97 0 0 1 72 56Zm4 12a4 4 0 0 1 4-4h12a4 4 0 1 1 0 8H80a4 4 0 0 1-4-4Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M24 28h72v64H24z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")}
-            &[href="/message-requests"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23fff' d='M24 6H8a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm-7 12h-2v-2h2v2Zm1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5.1-.2.2-.5.2-.7 0-.3-.1-.5-.3-.7-.2-.2-.5-.3-.8-.3-.3 0-.5.1-.7.2-.2.1-.3.3-.3.6h-2c.1-.7.4-1.3.9-1.7.5-.4 1.2-.5 2.1-.5.9 0 1.7.2 2.2.6.5.4.8 1 .8 1.7.1.4 0 .8-.3 1.2Z'/%3E%3C/svg%3E")}
-            &[href="/shop"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23fff' d='M16 17a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm4 5h2v-9.3a4.5 4.5 0 0 0 2 .3v9h2v4H6v-4h2v-9a4.5 4.5 0 0 0 2-.3V22h2v-2c0-1.3 2.7-2 4-2 1.3 0 4 .7 4 2v2ZM6 6h20v2.5a2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0 2.5 2.5 0 0 1-5 0V6Z'/%3E%3C/svg%3E")}
-            &[href="/family-center"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='none' viewBox='-3 -3 30 30'%3E%3Cpath fill='%23fff' d='M15.77 13.68a6.08 6.08 0 0 0-.74-.63c.35-.03.68-.05.97-.05 2.33 0 7 1.17 7 3.5V19h-4v-1c0-1.88-1.4-3.32-3.23-4.32ZM14.33 5.5A2.99 2.99 0 0 1 19 8a2.99 2.99 0 0 1-4.66 2.5 4.98 4.98 0 0 0 0-5ZM9 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4Z'/%3E%3C/svg%3E")}
-            &[href="/channels/@me/activity"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M10 16V8l5 4zm2-12a8 8 0 1 0 0 16 8 8 0 0 0 0-16'/%3E%3C/svg%3E")}
-            &[href="/quest-home"] .avatar__20a53 {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M8.6 19.3a7 7 0 0 1 6.8 0A.8.8 0 0 0 16 18l-1.4-.7 1.1-.8a3 3 0 0 0 4.2-1.3l-.2-.7a3 3 0 0 0-1.5-.6 3 3 0 0 0 2-3l-.6-.6-1.2.2a3 3 0 0 0 .4-4l-.7-.2A3 3 0 0 0 17 7.5a3 3 0 0 0-3.7-3l-.4.6a3 3 0 0 0 2.7 3.1 6 6 0 0 1 1 3.4c0 2.8-2 4.9-4.5 4.9-2.4 0-4.5-2.1-4.5-4.9a6 6 0 0 1 1-3.4 3 3 0 0 0 2.8-3l-.5-.6a3 3 0 0 0-3.7 3 3 3 0 0 0-1.3-1.3l-.7.2a3 3 0 0 0 .4 4l-1.2-.2-.5.6v.2a3 3 0 0 0 2 2.8q-.9 0-1.6.6-.3.2-.2.7a3 3 0 0 0 4.2 1.3l1.1.8L8 18a.8.8 0 1 0 .7 1.3'/%3E%3C/svg%3E")}
+            @container style(--dtm-16-plink: v2017) {
+              &:is([href="/channels/@me"], [href="/store"], [href="/shop"], [href="/message-requests"], [href="/library"], [href="/family-center"], [href="/channels/@me/activity"], [href="/quest-home"], [href="/icymi"]) {
+                .avatar__20a53 {
+                  svg {
+                    width: 24px;
+                    height: 24px;
+                    path[d="M2.63 4.19A3 3 0 0 1 5.53 2H7a1 1 0 0 1 1 1v3.98a3.07 3.07 0 0 1-.3 1.35A2.97 2.97 0 0 1 4.98 10c-2 0-3.44-1.9-2.9-3.83l.55-1.98ZM10 2a1 1 0 0 0-1 1v4a3 3 0 0 0 3 3 3 3 0 0 0 3-2.97V3a1 1 0 0 0-1-1h-4ZM17 2a1 1 0 0 0-1 1v3.98a3.65 3.65 0 0 0 0 .05A2.95 2.95 0 0 0 19.02 10c2 0 3.44-1.9 2.9-3.83l-.55-1.98A3 3 0 0 0 18.47 2H17Z"] {
+                      d: path("");
+                    }
+                  }
+                }
+              }
+            }
           }
           .marketingButtonBackground__4ed1a {
             display: none;
@@ -219,14 +259,16 @@
             margin-left: -1px;
             margin-right: -1px;
           }
-          &:is(:hover, :active, :focus) .link__972a0:is([href="/channels/@me"], [href="/store"], [href="/shop"], [href="/library"], [href="/message-requests"], [href="/family-center"], [href="/channels/@me/activity"], [href="/quest-home"]) {
-            .avatar__20a53 {
-              background-color: #{ss(rgba(114,137,218,.25))};
+          @container style(--dtm-16-plink: v2015) or style(--dtm-16-plink: v2016) {
+            &:is(:hover, :active, :focus) .link__972a0:is([href="/channels/@me"], [href="/store"], [href="/shop"], [href="/library"], [href="/message-requests"], [href="/family-center"], [href="/channels/@me/activity"], [href="/quest-home"]) {
+              .avatar__20a53 {
+                background-color: #{ss(rgba(114,137,218,.25))};
+              }
             }
-          }
-          &.selected_bf202d .link__972a0:is([href="/channels/@me"], [href="/store"], [href="/shop"], [href="/library"], [href="/message-requests"], [href="/family-center"], [href="/channels/@me/activity"], [href="/quest-home"]) {
-            .avatar__20a53 {
-              background-color: var(--blurple);
+            &.selected_bf202d .link__972a0:is([href="/channels/@me"], [href="/store"], [href="/shop"], [href="/library"], [href="/message-requests"], [href="/family-center"], [href="/channels/@me/activity"], [href="/quest-home"]) {
+              .avatar__20a53 {
+                background-color: var(--blurple);
+              }
             }
           }
           // badge
@@ -589,6 +631,12 @@
             :is(.name__2ea32, .children__2ea32) {
               opacity: var(--dtm-16-sidebar-item-opacity);
             }
+          }
+          .children__2ea32 {
+            --prefer-16px-icons: if(
+              style(--dtm-16-plink: v2017): false;
+              else: true;
+            );
           }
           .iconContainer__2ea32 {
             color: var(--header-primary);
