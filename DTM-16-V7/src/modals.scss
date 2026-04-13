@@ -1324,39 +1324,48 @@
             border-color: #{ss(rgba(28,36,43,.8))}
           }
         }
-        :is(.jumpButton_e8b59c, .actionButtons_e8b59c button):not(#\#) {
-          background: #ebebeb;
-          color: #{ss(rgba(115,127,141,.6))};
-          transition: .2s color;
-          font-weight: 600;
-          font-size: 11px;
-          border-radius: 3px;
-          border: none;
-          padding: 2px 8px;
-          min-width: 0;
-          min-height: 0;
-          width: auto;
-          height: auto;
-          &:hover {color: #{ss(#737f8d)}}
-          .theme-dark & {
-            background: #{ss(#535559)};
-            color: hsla(0,0%,100%,.3);
+        .actionButtons_e8b59c {
+          gap: 0;
+          .buttonContainer_e8b59c {
+            background: none !important;
+            border-radius: 0;
           }
-          +:is(.button__201d5, button) {
-            opacity: .3;
-            padding: 2px;
-            transform: scale(.8);
-            transition: opacity .1s;
-            .theme-dark & {color: #fff}
-            &:hover {opacity: .6}
-          }
-          :is(.buttonChildrenWrapper_a22cb0, .buttonChildren_a22cb0, [data-text-variant]):not(#\#) {
-            padding: 0;
+          button:not(#\#) {
+            background: #ebebeb;
+            color: #{ss(rgba(115,127,141,.6))};
+            transition: .2s color;
+            font-weight: 600;
+            font-size: 11px;
+            border-radius: 3px;
+            border: none;
+            padding: 2px 8px;
+            aspect-ratio: unset;
             min-width: 0;
             min-height: 0;
             width: auto;
             height: auto;
-            font-size: inherit !important;
+            &:hover {color: #{ss(#737f8d)}}
+            &:not(.hasText_a22cb0) {
+              background: none !important;
+              opacity: .3;
+              padding: 4px;
+              transform: scale(.8);
+              transition: opacity .1s;
+              .theme-dark & {color: #fff !important}
+              &:hover {opacity: .6}
+            }
+            .theme-dark & {
+              background: #{ss(#535559)};
+              color: hsla(0,0%,100%,.3);
+            }
+            :is(.buttonChildrenWrapper_a22cb0, .buttonChildren_a22cb0, [data-text-variant]):not(#\#) {
+              padding: 0;
+              min-width: 0;
+              min-height: 0;
+              width: auto;
+              height: auto;
+              font-size: inherit !important;
+            }
           }
         }
       }

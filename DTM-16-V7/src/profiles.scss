@@ -501,7 +501,7 @@
         }
       }
       // about me
-      div:has(>.descriptionClamp_f5f93a) {
+      section:has(>.descriptionClamp_f5f93a) {
         order: 5;
         background: var(--override-background-secondary);
         padding: 14px 10px 0 10px;
@@ -719,82 +719,125 @@
         position: unset !important;
       }
       // activity
-      .card__39ec2 {
-        border-radius: 0;
-        padding: 10px;
-        background: rgba(0,0,0,0.05) !important;
-        box-shadow: none !important;
-        --text-strong: rgba(255 255 255/1);
-        --text-normal: rgba(255 255 255/.8);
-        --text-default: rgba(255 255 255/.8);
-        --text-positive: rgba(255 255 255/.8);
-        --text-secondary: rgba(255 255 255/.8);
-        --text-subtle: rgba(255 255 255/.8);
-        --text-feedback-positive: rgba(255 255 255/.8);
-        --interactive-normal: rgba(255 255 255/.8);
-        .contentImage_ef9ae7 path {
-          fill: white;
-        }
-        .header__39ec2 .headerText__39ec2 {
-          font-size: 11px;
-          font-weight: 600;
-          text-transform: uppercase;
-          color: rgba(255 255 255) !important;
-        }
-        .overflow__82b15 {
-          margin-top: 1px;
-        }
-        .details__39ec2 .overflow_b0dfc2 {
-          font-weight: normal;
-        }
-        .live_a7acae {
-          background: #fff !important;
-          color: var(--blurple);
-          border-radius: 2px;
-        }
-        .preview__3299f {
-          background: rgba(0 0 0/.1);
-          border-radius: 2px;
-          >img {
-            margin-left: 16px;
-            margin-right: 16px;
+      @container style(--dtm-16-orp: false) {
+        .card__39ec2 {
+          border-radius: 0;
+          padding: 10px;
+          background: rgba(0,0,0,0.05) !important;
+          box-shadow: none !important;
+          --text-strong: rgba(255 255 255/1);
+          --text-normal: rgba(255 255 255/.8);
+          --text-default: rgba(255 255 255/.8);
+          --text-positive: rgba(255 255 255/.8);
+          --text-secondary: rgba(255 255 255/.8);
+          --text-subtle: rgba(255 255 255/.8);
+          --text-feedback-positive: rgba(255 255 255/.8);
+          --interactive-normal: rgba(255 255 255/.8);
+          .contentImage_ef9ae7 path {
+            fill: white;
+          }
+          .header__39ec2 .headerText__39ec2 {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: rgba(255 255 255) !important;
+          }
+          .overflow__82b15 {
+            margin-top: 1px;
+          }
+          .details__39ec2 .overflow_b0dfc2 {
+            font-weight: normal;
+          }
+          .live_a7acae {
+            background: #fff !important;
+            color: var(--blurple);
+            border-radius: 2px;
+          }
+          .preview__3299f {
+            background: rgba(0 0 0/.1);
+            border-radius: 2px;
+            >img {
+              margin-left: 16px;
+              margin-right: 16px;
+              border-radius: 3px;
+            }
+          }
+          :is(.imagePosition_ef9ae7, .clickableImage__39ec2) {
+            border-radius: 2px;
+          }
+          .overlayText__3299f {
             border-radius: 3px;
           }
+          .voiceChannel__39ec2 {
+            gap: 2px;
+          }
+          .voiceIcon__39ec2 {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            --prefer-16px-icons: true;
+          }
+          .voiceChannelOverflowCount__39ec2 {
+            box-shadow: inset 0 0 0 1px rgba(255 255 255/.4);
+            background: none;
+          }
         }
-        :is(.imagePosition_ef9ae7, .clickableImage__39ec2) {
-          border-radius: 2px;
-        }
-        .overlayText__3299f {
-          border-radius: 3px;
-        }
-        .voiceChannel__39ec2 {
-          gap: 2px;
-        }
-        .voiceIcon__39ec2 {
-          width: 16px;
-          height: 16px;
-          margin-right: 4px;
-          --prefer-16px-icons: true;
-        }
-        .voiceChannelOverflowCount__39ec2 {
-          box-shadow: inset 0 0 0 1px rgba(255 255 255/.4);
-          background: none;
+        .showMoreButtonContainer__84832 {
+          .showMoreButton__84832 {
+            margin: 0;
+            background: rgba(255 255 255/0) !important;
+            box-shadow: inset 0 1px rgba(255 255 255/.1);
+            &:hover {
+              box-shadow: none;
+              background: rgba(255 255 255/.1) !important;
+            }
+            &:active {background: rgba(255 255 255/.2) !important}
+            transition: .2s box-shadow, .2s background;
+            border-radius: 0;
+            color: #fff !important;
+            transform: none !important;
+          }
         }
       }
-      .showMoreButtonContainer__84832 {
-        .showMoreButton__84832 {
-          margin: 0;
-          background: rgba(255 255 255/0) !important;
-          box-shadow: inset 0 1px rgba(255 255 255/.1);
-          &:hover {
-            box-shadow: none;
-            background: rgba(255 255 255/.1) !important;
+      @container style(--dtm-16-orp: true) {
+        .card__39ec2 {
+          background: var(--override-background-secondary);
+          border-bottom: solid 1px var(--override-background-tertiary);
+          .header__39ec2 {
+            color: var(--override-header-secondary);
           }
-          &:active {background: rgba(255 255 255/.2) !important}
-          transition: .2s box-shadow, .2s background;
-          border-radius: 0;
-          color: #fff !important;
-          transform: none !important;
+          .headerText__39ec2 {
+            color: inherit !important;
+          }
+          .content__39ec2 {
+            gap: 12px;
+          }
+          .details__39ec2 {
+            gap: 0;
+            --text-subtle: var(--override-text-muted);
+            --text-default: var(--override-text-muted);
+            html.theme-dark & {
+              --text-subtle: var(--override-text-normal);
+              --text-default: var(--override-text-normal);
+            }
+            [data-text-variant="heading-sm/semibold"] {
+              font-size: 12px;
+              font-weight: 600;
+              line-height: 15px;
+              color: var(--override-interactive-active) !important;
+            }
+            [data-text-variant="text-xs/normal"] {
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 15px;
+            }
+          }
+        }
+        // facepile
+        .container_e928f4 {
+          border-radius: 3px;
+          border-color: #0000;
+          background: var(--blurple);
         }
       }
       // spotify icon
@@ -815,6 +858,8 @@
         justify-content: stretch;
         .button_a22cb0 {
           padding: 10px;
+          min-height: 32px;
+          height: 32px;
           &.secondary_a22cb0 {
             background: #0000;
             border: solid 1px rgba(255 255 255/.3);
@@ -1067,6 +1112,10 @@
         }
       }
     }
+    // game col
+    .innerContainer_c2a763 {
+      background: rgba(0 0 0/.05);
+    }
     // status picker
     .body_af7fb7 {
       padding: 0 !important;
@@ -1264,6 +1313,17 @@
       [data-text-variant="text-sm/medium"] {
         color: var(--yellow) !important;
         font-size: 12px;
+      }
+    }
+    .container_db1863 {
+      border: none;
+      border-radius: 0;
+      background: rgba(0 0 0/.05);
+      .text_db1863, a {
+        color: #fff;
+      }
+      a {
+        font-weight: 600;
       }
     }
   }
@@ -2638,6 +2698,11 @@
               // orb
               &[src$="/badge-icons/83d8a1eb09a8d64e59233eec5d4d5c2d.png"] {
                 content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23fff"><path fill-rule="evenodd" d="M11.53.1q.47-.2.93 0l7.62 3.15q.46.2.66.66l3.16 7.62q.18.47 0 .93l-3.16 7.62q-.2.46-.66.66l-7.62 3.16q-.46.18-.93 0l-7.62-3.16q-.46-.2-.66-.66L.1 12.46a1.2 1.2 0 0 1 0-.93l3.16-7.62q.2-.46.66-.66zm.86 3.23a.57.57 0 0 0-.8 0L3.33 11.6a.57.57 0 0 0 0 .8l8.26 8.27c.22.22.58.22.8 0l8.27-8.27a.57.57 0 0 0 0-.8z" clip-rule="evenodd"/><path d="M12.42 7.64a5.2 5.2 0 0 0 3.93 3.95.4.4 0 0 1 .33.41.4.4 0 0 1-.33.42 5.2 5.2 0 0 0-3.93 3.93.4.4 0 0 1-.42.33.4.4 0 0 1-.41-.33 5.2 5.2 0 0 0-3.94-3.93.4.4 0 0 1-.34-.42.4.4 0 0 1 .34-.41 5.2 5.2 0 0 0 3.94-3.94.4.4 0 0 1 .4-.34.4.4 0 0 1 .43.33"/></svg>');
+              }
+              // lmo
+              &[src$="/badge-icons/ca105ad9cfc8580c765101d17bbb2323.png"] {
+                // low budget replacement
+                filter: brightness(10);
               }
               // vendor
               &[src="https://cdn.discordapp.com/emojis/1092089799109775453.png?size=64"] {
