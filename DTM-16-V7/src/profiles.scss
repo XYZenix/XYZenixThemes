@@ -67,6 +67,7 @@
       --background-tertiary: var(--override-background-tertiary) !important;
       --override-background-primary: #fff;
       --override-background-secondary: #{ss(#fbfbfb)};
+      --override-background-tertiary: #{ss(#e3e5e8)};
       --override-header-primary: #{ss(#060607)};
       --override-header-secondary: #{ss(#87909c)};
       --override-interactive-normal: #{ss(#4f5660)};
@@ -803,6 +804,7 @@
         .card__39ec2 {
           background: var(--override-background-secondary);
           border-bottom: solid 1px var(--override-background-tertiary);
+          --custom-lift-hover: 0;
           .header__39ec2 {
             color: var(--override-header-secondary);
           }
@@ -850,12 +852,22 @@
               &:active {background: var(--blurple-active)}
             }
           }
+          .voiceChannel__39ec2 {
+            --text-subtle: var(--override-text-normal);
+          }
         }
         // facepile
         .container_e928f4 {
           border-radius: 3px;
           border-color: #0000;
           background: var(--blurple);
+        }
+        // more
+        .container__9d597 {
+          padding-bottom: 0;
+        }
+        .backgroundCardContainer__9d597 {
+          display: none; // i don't feel like it
         }
       }
       // spotify icon
@@ -878,6 +890,9 @@
           padding: 10px;
           min-height: 32px;
           height: 32px;
+          span {
+            font-size: 14px;
+          }
           &.secondary_a22cb0 {
             background: #0000;
             border: solid 1px rgba(255 255 255/.3);
