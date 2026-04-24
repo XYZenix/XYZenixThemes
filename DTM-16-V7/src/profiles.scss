@@ -376,7 +376,7 @@
             color: #fff;
           }
           // bot badge
-          .botTag__82f07 {
+          @at-root .outer_c0bea0 .botTag__82f07 {
             background: #fff;
             --white: var(--blurple);
             span {
@@ -411,7 +411,7 @@
             order: -10;
             margin-bottom: 8px;
           }
-          .chipletContainerInner__10651 {
+          @at-root :is(.themeContainer_ce8328, .themeContainer__5be3e) .chipletContainerInner__10651 {
             background: rgba(255 255 255/.1);
             .text__10651 {
               color: rgba(255 255 255/.5) !important;
@@ -850,7 +850,22 @@
               background: var(--blurple);
               &:hover {background: var(--blurple-hover)}
               &:active {background: var(--blurple-active)}
+              .buttonChildren_a22cb0 {
+                gap: 8px;
+              }
+              svg[viewBox="0 0 24 24"] {
+                width: 16px;
+                height: 16px;
+                color: #fff;
+                [fill] {
+                  fill: currentColor;
+                }
+              }
             }
+          }
+          .customButtons__39ec2:not(#\#) {
+            display: flex;
+            flex-direction: column;
           }
           .voiceChannel__39ec2 {
             --text-subtle: var(--override-text-normal);
@@ -1158,7 +1173,7 @@
         width: 0;
       }
       // username shit
-      @at-root .themeContainer_ce8328 {
+      @at-root :is(.themeContainer_ce8328, .outer_c0bea0) {
         .container__63ed3 {
           order: -20;
           --header-primary: rgba(255 255 255) !important;
@@ -1169,14 +1184,38 @@
         .button_fb7f94.hover_fb7f94 {
           opacity: 1;
         }
-        .usernameRow__63ed3, .tags__63ed3 {
+        :is(.displayNameRow__26b1f, .usernameAndPronounsRow__26b1f, .usernameRow__63ed3, .tags__63ed3) {
+          --header-primary: rgba(255 255 255) !important;
+          --text-normal: rgba(255 255 255/.75) !important;
+          --interactive-normal: rgba(255 255 255/.75) !important;
+          --interactive-hover: rgba(255 255 255) !important;
           text-align: center;
           justify-content: center;
+        }
+        .displayNameTrailing__26b1f,
+        .container__8061a {
+          display: none;
         }
         .body_af7fb7 {
           >div[aria-hidden="true"] {
             display: none;
           }
+        }
+      }
+      @at-root .user-profile-popout.outer_c0bea0 div:has(>.displayNameRow__26b1f) {
+        margin-bottom: 8px;
+        order: -20;
+        .displayName__26b1f {
+          font-size: 16px;
+          line-height: 19px;
+          font-weight: 400;
+          color: #fff;
+        }
+        .userTag__26b1f {
+          font-size: 14px;
+          line-height: auto;
+          font-weight: 400;
+          color: rgba(255 255 255/.6);
         }
       }
       // status shit
@@ -1473,6 +1512,9 @@
       .content_ab8609 {
         max-height: unset !important;
       }
+    }
+    section:has(>.descriptionClamp_f5f93a) {
+      display: none;
     }
     .dotSpacer__63ed3, .dotSpacer__63ed3~* {
       display: none;
@@ -1948,7 +1990,7 @@
       .mask__68edb {
         position: unset;
         grid-area: banner;
-        @media (max-height: 700px) {display:none}
+        @media (max-height: 700px) {height:0!important;max-height:0!important;min-height:0!important}
         >foreignObject {
           @include mask(none);
         }
@@ -2089,7 +2131,7 @@
             min-height: 30px;
           }
         }
-        .container__63ed3 {
+        .container__63ed3, .userInfo__24502 {
           grid-area: username;
           padding: 0;
           margin: 0;
@@ -2143,6 +2185,9 @@
             }
             +.container__8061a, +span+.container__8061a {display:none}
           }
+        }
+        .displayNameRow__26b1f, .usernameAndPronounsRow__26b1f {
+          justify-content: start;
         }
         .container_d1d9f3 {
           display: contents;
@@ -2584,7 +2629,7 @@
           order: 999;
         }
         // name section
-        .container__63ed3 {
+        .container__63ed3, div:has(>.displayNameRow__26b1f) {
           background: var(--profile-theme-color-default);
           padding: 16px;
           text-align: center;
@@ -2592,14 +2637,15 @@
           top: 0;
           z-index: 2;
           --text-default: #fff;
+          --text-strong: #fff;
           --text-muted: rgba(255 255 255/.8);
           --header-primary: #fff;
-          .usernameRow__63ed3 {
+          .usernameRow__63ed3, .displayNameRow__26b1f {
             justify-content: center;
           }
-          .tags__63ed3 {
+          :is(.tags__63ed3, .usernameAndPronounsRow__26b1f) {
             flex-direction: column;
-            .dotSpacer__63ed3 {display:none}
+            :is(.dotSpacer__63ed3, .dotSpacer__26b1f) {display:none}
             .vc-platform-indicator {
               background: #fff;
               border-radius: 3px;
@@ -2830,6 +2876,43 @@
           height: 0;
         }
       }
+    }
+  }
+}
+@at-root {
+  .profilePopout__1add6 {
+    width: 250px;
+    .profileBanner__1add6 {
+      height: 88px;
+      margin-bottom: -88px;
+    }
+    .profileAvatar__1add6 {
+      margin: 72px auto 0;
+      width: 98px;
+      height: 98px;
+      border-width: 4px;
+      position: relative;
+      isolation: isolate;
+      &:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        border-radius: inherit;
+        background: inherit;
+        animation: inherit;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -10;
+        border-radius: 999px;
+        background: var(--background-surface-high);
+      }
+    }
+    .profileHeader__1add6 {
+      align-items: center;
     }
   }
 }
