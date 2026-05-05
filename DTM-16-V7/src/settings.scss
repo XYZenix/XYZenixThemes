@@ -231,12 +231,11 @@
           }
         }
         .toolsContainer__23e6b {
-          position: absolute;
-          bottom: -75px;
+          position: fixed;
+          inset: auto 0 0 0;
           height: 75px;
-          left: 0;
-          right: unset;
           width: 712px;
+          z-index: 2;
           background: var(--dtm-16-settings-footer-bg);
           border-top: solid 1px var(--dtm-16-settings-footer-border);
           .tools__23e6b {
@@ -258,16 +257,16 @@
               &:hover {background: var(--blurple-hover)}
               &:active {background: var(--blurple-active)}
               svg {display:none}
-              &::before {
-                position: fixed;
-                top: -100vh;
-                left: -100vw;
-                width: 200vw;
-                height: 200vw;
-                content: '';
-                cursor: default;
-                z-index: -1;
-              }
+              // &::before {
+              //   position: fixed;
+              //   top: -100vh;
+              //   left: -100vw;
+              //   width: 200vw;
+              //   height: 200vw;
+              //   content: '';
+              //   cursor: default;
+              //   z-index: -1;
+              // }
               &:after {
                 content:"Done";
                 font-size: 16px;
@@ -283,9 +282,9 @@
           }
         }
         .contentRegion__23e6b {
-          margin-bottom: 75px;
           width: 712px;
           border-top-right-radius: 5px;
+          will-change: transform;
           .contentTransitionWrap__23e6b {
             width: 712px;
             border-top-right-radius: 8px;
@@ -293,9 +292,16 @@
           .contentRegionScroller__23e6b {
             border-top-right-radius: 8px;
             margin-top: 0;
+            padding-bottom: 80px !important;
+            &:has(>#roles-tab) {
+              overflow: hidden !important;
+            }
             &::-webkit-scrollbar {
               width: 14px;
               height: 14px;
+              &, &-track {
+                margin-bottom: 74px;
+              }
               &-track, &-thumb {
                 border-width: 3px;
               }
@@ -1469,6 +1475,7 @@
             // server settings tabs
             &#roles-tab {
               padding: 0;
+              overflow: hidden !important;
               .customScroller__23e6b {
                 overflow: visible !important;
                 min-height: max-content;
@@ -1488,15 +1495,6 @@
                     border-radius: 8px;
                     background-clip: padding-box;
                   }
-                }
-              }
-              .content_d125d2 {
-                min-width: unset;
-                max-width: unset;
-                margin: 0;
-                >div[aria-hidden="true"] {display:none}
-                >div>[data-text-variant="heading-lg/semibold"], >div>.description_db0ee9 {
-                  display: none;
                 }
               }
               .infobox__63c3c { // TODO: remove this after migration ends
@@ -1698,6 +1696,7 @@
               }
               .page__91dc3 {
                 position: absolute;
+                max-height: calc(100% - 75px);
                 .sidebar_e29cd7 .list_e29cd7 {
                   margin-bottom: 193px;
                   padding-bottom: 10px;
@@ -2316,6 +2315,15 @@
                 }
               }
             }
+            &#stickers-tab {
+              .tiers_a36dee {
+                max-width: 580px;
+              }
+              .grid_d87d30 {
+                padding: 0;
+                gap: 0;
+              }
+            }
             // slop perks tab
             &#boost_perks-tab {
               :is(.avatarUploaderDisabled_e04502, .avatarUploader_e04502) {
@@ -2482,6 +2490,17 @@
               }
             }
           }
+          .content_d125d2 {
+            min-width: unset;
+            max-width: unset;
+            padding: 40px;
+            margin: 0;
+            width: 100%;
+            >div[aria-hidden="true"], >div[aria-hidden]:first-child+.header__1de14 {display:none}
+            >div>[data-text-variant="heading-lg/semibold"], >div>.description_db0ee9 {
+              display: none;
+            }
+          }
           // horrible profile tab
           .contentColumnScrollable__23e6b {
             .content_dbba93 {
@@ -2575,6 +2594,11 @@
           // audit log
           .customColumn__23e6b {
             padding: 0;
+            max-height: calc(100% - 75px);
+            height: calc(100% - 75px);
+            position: absolute !important;
+            inset: 0 0 75px 0;
+            min-height: 0;
             .content__5906b {
               margin: 0;
               min-width: 0;

@@ -5128,16 +5128,15 @@ img[src="/assets/2ccd0ae2e8934844.png"] {
   d: path("m7.22 8.43 1.2-1.2c.3-.3.78-.3 1.08 0l2.5 2.5 2.5-2.5c.3-.3.78-.3 1.07 0l1.2 1.2c.3.3.3.77 0 1.07l-2.5 2.5 2.5 2.5c.3.3.3.78 0 1.07l-1.2 1.2c-.3.3-.77.3-1.07 0l-2.5-2.5-2.5 2.5c-.3.3-.78.3-1.07 0l-1.2-1.2a.76.76 0 0 1 0-1.07l2.5-2.5-2.5-2.5a.76.76 0 0 1 0-1.07Z");
   fill: currentColor;
 }
-.notice__6e2b9.notice__6e2b9 .button_c9e42f:not(#\#) {
+.notice__6e2b9.notice__6e2b9 .button__6e2b9:not(#\#) {
   background: none;
   border: 1px solid hsla(0, 0%, 100%, 0.25) !important;
   transition: 0.25s;
   color: #fff !important;
   margin-top: 2px;
   padding: 0 8px;
-  min-height: 32px;
 }
-.notice__6e2b9.notice__6e2b9 .button_c9e42f:not(#\#):hover {
+.notice__6e2b9.notice__6e2b9 .button__6e2b9:not(#\#):hover {
   background: #fff;
   color: var(--dtm-16-notice-bg-color, #000) !important;
 }
@@ -17831,12 +17830,11 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
   border-radius: 50px;
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .toolsContainer__23e6b {
-  position: absolute;
-  bottom: -75px;
+  position: fixed;
+  inset: auto 0 0 0;
   height: 75px;
-  left: 0;
-  right: unset;
   width: 712px;
+  z-index: 2;
   background: var(--dtm-16-settings-footer-bg);
   border-top: solid 1px var(--dtm-16-settings-footer-border);
 }
@@ -17867,16 +17865,6 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .toolsContainer__23e6b .tools__23e6b .closeButton_c2b141 svg {
   display: none;
 }
-.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .toolsContainer__23e6b .tools__23e6b .closeButton_c2b141::before {
-  position: fixed;
-  top: -100vh;
-  left: -100vw;
-  width: 200vw;
-  height: 200vw;
-  content: "";
-  cursor: default;
-  z-index: -1;
-}
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .toolsContainer__23e6b .tools__23e6b .closeButton_c2b141:after {
   content: "Done";
   font-size: 16px;
@@ -17889,9 +17877,9 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
   display: none;
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b {
-  margin-bottom: 75px;
   width: 712px;
   border-top-right-radius: 5px;
+  will-change: transform;
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentTransitionWrap__23e6b {
   width: 712px;
@@ -17900,10 +17888,17 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentRegionScroller__23e6b {
   border-top-right-radius: 8px;
   margin-top: 0;
+  padding-bottom: 80px !important;
+}
+.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentRegionScroller__23e6b:has(> #roles-tab) {
+  overflow: hidden !important;
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentRegionScroller__23e6b::-webkit-scrollbar {
   width: 14px;
   height: 14px;
+}
+.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentRegionScroller__23e6b::-webkit-scrollbar, .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentRegionScroller__23e6b::-webkit-scrollbar-track {
+  margin-bottom: 74px;
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentRegionScroller__23e6b::-webkit-scrollbar-track, .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentRegionScroller__23e6b::-webkit-scrollbar-thumb {
   border-width: 3px;
@@ -19115,6 +19110,7 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab {
   padding: 0;
+  overflow: hidden !important;
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab .customScroller__23e6b {
   overflow: visible !important;
@@ -19136,17 +19132,6 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
   background: var(--dtm-16-scrollbar-thumb);
   border-radius: 8px;
   background-clip: padding-box;
-}
-.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab .content_d125d2 {
-  min-width: unset;
-  max-width: unset;
-  margin: 0;
-}
-.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab .content_d125d2 > div[aria-hidden=true] {
-  display: none;
-}
-.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab .content_d125d2 > div > [data-text-variant="heading-lg/semibold"], .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab .content_d125d2 > div > .description_db0ee9 {
-  display: none;
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab .infobox__63c3c {
   border-radius: 0;
@@ -19349,6 +19334,7 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab .page__91dc3 {
   position: absolute;
+  max-height: calc(100% - 75px);
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#roles-tab .page__91dc3 .sidebar_e29cd7 .list_e29cd7 {
   margin-bottom: 193px;
@@ -20006,6 +19992,13 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#emoji-tab div:not([class]) > .h2_b717a1 span {
   color: var(--text-muted);
 }
+.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#stickers-tab .tiers_a36dee {
+  max-width: 580px;
+}
+.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#stickers-tab .grid_d87d30 {
+  padding: 0;
+  gap: 0;
+}
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#boost_perks-tab :is(.avatarUploaderDisabled_e04502, .avatarUploader_e04502) {
   border: solid 5px var(--dtm-16-settings-account-avatar-border);
   width: 260px;
@@ -20178,6 +20171,19 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumn__23e6b#permissions-tab .permissionsForm__0ab2c .container__5a838:not(.disabled__0d850):hover .description__5a838 {
   opacity: 1;
 }
+.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .content_d125d2 {
+  min-width: unset;
+  max-width: unset;
+  padding: 40px;
+  margin: 0;
+  width: 100%;
+}
+.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .content_d125d2 > div[aria-hidden=true], .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .content_d125d2 > div[aria-hidden]:first-child + .header__1de14 {
+  display: none;
+}
+.layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .content_d125d2 > div > [data-text-variant="heading-lg/semibold"], .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .content_d125d2 > div > .description_db0ee9 {
+  display: none;
+}
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .contentColumnScrollable__23e6b .content_dbba93 {
   padding-right: 16px;
   gap: 16px;
@@ -20264,6 +20270,11 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .customColumn__23e6b {
   padding: 0;
+  max-height: calc(100% - 75px);
+  height: calc(100% - 75px);
+  position: absolute !important;
+  inset: 0 0 75px 0;
+  min-height: 0;
 }
 .layers__960e4.layers__160d8 .layer__960e4:not(.baseLayer__960e4):where(:not([data-layer=COMPONENT_PLAYGROUND])) .contentRegion__23e6b .customColumn__23e6b .content__5906b {
   margin: 0;
