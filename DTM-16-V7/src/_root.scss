@@ -13,8 +13,8 @@
 @use "vars" as *;
 @use "sass:math";
 
-$themeVersion: "1100";
-$themeDate: "May 20, 2026";
+$themeVersion: "1101";
+$themeDate: "May 21, 2026";
 
 $themeName: "DTM-16";
 
@@ -834,6 +834,34 @@ $debug: 0;
       --chat-background: #000;
       --chat-border: #{ss(#202225)};
       --chat-input-container-background: #{ss(#36393f)};
+      @at-root html.theme-darker, html.theme-midnight {
+        --override-header-primary: #fff;
+        --override-header-secondary: #{ss(#b9bbbe)};
+        --override-text-normal: #{ss(#dcddde)};
+        --override-text-muted: #{ss(#a3a6aa)};
+        --override-text-link: #{ss(#00aff4)};
+        --override-text-link-low-saturation: #{ss(#0fbbff)};
+        --override-text-positive: #{ss(#46c46e)};
+        --override-text-warning: #{ss(#faa81a)};
+        --override-text-danger: #{ss(#f38688)};
+        --override-text-brand: #{ss(#949cf7)};
+        --override-interactive-normal: #{ss(#b9bbbe)};
+        --override-interactive-hover: #{ss(#dcddde)};
+        --override-interactive-active: #fff;
+        --override-interactive-muted: #{ss(#4f545c)};
+        --override-background-primary: #{ss(#040405)};
+        --override-background-secondary: #{ss(#111315)};
+        --override-background-secondary-alt: #{ss(#18191c)};
+        --override-background-tertiary: #{ss(#0c0d0e)};
+        --override-background-accent: #{ss(#1b1d20)};
+        --override-background-floating: #{ss(#121315)};
+        --override-background-nested-floating: #{ss(#121315)};
+        --override-background-mobile-primary: #000000;
+        --override-background-mobile-secondary: #{ss(#0c0d0e)};
+        --override-chat-background: #000;
+        --override-chat-border: #{ss(#202225)};
+        --override-chat-input-container-background: #{ss(#36393f)};
+      }
     }
   }
 }
@@ -1030,8 +1058,8 @@ $debug: 0;
     --dtm-17-chat-textbox-bg: #{ss(hsla(218,5%,47%,.3))};
     --dtm-19-chat-textbox-bg: #{ss(hsla(218,5%,47%,.18))};
     &.custom-theme-background, &.custom-theme-background .theme-light {
-      --dtm-17-chat-textbox-bg: rgba(255,255,255,.02);
-      --dtm-19-chat-textbox-bg: rgba(255,255,255,.05);
+      --dtm-17-chat-textbox-bg: rgba(0 0 0/.15);
+      --dtm-19-chat-textbox-bg: rgba(0 0 0/.15);
     }
     --dtm-16-chat-textbox-placeholder: rgba(255,255,255,.2);
     --dtm-16-chat-textbox-color: rgba(255,255,255,.7);
@@ -1368,8 +1396,8 @@ $debug: 0;
     &.custom-theme-background, &.custom-theme-background .theme-light {
       --dtm-16-chat-textbox-border: rgba(255,255,255,.8);
       --dtm-16-chat-textbox-bg: rgba(255,255,255,.2);
-      --dtm-17-chat-textbox-bg: rgba(0,0,0,.02);
-      --dtm-19-chat-textbox-bg: rgba(0,0,0,.05);
+      --dtm-17-chat-textbox-bg: rgba(255 255 255/.25);
+      --dtm-19-chat-textbox-bg: rgba(255 255 255/.25);
     }
     --dtm-16-chat-textbox-placeholder: #{ss(#dadddf)};
     --dtm-16-chat-textbox-color: #{ss(#747f8d)};
