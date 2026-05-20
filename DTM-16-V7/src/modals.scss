@@ -2921,7 +2921,7 @@
     &:before {
       content: "Voice Connection";
       padding: 13px;
-      margin: -14px -20px 16px;
+      margin: -14px -20px 0;
       font-size: 14px;
       font-weight: 600;
       line-height: 1;
@@ -2957,6 +2957,10 @@
         color: var(--blurple);
         &:after {background: var(--blurple)}
       }
+    }
+    .tabPanel__50387 {
+      min-height: 0;
+      height: auto;
     }
     .popoutText_effb26 {
       color: #{ss(#87909c)};
@@ -3011,11 +3015,84 @@
         font-weight: 600;
       }
     }
+    .codeGrid__9351a {
+      background: #0000;
+    }
+    .codeGridCode__9351a {
+      gap: 4px;
+    }
     .code__1a1f5 {
-      background: #fcfcfc;
+      background: #{ss(#f8f9f9)};
     }
     .codeText__1a1f5 {
       color: #{ss(#72767d)} !important;
+    }
+    .copyButtonWrapper__66f0f {
+      button:not(#\#) {
+        padding: 0;
+        min-width: 0;
+        min-height: 0;
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        background: #0000 !important;
+        span:not(#\#) {
+          color: var(--blurple);
+          font-weight: 700;
+          font-size: 12px;
+          text-transform: uppercase;
+        }
+        &:is(:hover, :active) span:not(#\#) {
+          color: var(--blurple-hover);
+        }
+        svg {
+          display: none;
+        }
+      }
+      .copyStateVisible__66f0f, .copyStateVisible__66f0f {
+        all: unset;
+        width: auto;
+        min-width: 0;
+      }
+      .copyStateVisible__66f0f:nth-child(2) button:not(#\#) {
+        span:not(#\#) {
+          color: var(--green) !important;
+        }
+        &:is(:hover, :active) span:not(#\#) {
+          color: var(--green-hover) !important;
+        }
+      }
+    }
+    .securedBanner__66f0f {
+      padding: 0;
+      background: none;
+      border-radius: 0;
+      padding-top: 6px;
+      margin-top: 6px;
+      margin-bottom: -2px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: -16px;
+        right: -16px;
+        height: 1px;
+        background: #f0f0f0;
+      }
+      svg {
+        background: var(--green);
+        width: 9px;
+        height: 12px;
+        >* {display:none}
+        @include mask(no-repeat url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 47 9 12"><path d="M8 53v-2.7c0-2-1.4-3.3-3.5-3.3S1 48.3 1 50.3V53H0v6h9v-6zm-6-2c0-2 1-3 2.5-3S7 49 7 51v2H2z"/></svg>') center/9px 12px);
+      }
+      [data-text-variant="text-xs/medium"] {
+        font-size: 12px;
+        color: var(--green);
+      }
+    }
+    .tabPanelHidden__50387 {
+      display: none;
     }
   }
   // soundboard
