@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "210";
-$themeDate: "May 21, 2026";
+$themeVersion: "211";
+$themeDate: "Jun 11, 2026";
 
 @use "sass:color";
 @use "sass:math";
@@ -910,7 +910,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
       .lowerBadge_cc5dd2 {
         right: 0;
         >div {
-          border-bottom-right-radius: 0;
+          border-radius: 3px 0 0 0;
         }
       }
       // TODO: figure out what this is for
@@ -1057,7 +1057,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
           color: var(--d8l1);
         }
       }
-      .numberBadge__2b1f5 {
+      .numberBadge__463b7 {
         border-radius: 4px 0;
         box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0004;
         background: linear-gradient(var(--d8rd6), var(--d8rd5) 50%, var(--d8rd6) 50%, var(--d8rd7));
@@ -1224,7 +1224,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
       @include scrollbar;
       .channel__972a0 {
         padding-right: 8px;
-        .interactive_bf202d {
+        .interactive_f88cfd {
           border-radius: 3px;
           cursor: default;
           a {
@@ -1240,7 +1240,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
               box-shadow: inset 0 1px #fff3, inset 0 0 0 1px #fff1, 0 1px 4px #0008;
             }
           }
-          &:active:not(.selected_bf202d) {
+          &:active:not(.selected_f88cfd) {
             .theme-light & {
               background: linear-gradient(var(--d8l5), var(--d8l6) 50%, var(--d8l3) 50%, var(--d8l1));
               box-shadow: inset 0 1px 2px #0008, 0 1px #fffe;
@@ -1250,7 +1250,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
               box-shadow: inset 0 1px 8px #0008, 0 1px #fff2, 0 -1px #000b;
             }
           }
-          &.selected_bf202d {
+          &.selected_f88cfd {
             .theme-light & {
               background: linear-gradient(var(--d8l2), var(--d8l4) 50%, var(--d8l6) 50%, var(--d8l8));
               box-shadow: inset 0 0 0 1px #fff2, inset 0 1px #fff8, 0 0 0 1px var(--d8lE), 0 1px 3px #0004;
@@ -1837,7 +1837,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         }
       }
       // mentions badge
-      .numberBadge__2b1f5 {
+      .numberBadge__463b7 {
         border-radius: 2px;
         box-shadow: inset 0 0 0 1px #fff2, 0 0 0 1px #0004;
         background: linear-gradient(var(--d8rd6), var(--d8rd5) 50%, var(--d8rd6) 50%, var(--d8rd7));
@@ -2854,6 +2854,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
       }
     }
     // search bar
+    .search__49676 {
+      width: auto;
+    }
     @at-root :is(.searchBar_c322aa, .searchBox_d9c882) {
       background: linear-gradient(to bottom,var(--d8dD) 0%,var(--d8dC) 50%,var(--d8dB) 50%,var(--d8dB) 100%);
       box-shadow: inset 0 1px 3px #0008, 0 1px #fff2, 0 0 0 1px #fff1;
@@ -4880,7 +4883,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
   }
   .message__5126c {
     // action buttons & other hover bars
-    @at-root :is(.wrapper_f7ecac, .hoverButtonGroup__06ab4) {
+    @at-root :is(.wrapper_f7ecac.wrapper_f7ecac, .hoverButtonGroup__06ab4.hoverButtonGroup__06ab4) {
       border-radius: 2px;
       border: none !important;
       .theme-dark & {
@@ -7397,7 +7400,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
 }
 // text badges
 @at-root {
-  :is(.botTagRegular__82f07, .textBadge__2b1f5) {
+  :is(.botTagRegular__82f07, .textBadge__463b7) {
     background: linear-gradient(var(--d8br8), var(--d8brA) 50%,var(--d8brC) 50%, var(--d8brB));
     box-shadow: inset 0 0 0 1px #fff4, 0 0 0 1px #000, 0 1px 3px #000;
     text-shadow: 0 -1px 1px #000b;
@@ -7722,9 +7725,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
     }
   }
   :is(
-    .cardPrimary__73069.editable__73069, /* design system card */
+    .cardPrimary_b5dd01.editable_b5dd01, /* design system card */
     .descriptionBox__981f7, /* GuildSettingsTemplate */
-    #permissions-tab .card_b651ff.cardPrimary__73069.card__73069,
+    #permissions-tab .card_b651ff.cardPrimary_b5dd01.card_b5dd01,
     .container__0be77, /* PollEmbedCard */
     .settingCard__1a4ef /* EasyChannelPermissionSettings */
   ) {
@@ -7739,7 +7742,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
       box-shadow: inset 0 1px #fff2, inset 0 0 0 1px #fff2, 0 0 0 1px #000, 0 1px 4px #0008;
     }
   }
-  .cardPrimary__73069.editable__73069 .iconWrapper__4a3a5 {
+  .cardPrimary_b5dd01.editable_b5dd01 .iconWrapper__4a3a5 {
     box-shadow: inset 0 1px 4px #0008, 0 1px #fff3;
     border-radius: 3px;
     background: #0004;
@@ -9391,7 +9394,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
       }
       .unavailableBadge__650eb {
         background: var(--background-tertiary);
-        .icon__2b1f5 {
+        .icon__463b7 {
           color: var(--red);
         }
       }
