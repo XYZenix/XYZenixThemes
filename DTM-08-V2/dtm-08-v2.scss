@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "211";
-$themeDate: "Jun 11, 2026";
+$themeVersion: "212";
+$themeDate: "Jun 17, 2026";
 
 @use "sass:color";
 @use "sass:math";
@@ -584,6 +584,13 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
       "guildsList panels page";
     grid-template-columns: [start] min-content [guildsEnd] min-content [channelsEnd] 1fr [end];
     grid-template-rows: [top] var(--custom-app-top-bar-height) [titleBarEnd] min-content [noticeEnd] 1fr [channelsListEnd] min-content [end];
+    &.vc-betterFolders-sidebar-grid {
+      grid-template-columns: [start] min-content [guildsEnd] min-content [sidebarEnd] min-content [channelsEnd] 1fr [end];
+      grid-template-areas: "titleBar titleBar titleBar titleBar"
+                           "guildsList betterFoldersSidebar notice notice"
+                           "guildsList betterFoldersSidebar channelsList page"
+                           "guildsList betterFoldersSidebar panels page";
+    }
   }
   .sidebarList__5e434 {
     border-radius: 0;
@@ -3639,6 +3646,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         }
       }
       .replyBar__841c8 {
+        >div[role=button] {
+          display: flex;
+        }
         .mentionButton__841c8 {
           &:before {
             content: "@";
