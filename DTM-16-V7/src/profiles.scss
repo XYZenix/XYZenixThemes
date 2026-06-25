@@ -322,10 +322,6 @@
         all: unset !important;
         display: contents !important;
       }
-      // sections in bot profiles
-      .section_bf424d:not(:has(.list__20827)) {
-        display: contents;
-      }
       // shitty upsell
       .upsellContainer__5997d {
         display: none;
@@ -394,7 +390,7 @@
       section:has(>.descriptionClamp_f5f93a) {
         order: 5;
         background: var(--override-background-secondary);
-        padding: 14px 10px 0 10px;
+        padding: 14px 10px 14px 10px;
         &:before {
           content: "ABOUT ME";
           display: block;
@@ -409,6 +405,9 @@
         }
         .viewFullBio_f5f93a {
           display: none;
+        }
+        ~.roleListContainer_af3987 {
+          padding-top: 0;
         }
       }
       // roles
@@ -1054,9 +1053,11 @@
           --text-muted: rgba(255 255 255/.8);
           --text-strong: rgba(255 255 255/.8);
         }
-        .displayNameTrailing__26b1f,
-        .container__8061a {
-          display: none;
+        @at-root .user-profile-popout.outer_c0bea0 {
+          .displayNameTrailing__26b1f,
+          .container__8061a {
+            display: none;
+          }
         }
         .body_af7fb7 {
           >div[aria-hidden="true"] {

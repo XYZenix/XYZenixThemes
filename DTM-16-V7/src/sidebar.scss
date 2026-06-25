@@ -1063,7 +1063,14 @@
       // old unread bar
       .container__3b95d {
         height: 20px;
-        .bar__3b95d {height: 20px}
+        .bar__3b95d {
+          height: 20px;
+        }
+        :where(.bar__3b95d) {
+          border: none;
+          background: var(--background-accent);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+        }
         .text__3b95d {
           font-size: 11px;
           text-transform: uppercase;
@@ -1092,6 +1099,18 @@
             transform: rotate(180deg);
           }
         }
+        
+        @container style(--dtm-16-plink: v2017) {
+          &.unreadTop__629e4 {
+            padding-top: 0;
+            padding-bottom: 16px;
+            .unreadBar__629e4 {
+              margin-top: 8px;
+              border-radius: 3px;
+              padding-top: 0;
+            }
+          }
+        }
         &.unreadBottom__629e4 {
           padding-bottom: 0;
           padding-top: 16px;
@@ -1102,6 +1121,14 @@
             margin-bottom: -16px;
             padding-bottom: 16px;
             border-radius: 3px 3px 0 0;
+            @container style(--dtm-16-plink: v2017) {
+              margin-top: -8px;
+              border-radius: 3px;
+              padding-bottom: 0;
+            }
+          }
+          .text__3b95d:after {
+            transform: none;
           }
         }
       }

@@ -168,6 +168,22 @@
     .chatContent_f75fb0 {
       background: none !important;
     }
+    // both bars
+    .barBase__0f481 {
+      @container style(--dtm-16-plink-cib: v2015) {
+        .topicsPillTextTitle__0f481 {
+          letter-spacing: .7px !important;
+        }
+        .barButtonMain__0f481 {
+          text-align: center;
+          letter-spacing: .7px;
+          text-transform: capitalize;
+        }
+        .buttonWrapper__0f481, .button_a22cb0 {
+          display: none;
+        }
+      }
+    }
     // top bars
     :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) {
       top: 0;
@@ -224,6 +240,32 @@
         &:hover {color:#fff}
         .contents__201d5 {all:unset}
         svg {display:none}
+      }
+      .newTopicsBarTextClickable__0f481 {
+        opacity: 1 !important;
+      }
+      .defaultColor__4bd52 {
+        color: #fff;
+      }
+      @container style(--dtm-16-plink-cib: v2018) {
+        border-radius: 0 0 5px 5px;
+      }
+      @container style(--dtm-16-plink-cib: v2020) {
+        border-radius: 0 0 8px 8px;
+        .barButtonMain__0f481, .barButtonAlt__0f481 {
+          padding: 5px 8px;
+          height: 24px;
+        }
+        .barButtonAlt__0f481 {
+          font-size: 14px;
+          line-height: 14px;
+          color: #fff;
+          font-weight: 600;
+          text-transform: none;
+          svg {
+            display: block;
+          }
+        }
       }
     }
     .topicsPillContainer__0f481 {
@@ -339,6 +381,39 @@
             all: unset !important;
             white-space: nowrap !important;
           }
+        }
+      }
+      @container style(--dtm-16-plink-cib: v2018) {
+        border-radius: 5px 5px 0 0;
+      }
+      @container style(--dtm-16-plink-cib: v2020) {
+        border-radius: 8px 8px 0 0;
+        .barButtonMain__0f481, .barButtonAlt__0f481 {
+          padding: 5px 8px;
+          height: 24px;
+        }
+        .barButtonAlt__0f481, .barButtonMain__0f481~.button_a22cb0 {
+          font-size: 14px;
+          line-height: 14px;
+          color: #fff;
+          font-weight: 600;
+          text-transform: none;
+          svg {
+            display: block;
+          }
+        }
+        &.jumpToPresentBar__0f481 .button_a22cb0:after,
+        &.messagesErrorBar__0f481 .button_a22cb0:after {
+          content: "";
+          display: block;
+          width: 16px;
+          height: 16px;
+          background: currentColor;
+          margin-left: 4px;
+          @include mask(no-repeat url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 5 5 5-5" fill="none"/></svg>'));
+        }
+        &.messagesErrorBar__0f481 .button_a22cb0:after {
+          @include mask(no-repeat url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8"/></svg>'));
         }
       }
     }
@@ -633,7 +708,7 @@
     .chatGradientBase__36d07 {
       --background-base-lower: var(--background-primary);
       background: var(--bg-overlay-1, var(--background-primary));
-      mask: linear-gradient(to bottom, #0000, #000);
+      @include mask(linear-gradient(to bottom, #0000, #000));
       transition: .2s opacity;
       &.chatTypingGradientAtBottom__36d07 {
         opacity: 0;

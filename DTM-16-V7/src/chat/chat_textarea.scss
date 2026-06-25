@@ -34,8 +34,9 @@
     @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) {
       --dtm-16-x-ctb-radius: 5px;
     }
-    @container style(--dtm-16-plink-ctb: v2019) {
+    @container style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
       --dtm-16-x-ctb-radius: 8px;
+      --custom-channel-textarea-text-area-height: 44px;
     }
   }
   .channelTextAreaDisabled__74017 {
@@ -62,7 +63,7 @@
     overflow-y: scroll;
     border-radius: 3px;
     border: solid 2px var(--dtm-16-chat-textbox-border);
-    background: var(--bg-overlay-4, var(--dtm-16-chat-textbox-bg));
+    background: var(--bg-overlay-3, var(--dtm-16-chat-textbox-bg));
     max-height: max(calc(var(--custom-channel-textarea-text-area-height) + 4px), min(172px, calc(100vh - 260px - var(--dtm-16-x-ctb-sticker-preview-height, 0px) - var(--dtm-16-x-ctb-attachments-height, 0px))));
     // the 2016 textarea doesn't have a scrollbar so we improvise
     &::-webkit-scrollbar {
@@ -95,7 +96,7 @@
       border-radius: 5px;
       background: var(--dtm-17-chat-textbox-bg, var(--dtm-16-chat-textbox-bg));
     }
-    @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) {
+    @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
       &::-webkit-scrollbar {
         width: 10px;
         height: 0;
@@ -110,7 +111,7 @@
         }
       }
     }
-    @container style(--dtm-16-plink-ctb: v2019) {
+    @container style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
       border: none;
       border-radius: 8px;
       background: var(--dtm-19-chat-textbox-bg, var(--dtm-16-chat-textbox-bg));
@@ -219,7 +220,7 @@
         @include mask(no-repeat center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cg fill='%23fff' clip-path='url(%23a)'%3E%3Cpath d='M11 9h4v2h-4v4H9v-4H5V9h4V5h2z'/%3E%3Cpath fill-rule='evenodd' d='M10 0a10 10 0 1 1 0 20 10 10 0 0 1 0-20m0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16' clip-rule='evenodd'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h20v20H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E"));
       }
     }
-    @container style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) {
+    @container style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
       .attachWrapper__0923f:not(:empty) {
         display: flex;
         align-items: start;
@@ -268,7 +269,7 @@
       .attachWrapper__0923f:not(:empty):after {
         height: 100%;
         max-height: 100%;
-        margin: 0 12px 0 0;
+        margin: 0 10px 0 0;
         top: 0;
         background: var(--bg-overlay-1, var(--background-primary));
       }
@@ -277,6 +278,26 @@
         opacity: 1;
         color: var(--interactive-normal);
         padding-right: 12px;
+        &:hover {
+          color: var(--interactive-hover);
+        }
+        .attachButtonInner__0923f:not(#\#) {
+          transform: none !important;
+        }
+      }
+    }
+    @container style(--dtm-16-plink-ctb: v2020) {
+      .attachButton__0923f {
+        height: 44px;
+      }
+      .attachWrapper__0923f:not(:empty):after {
+        content: none;
+      }
+      .attachButton__74017 {
+        transition: 0s;
+        opacity: 1;
+        color: var(--interactive-normal);
+        padding-inline: 18px;
         &:hover {
           color: var(--interactive-hover);
         }
@@ -328,22 +349,43 @@
         --dtm-16-chat-textbox-emoji-button-opacity: .3;
         margin-right: 0;
       }
-      @container style(--dtm-16-plink-ctb: v2019) {
+      @container style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
+        gap: 8px;
         --dtm-16-chat-textbox-button-opacity: 1;
-        --dtm-16-chat-textbox-emoji-button-opacity: .75;
+        --dtm-16-chat-textbox-emoji-button-opacity: 1;
+        .spriteContainer__04eed {
+          scale: calc(22/18);
+        }
         margin-right: 0;
         .button__74017:not(#\#), .app-launcher-entrypoint .button_e6e74f {
-          width: 24px;
-          height: 24px;
+          width: 30px;
+          height: 30px;
           padding: 0 4px;
           color: var(--interactive-normal);
           &:hover, &:active, &[aria-expanded=true] {
             color: var(--interactive-active);
           }
+          .buttonWrapper__24af7:not(#\#) {
+            scale: calc(24/20);
+          }
           .buttonWrapper__24af7:not(#\#), .lottieIcon__5eb9b:not(#\#) {
             transform: none !important;
             color: inherit;
           }
+        }
+        .app-launcher-entrypoint .button_e6e74f {
+          padding-inline: 0;
+          scale: calc(24/20);
+        }
+      }
+      @container style(--dtm-16-plink-ctb: v2019) {
+        .button__74017 path[d=" M-7,-10 C-8.656999588012695,-10 -10,-8.656999588012695 -10,-7 C-10,-7 -10,7 -10,7 C-10,8.656999588012695 -8.656999588012695,10 -7,10 C-7,10 7,10 7,10 C8.656999588012695,10 10,8.656999588012695 10,7 C10,7 10,-7 10,-7 C10,-8.656999588012695 8.656999588012695,-10 7,-10 C7,-10 -7,-10 -7,-10z"] {
+          d: path("M22 4H2C0.896 4 0 4.896 0 6V19C0 20.105 0.896 21 2 21H22C23.104 21 24 20.105 24 19V6C24 4.896 23.104 4 22 4ZM9.375 10.75H5.875V14.25H7.625V13.375H6.75V11.625H9.375V14.25C9.375 15.215 8.59 16 7.625 16H5.875C4.91 16 4.125 15.215 4.125 14.25V10.75C4.125 9.785 4.91 9 5.875 9H9.375V10.75ZM13.75 10.75H12.875V14.25H13.75V16H10.25V14.25H11.125V10.75H10.25V9H13.75V10.75ZM19.875 10.75H16.375V11.625H19V13.375H16.375V16H14.625V10.75C14.625 9.785 15.41 9 16.375 9H19.875V10.75Z");
+        }
+      }
+      @container style(--dtm-16-plink-ctb: v2020) {
+        .button__74017 path[d=" M-7,-10 C-8.656999588012695,-10 -10,-8.656999588012695 -10,-7 C-10,-7 -10,7 -10,7 C-10,8.656999588012695 -8.656999588012695,10 -7,10 C-7,10 7,10 7,10 C8.656999588012695,10 10,8.656999588012695 10,7 C10,7 10,-7 10,-7 C10,-8.656999588012695 8.656999588012695,-10 7,-10 C7,-10 -7,-10 -7,-10z"] {
+          d: path("M2 2C0.895431 2 0 2.89543 0 4V20C0 21.1046 0.89543 22 2 22H22C23.1046 22 24 21.1046 24 20V4C24 2.89543 23.1046 2 22 2H2ZM9.76445 11.448V15.48C8.90045 16.044 7.88045 16.356 6.74045 16.356C4.11245 16.356 2.66045 14.628 2.66045 12.072C2.66045 9.504 4.23245 7.764 6.78845 7.764C7.80845 7.764 8.66045 8.004 9.32045 8.376L9.04445 10.164C8.42045 9.768 7.68845 9.456 6.83645 9.456C5.40845 9.456 4.71245 10.512 4.71245 12.06C4.71245 13.62 5.43245 14.712 6.86045 14.712C7.31645 14.712 7.64045 14.616 7.97645 14.448V12.972H6.42845V11.448H9.76445ZM11.5481 7.92H13.6001V16.2H11.5481V7.92ZM20.4724 7.92V9.636H17.5564V11.328H19.8604V13.044H17.5564V16.2H15.5164V7.92H20.4724Z");
         }
       }
     }
@@ -463,6 +505,9 @@
     @container style(--dtm-16-plink-ctb: v2017p2) {
       margin: 0 0 10px;
     }
+    @container style(--dtm-16-plink-ctb: v2020) {
+      margin-block-end: 24px;
+    }
   }
   // thread start form
   .channelTextArea_fb64c9 {
@@ -540,7 +585,7 @@
       border-radius: 3px;
       min-height: 64px;
     }
-    @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) {
+    @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
       background: var(--background-tertiary);
       border: none;
       border-radius: 5px;
@@ -550,7 +595,7 @@
         margin: 0;
       }
     }
-    @container style(--dtm-16-plink-ctb: v2019) {
+    @container style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
       border-radius: 8px;
     }
   }
@@ -580,7 +625,7 @@
   style(--dtm-16-plink-ctb: v2017p3) or
   style(--dtm-16-plink-ctb: v2017) or
   style(--dtm-16-plink-ctb: v2019) or
-  style(--dtm-16-plink-ctb: v2021) {
+  style(--dtm-16-plink-ctb: v2020) {
     .typing_b88801 {
       left: 0;
       right: 0;
@@ -714,7 +759,7 @@
       border-top-right-radius: 0;
     }
   }
-  @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) {
+  @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
     .stackedBars__74017 {
       margin-top: -28px;
       border-radius: var(--dtm-16-x-ctb-radius) var(--dtm-16-x-ctb-radius) 0 0;
@@ -800,7 +845,7 @@
     .stickerPreviewDivider_a4cf0b {
       display: none;
     }
-    @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) {
+    @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
       .stickerPreviews_a4cf0b {
         background: var(--background-secondary);
         border-radius: var(--dtm-16-x-ctb-radius) var(--dtm-16-x-ctb-radius) 0 0;
@@ -911,7 +956,7 @@
       padding-left: 20px;
     }
   }
-  @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) {
+  @container style(--dtm-16-plink-ctb: v2017p3) or style(--dtm-16-plink-ctb: v2017) or style(--dtm-16-plink-ctb: v2019) or style(--dtm-16-plink-ctb: v2020) {
     .channelAttachmentArea_b77158 {
       padding: 12px;
       background: var(--bg-overlay-3, var(--background-secondary));
@@ -987,6 +1032,9 @@
           margin-bottom: unset;
           background: var(--dtm-16-chat-textbox-border);
           width: 46px;
+          .wrapper__4e6ce {
+            background: #0000;
+          }
           .wrapper__1a58a {
             background: none;
             position: relative;
@@ -1028,6 +1076,10 @@
         .autocompleteInner__13533 {
           border-bottom-width: 2px;
         }
+      }
+      .scrollableContainer__74017:has(+.autocomplete__13533) .inner__74017 {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
       }
     }
   }
@@ -1121,6 +1173,11 @@
           border-radius: 0;
         }
       }
+    }
+  }
+  @container style(--dtm-16-plink-ctb: v2020) {
+    .autocompleteAttached__6b0e0 {
+      inset-inline: 0;
     }
   }
   // slate

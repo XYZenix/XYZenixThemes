@@ -13,8 +13,8 @@
 @use "vars" as *;
 @use "sass:math";
 
-$themeVersion: "1103";
-$themeDate: "Jun 11, 2026";
+$themeVersion: "1104";
+$themeDate: "Jun 25, 2026";
 
 $themeName: "DTM-16";
 
@@ -25,28 +25,32 @@ $debug: 0;
 
 // configurables
 @property --dtm-16-broken-modal-anim {
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: false;
   name: "Use broken modal animation";
   note: "Plays on modals it's not supposed to and might play twice in some cases like on a loading modal";
 }
 @property --dtm-16-ugly-mode {
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: false;
   name: "Ugly Mode";
   note: "Certain elements are themed more accurately but also look slightly uglier"
 }
 @property --dtm-16-2018-attach-menu {
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: false;
   name: "2018 Attach Button Menu";
   note: "cuz why not"
 }
 @property --dtm-16-hide-vc-panel-buttons {
-  syntax: "full | partial | none";
+  syntax: "<custom-ident>";
+  options: "full=Always | partial=Only when not hovering | none=Never";
   inherits: true;
   initial-value: none;
   name: "Hide VC Panel Action Buttons";
@@ -54,69 +58,89 @@ $debug: 0;
 }
 @property --dtm-16-titlebar-button-count {
   syntax: "<integer>";
+  min: 0;
+  max: 15;
+  step: 1;
   inherits: true;
   initial-value: 2;
   name: "Titlebar Button Count";
   note: "Change this to match the amount of buttons (not counting the minimize/maximize/close buttons) you have on the right end of the titlebar. NOTE 1: DTM-16 automatically hides the help button when the update button is present so you don't have to worry about it. NOTE 2: If you open any issues about the titlebar buttons clipping into the header contents (e.g. the search bar), I *WILL* close your issue as invalid and link you to this line of text. No, there is no better way to handle this without making the theme lag more, sorry. You could use the classic titlebar plugin, but don't expect it to work flawlessly with DTM-16, supporting client mods and client mod plugins is not a priority for this theme.";
 }
 @property --dtm-16-header-three-buttons {
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: false;
   name: "[DEPRECATED]";
   note: "If you were using --dtm-16-header-three-buttons before, set --dtm-16-titlebar-button-count to 3 for the same behavior! Otherwise ignore this, it no longer does anything. (this note will be removed whenever i decide to do a proper cleanup of my themes)";
 }
 @property --dtm-16-hide-windows-titlebar {
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: false;
   name: "Hide Windows Titlebar";
   note: "compatibility option for whoever needs it. THIS DOES **NOT** TURN THE CHAT HEADER INTO A TITELBAR, IT DOES NOT MOVE THE BUTTONS TO IT, IT **REMOVES** THE TITLEBAR AS A WHOLE.";
 }
 @property --dtm-16-outline-on-chat-avatar-focus {
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: false;
   name: "2015 Concept: Outline chat avatars on focus";
   note: "i don't owe you an explanation";
 }
 @property --dtm-16-activity-feed-style {
-  syntax: "v1 | v1-1 | v2";
+  syntax: "<custom-ident>";
+  options: "v1=V1 (2017-2018) | v1-1=V1.1 (2018-2019) | v2=V2 (2019-2020)";
   inherits: true;
   initial-value: v1;
   name: "activity feed card style";
   note: "choose your flavor of the discord activity feed!";
 }
 @property --dtm-16-old-game-profile {
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: false;
   name: "old game profile";
   note: "has way less information and is way smaller";
 }
 @property --dtm-16-plink {
-  syntax: "v2015 | v2016 | v2017";
+  syntax: "<custom-ident>";
+  options: "v2015=2015 | v2016=2016 | v2017=2017";
   inherits: true;
   initial-value: v2016;
   name: "UI Version";
   note: "Whether to replicate the 2015, 2016, or 2017 UI. 2016 by default and will be the only accurate option. Stylin for the chat textarea is controlled separately.";
 }
 @property --dtm-16-plink-ctb {
-  syntax: "v2016 | v2017p1 | v2017p2 | v2017p3 | v2017 | v2019";
+  syntax: "<custom-ident>";
+  options: "v2016=2016 | v2017p1=2017 (Prototype 1) | v2017p2=2017 (Prototype 2) | v2017p3=2017 (Prototype 3) | v2017=2017 | v2019=2019 | v2020=2020";
   inherits: true;
   initial-value: v2016;
   name: "Chat Textarea Version";
   note: "If you set UI version to 2015 or 2016, leave this to the default value of v2016. If you set --dtm-16-plink to v2017, obviously set this to v2017. If you're really bored, go ahead and use the other options."
 }
+@property --dtm-16-plink-cib {
+  syntax: "<custom-ident>";
+  options: "v2015=2015 | v2016=2016 | v2018=2018 | v2020=2020";
+  inherits: true;
+  initial-value: v2016;
+  name: "Chat Info Bars Version";
+  note: "Styling for the 'new messages', 'jump to present', etc. bars in the messages scroller. 2016 is the default, 2015 has centered text and no action button but is otherwise nearly identical to 2016, 2018 is slightly more rounded, and 2020 is more rounded and the action text is the same styling as the main text and has a little icon."
+}
 @property --dtm-16-oreo {
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: false;
   name: "\"Oreo\" mode";
   note: "Makes certain elements light even in dark mode (profile popouts, specific menus, etc.)";
 }
 @property --dtm-16-orp { // orp = Old Rich Presence
-  syntax: "true | false";
+  syntax: "<custom-ident>";
+  checkbox: true;
   inherits: true;
   initial-value: true;
   name: "Old Rich Presence styles";
