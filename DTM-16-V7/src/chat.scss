@@ -184,8 +184,59 @@
         }
       }
     }
+    // new members bar
+    @at-root {
+      .newMembersNotice_acdcc0 {
+        --radius-sm: 3px;
+        td:not(:first-child) {
+          padding: 6px 10px;
+          background: none !important;
+          color: rgba(255,255,255,.6);
+          font-size: 12px;
+          line-height: 14px;
+          text-transform: uppercase;
+          font-weight: 300;
+          transition: color .2s;
+          text-align: end;
+          &:hover {color:#fff}
+          svg {
+            display: none;
+          }
+          div {
+            all: unset !important;
+            display: flex !important;
+            gap: 4px !important;
+            justify-content: end !important;
+          }
+        }
+        @container style(--dtm-16-plink-cib: v2015) {
+          td:first-child {
+            letter-spacing: .7px;
+            text-transform: capitalize;
+          }
+        }
+        @container style(--dtm-16-plink-cib: v2018) {
+          --radius-sm: 5px;
+        }
+        @container style(--dtm-16-plink-cib: v2020) {
+          --radius-sm: 8px;
+          padding: 5px 8px;
+          height: 24px;
+          td:not(:first-child) {
+            font-size: 14px;
+            line-height: 14px;
+            color: #fff;
+            font-weight: 600;
+            text-transform: none;
+            svg {
+              display: block;
+            }
+          }
+        }
+      }
+    }
     // top bars
-    :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) {
+    :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) {
       top: 0;
       left: 0;
       right: 0;
@@ -252,11 +303,11 @@
       }
       @container style(--dtm-16-plink-cib: v2020) {
         border-radius: 0 0 8px 8px;
-        .barButtonMain__0f481, .barButtonAlt__0f481 {
+        .barButtonMain__0f481, .barButtonAlt__0f481, tr {
           padding: 5px 8px;
           height: 24px;
         }
-        .barButtonAlt__0f481 {
+        .barButtonAlt__0f481, tr:last-child {
           font-size: 14px;
           line-height: 14px;
           color: #fff;
@@ -267,6 +318,10 @@
           }
         }
       }
+    }
+    .newMembersNotice_acdcc0 {
+      left: 8px;
+      right: 8px;
     }
     .topicsPillContainer__0f481 {
       background: var(--dtm-16-chat-bar-bg-gray);

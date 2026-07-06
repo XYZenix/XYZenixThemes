@@ -137,7 +137,7 @@
   border-radius: 3px;
   white-space: pre-wrap;
   color: var(--text-muted);
-  content: "DTM-16 Build " "1104" "\a" "Jun 25, 2026";
+  content: "DTM-16 Build " "1105" "\a" "Jul 2, 2026";
 }
 
 .theme-dark, .theme-light {
@@ -14035,7 +14035,7 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
   gap: 6px;
   margin-right: 6px;
 }
-#app-mount .buttons__74017 > .button__74017, #app-mount .buttons__74017 .container_c0c49a {
+#app-mount .buttons__74017 > .button__74017, #app-mount .buttons__74017 .container__5287f {
   display: none;
 }
 #app-mount .buttons__74017 .app-launcher-entrypoint .button_e6e74f {
@@ -15021,7 +15021,62 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
     display: none;
   }
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) {
+.newMembersNotice_acdcc0 {
+  --radius-sm: 3px;
+}
+.newMembersNotice_acdcc0 td:not(:first-child) {
+  padding: 6px 10px;
+  background: none !important;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  font-weight: 300;
+  transition: color 0.2s;
+  text-align: end;
+}
+.newMembersNotice_acdcc0 td:not(:first-child):hover {
+  color: #fff;
+}
+.newMembersNotice_acdcc0 td:not(:first-child) svg {
+  display: none;
+}
+.newMembersNotice_acdcc0 td:not(:first-child) div {
+  all: unset !important;
+  display: flex !important;
+  gap: 4px !important;
+  justify-content: end !important;
+}
+@container style(--dtm-16-plink-cib: v2015) {
+  .newMembersNotice_acdcc0 td:first-child {
+    letter-spacing: 0.7px;
+    text-transform: capitalize;
+  }
+}
+@container style(--dtm-16-plink-cib: v2018) {
+  .newMembersNotice_acdcc0 {
+    --radius-sm: 5px;
+  }
+}
+@container style(--dtm-16-plink-cib: v2020) {
+  .newMembersNotice_acdcc0 {
+    --radius-sm: 8px;
+    padding: 5px 8px;
+    height: 24px;
+  }
+  .newMembersNotice_acdcc0 td:not(:first-child) {
+    font-size: 14px;
+    line-height: 14px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: none;
+  }
+  .newMembersNotice_acdcc0 td:not(:first-child) svg {
+    display: block;
+  }
+}
+
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) {
   top: 0;
   left: 0;
   right: 0;
@@ -15036,13 +15091,13 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
   padding: 0;
   transition: background-color 0.2s;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481):hover {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0):hover {
   background: var(--dtm-16-chat-bar-bg-blurple-hover);
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481):active {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0):active {
   height: 27px;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonMain__0f481 {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonMain__0f481 {
   padding: 6px 10px;
   font-size: 14px;
   line-height: 14px;
@@ -15050,19 +15105,19 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
   font-weight: 400;
   height: 26px;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonMain__0f481 > span[id] {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonMain__0f481 > span[id] {
   all: unset;
   display: contents;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonMain__0f481 > span[id] > div[style] {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonMain__0f481 > span[id] > div[style] {
   all: unset !important;
   display: contents !important;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonMain__0f481 > span[id] > div[style] > div {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonMain__0f481 > span[id] > div[style] > div {
   all: unset;
   display: contents;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonAlt__0f481 {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonAlt__0f481 {
   padding: 6px 10px;
   height: 26px;
   box-sizing: border-box;
@@ -15074,44 +15129,48 @@ html.theme-light #app-mount .container__9293f.container__9293f .tabBar__133bf .i
   font-weight: 300;
   transition: color 0.2s;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonAlt__0f481:hover {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonAlt__0f481:hover {
   color: #fff;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonAlt__0f481 .contents__201d5 {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonAlt__0f481 .contents__201d5 {
   all: unset;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonAlt__0f481 svg {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonAlt__0f481 svg {
   display: none;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .newTopicsBarTextClickable__0f481 {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .newTopicsBarTextClickable__0f481 {
   opacity: 1 !important;
 }
-#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .defaultColor__4bd52 {
+#app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .defaultColor__4bd52 {
   color: #fff;
 }
 @container style(--dtm-16-plink-cib: v2018) {
-  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) {
+  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) {
     border-radius: 0 0 5px 5px;
   }
 }
 @container style(--dtm-16-plink-cib: v2020) {
-  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) {
+  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) {
     border-radius: 0 0 8px 8px;
   }
-  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonMain__0f481, #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonAlt__0f481 {
+  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonMain__0f481, #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonAlt__0f481, #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) tr {
     padding: 5px 8px;
     height: 24px;
   }
-  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonAlt__0f481 {
+  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonAlt__0f481, #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) tr:last-child {
     font-size: 14px;
     line-height: 14px;
     color: #fff;
     font-weight: 600;
     text-transform: none;
   }
-  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481) .barButtonAlt__0f481 svg {
+  #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) .barButtonAlt__0f481 svg, #app-mount .chat_f75fb0 :is(.newMessagesBar__0f481, .topicsPillContainer__0f481, .newTopicsBarContainer__0f481, .newMembersNotice_acdcc0) tr:last-child svg {
     display: block;
   }
+}
+#app-mount .chat_f75fb0 .newMembersNotice_acdcc0 {
+  left: 8px;
+  right: 8px;
 }
 #app-mount .chat_f75fb0 .topicsPillContainer__0f481 {
   background: var(--dtm-16-chat-bar-bg-gray);
