@@ -320,10 +320,18 @@
       }
     }
     .group__64e61 {
+      padding: 0;
       .radioGroupOption__64e61:not(#\#) {
+        padding: 0;
+        display: grid;
+        grid-template-areas: "icon title title2" "_ _ trash" "_ _ garbage";
+        grid-template-columns: [icon] min-content [title] min-content [title2] max-content;
         .radioIndicator__64e61 {
+          grid-area: icon;
+          position: unset;
           width: 30px;
           height: 30px;
+          margin-right: 12px;
           .outerRadioBase__64e61 {
             stroke-width: calc(1px * calc(30/40));
             fill: none;
@@ -337,7 +345,26 @@
             fill: var(--blurple);
             opacity: 0;
             transition: .2s opacity;
+            animation: none !important;
           }
+          +span {
+            grid-area: title2;
+            align-content: center;
+          }
+        }
+        .radioItemIcon__64e61 {
+          position: static;
+          align-self: center;
+          grid-area: title;
+          margin-right: 4px;
+          +span {
+            grid-area: title2;
+            align-content: center;
+          }
+        }
+        .description__64e61 {
+          grid-area: trash;
+          margin: 0;
         }
         &:hover .radioIndicator__64e61 .innerDotRadio__64e61 {
           opacity: .2;
@@ -363,43 +390,6 @@
           [data-text-variant] {
             line-height: inherit;
           }
-        }
-      }
-    }
-  }
-  html:not(.visual-refresh) {
-    .item__88a69 {
-      .radioBar__88a69 {
-        .radioIndicatorChecked__88a69, .radioBaricon__62141, >[class=""] {
-          width: 30px;
-          height: 30px;
-          box-sizing: border-box;
-          border: solid 1px var(--dtm-16-switch-ring);
-          border-radius: 50%;
-          display: flex;
-          min-width: 30px;
-          place-items: center;
-          justify-content: center;
-          overflow: visible;
-          &:after {
-            content: "";
-            display: block;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: var(--blurple);
-            opacity: 0;
-            transition: opacity .3s ease;
-          }
-          svg {
-            display: none;
-          }
-        }
-        &:hover>[class=""]:after, &:hover .radioBaricon__62141:after {
-          opacity: .2;
-        }
-        .radioIndicatorChecked__88a69:after {
-          opacity: 1 !important;
         }
       }
     }
