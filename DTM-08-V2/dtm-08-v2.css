@@ -610,6 +610,8 @@ rect[mask="url(#svg-mask-status-dnd)"] {
   margin: 0;
   -webkit-mask: none !important;
   mask: none !important;
+  width: 72px;
+  min-width: 72px;
 }
 
 .scroller_ef3116 {
@@ -1788,9 +1790,8 @@ html:not(.reduce-motion) .scroller_ef3116 .tutorialContainer__1f388 .childWrappe
   display: flex;
   flex-direction: column;
   grid-area: panels;
-  width: auto;
+  width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - 1px);
   height: auto;
-  max-width: calc(var(--custom-guild-sidebar-width) - 73px);
   border-radius: 0;
 }
 .theme-light .panels__5e434 {
@@ -1886,6 +1887,9 @@ html:not(.reduce-motion) .scroller_ef3116 .tutorialContainer__1f388 .childWrappe
   padding-right: 2px;
   padding-top: 2px;
   padding-bottom: 0;
+  min-height: 0;
+  max-height: unset;
+  height: auto;
 }
 .theme-light .panels__5e434 .wrapper_e131a9 .container_e131a9 .actionButtons_e131a9 {
   background: linear-gradient(var(--d8l2), #FFFFFF);
@@ -1936,6 +1940,7 @@ html:not(.reduce-motion) .scroller_ef3116 .tutorialContainer__1f388 .childWrappe
   border-radius: 0;
   padding-top: 0;
   opacity: 0.8;
+  height: 32px;
   transition: 0.1s opacity, 0.05s transform;
   cursor: default;
 }
@@ -5366,7 +5371,7 @@ html.font-size-24 .slateTextArea_ec4baf {
   animation: dotAnim 4s infinite ease-out;
 }
 .compact__081d7:before {
-  content: "DTM-08 V2 Build 220 \aUpdated on Oct 9, 2026";
+  content: "DTM-08 V2 Build 221 \aUpdated on Oct 10, 2026";
   font-size: 12px;
   color: var(--text-muted);
   text-transform: none;
@@ -7030,6 +7035,8 @@ html.font-size-24 .slateTextArea_ec4baf {
 
 :is(.messagesPopoutWrap__432f4, .container__8cb2e) {
   background: linear-gradient(var(--d8dD), var(--d8dB));
+  border-radius: 3px;
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.75);
 }
 .theme-light :is(.messagesPopoutWrap__432f4, .container__8cb2e) {
   background: linear-gradient(var(--d8l1), var(--d8l5));

@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "220";
-$themeDate: "Oct 9, 2026";
+$themeVersion: "221";
+$themeDate: "Oct 10, 2026";
 
 @use "sass:color";
 @use "sass:math";
@@ -757,6 +757,8 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
     margin: 0;
     -webkit-mask: none !important;
     mask: none !important;
+    width: 72px;
+    min-width: 72px;
   }
   // main scroller
   .scroller_ef3116 {
@@ -1950,9 +1952,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
     display: flex;
     flex-direction: column;
     grid-area: panels;
-    width: auto;
+    width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - 1px);
     height: auto;
-    max-width: calc(var(--custom-guild-sidebar-width) - 73px);
+    // max-width: calc(var(--custom-guild-sidebar-width) - 73px);
     border-radius: 0;
     .theme-light & {
       background: linear-gradient(var(--d8l6), var(--d8l2) 50%, var(--d8l3) 50%, var(--d8l6));
@@ -2052,6 +2054,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         padding-right: 2px;
         padding-top: 2px;
         padding-bottom: 0;
+        min-height: 0;
+        max-height: unset;
+        height: auto;
       }
       .actionButtons_e131a9 {
         .theme-light & {
@@ -2106,6 +2111,7 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
             border-radius: 0;
             padding-top: 0;
             opacity: 0.8;
+            height: 32px;
             transition: 0.1s opacity, 0.05s transform;
             cursor: default;
             &:hover, &:active {
@@ -7098,6 +7104,8 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
   // pinned messages & inbox
   :is(.messagesPopoutWrap__432f4, .container__8cb2e) {
     background: linear-gradient(var(--d8dD), var(--d8dB));
+    border-radius: 3px;
+    box-shadow: 0 16px 24px rgba(0 0 0/.25), 0 0 0 1px rgba(0 0 0/.75);
     .theme-light & {
       background: linear-gradient(var(--d8l1), var(--d8l5));
     }
