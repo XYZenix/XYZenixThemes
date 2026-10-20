@@ -75,10 +75,6 @@
       border-radius: 3px;
       border: none;
       background: var(--background-primary);
-      width: auto;
-      &.modal_e44912 {
-        width: 100%;
-      }
       .labelContainer__5a838:not(.container__5a838 .labelContainer__5a838) [data-text-variant="text-md/medium"] {
         @include dtm16_eyebrow;
       }
@@ -780,12 +776,24 @@
         //     }
         //   }
         // }
-        @at-root .container__5a838:has(.switchIndicator_a28278) {
+        @at-root .container__5a838:has(>.control__5a838>.container_a28278) {
           grid-template-areas: "control labels" "empty helper-text";
           grid-template-columns: min-content 1fr;
           column-gap: 8px;
+          .control__5a838 {
+            grid-area: control;
+          }
           .labelContainer__5a838 {
             margin-bottom: 0;
+            display: contents;
+          }
+          .label__5a838 {
+            grid-area: labels;
+            font-weight: 400;
+          }
+          .description__5a838 {
+            grid-area: helper-text;
+            font-size: 11px;
           }
           .control__5a838 {
             transform: translate(1px, 1px);
