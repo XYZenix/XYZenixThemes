@@ -7,8 +7,8 @@
 * @invite pM2uZheDud
 */
 
-$themeVersion: "221";
-$themeDate: "Oct 20, 2026";
+$themeVersion: "222";
+$themeDate: "Oct 23, 2026";
 
 @use "sass:color";
 @use "sass:math";
@@ -764,6 +764,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
   .scroller_ef3116 {
     padding-top: 0 !important;
     flex: 1 1 auto;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
     .theme-light & {
       background: linear-gradient(#FFF, var(--d8l4));
       box-shadow: inset 0 1px 8px #000;
@@ -3272,11 +3275,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
 // chat
 @at-root {
   .chat_f75fb0 {
-    &, .visual-refresh & {
-      border: none;
-      background: linear-gradient(to bottom, var(--d8dG) 0%, var(--d8dB) 100%);
-    }
-    .theme-light &, .theme-light.visual-refresh & {
+    &.chat_f75fb0 {border: none}
+    background: linear-gradient(to bottom, var(--d8dG) 0%, var(--d8dB) 100%);
+    .theme-light & {
       background: linear-gradient(to bottom, var(--d8l4) 0%, #FFF 100%);
     }
     // no you fucking don't
@@ -3950,6 +3951,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
           .divider__7641b {
             background: linear-gradient(to right, #0000, #fff2, #fff2, #0000) !important;
           }
+          .container__25dca {
+            display: none;
+          }
         }
       }
       // activity cards
@@ -4079,6 +4083,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
           }
         }
       }
+    }
+    &.hasSidebar_f75fb0 {
+      border-radius: 0;
     }
   }
   // sidebar resize bar
@@ -4298,6 +4305,29 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
   }
   .bookmarkBtn__23977 {
     display: none;
+  }
+}
+// friends sidebar
+.container_b17982 {
+  margin-left: 0;
+  border-radius: 0;
+  border: 0;
+  .header_b5f5a6 {
+    .theme-light & {
+      background: linear-gradient(var(--d8l3), var(--d8l5) 50%, var(--d8l7) 50%, var(--d8l8));
+      box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
+    }
+    .theme-dark & {
+      background: linear-gradient(var(--d8d8), var(--d8dA) 50%, var(--d8dB) 50%, var(--d8dC));
+      box-shadow: inset 0 1px #fff2, inset 0 2px #fff1;
+    }
+  }
+  .body_b17982 {
+    border: none;
+    background: linear-gradient(to bottom, var(--d8dG) 0%, var(--d8dB) 100%);
+    .theme-light & {
+      background: linear-gradient(to bottom, var(--d8l4) 0%, #FFF 100%);
+    }
   }
 }
 // members tab in servers
@@ -4852,6 +4882,33 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
         background: linear-gradient(#e8e8e8, #e8e8e8 50%, #dcdcdc 50%, #cacaca);
         border: none;
         box-shadow: 0 0 0 1px #0006, inset 0 1px #fff, 0 1px 4px #0006;
+      }
+    }
+    // checkpoint
+    .container_d68e4d {
+      --font-primary: cursive;
+      --font-display: cursive;
+      --font-headline: cursive;
+      border: solid 2px red;
+      border-image: conic-gradient(red,orange,yellow,lime,cyan,blue,indigo,purple,magenta,red) 1;
+      h3[data-text-variant="display-sm"],
+      div[data-text-variant="text-sm/bold"],
+      .statText_d68e4d {
+        text-transform: lowercase;
+      }
+      .asset_d68e4d {
+        content: url("https://cdn.discordapp.com/emojis/915752170278752326.webp?size=16&animated=true");
+      }
+      .stat_d68e4d>svg {
+        width: 16px;
+        height: 16px;
+      }
+      .powerText_d68e4d>[data-text-variant="text-xs/bold"] {
+        font-size: 0;
+        &:after {
+          content: "-7.060035e+218k";
+          font-size: 12px;
+        }
       }
     }
   }
@@ -6931,7 +6988,9 @@ $sideNoDark: ".theme-light .sidebar__5e434:not(theme-dark)";
     border-radius: 2px;
     color: #fff;
     border: none;
-    &[style*="background-color: var(--badge-notification-background);"] {
+    &[style*="background-color: var(--badge-notification-background);"],
+    &[style*="background-color: var(--background-feedback-notification);"],
+    .mentionsBadge__933a1 & {
       background: linear-gradient(var(--d8rd4), var(--d8rd7) 50%,var(--d8rd9) 50%, var(--d8rdB));
     }
   }
