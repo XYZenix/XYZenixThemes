@@ -1,34 +1,39 @@
 @use "funcs" as *;
 @use "mixins" as *;
 :root {
-  .container_a592e1 {
+  .container_I4BhVZ {
     z-index: 101;
     border-top: none;
     background: var(--background-primary);
-    .scroller__23746 {
+    .scroller_jkJlMe {
       background: var(--background-primary);
     }
-    .headerBar__8a7fc {
+    .headerBar_Y0eJLL {
       height: 56px;
       background: none;
       border-bottom: solid 1px #0000;
-      padding-right: calc(20px + var(--dtm-16-header-button-spacing));
-      &.overlay__8a7fc {
-        &:after {display:none}
+      &:after {
+        all: unset;
+        content: counter(titlebar-icons, titlebar-spacing);
+        font-size: 24px;
+        letter-spacing: 16px;
+        white-space: pre;
+        flex-shrink: 0;
+        margin-right: -16px;
       }
-      .backdrop__8a7fc {
+      .backdrop_Y0eJLL {
         background: var(--background-primary);
         box-shadow: var(--dtm-16-header-shadow);
         border-bottom: solid 1px var(--dtm-16-header-border);
       }
-      .container__65d41 {
+      .container_uP9HND {
         height: 56px;
       }
-      .tabs__65d41 {
+      .tabs_uP9HND {
         height: auto;
         border: none;
         align-items: center;
-        .item_aa8da2 {
+        .item_6zZYhF {
           height: auto;
           min-width: 56px;
           line-height: 18px;
@@ -45,14 +50,14 @@
             color: var(--dtm-16-header-tab-fg);
             background: var(--dtm-16-header-tab-hover-bg);
           }
-          &.selected_aa8da2 {
+          &.selected_6zZYhF {
             background: var(--dtm-16-header-tab-active-bg);
             color: var(--dtm-16-header-tab-active-fg);
           }
           &:before,&:after {content:none}
         }
       }
-      .searchBar__1ac1c {
+      .searchBar_B1ffsk {
         border: none;
         border-radius: 4px;
         font-size: 12px;
@@ -61,19 +66,19 @@
         background: var(--dtm-16-classic-popout-searchbar-bg);
       }
     }
-    .content_f0d60d {
+    .content_vA5YGD {
       background: var(--background-primary);
     }
-    .dragRegion_a592e1 {
+    .dragRegion_I4BhVZ {
       height: 36px;
     }
-    .container_e9ef78 {
+    .container_-6JdM0 {
       background: var(--background-primary);
       overflow: visible;
-      .content_e9ef78 {
+      .content_-6JdM0 {
         justify-content: center;
       }
-      .gradientBackground_e9ef78 {
+      .gradientBackground_-6JdM0 {
         display: none;
       }
       &:before {
@@ -91,7 +96,7 @@
         background-size: cover auto;
         background: var(--dtm-16-discovery-splash-bg) no-repeat top / contain;
       }
-      .textContainer_e9ef78 {
+      .textContainer_-6JdM0 {
         text-align: center;
         align-items: center;
         padding: 0;
@@ -101,24 +106,24 @@
         }
       }
     }
-    .contentSection_b6bcee {
+    .contentSection_YXXVAo {
       background: var(--background-primary);
     }
-    .transitionGroup__4cb8a {
+    .transitionGroup_BTjcfU {
       height: 148px;
-      .placeholder__4cb8a {
+      .placeholder_BTjcfU {
         height: 148px;
         background: var(--background-secondary);
         border: none;
         box-shadow: none;
       }
     }
-    .card__84e3e.card__4cb8a {
+    .card__84e3e.card_BTjcfU {
       background: var(--background-tertiary);
       border: none !important;
       height: 146px;
       contain: paint;
-      .guildDetails__4cb8a {
+      .guildDetails_BTjcfU {
         transition: .3s;
         position: absolute;
         bottom: 0;
@@ -130,7 +135,7 @@
         grid-template-areas: "title" "counts" "description";
         // grid-template-rows: [title] auto [counts] auto [description] 0px [end];
       }
-      .banner__4cb8a {
+      .banner_BTjcfU {
         &:before, &:after {
           content: "";
           background: linear-gradient(180deg,#0000 30%,#000);
@@ -147,13 +152,13 @@
           transition: .3s;
         }
       }
-      .header__4cb8a {
+      .header_BTjcfU {
         margin: 0;
-        .maximizeIcon__4cb8a {
+        .maximizeIcon_BTjcfU {
           z-index: 100;
         }
       }
-      .icon__4cb8a {
+      .icon_BTjcfU {
         bottom: 16px;
         left: 16px;
         padding: 0;
@@ -167,11 +172,11 @@
           width: 100%;
           height: 100%;
         }
-        .iconMask__4cb8a {
+        .iconMask_BTjcfU {
           padding: 0;
         }
       }
-      .description__4cb8a {
+      .description_BTjcfU {
         color: rgba(255 255 255/.6) !important;
         order: 2;
         margin: 0;
@@ -185,16 +190,16 @@
         -webkit-box-orient: vertical;
         grid-area: description;
       }
-      .memberDetailsCount__4cb8a {
+      .memberDetailsCount_BTjcfU {
         grid-area: counts;
-        [data-text-variant="text-xs/normal"] {
+        [data-text-variant="body-xs/normal"] {
           color: #{ss(#b9bbbe)} !important;
           font-weight: 600;
           font-size: 14px;
         }
-        &+.memberDetailsCount__4cb8a {display: none}
+        &+.memberDetailsCount_BTjcfU {display: none}
       }
-      .guildName__4cb8a {
+      .guildName_BTjcfU {
         grid-area: title;
         font-size: 18px;
         font-weight: 500;
@@ -211,16 +216,16 @@
         -webkit-box-orient: vertical;
       }
       &:is(:focus, :hover) {
-        // .guildDetails__4cb8a {
+        // .guildDetails_BTjcfU {
         //   grid-template-rows: [title] auto [counts] auto [description] auto [end];
         // }
-        .banner__4cb8a {
+        .banner_BTjcfU {
           transform: scale(1.02) translateZ(0);
           &:after {
             opacity: .5;
           }
         }
-        .description__4cb8a:not(:empty) {
+        .description_BTjcfU:not(:empty) {
           margin-top: 8px;
           margin-bottom: 0;
         }
@@ -228,11 +233,11 @@
     }
   }
 }
-html:not(.visual-refresh) .container_a592e1 {
-  .icon__8a7fc {display:none}
-  .tabs__65d41 {
+html:not(.visual-refresh) .container_I4BhVZ {
+  .icon_Y0eJLL {display:none}
+  .tabs_uP9HND {
     gap: 0;
-    .tab__65d41 {
+    .tab_uP9HND {
       border: none;
       padding: 0;
       margin: 0;
